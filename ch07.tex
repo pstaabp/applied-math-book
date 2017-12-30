@@ -1,0 +1,257 @@
+% !TEX root = applied-math.tex
+
+
+\chapter{Differential Equations on \texorpdfstring{$\mathbb{R}$}{the real number line} and the Fourier Transform}
+ 
+
+
+\section{The Fourier Transform}
+
+From above, we can write the Fourier Series of $f(x)$ on $[-L/2,L/2]$ as
+%
+\begin{align*}
+f(x) & = \sum_{n=-\infty}^{\infty} c_n e^{i n \omega_0 x} \intertext{where}
+c_n & = \frac{1}{L} \int_{-L/2}^{L/2} f(x) e^{-in\omega_0 x} \, dx 
+\end{align*}
+
+where $\omega_0=2\pi/L$ and $\omega_n=n\omega_0$ and let
+%
+\begin{align*}
+\Delta \omega = \omega_{n+1}-\omega_n = \frac{2\pi}{L} 
+\end{align*}
+
+The series can be written:
+%
+\begin{align*}
+f(x) & = \sum_{n=-\infty}^{\infty} \biggl[\frac{1}{2\pi} \int_{-L/2}^{L/2} f(x) e^{-i\omega_n x} \, dx \biggr] e^{i \omega_n x} \Delta \omega
+\end{align*}
+and letting $L \rightarrow \infty$ or $\Delta \omega \rightarrow 0$, we get:
+%
+\begin{align*}
+f(x) & = \int_{-\infty}^{\infty}  \biggl[\frac{1}{2\pi} \int_{-\infty}^{\infty} f(x) e^{-i\omega_n x} \, dx \biggr] e^{i \omega x} d \omega
+\end{align*}
+which can be written as follows:
+
+\begin{Boxed}
+The \textbf{Fourier Transform} of $f$ is :
+\begin{align*}
+\hat{f}(\omega) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(x) e^{-i \omega x} \, dx 
+\end{align*}
+and using this, the function $f(x)$ can be written:
+\begin{align*}
+f(x) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \hat{f}(x) e^{i \omega x} \, d\omega 
+\end{align*}
+Note: not all functions have a Fourier Transform. If the integral is defined (and converges), then the transform exists. 
+\end{Boxed} 
+
+(discussion of function space versus frequency space). 
+
+\begin{example}
+Find the Fourier Transform of 
+%
+\begin{align*}
+f(x) = \begin{cases}
+e^{-ax} & x \geq 0 \\
+0 & \text{otherwise} 
+\end{cases}
+\end{align*}
+
+\solution
+
+\begin{align*}
+\hat{f}(\omega) & =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} f(x)  e^{-i \omega x} \, dx \\
+& =\frac{1}{\sqrt{2\pi}}\int_{0}^{\infty} e^{-ax} e^{-i\omega x} \, dx \\
+& =\frac{1}{\sqrt{2\pi}} \int_0^{\infty} e^{-(a+i\omega) x} \, dx \\
+& = \frac{1}{\sqrt{2\pi}} \frac{-1}{a+i\omega} e^{-(a + i \omega)x} \biggr\vert_0^{\infty} =\frac{1}{\sqrt{2\pi}} \frac{1}{a+i\omega} = \frac{1}{\sqrt{2\pi} }\frac{a-i\omega}{a^2+\omega^2} 
+\end{align*}
+
+\end{example}
+
+\subsection{Even and Odd Functions and Fourier Transforms}
+
+\begin{Boxed}
+if $f(x)$ is an even function then the Fourier Transform can be written:
+%
+\begin{align*}
+f(x) & = \int_{-\infty}^{\infty} \hat{f}(x) e^{i \omega x} \, d\omega \intertext{where}
+\hat{f} (x) & = \frac{1}{2\pi} 
+\end{align*}
+
+
+\end{Boxed}
+
+\begin{example}
+Fourier Transform of the function
+%
+\begin{align*}
+f(x) & = \begin{cases}
+1 & | x| \leq 1 \\
+0 & otherwise
+\end{cases}
+\end{align*}
+
+\solution
+
+The Fourier Transform is:
+%
+\begin{align*}
+\hat{f}(\omega) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(x) e^{-i\omega x} \, dx \\
+& = \frac{1}{\sqrt{2\pi}} \int_{-1}^{1} e^{-i\omega x} \, dx \\
+& = \frac{1}{\sqrt{2\pi}} \frac{1}{-i \omega}  e^{-i\omega x} \biggr\vert_{-1}^1  \\
+& = \frac{1}{\sqrt{2\pi}} \biggl( \frac{e^{-i\omega}}{-i \omega } + \frac{e^{i\omega}}{i \omega} \biggr) \\
+& = \frac{1}{\sqrt{2\pi}} \frac{2 \sin \omega}{\omega}  
+\end{align*}
+
+Also, 
+%
+\begin{align*}
+f(x) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \hat{f}(\omega) e^{i \omega x} \, d\omega \\
+& = \frac{1}{2\pi} \int_{-\infty}^{\infty} \frac{2 \sin \omega}{\omega} e^{i \omega x} \, d \omega 
+\end{align*}
+
+Since $f(0)=1$ (from the original definition of the function), this means that
+%
+\begin{align*}
+1 & = \frac{1}{\pi} \int_{-\infty}^{\infty}\frac{\sin \omega}{\omega} \, d\omega  \intertext{or}
+\pi & = \int_{-\infty}^{\infty}\frac{\sin \omega}{\omega} \, d\omega 
+\end{align*}
+since $\frac{\sin \omega}{\omega}$ is an even function we can write:
+%
+\begin{align*}
+\frac{\pi}{2} & = \int_{0}^{\infty} \frac{\sin \omega}{\omega} \, d\omega
+\end{align*}
+
+An important function is that on the right side 
+%
+\begin{align*}
+\mbox{Si}(u) & = \int_{0}^u \frac{\sin \omega}{\omega} \, d\omega 
+\end{align*}
+
+
+
+\end{example}
+
+
+\subsection{Physical Interpretation of the Fourier Transform}
+
+The Fourier Transform of a function $f(x)$ is a function that lists all of its frequencies, often called the \textbf{spectral representation}.  The name come from understanding light in terms of its frequencies (colors) and many analyses in physics and chemistry are easier to do in term of the spectrum 
+
+\begin{definition}
+The \textbf{total energy} is 
+%
+\begin{align*}
+\int_{-\infty}^{\infty} | \hat{f}(\omega)|^2 \, d\omega
+\end{align*}
+\end{definition}
+
+
+\subsection{Properties of the Fourier Transform}
+
+\begin{theorem}[Linearity]
+The Fourier Transform is \emph{linear}; that is, for any pair of functions $f(x)$ and $g(x)$ whose Fourier transforms exist and any constants $a$ and $b$, then
+%
+\begin{align*}
+{\cal F}(af+bg) &  = a {\cal F}(f) + b {\cal F}(g)  
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+\begin{align*}
+{\cal F}(af+bg) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} (a f(x) + b g(x)) \, dx \\
+& = a \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(x) \, dx + b \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} g(x) \, dx \\
+& = a {\cal F}(f) + b {\cal F}(g) 
+\end{align*}
+\end{proof}
+
+
+\begin{theorem}[Derivatives]
+Let $f(x)$ be a continuous on the $x$-axis and $f(x) \rightarrow 0$ as $|x| \rightarrow \infty$.  Furthermore, let $f'(x)$ be absolutely integrable on the $x$-axis.  Then 
+\begin{align*}
+{\cal F}\bigl\{f'(x) \bigr\} & = i \omega {\cal F} \bigl\{ f(x) \bigr\} 
+\end{align*}
+
+\end{theorem}
+\begin{proof}
+\begin{align*}
+{\cal F} \bigl\{ f'(x) \bigr\} & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f'(x) e^{-i \omega x} \, dx  \intertext{integrate by parts} 
+& = \frac{1}{\sqrt{2\pi}} \biggl( f(x) e^{-i \omega x} \biggr\vert_{-\infty}^{\infty} - (-i\omega) \int_{-\infty}^{\infty} f(x) e^{-i \omega x} \, dx \biggr) \intertext{since $f(x) \rightarrow 0$ as $|x|\rightarrow \infty$} 
+& = \frac{1}{\sqrt{2\pi}} i\omega {\cal F} \bigl\{ f(x) \bigr\} 
+\end{align*}
+\end{proof}
+
+
+
+
+\section{Solving the Heat Equation using Fourier Transform}
+
+Now we solve:
+%
+\begin{align*}
+\frac{1}{\kappa}\frac{\partial u}{\partial t} & = \frac{\partial^2 u}{\partial {x}^2} 
+\end{align*}
+if $-\infty < x < \infty$ and $u(x,0)=f(x)$.  
+
+Let $\hat{u}(\omega,t)$ be the Fourier Transform of $u(x,t)$.  Taking the Fourier Transform of the PDE above:
+%
+\begin{align*}
+\frac{1}{\kappa} \frac{\partial \hat{u}}{\partial t} & = \frac{\partial^2 \hat{u}}{\partial {x}^2} 
+\end{align*}
+and using the derivative of the Fourier Transform:
+\begin{align*}
+\frac{1}{\kappa} \frac{\partial U}{\partial t} & = (i\omega)^2 \hat{u} = -\omega^2 \hat{u} 
+\end{align*}
+and solving this we get:
+%
+\begin{align*}
+\hat{u}(\omega,t) & = A(\omega) e^{-\kappa \omega^2 t}   
+\end{align*}
+
+If we take the Fourier Transform of the initial condition:
+%
+\begin{align*}
+\hat{u}(\omega,0) & = {\cal F}\{f(x)\} = \hat{f}(\omega)
+\end{align*}
+
+and then evaluate the transformed solution to get:
+%
+\begin{align*}
+\hat{u}(\omega,0) & = A(\omega) \intertext{so}
+\hat{u}(\omega,t) & = \hat{f}(\omega) e^{-\kappa \omega^2 t} 
+\end{align*}
+and lastly, we take the inverse transform:
+%
+\begin{align*}
+u(x,t) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \hat{f}(\omega) e^{-\kappa \omega^2 t}  e^{i\omega x} \, d\omega 
+\end{align*}
+
+
+\begin{example}
+Solve the Heat equation on the real line if the initial condition is
+%
+\begin{align*}
+f(x) & = \begin{cases}
+1 & |x| \leq 1 \\
+0 & \text{otherwise}
+\end{cases}
+\end{align*}
+
+\solution
+
+From above
+%
+\begin{align*}
+\hat{f}(\omega) & = \frac{1}{\sqrt{2\pi}} \frac{\sin \omega}{\omega}
+\end{align*}
+so the solution is:
+%
+\begin{align*}
+u(x,t) & = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}  \frac{1}{\sqrt{2\pi}} \frac{\sin \omega}{\omega} e^{-\kappa \omega^2 t + i \omega x} \, d\omega 
+\end{align*}
+
+\end{example}
+
+
+
+
+
+

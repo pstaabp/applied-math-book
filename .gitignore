@@ -1,0 +1,11 @@
+*.aux
+*.idx
+*.ilg
+*.log
+*.out
+*.synctex.gz
+*.ind
+*.thm
+*.toc
+old/*
+References/*

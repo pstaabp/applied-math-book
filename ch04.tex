@@ -1,0 +1,1482 @@
+% !TEX root = applied-math.tex
+
+\chapter{Matrix Factoring}   \label{ch:matrix:factoring}
+
+Matrices have appeared throughout previous chapters and has many uses.  In this chapter, we will take a matrix $A$ and write it as the product of two or more matrices.  In each case, we will show the purpose of doing this.  In each case, the factored matrices will have desirable properties.  The first factorization technique that we will examine is called LU factorization, which writes $A=LU$, where $L$ is a lower triangular matrix and $U$ is upper triangular.  This factorization will be helpful for solving $A\textbf{x}=\textbf{b}$ repeatedly and can be helpful for finding the inverse of a matrix.   We will also see the Singular Value Decomposition (SVD) of a matrix which is quite useful in finding matrices that are close to the original matrix with a smaller rank.  We'll explain why this is important with some nice applications.  
+
+\section{Matrix Properties and Operations}
+
+Although we have spent some time with matrices earlier in the text, we summarize these and they will be important throughout this chapter. 
+
+\subsection{The Matrix Transpose}
+
+Let $A$ be an $m$ by $n$ matrix.  The matrix transpose\index{transpose}\index{matrix!transpose} of $A$ is denoted $A^{\intercal}$ and 
+\begin{align*}
+(A^{\intercal})_{i,j} = A_{j,i}
+\end{align*}
+or in other words, the $i$th row of the transpose is the $j$th column of $A$. 
+
+\begin{example}
+If 
+\begin{align*}
+A & = \begin{bmatrix}
+1 & -3 & 7 \\
+2 & 0 & 5 
+\end{bmatrix}
+\end{align*}
+then 
+\begin{align*}
+A^{\intercal} =
+\begin{bmatrix}
+1 & 2 \\ -3 & 0 \\ 7 & 5
+\end{bmatrix}
+\end{align*}
+
+\end{example}
+
+The matrix $A^{\intercal}$ is the matrix $A$ flipped over the diagonal.  
+
+(thinking of the transpose in a more abstract manner)
+
+\subsubsection{Properties of the Matrix Transpose}
+
+The following are properties of the transpose. \index{matrix!transpose!properties of}  Let $A$ be an $m$ by $n$ matrix (unless more restricted as noted). 
+
+\begin{enumerate}
+\item $(A^{\intercal})^{\intercal} = A$.  That is, the transpose of the transpose is the original matrix back. 
+\item $(A+B)^{\intercal} = A^{\intercal} + B^{\intercal}$. 
+
+This is one of the properties of linearity.   
+\item $(AB)^{\intercal} = B^{\intercal} A^{\intercal}$. 
+\item $(cA)^{\intercal} = c A^{\intercal}$. 
+
+And this is the other linearly property. 
+\end{enumerate}
+If, in addition, the matrix $A$ is square, then 
+\begin{enumerate}[start=5]
+\item $(A^{-1})^T=(A^T)^{-1}$.  
+\item The eigenvalues of $A$ are the same as the eigenvalues of $A^T$.  Also, the characteristic polynomial of $A$ and $A^{\intercal}$ are the same.  
+\end{enumerate}
+
+\subsection{Symmetric Matrices}
+
+We have seen throughout this book examples where a matrix is symmetric in some sense.  However, there is a precise definition. 
+
+\begin{definition}
+A matrix is \text{symmetric}\index{symmetric matrix}\index{matrix!symmetric} if it is square and if $A= A^{\intercal}$. 
+\end{definition}
+
+\begin{example}
+The following matrix is symmetric,
+%
+\begin{align*}
+A & = \begin{bmatrix}
+1 & 2 & 0 \\
+2 & 3 & -4 \\
+0 & -4 & -5
+\end{bmatrix}
+\end{align*}
+
+and the following is not
+\begin{align*}
+A & = \begin{bmatrix}
+1 & 0 & -3 \\
+0 & 3 & 1 \\
+-3 & 1 & 0 \\
+0 & 0 & 0  
+\end{bmatrix}
+\end{align*}
+since it is not square.  
+\end{example}
+
+Notice that a symmetric matrix has the property that it symmetric over the main diagonal (running from the upper left to lower right).  
+
+\subsubsection{Eigenvalues of Symmetric Matrices}
+
+If we follow the techniques in \ref{sect:eigenvalues}, we can find the eigenvalues and eigenvectors of 
+%
+\begin{align*}
+A & = \begin{bmatrix}
+3 & 2 & 4 \\
+2 & 0 & 2 \\
+4 & 2 & 3
+\end{bmatrix}
+\end{align*}
+then the eigenvalues are $\lambda=8,-1,-1$ and the corresponding eigenvectors are
+\begin{align*}
+\vec{v}_1 & = \begin{bmatrix}
+2 \\ 1 \\ 2
+\end{bmatrix} & \vec{v}_2 & = 
+\begin{bmatrix}
+-1 \\ 0 \\ 1
+\end{bmatrix} & \vec{v}_3 & = 
+\begin{bmatrix}
+-1 \\ 2 \\ 0 
+\end{bmatrix}
+\end{align*}
+which are both real eigenvalues and eigenvectors.  This fact is (as shown in the next lemma) that the matrix is symmetric.  
+
+
+\begin{lemma}
+Let $A$ be a real symmetric matrix.  The eigenvalues and eigenvectors of $A$ are real. 
+\end{lemma}
+\begin{proof}
+Let $\lambda$ be an eigenvalue of $A$ with corresponding eigenvector $\vec{v}$, then 
+\begin{align}
+A\vec{v} & = \lambda \vec{v} \label{eqn:proof:sys:matrix1}
+\intertext{take the complex conjugate of both sides}
+\overline{A} \overline{\vec{v}} & = \overline{\lambda} \overline{\vec{v}}
+\notag
+%
+\intertext{and since $A$ is real}
+%
+A \overline{\vec{v}} & = \overline{\lambda} \overline{\vec{v}} 
+\label{eqn:proof:sys:matrix2}
+\end{align}
+
+If we left-multiply (\ref{eqn:proof:sys:matrix1}) by $\overline{\vec{v}}^{\intercal}$, 
+\begin{align}
+\overline{\vec{v}}^{\intercal} A\vec{v} & = \overline{\vec{v}}^{\intercal} (\lambda \vec{v}) 
+= \lambda \overline{\vec{v}}^{\intercal} \vec{v} 
+\notag
+%
+\intertext{and solving for $\lambda$,}
+%
+\lambda & = \frac{\overline{\vec{v}}^{\intercal} A \vec{v}}{\overline{\vec{v}}^{\intercal}\vec{v}}
+\label{eq:sym:matrix:lambda}
+%
+\intertext{and left-multiply (\ref{eqn:proof:sys:matrix2}) by $\vec{v}^{\intercal}$ to get:}
+%
+\vec{v}^{\intercal} \overline{A}\overline{\vec{v}} & = \vec{v}^{\intercal} (\overline{\lambda} \overline{\vec{v}}) 
+\notag
+%
+\intertext{and if we take the transpose of both sides of this}
+(\vec{v}^{\intercal} \overline{A}\overline{\vec{v}})^{\intercal} & = (\vec{v}^{\intercal} \overline{\lambda} \overline{\vec{v}})^{\intercal} \notag  \\
+\overline{\vec{v}}^{\intercal} A^{\intercal} \vec{v} & = \overline{\lambda} \overline{\vec{v}}^{\intercal} \vec{v} 
+\notag
+\intertext{and since $A$ is symmetric, $A=A^{\intercal}$ and then solving for $\overline{\lambda}$}
+%
+\overline{\lambda} & = \frac{\overline{\vec{v}}^{\intercal} A \vec{v}}{\overline{\vec{v}}^{\intercal} \vec{v} } 
+\label{eq:sym:matrix:conj:lambda}
+\end{align}
+and since (\ref{eq:sym:matrix:lambda}) is the same as (\ref{eq:sym:matrix:conj:lambda}), then $\lambda = \overline{\lambda}$ so the eigenvalue is real.   
+
+Since the eigenvalue of a symmetric matrix is real and the matrix $A$ is real, then the eigenvectors are also real. 
+
+\end{proof}
+
+The fact that symmetric matrices have real eigenvalues with be used later in this section.  
+
+
+\subsection{Orthogonal Matrices}
+
+An \textbf{orthogonal matrix},\index{orthogonal matrix}\index{matrix!orthogonal} $Q$ is a square matrix that satisfies $QQ^{\intercal} =Q^{\intercal}Q=I$.  
+
+The properties include:
+\begin{itemize}
+\item The columns of $Q$ are orthogonal unit vectors. 
+\item The rows of $Q$ are orthogonal unit vectors. 
+\item The inverse of $Q$ is its transpose or $Q^{-1} = Q^{\intercal}$.  
+\item The determinant of $Q$ is $1$ or $-1$.  This can be found by 
+\begin{align*}
+1 & = \det I = \det (QQ^{\intercal}) = \det(Q) \det(Q^{\intercal})  = \det(Q)^2
+\end{align*}
+So the determinant is $1$ or $-1$. 
+\end{itemize}
+
+\vspace{1in}
+
+\begin{example}
+The following are examples of 2 by 2 orthogonal matrices: 
+\begin{align*}
+\begin{bmatrix}
+0 & 1 \\
+-1 & 0 
+\end{bmatrix}, \qquad \begin{bmatrix}
+\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\[6pt]
+\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}
+\end{bmatrix}
+\end{align*}
+
+And the following are 3 by 3 orthogonal matrices:
+
+\begin{align*}
+\begin{bmatrix}
+\frac{2}{3} & -\frac{2}{3} & \frac{1}{3}\\[4pt]
+-\frac{1}{\sqrt{5}} & 0 & \frac{2}{\sqrt{5}} \\[4pt]
+\frac{4}{3\sqrt{5}} & \frac{5}{3\sqrt{5}} & \frac{2}{3\sqrt{5}}
+\end{bmatrix} &&
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 
+\end{bmatrix}
+\end{align*}
+The matrix on the right is an example of a permutation matrix.  Every permutation matrix is an orthogonal matrix.  
+\end{example}
+
+
+
+\subsection{Upper- and Lower-Triangular Matrices}
+
+An \emph{upper triangle matrix} is a matrix (not-necessarily square) such that all elements below the diagonal are 0.  A \emph{lower triangular matrix} is a matrix such that all elements above the diagonal are 0.  More precisely,
+
+\begin{definition}
+A \textbf{upper-triangular matrix}\index{upper-triangular matrix} is an $m$ by $n$ matrix $A$, such that $a_{i,j}=0$ if $j<i$.  A \textbf{lower triangular matrix}\index{lower-triangular matrix} is an $m$ by $n$ matrix $A$ such that $a_{i,j}=0$ if $j>i$.  
+\end{definition}
+
+\begin{example}
+The matrix $L$ below is a lower triangular matrix and $U$ is an upper triangular matrix:
+
+\begin{align*}
+L & = \begin{bmatrix}
+3 & 0 & 0 \\
+2 & -1 & 0 \\
+0 & 5 & 2
+\end{bmatrix} & 
+U & = \begin{bmatrix}
+1 & -7 & -5 \\
+0 & 3 & 2 \\
+0 & 0 & -3 
+\end{bmatrix}
+\end{align*}
+\end{example}
+
+Hopefully that it's clear that a matrix in echelon form\index{matrix!echelon form} defined in Definition \ref{def:echelon:form} is also upper triangular.  
+
+
+\subsubsection{Back Substitution}
+
+An advantage to having an upper- or lower-triangular matrix is 
+
+
+{\color{red} (NEED TO FINISH)}
+
+\subsubsection{Forward Substitution}
+
+{\color{red} (NEED TO FINISH)}
+
+
+
+\section{LU Factorization}
+
+Let $A$ be a square matrix.  We seek to write $A=LU$, where $L$ is a lower triangular matrix and $U$ is an upper triangular matrix.  The reason for doing such a factorization is often to solve $A\vec{x}=\vec{b}$ for multiple right hand sides.   
+
+Recall (or is this somewhere else), than an \emph{upper triangle matrix} is a matrix (not-necessarily square) such that all elements below the diagonal are 0.  A \emph{lower triangular matrix} is a matrix such that all elements above the diagonal are 0.  More precisely,
+
+
+The next example shows that there is a lower-triangular matrix $L$ and an upper triangular matrix $U$ whose product is the original matrix $A$.  Later we will show where this arises.  
+
+\begin{example}
+Let 
+\begin{align*}
+L & = \begin{bmatrix}
+3 & 0 & 0 \\
+2 & -1 & 0 \\
+0 & 5 & 2
+\end{bmatrix} & 
+U & = \begin{bmatrix}
+1 & -7 & -5 \\
+0 & 3 & 2 \\
+0 & 0 & -3 
+\end{bmatrix} & 
+ A &= \begin{bmatrix}
+  3 & -2 &  1 \\
+  6 &  0 &  4 \\
+ -6 & -8 & -7 \\
+\end{bmatrix}
+\end{align*}
+Show that $A=LU$ if
+\begin{align*}
+L &= \begin{bmatrix}
+1 & 0 & 0 \\ 2 & 1 & 0 \\ -2 & -3 & 1 
+\end{bmatrix}
+& U & = \begin{bmatrix}
+3 & -2 & 1 \\
+0 & 4 & 2 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+and using standard matrix multiplication:
+\begin{align*}
+A & = \begin{bmatrix}
+1(3)+0(0)+0(0) & 1(-2) +0(4)+0(0) & 1(1)+0(2)+0(1) \\
+2(3)+1(0)+0(0) & 2(-2)+1(4)+0(0) & 2(1)+1(2)+0(1) \\
+-2(3)-3(0)+1(0) & -2(-2)-3(4)+1(0)&-2(1)-3(2)+1(1) 
+\end{bmatrix} =
+\begin{bmatrix}
+3 & -2 & 1 \\ 6 & 0 & 4 \\ -6 & -8 & -7
+\end{bmatrix}
+\end{align*}
+
+
+\end{example}
+
+This is nice, but the goal of LU factorization is to take any matrix $A$ and find matrices $L$ and $U$.  We first, show how to do this for a 3 by 3 matrix and then extend it. 
+
+\subsubsection{LU factorization of a 3 by 3 matrix}
+
+\index{LU factorization}\index{matrix!LU factorization}
+Consider a general 3 by 3 matrix
+\begin{align*}
+A & = \begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} 
+\end{bmatrix}
+\end{align*}
+
+It is interesting to note that if we define 
+\begin{align*}
+B_{21} & = \begin{bmatrix}
+1 & 0 & 0 \\[4pt]
+-\frac{a_{21}}{a_{11}} & 1 & 0 \\[4pt]
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+then 
+\begin{align*}
+B_{21} A & = \begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\[4pt]
+0 & a_{22} - \frac{a_{12}a_{21}}{a_{11}} & a_{23}- \frac{a_{13}a_{21}}{a_{11}} \\[4pt]
+a_{31} & a_{32} & a_{33} 
+\end{bmatrix}
+\end{align*}
+
+And if 
+\begin{align*}
+B_{31} & = \begin{bmatrix}
+1 & 0 & 0 \\[4pt]
+0 & 1 & 0 \\[4pt]
+-\frac{a_{31}}{a_{11}} & 0 & 1
+\end{bmatrix}
+\end{align*}
+then 
+\begin{align*}
+B_{31} B_{21} A & = 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\[4pt]
+0 & a_{22} - \frac{a_{12}a_{21}}{a_{11}} & a_{23}- \frac{a_{13}a_{21}}{a_{11}} \\[4pt]
+0 & a_{32} - \frac{a_{12}a_{31}}{a_{11}} & a_{33} - \frac{a_{31}a_{31}}{a_{11}} 
+\end{bmatrix}
+\end{align*}
+If we define this matrix as $A^{(1)}$ and then repeat the steps. 
+
+\begin{align*}
+B_{32} & = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\[2pt]
+0 & -\frac{a^{(1)}_{32}}{a^{(1)}_{22}} & 1 
+\end{bmatrix}
+\end{align*}
+and then
+\begin{align*}
+B_{32} A^{(1)} & = 
+\begin{bmatrix}
+a^{(1)}_{11} & a^{(1)}_{21} & a^{(1)}_{21} \\[3pt]
+0 & a^{(1)}_{22} & a^{(1)}_{23} \\[3pt]
+0 & 0 & a^{(1)}_{33} - \frac{a^{(1)}_{23}a^{(1)}_{32}}{a^{(1)}_{22}} 
+\end{bmatrix}
+\end{align*}
+
+Notice that this matrix is an upper triangular matrix.  We let $U=B_{32}A^{(1}) = B_{32}B_{31}B{21} A$.  
+
+If $U$ has non zeros along its diagonal, then it is invertible and 
+\begin{align*}
+A & = LU 
+\intertext{multiply through on the right by $U^{-1}$}
+A U^{-1} & = L 
+\end{align*}
+
+
+\begin{example}  \label{ex:lu-decomp} \index{LU factorization}\index{matrix!LU factorization}
+Use the steps above to find matrices $L$ and $U$ such that $A=LU$ for
+\begin{align*}
+A &= \begin{bmatrix}
+  3 & -2 &  1 \\
+  6 &  0 &  4 \\
+ -6 & -8 & -7 \\
+\end{bmatrix}
+\end{align*}
+
+\solution
+
+As above, 
+\begin{align*}
+B_{21} & = \begin{bmatrix}
+1 & 0 & 0 \\ -\frac{6}{3} & 1 & 0 \\
+0 & 0 & 1 
+\end{bmatrix}
+\end{align*}
+
+And 
+\begin{align*}
+B_{21} A & = \begin{bmatrix}
+3 & -2 & 1 \\
+0 & 4 & 2 \\
+-6 & -8 & -7 
+\end{bmatrix}
+\end{align*}
+And if
+\begin{align*}
+B_{31} & = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-\frac{-6}{3} & 0 & 1 
+\end{bmatrix} = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+2 & 0 & 1
+\end{bmatrix}
+\end{align*}
+and
+\begin{align*}
+B_{31} B_{21} A & =
+\begin{bmatrix}
+3 & -2 & 1 \\
+0 & 4 & 2 \\
+0 & -12 & -5
+\end{bmatrix}
+\end{align*}
+And we will call this matrix $A^{(1)}$. 
+
+\begin{align*}
+B_{32} & = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -\frac{-12}{4} & 1 \\
+\end{bmatrix}
+= \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 3 & 1 
+\end{bmatrix}
+\end{align*}
+
+\begin{align*}
+B_{32} A^{(1)} & = \begin{bmatrix}
+3 & -2 & 1 \\
+0 & 4 & 2 \\
+0 & 0 & 1 
+\end{bmatrix}
+\end{align*}
+and we will call this $U$.  And $L$ is found by 
+
+\begin{align*}
+L & = A U^{-1} = \begin{bmatrix}
+3 & -2 & 1 \\
+6 & 0 & 4 \\
+-6 & -8 & -7 
+\end{bmatrix} \begin{bmatrix}
+1/3 & 1/6 & -2/3 \\
+0 & 1/4 & -1/2 \\
+0 & 0 & 1
+\end{bmatrix} = \begin{bmatrix}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+-2 & -3 & 1
+\end{bmatrix}
+\end{align*}
+
+\end{example}
+
+\subsubsection{Extending LU factorization to invertible matrices}
+
+The 3 by 3 example above can be extended to larger square matrices.  For a matrix $A=\{a_{i,j}\}$, if we define
+\begin{align*}
+B^{(1)} & = \begin{bmatrix}
+1 & 0 & 0 & 0 &   \cdots & 0 \\
+-a_{21}/a_{11} & 1& 0 & 0 & \cdots & 0 \\
+-a_{31}/a_{11} & 0 & 1 & 0 & \cdots & 0 \\
+\vdots & 0 & 0 & 1 & \ddots & \vdots \\
+-a_{n1}/a_{11} & 0 & \cdots & &  & 1 
+\end{bmatrix} 
+\intertext{and define}
+A^{(1)} & = B^{(1)} A 
+\end{align*}
+will satisfy 
+\begin{align*}
+a^{(1)}_{i1} = \begin{cases} a_{11} & i=1 \\
+0 & i>1
+\end{cases}
+\end{align*}
+
+If this process is continued with 
+%
+\begin{align*}
+B^{(k)} & = \begin{bmatrix}
+1 & 0 & 0 & 0 & \cdots & & & 0  \\
+0 & 1 & 0 & 0 & \cdots & & & 0  \\
+0 & 0 & \ddots \\
+0 & 0 & 0 & 1 & 0 & \cdots & & \vdots \\
+0 & 0 & 0 & -a^{(k-1)}_{k+1,k}/a^{(k-1)}_{k,k} & 1 & 0 \\
+0 & 0 & 0 & -a^{(k-1)}_{k+2,k}/a^{(k-1)}_{k,k} & 0 & 1 & 0 \\
+0 & 0 & 0 & \vdots & 0 & 0 & \ddots & 0 \\
+0 & 0 & 0 & -a^{(k-1)}_{n,k}/a^{(k-1)}_{k,k} & 0 & \cdots & 0 & 1 \\
+\end{bmatrix}
+\end{align*}
+and define
+\begin{align*}
+A^{(k)} & = B^{(k)} B^{(k-1)} 
+\end{align*}
+and this will have nonzero elements on the diagonal and zeros below it through column $k+1$.  
+If this is continued up to $A^{(n-1)}$, then 
+\begin{align*}
+U & = A^{(n-1)} = B^{(n-1)}B^{(n-2)} \cdots B^{(1)} A
+\end{align*}
+is an upper diagonal matrix and as before let $L = U^{-1} A$. 
+
+\subsubsection{Further Details}
+
+A keen eye will notice some possible problems with the above formulation for the $LU$ factorization.  If any of the terms $a^{(k)}_{k,k} = 0$, then the matrix $B^{(k)}$ is not defined.   There are examples of invertible matrices that do not have an LU factorization, however, what can be done is to find a permutation matrix $P$ such that $LUP=A$.  Details of this are not provided here. 
+
+\subsubsection{Any Square Matrix has a LU Decomposition}
+
+Additionally, an square matrix $A$ can be written as $A=LUP$, where $L$ is a lower-diagonal, $U$ is upper-diagonal and $P$ is a permutation matrix.  Details of this can be found in ???
+
+\subsubsection{Applications of LU Decomposition}
+
+The main application of LU decomposition is that of solving linear systems.  Consider the matrix equation $A\vec{x} = \vec{b}$ and assume that $A=LU$  (that is the needed permutation matrix is $P=I$).  
+
+
+\begin{enumerate}
+\item Solve $L\vec{y} = \vec{b}$ for $\vec{y}$.  
+\item Then solve $U\vec{x} = \vec{y}$ for $\vec{x}$.  
+\end{enumerate}
+
+First, this works, because if $\vec{y} = U\vec{x}$, then
+\begin{align*}
+L\vec{y} & = \vec{b} \\
+L U\vec{x} & = \vec{b} \\
+A \vec{x} & = \vec{b}
+\end{align*}
+
+
+\begin{example}
+Solve the system $A\vec{x}=\vec{b}$ using $LU$-decomposition for 
+\begin{align*}
+A & = \begin{bmatrix}
+  3 & -2 &  1 \\
+  6 &  0 &  4 \\
+ -6 & -8 & -7 \\
+\end{bmatrix} & \vec{b} & = \begin{bmatrix}
+14 \\22 \\ -9
+\end{bmatrix}
+\end{align*}
+
+\solution
+
+Recall that in Example \ref{ex:lu-decomp} the $LU$-factorizations\index{LU factorization}\index{matrix!LU factorization} of the matrix $A$ was found and is
+\begin{align*}
+L & = \begin{bmatrix}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+-2 & -3 & 1
+\end{bmatrix}
+& U & = \begin{bmatrix}
+3 & -2 & 1 \\
+0 & 4 & 2 \\
+0 & 0 & 1 
+\end{bmatrix}
+\end{align*}
+
+To use this to solve $A\vec{x}=\vec{b}$, first we solve $L \vec{y} = \vec{b}$ via forward substitution.  
+\begin{align*}
+y_1 & = 14 \\
+2y_1 + y_2 & = 22 \intertext{so}
+y_2 & = 22-2y_1 = 22-28 =-6 \intertext{and the last equation is}
+-2 y_1 -3y_2 + y_3 & = -9 \intertext{or}
+y_3 & = -9 + 2(14)+3(-6) = 1
+\end{align*}
+So the solution to $L\vec{y}=\vec{b}$ is $\vec{y}=[14,-6,1]^{\intercal}$.  Next, we solve $U\vec{x}=\vec{y}$ by back substitution,
+\begin{align*}
+x_3 & = 1 \\
+4 x_2 + 2 x_3 & = -6 \intertext{or}
+x_2 & = (-6 -2 (1))/4 = -2 \intertext{and the first equation is}
+3 x_1 -2x_2+x_3 & = 14 \intertext{or}
+3x_1 & = 14+2(-2)-x_3 = 9 \\
+x_1 & = 3 
+\end{align*}
+So the solution is 
+\begin{align*}
+\vec{x} & = \begin{bmatrix}
+1 \\ -2 \\ 3
+\end{bmatrix}
+\end{align*}
+\end{example}
+
+You can see from the example above that once the matrix $A$ factored that it is relatively simple to find the solutions to $L\vec{y}=\vec{b}$ and $A\vec{x}=\vec{y}$ and there are relatively few computations to perform.  
+
+In fact, this is true in general.  In that if one actually finds the factorization of $A$ and then solves this in the manner show that about 1/2 of the operations are done then solving $A\vec{x}=\vec{b}$ directly, say by reducing the matrix to reduced row echelon form.  
+
+\subsubsection{Inverting a Matrix}
+
+The same idea can be use to find inverse of $A$ by repeated solving $LU\vec{x} = \vec{b}$ by repeating this for $\vec{b}$ the columns of the identity matrix.   The example below shows this without all of the details of finding the factorization:
+
+\vspace{1in}
+
+\begin{example}
+Find the inverse of the matrix in Example \ref{ex:3by3:matrix:inverse},
+\begin{align*}
+A & = \begin{bmatrix}
+3 & 3 &  -1 \\ 2 &  1 &  -3 \\ 0 &  2 &  5
+\end{bmatrix}
+\end{align*}
+using the LU-decomposition.
+
+\solution
+
+Following the steps above, the LU decomposition is
+\begin{align*}
+L & = \begin{bmatrix}
+1 & 0 & 0 \\ 2/3 & 1 & 0 \\
+0 & -2 & 1
+\end{bmatrix} & U & = \begin{bmatrix}
+3 & 3 & -1 \\
+0 & -1 & -7/3 \\
+0 & 0 & 1/3
+\end{bmatrix}
+\end{align*}
+and we will solve $A\vec{x}=LU\vec{x}=\vec{e}_j$, where $\vec{e}_j$ is the $j$th column of the 3 by 3 identity matrix.  
+
+Solving $LU\vec{x} = \vec{e}_1$ by  solving $L\vec{y}_1 = (1,0,0)^{\intercal}$ or
+\begin{align*}
+\vec{y_1} & = \begin{bmatrix}
+1 \\ -2/3 \\ -4/3
+\end{bmatrix}
+\end{align*}
+then solve $U\vec{x}_1 = \vec{y}_1$ for $\vec{x}_1$ or
+\begin{align*}
+\vec{x}_1 & = \begin{bmatrix}
+-11 \\ 10 \\ -4
+\end{bmatrix}
+\end{align*}
+Repeating this for $\vec{b}=\vec{e}_2$, first solving $L\vec{y}_2 = (0,1,0)^{\intercal}$ or
+\begin{align*}
+\vec{y}_2 & = \begin{bmatrix}
+0 \\ 1 \\ 2 
+\end{bmatrix}
+\end{align*}
+then solve $U\vec{x}_2  = \vec{y}_2$ for $\vec{x}_2$ or
+\begin{align*}
+\vec{x}_2 & = \begin{bmatrix}
+17 \\ -15 \\ 6
+\end{bmatrix}
+\end{align*}
+and lastly, solve $L\vec{y}_3 = (0,0,1)^{\intercal}$ or 
+\begin{align*}
+\vec{y}_3 & = \begin{bmatrix}
+0 \\ 0 \\ 1
+\end{bmatrix} 
+\end{align*}
+and solving $U\vec{x}_3 = \vec{y}_3$ results in
+\begin{align*}
+\vec{x}_3 & = \begin{bmatrix}
+8 \\ -7 \\ 3
+\end{bmatrix}
+\end{align*}
+The inverse matrix is then the matrix with $\vec{x}_j$ as the columns or 
+\begin{align*}
+A^{-1} & = \begin{bmatrix}
+-11 & 17 & 8 \\
+10 & -15 & -7 \\
+-4 & 6 & 3 
+\end{bmatrix}
+\end{align*}
+\end{example}
+
+\section{Diagonalization of Matrices} \index{diagonalization of a matrix}\index{matrix!diagonalization}
+
+Consider a matrix $A$.  There are many application where the power of the matrix, $A^n$ is helpful. One such cases is at the end of this this chapter.  One way to approach this is that the $n$th power is just the matrix product with itself $n$ times or 
+%
+\begin{align*}
+A^2 & = A A \\
+A^3 & = A A A
+\end{align*}
+and this can be extended to any positive integer power.  However, finding the 50th power may not be practical. 
+
+To make this an easier task, let's assume that we can write $A$ in the form:
+% 
+\begin{align}
+A &= P D P^{-1} \label{eq:diag:matrix}
+\end{align}
+where $D$ is a diagonal matrix and $P$ is invertible.  If this is possible, then 
+% 
+\begin{align*}
+A^3 & = A A A \\
+& = (P D P^{-1}) (P D P^{-1}(P D P^{-1}) \\
+& = P D^3 P^{-1}  
+\end{align*}
+and $D^3$ is easy to find because it is a diagonal matrix.   
+
+If it's possible to factor $A$ as in (\ref{eq:diag:matrix}), then we call a matrix diagonalizable.  Here's a formal definition. 
+
+
+\begin{definition}
+An $n$ by $n$  matrix $A$ is said to be \textbf{diagonalizable} if it can be written 
+% 
+\begin{align*}
+A & = P D P^{-1} 
+\end{align*}
+where $D$ is a diagonal matrix and $P$ is invertible. 
+\end{definition}
+
+Before explaining how starting with a matrix $A$, we can find matrices $D$ and $P$, let's look at one that is factored in this way. 
+
+
+\begin{example}
+Let 
+%
+\begin{align*}
+A &= 
+\begin{bmatrix}
+1 & 2 \\ 4 & 3
+\end{bmatrix}
+& P& = \begin{bmatrix}
+1 &  1 \\
+-1 & 2 
+\end{bmatrix} & D & = \begin{bmatrix}
+-1 & 0 \\
+0 & 5 
+\end{bmatrix}
+\end{align*}
+
+Show that $ A = P D P^{-1}$.  
+
+First, recall that 
+% 
+\begin{align*}
+P^{-1} & = \frac{1}{|P|} \begin{bmatrix}
+2 & -1 \\
+1 & 1  
+\end{bmatrix} = \frac{1}{3} \begin{bmatrix}
+2 & -1 \\
+1 & 1 
+\end{bmatrix}
+\end{align*}
+and
+\begin{align*}
+P D & = \begin{bmatrix}
+-1 & 5 \\
+1 & 10 
+\end{bmatrix}
+\end{align*} then
+\begin{align*}
+P D P^{-1} & =  \begin{bmatrix}
+1 & 2 \\
+4 & 3 
+\end{bmatrix}
+\end{align*}
+%
+which shows in this particular example that $A=PDP^{-1}$.  
+
+
+
+\end{example}
+
+
+\begin{theorem}
+An $n$ by $n$ matrix $A$ is diagonalizable if and only if it has $n$ linearly independent eigenvectors.  The matrix $P$ is a matrix of the eigenvectors and the matrix $D$ is the diagonal matrix of eigenvalues.  
+\end{theorem}
+
+\begin{proof}
+Thus we want to show that 
+\begin{align*}
+A & = P D P^{-1} && \text{or} \\
+A P & = P D  
+\end{align*}
+since $P$ is invertible. 
+
+
+Let 
+% 
+\begin{align*}
+P & = \begin{bmatrix}
+\vec{v}_1 & \vec{v}_2 &  \cdots & \vec{v}_n
+\end{bmatrix}
+& D & = \begin{bmatrix}
+\lambda_1 & 0 & 0 & \cdots & 0 \\
+0 & \lambda_2 & 0 & \cdots & 0 \\
+0 & 0 & \lambda_3 & \cdots & 0 \\
+\vdots & \vdots & \vdots &  & \vdots \\
+0 & 0 & 0 & \cdots & \lambda_n 
+\end{bmatrix}
+\end{align*}
+where $\vec{v}_i$ is the eigenvector associated with the eigenvalue $\lambda_i$.  
+
+% 
+\begin{align*}
+A P & = \begin{bmatrix}
+A \vec{v}_1 & A \vec{v}_2 & \cdots A \vec{v}_n 
+\end{bmatrix} \\
+& = \begin{bmatrix}
+\lambda_1  \vec{v}_1 &  \lambda_2 \vec{v}_2 & \cdots & \lambda_n \vec{v}_n 
+\end{bmatrix} \\
+& = \begin{bmatrix}
+\vec{v}_1 \lambda_1 & \vec{v}_2 \lambda_2 & \cdots & \vec{v}_n \lambda_n 
+\end{bmatrix}
+= P D
+\end{align*}
+~
+\end{proof} 
+
+\begin{example} \label{ex:diag:2by2}
+Is the matrix 
+%
+\begin{align*}
+A & = \begin{bmatrix}
+1 & -1 \\
+2 & 4 
+\end{bmatrix}
+\end{align*}
+diagonalizable?  If so, find $P$ and $D$. 
+
+\solution
+
+To check this, we need to find the eigenvalues and eigenvectors. First, find the eigenvalues by solving $|A-\lambda I|=0$ or $\lambda^2-5\lambda+6=(\lambda-3)(\lambda-2)=0$ or $\lambda_1=2$ and $\lambda_2=3$ 
+
+The associated eigenvectors are 
+%
+\begin{align*}
+\vec{v}_1 &= \begin{bmatrix}
+1 \\ -1 
+\end{bmatrix}, & \vec{v}_2 & = \begin{bmatrix}
+1 \\ -2
+\end{bmatrix}
+\end{align*}
+ (The steps to find these aren't shown, but follow the steps in section  \ref{sect:eigenvalues}).  Since there are 2 linearly independent eigenvectors, this vector is diagonalizable and 
+%
+\begin{align*}
+P & = \begin{bmatrix}
+1 & 1 \\ -1 & -2 
+\end{bmatrix} & D & = \begin{bmatrix}
+2 & 0 \\
+0 & 3
+\end{bmatrix}
+\end{align*}
+\end{example}
+
+
+
+\begin{example}
+Is the matrix
+\begin{align*}
+A =
+\begin{bmatrix}
+1 & 0 & 0 \\
+3 & -2 & 6 \\
+2 & 1 & 3
+\end{bmatrix}
+\end{align*}
+%
+diagonalizable? If so, find $P$ and $D$. 
+
+\solution
+
+From example \ref{ex:eigs:3by3}, we found that $A$ has eigenvalues $\lambda_1 = 1, \lambda_2 = 4, \lambda_3 = -3$.  It also has eigenvectors $\vec{v}_1 =[-4\;\;2\;\;3]^{\intercal} $, $\vec{v}_2 =[0\;\;1\;\;1]^{\intercal}$ and $\vec{v}_3=[0\;\;-6\;\;1]^{\intercal}$.  Therefore the matrices:
+%
+\begin{align*}
+P = \begin{bmatrix}
+-4 & 0 & 0 \\
+2 & 1 & -6 \\
+3 & 1 & 1
+\end{bmatrix} \qquad
+D = 
+\begin{bmatrix}
+1 & 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & -3
+\end{bmatrix}
+\end{align*}
+%
+satisfy $A = PDP^{-1}$
+
+\end{example}
+
+
+\subsection*{Powers of Diagonalizable Matrices}
+
+One main reason for writing a matrix in diagonalizable form is that powers of the matrix are easy to compute.  Note that if $A = P^{-1} DP$,  then 
+%
+\begin{align*}
+A^2 & = ( PDP^{-1})(PDP^{-1}) \\
+& = PD^2P^{-1} 
+\end{align*}
+%
+and by induction:
+%
+\begin{align*}
+A^k = PD^k P^{-1}
+\end{align*}
+%
+Note that raising the diagonal matrix $D$ to a power is a simple process .
+
+
+\begin{example}
+Use the fact that $A$ is diagonalizable to find
+%
+\begin{align*}
+\begin{bmatrix}
+1 & -1 \\
+2 & 4 
+\end{bmatrix}^5
+\end{align*}
+
+\solution
+
+From Example \ref{ex:diag:2by2}, $A$ can be written $A=PDP^{-1}$ with
+%
+\begin{align*}
+P & = \begin{bmatrix}
+1 & 1 \\ -1 & -2 
+\end{bmatrix} & D & = \begin{bmatrix}
+2 & 0 \\
+0 & 3
+\end{bmatrix}
+\end{align*}
+
+Then, $A^5$ can be written
+%
+\begin{align*}
+A^5 & = P D^5 P^{-1} \\
+& = \begin{bmatrix}
+1 & 1 \\
+-1 & -2 
+\end{bmatrix} \begin{bmatrix}
+2 & 0 \\
+0 & 3
+\end{bmatrix}^5  \begin{bmatrix}
+2 & 1 \\
+-1 & -1
+\end{bmatrix} \\
+& = \begin{bmatrix}
+1 & 1 \\
+-1 & -2
+\end{bmatrix} \begin{bmatrix}
+32 & 0 \\
+0 & 243
+\end{bmatrix} \begin{bmatrix}
+2 & 1 \\
+-1 & -1 
+\end{bmatrix} \\
+& = \begin{bmatrix}
+-179 & -211 \\
+422 & 454
+\end{bmatrix}
+\end{align*}
+\end{example}
+
+
+\subsection{Similar Matrices}
+
+\begin{definition}
+Two $n$ by $n$ matrices $A$ and $B$ are said to be \textbf{similar} if there exists an invertible matrix $S$ such that 
+% 
+\begin{align*}
+B & = S^{-1} A S
+\end{align*}
+\end{definition}
+
+\begin{theorem}
+If $A$ and $B$ are similar $n$ by $n$ matrices, then the following are identical for the two matrices:
+\begin{itemize}
+\item Rank
+\item Determinant
+\item Trace
+
+\end{itemize}
+\end{theorem}
+
+
+\begin{theorem}
+ If $A$ and $B$ are similar $n$ by $n$ matrices, then $A$ and $B$ have the same characteristic equation and therefore have the same eigenvalues.  
+\end{theorem}
+
+
+\begin{proof}
+Let $A$ satisfy the characteristic equation 
+%
+\begin{align*}
+\det(A - \lambda I) & = 0 
+\end{align*}
+Since $A$ and $B$ are similar, then $A=S^{-1}BS$, 
+\begin{align*}
+\det(S^{-1} B S - \lambda I) & = 0  \intertext{Since $S^{-1}S=I=S^{-1} IS$}
+\det(S^{-1} B S - \lambda S^{-1} I S) & = 0 \intertext{Factoring out a $S^{-1}$ from the left and $S$ from the right}
+\det (S^{-1}(B - \lambda S I S^{-1}) S) &  = 0 \\
+\det(S^{-1}) \det(B-\lambda I) \det(S) & = 0 
+\intertext{since $\det(S^{-1}) \det(S)= \det(S^{-1}S)=\det(I)= 1$}  
+\det(B - \lambda I) & = 0 
+\end{align*}
+so the characteristic equation is identical, thus the eigenvalues are the same. 
+\end{proof}
+
+Note:  The eigenvectors are in general not the same in $A$ and $B$.  
+
+\begin{example} \label{ex:sim:matrices}
+Show that 
+%
+\begin{align*}
+A & = \begin{bmatrix}
+1 & -1 \\ 2 & 4
+\end{bmatrix} & B & = \begin{bmatrix}
+2 & 2 \\ 0 & 3
+\end{bmatrix}
+\end{align*}
+ are similar matrices with 
+%
+\begin{align*}
+S & = \begin{bmatrix}
+-1 & 1 \\ 1 & 0 
+\end{bmatrix}
+\end{align*}
+
+\solution 
+
+First, using the formula for the inverse of a $2 \times 2$ matrix, 
+%
+\begin{align*}
+S^{-1} & =  \begin{bmatrix}
+0 & 1 \\ 1 & 1 
+\end{bmatrix}
+\end{align*}
+and 
+%
+\begin{align*}
+S^{-1} A S & = \begin{bmatrix}
+0 & 1 \\ 1 & 1
+\end{bmatrix} \begin{bmatrix}
+1 & -1 \\ 2 & 4 
+\end{bmatrix}\begin{bmatrix}
+-1 & 1 \\ 1 & 0  
+\end{bmatrix} = \begin{bmatrix}
+2& 2 \\ 0  & 3 
+\end{bmatrix} = B 
+\end{align*}
+
+\end{example}
+
+\phantom{hi}
+
+\subsection{Similar and Diagonalizable Matrices}
+
+It appears that there is a connection to similar and diagonalizable matrices through at least their near identical formulas.  Notice that $A$ and $B$ are similar if there exists an invertible matrix $P$ such that 
+% 
+\begin{align*}
+A = S^{-1} B S
+\end{align*}
+
+and $A$ is diagonalizable if there exists a $P_1$ such that 
+% 
+\begin{align} \label{eq:diag:A}
+A & = P_1D_1 P^{-1}_1
+\end{align}
+for a diagonal matrix $D_1$.  Similarly $B$ is diagonalizable if there exists an invertible $P_2$ such that 
+\begin{align} \label{eq:diag:B}
+B & = P_2 D_2 P_{2}^{-1}
+\end{align}
+for diagonal matrix $D_2$.  
+
+We know that the matrices $P_1$ and $P_2$ exist if there are $n$ linearly independent eigenvectors, but how do you find $S$?  
+
+Solving for $D_1$ in (\ref{eq:diag:A}) and $D_2$ in (\ref{eq:diag:B}), 
+\begin{align*}
+D_1 & = P_1^{-1}A P_1 & D_2 & = P_2^{-1} B P_2
+\end{align*}
+Also, since the eigenvalues of $A$ and $B$ are the same, we can rearrange the eigenvectors of $A$ and $B$ to the same order thus without loss of generality, $D_1=D_2$ and
+% 
+\begin{align*}
+P_1^{-1} A P_1 & = P_2^{-1} B P_2  
+\intertext{left multiplying by $P_1$ and right multiplying by $P_1^{-1}$} 
+A & = P_1 P_2^{-1} B P_2 P_1^{-1}	
+\end{align*}
+thus let 
+\begin{align} \label{eq:similar:matrix}
+S = P_2 P_1^{-1}.
+\end{align}
+
+\phantom{hi}
+
+\begin{example}
+Above we showed that the matrices 
+\begin{align*}
+A & = \begin{bmatrix}
+1 & -1 \\ 2 & 4
+\end{bmatrix} & B & = \begin{bmatrix}
+2 & 2 \\ 0 & 3
+\end{bmatrix} 
+\end{align*}
+ are similar.  Use the above discussion to find $S$ such that $A=S^{-1}BS$. 
+ 
+\solution 
+
+Briefly, we need to diagonalize both $A$ and $B$. In example \ref{ex:diag:2by2}, we found that the eigenvalues of $A$ are $\lambda_1=2$ and $\lambda_2=3$ with associated eigenvectors $\vec{v}_1=[1\;\;-1]^{\intercal}$ and $\vec{v}_2=[1\;\;-2]^{\intercal}$.
+
+Using the techniques of section \ref{sect:eigenvalues}, the eigenvalues of $B$ are $\lambda_1=2$ and $\lambda_2=3$ with associated eigenvectors $\vec{v}_1=[1\;\;4]^{\intercal}$ and $\vec{v}_2=[0\;\;1]^{\intercal}$. 
+ 
+Letting $D_1$ and $P_1$ be the matrices associated with $A$ and $D_2$ and $P_2$, those associated with $B$, let
+%
+\begin{align*}
+D_1 & = D_2 = \begin{bmatrix}
+3 & 0 \\ 0 & 2
+\end{bmatrix}
+\end{align*}
+and
+%
+\begin{align*}
+P_1 & = \begin{bmatrix}
+1 & 1 \\
+-1 & -2 
+\end{bmatrix}, & P_2 & = \begin{bmatrix}
+2 & 1 \\
+1 & 0
+\end{bmatrix}
+\end{align*}
+and using (\ref{eq:similar:matrix}), 
+%
+\begin{align*}
+S & = P_{2} P_1^{-1} = \begin{bmatrix}
+2 & 1 \\ 1 & 0 
+\end{bmatrix} \begin{bmatrix}
+-1 & -1\\ 
+2 & 1\\
+\end{bmatrix}= \begin{bmatrix}
+0 &  -1 \\
+-1 & -1 
+\end{bmatrix}
+\end{align*}
+ 
+And although this $S$ is not the same $S$ as Example \ref{ex:sim:matrices}, this matrix $S$ is the negative of the inverse of that matrix in Example \ref{ex:sim:matrices}.  
+\end{example}
+
+
+\section{Singular Value Decomposition}
+
+The singular value decomposition, also known as the SVD, is yet another way to factor a factor.  In short, a matrix $A$ can be written $A=U \Sigma V^{\intercal}$, where $U$ and $V$ are orthogonal matrices and $\Sigma$ is a diagonal matrix.  We will show that it is possible to factor any $m$ by $n$ matrix $A$ in this form and also determine how to find the matrices $U$, $\Sigma$ and $V$.  
+
+Consider a real $m$ by $n$ matrix $A$.  We will consider $U$, an $m$ by $m$ matrix, $\Sigma$, an $m$ by $n$ matrix and $V$ a $n$ by $n$ matrix. If we write down $AA^{\intercal}$
+%
+
+
+
+\begin{theorem}[Singular Value Decomposition] \index{singular value decomposition (SVD)}\index{matrix!singular value decomposition}
+Let $A$ be a general $m$ by $n$ matrix.  The matrix can be written:
+\begin{align*}
+A & = U \Sigma V^{\intercal}
+\end{align*}
+where $U$ and $V$ are square orthogonal matrices of size $m$ and $n$ respectively and $\Sigma$ is an $m$ by $n$ diagonal matrix.  The columns of $U$ are the eigenvectors of $AA^{\intercal}$ and the columns of $V$ are the eigenvectors of $A^{\intercal}A$.  
+\end{theorem}
+
+The general proof is not presented here in that showing the factoring is overly complicated, but can be found HERE.  Instead, assume that the matrix can be factored as in the Singular Value Decomposition, then 
+\begin{align*}
+AA^{\intercal} & = U \Sigma V^{\intercal} (U \Sigma V^{\intercal})^{\intercal} \\
+& = U \Sigma V^{\intercal} V \Sigma^{\intercal} U^{\intercal}  \intertext{since $V^{\intercal}V=I$}
+& = U \Sigma \Sigma^{\intercal} U^{\intercal}
+\end{align*}
+
+(NOTE that the diagonal elements of $\Sigma$ are the squares of the eigenvalues of $A$.) 
+
+
+We first start with the SVD of a 2 by 2 matrix with the following example. 
+\begin{example}
+Find $U, \Sigma,$ and $V$ of the SVD for the matrix
+\begin{align*}
+A & = \begin{bmatrix}
+-1 & 2 \\
+1 & 2 
+\end{bmatrix}
+\end{align*}
+
+\solution
+
+As explained above, the columns of $U$ are the columns of $AA^{\intercal}$ and 
+\begin{align*}
+A A^{\intercal} & = \begin{bmatrix}
+5 & 3 \\
+3 & 5
+\end{bmatrix}
+\end{align*}
+The eigenvalues are found by 
+%
+\begin{align*}
+\det(A-\lambda I) & = \begin{vmatrix}
+5 - \lambda & 3 \\ 3 & 5- \lambda 
+\end{vmatrix} = (5-\lambda)^2 - 9  = 0
+\end{align*}
+with solutions $\lambda = 2, 8$.  If $\lambda = 2$, then the solution to 
+\begin{align*}
+(AA^{\intercal}-2I)\vec{v}_1 & = \begin{bmatrix}
+3 & 3 \\ 3 & 3 
+\end{bmatrix}\vec{v}_1 = \begin{bmatrix}
+0 \\ 0
+\end{bmatrix}
+\end{align*}
+is $\vec{v}_1 = [1,-1]^{\intercal}$.  And if $\lambda = 8$, then the solution to 
+\begin{align*}
+(AA^{\intercal}-8I) \vec{v}_2 & = \begin{bmatrix}
+-3 & 3 \\
+3 & -3 
+\end{bmatrix} \vec{v}_2  = \begin{bmatrix}
+0 \\ 0 
+\end{bmatrix}
+\end{align*}
+is $\vec{v}_2 = [1,1]^{\intercal}$. Thus the columns of $U$ are the two eigenvectors scaled to be unit vectors, 
+\begin{align*}
+U & = \begin{bmatrix}
+1/\sqrt{2} & 1/\sqrt{2} \\
+-1/\sqrt{2} & 1/\sqrt{2}
+\end{bmatrix}
+\end{align*}
+
+To find the matrix $V$, we seek the eigenvalues/eigenvectors of $A^{\intercal}A$, or 
+\begin{align*}
+A^{\intercal} A & = \begin{bmatrix}
+2 & 0 \\ 0 & 8 
+\end{bmatrix}
+\end{align*}
+and because this is a diagonal matrix, the eigenvalues are $2$ and $8$ (the same as before) and the eigenvectors are
+\begin{align*}
+\vec{v}_1 & = \begin{bmatrix}
+0 \\ 1
+\end{bmatrix} & \vec{v}_2 & = \begin{bmatrix}
+1 \\ 0 
+\end{bmatrix}
+\end{align*}
+So 
+\begin{align*}
+V & = \begin{bmatrix}
+0 & 1 \\
+1 & 0 
+\end{bmatrix}
+\end{align*}
+
+The singular values in the matrix $\Sigma$ are the square roots of the eigenvalues of either $AA^{\intercal}$ or $A^{\intercal}A$ and the matrix is
+\begin{align*}
+\Sigma & = \begin{bmatrix}
+\sqrt{2} & 0 \\
+0 & \sqrt{8} 
+\end{bmatrix}
+\end{align*}
+
+Note:  this matrix is the same as $A^{\intercal}A$, but this is not true in general.  
+
+\end{example}
+
+
+The next example finds the SVD of a 2 by 3 matrix, showing how to handle a non-square matrix. 
+
+\begin{example}
+Find the SVD of the matrix
+\begin{align*}
+A & = \begin{bmatrix}
+2 & -3 & -3 \\
+2 & 3 & 3 
+\end{bmatrix}
+\end{align*}
+
+\solution
+
+The columns of $U$ are the columns of $AA^{\intercal}$ and 
+\begin{align*}
+AA^{\intercal} &  = \begin{bmatrix}
+22 & -14 \\
+-14 & 22 
+\end{bmatrix}
+\end{align*}
+and the eigenvalues are found by
+\begin{align*}
+\det(A-\lambda I) & = \begin{vmatrix}
+22-\lambda & -14 \\ -14 & 22-\lambda 
+\end{vmatrix} = (22-\lambda)^2 - 14^2 = 0 
+\end{align*}
+which has the solution $\lambda=8,36$.  If $\lambda = 8$, then the solution to
+\begin{align*}
+(AA^{\intercal}-8I)\vec{v}_1 & = \begin{bmatrix}
+14 & -14 \\ -14 & 14
+\end{bmatrix} = \begin{bmatrix}
+0 \\ 0 
+\end{bmatrix}
+\end{align*}
+has the solution $\vec{v}_1 = [1,1]^{\intercal}$. 
+
+The columns of $V$ are the columns of $A^{\intercal}A$ and 
+\begin{align*}
+A^{\intercal}A & = \begin{bmatrix}
+8 & 0 & 0 \\ 
+0 & 18 & 18 \\
+0 & 18 & 18 
+\end{bmatrix}
+\end{align*}
+and the eigenvalues of $A^{\intercal}A$ is found by 
+\begin{align*}
+\det(A^{\intercal}A-\lambda I) & = \begin{vmatrix}
+8-\lambda & 0 & 0 \\ 
+0 & 18-\lambda & 18 \\
+0 & 18 & 18-\lambda 
+\end{vmatrix} = (8-\lambda)\bigl((18-\lambda)^2-18^2\bigr) = 0
+\end{align*}
+which has the solutions $\lambda=8,36,0$.  The corresponding eigenvectors are 
+\begin{align*}
+\vec{v}_1 & = \begin{bmatrix}
+1 \\ 0 \\ 0
+\end{bmatrix}, & \vec{v}_2 & = \begin{bmatrix}
+0 \\ 1 \\1
+\end{bmatrix} & \vec{v}_3 & = \begin{bmatrix}
+0 \\ -1 \\ 1 
+\end{bmatrix}
+\end{align*}
+
+And the matrix $V$ with the column above scaled to make them unit vectors is
+\begin{align*}
+V & = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1/\sqrt{2} & -1/\sqrt{2} \\
+0 & 1/\sqrt{2} & 1/\sqrt{2}
+\end{bmatrix}
+\end{align*}
+
+Also note that we have selected the order of the eigenvalues to be the same in $U$ and $V$.  This is very important.  Also, if the original matrix is not square, then some of the eigenvalues will be 0.  These should go at the end.  
+
+Lastly, the singular values in the matrix $\Sigma$ are the square roots of the eigenvalues of either $AA^{\intercal}$ or $A^{\intercal}A$ and the matrix is
+\begin{align*}
+\Sigma & = \begin{bmatrix}
+\sqrt{8} & 0 & 0 \\
+0 & 6 & 0  
+\end{bmatrix}
+\end{align*}
+
+\end{example}
+
+\subsubsection{The geometry of the SVD} \index{singular value decomposition (SVD)!geometry of}
+
+This section will explain in geometric terms what the SVD generates for an example that can be plotted in 2D.  First, let's consider 100 points that are scattered around the origin and perhaps they look like the following:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+
+\draw[->] (-10.5,0) -- (10.5,0) node [above right] {$x$};
+ \foreach \x in {-10,-8,...,-2,2,4,...,10} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x}; 
+\draw[->] (0,-6.5) -- (0,6.5) node [above right] {$y$};
+ \foreach \y in {-6,-4,-2,2,4,6} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y}; 
+
+\begin{luacode}
+local x
+local y
+for i=1,100 do
+   x = 20*math.random()-10
+   y = 0.3*x + (2*math.random()-1)
+   tex.print('\\fill (',x,',',y,') circle[radius=2pt];')
+end
+
+\end{luacode}
+
+\draw[very thick,->] (0,0) -- (-9.53,-3.01); 
+\draw[very thick,->] (0,0) -- (-0.30,0.95); 
+\end{tikzpicture}
+
+\end{center}
+
+If the matrix is a 2 by 100 matrix with each column the $x$ and $y$ value of each point, we can perform an SVD of this.  The results for $U$ and the 2 diagonal elements of $\Sigma$ (denoted $\sigma_1$ and $\sigma_2$) are
+\begin{align*}
+\sigma_1 & = 54.51177 & \sigma_2 & =  
+5.576430 & U & = \begin{bmatrix}
+-0.953478 & 0.30146\\
+-0.30146 & 0.953478 
+\end{bmatrix}
+\end{align*}
+where these have been done using software (not by hand).  
+
+If we plot the two vectors in the columns of $U$ with relative sizes of those found in $\Sigma$, you see in the plot above that the larger vector points in the direction of stretch of the points and the second vector is orthogonal.  The relative lengths are the relative stretches of the points.   The geometry of the columns in the $V$ matrix is more difficult to understand in this situation because each of the vectors are length 100. 
+
+If the original matrix had 3 rows, then each column is a point in 3 dimensions.  The 3 columns in $U$ would again show the stretching of the points in 3 orthogonal directions with the stretching factor in the $\Sigma$ matrix.   
+
+
+
+
+
+
+\subsubsection{Finding a best-fit line and plane using SVD}
+
+You might notice from above that perhaps we can use the SVD to find a line to a set of points and this is true.  We will use a simpler example to show how this work and how it is similar to other fitting techniques.  We can also use a similar technique to find the best-fit plane through points in 3 dimensions.  
+
+We first start with a simple example of points in the plan.  Consider the points (1,2), (2,2), (3,5), (6,7).  We wish to fit a line that best fits the points.  
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw[->] (-2,0) -- (7,0) node [above right] {$x$};
+\draw[->] (0,-2) -- (0,7) node [above right] {$y$};
+\foreach \x in {-1,1,2,...,6} {\draw (\x,0.15) -- (\x,-0.15) node [below] {$\x$};}
+\foreach \y in {-1,1,2,...,6} {\draw (0.15,\y) -- (-0.15,\y) node [left] {$\y$};}
+
+
+\foreach \x/\y in {1/2,2/2,3/5,6/7} \fill (\x,\y) circle [radius=2.5pt];
+\end{tikzpicture}
+\end{center}
+
+First, we will find the center of these points by just finding the average of the $x$ and $y$ values.
+
+\begin{align*}
+\overline{x} & = \frac{1+2+3+6}{4} = 3 & \overline{y} & = \frac{2+2+5+7}{4} = 4
+\end{align*}
+
+We now generate a new data set where each $x$ and $y$ value is adjusted by the means above.  The new data set is $\{(-2,-2),(-1,-2),(0,1),(3,3)\}$.  We then use these values to find 
+%
+\begin{align*}
+A & = \begin{bmatrix}
+-2 & -1 & 0 & 3 \\
+-2 & -2 & 1 & 3
+\end{bmatrix}
+\end{align*}
+
+As above, the singular values in $\Sigma$ and the matrix $U$ will be most important.  As above, the matrix $U$ have the eigenvectors of $AA^{\intercal}$ with the eigenvalues as the diagonal elements of $\Sigma$.  
+
+\begin{align*}
+AA^{\intercal} & = \begin{bmatrix}
+14 & 15 \\ 15 & 18 
+\end{bmatrix}
+\end{align*}
+
+Again, using software, the diagonal elements of $\Sigma$, labelled $\sigma_1$ and $\sigma_2$ and the matrix $U$ is 
+\begin{align*}
+\sigma_1 & = 5.5796 & \sigma_2 & = 0.93126 & U & = \begin{bmatrix}
+-0.658724 & -0.752384 \\
+-0.752384 & 0.658725
+\end{bmatrix}
+\end{align*}
+
+The prominent eigenvector is the one corresponding to the larger singular value (the first one), so the eigenvalue to use is the first column of $U$.  
+
+The slope of the line will be the $y$-component over the $x$-component (rise over run) or
+\begin{align*}
+m & = \frac{-0.752384}{-0.658724} = 1.1421830
+\end{align*}
+
+Lastly, to find the line, we will use the point-slope form with the average values (or center point) of $(3,4)$:
+\begin{align*}
+y-4 & = 1.1428130 (x-3) \\
+y & = 1.1428130 x + 0.571561
+\end{align*}
+
+and the following is a plot of the data and the line:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw[->] (-2,0) -- (7,0) node [above right] {$x$};
+\draw[->] (0,-2) -- (0,7) node [above right] {$y$};
+\foreach \x in {-1,1,2,...,6} {\draw (\x,0.15) -- (\x,-0.15) node [below] {$\x$};}
+\foreach \y in {-1,1,2,...,6} {\draw (0.15,\y) -- (-0.15,\y) node [left] {$\y$};}
+
+
+\foreach \x/\y in {1/2,2/2,3/5,6/7} \fill (\x,\y) circle [radius=2.5pt];
+
+\draw[<->] plot [domain=-0.5:6] (\x,{1.1428130*\x + 0.571561});
+\end{tikzpicture}
+\end{center}
+
+And as a comparison, if we use least-squares to find the line, the result is
+\begin{align*}
+m & = 1.0714x+ 0.285714
+\end{align*}
+
+The reason for the difference is because each method minimizes something different.  The least-squares line is the one that minimizes the vertical distance between the data and the line.  The SVD best-fit line produces a line that minimizes the square of the orthogonal distance to all the points.  ({\color{red} this would be good to prove/show at some point}).  
+

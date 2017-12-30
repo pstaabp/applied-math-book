@@ -1,0 +1,86 @@
+% !TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[display=portrait]{mathbook}
+ 
+\usepackage{url,enumitem,tikz-3dplot,multicol,pgfplots,hyperref,luacode}
+\renewcommand{\coursename}{Applied Mathematics}
+
+\pgfplotsset{compat=1.12}
+
+\usepackage{makeidx}
+\makeindex
+
+\usetikzlibrary{decorations.pathmorphing}
+ 
+%\includeonly{ch02}
+
+\DeclareMathOperator{\SPAN}{span}
+
+\title{Applied Mathematics}
+\author{Peter Staab}
+\begin{document}
+\begin{titlepage}
+
+% some important math and plotting routines:
+\begin{luacode}
+dofile("quad.lua")
+\end{luacode}
+
+
+\begin{center}
+{\fontspec[Scale=5.5]{Chalkduster}  
+Applied Mathematics }
+
+\vspace{0.5in}
+
+{\fontspec[Scale=3.0]{Arial}  Peter Staab}
+
+\vspace{0.25in}
+
+
+{\fontspec[Scale=2.0]{Arial} Fitchburg State University} 
+ 
+\vfill
+ 
+% Bottom of the page
+{ \sffamily \today}
+ 
+\end{center}
+ 
+\end{titlepage}
+
+\vfill 
+
+
+This edition was last edited on \today.
+
+Copyright by Peter Staab, Jamaica Plain, Massachusetts. 
+ 
+Creative Commons Attribution-Noncommercial-Share Alike 3.0  United States \linebreak License.
+
+
+
+ 
+\frontmatter
+\setcounter{tocdepth}{1}
+
+\tableofcontents
+
+\mainmatter
+
+%\setcounter{chapter}{0}
+%\include{ch00} 
+\include{ch01}
+\include{ch02}
+\include{ch03}
+\include{ch04}
+\include{ch05}
+\include{ch06}
+\include{ch07}
+%\appendix
+
+%\input{solutions}
+
+\printindex
+\end{document}
