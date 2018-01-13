@@ -1892,7 +1892,7 @@ The \textbf{Gram-Schmidt Orthogonalization} algorithm is the following.  Conside
 \begin{enumerate}
 \item Let $\vec{v}_1=\vec{u}_1$. 
 \item Let $\vec{v}_2 = \vec{u}_2 - \dfrac{\langle \vec{v}_1,\vec{u}_2 \rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1$
-\item Let $\vec{v}_3 = \vec{u}_3 - \dfrac{\langle \vec{v}_2,\vec{u}_3 \rangle}{\langle \vec{v}_2,\vec{v}_2 \rangle} \vec{u}_2-\dfrac{\langle \vec{v}_1,\vec{u}_3 \rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1$. 
+\item Let $\vec{v}_3 = \vec{u}_3 - \dfrac{\langle \vec{v}_2,\vec{u}_3 \rangle}{\langle \vec{v}_2,\vec{v}_2 \rangle} \vec{v}_2-\dfrac{\langle \vec{v}_1,\vec{u}_3 \rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1$. 
 
 \item And so on with 
 %
@@ -1903,7 +1903,7 @@ The \textbf{Gram-Schmidt Orthogonalization} algorithm is the following.  Conside
 \end{align*}
 \end{enumerate}
 
-If the set also needs to be orthonormal, for each vector $\vec{v}_k$ divide through by its length.  
+The resulting set of vectors $\{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\}$ are orthogonal.  If the set also needs to be orthonormal, for each vector $\vec{v}_k$ divide through by its length. 
 \end{Boxed*}
 
 \begin{proof}
@@ -2643,11 +2643,11 @@ Find the projection of vector $[6,-2,4]^T$ onto plane given by $x+2y+3z=0$.
  
  \solution
  
- First, let's find two vectors in the plane, called $P$, that form an orthogonal basis (we will see why it's helpful to have an orthogonal basis later).  Recall that a normal vector to the plane is given by the vector $[1,2,3]^T$.  Two vector that are normal to it is $\vec{v}_1=[3,0,-1]$ and $\vec{v}_2=[0,-3,2]^T$.  (Note: these are two points in the plane).  To form an orthonormal basis, we need to perform Gramm-Schmidt.  
+ First, let's find two vectors in the plane, called $P$, that form an orthogonal basis (we will see why it's helpful to have an orthogonal basis later).  Recall that a normal vector to the plane is given by the vector $[1,2,3]^T$.  Two vector that are normal to it is $\vec{u}_1=[3,0,-1]$ and $\vec{u}_2=[0,-3,2]^T$.  (Note: these are two points in the plane).  To form an orthonormal basis, we need to perform Gramm-Schmidt.  
  
 \begin{align*}
  \vec{v}_1 & = \vec{u}_1 
-& \vec{v}_2 &= \vec{u}_2 - \frac{\langle \vec{v}_1,\vec{v}_2 \rangle}{\langle \vec{v}_1, \vec{v}_1 \rangle} \vec{v}_1  \\
+& \vec{v}_2 &= \vec{u}_2 - \frac{\langle \vec{v}_1,\vec{u}_2 \rangle}{\langle \vec{v}_1, \vec{v}_1 \rangle} \vec{v}_1  \\
  & = \begin{bmatrix}
  3 \\ 0 \\ -1
  \end{bmatrix}&
@@ -2662,11 +2662,7 @@ Find the projection of vector $[6,-2,4]^T$ onto plane given by $x+2y+3z=0$.
  3/5 \\ -3 \\ 9/5 
 \end{bmatrix}
 \end{align*}
-with $\alpha$ chosen such that $\langle \vec{u}_1,\vec{u}_2\rangle=0.  $
-\begin{align*}
- \langle \vec{u}_1,\vec{u}_2 \rangle = \langle \vec{v}_1,\vec{v}_2 \rangle - \alpha \langle \vec{v}_1, \vec{v}_1 \rangle=0 
-\end{align*}
-and to make the second vector nicer, we'll multiply by $5/3$.  A orthogonal set in the plane is
+and to make the second vector nicer, we'll multiply by $5/3$.  An orthogonal set in the plane is
 %
 \begin{align*}
 \left\{ \begin{bmatrix}
@@ -2715,6 +2711,7 @@ So in the case of projecting a vector onto a plane, $P$,
 5 \\-4 \\ 1
 \end{bmatrix}
 \end{align*} 
+So the vector $[5,-4,1]^{\intercal}$ is the projection of the vector $[1,2,3]^{\intercal}$ onto the plane $x+2y+3z=0$.  
 \end{example}
 
 
@@ -2867,7 +2864,7 @@ which looks quite sine-like and is fairly close if we plot
 \foreach \x in {-1,-0.5,...,1} \draw (\x,0.0005) -- (\x,-0.0005) node [below] {\x};
 \draw[->] (0,-0.001) -- (0,0.012) node [above right] {$y$}; 
 \foreach \y in {0.0025,0.005,0.0075,0.01} \draw (0.025,\y) -- (-0.025,\y) node [left] {\y};
-\draw plot[domain=-1:1,smooth,samples=100] (\x,{abs(sin(pi*\x r)-\x*(3.103460404+(-4.814388214+1.726905092*pow(\x,2))*pow(\x,2)))});
+\draw plot[domain=-1:1,samples=400] (\x,{abs(sin(pi*\x r)-\x*(3.103460404+(-4.814388214+1.726905092*pow(\x,2))*pow(\x,2)))});
 \end{tikzpicture}
 \end{center}
 

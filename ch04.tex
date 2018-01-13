@@ -38,7 +38,9 @@ The matrix $A^{\intercal}$ is the matrix $A$ flipped over the diagonal.
 
 (thinking of the transpose in a more abstract manner)
 
-\subsubsection{Properties of the Matrix Transpose}
+\begin{theorem}[Properties of the matrix transpose]
+
+\label{thm:matrix:transpose}
 
 The following are properties of the transpose. \index{matrix!transpose!properties of}  Let $A$ be an $m$ by $n$ matrix (unless more restricted as noted). 
 
@@ -57,6 +59,12 @@ If, in addition, the matrix $A$ is square, then
 \item $(A^{-1})^T=(A^T)^{-1}$.  
 \item The eigenvalues of $A$ are the same as the eigenvalues of $A^T$.  Also, the characteristic polynomial of $A$ and $A^{\intercal}$ are the same.  
 \end{enumerate}
+
+\end{theorem}
+
+%
+%. Prove at least a few of these? 
+%
 
 \subsection{Symmetric Matrices}
 
@@ -247,14 +255,115 @@ Hopefully that it's clear that a matrix in echelon form\index{matrix!echelon for
 
 \subsubsection{Back Substitution}
 
-An advantage to having an upper- or lower-triangular matrix is 
+An advantage to having an upper- or lower-triangular matrix is that solving the matrix is quite straightforward.  In the case of a upper-triangular matrix, $U$ the steps that solve $U\vec{x}=\vec{b}$ is called \textbf{back substitution}.   We will show the steps in an example. 
+
+\begin{example}
+If
+\begin{align*}
+U & = \begin{bmatrix}
+1 & -7 & -5 \\
+0 & 3 & 2 \\
+0 & 0 & -3 
+\end{bmatrix} & \vec{b} & = \begin{bmatrix}
+2 \\ -5 \\ 6
+\end{bmatrix},
+\end{align*}
+solve $U\vec{x}=\vec{b}$. 
+
+\solution
+
+To illustrate back substitution, we write out the matrix equation as the corresponding equations:
+\begin{align*}
+x_1 -7x_2 -5x_3 & = 2 \\
+3x_2 +2x_3 & = -5 \\
+-3 x_3 & = -6 
+\end{align*}
+
+and solving the 3rd equation above, $x_3=2$.  This is then substituted into the 2nd equation to get:
+\begin{align*}
+3x_2 +2(2) & = -5
+\end{align*}
+and solving leads to $x_2 =-3$.  And then lastly, $x_2$ and $x_3$ are substituted into the first equation to get:
+\begin{align*}
+x_1 -7(-3)-5(2)=2
+\end{align*}
+and solving this leads to $x_1=13$.  Thus the solution to $U\vec{x}=\vec{b}$ is
+\begin{align*}
+\vec{x} & = \begin{bmatrix}
+13 \\ -3 \\ 2
+\end{bmatrix}
+\end{align*}
+\end{example}
+
+In general, back substitution works the same way.  
+
+\begin{Boxed*}
+To solve the matrix equation $U\vec{x}=\vec{b}$, where $U$ is an $n$ by $n$, non-singular, upper-triangular matrix, first
+\begin{align*}
+x_n & = \frac{b_n}{a_{nn}}
+\end{align*}
+and assume that $x_{j+1}, x_{j+2}, \ldots, x_n$ are known.  Then,
+\begin{align*}
+x_j & = \frac{1}{a_{jj}} \bigl(b_j - \sum_{k=j+1}^n a_{jk} x_k\bigr) \qquad \text{for $j=n-1,n-2,\ldots,1$}
+\end{align*}
+and it is important that the steps are performed in reverse order.  This technique is called \textbf{back substitution}.
+\end{Boxed*}
 
 
-{\color{red} (NEED TO FINISH)}
 
 \subsubsection{Forward Substitution}
 
-{\color{red} (NEED TO FINISH)}
+Similar to back substitution, if a matrix is in lower-diagonal form, then the matrix equation $L\vec{y}=\vec{c}$ can be solved in a straightforward manner.  We first look at an example:
+
+\begin{example}
+Solve $L\vec{y}=\vec{c}$ if
+\begin{align*}
+L & = \begin{bmatrix}
+3 & 0 & 0 \\
+2 & -1 & 0 \\
+0 & 5 & 2
+\end{bmatrix} & \vec{c} & = \begin{bmatrix}
+9 \\ 8 \\2 \end{bmatrix}
+\end{align*}
+
+We first write down the equations that correspond to these:
+\begin{align*}
+3y_1 & = 9 \\
+2y_1-y_2 & = 8 \\
+5y_2 + 2y_3 & = 2 
+\end{align*}
+
+
+Solving the first equation is $y_1=3$.  Then substitute this into the second equation to get:
+\begin{align*}
+2(3) - y_2 & = 8 
+\end{align*}
+which has the solution $y_2=-2$.  Lastly, we substitute these into the last equation to get:
+\begin{align*}
+5(-2) +2y_3 & = 2 
+\end{align*}
+which has the solution $y_3=6$.  Thus the solution to the matrix equation is 
+\begin{align*}
+\vec{y} & =\begin{bmatrix}
+ 3 \\ -2 \\ 6
+\end{bmatrix}
+\end{align*}
+
+\end{example}
+
+Notice in this example, we solved the unknown's in the $\vec{y}$ vector in order.  This is because of the structure of the lower-triangular matrix and hence why this technique is called \textbf{forward substitution}.  
+
+\begin{Boxed*}
+To solve the matrix equation $L\vec{y}=\vec{c}$,  where $L$ is an $n$ by $n$, nonsingular, lower-triangular matrix, first,
+\begin{align*}
+y_1 & = \frac{c_1}{a_{11}}
+\end{align*}
+and then assume that $y_1, y_2, \ldots, y_{j-1}$ are known.  Then 
+\begin{align*}
+y_j & = \frac{1}{a_{jj}} \bigl(b_j - \sum_{k=1}^{j-1} a_{jk} x_k\bigr) \qquad \text{for $j=2,3, \ldots n$} 
+\end{align*}
+and note that in this case, the steps are performed in order.  This technique is called \textbf{forward substitution}. 
+\end{Boxed*}
 
 
 
@@ -380,7 +489,7 @@ a^{(1)}_{11} & a^{(1)}_{21} & a^{(1)}_{21} \\[3pt]
 \end{bmatrix}
 \end{align*}
 
-Notice that this matrix is an upper triangular matrix.  We let $U=B_{32}A^{(1}) = B_{32}B_{31}B{21} A$.  
+Notice that this matrix is an upper triangular matrix.  We let $U=B_{32}A^{(1}) = B_{32}B_{31}B_{21} A$.  
 
 If $U$ has non zeros along its diagonal, then it is invertible and 
 \begin{align*}
@@ -533,7 +642,7 @@ A keen eye will notice some possible problems with the above formulation for the
 
 \subsubsection{Any Square Matrix has a LU Decomposition}
 
-Additionally, an square matrix $A$ can be written as $A=LUP$, where $L$ is a lower-diagonal, $U$ is upper-diagonal and $P$ is a permutation matrix.  Details of this can be found in ???
+Additionally, an square matrix $A$ can be written as $A=LUP$, where $L$ is a lower-diagonal, $U$ is upper-diagonal and $P$ is a permutation matrix.  {\color{red} NEED A REFERENCE} 
 
 \subsubsection{Applications of LU Decomposition}
 
@@ -1151,7 +1260,7 @@ And although this $S$ is not the same $S$ as Example \ref{ex:sim:matrices}, this
 
 \section{Singular Value Decomposition}
 
-The singular value decomposition, also known as the SVD, is yet another way to factor a factor.  In short, a matrix $A$ can be written $A=U \Sigma V^{\intercal}$, where $U$ and $V$ are orthogonal matrices and $\Sigma$ is a diagonal matrix.  We will show that it is possible to factor any $m$ by $n$ matrix $A$ in this form and also determine how to find the matrices $U$, $\Sigma$ and $V$.  
+The singular value decomposition, also known as the SVD, is yet another way to factor a matrix.  In short, a matrix $A$ can be written $A=U \Sigma V^{\intercal}$, where $U$ and $V$ are orthogonal matrices and $\Sigma$ is a diagonal matrix.  We will show that it is possible to factor any $m$ by $n$ matrix $A$ in this form and also determine how to find the matrices $U$, $\Sigma$ and $V$.  
 
 Consider a real $m$ by $n$ matrix $A$.  We will consider $U$, an $m$ by $m$ matrix, $\Sigma$, an $m$ by $n$ matrix and $V$ a $n$ by $n$ matrix. If we write down $AA^{\intercal}$
 %
@@ -1160,24 +1269,47 @@ Consider a real $m$ by $n$ matrix $A$.  We will consider $U$, an $m$ by $m$ matr
 
 \begin{theorem}[Singular Value Decomposition] \index{singular value decomposition (SVD)}\index{matrix!singular value decomposition}
 Let $A$ be a general $m$ by $n$ matrix.  The matrix can be written:
-\begin{align*}
-A & = U \Sigma V^{\intercal}
-\end{align*}
+\begin{align}
+A & = U \Sigma V^{\intercal} \label{eq:SVD:decomp}
+\end{align}
 where $U$ and $V$ are square orthogonal matrices of size $m$ and $n$ respectively and $\Sigma$ is an $m$ by $n$ diagonal matrix.  The columns of $U$ are the eigenvectors of $AA^{\intercal}$ and the columns of $V$ are the eigenvectors of $A^{\intercal}A$.  
 \end{theorem}
 
-The general proof is not presented here in that showing the factoring is overly complicated, but can be found HERE.  Instead, assume that the matrix can be factored as in the Singular Value Decomposition, then 
-\begin{align*}
-AA^{\intercal} & = U \Sigma V^{\intercal} (U \Sigma V^{\intercal})^{\intercal} \\
-& = U \Sigma V^{\intercal} V \Sigma^{\intercal} U^{\intercal}  \intertext{since $V^{\intercal}V=I$}
-& = U \Sigma \Sigma^{\intercal} U^{\intercal}
-\end{align*}
+The general proof is not presented here, but can be found {\color{red} NEED A REFRENCE}.  Instead, assume that the matrix can be factored as in the Singular Value Decomposition, then 
+\begin{align}
+AA^{\intercal} & = U \Sigma V^{\intercal} (U \Sigma V^{\intercal})^{\intercal} \notag \\
+& = U \Sigma V^{\intercal} V \Sigma^{\intercal} U^{\intercal} \notag
+\intertext{and since $V^{\intercal}V=I$, then }
+AA^{\intercal}& = U \Sigma \Sigma^{\intercal} U^{\intercal}. \label{eq:SVD:similar}
+\end{align}
 
-(NOTE that the diagonal elements of $\Sigma$ are the squares of the eigenvalues of $A$.) 
+The astute reader will notice that (\ref{eq:SVD:similar}) shows that the matrices $AA^{\intercal}$ and $\Sigma \Sigma^{\intercal}$ are similar and thus have the same eigenvalues. Recall also that $U$ will be the eigenvectors of $AA^{\intercal}$.  These properties are used to actually find $U$ and $\Sigma$.  
 
 
-We first start with the SVD of a 2 by 2 matrix with the following example. 
-\begin{example}
+Also, if you can find either $U$ or $V$, then finding the other is easier by solving (\ref{eq:SVD:decomp}).  If we know $V$, then 
+\begin{align}
+U \Sigma V^{\intercal} & = A  \notag \\
+\Sigma V^{\intercal}  & = U^{-1} A \notag
+\intertext{and recall that since $U$ is an orthogonal matrix that $U^{-1}=U^{\intercal}$.  This is now left-multiplied by $\Sigma^{\intercal}$ in case the original matrix is not square, then $\Sigma$ is not square and the inverse is not defined.} 
+\Sigma^{\intercal} \Sigma V^{\intercal}  & = \Sigma^{\intercal} U^{\intercal} A  \notag \\
+V^{\intercal} & = (\Sigma^{\intercal} \Sigma)^{-1} \Sigma^{\intercal} U^{\intercal} A   \notag\\
+V & = ((\Sigma^{\intercal} \Sigma)^{-1} \Sigma^{\intercal} U^{\intercal} A)^{\intercal}  \notag
+\intertext{Use a property in Theorem \ref{thm:matrix:transpose}}
+V & = A^{\intercal} U \Sigma ((\Sigma^{\intercal} \Sigma)^{-1})^{\intercal} 
+\label{eq:SVD:V}
+\end{align}
+and similarly if one solves for $U$:
+\begin{align}
+U \Sigma V^{\intercal} & = A \notag 
+\intertext{and recall that since $V$ is an orthogonal matrix that $V^{-1}=V^{\intercal}$ and  that first this equation is right-multiplied by $V$ to get}
+U \Sigma & = A V \notag \\
+U \Sigma \Sigma^{\intercal} & = A V \Sigma^{\intercal} \notag \\
+U & = A V \Sigma^{\intercal} (\Sigma \Sigma^{\intercal})^{-1} \label{eq:SVD:U} 
+\end{align}
+
+
+Two examples of finding the SVD are presented below.  The first is for a square matrix and the second is for a non-square matrix.  We first start with the SVD of a 2 by 2 matrix with the following example. 
+\begin{example} \label{ex:svd:2by2}
 Find $U, \Sigma,$ and $V$ of the SVD for the matrix
 \begin{align*}
 A & = \begin{bmatrix}
@@ -1188,7 +1320,7 @@ A & = \begin{bmatrix}
 
 \solution
 
-As explained above, the columns of $U$ are the columns of $AA^{\intercal}$ and 
+As explained above, the columns of $U$ are the eigenvectors of $AA^{\intercal}$ and 
 \begin{align*}
 A A^{\intercal} & = \begin{bmatrix}
 5 & 3 \\
@@ -1227,29 +1359,7 @@ U & = \begin{bmatrix}
 \end{bmatrix}
 \end{align*}
 
-To find the matrix $V$, we seek the eigenvalues/eigenvectors of $A^{\intercal}A$, or 
-\begin{align*}
-A^{\intercal} A & = \begin{bmatrix}
-2 & 0 \\ 0 & 8 
-\end{bmatrix}
-\end{align*}
-and because this is a diagonal matrix, the eigenvalues are $2$ and $8$ (the same as before) and the eigenvectors are
-\begin{align*}
-\vec{v}_1 & = \begin{bmatrix}
-0 \\ 1
-\end{bmatrix} & \vec{v}_2 & = \begin{bmatrix}
-1 \\ 0 
-\end{bmatrix}
-\end{align*}
-So 
-\begin{align*}
-V & = \begin{bmatrix}
-0 & 1 \\
-1 & 0 
-\end{bmatrix}
-\end{align*}
-
-The singular values in the matrix $\Sigma$ are the square roots of the eigenvalues of either $AA^{\intercal}$ or $A^{\intercal}A$ and the matrix is
+The singular values in the matrix $\Sigma$ are the square roots of the eigenvalues of $AA^{\intercal}$ and the matrix is
 \begin{align*}
 \Sigma & = \begin{bmatrix}
 \sqrt{2} & 0 \\
@@ -1257,8 +1367,47 @@ The singular values in the matrix $\Sigma$ are the square roots of the eigenvalu
 \end{bmatrix}
 \end{align*}
 
-Note:  this matrix is the same as $A^{\intercal}A$, but this is not true in general.  
 
+To find the matrix $V$, we will use (\ref{eq:SVD:V}).  Since
+\begin{align*}
+\Sigma^{\intercal} \Sigma & = \begin{bmatrix}
+2 & 0 \\
+0 & 8 
+\end{bmatrix}
+\end{align*}
+and 
+\begin{align*}
+(\Sigma^{\intercal} \Sigma)^{-1} & = \begin{bmatrix}
+1/2 & 0 \\
+0 & 1/8 
+\end{bmatrix},
+\end{align*}
+then using (\ref{eq:SVD:V}),
+\begin{align*}
+V & = A^{\intercal} U \Sigma ((\Sigma^{\intercal} \Sigma)^{-1})^{\intercal} \\
+& = \begin{bmatrix}
+-1 & 1 \\
+2 & 2 
+\end{bmatrix}
+\begin{bmatrix}
+1/\sqrt{2} & 1/\sqrt{2} \\
+-1/\sqrt{2} & 1/\sqrt{2}
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{2} & 0 \\
+0 & \sqrt{8} 
+\end{bmatrix}
+\begin{bmatrix}
+1/2 & 0 \\
+0 & 1/8 
+\end{bmatrix} \\
+& = \begin{bmatrix}
+-1 & 0 \\ 0 & 1
+\end{bmatrix}
+\end{align*}
+
+
+It can be checked that indeed $A=U\Sigma V^{\intercal}$.  
 \end{example}
 
 
@@ -1275,30 +1424,8 @@ A & = \begin{bmatrix}
 
 \solution
 
-The columns of $U$ are the columns of $AA^{\intercal}$ and 
-\begin{align*}
-AA^{\intercal} &  = \begin{bmatrix}
-22 & -14 \\
--14 & 22 
-\end{bmatrix}
-\end{align*}
-and the eigenvalues are found by
-\begin{align*}
-\det(A-\lambda I) & = \begin{vmatrix}
-22-\lambda & -14 \\ -14 & 22-\lambda 
-\end{vmatrix} = (22-\lambda)^2 - 14^2 = 0 
-\end{align*}
-which has the solution $\lambda=8,36$.  If $\lambda = 8$, then the solution to
-\begin{align*}
-(AA^{\intercal}-8I)\vec{v}_1 & = \begin{bmatrix}
-14 & -14 \\ -14 & 14
-\end{bmatrix} = \begin{bmatrix}
-0 \\ 0 
-\end{bmatrix}
-\end{align*}
-has the solution $\vec{v}_1 = [1,1]^{\intercal}$. 
+In this example, we will first find the columns of $V$ by the eigenvectors of $A^{\intercal}A$.  Generally, if the original matrix is not square, one should select the larger matrix between $AA^{\intercal}$ and $A^{\intercal}A$. 
 
-The columns of $V$ are the columns of $A^{\intercal}A$ and 
 \begin{align*}
 A^{\intercal}A & = \begin{bmatrix}
 8 & 0 & 0 \\ 
@@ -1312,9 +1439,19 @@ and the eigenvalues of $A^{\intercal}A$ is found by
 8-\lambda & 0 & 0 \\ 
 0 & 18-\lambda & 18 \\
 0 & 18 & 18-\lambda 
-\end{vmatrix} = (8-\lambda)\bigl((18-\lambda)^2-18^2\bigr) = 0
+\end{vmatrix} = (8-\lambda)\bigl((18-\lambda)^2-18^2\bigr) \\
+& = (8-\lambda)(\lambda^2-36\lambda) = 0 
 \end{align*}
-which has the solutions $\lambda=8,36,0$.  The corresponding eigenvectors are 
+which has the solutions $\lambda=8,36,0$.   Thus the singular values result in
+\begin{align*}
+\Sigma & = \begin{bmatrix}
+\sqrt{8} & 0 & 0 \\
+0 & 6 & 0 
+\end{bmatrix}
+\end{align*}
+and recall that this matrix is always the same size as the original matrix, $A$.  Also, you will get zero eigenvalues whenever the matrix is not square.  
+
+The corresponding eigenvectors are 
 \begin{align*}
 \vec{v}_1 & = \begin{bmatrix}
 1 \\ 0 \\ 0
@@ -1325,7 +1462,7 @@ which has the solutions $\lambda=8,36,0$.  The corresponding eigenvectors are
 \end{bmatrix}
 \end{align*}
 
-And the matrix $V$ with the column above scaled to make them unit vectors is
+And the matrix $V$ with the columns above scaled to make them unit vectors is
 \begin{align*}
 V & = \begin{bmatrix}
 1 & 0 & 0 \\
@@ -1334,17 +1471,42 @@ V & = \begin{bmatrix}
 \end{bmatrix}
 \end{align*}
 
-Also note that we have selected the order of the eigenvalues to be the same in $U$ and $V$.  This is very important.  Also, if the original matrix is not square, then some of the eigenvalues will be 0.  These should go at the end.  
-
-Lastly, the singular values in the matrix $\Sigma$ are the square roots of the eigenvalues of either $AA^{\intercal}$ or $A^{\intercal}A$ and the matrix is
+To find $U$, we will use (\ref{eq:SVD:U}) and note that
 \begin{align*}
-\Sigma & = \begin{bmatrix}
-\sqrt{8} & 0 & 0 \\
-0 & 6 & 0  
+(\Sigma \Sigma^{\intercal})^{-1} & = \begin{bmatrix}
+1/8 & 0 \\
+0 & 1/36
 \end{bmatrix}
 \end{align*}
+and now using (\ref{eq:SVD:U})
+\begin{align*}
+U & = A V \Sigma^{\intercal} (\Sigma \Sigma^{\intercal})^{-1}  \\
+& = \begin{bmatrix}
+2 & -3 & -3 \\
+2 & 3 & 3
+\end{bmatrix} \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1/\sqrt{2} & -1/\sqrt{2} \\
+0 & 1/\sqrt{2} & 1/\sqrt{2}
+\end{bmatrix}\begin{bmatrix}
+\sqrt{8} & 0  \\
+0 & 6 \\
+0 & 0 
+\end{bmatrix}\begin{bmatrix}
+1/8 & 0 \\
+0 & 1/36 
+\end{bmatrix} \\
+& = \begin{bmatrix}
+\sqrt{2}/2 & \sqrt{2}/2 \\
+\sqrt{2}/2 & -\sqrt{2}/2
+\end{bmatrix}
+\end{align*}
+%
+and it can be checked that $U\Sigma V^{\intercal} = A$.  
 
 \end{example}
+
+It is noted that the above two examples result in fairly nice matrices $U,V$ and $\Sigma$.  This very rarely happens.  In addition, as the size of the matrices grow, the eigenvalues generally cannot be found exactly.  Therefore for matrices of sizes larger than 3 by 3, numerical techniques are used to find the factors.  
 
 \subsubsection{The geometry of the SVD} \index{singular value decomposition (SVD)!geometry of}
 
@@ -1379,7 +1541,7 @@ If the matrix is a 2 by 100 matrix with each column the $x$ and $y$ value of eac
 \begin{align*}
 \sigma_1 & = 54.51177 & \sigma_2 & =  
 5.576430 & U & = \begin{bmatrix}
--0.953478 & 0.30146\\
+-0.953478 & -0.30146\\
 -0.30146 & 0.953478 
 \end{bmatrix}
 \end{align*}
