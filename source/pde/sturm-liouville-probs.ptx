@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section>
+	<title>Sturm-Liouville Problems </title>
+	<p>
+		We now turn to a class of differential equations that arise in solving partial differential equations.
+		This class is called Sturm-Liouville problems and they satisfy boundary conditions instead of the initial conditions that we saw in the previous section.
+	</p>
+
+	<definition>
+		<statement>
+			<p>
+				Consider the differential equation
+			</p>
+
+			<p>
+				<me>
+					[r(x) y']' + [p(x) + \lambda q(x)] y = 0
+				</me>
+			</p>
+
+			<p>
+				for <m>r(x), p(x) \in \mathcal{C}^{(1)[a,b]}</m>, <m>q(x)\in \mathcal{C}^{(0)}[a,b]</m>,
+				and <m>\lambda \in \mathbb{R}</m>.
+				The differential equation is also subject to the boundary conditions:
+			</p>
+
+			<p>
+				<md>
+					<mrow>a_1 y(a) + a_2 y'(a) \amp = 0</mrow>
+					<mrow>b_1 y(b) + b_2 y'(b) \amp = 0</mrow>
+				</md>
+			</p>
+
+			<p>
+				such that both <m>a_1</m> and <m>a_2</m> cannot be zero as well as both <m>b_1</m> and <m>b_2</m>.
+				The differential equation with these boundary conditions are called a <term>Sturm-Liouville Problem</term>.
+				The solution is called an <term>eigenfunction</term> of the problem and the values of <m>\lambda</m> are called the <term>eigenvalues</term>.
+			</p>
+		</statement>
+	</definition>
+
+	<p>
+		The following example shows how to solve a Sturm-Liouville problem, that is, find the eigenvalues
+		and eigenfunctions of the problem.
+	</p>
+
+	<example xml:id="ex-sturm-liouville">
+		<statement>
+			<p>
+				Find the eigenvalue and eigenfunctions of the Sturm-Liouville problem:
+			</p>
+
+			<p>
+				<md>
+					<mrow>y''+\lambda y \amp = 0 \amp y(0) \amp = y(L)  = 0</mrow>
+				</md>
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				First note that <m>r(x)=q(x) \equiv 1</m> and also <m>a_1=b_1=1</m> and <m>a_2=b_2=0</m>, which satisfies the conditions on the boundaries.
+				The characteristic equation for this problem is:
+			</p>
+
+			<p>
+				<me>
+					r^2+\lambda = 0
+				</me>
+			</p>
+
+			<p>
+				which has the solutions <m>r = \pm \sqrt{-\lambda}</m>.
+				The form of the equation depends on <m>\lambda</m>.
+				If <m>\lambda=0</m>, we get:
+			</p>
+
+			<p>
+				<men xml:id="eq-sturm-liouville-ex-eq1">
+					y = A + B x
+				</men>
+			</p>
+
+			<p>
+				if <m>\lambda &lt; 0</m>, then the solution is
+			</p>
+
+			<p>
+				<men xml:id="eq-sturm-liouville-ex-eq2">
+					y = c_1 e^{\sqrt{-\lambda} x} + c_2 e^{-\sqrt{-\lambda} x}
+				</men>
+			</p>
+
+			<p>
+				and if <m>\lambda &gt; 0</m>, then we get
+			</p>
+
+			<p>
+				<men xml:id="eq-sturm-liouville-ex-eq3">
+					y = C_1 \cos \sqrt{\lambda} x + C_2 \sin \sqrt{\lambda} x
+				</men>
+			</p>
+
+			<p>
+				Next, we apply the boundary conditions on all three solutions.
+				Recall that <m>y(0)=y(L)=0</m>.
+				If <m>\lambda = 0</m>, substituting the boundary conditions into
+				<xref ref="eq-sturm-liouville-ex-eq1" />,
+			</p>
+
+			<p>
+				<md>
+					<mrow>A+ B(0)\amp = 0 \amp\amp \text{so $A=0$}</mrow>
+					<mrow>A+B(L) \amp = 0 \amp\amp \text{so $B=0$} </mrow>
+				</md>
+			</p>
+
+			<p>
+				so the only solution to (<xref ref="eq-sturm-liouville-ex-eq1" />) is the trivial solution
+				<m>y\equiv 0</m>.
+				If <m>\lambda &gt; 0</m>, then substituting the boundary conditions into
+				<xref ref="eq-sturm-liouville-ex-eq2" /> results in
+			</p>
+
+			<p>
+				<md>
+					<mrow>c_1 (1) + c_2(1) \amp = 0 </mrow>
+					<mrow>c_1(e^{\sqrt{-\lambda} L} + c_2 e^{-\sqrt{-\lambda} L}) \amp = 0 </mrow>
+				</md>
+			</p>
+
+			<p>
+				From the first equation, <m>c_1=-c_2</m> and substituting this into the 2nd equation
+			</p>
+
+			<p>
+				<md>
+					<mrow>c_1 e^{\sqrt{-\lambda} L} - c_1 e^{-\sqrt{-\lambda} L} \amp = 0 </mrow>
+					<mrow>c_1 e^{\sqrt{-\lambda}L} \bigl( 1- e^{-2\sqrt{-\lambda} L}) \amp = 0 </mrow>
+				</md>
+			</p>
+
+			<p>
+				<m>c_1=0</m> is a solution, the second term is never zero and the third term is only zero
+				if <m>L=0</m>, which is not true or <m>\lambda=0</m>, which is also not true, since this case
+				is <m>\lambda &gt; 0</m>.
+				Therefore again, the only solution to <xref ref="eq-sturm-liouville-ex-eq2" /> is the
+				trivial solution.
+				If <m>\lambda &lt; 0</m> then substituting the boundary conditions into
+				<xref ref="eq-sturm-liouville-ex-eq3" /> results in
+			</p>
+
+			<p>
+				<md>
+					<mrow>C_1 (1) + C_2 (0) \amp = 0 \amp\amp \text{so $C_1=0$} </mrow>
+					<mrow>(0) \cos \sqrt{\lambda} L + C_2 \sin \sqrt{\lambda} L = 0 </mrow>
+				</md>
+			</p>
+
+			<p>
+				the second states that either <m>C_2=0</m>, again the trivial solution or
+			</p>
+
+			<p>
+				<me>
+					\sin \sqrt{\lambda} L = 0
+				</me>
+			</p>
+
+			<p>
+				which occurs if <m>\sqrt{\lambda} L = n \pi</m> for <m>n=0,\pm 1, \pm 2, \pm 3, \ldots</m>.
+				Or
+			</p>
+
+			<p>
+				<men xml:id="eq-sturm-liouville-ex-eigs">
+					\lambda = \frac{n^2 \pi^2}{L^2}
+				</men>
+			</p>
+
+			<p>
+				We now check which values of <m>n</m> result in valid values of <m>\lambda</m>.
+				When <m>n=0</m>, we get <m>\lambda=0</m> again, which violates <m>\lambda \lt; 0</m> and
+				for <m>n</m> both plus and minus the same number, we get the same eigenvalue, so we will discard
+				the negative values of <m>n</m> and just include <m>n=1,2,3, \ldots.</m>
+				The eigenvalues of this problem are those in <xref ref="eq-sturm-liouville-ex-eigs" />
+				for <m>n=1,2,3,\ldots</m>and the eigenfunctions of this problem are:
+			</p>
+
+			<p>
+				<me>
+					\phi_n(x) = \sin \frac{n\pi x}{L}
+				</me>
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		It may have appears that we were lucky that there was a solution to the Sturm-Liouville problem in
+		the above example.
+		However, this is not the case and any Sturm-Liouville problem has a solution as the following
+		theorem shows.
+	</p>
+
+	<theorem xml:id="thm-sturm-liouville">
+		<statement>
+			<p>
+				Let <m>\lambda_n</m> and <m>\phi_n(x)</m> be any eigenvalue and eigenfunction of the
+				Sturm-Liouville problem.
+			</p>
+
+			<p>
+				<ul>
+					<li>
+						<p>
+							The eigenvalue <m>\lambda_n</m> is real.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							There are an infinite number of eigenvalues that can be ordered <m>\lambda_1 &lt; \lambda_2
+							&lt; \lambda_3 &lt; \cdots </m> and for each eigenvalue, there is only one eigenfunction.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							Eigenfunctions <m>\phi_n</m> and <m>\phi_m</m> with <m>\lambda_n \neq \lambda_m</m> satisfy <m>\langle \phi_n , \phi_m \rangle = 0</m>.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							Let <m>f</m> and <m>f'</m> be piecewise continuous functions on <m>[a,b]</m>.
+							If
+						</p>
+
+						<p>
+							<me>
+								a_n = \frac{\langle f,\phi_n \rangle }{ \langle \phi_n, \phi_n \rangle},
+							</me>
+						</p>
+
+						<p>
+							then the series:
+						</p>
+
+						<p>
+							<me>
+								\sum_{n=1}^{\infty}a_n \phi_n(x)
+							</me>
+						</p>
+
+						<p>
+							converges to <m>f</m> if <m>f</m> is continuous at <m>x</m> and to the
+							value <m>(f(x+)+f(x-))/2</m> if <m>f</m> is discontinuous at <m>x</m> for
+							each point in <m>[a,b]</m>.
+						</p>
+					</li>
+				</ul>
+			</p>
+		</statement>
+	</theorem>
+
+	<example>
+		<statement>
+			<p>
+				Let <m>f(x)=x</m> on <m>[0,L]</m>.
+				Find the series expansion listed in the theorem corresponding to the Sturm-Liouville
+				problem <m>y''+\lambda y= 0</m>.
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				<md>
+					<mrow>a_n \amp = \frac{ \langle f,\phi_n \rangle}{ \langle \phi_n, \phi_n \rangle} </mrow>
+					<mrow>\amp = \frac{1}{L/2} \int_{0}^L f(x) \sin \frac{n\pi x}{L} \, dx </mrow>
+				</md>
+			</p>
+
+			<p>
+				which is the Fourier sine series.
+			</p>
+		</solution>
+	</example>
+
+	<example xml:id="ex-sturm-liouville-2">
+		<statement>
+			<p>
+				Find the solution of the Sturm-Liouville problem
+			</p>
+
+			<p>
+				<md>
+					<mrow>y'' + \lambda y \amp= 0 \amp y'(0) = 0, \amp\amp y'(L) \amp = 0</mrow>
+				</md>
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				Since this the same differential equation as in <xref ref="ex-sturm-liouville" />,
+				we note that when <m>\lambda &gt; 0</m>, there was no solution and the same is true here.
+				In the case of <m>\lambda=0</m>, the solution is
+			</p>
+
+			<p>
+				<me>
+					y = A+Bx
+				</me>
+			</p>
+
+			<p>
+				and the derivative is needed as well,
+			</p>
+
+			<p>
+				<me>
+					y'  = B
+				</me>
+			</p>
+
+			<p>
+				and then applying the boundary condition <m>y'(0)=y'(L)=0</m>, implies that <m>B=0</m>,
+				however, <m>A</m> is not determined and <m>y=A</m> is a solution.
+				Next, we turn to  <m>\lambda &gt; 0</m>, with the solution,
+			</p>
+
+			<p>
+				<me>
+					y  = C_1 \cos \sqrt{\lambda} x + C_2 \sin \sqrt{\lambda} x
+				</me>
+			</p>
+
+			<p>
+				and again, we need the derivative,
+			</p>
+
+			<p>
+				<me>
+					y' = - C_1 \sqrt{\lambda} \sin \sqrt{\lambda} x + C_2 \sqrt{\lambda} \cos \sqrt{\lambda} x
+				</me>
+			</p>
+
+			<p>
+				Applying the boundary condition, <m>y'(0)=0</m>, results in
+			</p>
+
+			<p>
+				<me>
+					y'(0) = C_2 \sqrt{\lambda} = 0
+				</me>
+			</p>
+
+			<p>
+				which implies that <m>C_2=0</m>.
+				Applying the boundary condition <m>y'(L)=0</m> results in
+			</p>
+
+			<p>
+				<me>
+					y'(L)  = -C_1 \sqrt{\lambda} \sin \sqrt{\lambda} L = 0
+				</me>
+			</p>
+
+			<p>
+				and if <m>C_1=0</m>, this results in the trivial solution, <m>\lambda</m> cannot be zero, however
+			</p>
+
+			<p>
+				<me>
+					\sin \sqrt{\lambda} L  = 0
+				</me>
+			</p>
+
+			<p>
+				when <m>\sqrt{\lambda} L = n \pi</m> or <m>\lambda = n^2 \pi^2/L^2</m>.
+				The eigenvalues and eigenfunctions of this problem then are <m>\lambda_0 =0</m>
+				and <m>\phi_0=1</m>, and
+			</p>
+
+			<p>
+				<md>
+					<mrow>\lambda_n \amp = \frac{n^2 \pi^2}{L^2} \amp \phi_n \amp = \cos \frac{n \pi x}{L} </mrow>
+				</md>
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		There are other Sturm-Liouville problems that arise commonly and we will see others later in this chapter and solve them as they arise.
+		We will use these solutions that we just found in solving the PDEs that we derived above.
+	</p>
+</section>

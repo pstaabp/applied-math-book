@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-vector-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Vector Spaces</title>
+	<introduction>
+		<p>
+			A vector space as we will see is a set of vectors with a certain
+			collection of properties.
+			This notion arose from vectors of
+			<m>\mathbb{R}^n</m>, however, we will see that they generalize.
+		</p>
+
+		<definition xml:id="def-vector-space">
+			<title>Vector Space</title>
+			<statement>
+				<p>
+					Let  <m>V</m> be a nonempty set of elements with
+					<m>\vec{x}, \vec{y}, \vec{z} \in V</m> and <m>c,k \in \mathbb{R}</m>.
+					The set <m>V</m> is called a <term>real vector space</term> and the elements
+					of <m>V</m> are called <term>vectors</term> if in <m>V</m> there are defined
+					two algebraic operations (called <term>vector addition</term>,
+					<m>+</m> and <term>scalar multiplication</term>, <m>\cdot</m>)
+					that satisfy the following:
+				</p>
+
+				<p>
+					<dl>
+					<li>
+						<title>Vector Addition:</title>
+						<p>
+							The operation <m>+</m> satisfies:
+						</p>
+
+						<p>
+							<ol>
+								<li>
+									<p>
+										(Closure):  <m>\vec{x}+\vec{y} \in V</m>.
+									</p>
+								</li>
+
+								<li>
+									<p>
+										(Commutativity:)  <m>\vec{x} +\vec{y} = \vec{y}+\vec{x}</m>
+									</p>
+								</li>
+
+								<li>
+									<p>
+										(Associativity:) <m>(\vec{x} + \vec{y}) + \vec{z} = \vec{x} + (\vec{y} + \vec{z})</m>
+									</p>
+								</li>
+
+								<li>
+									<p>
+										(Identity Element:)  There exist an element <m>\vec{0} \in V</m>
+										that satisfies: <m>\vec{x} + \vec{0} = \vec{x}</m>.
+									</p>
+								</li>
+
+								<li>
+									<p>
+										(Inverse Elements:)  For every <m>\vec{x} \in V</m>, there exists
+										an element denoted <m>-\vec{x}</m> such that  <m>\vec{x} + (-\vec{x}) = \vec{0}</m>.
+									</p>
+								</li>
+							</ol>
+						</p>
+					</li>
+
+					<li>
+						<title>Scalar Multiplication:</title>
+						<p>
+							The real numbers <m>c</m> and <m>k</m>
+							are called <term>scalars</term>.
+							The operations <m>+</m> and <m>\cdot</m>
+							also satisfy:
+						</p>
+
+						<p>
+							<ol>
+								<li>
+									<p>
+										(Closure:) <m>c \cdot \vec{x} \in V</m>.
+									</p>
+								</li>
+
+								<li>
+									<p>
+										(Distributivity:) <m>c \cdot (\vec{x} + \vec{y}) = c\cdot  \vec{x} + c\cdot \vec{y}</m>
+									</p>
+								</li>
+
+								<li>
+									<p>
+										(Distributivity:) <m>(c+k) \cdot \vec{x} = c\cdot \vec{x} + k\cdot  \vec{x}</m>
+									</p>
+								</li>
+
+								<li>
+									<p>
+										(Associativity:) <m>c\cdot (k\cdot \vec{x}) = (ck)\cdot  \vec{x}</m>
+									</p>
+								</li>
+
+								<li>
+									<p>
+										(Identity):  For every <m>\vec{x} \in V</m>, <m>1 \cdot  \vec{x} = \vec{x}</m>.
+									</p>
+								</li>
+							</ol>
+						</p>
+					</li>
+					</dl>
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			From its name, its clear that sets of vectors are vector spaces.
+			We will prove this soon.
+			However, it is interesting that there are
+			many other familiar sets of mathematical objects that are also vectors
+			spaces.
+			We will now see these.
+		</p>
+	</introduction>
+
+	<subsection>
+		<title>Examples of Vector Spaces</title>
+		<p>
+			Let's begin with the set of all vectors of length 2, which we typically write as <m>\mathbb{R}^2</m>.
+		</p>
+
+		<lemma>
+			<statement>
+				<p>
+					Show that <m>\mathbb{R}^2</m> together with the standard notion of vector
+					addition and scalar multiplication is a vector space.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					Let
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{x} \amp =
+						\begin{bmatrix}
+						x_1 \\ x_2
+						\end{bmatrix}, \amp
+						\vec{y} \amp =
+						\begin{bmatrix}
+						y_1 \\ y_2
+						\end{bmatrix} \amp
+						\vec{z} \amp = \begin{bmatrix}
+						z_1 \\ z_2
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and <m>c,k \in \mathbb{R}</m> as well as vector addition and scalar multiplication as
+				</p>
+
+				<p>
+					<md>
+						<mrow> \vec{x} + \vec{y} \amp =
+						\begin{bmatrix}
+						x_1 + y_1 \\ x_2 + y_2
+						\end{bmatrix} \amp
+						c \cdot \vec{x} \amp =
+						\begin{bmatrix}
+						c x_1 \\ c x_2
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					We now show that all 10 properties of a vector space hold:
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<em>Additive Closure:</em> Since
+								<md>
+									<mrow>\vec{x} + \vec{y} \amp = \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} + \begin{bmatrix}
+									y_1 \\ y_2
+									\end{bmatrix} = \begin{bmatrix}
+									x_1 + y_1 \\ x_2 + y_2
+									\end{bmatrix}</mrow>
+								</md>
+								are elements of <m>\mathbb{R}^2</m>, the closure by addition holds.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Additive Commutativity:</em> For all <m>\vec{x}, \vec{y}, \vec{z} \in V</m>,
+								<md>
+									<mrow>\vec{x} + \vec{y} \amp = \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} + \begin{bmatrix}
+									y_1 \\ y_2
+									\end{bmatrix} =
+									\begin{bmatrix}
+									x_1 + y_1 \\ x_2 + y_2
+									\end{bmatrix}</mrow>
+									<mrow>\amp =
+									\begin{bmatrix}
+									y_1 + x_1 \\
+									y_2 + x_2
+									\end{bmatrix} = \begin{bmatrix}
+									y_1 \\ y_2
+									\end{bmatrix} + \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} = \vec{y} + \vec{x}</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Additive Associativity:</em>
+								<md>
+									<mrow>(\vec{x} + \vec{y}) + \vec{z} \amp =
+									\biggl( \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} + \begin{bmatrix}
+									y_1 \\ y_2
+									\end{bmatrix} \biggr) + \begin{bmatrix}
+									z_1 \\ z_2
+									\end{bmatrix}</mrow>
+									<mrow> \amp =
+									\begin{bmatrix}
+									x_1 + y_1 \\
+									x_2 + y_2
+									\end{bmatrix} + \begin{bmatrix}
+									z_1 \\ z_2
+									\end{bmatrix}</mrow>
+									<mrow>\amp =
+									\begin{bmatrix}
+									(x_1 + y_1) + z_1 \\
+									(x_2 + y_2) + z_2
+									\end{bmatrix}</mrow>
+									<mrow>\amp =
+									\begin{bmatrix}
+									x_1 + (y_1 + z_1) \\
+									x_2 + (y_2 + z_2)
+									\end{bmatrix}
+									= \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix}+
+									\begin{bmatrix}
+									y_1 + z_1 \\
+									y_2 + z_2
+									\end{bmatrix}</mrow>
+									<mrow>\amp  = \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} + \biggl( \begin{bmatrix}
+									y_1 \\ y_2
+									\end{bmatrix} + \begin{bmatrix}
+									z_1 \\ z_2
+									\end{bmatrix} \biggr) = \vec{x} + (\vec{y} + \vec{z})</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em> Additive Identity Element:</em>  The zero element <m>\vec{0}</m> is
+								<me>
+									\vec{0}  =
+									\begin{bmatrix}
+									0 \\ 0
+									\end{bmatrix}
+								</me>
+								and it satisfies,
+								<md>
+									<mrow>\vec{0} + \vec{x} \amp =
+									\begin{bmatrix}
+									0 \\ 0
+									\end{bmatrix} +
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} =
+									\begin{bmatrix}
+									0 + x_1 \\ 0 + x_2
+									\end{bmatrix} =
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} = \vec{x}</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Additive Inverse Element:</em> The inverse element <m>-\vec{x}</m> is given as
+								<me>
+									-\vec{x} = \begin{bmatrix}
+									-x_1 \\ -x_2
+									\end{bmatrix}
+								</me>
+								and the following satisfies:
+								<md>
+									<mrow>\vec{x} + (-\vec{x}) \amp =
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} +
+									\begin{bmatrix}
+									-x_1 \\ -x_2
+									\end{bmatrix}
+									=
+									\begin{bmatrix}
+									x_1 + (-x_1) \\ x_2 + (-x_2)
+									\end{bmatrix} =
+									\begin{bmatrix}
+									0 \\ 0
+									\end{bmatrix} = \vec{0}</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Multiplicative Closure:</em> For <m>c \in \mathbb{R}</m>,
+								<md>
+									<mrow>c \cdot \vec{x} \amp = c \cdot  \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} = \begin{bmatrix}
+									cx_1 \\ cx_2
+									\end{bmatrix}</mrow>
+								</md>
+								which is in <m>\mathbb{R}^2</m>, so scalar multiplication is closed.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Distributivity over vectors: </em>
+								Let <m>c \in \mathbb{R}</m> and
+								<md>
+									<mrow>c \cdot (\vec{x} + \vec{y}) \amp =
+									c \cdot \biggl(
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} +
+									\begin{bmatrix}
+									y_1 \\ y_2
+									\end{bmatrix} \biggr)
+									= c\cdot
+									\begin{bmatrix}
+									x_1 + y_1 \\
+									x_2 + y_2
+									\end{bmatrix}
+									=
+									\begin{bmatrix}
+									c (x_1 +y_1) \\ c (x_2 + y_2)
+									\end{bmatrix} </mrow>
+									<mrow>\amp =
+									\begin{bmatrix}
+									c x_1 + c y_1 \\
+									c x_2 + c y_2
+									\end{bmatrix}
+									=
+									\begin{bmatrix}
+									c x_1 \\ c x_2
+									\end{bmatrix} +
+									\begin{bmatrix}
+									c y_1 \\ c y_2
+									\end{bmatrix}
+									= c \cdot
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix}
+									+ c \cdot
+									\begin{bmatrix}
+									y_1 \\ y_2
+									\end{bmatrix} </mrow>
+									<mrow>\amp = c\cdot  \vec{x} + c\cdot  \vec{y} </mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Distributivity over scalars:</em>  Let <m>c</m> and <m>k</m> be elements of <m>\mathbb{R}</m>.
+								<md>
+									<mrow>(c + k)\cdot  \vec{x} \amp = (c+k) \cdot
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} =
+									\begin{bmatrix}
+									(c+k) x_1 \\ (c+k) x_2
+									\end{bmatrix} =
+									\begin{bmatrix}
+									c x_1 + k x_1 \\
+									c x_2 + k x_2
+									\end{bmatrix} </mrow>
+									<mrow>\amp =
+									\begin{bmatrix}
+									c  x_1 \\ c x_2
+									\end{bmatrix} +
+									\begin{bmatrix}
+									k x_1 \\ k x_2
+									\end{bmatrix} = c \cdot
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} + k \cdot
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} = c \cdot \vec{x} + k \cdot \vec{x}
+									</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Scalar Multiplicative Associativity:</em>
+								Let <m>c</m> and <m>k</m> be elements of <m>\mathbb{R}</m>.
+								<md>
+									<mrow>c\cdot (k\cdot \vec{x})  \amp = c \cdot \biggl( k \cdot
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} \biggr) = c \cdot
+									\begin{bmatrix}
+									k x_1 \\ k x_2
+									\end{bmatrix} =
+									\begin{bmatrix}
+									c (k x_1) \\ c (kx_2)
+									\end{bmatrix} =
+									\begin{bmatrix}
+									(c k) x_1 \\ (ck) x_2
+									\end{bmatrix} </mrow>
+									<mrow>\amp = (ck) \cdot
+									\begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} = (ck) \cdot \vec{x}</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em> Multiplicative Identity element:</em>
+								<me>
+									1 \cdot \vec{x} = 1\cdot  \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} = \begin{bmatrix}
+									1 \cdot x_1 \\ 1 \cdot x_2
+									\end{bmatrix} = \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix} = \vec{x}
+								</me>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</proof>
+		</lemma>
+
+		<p>
+			The following are also vector spaces.
+			There are not proofs associated with these.
+		</p>
+
+		<p>
+			<ul>
+				<li>
+					<p>
+						<m>{\cal P}_n</m>, the set of polynomials of degree <m>n</m>.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						The set of vectors that consist of  <m>\mathbb{R}^3</m> with
+						the standard definition of vector addition and scalar multiplication.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						The set of vectors that consist of  <m>\mathbb{R}^n</m> with
+						the standard definition of vector addition and scalar multiplication.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						The set of all <m>m \times n</m> matrices,
+						<m>\mathcal{M}_{m \times n}</m> with standard definition of matrix
+						addition and scalar multiplication.
+					</p>
+				</li>
+			</ul>
+		</p>
+
+		<p>
+			In the next few examples, we will also show some other interesting sets are vector spaces.
+			To save a bunch of time and effort, in some cases, we don't need to show all 10 properties.
+			We can skip most of properties, if the set <m>V</m> is a subset of a known vector space.
+			The reason for this is that properties 2-5 and 7-10 will automatically hold because the vectors are already in a vector space.
+			We will do this formally in the next section.
+		</p>
+
+		<example xml:id="ex-lines-through-origin-vector-space">
+			<statement>
+				<p>
+					Show that all lines that pass through the origin, or the set
+				</p>
+
+				<p>
+					<me>
+						V = \{ ax + by = 0\; | \; x, y \in \mathbb{R} \qquad \text{with $a$ and $b$ are not both 0.} \}
+					</me>
+				</p>
+
+				<p>
+					is a vector space.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, let's rewrite the vector space as
+				</p>
+
+				<p>
+					<me>
+						V = \{ \begin{bmatrix}
+						u_1 \\ u_2
+						\end{bmatrix} \; | \; \text{$au_1+bu_2=0$, with $a$ and $b$ both not 0.}\}
+					</me>
+				</p>
+
+				<p>
+					because this is the same set of points, but it is written in terms of a vector, which makes things easier to show.
+					As stated above, since <m>V</m> is a subset of <m>\mathbb{R}^2</m>, we don't need to prove properties 2--5, 7--10, which hold because we already showed that these properties show.
+					Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in <xref ref="def-vector-space" />.
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								Let <m>\vec{u}, \vec{v} \in V</m>.
+								Therefore the two equations <m>au_1+bu_2=0</m> and <m>av_1+bv_2=0</m> are satisfied.
+								Now check the sum,
+							</p>
+
+							<p>
+								<me>
+									\vec{u} + \vec{v} = \begin{bmatrix}
+									u_1 + v_1 \\
+									u_2 + v_2
+									\end{bmatrix}
+								</me>
+							</p>
+
+							<p>
+								and need to show that this is in <m>V</m>.
+								Since
+							</p>
+
+							<p>
+								<md>
+									<mrow>a(u_1 + v_1) + b(u_2+v_2) \amp = au_1 + av_1 + bu_2 + bv_2</mrow>
+									<mrow>\amp =(au_1 + bu_2) + (av_1 + bv_2) = 0 + 0 = 0 </mrow>
+								</md>
+							</p>
+
+							<p>
+								then <m>\vec{u}+\vec{v} \in V</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								We need to show that <m>r \cdot \vec{u} \in V</m>, so that the
+								vector <m>r\cdot\vec{u}</m> satisfies the property that the line passes through the origin.
+							</p>
+
+							<p>
+								<me>
+									r \cdot \vec{u}  = \begin{bmatrix}
+									r u_1 \\ r u_2
+									\end{bmatrix}
+								</me>
+							</p>
+
+							<p>
+								and since <m>au_1 + bu_2 = 0</m>, then
+							</p>
+
+							<p>
+								<me>
+									r \cdot 0  = r(au_1 + bu_2)  = a (ru_1) + b (r u_2)  =0
+								</me>
+							</p>
+
+							<p>
+								therefore <m>r \cdot \vec{u} \in V</m>.
+							</p>
+						</li>
+					</ol>
+				</p>
+
+				<p>
+					So this is a vector space.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The next example shows that polynomials (specifically quadratics) are
+			vector spaces.
+			Since we haven't shown anything about polynomials yet,
+			we need to show all 10 properties of Definition <xref ref="def-vector-space" /> hold.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Show than the set, <m>\mathcal{P}_2</m>, the set of all polynomials of
+					degree <m>2</m> is a vector space with vector addition defined as the sum
+					of two polynomials and scalar multiplication as the multiplication of a
+					polynomial by a constant.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					In this case scalars are elements in <m>\mathbb{R}</m> and the vector
+					space <m>V</m> is the set of all polynomials of degree at most <m>2</m>.
+					Let
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{x} \amp = a_0 + a_1 x + a_2 x^2 </mrow>
+						<mrow>\vec{y} \amp = b_0 + b_1 x + b_2 x^2 </mrow>
+						<mrow>\vec{z} \amp = c_0 + c_1 x + c_2 x^2</mrow>
+					</md>
+				</p>
+
+				<p>
+					Vector addition is simply polynomial addition for example:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{x} + \vec{y} \amp = (a_0 + a_1 x + a_2 x^2) + (b_0 + b_1 x + b_2 x^2) </mrow>
+						<mrow>\amp = (a_0 + b_0) + (a_1 + b_1) x + (a_2 + b_2) x^2.</mrow>
+					</md>
+				</p>
+
+				<p>
+					and scalar addition is given by
+				</p>
+
+				<p>
+					<me>
+						r \vec{x} = r(a_0 + a_1 x + a_2 x^2) = (ra_0) + (ra_1) x + (ra_2) x^2
+					</me>
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<em>Additive Closure:</em> Show that <m>\vec{x}+\vec{y}</m> is
+								in <m>\mathcal{P}_2</m>, the set of polynomials of degree 2.
+								<md>
+									<mrow>\vec{x} + \vec{y} \amp = (a_0 + a_1 x + a_2 x^2) + (b_0 + b_1 x+ b_2 x^2) </mrow>
+									<mrow>\amp = (a_0 + b_0) + (a_1 + b_1) x + (a_2 + b_2) x^2</mrow>
+								</md>
+								which is a polynomial of degree 2, so this is in <m>\mathcal{P}_2</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em> Additive Commutativity:</em>
+								<md>
+									<mrow>\vec{x} + \vec{y} \amp = (a_0 + a_1 x + a_2 x^2) + (b_0 + b_1 x +b_2 x^2) </mrow>
+									<mrow>\amp = (b_0 + b_1 x + b_2 x^2) + (a_0 + a_1 x +  a_2 x^2) </mrow>
+									<mrow>\amp = \vec{y} + \vec{x}</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Additive Associativity:</em>
+								<md>
+									<mrow>(\vec{x} + \vec{y}) + \vec{z} \amp = (a_0 + a_1 x + a_2 x^2+ b_0 + b_1 x + b_2 x^2) </mrow>
+									<mrow>\amp \qquad+ (c_0 + c_1 x + c_2 x^2) </mrow>
+									<mrow>\amp = a_0 + a_1 x + a_2 x^2 </mrow>
+									<mrow>\amp \qquad + (b_0 + b_1 x + b_2 x^2) + (c_0 + c_1 x + c_2 x^2) </mrow>
+									<mrow>\amp = \vec{x} + (\vec{y} + \vec{z})</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Additive Identity:</em> The zero element <m>\vec{0}</m> is the function 0.
+								<md>
+									<mrow>\vec{0} + \vec{x} \amp = 0 + a_0 + a_1 x + a_2 x^2 </mrow>
+									<mrow>\amp = a_0 + a_1 x + a_2 x^2 = \vec{x}</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Additive Inverse:</em> The inverse element <m>-\vec{x}</m>
+								is <m>-a_0 - a_1 x-a_2x^2</m>, and
+								<md>
+									<mrow>\vec{x} + (-\vec{x}) \amp = (a_0 + a_1 x + a_2 x^2) + (-a_0 - a_1 x-a_2x^2) </mrow>
+									<mrow>\amp = (a_0 -a_0) + (a_1 -a_1) x + (a_2 -a_2) x^2 = 0 = \vec{0}.</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Closure under scalar multiplication:</em>
+								<me>
+									r \vec{x} = r(a_0 + a_1 x + a_2 x^2) = (ra_0) + (ra_1) x + (ra_2) x^2
+								</me>
+								since this is a polynomial of degree 2, then <m>r \vec{x} \in \mathcal{P}_2</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Scalar Multiple Distributivity:</em> Let <m>r, s \in \mathbb{R}</m>,
+								<md>
+									<mrow>(r + s) \vec{x} \amp = (r+s) (a_0 + a_1 x + a_2 x^2) </mrow>
+									<mrow>\amp = r (a_0 + a_1 x + a_2 x^2) + s (a_0 + a_1 x + a_2 x^2) = r \vec{x} + s \vec{x}</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Vector Distributivity:</em> Let <m>r \in \mathbb{R}</m>,
+								<md>
+									<mrow>r (\vec{x} + \vec{y}) \amp = r ((a_0 + a_1 x + a_2 x^2) + (b_0 + b_1 x + b_2 x^2)) </mrow>
+									<mrow>\amp =r (a_0 + a_1 x + a_2 x^2) + r (b_0 + b_1 x + b_2 x_2)  </mrow>
+									<mrow>\amp = r \vec{x} + r \vec{y}</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Scalar Multiple Associativity:</em> Let <m>r, s \in \mathbb{R}</m>,
+								<md>
+									<mrow>(rs) \vec{x} \amp = (rs) (a_0 + a_1 x + a_2 x^2) = r (s(a_0 + a_1 x + a_2 x^2)) </mrow>
+									<mrow>\amp = r (s \vec{x})</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<em>Scalar Multiple Identity:</em>
+								<me>
+									1 \cdot \vec{x} = 1 (a_0 + a_1 x + a_2 x^2) = a_0 + a_1 x + a_2 x^2 = \vec{x}.
+								</me>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The above example shows that there are examples of vectors and vector
+			spaces that don't seem like vectors in <m>\mathbb{R}^n</m>.
+			The following are also vector spaces:
+		</p>
+
+		<p>
+			<ul>
+				<li>
+					<p>
+						The set <m>\{a \sin x + b \cos x \; | \; a, b \in \mathbb{R} \}</m>.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						The set <m>\{ f \; | \; f: \mathbb{R} \rightarrow \mathbb{R} \}</m>
+						of functions of a single variable.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						The set of functions that satisfy <m>f'+f=0</m>.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Solutions of homogeneous differential equations, which
+						is a generalization of functions that satisfy <m>f'+f=0</m>.
+					</p>
+				</li>
+			</ul>
+		</p>
+
+		<p>
+			Note that above there are sets of functions that are vector spaces.
+			Similar to the 2nd degree polynomials, the <q>vector addition</q> is
+			given by <m>(f+g) (x)= f(x) + g(x)</m> and the
+			<q>scalar multiplication</q> is <m>(r \cdot f) (x) = r \cdot f(x)</m>.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Is every set a vector space?</title>
+		<p>
+			In short, no.
+			For example, consider the following:
+			<me>
+				V = \left\{ \begin{bmatrix}
+				x_1 \\ x_2
+				\end{bmatrix} \; | \; x_1 \geq 0, x_2 \geq 0 \right\}
+			</me>
+			which is the first quadrant of the plane.	To check if this is a vector space, we don't need to
+      check all 10 properties.  This is because since <m>V</m> is a subset of <m>\mathbb{R}^2</m>,
+      most of the properties (commutative, associative, distributive, for examples) will work just as they
+      did in <m>\mathbb{R}^2</m>.  The only two that we do need to check are the closure properties.
+		</p>
+
+		<p>
+			<ol>
+				<li>
+					<p>
+						If <m>\vec{u}, \vec{v} \in V</m>, then
+						<md>
+							<mrow>\vec{u} + \vec{v} \amp = \begin{bmatrix}
+							u_1 + v_1 \\
+							u_2 + v_2
+							\end{bmatrix}</mrow>
+						</md>
+						and since <m>u_1, u_2, v_1, v_2</m> are all nonnegative, then this vector
+						is in <m>V</m>.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Let <m>r \in \mathbb{R}</m>, then
+						<me>
+							r \vec{u} = \begin{bmatrix}
+							r u_1 \\ r u_2
+							\end{bmatrix}
+						</me>
+						but if <m>r \lt 0</m> then <m>r \vec{u} \not \in V</m>, so <m>V</m> is not a vector space.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Is the set
+				</p>
+
+				<p>
+					<me>
+						U=\left\{ \begin{bmatrix}
+						x_1 \\ x_2
+						\end{bmatrix} \; | \; x_1^2+x_2^2=1\right\}
+					</me>
+				</p>
+
+				<p>
+					a vector space?  If not what properties does it violate?
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					This set is a circle of radius one centered at the origin.
+					Again, like
+					above, <m>U</m> is a subset of <m>\mathbb{R}^2</m> and thus the properties
+					to check are the closure properties.
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								If we let
+								<md>
+									<mrow>\vec{x} \amp= \begin{bmatrix}
+									x_1 \\ x_2
+									\end{bmatrix}\amp \vec{y} \amp = \begin{bmatrix}
+									y_1 \\ y_2
+									\end{bmatrix}</mrow>
+								</md>
+								both be in <m>U</m>, then
+								<md>
+									<mrow>\vec{x}+\vec{y} \amp = \begin{bmatrix}
+									x_1 + y_1 \\ x_2 +y_2
+									\end{bmatrix}</mrow>
+								</md>
+								Is this in <m>U</m>.
+								To check sum the squares of the individual elements.
+								<md>
+									<mrow>(x_1+y_1)^2 + (x_2+y_2)^2 \amp = x_1^2+ 2x_1y_1 + y_1^2+x_2^2+ 2x_2y_2 + y_1^2 </mrow>
+									<mrow>\amp = 2 + 2x_1y_1 + 2 x_2 y_2</mrow>
+								</md>
+								which is only 1 in special circumstances and not in general, so this is not a vector space.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								The additive identity requires that the zero vector is an element of the vector space.
+								However, since
+								<me>
+									\begin{bmatrix}
+									0 \\ 0
+									\end{bmatrix}
+								</me>
+								is not in <m>U</m>, then this property is also not satisfied.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								This property is also not satisfied for the same reason as \#1.
+								Geometrically if <m>\vec{x}</m> is in <m>U</m> then <m>r\vec{x}</m>
+								is on a circle of radius <m>r</m>, so won't be in <m>U</m> in general.
+							</p>
+						</li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+    <note>
+      <p>We have an alternative way of looking at the circle that will be a vector space.  We
+        can still define the vectors to be on the unit circle, however, this time addition will
+        be defined as the vector whose angle is the sum of the angles, where angle is defined from the
+        positive <m>x</m>-axis.  Scalar multiplication will be the scalar multiplication of the
+        angle.  There are some other details that are needed to formalize this as a vector space.
+      </p>
+    </note>
+	</subsection>
+</section>

@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-linear-geometry" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Geometry of <m>n</m>-space </title>
+
+  <subsection>
+    <title>Summaries of Linear Systems</title>
+
+    <p> We will see more complicated linear systems (including systems with
+      more than two equations as well as more than two variables) shortly.
+      Even with more complicated systems, there are only three possibilities
+      for solutions linear systems: </p>
+
+    <p>
+      <ul>
+        <li>
+          <p> One solution. Mathematically, we say this is a <term>unique</term> solution.</p>
+        </li>
+        <li>
+          <p> No solution. We often say that the system is <term>inconsistent</term>. </p>
+        </li>
+        <li>
+          <p> An infinite number of solutions. We often say that such as system is <term>dependent</term>
+            .</p>
+        </li>
+      </ul>
+    </p>
+  </subsection>
+
+
+  <subsection>
+    <title>Scalar Multiplication of Vectors</title>
+
+    <p>In the previous chapter, we saw the scalar multiplication of a vector. In <m>\mathbb{R}^2</m>,
+      this means</p>
+    <p>
+      <me>
+        r \begin{bmatrix}
+        x_1 \\ x_2
+        \end{bmatrix} = \begin{bmatrix}
+        r x_1 \\ r x_2
+        \end{bmatrix}
+      </me>
+    </p>
+    <p> in that each component of the vector is multiplied by the scalar <m>r</m>. Geometrically,
+      multiplication by the scalar <m>r</m>, <em>scales</em> the length of the vector by a factor of <m>
+      r</m> and flips its direction if <m>r \lt 0</m>. </p>
+
+    <figure xml:id="fig-plot-mult-vectors">
+      <caption>A plot showing multiplication of vectors</caption>
+      <image width="75%" xml:id="plot-mult-vectors">
+        <latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \draw [->] (-3,0) -- (3,0);
+          \draw [->] (0,-3) -- (0,3);
+          \foreach \x in {-2,-1,1,2} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
+          \foreach \y in {-2,-1,1,2} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
+          \draw [->,very thick] (0,0) -- (2,1) node [above] {$ \vec{v}$};
+          \draw [->,very thick] (0,-1) -- (4,1) node [right] {$ 2\vec{v}$};
+          \draw [->,very thick] (0,2) -- (-2,1) node [left] {$ -\vec{v}$};
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+  </subsection>
+
+  <subsection>
+    <title>Vector Addition</title>
+
+    <p> As we saw in the previous chapter, vector addition in <m>\mathbb{R}^2</m> is </p>
+    <p>
+      <me>
+        \vec{u} + \vec{v} = \begin{bmatrix}
+        u_1 \\ u_2
+        \end{bmatrix} + \begin{bmatrix}
+        v_1 \\ v_2
+        \end{bmatrix} = \begin{bmatrix}
+        u_1 + v_1 \\ u_2 + v_2
+        \end{bmatrix}
+      </me>
+    </p>
+    <p> Consider two vectors <m>\vec{u}</m> and <m>\vec{v}</m> in the plane: </p>
+
+    <figure xml:id="fig-plot-two-vectors">
+      <caption>A plot of two vectors in the plane</caption>
+      <image width="50%" xml:id="plot-two-vectors">
+        <latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \draw[->,very thick] (0,0) -- (2,1) node [midway, below right] {$ \vec{u}$};
+          \draw[->,very thick] (-2,1) -- (-1,4) node [midway, above left] {$ \vec{v}$};
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>The sum of these vectors can be represented by taking the <m>\vec{u}</m> vector, then drawing
+      the <m>\vec{v}</m> at the tail end of the <m>\vec{u}</m> vector. The resulting vector </p>
+
+    <figure xml:id="fig-plot-sum-vectors">
+      <caption></caption>
+      <image width="50%" xml:id="plot-sum-vectors">
+        <latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \draw[->,very thick] (0,0) -- (2,1) node [midway, below right] {$ \vec{u}$};
+          \draw[->,very thick] (2,1) -- (3,5)node [midway, below right] {$ \vec{v}$};
+
+          \draw[->,very thick] (0,0) -- (3,5) node [pos=0.75, above left] {$ \vec{u}+\vec{v}$};
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>starts at the beginning of <m>\vec{u}</m> and ends at the end of <m>\vec{v}</m> as seen
+      above. </p>
+
+    <p> Another way to think about this is to use <m>\vec{u}</m> and <m>\vec{v}</m> as the sides of
+      the parallelogram. The vector <m>\vec{u}+\vec{v}</m> is diagonal from the starting point of
+      both <m>\vec{u}</m> and <m>\vec{v}</m> extending to the ending point of both. </p>
+
+    <figure xml:id="fig-plot-vector-parallelogram">
+      <caption>The sum of two vectors are the sides of a paralellogram</caption>
+      <image width="30%" xml:id="plot-vector-parallelogram">
+        <latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \draw[->,very thick] (0,0) -- (2,1) node [midway, below right] {$ \vec{u}$};
+          \draw[->,very thick] (2,1) -- (3,5)node [midway, below right] {$ \vec{v}$};
+          \draw[->,very thick] (1,4) -- (3,5) node [midway, above left] {$ \vec{u}$};
+          \draw[->,very thick] (0,0) -- (1,4)node [midway, above left] {$ \vec{v}$};
+
+          \draw[->,very thick] (0,0) -- (3,5) node [midway, above] {$ \vec{u}+\vec{v}$};
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+  </subsection>
+
+  <subsection>
+    <title>Geometry of Addition and Scalar Multiplication in <m>\mathbb{R}^n</m></title>
+
+    <p>As we saw in the previous section, we know how to add and scalar multiply vectors in <m>
+      \mathbb{R}^n</m>. The geometry of these operations are similar to that in <m>\mathbb{R}^2</m>.
+      For example, in <m>\mathbb{R}^3</m>, a vector connects two points in 3-dimensional space.
+      Scalar multiplication results in scaling that vector by a factor of <m>r</m>. Addition works
+      the same way: make the ending point of the first vector, the starting point of the second
+      vector. The result is the vector from the starting point of the first vector to the ending
+      point of the 2nd vector. </p>
+
+    <p>And this extends to any dimension, <m>\mathbb{R}^n</m>. Although this is difficult to
+      visualize, it still works the same way. Typically there is no need to draw any vectors in
+      dimensions above 3. </p>
+  </subsection>
+
+  <subsection>
+    <title>Lines in Vector form in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m></title>
+
+    <p>First, let's look at a line in <m>\mathbb{R}^2</m> and for example, passes through <m>(2,1)</m>
+      and <m>(3,4)</m> and denote the line <m>L</m>. This would look like: </p>
+
+    <figure xml:id="fig-plot-line-in-r2">
+      <caption>A vector version of a line in <m>\mathbb{R}^2</m></caption>
+      <image width="50%" xml:id="plot-line-in-r2">
+        <latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \draw [->] (-4,0) -- (4,0);
+          \draw [->] (0,-4) -- (0,4);
+          \foreach \x in {-3,-2,-1,1,2,3} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
+          \foreach \y in {-3,-2,-1,1,2,3} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
+
+          \fill (2,1) circle (2.5pt);
+          \fill (3,4) circle (2.5pt);
+
+          \draw[<->] ({1/3},-4) -- ({10/3},5) node [pos=0.8,below right]{$ L$};
+          \draw[->,very thick] (2,1) -- (3,4) node [at end, below right] {$ \vec{v}$};
+
+          \draw[->,very thick] (0,0) -- (2,1) node [midway, above] {$ \vec{u}$};
+
+          \draw[->,very thick, red] (2,1) -- (2.5,2.5) node [midway, below right] {$ t\vec{v}$};
+          \draw[->,very thick, red] (0,0) -- (2.5,2.5) node [pos=0.6, above left]  {$ \vec{u}+t\vec{v}$};
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>Let's make the vector <m>\vec{v}</m> the vector between the points <m>(2,1)</m> and <m>(3,4)</m>
+      as shown on the figure above. Recall that a vector and a point is synonymous if the vector
+      starts at the origin. Call <m>\vec{u}</m> the vector from <m>(0,0)</m> to <m>(2,1)</m>. </p>
+
+    <p>Next, any point on the line can be written as a vector by addition of <m>\vec{u}</m> and a
+      scale of <m>\vec{v}</m> or <m>\vec{u}+t\vec{v}</m>. Thus the line between these two points can
+      be written as </p>
+    <p>
+      <me>
+        \left\{
+        \begin{bmatrix}
+        x \\ y
+        \end{bmatrix} =
+        \begin{bmatrix}
+        2 \\ 1
+        \end{bmatrix} + t
+        \begin{bmatrix}
+        1 \\ 3
+        \end{bmatrix} \; | \; t \in \mathbb{R} \right\}
+      </me>
+    </p>
+    <p> This notion extend easily to <m>\mathbb{R}^3</m>. The set of points </p>
+
+    <p>
+      <me>
+        \left\{
+        \begin{bmatrix}
+        2 \\ 1 \\ 3
+        \end{bmatrix} + t \begin{bmatrix}
+        1 \\ 0 \\ 2
+        \end{bmatrix} \; | \; t \in \mathbb{R} \right\}
+      </me>
+    </p>
+
+
+    <figure xml:id="fig-plot-line-in-r3">
+      <caption></caption>
+      <image width="50%" xml:id="plot-line-in-r3">
+        <latex-image>
+          <![CDATA[
+          \tdplotsetmaincoords{70}{130}
+          \begin{tikzpicture}[tdplot_main_coords]
+
+          %draw the main coordinate system axes
+          \draw[thick,->] (0,0,0) -- (4,0,0) node[anchor=north east]{$ x$};
+          \draw[thick,->] (0,0,0) -- (0,4,0) node[anchor=north west]{$ y$};
+          \draw[thick,->] (0,0,0) -- (0,0,4) node[anchor=south]{$ z$};
+
+
+          \draw[-stealth] (0,0,0) -- (2,1,3) node [midway,above left] {$ \vec{u}$};
+          \draw[-stealth,thick] (2,1,3) -- (4,1,1) node [midway,above left] {$ t\vec{v}$};
+          \draw[<->] (0,1,5) -- (5,1,0);
+
+
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+
+  </subsection>
+
+  <subsection xml:id="sect-planes-r3">
+    <title>Planes in <m>\mathbb{R}^3</m></title>
+
+    <p>A plane in <m>\mathbb{R}^3</m> can also be written using vectors although perhaps harder to
+      visualize. </p>
+
+    <definition>
+      <title>Plane</title>
+      <statement>
+        <p>A <term>plane</term> in <m>\mathbb{R}^3</m> is the set of points</p>
+        <p>
+          <me>
+            \{ \vec{p} + \vec{u} t + \vec{v} s \; | t,s \in \mathbb{R} \}
+</me>
+        </p>
+        <p> for nonzero vectors <m>\vec{u}</m> and <m>\vec{v}</m> and <m>\vec{p},\vec{u}</m> and <m>
+          \vec{v}</m> are vectors in <m>\mathbb{R}^3</m>. </p>
+      </statement>
+    </definition>
+
+
+    <p> Consider the following example in which a parallelogram is drawn in the plane. The point <m>
+      (2,3,1)</m> in one corner of the parallelogram and the two sides are </p>
+
+    <p>
+      <md>
+        <mrow>
+          \vec{v} \amp = \begin{bmatrix}
+          1 \\ 1 \\1
+          \end{bmatrix} \amp \vec{w} \amp = \begin{bmatrix}
+          2 \\ 0 \\ -1
+          \end{bmatrix}
+</mrow>
+      </md>
+    </p>
+
+    <p>The parallelogram in <m>\mathbb{R}^3</m> would look like: </p>
+
+    <figure xml:id="fig-plot-parallelogram-in-r3">
+      <caption></caption>
+      <image width="50%" xml:id="plot-parallelogram-in-r3">
+        <latex-image>
+      <![CDATA[
+      \tdplotsetmaincoords{70}{130}
+      \begin{tikzpicture}[tdplot_main_coords]
+
+      %draw the main coordinate system axes
+      \draw[thick,->] (0,0,0) -- (4,0,0) node[anchor=north east]{$ x$};
+      \draw[thick,->] (0,0,0) -- (0,4,0) node[anchor=north west]{$ y$};
+      \draw[thick,->] (0,0,0) -- (0,0,4) node[anchor=south]{$ z$};
+
+
+      \draw[-stealth] (2,3,1) -- (1,1,1) node [midway,above right] {$ \vec{v}$};
+      \draw[-stealth] (2,3,1) -- (4,3,0) node [midway,above left] {$ \vec{w}$};
+
+      \draw[-stealth] (1,1,1) -- (3,1,0) -- (4,3,0);
+      \end{tikzpicture}
+      ]]>
+      </latex-image>
+      </image>
+    </figure>
+
+
+    <p>The set of all points on the plane can then be written as </p>
+
+    <p>
+      <me>
+        \left\{ \begin{bmatrix}
+        2 \\ 3 \\ 1
+        \end{bmatrix} + \begin{bmatrix}
+        1 \\ 1 \\ 1
+        \end{bmatrix} t +
+        \begin{bmatrix}
+        2 \\ 0 \\ -1
+        \end{bmatrix} s \; | \; t,s \in \mathbb{R} \right\}
+      </me>
+    </p>
+
+    <p> Extending this idea to linear surfaces in <m>\mathbb{R}^n</m> is a natural generalization of
+      planes. </p>
+
+    <definition>
+      <statement>
+        <p> A <term><m>k</m>-dimensional linear surface</term> in <m>\mathbb{R}^n</m> is the set: </p>
+
+        <p>
+          <me>
+            \{ \vec{p} + t_1 \vec{v}_1 + t_2 \vec{v}_2 + \cdots + t_k \vec{v}_k \; | \; t_1, t_2,
+            \ldots, t_k \in \mathbb{R} \}
+          </me>
+        </p>
+        <p> If <m>k=n-1</m>, then the surface is called a <term>hyperplane</term>. </p>
+      </statement>
+    </definition>
+
+  </subsection>
+
+  <subsection>
+    <title>Geometry of Linear Systems</title>
+
+    <p>You should have noticed the the <m>k</m>-dimensional linear surface above has the same form
+      as the solution to the general linear system. </p>
+
+    <p>
+      <ul>
+        <li>
+          <p> If the linear system has one free variable, the solution is a line. </p>
+        </li>
+        <li>
+          <p> If the linear system has two free variables, the solution is a plane (or hyperplane). </p>
+        </li>
+      </ul>
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="sect-length-angles">
+    <title>Length and Angle Measures</title>
+
+    <p> Two of the basic ideas of geometry are the notions of length and angles. These are
+      well-defined in <m>\mathbb{R}^2</m> and with a relatively easy extension to <m>\mathbb{R}^3</m>
+      and in this section we generalize to <m>\mathbb{R}^n</m>. We'll start with the notion of
+      distance as the length of a vector. Consider first a vector </p>
+
+    <p>
+      <me>
+        \vec{v} = \begin{bmatrix}
+        v_1 \\ v_2
+        \end{bmatrix}
+</me>
+    </p>
+
+    <p> in the plane (<m>\mathbb{R}^2</m>). </p>
+
+    <figure xml:id="fig-plot-vector-with-coords">
+      <caption>A vector starting at the origin showing the relationship to the
+        coordinate sides.
+      </caption>
+      <image width="50%" xml:id="plot-vector-with-coords">
+        <latex-image>
+      <![CDATA[
+      \begin{tikzpicture}
+      \draw [->] (-3,0) -- (3,0);
+      \draw [->] (0,-3) -- (0,3);
+      %\foreach \x in {-2,-1,1,2} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
+      %\foreach \y in {-2,-1,1,2} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
+      \draw [->,very thick] (0,0) -- (2,1) node [above] {$ \vec{v}$};
+      \draw (2,0.1) -- (2,-0.1) node [below] {$ v_1$};
+      \draw (0.1,1) -- (-0.1,1) node [left] {$ v_2$};
+      \draw (2,0) -- (2,1) node [midway, right] {$ v_2$};
+      %\draw [->,very thick] (0,-1) -- (4,1) node [right] {$ 2\vec{v}$};
+      %\draw [->,very thick] (0,2) -- (-2,1) node [left] {$ -\vec{v}$};
+      \end{tikzpicture}
+      ]]>
+      </latex-image>
+      </image>
+    </figure>
+
+    <p>and using plane geometry, the length of <m>\vec{v}</m>, denoted <m>||\vec{v}||</m> is the
+      hypotenuse of the triangle or </p>
+
+    <p>
+      <me>
+        ||\vec{v}|| = \sqrt{v_1^2+v_2^2}
+</me>
+    </p>
+
+    <p> and if <m>\vec{v}</m> is in <m>\mathbb{R}^3</m>, the length would include a square of the
+      third component inside the square root. Thus, we defined the length of any vector in <m>
+      \mathbb{R}^n</m> to be the following. </p>
+
+    <definition>
+      <statement>
+        <p> The <term>length</term> of a vector <m>\vec{v} \in \mathbb{R}^n</m> is given by </p>
+
+        <p>
+          <me>
+            || \vec{v}|| = \sqrt{v_1^2 + v_2^2 + \cdots v_n^2 }
+</me>
+        </p>
+
+        <p> which fits our expectations in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m>. </p>
+      </statement>
+    </definition>
+
+
+    <example>
+      <statement>
+        <p>
+          Find the length of the vector: </p>
+
+        <p>
+          <me>
+            \vec{v} = \begin{bmatrix}
+            3 \\ 1 \\ 0 \\ -5
+            \end{bmatrix}
+</me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          <me>
+            ||\vec{v}|| = \sqrt{9+1+0+25} = \sqrt{35}
+</me>
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+
+<subsection>
+  <title>Angles of vectors in <m>\mathbb{R}^2</m></title>
+
+<p> Consider first 2 vectors in <m>\mathbb{R}^2</m>.  The angle between
+  them would be the angle (measured in the counterclockwise direction)
+  between the vectors if the starting point is anchored at the same place.
+  For example: </p>
+
+<figure xml:id="fig-plot-angle-between-vector">
+  <caption></caption>
+  <image width="50%" xml:id="plot-angle-between-vector">
+    <latex-image>
+<![CDATA[
+\begin{tikzpicture}[scale=0.8]
+\draw [->] (-3,0) -- (4,0);
+\draw [->] (0,-3) -- (0,4);
+\foreach \x in {-2,-1,1,2,3} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
+\foreach \y in {-2,-1,1,2,3} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
+
+
+\draw[->] (0,0) -- (3,1) node [below right] {$ \vec{u}$};
+\draw[->] (0,0) -- (-1,2) node [below left] {$ \vec{v}$};
+
+\draw(9.48pt,3.16pt) arc [radius=10pt, start angle=18.43, end angle=116.56505118] ;
+
+\draw(0.1,0.3) node [above right] {$ \theta$};
+
+\end{tikzpicture}
+]]>
+</latex-image>
+</image>
+</figure>
+
+<p>where
+<md>
+  <mrow>\vec{u} \amp = \begin{bmatrix}
+3 \\ 1
+\end{bmatrix}, \amp \vec{v} \amp = \begin{bmatrix}
+-1 \\ 2
+\end{bmatrix} </mrow>
+</md>
+
+You can find the angle using knowledge of geometry.  In this case,
+ you can make a triangle by connecting the end points of each vector.
+ Note that the third leg of the triangle can be written as
+<me>
+\vec{v}-\vec{u} = \begin{bmatrix}
+-1 \\ 2
+\end{bmatrix} - \begin{bmatrix}
+3 \\ 1
+\end{bmatrix} = \begin{bmatrix}
+-4 \\ 1
+\end{bmatrix}
+</me>
+</p>
+
+
+<figure xml:id="fig-plot-vector-diff">
+  <caption></caption>
+  <image width="40%" xml:id="plot-vector-diff">
+    <latex-image>
+<![CDATA[
+\begin{tikzpicture}[scale=0.8]
+\draw [->] (-1.5,0) -- (4,0);
+\draw [->] (0,-1.5) -- (0,4);
+\foreach \x in {-1,1,2,3} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
+\foreach \y in {-1,1,2,3} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
+
+
+\draw[->] (0,0) -- (3,1) node [midway, below right] {$ \vec{u}$};
+\draw[->] (0,0) -- (-1,2) node [midway, below left] {$ \vec{v}$};
+\draw[->] (3,1) -- (-1,2) node [midway, above] {$ \vec{v}-\vec{u}$};
+
+\draw (9.48pt,3.16pt) arc [radius=10pt, start angle=18.43, end angle=116.56505118] ;
+
+\draw(0.1,0.3) node [above right] {$ \theta$};
+
+\end{tikzpicture}
+]]>
+</latex-image>
+</image>
+</figure>
+
+<p>and the lengths of the three sides are:
+<md>
+  <mrow>||\vec{u}|| \amp = \sqrt{10}, \amp ||\vec{v}|| \amp= \sqrt{5}, \amp ||\vec{v}-\vec{u}|| \amp = \sqrt{17} </mrow>
+</md>
+and then using the law of cosines:
+
+<md>
+  <mrow>||\vec{v}-\vec{u}||^2 \amp = ||\vec{u}||^2 + || \vec{v}||^2 -2 ||\vec{u}|| \,  ||\vec{v}| \cos \theta \\
+17 \amp = 10+5 - 2 \sqrt{10}\sqrt{5} \cos \theta \\
+\frac{2}{-2 \sqrt{10}\sqrt{5}} \amp = \cos \theta
+</mrow>
+</md>
+which in this case <m>\theta \approx 98.13^{\circ}</m>. </p>
+
+
+<p> Note: since the range of <m>\cos^{-1} \theta</m> is <m>[0,\pi]</m>
+  (or <m>[0,180^{\circ}]</m>), the angle will always be the angle between
+  the vectors with this range.  If you need the proper angle, you may need
+  to subtract the result from <m>360^{\circ}</m>. </p>
+
+
+</subsection>
+
+<subsection xml:id="sect-angles-vectors">
+  <title>Angles of vectors in <m>\mathbb{R}^n</m></title>
+
+<p> Understanding the above section allows us to extend the notion of
+  vectors in <m>n</m> dimensions, with the key being the law of cosines: </p>
+
+  <p>
+<me>
+||\vec{u}-\vec{v}||^2 = ||\vec{u}||^2 + || \vec{v}||^2 -2 ||\vec{u}|| \,  ||\vec{v}| \cos \theta \\
+</me>
+</p>
+
+<p>
+and if we expand this out for</p>
+
+<p>
+<md>
+  <mrow>\vec{u} \amp = \begin{bmatrix}
+u_1 \\ u_2 \\ \vdots \\ u_n
+\end{bmatrix} \amp
+\vec{v} \amp = \begin{bmatrix}
+v_1 \\ v_2 \\ \vdots \\ v_n
+\end{bmatrix}
+</mrow>
+</md>
+</p>
+
+<p>Then, </p>
+
+<p>
+<md>
+<mrow>||\vec{u}-\vec{v}||^2 \amp = (u_1-v_1)^2 + (u_2-v_2)^2 + \cdots + (u_n -v_n)^2, </mrow>
+  <mrow>||\vec{u}||^2 \amp = u_1^2 + u_2^2 + \cdots + u_n^2, </mrow>
+    <mrow>||\vec{v}||^2 \amp = v_1^2 + v_2^2 + \cdots + v_n^2,</mrow>
+</md>
+</p>
+
+<p>Expanding the top equation and subtracting the two below:</p>
+
+<p>
+<me>
+||\vec{u}-\vec{v}||^2-||\vec{u}||^2-||\vec{v}||^2  = -u_1v_1 - u_2v_2 - \cdots -u_nv_n
+</me>
+</p>
+<p>
+The negative of this expression appears often throughout linear algebra and is called the <term>dot product</term>
+</p>
+
+<definition>
+  <statement>
+<p>
+  The <term>dot product</term> (or <term>inner product</term>) of the
+  vectors <m>\vec{u}</m> and <m>\vec{v}</m> is defined as</p>
+
+  <p>
+<me>
+\vec{u} \cdot \vec{v}  = u_1v_1 + u_2v_2 + \cdots +u_nv_n
+</me>
+</p>
+  </statement>
+</definition>
+
+<p>Note:  the dot product between two vectors results in a number (a scalar).
+Also, the dot product is only defined between two vectors of the same length.
+Also, for any vector <m>\vec{u}</m>, there is a nice relationship between the
+length and the dot product:</p>
+
+<p>
+<me>
+\vec{u} \cdot \vec{u}   = ||\vec{u}||^2
+</me>
+</p>
+
+<p>
+Again, returning to law of cosines and solving for <m>\cos \theta</m>:
+</p>
+
+<p>
+<md>
+  <mrow>\cos \theta \amp = \frac{||\vec{u}-\vec{v}||^2-||\vec{u}||^2-||\vec{v}||^2}{-2 ||\vec{u}|| \, ||\vec{v}||}</mrow>
+    <mrow>\amp = \frac{-\vec{u} \cdot \vec{v}}{-2 ||\vec{u}|| \, ||\vec{v}||} </mrow>
+      <mrow>\amp = \frac{\vec{u} \cdot \vec{v}}{2 ||\vec{u}|| \, ||\vec{v}||}</mrow>
+</md>
+</p>
+</subsection>
+
+<subsection xml:id="sect-dot-prod-props">
+  <title>Properties of The Dot Product</title>
+
+<p>As we will see, the dot product is an extremely important concept.
+  Before going on, we show the properties of the dot product. </p>
+
+  <p>
+<dl>
+  <li>
+    <title>Commutative</title>
+    <p>
+      <m>\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}</m>,
+    </p>
+  </li>
+<li>
+  <title>Distributative</title>
+  <p>
+    <m>\vec{u} \cdot (\vec{v} + \vec{w}) = \vec{u} \cdot \vec{v} + \vec{u} \cdot \vec{w}</m>.
+  </p>
+</li>
+<li>
+  <title>Associative</title>
+  <p>
+    <m>\vec{u} \cdot (r\vec{v}) = (r \vec{u}) \cdot \vec{v} = r (\vec{u} \cdot \vec{v})</m>.
+  </p>
+</li>
+</dl>
+</p>
+
+<p>These properties can be shown using the Definition above. </p>
+
+
+<theorem>
+  <title>The Triangle Inequality</title>
+  <statement>
+<p>For any <m>\vec{u}</m> and <m>\vec{v}</m> both in <m>\mathbb{R}^n</m>, then</p>
+
+<p>
+<men  xml:id="eq-tri-inequal">
+||\vec{u}+\vec{v}||   \leq ||\vec{u}||+||\vec{v}||
+</men>
+</p>
+
+<p>
+Equality is only reached if one of the vectors is a nonnegative scalar multiple of the other.
+</p>
+</statement>
+<proof>
+<p>First, assume that either <m>\vec{u} = \vec{0}</m> or <m>\vec{v} = \vec{0}</m>, then
+  then <xref ref="eq-tri-inequal" /> holds. </p>
+
+  <p>Next, assume that neither <m>\vec{u}</m> nor <m>\vec{v}</m> is the zero vector. Then create
+  the vector  </p>
+
+  <p><me>
+    ||\vec{u}|| \vec{v} - ||\vec{v}||\vec{u}.
+  </me>
+</p>
+<p>The square of the length of this is nonnegative. </p>
+
+  <p>
+  <md>
+    <mrow>0  \leq \amp ||(||\vec{u}|| \vec{v} - ||\vec{v}||\vec{u})||^2 </mrow>
+    <mrow>\amp = (||\vec{u}|| \vec{v} - ||\vec{v}||\vec{u}) \cdot (||\vec{u}|| \vec{v} - ||\vec{v}||\vec{u})</mrow>
+    <mrow>\amp  = (||\vec{u} || \vec{v}) \cdot (||\vec{u}|| \vec{v}) - (||\vec{u}|| \vec{v}) \cdot (||\vec{v}|| \vec{u})
+      - (||\vec{v} || \vec{u}) \cdot (||\vec{u}|| \vec{v}) + (||\vec{v}|| \vec{u}) \cdot (||\vec{v}|| \vec{u})</mrow>
+      <mrow>\amp \qquad \qquad\text{using properties of the dot product}</mrow>
+      <mrow>\amp = ||\vec{u}||^2 (\vec{v} \cdot \vec{v}) - 2 (||\vec{u}||\vec{v}  \cdot ||\vec{v}|| \vec{u})
+        + ||\vec{v}||^2 (\vec{u} \cdot \vec{u})
+      </mrow>
+      <mrow> \amp = \leq ||\vec{u}||^2 ||\vec{v}||^2 - 2 ||\vec{u}|| \, ||\vec{v}||  (\vec{v}  \cdot \vec{u})
+        + ||\vec{v}||^2 ||\vec{v}||^2
+      </mrow>
+      <mrow> \amp = \qquad \qquad \text{divide through by $||\vec{u}|| \, ||\vec{v}||$} </mrow>
+      <mrow xml:id="eq-tri-inequal2" number="yes"> \amp \leq 2||\vec{u}|| \, ||\vec{v}|| - 2 (\vec{v}  \cdot \vec{u}) </mrow>
+  </md>
+</p>
+<p>Adding <m>||\vec{u} + \vec{v}||^2 = (\vec{u}+\vec{v}) \cdot (\vec{u}+\vec{v})</m> to both sides</p>
+
+<p>
+<md>
+  <mrow>
+    ||\vec{u} +\vec{v}||^2 \amp \leq  (\vec{u}+\vec{v}) \cdot (\vec{u}+\vec{v}) +
+    2||\vec{u}|| ||\vec{v}|| - 2 (\vec{v}  \cdot \vec{u}) </mrow>
+  <mrow>
+    \amp = \vec{u} \cdot \vec{u} + 2 \vec{u} \cdot \vec{v} + \vec{v} \cdot \vec{v} +
+    2||\vec{u}|| ||\vec{v}|| - 2 (\vec{v}  \cdot \vec{u}) </mrow>
+  <mrow>
+    \amp  = ||\vec{u}||^2 + 2 ||\vec{u}||\,||\vec{v}|| + ||\vec{v}||^2
+  </mrow>
+  <mrow>
+    \amp  = (||\vec{u}|| + ||\vec{v}||)^2
+  </mrow>
+  </md>
+</p>
+<p> and lastly, taking the square root of both sides</p>
+<p>
+<me> ||\vec{u} + \vec{v}|| \leq ||\vec{u}|| + ||\vec{v}|| </me>
+</p>
+
+  <p>To show equality, assume that <m>||\vec{v}|| \neq 0</m>,</p>
+    <p>
+  <md>
+    <mrow>||\vec{u}||\vec{v} - ||\vec{v}|| \vec{u} \amp = 0 </mrow>
+    <mrow> \text{or} \qquad \qquad \amp </mrow>
+  <mrow>\vec{u} \amp = \frac{||\vec{u}||}{||\vec{v}||} \vec{v}</mrow>
+  </md>
+</p>
+<p>
+  therefore <m>\vec{u}</m> is a scalar multiple of <m>\vec{v}</m>. </p>
+
+</proof>
+</theorem>
+
+<p> This can be visualized by considering the plane in which <m>\vec{u}</m>
+  and <m>\vec{v}</m> lie (and note that regardless of the value of <m>n</m>,
+  they will lie in a plane or planar subset of <m>\mathbb{R}^n</m>.) </p>
+
+
+  <figure xml:id="fig-plot-triangle-inequality">
+    <caption>A plot showing the triangle inequality for vectors in <m>\mathbb{R}^2</m></caption>
+    <image width="50%" xml:id="plot-triangle-inequality">
+      <latex-image>
+  <![CDATA[
+\begin{tikzpicture}
+\draw[->, thick] (0,0) -- (3,1) node [midway,below right] {$\vec{u}$};
+\draw[->,thick] (3,1) -- (5,3) node [midway,below right] {$\vec{v}$};
+\draw[->,thick] (0,0) -- (5,3) node [midway,above left] {$\vec{u}+\vec{v}$};
+\end{tikzpicture}
+]]>
+</latex-image>
+</image>
+</figure>
+
+
+<p> The vector <m>\vec{u}+\vec{v}</m> is one side of the triangle and
+  we know that any one side must always be no larger than the sum of
+  the other two. </p>
+
+<corollary>
+  <title>Cauchy-Swartz Inequality</title>
+  <statement>
+    <p>
+  Let <m>\vec{u}</m> and <m>\vec{v}</m> be vectors in <m>\mathbb{R}^n</m>. Then</p>
+  <p>
+<me>
+| \vec{u} \cdot \vec{v}| \leq ||\vec{u}|| \, ||\vec{v}||
+</me>
+</p>
+
+<p>
+with equality if and only if <m>\vec{u}</m> and <m>\vec{v}</m> are scalar multiples of each other.
+</p>
+</statement>
+
+<proof>
+
+<p> A consequence of the Triangle Inequality is (<xref ref="eq-tri-inequal2" />),
+  thus the Cauchy-Swartz Inequality holds if <m>\vec{u} \cdot \vec{v} \gt 0</m>.
+  Assume that <m>\vec{u} \cdot \vec{v}  \lt 0</m>.  Then</p>
+
+  <p>
+<md>
+  <mrow>\vec{u} \cdot \vec{v} = - (\vec{u} \cdot \vec{v}) = (-\vec{u} \cdot \vec{v}) \amp \leq ||-\vec{u}|| ||\vec{v}|| </mrow>
+  <mrow>
+      \text{and since} \; ||-\vec{u}|| = ||\vec{u}|| \qquad \amp </mrow>
+      <mrow>\amp = ||\vec{u}|| \, ||\vec{v}||</mrow>
+</md>
+</p>
+
+<p>
+For equality, assume that <m>\vec{u} = k \vec{v}</m> for some real number <m>k</m>.
+Then</p>
+
+<p>
+<md>
+  <mrow> |\vec{u}\cdot \vec{v} | \amp = |k \vec{v} \cdot \vec{v}| </mrow>
+  <mrow> \amp = |k| \; |\vec{v} \cdot \vec{v} | </mrow>
+  <mrow> \amp = |k| \; || \vec{v} ||^2 </mrow>
+</md></p>
+<p>
+and since these steps are reversible, this hold for if and only if. </p>
+</proof>
+</corollary>
+
+<p> We now use the dot product to define the angle between two vectors in <m>\mathbb{R}^n</m>. </p>
+
+<definition>
+  <statement>
+  <p>
+The <term>angle between vectors</term> <m>\vec{u}</m> and <m>\vec{v}</m> is the value of <m>\theta</m> that satisfies:
+</p>
+
+<p>
+<me>
+\cos \theta = \frac{ \vec{u} \cdot \vec{v}}{||\vec{u}||\, ||\vec{v}||}
+</me>
+</p>
+  </statement>
+</definition>
+
+
+<p>So now with any two vectors, the above expression is a way to define the angle between them. </p>
+
+<example>
+  <statement>
+    <p>
+Find the angle between</p>
+
+<p>
+<md>
+  <mrow>\vec{u} \amp = \begin{bmatrix}
+2 \\ -4 \\ 1 \\ 1
+\end{bmatrix} \amp \vec{v} \amp = \begin{bmatrix}
+3 \\ 2 \\ 0 \\ 5
+\end{bmatrix}.</mrow>
+</md>
+</p>
+</statement>
+
+<solution>
+
+  <p>
+<md>
+  <mrow>||\vec{u}|| \amp =\sqrt{22}, \amp ||\vec{v}|| \amp = \sqrt{38} </mrow>
+</md>
+</p>
+<p>
+<me>
+\vec{u} \cdot \vec{v} = 6-8+0+5 = 3
+</me>
+</p>
+
+<p>
+and therefore the angle can be found by
+</p>
+<p>
+<me>
+\cos \theta = \frac{3}{\sqrt{22}\sqrt{38}} \approx 0.1037571696
+</me>
+</p>
+<p>
+and <m>\theta \approx 84.04^{\circ}</m>.   And although it's difficult to
+visualize these vectors, we can imagine the angle between them. </p>
+</solution>
+</example>
+
+<p> One of the most important angles in geometry is <m>\theta=90^{\circ}</m>,
+  which occurs in right triangles and perpendicular lines.  In terms
+  of vectors, we use the dot product to define this. </p>
+
+<definition>
+  <statement>
+<p> Two vectors <m>\vec{u}</m> and <m>\vec{v}</m> are <term>perpendicular</term>
+or <term>orthogonal</term> if their dot product is 0. </p>
+  </statement>
+</definition>
+
+</subsection>
+</section>
+
+

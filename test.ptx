@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-matrix-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Operations</title>
+
+<p> As we have seen, a matrix is a group of numbers arranged in a rectangular
+  block.  An <m>m</m> by <m>n</m> matrix has <m>m</m> rows and <m>n</m> columns. </p>
+
+<p>For example,
+
+<men xml:id="eq-example-matrix">
+\begin{bmatrix}
+1 \amp 2 \amp 11 \amp -1 \\ 3 \amp -2 \amp 3 \amp 4
+\end{bmatrix}
+</men>
+is a 2 by 4 matrix. </p>
+
+<p> The <term>size</term> of a matrix is the number of rows and columns
+  in the matrix.  The number of rows is listed first.  The size of the
+  example above is 2 by 4. </p>
+
+The numbers in a matrix are called the <term>entries</term> or
+<term>elements</term> of the matrix.  For example, for the matrix in
+
+(<xref ref="eq-example-matrix" />), the entry on the first row and third column is 11.  Often we will use the notation <m>a_{1,3} = 11</m>, where the subscript 1 is the row number and <m>3</m> is the column number.
+
+</subsection><subsection><title>Matrix, Vector and Scalar Notation</title>
+
+A <term>scalar</term> is a fancy term for a number.  Mathematician use this term to distinguish them from matrices and vectors, which are not scalars.  Whenever variables are used for scalars, then lower case letters will be used.  For example, <m>a, n</m> and <m>x</m> are scalar variables.
+
+When we use variable names for matrices, we will use capital letters.  For example, <m>A, B</m> and <m>X</m> are matrix (or vector) variables.
+
+</subsection><subsection><title>Addition and Subtraction of Matrices</title>
+
+
+In this section, we learn how to perform some basic operations between matrices.  First, we will look at adding and subtracting two matrices and later we will look at multiplying a matrix by a scalar (a number).
+
+<definition>
+In this case, let <m>k \in \mathbb{R}</m> and <m>A</m> and <m>B</m> are <m>m \times n</m> matrices.  Then
+
+\begin{itemize}
+\item <m>kA</m> is the matrix formed by each entry is <m>ka_{i,j}</m>.  That is multiply each entry by <m>k</m>.
+\item <m>A+B</m> is the matrix form by each entry is <m>a_{i,j}+b_{i,j}</m>.  That is to add matrices, we add element by element.
+\item <m>A-B</m> is the matrix form by each entry is <m>a_{i,j}-b_{i,j}</m>.  That is to add matrices, we subtract element by element.
+\end{itemize}
+If <m>A</m> and <m>B</m> are not the same size then <m>A+B</m> and <m>A-B</m> does not exist.
+</definition>
+
+Note: an alternative definition of matrix subtraction, <m>A-B=A+(-B)</m>, which is consistent with subtraction of real numbers.
+
+\bigskip
+<example>
+Let
+%
+<md>
+A \amp = \begin{bmatrix}
+1 \amp -1 \amp 3 \\
+2 \amp 7 \amp 3
+\end{bmatrix} \amp
+B \amp = \begin{bmatrix}
+3 \amp 2 \amp -7 \\ 11 \amp 2 \amp 0
+\end{bmatrix}
+</md>
+
+Then the sum <m>A+B</m> is found by adding the individual elements.
+%
+<md>
+A+B \amp = \begin{bmatrix}
+1+3 \amp -2+2 \amp 3-7\\ 2+11 \amp 7+2 \amp 3+0
+\end{bmatrix}= \begin{bmatrix}
+4 \amp 1 \amp -4 \\ 13 \amp 9 \amp 3
+\end{bmatrix}
+</md>
+similarly we can subtract in the same way
+<md>
+A-B \amp =
+\begin{bmatrix}
+1-3 \amp -1-2 \amp 3-(-7)\\
+2-11 \amp 7-2 \amp 3-0
+\end{bmatrix}=
+\begin{bmatrix}
+-2 \amp -3 \amp 10 \\
+-9 \amp 5 \amp 3
+\end{bmatrix}
+</md>
+
+</example>
+
+
+<example>
+ Find the following result or state that it does not exist.
+ %
+<md>
+\begin{bmatrix}
+ 1 \amp 0 \\ 3 \amp -2
+\end{bmatrix} +
+\begin{bmatrix}
+ 3 \amp -2 \\
+ 5 \amp 0 \\
+ -3 \amp 4
+\end{bmatrix}
+</md>
+
+\solution
+
+Since the matrices are not the same size, this operation is not valid.
+
+</example>
+
+\subsubsection{Scalar Multiplication of Vectors and Matrices}
+
+Scalar multiplication of vectors and matrices is a simple operation where the result is the scalar times each element of the vector or matrix.
+
+<example>
+	Evaluate
+
+
+\begin{enumerate}[label=(\alph*)]
+\item
+<md> 3
+\begin{bmatrix}
+	5 \amp 5 \\
+-4 \amp 2
+\end{bmatrix}.
+</md>
+
+\item <md>
+-7 \begin{bmatrix}
+ 3 \amp -2 \amp 0 \amp 5
+\end{bmatrix}
+</md>
+\end{enumerate}
+
+\solution
+
+\begin{enumerate}[label=(\alph*)]
+\item
+<md>
+\begin{bmatrix}
+	15 \amp 15 \\ -12 \amp 6
+\end{bmatrix}
+</md>
+
+\item
+<md>
+\begin{bmatrix}
+ -21 \amp 14 \amp 0 \amp -35
+\end{bmatrix}
+</md>
+\end{enumerate}
+</example>
+
+</subsection><subsection><title>Transpose} \label{sect:transpose</title>
+
+The last basic matrix operation that we will cover here in the transpose of a matrix.  As an example, if
+%
+<md>
+	A \amp =
+\begin{bmatrix}
+	3 \amp -1 \amp 0 \\ 2 \amp 7 \amp 5
+\end{bmatrix}
+</md>
+then the transpose is the matrix, <m>A^{\intercal}</m> given by
+%
+<md>
+	A^{\intercal} \amp =
+\begin{bmatrix}
+	3 \amp 2 \\ -1 \amp 7 \\ 0 \amp 5
+\end{bmatrix}
+</md>
+where the row and column of each element is flipped.
+
+<definition>
+The <term>transpose</term> of an <m>m \times n</m> matrix <m>A</m>,  denoted <m>A^{\intercal}</m> is <m>A</m> flipped over the diagonal.  In particular, the element in the <m>i</m>th row and <m>j</m>th column of <m>A^{\intercal}</m> is given by the <m>j</m>th row and <m>i</m> column of <m>A</m>.
+</definition>
+
+\subsubsection{Properties of Transposes}
+
+We will see that transposes play a big role in linear algebra.
+
+\begin{lemma}
+The following are true:
+\begin{enumerate}
+\item <m>(A+B)^{\intercal} = A^{\intercal} + B^{\intercal}</m>
+\item <m>(cA)^{\intercal} = c A^{\intercal}</m>
+\item <m>(A^{\intercal})^{\intercal} = A</m>.
+\item <m>(AB)^{\intercal} = B^{\intercal} A^{\intercal}</m>
+\end{enumerate}
+\end{lemma}
+
+%
+</subsection><subsection><title>Multiplication of Vectors and Matrices</title>
+\label{sect:mult:matrix}
+
+In an perhaps backwards way of thinking, we will start with the product of two matrices.  We will then see that the product of matrices and vectors and then vectors and vectors can be seen in the same manner.
+
+<definition>
+Let <m>A</m> and <m>B</m> be matrices.  The \text{product of <m>A</m> and <m>B</m>}, or <m>C=AB</m> can be found in the following manner.  Element <m>c_{ij}</m> is the dot product of the <m>i</m>th row of <m>A</m> and the <m>j</m>th column of <m>B</m>.
+
+Note:  In order for the dot product to be defined, the number columns of <m>A</m> must equal the number of rows of <m>B</m>.  If not the product is not defined.
+</definition>
+
+Also if the product <m>AB</m> is defined, the result, <m>C</m> has the same number of rows of <m>A</m> and the same number of columns as <m>B</m>.
+
+<example>
+Find <m>C=AB</m> if
+%
+<md>
+A \amp = \begin{bmatrix}
+2 \amp -1 \amp 3 \\ 1 \amp 1 \amp 2
+\end{bmatrix}
+\amp
+B \amp = \begin{bmatrix}
+2 \amp 1 \\ 3 \amp -2 \\ 7 \amp 5
+\end{bmatrix}
+</md>
+
+\solution
+
+First, since the number of rows of <m>A</m> is 2 and the number of columns of <m>B</m> is 2, the size of <m>C</m> is 2.
+
+\begin{itemize}
+\item The 1st row and 1st column of <m>C</m> is the 1st row of <m>A</m> times the 1st column of <m>B</m>.
+\item The 1st row and 2nd column of <m>C</m> is the 1st row of <m>A</m> times the 2nd column of <m>B</m>.
+\item The 2nd row and 1st column of <m>C</m> is the 2nd row of <m>A</m> times the 1st column of <m>B</m>.
+\item The 2nd row and 2nd column of <m>C</m> is the 2nd row of <m>A</m> times the 2nd column of <m>B</m>.
+
+\end{itemize}
+
+We now explicitly show the dot products.
+
+<md>
+C \amp =
+\begin{bmatrix}
+\begin{bmatrix}
+ 2  \amp -1 \amp 3
+\end{bmatrix}
+\begin{bmatrix}
+2 \\ 3 \\ 7
+\end{bmatrix}
+\amp
+\begin{bmatrix}
+2 \amp -1 \amp 3
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ -2 \\ 5
+\end{bmatrix} \\
+\begin{bmatrix}
+1 \amp 1 \amp 2
+\end{bmatrix}
+\begin{bmatrix}
+2 \\ 3 \\ 7
+\end{bmatrix}
+\amp
+\begin{bmatrix}
+1 \amp 1 \amp 2
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ -2 \\ 5
+\end{bmatrix}
+\end{bmatrix}
+ \\
+\amp =
+\begin{bmatrix}
+2(2) + (-1)(3) + 3(7) \amp (2)(1) + (-1)(-2) + (3)(5) \\
+(1)(2) + (1)(3) +(2)(7) \amp (1)(1) + (1)(-2) + (2)(5)
+\end{bmatrix} \\
+\amp = \begin{bmatrix}
+22 \amp 19 \\ 19 \amp 9
+\end{bmatrix}
+</md>
+
+</example>
+
+</subsection><subsection><title>Size Restrictions on Matrices</title>
+
+Note that for each element in the resulting matrix, there is a vector-vector product, coming from each row of the first matrix and each column of the second matrix:
+
+\begin{Boxed*}
+The number of columns of the first matrix must equal the number of rows of the second matrix.
+\end{Boxed*}
+
+The size of the resulting matrix can also be found by the sizes of the input matrices.
+
+\begin{Boxed*}
+If the matrices <m>A</m> and <m>B</m> are multiplied then this diagram helps with a valid product as well as the size of the result.
+
+\begin{center}
+<![CDATA[
+\begin{tikzpicture}
+\draw (-2,-0.25) node[above] {<m>A</m>};
+\draw (2,-0.25) node [above] {<m>B</m>};
+
+\draw (-2,-0.75) node {<m>m \times n</m>};
+\draw (2,-0.75) node {<m>n \times p</m>};
+
+\draw[<->] (-1.6,-0.5) -- (-1.6,0) -- (1.6,0) -- (1.6,-0.5);
+\draw[<->] (-2.4,-1) -- (-2.4,-1.5) -- (2.4,-1.5) -- (2.4,-1);
+
+\draw (0,-1.5) node [below] {This is the resultant size};
+\end{tikzpicture}
+]]>]
+\end{center}
+
+That is if <m>A</m> is <m>m</m> by <m>n</m> and <m>B</m> is <m>n</m> by
+<m>p</m>, then <m>C=AB</m> has size <m>m</m> by <m>p</m>.
+
+\end{Boxed*}
+
+<example>
+Let <m>A</m> be a matrix that is 2 by 3, <m>B</m> be a matrix that is
+3 by 3 and <m>C</m> be a matrix that is 2 by 2.  Determine which of
+the following products are valid and if the product is valid, list its size.
+
+\begin{multicols}{3}
+\begin{enumerate}[label=(\alph*)]
+\item <m>AB</m> \item <m>AC</m> \item <m>BC</m>
+\end{enumerate}
+
+\end{multicols}
+\begin{multicols}{3}
+\begin{enumerate}[label=(\alph*)]\setcounter{enumi}{3}
+\item <m>BA</m> \item <m>CA</m> \item <m>CAB</m>
+\end{enumerate}
+
+\end{multicols}
+
+\solution
+
+\begin{enumerate}[label=(\alph*)]
+\item Since <m>A</m> is 2 by 3 and <m>B</m> is 3 by 3, the inner numbers are equal and thus multiplication is valid and the result is 2 by 3.
+
+\item Since <m>A</m> is 2 by 3 and <m>C</m> is 2 by 2, the inner numbers are not equal, so multiplication is not valid.
+
+\item Since <m>B</m> is 3 by 3 and <m>C</m> is 2 by 2, the inner numbers are not equal, so multiplication is not valid.
+
+\item Since <m>B</m> is 3 by 3 and <m>A</m> is 2 by 3, the inner numbers are not equal, so multiplication is not valid.
+
+\item Since <m>C</m> is 2 by 2 and <m>A</m> is 2 by 3, the inner numbers are equal so multiplication is valid and the result are the outer numbers or 2 by 3.
+
+\item In this case, from (e), the size of <m>CA</m> is 2 by 3 and <m>B</m> is 3 by 3, so the inner numbers are equal so multiplication is valid and the result is 2 by 3.
+
+\end{enumerate}
+
+
+</example>
+
+<example>
+	Let
+<md>
+	A \amp =
+\begin{bmatrix}
+	2 \amp 0 \\ 3 \amp -1 \\ -3 \amp 5
+\end{bmatrix}
+\amp B\amp =
+\begin{bmatrix}
+	3 \amp -1 \\ 2 \amp 2
+\end{bmatrix}
+</md>
+find <m>AB</m> if this is a valid operation.
+
+\solution
+
+The size of <m>A</m> is 3 by 2 and the size of <m>B</m> is 2 by 2, so the inner numbers are equal and thus this operations is valid.  The size of the result is 3 by 2.
+
+<md>
+	AB \amp =
+	\begin{bmatrix}
+\begin{bmatrix}
+ 2 \amp 0
+\end{bmatrix}
+\begin{bmatrix}
+ 3 \\ 2
+\end{bmatrix} \amp
+\begin{bmatrix}
+ 2 \amp 0
+\end{bmatrix}
+\begin{bmatrix}
+ -1 \\ 2
+\end{bmatrix} \\[8pt]
+\begin{bmatrix}
+3 \amp -1
+\end{bmatrix}
+\begin{bmatrix}
+ 3 \\ 2
+\end{bmatrix} \amp
+\begin{bmatrix}
+3 \amp -1
+\end{bmatrix}
+\begin{bmatrix}
+ -1 \\ 2
+\end{bmatrix} \\[8pt]
+\begin{bmatrix}
+-3 \amp 5
+\end{bmatrix}
+\begin{bmatrix}
+ 3 \\ 2
+\end{bmatrix} \amp
+\begin{bmatrix}
+ -3 \amp 5
+\end{bmatrix}
+\begin{bmatrix}
+ -1 \\ 2
+\end{bmatrix}
+	\end{bmatrix} \\
+	\amp =
+\begin{bmatrix}
+	(2)(3) + (0)(2) \amp (2)(-1)+(0)(2) \\
+	(3)(3) + (-1)(2) \amp (3)(-1) +(-1)(2) \\
+	(-3)(3) + (5)(2) \amp (-3)(-1) +(5)(2)
+\end{bmatrix} =
+\begin{bmatrix}
+	6 \amp -2 \\
+	7 \amp -5 \\
+	1 \amp 13
+\end{bmatrix}
+</md>
+</example>
+
+</subsection><subsection><title>Matrix-Vector Multiplication</title>
+
+Since a vector can be thought of as a matrix, the matrix-vector product (and vector-matrix products) exist if they are compatible.  If <m>A</m> is a <m>m \times n</m> matrix and <m>\vec{u}</m> is a column vector of size <m>n</m>, then the result is valid.
+
+
+<example>
+Let
+%
+<md>
+A \amp = \begin{bmatrix}
+3 \amp -2 \amp 7 \\
+0 \amp 3 \amp 5 \\
+2 \amp -1 \amp 3
+\end{bmatrix} \amp \vec{u} \amp = \begin{bmatrix}
+2 \\ 4 \\ 9
+\end{bmatrix}
+</md>
+Find <m>A\vec{u}</m>.
+
+\solution
+
+This product is found by taking the dot product of rows of <m>A</m> and <m>\vec{u}</m>.
+
+<md>
+A \vec{u} \amp = \begin{bmatrix}
+3 \amp -2 \amp 7 \\
+0 \amp 3 \amp 5 \\
+2 \amp -1 \amp 3
+\end{bmatrix}\begin{bmatrix}
+2 \\ 4 \\ 9
+\end{bmatrix}
+ \amp = \begin{bmatrix}
+3 (2) + (-2)(4) + 7 (9) \\
+0 (2) + (3)(4) + 5 (9) \\
+2 (2) + (-1)(4) + 3 (9) \\
+\end{bmatrix} = \begin{bmatrix}
+61 \\
+57 \\
+27
+\end{bmatrix}
+</md>
+</example>
+
+
+</subsection><subsection><title>Reexamination of the Dot Product</title>
+
+Recall that the dot product of two vectors <m>\vec{u}</m> and <m>\vec{v}</m> of the same length discussed in Section <xref ref="sect-length-angles" /> is the sum of the products of the individual elements.
+
+ We can see that the dot product can also be defined as
+%
+<md>
+\vec{u} \cdot \vec{v} = \vec{u}^{\intercal} \vec{v} = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n
+</md>
+or alternatively using summation notation
+%
+<md>
+\vec{u}^{\intercal} \vec{v} \amp = \sum_{i=1}^n u_i v_i
+</md>
+
+
+</subsection><subsection><title>Matrix Multiplication and Linear Systems</title>
+\label{section:matrix:multiplication:linear:systems}
+
+In this section, we will learn an alternative way to look at a linear system and in the next section, we will solve it.  Consider the following linear system.
+%
+<md>
+3 x + 2y - z \amp = 10, \\
+ x - 2y + z \amp = 11, \\
+ 2x - 2y + 4z \amp = 5.
+</md>
+
+This can be written as:
+%
+<md>
+\begin{bmatrix}
+3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
+\end{bmatrix} \begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+10 \\ 11 \\ 5
+\end{bmatrix}.
+</md>
+
+The first matrix is simply the coefficient matrix without the last column.  The column vector on the right hand side is that last column in the coefficient matrix.
+
+To show that this matrix equation is identical to the linear system above, we use matrix multiplication to get:
+<md>
+\begin{bmatrix}
+	3x +2y -z \\ x-2y+z \\ 2x-2y + 4z
+\end{bmatrix} =
+\begin{bmatrix}
+	10 \\ 11 \\ 5
+\end{bmatrix}
+</md>
+and since two vectors are equal if each of the corresponding elements are equal, this is the same as the linear system above.
+
+If we let
+<md>
+	A \amp =
+\begin{bmatrix}
+3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
+\end{bmatrix} \amp \vec{u} \amp =\begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix} \amp \vec{b} \amp = \begin{bmatrix}
+10 \\ 11 \\ 5
+\end{bmatrix}
+</md>
+then the linear system can be written as
+%
+<md>
+	A\vec{u}=\vec{b}
+</md>
+
+In the next section we will learn a way to solve a linear system in this way using an alternative method to Gauss' method.
+
+
+%</subsection><subsection><title>Problems</title>
+%
+%For problems 1--4, list the size of each matrix.  If the matrix is also a vector, determine if it is a row or column vector and list the length.
+%
+%\begin{multicols}{2}
+%
+%\begin{enumerate}
+%	\item $\displaystyle
+%\begin{bmatrix}
+%	3 \amp 2 \amp -1 \\ 11 \amp 4 \amp 0
+%\end{bmatrix}$
+%\item $\displaystyle
+%\begin{bmatrix}
+%	3 \amp -1/2 \amp 4
+%\end{bmatrix}$
+%\end{enumerate}
+%\end{multicols}
+%
+%\begin{multicols}{2}
+%\begin{enumerate}[start=3]
+%\item $\displaystyle
+%\begin{bmatrix}
+%	4 \amp 0 \amp -1 \amp 4/3 \\ 3 \amp 0 \amp 2 \amp -1 \\ 4 \amp 3 \amp 6 \amp 5/4
+%\end{bmatrix}$
+%\item $\displaystyle
+%\begin{bmatrix}
+%	3 \\ 3 \\ -6 \\ 2
+%\end{bmatrix}$
+%\end{enumerate}
+%\end{multicols}
+
+
+
+
+%For problems 5--10, evaluate the operation or say that the result does not exist.
+%
+%\begin{multicols}{2}
+%\begin{enumerate}[start=5]
+%\item $\displaystyle
+%\begin{bmatrix}
+%	-2 \amp 3 \\ 0 \amp 5
+%\end{bmatrix} +
+%\begin{bmatrix}
+%	3 \amp -4 \\ 2 \amp 7
+%\end{bmatrix}$
+%\item \;~$\displaystyle 3
+%\begin{bmatrix}
+%	4 \amp 0 \amp -1 \\
+%	2 \amp 2 \amp 5
+%\end{bmatrix}$
+%\end{enumerate}
+%\end{multicols}
+%
+%\begin{multicols}{2}
+%\begin{enumerate}[start=7]
+%
+%\item $ \displaystyle
+%\begin{bmatrix}
+%	3 \\ 4 \\ -1
+%\end{bmatrix}-
+%\begin{bmatrix}
+%	4 \\ 3/2 \\ 2/3
+%\end{bmatrix}$
+%\item $\displaystyle
+%\begin{bmatrix}
+%	2 \amp 0 \\ -1 \amp 7
+%\end{bmatrix} +
+%\begin{bmatrix}
+%	2 \\ 4
+%\end{bmatrix}$
+%\end{enumerate}
+%\end{multicols}
+%
+%\begin{multicols}{2}
+%\begin{enumerate}[start=9]
+%
+%\item $\displaystyle
+%\begin{bmatrix}
+%	11 \amp 4 \amp 5 \\
+%	3 \amp -3 \amp 1
+%\end{bmatrix} -
+%\begin{bmatrix}
+%	3 \amp 2 \\ -1 \amp -5 \\ 1/2 \amp 3
+%\end{bmatrix}$
+%
+%\item ~~ $\displaystyle 4
+%\begin{bmatrix}
+%	3 \\ -2 \\ 0
+%\end{bmatrix}$
+%\end{enumerate}
+%
+%\end{multicols}
+%
+%For problems 11 and 12, find the transpose of the given matrix.
+%
+%\begin{multicols}{2}
+%\begin{enumerate}[start=11]
+%	\item ~~$\displaystyle \begin{bmatrix}
+%	3 \amp 2 \\ -1 \amp -5 \\ 1/2 \amp 3
+%\end{bmatrix}$
+%
+%\item ~~ $\displaystyle
+%\begin{bmatrix}
+% 11 \amp -1 \amp 2 \\
+% 3 \amp 0 \amp 12 \\
+% 1 \amp 2 \amp -4
+%\end{bmatrix}$
+%
+%\end{enumerate}
+%
+%{For the products in problems 13-22, determine if they are valid or not.  If they are valid, compute the result.
+%
+%
+%
+%\begin{multicols}{2}[\raggedcolumns]
+%\begin{enumerate}[start=13]
+%\item <md>
+%\begin{bmatrix}
+%	-2 \amp 3 \amp 1
+%\end{bmatrix} \cdot
+%\begin{bmatrix}
+%4 \amp 2 \amp -2
+%\end{bmatrix}
+%</md>
+%
+%
+%\item
+%<md>
+%\begin{bmatrix}
+%	2 \amp 2 \amp 5
+%\end{bmatrix} \cdot
+%\begin{bmatrix}
+%	-2 \\ 1 \\ 3
+%\end{bmatrix}
+%</md>
+%\end{enumerate}
+%\end{multicols}}
+%
+%~
+%
+%\begin{multicols}{2}[\raggedcolumns]
+%\begin{enumerate}[start=15]
+%
+%\item
+%<md>
+%\begin{bmatrix}
+%   1/2 \amp 2 \amp 4 \amp 5
+%\end{bmatrix}\cdot \begin{bmatrix}
+%	3 \\ 4 \\ -1
+%\end{bmatrix}
+%</md>
+%
+%\item
+%<md>
+%\begin{bmatrix}
+%12 \amp -1 \amp 2 \amp 4
+%\end{bmatrix} \cdot
+%\begin{bmatrix}
+%	1/3 \\ 2 \\ 1/2 \\ -1
+%\end{bmatrix}
+%</md>
+%\end{enumerate}
+%\end{multicols}
+%
+%~
+%
+%\begin{multicols}{2}[\raggedcolumns]
+%\begin{enumerate}[start=17]
+%\item <md>
+%\begin{bmatrix}
+%	3 \amp -1 \\ 2 \amp 4
+%\end{bmatrix}
+%\begin{bmatrix}
+%	3 \amp 2 \amp 6 \\ -2 \amp 7 \amp 0
+%\end{bmatrix}
+%</md>
+%
+%\item <md>
+%\begin{bmatrix}
+%	1 \amp -3 \amp 0 \\ 2 \amp 4 \amp 7
+%\end{bmatrix}
+%\begin{bmatrix}
+%	2 \\ 5 \\ -2
+%\end{bmatrix}
+%</md>
+%
+%\end{enumerate}
+%
+%\end{multicols}
+%
+%~
+%
+%\begin{multicols}{2}
+%\begin{enumerate}[start=19]
+%\item 	<md>
+%\begin{bmatrix}
+%	2 \amp -3 \\ 4 \amp 1
+%\end{bmatrix}
+%\begin{bmatrix}
+%	5 \amp 3 \\ 2 \amp -1 \\ 7 \amp 3
+%\end{bmatrix}
+%</md>
+%
+%\item <md>
+%\begin{bmatrix}
+%	3 \\ 2 \\ 6
+%\end{bmatrix}
+%\begin{bmatrix}
+%	-2 \amp 3 \amp 0
+%\end{bmatrix}
+%</md>
+%\end{enumerate}
+%
+%\end{multicols}
+%
+%~
+%
+%\begin{multicols}{2}[\raggedcolumns]
+%\begin{enumerate}[start=21]
+%\item <md>
+%\begin{bmatrix}
+%	3 \amp 0 \amp 1 \amp -2 \\
+%	2 \amp -5 \amp 3 \amp 2
+%\end{bmatrix}
+%\begin{bmatrix}
+%	2 \amp -3 \\ 4 \amp 6 \\ 3 \amp 1 \\ 0 \amp 7
+%\end{bmatrix}
+%</md>
+%\item <md>
+%\begin{bmatrix}
+%	2 \amp 0 \\
+%	0 \amp 2
+%\end{bmatrix}
+%\begin{bmatrix}
+%	0 \amp 3 \\
+%	1 \amp 1
+%\end{bmatrix}
+%</md>
+%\end{enumerate}
+%
+%\end{multicols}
+%
+%\vfill
+%
+%\pagebreak
+%
+%\begin{enumerate}[start=23]
+%\item If <m>A</m> is a 4 by 3 matrix, <m>B</m> is a 3 by 4 matrix and <m>C</m> is a 3 by 3 matrix, for each of the following operations, determine if each is valid.  If it is valid, write the size of the resulting matrix.
+%
+%\begin{multicols}{3}
+%\begin{enumerate}
+%\item <m>AB</m>, \item <m>AC</m>, \item <m>AD</m>
+%\end{enumerate}
+%\end{multicols}
+%\begin{multicols}{3}
+%\begin{enumerate}[start=4]
+%\item <m>BA</m>, \item <m>CB</m>, \item <m>CBA</m>
+%\end{enumerate}
+%\end{multicols}
+%
+%
+%(Hint for part (f):  First multiply <m>CB</m> and the multiply that result times <m>A</m>.)
+%
+%	\item Write matrices <m>A</m>, <m>X</m> and <m>B</m> such that the following linear system can be written in the form <m>AX=B</m>.
+%
+%<md>
+%\begin{cases}
+%\begin{split}
+%	x + 3y -2w \amp = 11, \\
+%	2y + 5w \amp = 4, \\
+%	3x + 2y - z \amp = 6, \\
+%	y - w \amp = 10.
+%	\end{split}
+%	\end{cases}
+%</md>
+%
+%\end{enumerate}
+
+
+</section>

@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-projection-maps">
+	<title>Projection Maps</title>
+	<introduction>
+		<p>
+			There is a class of linear transformations that are very important and have a nice geometric
+			interpretation called projection maps.
+			Let's look at an example in the <m>xy</m>-plane.
+			Consider the point <m>(1,4)</m> as shown below.
+		</p>
+
+		<figure>
+			<caption> Projecting a point onto the <m>x</m>-axis.
+			</caption>
+
+			<image width="50%" xml:id="plot-min-dist">
+				<latex-image>
+				<![CDATA[
+				\begin{tikzpicture}
+				\draw[->] (-2,0) -- (5,0) node [above right] {$ x $};
+				\foreach \x in {-1,1,2,3,4} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+				\draw[->] (0,-2) -- (0,5) node [above right] {$ y $};
+				\foreach \y in {-1,1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+				\fill (1,4) circle (1.5pt);
+				\draw[->,thick] (0,0) -- (1,4) node [midway, right] {$\vec{u}$};
+				\fill (1,0) circle (1.5pt);
+				\draw[->,thick] (0,0) -- (1,0);
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			If the point (or the vector) is projected onto the <m>x</m>-axis, then the result is the
+			point <m>(1,0)</m> found by taking the <m>x</m>-component of the point.
+			In term of the vector,
+			this is <m>[1\;\;0]^T</m>.
+		</p>
+
+		<p>
+			We now look at projecting a vector <m>\vec{u}</m> onto a line (or a vector <m>\vec{v}</m>).
+			We will derive this in the <m>xy</m>-plane, however the result will work for any vector space.
+		</p>
+
+		<figure>
+			<caption>
+			Projecting a vector onto another vector.
+			</caption>
+
+			<image width="50%" xml:id="plot-min-dist2">
+				<latex-image>
+				<![CDATA[
+				\begin{tikzpicture}
+				\draw[->] (-2,0) -- (5,0) node [above right] {$ x $};
+				\draw[->] (0,-2) -- (0,5) node [above right] {$ y $};
+				\draw[->,thick] (0,0) -- (1,4) node [midway, right] {$ \vec{u} $};
+				\draw[->,thick] (0,0) -- (4,2) node [right] {$ \vec{v} $};
+				\draw[->,very thick] (0,0) -- ({52/20},{26/20}) node [below right] {$ \text{Proj}_{\vec{v}} \vec{u} $};
+				\draw[dashed] ({52/20},{26/20}) -- (1,4);
+				\draw[->,very thick] (0,0) -- ({1-52/20},{4-26/20}) node [above right] {$ \vec{u}_{\perp} $};
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			Let <m>\vec{u}</m> and <m>\vec{v}</m> be two vectors in <m>\mathbb{R}^2</m> as shown above.
+			We seek the projection of <m>\vec{u}</m> onto <m>\vec{v}</m> and denote this as <m>\text{Proj}_{\vec{v}}
+			\vec{u}</m>.
+			The projection is a vector that is in the same direction as <m>\vec{v}</m>.
+			The
+			length will be explained below.
+		</p>
+
+		<p>
+			Any vector <m>\vec{u}</m> can be split into two parts, <m>\vec{u}_{||}</m> a vector in a
+			direction parallel to <m>\vec{v}</m> and a vector <m>\vec{u}_{\perp}</m> which satisfies <m>\langle
+			\vec{u}_{\perp} , \vec{v} \rangle = 0</m>.
+		</p>
+
+		<p>
+			<men xml:id="eq-proj-derive">
+				\vec{u} = \vec{u}_{||} + \vec{v}_{\perp}
+			</men>
+		</p>
+
+		<p>
+			where <m>\vec{u}_{||} = \alpha \vec{v}</m>.
+		</p>
+
+		<p>
+			Take the inner product of both sides of (<xref ref="eq-proj-derive" />) with the vector <m>
+			\vec{v}</m>
+		</p>
+
+		<p>
+			<md>
+				<mrow>\langle \vec{u}, \vec{v} \rangle \amp = \langle \vec{u}_{||} + \vec{u}_{\perp},
+				\vec{v} \rangle </mrow>
+				<mrow>\amp = \langle \alpha \vec{v}, \vec{v} \rangle + \langle \vec{u}_{\perp}, \vec{v}
+				\rangle </mrow>
+				<mrow>\amp = \alpha \langle \vec{v},\vec{v} \rangle + 0</mrow>
+			</md>
+		</p>
+
+		<p>
+			and solving for <m>\alpha</m>,
+		</p>
+
+		<p>
+			<me>
+				\alpha = \frac{ \langle \vec{u}, \vec{v} \rangle}{\langle \vec{v}, \vec{v} \rangle}
+			</me>
+		</p>
+
+		<p>
+			Therefore the projection vector
+		</p>
+
+		<p>
+			<men xml:id="eq-proj-vector">
+				\text{Proj}_{\vec{v}} \vec{u} = \frac{ \langle \vec{u}, \vec{v} \rangle}{\langle \vec{v},
+				\vec{v} \rangle} \vec{v}
+			</men>
+		</p>
+
+		<p>
+			and if needed the vector <m>\vec{u}_{\perp}</m> is
+		</p>
+
+		<p>
+			<me>
+				\vec{u}_{\perp} = \vec{u} - \text{Proj}_{\vec{v}} \vec{u} = \vec{u} - \frac{ \langle
+				\vec{u}, \vec{v} \rangle}{\langle \vec{v}, \vec{v} \rangle} \vec{v}
+			</me>
+		</p>
+
+		<p>
+			Although we derived this projection in <m>\mathbb{R}^2</m>, there is nothing about the
+			projection formula to indicate it's confined to <m>\mathbb{R}^2</m>.
+			In fact, as we will see,
+			the projection mapping is a linear transformation and applies to vectors in an inner product
+			space.
+		</p>
+
+		<remark>
+			<p>
+				The projection of any vector <m>\vec{u} \in \mathbb{R}^n</m> onto a vector <m>\vec{v} \in
+				\mathbb{R}^n</m> is given by
+				<me>
+					\text{Proj}_{\vec{v}} \vec{u} = \frac{\langle \vec{u},\vec{v} \rangle}{\langle \vec{v},
+					\vec{v} \rangle} \vec{v}
+				</me>
+				and the vector perpendicular to <m>\text{Proj}_{\vec{v}}\vec{u}</m> that satisfies <m>\vec{u}
+				= \text{Proj}_{\vec{v}}\vec{u} + \vec{u}_{\perp}</m> is given by
+				<me>
+					\vec{u}_{\perp} = \vec{u} - \text{Proj}_{\vec{v}} \vec{u} = \vec{u} - \frac{ \langle
+					\vec{u}, \vec{v} \rangle}{\langle \vec{v}, \vec{v} \rangle} \vec{v}
+				</me>
+			</p>
+		</remark>
+
+		<p>
+			The example below finds the projection of vectors in <m>\mathbb{R}^3</m>.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find the projection of <m>\vec{u} = [1\;\;2\;\;3]^T</m> onto the vector <m>\vec{v}=[-2\;\;
+					0\;\; 4]</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Since
+					<md>
+						<mrow>\langle \vec{u}, \vec{v} \rangle \amp = -2+0+12=10 \amp \langle \vec{v},\vec{v}
+						\rangle \amp = (-2)^2 + 0^2 + 4^2 =20.</mrow>
+					</md>
+					<me>
+						\text{Proj}_{\vec{v}} \vec{u} = \frac{10}{20} \vec{v} = \frac{1}{2} \begin{bmatrix}
+						-2 \\ 0 \\ 4
+						\end{bmatrix} = \begin{bmatrix}
+						-1 \\ 0 \\ 2
+						\end{bmatrix}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<theorem xml:id="thm-proj-map">
+			<statement>
+				<p>
+					Given a nonzero vector <m>\vec{v}</m> and a vector <m>\vec{u}</m> both in <m>
+					\mathbb{R}^n</m>, the projection map in (<xref ref="eq-proj-vector" />) is a linear
+					transformation.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					We need to prove the two properties of linear transformations in <xref
+					ref="def-linear-trans" />.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\text{Proj}_{\vec{v}}(\vec{u} + \vec{w}) \amp = \frac{\langle (\vec{u}+\vec{w}),
+						\vec{v} \rangle}{\langle \vec{v},\vec{v} \rangle} </mrow>
+						<mrow>\amp = \frac{\langle \vec{u},\vec{v} \rangle + \langle \vec{w},\vec{v}
+						\rangle}{\langle \vec{v},\vec{v} \rangle } </mrow>
+						<mrow>\amp = \frac{\langle \vec{u},\vec{v} \rangle}{\langle \vec{v},\vec{v} \rangle } +
+						\frac{\langle \vec{w},\vec{v} \rangle}{\langle \vec{v},\vec{v} \rangle } </mrow>
+						<mrow>\amp = \text{Proj}_{\vec{v}} \vec{u} + \text{Proj}_{\vec{v}} \vec{w}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and
+				</p>
+
+				<p>
+					<md>
+						<mrow>\text{Proj}_{\vec{v}} (\alpha \vec{u}) \amp = \frac{\langle (\alpha \vec{u}),
+						\vec{v} \rangle}{\langle \vec{v},\vec{v} \rangle} </mrow>
+						<mrow>\amp = \alpha \frac{\langle \vec{u}, \vec{v} \rangle}{\langle \vec{v},\vec{v}
+						\rangle} = \alpha \text{Proj}_{\vec{v}} \vec{u}</mrow>
+					</md>
+				</p>
+			</proof>
+		</theorem>
+
+		<p>
+			The example shown so far for projections have been onto a vector (which can
+			be thought of as the line through the origin with that direction), but in
+			general, one can project onto any linear space (more technically, any inner
+			product space).
+			Before showing the general projection, let's consider the
+			projection of a vector onto a plane.
+			The following example shows this.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find the projection of vector <m>[6,-2,3]^T</m> onto plane given by <m>x+2y+3z=0</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, let's find two vectors in the plane, called <m>P</m>, that form an orthogonal basis (we will see why it's helpful to have an orthogonal basis later).
+					Recall that a normal vector to the plane is given by the vector <m>[1,2,3]^T</m>.
+					Two vector that are normal to it is <m>\vec{u}_1=[3,0,-1]</m> and <m>\vec{u}_2=[0,-3,2]^T</m>.
+					(Note: these are two points in the plane).
+					To form an orthonormal basis, we need to perform Gramm-Schmidt.
+					<md>
+						<mrow>\vec{v}_1 \amp = \vec{u}_1
+						\amp \vec{v}_2 \amp= \vec{u}_2 - \frac{\langle \vec{v}_1,\vec{u}_2 \rangle}{\langle \vec{v}_1, \vec{v}_1 \rangle} \vec{v}_1  \\
+						\amp = \begin{bmatrix}
+						3 \\ 0 \\ -1
+						\end{bmatrix}\amp
+						\vec{v}_2 \amp = \begin{bmatrix}
+						0 \\ -3 \\ 2
+						\end{bmatrix} - \biggl(-\frac{1}{5}\biggr)
+						\begin{bmatrix}
+						3 \\ 0 \\ -1
+						\end{bmatrix} </mrow>
+						<mrow>\amp\amp\amp  =
+						\begin{bmatrix}
+						3/5 \\ -3 \\ 9/5
+						\end{bmatrix}</mrow>
+					</md>
+					and to make the second vector nicer, we'll multiply by <m>5/3</m>.
+					An orthogonal set in the plane is
+					<me>
+						\left\{ \begin{bmatrix}
+						3 \\ 0 \\ -1
+						\end{bmatrix} , \begin{bmatrix}
+						1 \\ -5 \\ 3
+						\end{bmatrix} \right \}
+					</me>
+					To consider how to project the vector <m>\vec{u} = [6,-2,3]^{\intercal}</m> into the plane we will write
+					<me>
+						\vec{u} = \vec{u}_{\perp} + \vec{u}_{||}
+					</me>
+					where <m>\vec{u}_{\perp}</m> is orthogonal to both <m>\vec{v}_1</m> and <m>\vec{v}_2</m> and we can write
+					<me>
+						\text{Proj}_{P}\vec{u} = \vec{u}_{||} = c_1 \vec{v}_1 + c_2 \vec{v}_2
+					</me>
+					So we next take the inner product of <m>\vec{u}</m> with both <m>\vec{v}_1</m> and <m>\vec{v}_2</m>.
+					<md>
+						<mrow>\langle \vec{u}, \vec{v}_1 \rangle \amp = \langle \vec{u}_{\perp} + \vec{u}_{||}, \vec{v}_1 \rangle \amp
+						\langle \vec{u}, \vec{v}_2 \rangle \amp = \langle \vec{u}_{\perp} + \vec{u}_{||}, \vec{v}_2 \rangle </mrow>
+						<mrow>\amp = \langle \vec{u}_{\perp}, \vec{v}_1 \rangle + \langle \vec{u}_{||}, \vec{v}_1 \rangle \amp
+						\amp = \langle \vec{u}_{\perp}, \vec{v}_2 \rangle + \langle \vec{u}_{||}, \vec{v}_2 \rangle </mrow>
+						<mrow>\amp = 0 + \langle c_1 \vec{v}_1 + c_2 \vec{v}_2 ,\vec{v}_1 \rangle \amp
+						\amp = 0 + \langle c_1 \vec{v}_1 + c_2 \vec{v}_2 ,\vec{v}_2 \rangle </mrow>
+						<mrow>\amp = c_1 \langle \vec{v}_1, \vec{v}_1 \rangle + c_2 \langle \vec{v}_2, \vec{v}_1 \rangle \amp
+						\amp = c_1 \langle \vec{v}_1, \vec{v}_2 \rangle + c_2 \langle \vec{v}_2, \vec{v}_2 \rangle </mrow>
+						<mrow>\amp = c_1 \langle \vec{v}_1, \vec{v}_1 \rangle + 0 \amp
+						\amp = 0 + c_2 \langle \vec{v}_2, \vec{v}_1 \rangle</mrow>
+					</md>
+					Therefore
+					<md>
+						<mrow>c_1 \amp = \frac{\langle \vec{u},\vec{v}_1 \rangle}{\langle \vec{v}_1, \vec{v}_1 \rangle} \amp
+						c_2 \amp = \frac{\langle \vec{u},\vec{v}_2 \rangle}{\langle \vec{v}_2, \vec{v}_2 \rangle} </mrow>
+					</md>
+					So in the case of projecting a vector onto a plane, <m>P</m>,
+					<md>
+						<mrow>\text{Proj}_{P} \vec{u} \amp = c_1 \vec{v}_1 + c_2 \vec{v}_2 </mrow>
+						<mrow>\amp = \frac{\langle \vec{u},\vec{v}_1 \rangle}{\langle \vec{v}_1, \vec{v}_1 \rangle} \vec{v}_1 +
+						\frac{\langle \vec{u},\vec{v}_2 \rangle}{\langle \vec{v}_2, \vec{v}_2 \rangle} \vec{v}_2 </mrow>
+						<mrow>\amp = \frac{15}{10} \begin{bmatrix}
+						3 \\ 0 \\ -1
+						\end{bmatrix} + \frac{25}{35} \begin{bmatrix}
+						1 \\ -5 \\ 3
+						\end{bmatrix} = \frac{1}{14}\begin{bmatrix}
+						73 \\ -50 \\ 9
+						\end{bmatrix}</mrow>
+					</md>
+					So the vector <m>\frac{1}{14} [73,-50,9]^{\intercal}</m> is the projection of the vector
+					<m>[6,-2,3]^{\intercal}</m> onto the plane <m>x+2y+3z=0</m>.
+				</p>
+			</solution>
+		</example>
+	</introduction>
+
+	<subsection>
+		<title>Using Projections to solve Least-Squares Problems</title>
+		<p>
+			A useful problem is to find the minimum distance between a point and line.
+			For example consider the point <m>(1,4)</m> and the line <m>L:  y= \frac{1}{2} x</m>
+			as shown in the figure below.
+		</p>
+
+		<figure>
+			<caption>Line and a point</caption>
+			<image width="50%" xml:id="plot-point-and-line">
+				<latex-image>
+				<![CDATA[
+				\begin{tikzpicture}
+				\draw[->] (-2,0) -- (5,0) node [above right] {$ x $};
+				\foreach \x in {-1,1,2,3,4} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+				\draw[->] (0,-2) -- (0,5) node [above right] {$ y $};
+				\foreach \y in {-1,1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+				\fill (1,4) circle (1.5pt);
+				\draw[<->,thick] (-2,-1) -- (4,2) node [right] {$ L $};
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			If we want to minimize the distance from the point <m>P</m> to the
+			line <m>L</m>, we often minimize the square<fn>Recall that the
+			point that minimizes a function is the same point that to minimizes
+			the square of the function.
+			The reason for doing this it it gets rid
+			of the square root and makes calculations easier to do.</fn>  of the
+			distance from the point to the line or
+			<me>
+				g(x)  = (x-1)^2 + \biggl(\frac{1}{2} x - 4\biggr)^2
+			</me>
+			<!-- g' = 2(x-1) + 2(1/2 x - 4) = 2x-2+x-8 = 3x-11 -->
+			and using techniques from calculus, this function is minimized when
+			<m>x=12/5</m>.
+			Looking at the plot, the <m>y</m>-value is <m>12/5</m>
+			and the vector from <m>(12/5,6/5)</m> to <m>(1,4)</m> is perpendicular to
+			the vector in the direction of <m>L</m> as shown below:
+		</p>
+
+		<figure>
+			<caption>
+			Find a point on a line that minimizes distance
+			</caption>
+
+			<image width="50%" xml:id="plot-point-line2">
+				<latex-image>
+				<![CDATA[
+				\begin{tikzpicture}
+				\draw[->] (-2,0) -- (5,0) node [above right] {$ x $};
+				\foreach \x in {-1,1,2,3,4} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+				\draw[->] (0,-2) -- (0,5) node [above right] {$ y $};
+				\foreach \y in {-1,1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+				\fill (1,4) circle (1.5pt);
+				\draw[<->,thick] (-2,-1) -- (4,2) node [right] {$ L $};
+				\draw[->,thick] ({12/5},{6/5}) -- (1,4);
+				\fill[red] (2.4,1.2) circle (2pt);
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			In light of projections, we can reframe this problem.
+			We are seeking
+			the point on <m>L</m> closest to <m>P</m>.
+			This can be found by projecting
+			the vector <m>\overrightarrow{OP}</m> to the line <m>L</m> or
+			<me>
+				\text{proj}_{\vec{v}} \overrightarrow{OP} = \frac{\langle \vec{v}, \overrightarrow{OP} \rangle} {\langle \vec{v},\vec{v}\rangle} \vec{v}
+			</me>
+			and in this case, with <m>\vec{v} = [2\;\;1]^{\intercal}</m> and <m>\overrightarrow{OP}=[1\;\;4]^{\intercal}</m>,
+			<me>
+				\text{proj}_{\vec{v}} \overrightarrow{OP} = \frac{\langle \vec{v}, \overrightarrow{OP} \rangle} {\langle \vec{v},\vec{v}\rangle} = \frac{6}{5} \begin{bmatrix}
+				2 \\ 1
+				\end{bmatrix}= \begin{bmatrix}
+				12/5 \\ 6/5
+				\end{bmatrix}
+			</me>
+			which is the same result as from Calculus.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Projecting onto a Vector Space</title>
+		<p>
+			We again generalize from projecting onto a single vector or set of vectors
+			to a general vector space, <m>V</m>.
+			First, to make things easier, we will
+			use an orthogonal basis for <m>V</m>, call it, <m>( \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n )</m>.
+		</p>
+
+		<p>
+			Recall that a projection onto a vector is found by writing the original
+			vector, <m>\vec{u}=\vec{u}_{||} + \vec{u}_{\perp}</m>, where <m>\vec{u}_{||}</m>
+			is in <m>V</m> or
+			<men xml:id="eq-projection-vector-space">
+				\vec{u} = \vec{u}_{\perp} + \sum_{i=1}^n c_i \vec{v}_i
+			</men>
+			Finding the projection is analogous to finding the constants <m>c_i</m>.
+			Take the inner product of (<xref ref="eq-projection-vector-space" />) with
+			<m>v_k</m>, the <m>k</m>th basis vector of <m>V</m> or
+			<md>
+				<mrow>\langle \vec{u}, \vec{v}_k \rangle \amp= \biggl\langle \vec{u}_{\perp} + \sum_{i=1}^n c_i \vec{v}_i , \vec{v}_k \biggr\rangle </mrow>
+				<mrow>\amp\amp\text{using properties of inner products}</mrow>
+				<mrow>\amp = \langle \vec{u}_{\perp}, \vec{v}_k \rangle + \sum_{i=1}^n c_i \langle \vec{v}_i, \vec{v}_k \rangle</mrow>
+			</md>
+			since <m>\vec{u}_{\perp}</m> is chosen to be orthogonal to the vector space and since the basis of <m>V</m> is orthogonal,
+			<me>
+				\langle \vec{u}, \vec{v} \rangle = c_k \langle v_k, v_k \rangle
+			</me>
+			Therefore
+			<me>
+				c_k = \frac{\langle \vec{u}, \vec{v}_k \rangle}{\langle \vec{v}_k, \vec{v}_k \rangle}
+			</me>
+			and thus we can make the following statement about projecting any element onto a subspace:
+		</p>
+
+		<remark>
+			<p>
+				Let <m>\vec{u}</m> be an element in a vector space <m>S</m> and
+				<m>( \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n )</m> be an orthogonal basis of
+				a subspace <m>V</m>.
+				The projection of <m>\vec{u}</m> onto <m>V</m> can be written:
+				<me>
+					\text{Proj}_V (\vec{u}) = \sum_{i=1}^n c_k v_k
+				</me>
+				where
+				<me>
+					c_k = \frac{\langle \vec{u}, \vec{v}_k \rangle}{\langle \vec{v}_k, \vec{v}_k \rangle}
+				</me>
+				Note: if the basis of <m>V</m> is also orthonormal, then <m>c_k = \langle \vec{u}, \vec{v}_k \rangle</m>.
+			</p>
+		</remark>
+
+		<example>
+			<statement>
+				<p>
+					Find the projection of <m>\sin \pi x</m>, an element of <m>{\cal C}^{(0)}</m> onto <m>{\cal P}_5[-1,1]</m>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, we need a orthogonal basis of the subspace and we found this above in <xref ref="example-gram-schmidt-p3" />.
+					These are the first four Legendre polynomials (scaled to eliminate fractions) or
+				</p>
+
+				<p>
+					<men xml:id="eq-legendre-poly">
+						(1,x,3x^2-1,5x^3-3x)
+					</men>
+				</p>
+
+				<p>
+					Next, find all of the values of <m>c_k</m> for <m>k=0,1,2,3</m>
+				</p>
+
+				<p>
+					<md>
+						<mrow>c_0 \amp = \frac{\langle \sin \pi x, 1 \rangle }{\langle 1, 1 \rangle} = \frac{\int_{-1}^1 \sin \pi x \, dx}{\int_{-1}^1 1^2 \, dx} = 0 </mrow>
+						<mrow>c_1 \amp = \frac{\langle \sin \pi x, x \rangle }{\langle x, x \rangle} = \frac{\int_{-1}^1 x \sin \pi x \, dx}{\int_{-1}^1 x^2 \, dx} = \frac{2/\pi}{2/3} =\frac{3}{\pi} </mrow>
+					</md>
+				</p>
+
+				<p>
+					Similarly, it can be shown that
+				</p>
+
+				<p>
+					<md>
+						<mrow>c_2 \amp = 0  </mrow>
+						<mrow>c_3 \amp = \frac{7(\pi^2-15)}{\pi^3}</mrow>
+					</md>
+				</p>
+
+				<p>
+					The projection then is the sum
+				</p>
+
+				<p>
+					<me>
+						c_0 p_0 + c_1 p_1 + c_2 p_2 + c_3 p_3
+					</me>
+				</p>
+
+				<p>
+					where <m>P_k</m> is the <m>k</m>th Legendre polynomial as in (<xref ref="eq-legendre-poly" />).
+					A plot of this is
+				</p>
+
+				<figure xml:id="fig-plot-sine">
+					<caption>
+					Find a projection of <m>\sin x</m> onto <m>{\cal P}_3</m>
+					</caption>
+
+					<image width="50%" xml:id="plot-sine">
+						<latex-image>
+						<![CDATA[
+						\begin{tikzpicture}[xscale=4,yscale=2]
+						\draw[->] (-1.1,0) -- (1.1,0) node [above right] {$x$};
+						\foreach \x in {-1,-0.5,...,1} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+						\draw[->] (0,-1.5) -- (0,1.5) node [above right] {$y$};
+						\foreach \y in {-1,-0.5,...,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+						\draw plot[domain=-1:1,smooth] (\x,{3*\x/pi + 7*(pow(pi,2)-15)/(2*pow(pi,3))*(5*\x^3-3*\x)});
+						\end{tikzpicture}
+						]]>
+						</latex-image>
+					</image>
+				</figure>
+
+				<p>
+					which looks quite sine-like. Notice that if we plot the absolute difference between the
+          function and the projection that we get
+					<me>
+						|\sin \pi x -\sum_{i=0}^3 c_k P_k(x)|
+					</me>
+				</p>
+
+				<figure xml:id="fig-plot-sine-ex3">
+					<caption>
+					Difference between <m>\sin x</m> and its projection.
+					</caption>
+
+					<image width="50%" xml:id="plot-sine-ex3">
+						<latex-image>
+						<![CDATA[
+						\begin{tikzpicture}[xscale=4,yscale=15]
+						\draw[->] (-1.1,0) -- (1.1,0) node [above right] {$x$};
+						\foreach \x in {-1,-0.5,...,1} \draw (\x,0.005) -- (\x,-0.005) node [below] {\x};
+						\draw[->] (0,-0.001) -- (0,0.12) node [above right] {$y$};
+						\foreach \y in {0.025,0.05,0.075,0.1} \draw (0.025,\y) -- (-0.025,\y) node [left] {\y};
+						\draw plot[domain=-1:1,samples=400] (\x,{abs(sin(pi*\x r)- (3*\x/pi + 7*(pow(pi,2)-15)/(2*pow(pi,3))*(5*\x^3-3*\x))   )});
+						\end{tikzpicture}
+						]]>
+						</latex-image>
+					</image>
+				</figure>
+
+				<p>
+					This plot shows that except for near the ends of the interval, the projection (or
+					an approximation is within 1 decimal places.)
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			This last example shows the power of projections.
+			If we are using
+			functions as elements of vector spaces, then a projection of a function
+			onto a vector space (using the span of a vector space), is the closest
+			function in the vector space to the original function.
+			In
+			<xref ref="ch-fourier-series" />, we will do this with trigonometric
+			function and is called Fourier Series.
+		</p>
+		<!--
+		%In general this applies to any inner product space.
+		We can take any point (thought of as a point vector) in the space and project it onto a subspace.
+		The resulting vector (thought of also as a point) is the point in the subspace closest to the original point.
+		The term closest requires a distance, which is the norm as explained in the following theorem.
+		%
+		%
+		<theorem>
+			%Consider <m>S</m> a subspace of <m>\mathbb{R}^n</m>.
+			If <m>\vec{s} \in S</m>, then, for any <m>\vec{x} \in \mathbb{R}^2</m> then the <m>\vec{s}</m> that satisfies
+			%%
+			%
+			<md>
+				%\min_{\vec{s} \in S} ||\vec{x}-\vec{s}||
+				%
+			</md>
+			%is given by
+			%%
+			%
+			<md>
+				%\vec{s} = \text{proj}_S \vec{x}
+				%
+			</md>
+			%
+		</theorem>
+		%
+		%
+		<proof>
+			%Let <m>E</m> be the square of the norm that represents the distance between the point <m>\vec{x}</m> and any <m>\vec{s} \in S</m>.
+			%
+			%
+			<md>
+				%E(\vec{s}) \amp = || \vec{s} - \vec{x}|| = \langle \vec{s}-\vec{x},\vec{s} - \vec{x} \rangle \\
+				%\amp = \langle \vec{s},\vec{s} \rangle - 2 \langle \vec{x},\vec{s}\rangle + \langle \vec{x}, \vec{x} \rangle
+				%
+			</md>
+			%If we differentiate <m>E</m> with respect to <m>\vec{s}</m>, then the result is:
+			%%
+			%
+			<md>
+				%\frac{\partial E}{\partial \vec{s}} \amp  = 2 \vec{s} -
+				%
+			</md>
+			%
+			%{\color{red} ARRGGGG!!  Maybe write as a projection matrix first.
+			}
+			%
+		</proof>
+		%
+		%
+		<subsection>
+			<title>Projection Matrices</title>
+			%
+			%Since from Theorem <xref ref="thm-proj-map" />, that the projection map is a linear transformation and from Theorem <xref ref="thm-linear-trans-matrix" /> that a linear transformation, we examine the projection map as a matrix.
+			Let's first consider the projection of
+			%
+			%{\color{red} Not sure what I want to do here.}
+			%
+			%
+			<example>
+				% The transformation matrices for the previous theorems are:
+				%
+				%
+				<ol>
+					%
+					%\item
+					% %
+					%
+					<md>
+						%\begin{bmatrix}
+						% 1 \amp 0 \\ 0 \amp -1
+						%\end{bmatrix}
+						%
+					</md>
+					%
+					%\item
+					%
+					<md>
+						%\begin{bmatrix}
+						% \cos \theta \amp -\sin \theta \\ \sin \theta \amp \cos \theta
+						%\end{bmatrix}
+						%
+					</md>
+					%
+					%\item To show that the projection operation above can be written as a matrix, let <m>\vec{v} = [v_1,v_2,v_3]^T</m> and write:
+					%%
+					%
+					<md>
+						% P \vec{v} \amp = A_T \vec{v}  =
+						%\begin{bmatrix}
+						% a_{11} \amp a_{12} \amp a_{13} \\
+						% a_{21} \amp a_{22} \amp a_{23} \\
+						% a_{31} \amp a_{32} \amp a_{33} \\
+						%\end{bmatrix}
+						%\begin{bmatrix}
+						% v_1 \\ v_2 \\v_3
+						%\end{bmatrix}  =
+						%\begin{bmatrix}
+						% a_{11} v_1 + a_{12} v_2 + a_{13} v_3 \\
+						% a_{21} v_1 + a_{22} v_2 + a_{23} v_3 \\
+						% a_{31} v_1 + a_{32} v_2 + a_{33} v_3 \\
+						%\end{bmatrix}
+						%\\
+						%\amp  =
+						%\begin{bmatrix}
+						% v_1 \\ v_2 \\v_3
+						%\end{bmatrix}^T
+						%\frac{1}{\sqrt{10}}
+						%\begin{bmatrix}
+						% 3 \\ 0 \\ -1
+						%\end{bmatrix}\frac{1}{\sqrt{10}}
+						%\begin{bmatrix}
+						% 3 \\ 0 \\ -1
+						%\end{bmatrix} +
+						%\begin{bmatrix}
+						% v_1 \\ v_2 \\v_3
+						%\end{bmatrix}^T \frac{1}{\sqrt{35}}
+						%\begin{bmatrix}
+						% 1 \\ -5 \\ 3
+						%\end{bmatrix} \frac{1}{\sqrt{35}}
+						%\begin{bmatrix}
+						% 1 \\ -5 \\ 3
+						%\end{bmatrix} \\
+						%\amp = \frac{1}{10} (3 v_1 -v_3)
+						%\begin{bmatrix}
+						% 3 \\ 0 \\ -1
+						%\end{bmatrix} + \frac{1}{35} (v_1 - 5v_2 + 3v_3)
+						%\begin{bmatrix}
+						% 1 \\ -5 \\ 3
+						%\end{bmatrix} \\
+						%\amp =
+						%\begin{bmatrix}
+						% (9/10 + 1/35)  v_1 - 1/7 v_2 + (3/35-3/10) v_3 \\
+						% -1/7 v_1 + 5/7 v_2 -3/7 v_3 \\
+						% (3/10+3/35) v_1 -3/7 v_2 + (1/10 +9/35)v_3
+						%\end{bmatrix}  \\ \amp =
+						%\begin{bmatrix}
+						%13/14 \amp -1/7 \amp -3/14 \\
+						% -1/7 \amp 5/7 \amp -3/7 \\
+						%-3/14 \amp -3/7 \amp 5/14
+						%\end{bmatrix}
+						%\begin{bmatrix}
+						% v_1 \\ v_2 \\ v_3
+						%\end{bmatrix}
+						%
+					</md>
+					%
+				</ol>
+				%
+			</example>
+			-->
+		</subsection>
+	</section>

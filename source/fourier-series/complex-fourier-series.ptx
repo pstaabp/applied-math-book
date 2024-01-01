@@ -1,0 +1,74 @@
+<section><title>The Fourier Series using the complex exponential</title>
+
+  Recall that the Fourier Series of <m>f(x)</m> on <m>[-\pi,\pi]</m> is
+
+  <md>
+  f(x) \amp = a_0 + \sum_{n=1}^{\infty} (a_n \cos n x + b_n \sin n x)
+  </md>
+  where
+
+  <md>
+  a_0 \amp = \frac{\langle f,1 \rangle}{\langle 1,1 \rangle} = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) \,dx \\
+  a_n \amp = \frac{\langle f, \cos nx \rangle}{\langle \cos nx, \cos nx \rangle} = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \,dx \\
+  b_n \amp =\frac{\langle f,\sin nx \rangle}{\langle \sin nx, \sin nx \rangle} =  \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin n x \,dx \\
+  </md>
+  and if <m>f(x)</m> is a real-valued function then <m>a_0, a_n</m> and <m>b_n</m> are real values.
+
+  If we use the identities:
+
+  <md>
+  \cos nx \amp = \frac{1}{2} ( e^{inx} + e^{-inx}) \\
+  \sin nx \amp = \frac{1}{2i} (e^{inx} - e^{-inx})
+  </md>
+  then the Fourier Series can be written:
+
+  <md>
+  f(x) \amp = a_0 + \sum_{n=1}^{\infty} (\frac{a_n}{2} ( e^{inx} + e^{-inx}) + \frac{b_n}{2i} (e^{inx} - e^{-inx}) \\
+  \amp = a_0 + \frac{1}{2} \sum_{n=1}^{\infty} (a_n-ib_n) e^{inx}  + (a_n + ib_n) e^{-inx}
+  </md>
+  if we let <m>c_0=a_0</m> and <m>c_n = (a_n-ib_n)/2</m> for <m>n>0</m> and <m>c_n=(a_{-n} + ib_{-n})</m> for <m>n<0</m> then we can write the sum as
+
+  <md>
+  f(x) \amp = c_0 + \sum_{n=1}^{\infty} c_n e^{inx} + c_{-n} e^{-inx} \\
+  \amp = \sum_{n=-\infty}^{\infty} c_n e^{inx}
+  </md>
+  where
+
+  <md>
+  c_0 \amp = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) \, dx \\
+  c_n \amp = \frac{a_n-ib_n}{2} = \frac{1}{2}\cdot \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) (\cos nx -i \sin nx) \, dx \\
+  \amp = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-inx} \, dx \\
+  c_{-n} \amp = \frac{a_n+ib_n}{2} = \frac{1}{2}\cdot \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) (\cos nx +i \sin nx) \, dx \\
+  \amp = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{inx} \, dx \\
+  </md>
+  and since <m>c_{-n}</m> is consistent with <m>c_n</m>, we use <m>c_n</m> for all <m>n \neq 0</m> and actually since that is also consistent, then
+
+  <md>
+  c_n \amp = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-inx} \, dx \\
+  </md>
+
+  If we take the interval from <m>[-L,L]</m> instead of from <m>[-\pi,\pi]</m> we get
+
+  <md>
+  f(x) \amp = \sum_{n=-\infty}^{\infty} c_n e^{2\pi i x/L} \intertext{where}
+  c_n \amp = \frac{1}{2L} \int_{-L}^{L} f(x) e^{-2\pi i x/L}
+  </md>
+
+  <example>
+  Find the complex Fourier series on <m>[-\pi,\pi]</m> if <m>f(x)=x</m>.
+
+  \solution
+  <md>
+  c_n \amp = \frac{1}{2\pi} \int_{-\pi}^{\pi} x e^{-inx} \, dx \\
+  \amp = \begin{cases}
+  0 \amp n= 0 \\
+  \frac{-2i\pi}{n} e^{-i \pi n}=\frac{-2(-1)^n\pi}{n}   \amp \text{otherwise}
+  \end{cases}
+  </md>
+  </example>
+
+  As you can see, finding the complex Fourier Series is generally easier in terms of only needing to find one integral instead of 3 for the standard Fourier Series.
+
+
+
+  </section>

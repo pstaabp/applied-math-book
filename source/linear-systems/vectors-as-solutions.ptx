@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="sect-vectors-as-solutions">
+	<title>Vectors as Solutions of Linear Solutions</title>
+	<introduction>
+		<p>
+			In <xref ref="sect-gaussian-elimination" />, we saw solutions of linear systems that either
+			had or did not have a free variable.
+			In both of these cases, we can write the solutions in
+			another form using vectors.
+			In this section,
+		</p>
+
+		<p>
+			<ul>
+				<li>
+					<p>
+						We revisit vectors and discuss sums and scalar multiplication of vectors.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Write a solution without a free variable as a vector.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Write a solution with free variables(s) in vector form.
+					</p>
+				</li>
+			</ul>
+		</p>
+	</introduction>
+
+	<subsection>
+		<title>Vectors as Solutions of Linear Systems</title>
+		<p>
+			In <xref ref="sect-matrices" /> we were introduced to matrices as a rectangular grid of
+			numbers.
+			Recall that if the matrix has only a single column, we called it <term>column vector</term>.
+			As we will see in the first few chapters of this text, vectors are very important so we
+			explore these a bit more here and then later in <xref ref="ch-linear-systems"/>.
+			A column vector <m>\vec{s}</m>
+			can be written
+		</p>
+
+		<p>
+			<men xml:id="eq-column-vector">
+				\vec{s} = \begin{bmatrix}
+				s_1 \\ s_2 \\ \vdots \\ s_n
+				\end{bmatrix}
+			</men>
+		</p>
+
+		<p>
+			with <m>s_1, s_2, \ldots, s_n</m> real numbers is a solution to the linear equation
+		</p>
+
+		<definition xml:id="def-vector-as-solution">
+			<statement>
+				<p>
+					The vector in (xref ref="eq-column-vector" /> is a <term>solution to a linear equation</term>
+				</p>
+
+				<p>
+					<me>
+						a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b
+					</me>
+				</p>
+
+				<p>
+					if
+				</p>
+
+				<p>
+					<me>
+						a_1 s_1 + a_2 s_2 + \cdots + a_n s_n = b.
+					</me>
+				</p>
+
+				<p>
+					A vector is a <term>solution to a linear system</term> if the points satisfy each
+					equation in the solution.
+					We consider the vector in <xref ref="eq-column-vector" /> similar to
+					the tuple <m>(s_1, s_2, \ldots, s_n)</m>.
+				</p>
+			</statement>
+		</definition>
+	</subsection>
+
+	<subsection>
+		<title>Addition and Scalar Multiplication of Vectors</title>
+		<p>
+			Before examining vectors as solutions of linear system, we need to define vector sum and
+			scalar multiplication.
+		</p>
+
+		<definition xml:id="def-">
+			<statement>
+				<p>
+					The <term>sum of two vectors</term> <m>\vec{u}</m> and <m>\vec{v}</m> is defined as
+				</p>
+
+				<p>
+					<me>
+						\vec{u} + \vec{v} = \begin{bmatrix}
+						u_1 \\ u_2 \\ \vdots \\ u_n
+						\end{bmatrix} + \begin{bmatrix}
+						v_1 \\ v_2 \\ \vdots \\ v_n
+						\end{bmatrix} = \begin{bmatrix}
+						u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					and the <term> scalar multiplication of a vector</term> <m>\vec{u}</m> by <m>r \in
+					\mathbb{R}</m> is
+				</p>
+
+				<p>
+					<me>
+						r \vec{u} = r \begin{bmatrix}
+						u_1 \\ u_2 \\ \vdots \\ u_n
+						\end{bmatrix} = \begin{bmatrix}
+						r u_1 \\ r u_2 \\ \vdots \\r u_n
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					Let
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{u} \amp = \begin{bmatrix}
+						3 \\ -3 \\ 4
+						\end{bmatrix}, \amp \vec{v} \amp = \begin{bmatrix}
+						2 \\ 3/2 \\ 9
+						\end{bmatrix}.</mrow>
+					</md>
+				</p>
+
+				<p>
+					Find <m>\vec{u}+\vec{v}</m> and <m>4 \vec{v}</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					<md>
+						<mrow>\vec{u} + \vec{v} \amp = \begin{bmatrix}
+						3+2 \\ -3 + 3/2 \\ 4+9
+						\end{bmatrix} = \begin{bmatrix}
+						5 \\ -3/2 \\ 13
+						\end{bmatrix},
+						\amp 4 \vec{v} \amp = \begin{bmatrix}
+						4 \cdot 2, \\ 4 \cdot \frac{3}{2}, \\ 4 \cdot 9
+						\end{bmatrix} =
+						\begin{bmatrix}
+						8 \\ 6 \\ 36
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Writing Solutions in Vector Form</title>
+		<p>
+			There are a couple of advantages to writing a solution to a linear system in vector form.
+			We will see some of them later in the course, however, right now,
+			we can write down specific points that are in the solution set quite
+			easily.
+			There's little advantage to using vectors for unique and no
+			solution linear systems, but when you have multiple (infinite number of)
+			solutions, then vectors shine through.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Consider the linear system from <xref ref="subsect-describe-solutions" />  in
+					reduced row echelon form:
+				</p>
+
+				<p>
+					<md>
+						<mrow>x\phantom{+2y} + 2z \amp = -6</mrow>
+						<mrow>y + 4z \amp = -13 </mrow>
+						<mrow>0 \amp = 0</mrow>
+					</md>
+				</p>
+
+				<p>
+					Recall that the solution in terms of <m>z</m> as
+				</p>
+
+				<p>
+					<me>
+						\{ (-2z-6, -4z-13,z) \; | \; z \in \mathbb{R} \}
+					</me>
+				</p>
+
+				<p>
+					Write the solution in terms of a vector.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					There is one parameter in this case <m>z</m> and thus the solution can be written as
+				</p>
+
+				<p>
+					<md>
+						<mrow>
+						\begin{bmatrix}
+						-2z-6, \\ -4z-13 \\ z
+						\end{bmatrix} \amp = \begin{bmatrix}
+						-2z \\ -4z \\ z
+						\end{bmatrix} + \begin{bmatrix}
+						-6 \\ -13 \\ 0
+						\end{bmatrix} \\
+						\amp = \begin{bmatrix}
+						-2 \\ -4 \\ 1
+						\end{bmatrix} z + \begin{bmatrix}
+						-6 \\ -13 \\ 0
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					And this form makes it quite easy to find individual points.
+					If we let <m>z=0</m>, then <m>
+					(-6,-13,0)</m> is a point in the solution set, if let <m>z=-3</m>, then <m>(0,-1,-3)</m>
+					is a point.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			Note that it takes a little work to get a linear system in echelon form
+			into a solution in vector form.
+			We will see in the next section that
+			there is another form that the linear system (matrix) can be put into
+			for an easier transition to this form.
+		</p>
+
+		<example xml:id="ex-large-linear-solution">
+			<statement>
+				<p>
+					Write the solution to the linear system that we saw in Example <xref
+					ref="ex-echelon-form-3by5" />
+				</p>
+
+				<p>
+					<md>
+						<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
+						<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
+						<mrow>3x_5 \amp = 27,</mrow>
+					</md>
+				</p>
+
+				<p>
+					in vector form.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					In example <xref ref="ex-echelon-form-3by5" />, the solution set was found to be
+				</p>
+
+				<p>
+					<me>
+						\{ (x_1,x_2,x_3,x_4,x_5) = (9x_4-46,x_2,-13,x_4,9) \; | \; x_2, x_4 \in \mathbb{R}\}
+					</me>
+				</p>
+
+				<p>
+					with the free variables <m>x_2</m> and <m>x_4</m>.
+					This can be written as a vector as
+				</p>
+
+				<p>
+					<me>
+						\begin{bmatrix}
+						9x_4 - 46 \\
+						x_2 \\
+						-13 \\
+						x_4 \\
+						9
+						\end{bmatrix} =
+						\begin{bmatrix}
+						0 \\ 1 \\ 0 \\ 0 \\0
+						\end{bmatrix} x_2 +
+						\begin{bmatrix}
+						9 \\ 0 \\ 0 \\ 1 \\ 0
+						\end{bmatrix} x_4 +
+						\begin{bmatrix}
+						-46 \\ 0 \\ -13 \\ 0 \\ 9
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Thus the solution can be written:
+				</p>
+
+				<p>
+					<me>
+						\left\{ \begin{bmatrix}
+						0 \\ 1 \\ 0 \\ 0 \\0
+						\end{bmatrix} x_2 +
+						\begin{bmatrix}
+						9 \\ 0 \\ 0 \\ 1 \\ 0
+						\end{bmatrix} x_4 +
+						\begin{bmatrix}
+						-46 \\ 0 \\ -13 \\ 0 \\ 9
+						\end{bmatrix} \; | \; x_2, x_4 \in \mathbb{R} \right\}.
+					</me>
+				</p>
+
+				<p>
+					This is the most general form of the solution to the linear system in this example and
+					as before one can write down solutions with specific values of free variables.
+					For
+					example, if <m>x_2</m> and <m>x_4</m> are both 0, the the point <m>(-46,0,-13,0,9)</m>
+					is a solution to the linear system.
+					(Try it!) This is an example of a particular
+					solution as we define below.
+				</p>
+			</solution>
+		</example>
+
+		<definition>
+			<statement>
+				<p>
+					Consider a linear system.
+					If the point <m>(s_1,s_2,\ldots,s_n)</m> is a solution to the
+					system and <m>s_1, s_2, \ldots, s_n</m> do not have any free variables, then the point <m>
+					(s_1,s_2,\ldots,s_n)</m> is called a <term>particular solution</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			A few things of note before we go on:
+		</p>
+
+		<p>
+			<ul>
+				<li>
+					<p>
+						After the first two sections of the text, you should know how to do Gauss's method on
+						any linear system and be able to write down the solution set in either <em>set builder
+						notation</em> or as vectors.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Gauss' method states that any of the 3 elementary row operations
+						results in the same solution.
+						Since there is no algorithm to apply
+						to a linear system (or matrix), if we use 2 different set of row
+						operations, do we get the same solution (or at least the same set
+						of free variables)?
+					</p>
+				</li>
+			</ul>
+		</p>
+	</subsection>
+</section>

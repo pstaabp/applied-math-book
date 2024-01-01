@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-fourier-series">
+  <title>Fourier Series</title>
+
+  <introduction>
+    <p>
+
+      An infinite series of the form:
+</p>
+    <p>
+      <men xml:id="eq-trig-series">
+        a_0 + \sum_{n=1}^{\infty} (a_n \cos n x + b_n \sin nx)
+      </men>
+    </p>
+    <p> is called the <term>trigonometric
+        series</term>.</p>
+    <p> The trigonometric series is periodic with period at most <m>2\pi</m>. Consider the terms <m>\cos
+      x</m> and <m>\sin x</m>, which each have period <m>2\pi</m>. All other functions have period <m>
+      2\pi/n</m>, which are also periodic with period <m>2\pi</m>, but their fundamental period is <m>
+      2\pi/n</m>.</p>
+
+
+    <definition>
+      <statement>
+        <p> Let <m>f(x)</m> be periodic of period <m>2\pi</m> and be piecewise continuous in <m>
+          [-\pi,\pi]</m>. Suppose <m>f(x)</m> can be written as a trigonometric series. Then it is
+          called a <term>Fourier Series</term> for <m>f(x)</m>. The constants <m>
+            a_n</m> and <m>b_n</m> are called the <term>Fourier Coefficients</term> of <m>
+            f(x)</m> and are given by the Euler formulas: </p>
+
+        <p>
+          <md>
+            <mrow xml:id="eq-fourier-coeff-a0" number="yes">
+              a_0 \amp = \frac{1}{2\pi} \langle f(x), 1 \rangle = \frac{1}{2\pi} \int_{-\pi}^{\pi}
+              f(x) \, dx
+            </mrow>
+            <mrow xml:id="eq-fourier-coeff-an" number="yes">
+              a_n \amp = \frac{1}{\pi} \langle f(x), \cos n x \rangle = \frac{1}{\pi}
+              \int_{-\pi}^{\pi} f(x) \cos nx \, dx
+            </mrow>
+            <mrow xml:id="eq-fourier-coeff-bn" number="yes">
+              b_n \amp = \frac{1}{\pi} \langle f(x), \sin nx \rangle = \frac{1}{\pi}
+              \int_{-\pi}^{\pi} f(x) \sin nx \, dx
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      In this section, we're going to write period functions as Fourier Series. This is possible due
+      to the following theorem.</p>
+
+    <theorem xml:id="thm-fourier-series">
+      <statement>
+        <p> Let <m>f</m> be a continuous function that is periodic with period <m>2\pi</m>. Then <m>
+          f</m> can be written as a trigonometric series or </p>
+        <p>
+          <me>
+            f(x) = a_0 + \sum_{n=1}^{\infty} (a_n \cos n x + b_n \sin nx).
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p> In this proof, we will take the inner product of <m>f</m> with each element in the set
+          from Example <xref ref="ex-trig-ortho-set" />. We will start with the constant function
+          and use (<xref
+            ref="eq-trig-series" />). </p>
+        <p>
+          <md>
+            <mrow>\biggl\langle \frac{1}{\sqrt{2\pi}}, f(x) \biggr\rangle \amp = \biggl\langle
+              \frac{1}{\sqrt{2\pi}}, a_0 + \sum_{n=1}^{\infty} (a_n \cos n x + b_n \sin nx)
+              \biggr\rangle </mrow>
+            <mrow>\frac{1}{\sqrt{2\pi}} \langle 1, f(x) \rangle \amp = \frac{1}{\sqrt{2\pi}}
+              \biggl(\langle a_0,1 \rangle + \sum_{n=1}^{\infty} a_n \langle \cos nx, 1 \rangle +
+              b_n \langle \sin nx , 1 \rangle \biggr) </mrow>
+            <mrow> \amp \qquad \text{since the inner product of 1 with the trig functions are 0}</mrow>
+            <mrow>\amp = \frac{a_0}{\sqrt{2\pi}} \langle 1, 1 \rangle</mrow>
+          </md>
+        </p>
+        <p> and solving for <m>a_0</m>, </p>
+        <p>
+          <me>
+            a_ 0 = \frac{\langle f(x),1 \rangle}{\langle 1,1 \rangle} = \frac{1}{2\pi}
+            \int_{-\pi}^{\pi} f(x) \, dx
+          </me>
+        </p>
+        <p> Next, take the inner product of (<xref ref="eq-trig-series" />) with <m>\frac{1}{\sqrt{\pi}}\cos
+          nx</m>. </p>
+        <p>
+          <md>
+            <mrow>\biggl\langle \frac{1}{\sqrt{\pi}}\cos nx ,f(x) \biggr \rangle \amp =
+              \biggl\langle \frac{1}{\sqrt{\pi}}\cos nx, a_0 + \sum_{m=1}^{\infty} (a_m \cos m x +
+              b_m \sin mx) \biggr\rangle </mrow>
+            <mrow>\frac{1}{\sqrt{\pi}} \langle \cos nx, f(x) \rangle \amp = \frac{1}{\sqrt{\pi}}
+              \biggl(a_0 \langle 1, \cos nx \rangle + \sum_{m=1}^{\infty} \bigl( a_m \langle \cos
+              mx, \cos n x \rangle </mrow>
+            <mrow>\amp \phantom{\frac{1}{\sqrt{\pi}} \biggl(a_0 \langle 1, \cos nx \rangle +
+              \sum_{m=1}^{\infty}} + b_m \langle \sin mx, \cos nx \rangle \bigr) \biggr), </mrow>
+          </md>
+        </p>
+        <p>All of the inner products on the right side are zero except when <m>n=m</m>. Canceling a <m>
+          \sqrt{\pi}</m>, the result is</p>
+        <p>
+          <me>
+            \langle \cos nx, f(x) \rangle = a_n \langle \cos nx, \cos nx \rangle
+          </me>
+        </p>
+        <p> or solving for <m>a_n</m>, </p>
+        <p>
+          <me>
+            a_n = \frac{\langle f(x), \cos nx \rangle}{\langle \cos nx, \cos nx \rangle} =
+            \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \, dx
+          </me>
+        </p>
+        <p> Lastly, take the inner product of (<xref ref="eq-trig-series" />) with <m>\frac{1}{\sqrt{\pi}}\sin
+          nx</m>. </p>
+        <p>
+          <md>
+            <mrow>\biggl\langle \frac{1}{\sqrt{\pi}}\sin nx ,f(x) \biggr \rangle \amp =
+              \biggl\langle \frac{1}{\sqrt{\pi}}\sin nx, a_0 + \sum_{m=1}^{\infty} (a_m \cos m x +
+              b_m \sin mx) \biggr\rangle </mrow>
+            <mrow>\frac{1}{\sqrt{\pi}} \langle \sin nx, f(x) \rangle \amp = \frac{1}{\sqrt{\pi}}
+              \biggl(a_0 \langle 1, \sin nx \rangle + \sum_{m=1}^{\infty} \bigl( a_m \langle \cos
+              mx, \sin n x \rangle </mrow>
+            <mrow>\amp \phantom{\frac{1}{\sqrt{\pi}} \biggl(a_0 \langle 1, \cos nx \rangle +
+              \sum_{m=1}^{\infty}} + b_m \langle \sin mx, \sin nx \rangle \bigr) \biggr),</mrow>
+          </md>
+        </p>
+        <p> All of the inner products on the right side are zero except when <m>n=m</m>. Canceling a <m>
+          \sqrt{\pi}</m>, the result is </p>
+        <p>
+          <me>
+            \langle \sin nx, f(x) \rangle = b_n \langle \sin nx, \sin nx \rangle
+          </me>
+        </p>
+        <p> and solving for <m>b_n</m>,</p>
+        <p>
+          <me>
+            b_n = \frac{\langle f(x), \sin nx \rangle}{\langle \sin nx, \sin nx \rangle} =
+            \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx
+          </me>
+        </p>
+      </proof>
+    </theorem>
+
+    <p> Notice again that the statement in Theorem <xref ref="thm-fourier-series" /> is the <m>f</m>
+      is periodic with period <m>2\pi</m>. This is a fairly strict requirement that we will relax
+      over the rest of this section, however, one way to get a periodic function is to start with a
+      function that is defined on <m>[-\pi,\pi]</m> and extend it periodically such that <m>
+      f(x)=f(x+2\pi)</m>. We do this in the following example. </p>
+
+    <example xml:id="ex-FS-square-wave">
+      <statement>
+        <p>
+          Find the Fourier coefficients and the Fourier series for the periodic extension square
+          wave:
+        </p>
+        <p>
+          <me>
+            f(x) = \begin{cases}
+            1 \amp 0 \leq x \leq \pi \\
+            -1 \amp -\pi \lt x \lt 0
+            \end{cases}
+          </me>
+        </p>
+        <p> and define <m>f(x)</m> to be its periodic extension of period <m>2\pi</m>. That is if <m>
+          x</m> is outside of <m>[-\pi,\pi]</m>, then apply <m>f(x) = f(x+2\pi)</m> or <m>f(x) =
+          f(x-2\pi)</m> until <m>x \in [-\pi,\pi]</m>. This function looks like:</p>
+
+        <figure>
+          <caption>
+            Graph of the Square Wave
+          </caption>
+          <image width="75%" xml:id="plot-square-wave">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}[xscale=0.45,yscale=1.5]
+                \draw[->] (-10,0) -- (10,0) node [above right] {$x$};
+                \draw[->] (0,-1.25) -- (0,1.25) node [above right] {$y$};
+
+                % this draws all the fractional multiples of pi
+
+                %\foreach \x/\num/\den/\neg in {0.5*pi/\pi/2/,1.5*pi/3\pi/2/,-0.5*pi/\pi/2/-,-1.5*pi/3\pi/2/-} \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\neg \frac{\num}{\den}$};
+
+                % this draws all non fractional multiples of pi
+
+                \foreach \x/\val in {pi/\pi,2*pi/2\pi,3*pi/3\pi,-pi/-\pi,-2*pi/-2\pi,-3*pi/-3\pi}
+                \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\val$};
+
+                \foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+
+                \foreach \i in {-1,0,1} {
+                \draw ({2*pi*\i},1) -- ({2*pi*\i+pi},1);
+                \draw ({2*pi*\i-pi},-1) -- ({2*pi*\i},-1);}
+
+                \end{tikzpicture}
+              ]]>
+            </latex-image>
+          </image>
+        </figure>
+      </statement>
+
+
+      <solution>
+        <p>
+
+          To begin with, we find all of the coefficients:
+</p>
+        <p>
+          <md>
+            <mrow>a_0 \amp = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) \, dx </mrow>
+            <mrow>\amp = \frac{1}{2\pi} \biggl( \int_{-\pi}^0 (-1) \, dx + \int_0^{\pi} (1) \, dx
+              \biggr) = \frac{1}{2\pi} \bigl( -\pi + \pi) = 0 </mrow>
+          </md>
+        </p>
+        <p>
+          <md>
+            <mrow>a_n \amp = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \, dx </mrow>
+            <mrow>\amp = \frac{1}{\pi} \biggl( \int_{-\pi}^0 (-1) \cos nx \, dx + \int_0^{\pi} \cos
+              nx \, dx \biggr) </mrow>
+            <mrow>\amp = \frac{1}{\pi} \biggl( -\frac{1}{n} \sin nx \biggr\vert_{-\pi}^0 +
+              \frac{1}{n} \sin nx \biggr\vert_{0}^{\pi} \biggr) = 0</mrow>
+          </md>
+        </p>
+        <p>
+
+          <md>
+            <mrow>b_n \amp = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx </mrow>
+            <mrow>\amp = \frac{1}{\pi} \biggl( \int_{-\pi}^0 (-1) \sin nx \, dx + \int_0^{\pi} \sin
+              nx \, dx \biggr) </mrow>
+            <mrow>\amp = \frac{1}{\pi} \biggl( \frac{1}{n} \cos nx \biggr \vert_{-\pi}^0 -
+              \frac{1}{n} \cos nx \biggr \vert_0^{\pi} \biggr) </mrow>
+            <mrow>\amp = \frac{1}{n\pi} \bigl( (1-\cos n(-\pi)) - (\cos(n\pi)-1) \bigr) </mrow>
+            <mrow>\amp = \frac{2}{n\pi} (1- (-1)^n)</mrow>
+          </md>
+        </p>
+        <p>
+
+          So the Fourier Series can be written:
+</p>
+        <p>
+          <md>
+            <mrow>F(x) \amp = \sum_{n=1}^{\infty} \frac{2}{n\pi} (1- (-1)^n) \sin nx </mrow>
+            <mrow>\amp = \frac{4}{\pi} \biggl(\sin x + \frac{1}{3}\sin 3x + \frac{1}{5}\sin 5x +
+              \frac{1}{7}\sin 7x + \frac{1}{9}\sin 9x + \cdots \biggr)</mrow>
+            <mrow>\amp \qquad \text{or again, writing it more compactly,}</mrow>
+            <mrow>\amp = \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{1}{2n-1} \sin (2n-1) x</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <p>The above series also shows and interesting result that you should have seen in the series
+      chapter of Calculus. If we let <m>x=\pi/2</m>, then <m>\sin (2n-1)\frac{\pi}{2}=(-1)^{n+1}</m>
+      and <m>F(\pi/2) = 1</m> from the definition of the square wave and substituting this into the
+      Fourier series, we get: </p>
+    <p>
+      <me>
+        1 = \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n-1}
+      </me>
+    </p>
+    <p>or multiplying both sides by <m>\pi/4</m>
+    </p>
+    <p>
+      <me>
+        \frac{\pi}{4} = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n-1}
+      </me>
+    </p>
+    <p> which shows that some infinite sums have closed form values. This particular series is
+      usually found using the Taylor Series of <m>\tan x</m> and evaluating it a 1. </p>
+
+
+    <example xml:id="ex-FS-sawtooth">
+      <statement>
+        <p>
+          Find the Fourier series of the period sawtooth wave:
+        </p>
+        <figure>
+          <caption>
+            Plot of the sawtooth wave
+          </caption>
+          <image width="75%" xml:id="plot-sawtooth-wave">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}[xscale=0.45,yscale=1.5]
+                \draw[->] (-10,0) -- (10,0) node [above right] {$x$};
+                \draw[->] (0,-0.25) -- (0,1.25) node [above right] {$y$};
+
+                % this draws all the fractional multiples of pi
+
+                %\foreach \x/\num/\den/\neg in {0.5*pi/\pi/2/,1.5*pi/3\pi/2/,-0.5*pi/\pi/2/-,-1.5*pi/3\pi/2/-} \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\neg \frac{\num}{\den}$};
+
+                % this draws all non fractional multiples of pi
+
+                \foreach \x/\val in {pi/\pi,2*pi/2\pi,3*pi/3\pi,-pi/-\pi,-2*pi/-2\pi,-3*pi/-3\pi}
+                \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\val$};
+
+                \foreach \y/\val in {0.5/\frac{\pi}{2},1/\pi} \draw (0.1,\y) -- (-0.1,\y) node [left] {$\val$};
+
+                \foreach \i in {-1,0,1} {
+                \draw ({2*pi*\i},0) -- ({2*pi*\i+pi},1);
+                \draw ({2*pi*\i-pi},1) -- ({2*pi*\i},0);}
+
+                \end{tikzpicture}
+              ]]>
+            </latex-image>
+          </image>
+        </figure>
+      </statement>
+
+      <solution>
+        <p> Let <m>f(x)</m> be the sawtooth wave defined in the picture above. We can write it as a
+          piecewise function as </p>
+        <p>
+          <me>
+            f(x) = \begin{cases}
+            x \amp 0 \leq x \leq \pi \\
+            -x \amp -\pi \lt x \lt 0
+            \end{cases}
+          </me>
+        </p>
+        <p>
+          and extending it periodically.</p>
+        <p> Then using the formulas in (<xref ref="eq-fourier-coeff-a0" />)--(<xref
+            ref="eq-fourier-coeff-bn" />) and we will take advantage of the fact that <m>f(x)</m> is
+          an even function. </p>
+        <p>
+          <md>
+            <mrow>a_0 \amp = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) \, dx </mrow>
+            <mrow>\amp = \frac{2}{2\pi} \int_0^{\pi} x \,dx </mrow>
+            <mrow>\amp = \frac{1}{\pi} \frac{x^2}{2} \biggr \vert_0^{\pi} = \frac{\pi}{2}</mrow>
+          </md>
+        </p>
+        <p>
+          <md>
+            <mrow>a_n \amp = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \, dx</mrow>
+            <mrow> \amp = \frac{2}{\pi} \int_{0}^{\pi} x\cos nx \, dx</mrow>
+          </md>
+        </p>
+        <p>where <xref ref="thm-even-odd-integrals" /> is used and since <m>\cos nx</m> is even and
+          the product of even functions is even. Also this is a good example to use tabular
+          integration. </p>
+
+        <figure>
+          <caption> tabular integration of <m>x \cos nx</m>. </caption>
+          <image width="40%" xml:id="plot-tab-integration-x-cosnx">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}[every node/.style={anchor=base}]
+                  \matrix
+                  {
+                    \node (f1){$f'(x)$}; \amp \node{$\pm$}; \amp \node (g1) {$\int g(x) \, dx$}; \\ \hline
+                    \node (f2){$x$}; \amp \node {$+$}; \amp \node (g2) {$\cos nx$}; \\
+                    \node (f3) {$1$}; \amp \node {$-$}; \amp \node (g3) {$\frac{1}{n} \sin nx$}; \\
+                    \node (f4){$0$}; \amp \node {$+$}; \amp \node (g4) {$-\frac{1}{n^2} \cos nx$}; \\
+                  };
+                    \draw[->] (f2)--(g3);
+                    \draw[->] (f3)--(g4);
+                \end{tikzpicture}
+              ]]>
+            </latex-image>
+          </image>
+        </figure>
+
+        <p>and then using the table to find
+        </p>
+        <p>
+          <md>
+            <mrow>a_n \amp =\frac{2}{\pi} \biggl( \frac{x}{n} \sin nx + \frac{1}{n^2} \cos nx
+              \biggr) \biggr \vert_0^{\pi} </mrow>
+            <mrow>\amp = \frac{2}{\pi}\biggl(\biggl(\frac{\pi}{n} \sin n \pi + \frac{1}{n^2} \cos
+              n\pi \biggr) -
+              \biggl( 0 +\frac{1}{n^2} \cos 0 \biggr) \biggr)</mrow>
+            <mrow>\amp = \frac{2}{\pi n^2} \bigl( (-1)^n - 1)</mrow>
+          </md>
+        </p>
+        <p>
+          Lastly,
+</p>
+        <p>
+          <me>
+            b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx
+          </me>
+        </p>
+        <p>
+          but this is a product of a even and an odd function, which is odd and integrating an odd
+          function over a symmetric interval is 0. Therefore the Fourier series is
+</p>
+        <p>
+          <me>
+            F(x) = \frac{\pi}{2} + \sum_{n=1}^{\infty} \frac{2}{\pi n^2} \bigl( (-1)^n - 1) \cos nx
+          </me>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+
+  <subsection>
+    <title>Convergence of a Sum of a Fourier Series</title>
+
+    <p> Since Fourier series are infinite series, it is important to consider if it converges. As we
+      will see, Fourier series will generally converge, to what value will depend on <m>x</m>.
+      Consider the Fourier series in Example <xref ref="ex-FS-sawtooth" />. If we let </p>
+    <p>
+      <me>
+        F(x) = \frac{\pi}{2} + \sum_{n=1}^{\infty} \frac{1}{n^2} \bigl( (-1)^n - 1) \cos nx
+      </me>
+    </p>
+    <p> we would need to text the convergence of every value of <m>x</m>. In this case, this can be
+      done by using the direct comparison test to the series to <m>\sum_{n=1}^{\infty} \frac{1}{n^2}</m>
+      which converges, so the series <m>F(x)</m> converges for all <m>x</m>. </p>
+    <p>
+      This doesn't work for all series and the other difficulty is that we don't know what it
+      converges to. Fortunately, the following theorem gives a very nice result. </p>
+
+    <theorem>
+      <statement>
+        <p> Let <m>f(x)</m> be periodic with period <m>2\pi</m> and piecewise continuous in the
+          interval <m>-\pi \leq x \leq \pi</m>. Let <m>F(x)</m> be the Fourier series of <m>f(x)</m>
+          and </p>
+        <p>
+          <me>
+            F(x) = \begin{cases}
+            f(x) \amp \text{if $f$ is continuous at $x$} \\
+            \frac{f(x^+)+f(x^-)}{2} \amp \text{if $f$ is not continuous at $x$}
+            \end{cases}
+          </me>
+        </p>
+        <p> In other words, the Fourier series converges to the average of the left- and right-hand
+          limits of <m>f(x)</m>. </p>
+      </statement>
+    </theorem>
+
+
+    <example>
+      <statement>
+        <p> Show that the Fourier series of the square wave function above converges to 0 when <m>
+          x=0</m>. </p>
+      </statement>
+
+
+      <solution>
+
+        <p>Note that average of the left- and right-handed limits of the square wave function at <m>
+          x=0</m> is <m>(1+(-1))/2=0</m>, so using the theorem above, the function converges to 0
+          when <m>x=0</m>.</p>
+        <p> Alternatively, we can evaluate the Fourier series of the square wave function directly.
+          Evaluating the Fourier series at <m>x=0</m> is</p>
+        <p>
+
+          <me>
+            F(0) = \sum_{n=1}^{\infty} \frac{2}{n\pi} (1-\cos(n\pi)) \sin n x \biggl \vert_{x=0} =
+            0,
+          </me>
+        </p>
+        <p>
+          which is consistent with that above.
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+
+  <subsection>
+    <title>Fourier Series of Functions of Period <m>2L</m></title>
+
+    <p>We saw that the Fourier series above applied only to functions that were periodic with period <m>
+      2\pi</m>. This section covers functions with arbitrary periodicity, which we will call period <m>
+      2L</m>. If we let <m>u=\frac{\pi x}{L}</m>, and substitute this into (<xref
+        ref="eq-trig-series" />), then </p>
+    <p>
+      <men xml:id="eq-FS-period-2L">
+        f(x) = a_0 + \sum_{n=1}^{\infty} \biggl( a_n \cos \frac{n\pi x}{L} + b_n \sin \frac{n \pi
+        x}{L} \biggr)
+      </men>
+    </p>
+    <p> and then it can be shown in a similar manner to that above that (<xref
+        ref="eq-fourier-coeff-a0" />)--(<xref ref="eq-fourier-coeff-bn" />) can be written as </p>
+    <p>
+      <md>
+        <mrow xml:id="eq-coeff-period-2L-a0" number="yes"> a_0 \amp = \frac{1}{2L} \int_{-L}^L f(x)\, dx  </mrow>
+        <mrow xml:id="eq-coeff-period-2L-an" number="yes">a_n \amp = \frac{1}{L} \int_{-L}^{L} f(x)
+          \cos \biggl( \frac{n\pi x}{L} \biggr) \, dx</mrow>
+        <mrow xml:id="eq-coeff-period-2L-bn" number="yes">b_n \amp = \frac{1}{L} \int_{-L}^{L} f(x)
+          \sin \biggl( \frac{n\pi x}{L} \biggr) \, dx </mrow>
+      </md>
+    </p>
+    <p> The series is called the Fourier series of period <m>2L</m> with the corresponding Fourier
+      coefficients. </p>
+
+
+    <example xml:id="ex-FS-x">
+      <statement>
+        <p> Find the Fourier Series of the periodic extension (of period 2) of <m>f(x) = x</m> for <m>x
+          \in [-1,1]</m> as shown in the graph below: </p>
+
+        <figure>
+          <caption>
+            Another plot
+          </caption>
+          <image width="75%" xml:id="plot-another-one">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}
+                \draw[->] (-3.5,0) -- (3.5,0) node [above right] {$x$};
+                \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+                \draw[->] (0,-1.5) -- (0,1.5) node [above right] {$y$};
+                \foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+                \foreach \i in {-1,0,1} \draw ({-1+2*\i},-1) -- ({1+2*\i},1);
+                \end{tikzpicture}
+              ]]>
+            </latex-image>
+          </image>
+        </figure>
+      </statement>
+
+      <solution>
+        <p> To find the Fourier series, we first need to find the Fourier coefficients, by
+          evaluating the integrals in (<xref ref="eq-coeff-period-2L-a0" />)--(<xref
+            ref="eq-coeff-period-2L-bn" />), </p>
+        <p>
+          <md>
+            <mrow>a_0 \amp = \frac{1}{2} \int_{-1}^1 x \, dx = 0 \qquad\text{because $x$ is an odd
+              function}</mrow>
+            <mrow>a_n \amp = \frac{1}{1} \int_{-1}^1 x \cos n \pi x \, dx = 0 \qquad \text{because
+              $x$ times $\cos n\pi x$ is odd}</mrow>
+            <mrow>b_n \amp = \frac{1}{1} \int_{-1}^1 x \sin n \pi x \, dx \qquad\text{because $x$
+              times $\sin n\pi x$ is even}</mrow>
+            <mrow>\amp = 2\int_0^1 x \sin n\pi x </mrow>
+            <mrow>\amp \qquad \text{using tabular integration,}</mrow>
+            <mrow>b_n \amp = -\frac{x}{n\pi} \cos (n \pi x) + \frac{1}{n^2 \pi^2} \sin (n\pi x)
+              \biggr\vert_{-1}^1 </mrow>
+            <mrow>\amp = -\frac{2}{n\pi} \cos (n\pi) = \frac{2}{n\pi} (-1)^{n+1}</mrow>
+          </md>
+        </p>
+        <p>
+          The Fourier Series of the function is
+</p>
+        <p>
+          <me>
+            \sum_{n=1}^{\infty} \frac{2}{n\pi} (-1)^{n+1} \sin n \pi x
+          </me>
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+</section>

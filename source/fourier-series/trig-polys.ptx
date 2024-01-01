@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section>
+  <title>Approximation by Trigonometric Polynomials</title>
+
+  <introduction>
+    <p>Consider a periodic function <m>f</m> of period <m>2\pi</m> on the interval <m>[-\pi,\pi]</m>.
+      The <m>N</m>th partial sum of the Fourier Series of <m>f</m> is denoted <m>f_N</m>, </p>
+    <p>
+      <me>
+        f_N(x) = a_0 + \sum_{n=1}^N (a_n \cos nx + b_n \sin nx)
+      </me>
+    </p>
+    <p> where <m>a_0,
+        a_n</m> and <m>b_n</m> are the Fourier Coefficients as before. The function <m>f_N</m> is
+      also called the <term>Trigonometric Polynomial of degree <m>n</m></term>. \index{trigonometry
+      polynomial} </p>
+    <p>
+      Let's ask a question about approximation. Consider a function of the form:
+    </p>
+    <p>
+      <me>
+        F_N(x) =A_0 + \sum_{n=1}^N (A_n \cos nx + B_n \sin nx)
+      </me>
+    </p>
+    <p> What is the best approximate for a trigonometric polynomial to another function <m>F(x)</m>.
+      That is, what coefficients can be chosen <m>A_0, A_n, B_n</m>? </p>
+    <p> To answer this question, we will need to know what error we are taking about. Typically the
+      error will be some function of the two functions, called <m>E(f,g)</m> that outputs a number.
+      We would like the error to have the following properties: <md>
+        <mrow>E(f,g) \amp = E(g,f) </mrow>
+        <mrow>E(f,g) \amp \geq 0 </mrow>
+        <mrow>E(f,f) \amp = 0</mrow>
+      </md></p>
+    <p>
+      one such function that we know is the square of the function norm or
+</p>
+    <p>
+      <md>
+        <mrow>E(F,F_N) \amp = \langle F-F_N,F-F_N \rangle = ||F-F_N||^2 </mrow>
+        <mrow>\amp = \int_{-\pi}^{\pi} (F(x)-F_N(x))^2 \, dx </mrow>
+        <mrow>\amp = \int_{-\pi}^{\pi}\bigl(F(x) - A_0 - \sum_{n=1}^{N} (A_n \cos nx + B_n \sin nx)
+          \bigr)^2</mrow>
+      </md>
+    </p>
+    <p> To find the minimum of this, we will take the derivatives of <m>
+        E</m> with respect to <m>A_0, A_n</m> and <m>B_n</m>: </p>
+    <p>
+      <md>
+        <mrow>\frac{\partial E}{\partial A_0} \amp = -2 \int_{-\pi}^{\pi} \bigl(F(x) - A_0 -
+          \sum_{n=1}^{N} (A_n \cos nx + B_n \sin nx ) \bigr) </mrow>
+        <mrow>0 \amp = \langle F, 1\rangle - \langle A_0, 1 \rangle - \sum_{n=1}^{N} (\langle A_n
+          \cos
+          n x, 1 \rangle + \langle B_n \sin nx, 1 \rangle ) </mrow>
+        <mrow>0 \amp = \langle F, 1\rangle - A_0\langle 1, 1 \rangle</mrow>
+      </md>
+    </p>
+    <p>or</p>
+    <p>
+      <me>
+        A_0 = \frac{\langle F,1\rangle}{\langle 1,1 \rangle} = \frac{1}{2\pi} \int_{-\pi}^{\pi}
+        F(x)\,dx
+      </me>
+    </p>
+    <p> Similarly take the derivative with respect to <m>A_m</m>: </p>
+    <p>
+      <md>
+        <mrow>\frac{\partial E}{\partial A_m} \amp = -2 \int_{-\pi}^{\pi} \cos mx \bigl(F(x) - A_0 -
+          \sum_{n=1}^{N} (A_n \cos nx + B_n \sin nx ) \bigr)</mrow>
+        <mrow>\amp \qquad \text{set the derivative to 0} </mrow>
+        <mrow>0 \amp = \langle F, \cos mx \rangle - \langle A_0, \cos mx \rangle </mrow>
+        <mrow>\amp \qquad - \sum_{n=1}^{N} (\langle A_n \cos n x, \cos mx \rangle + \langle B_n \sin
+          nx, \cos mx \rangle )</mrow>
+      </md>
+    </p>
+    <p> Note that <m>\langle \cos nx,\cos mx\rangle =0</m> unless <m>m=n</m> and <m>\langle 1,\cos
+      mx\rangle=0</m>
+    </p>
+    <p>
+      <md>
+        <mrow>0 \amp = \langle F, \cos mx \rangle - A_m \langle \cos mx, \cos mx \rangle </mrow>
+        <mrow>\amp \qquad \text{or}</mrow>
+        <mrow>A_m \amp = \frac{\langle F, \cos mx\rangle }{\langle \cos mx, \cos mx \rangle } </mrow>
+        <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} F(x) \cos m x \, dx</mrow>
+      </md>
+    </p>
+    <p>
+      And similarly it can be shown that
+</p>
+    <p>
+      <me>
+        B_m = \frac{1}{\pi} \int_{-\pi}^{\pi} F(x) \sin mx \, dx
+      </me>
+    </p>
+
+    <remark>
+      <p> Let <m>f(x)</m> be a piecewise continuous function on <m>[-\pi,\pi]</m>, <m>N \gt 0</m>
+        and </p>
+      <p>
+        <me>
+          f_N (x) = a_0 + \sum_{n=1}^N (a_n \cos nx + b_n \sin nx)
+        </me>
+      </p>
+      <p> The values of <m>a_n</m> and <m>b_n</m> that minimize <m>||f-f_N||</m> (or <m>||f-f_N||^2</m>)
+        is </p>
+      <p>
+        <md>
+          <mrow>a_0 \amp = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) \, dx </mrow>
+          <mrow>a_n \amp = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos n x \, dx </mrow>
+          <mrow>b_n \amp = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin n x \, dx </mrow>
+        </md>
+      </p>
+      <p>that is they are the Fourier Coefficients.</p>
+    </remark>
+
+    <example>
+      <statement>
+        <p> In Example <xref ref="ex-FS-sawtooth" />, the Fourier series of the sawtooth function
+          was found the Fourier Coefficients are: </p>
+        <p>
+          <md>
+            <mrow>a_0 \amp = \frac{\pi}{2} </mrow>
+            <!-- <mrow> a_n \amp = \frac{\pi}{2} </mrow> -->
+            <mrow>a_n \amp = \frac{2}{\pi n^2} ((-1)^n-1) \qquad \text{$n \geq 1$} </mrow>
+            <mrow>b_n \amp = 0</mrow>
+          </md>
+        </p>
+        <p> Graph the sawtooth function and <m>f_{9}(x)</m>, the 9th degree trigonometric
+          polynomial. </p>
+      </statement>
+      <solution>
+
+        <figure>
+          <caption>
+            Plot of the sawtooth wave and it's 9th degree trigonometric approximation.
+          </caption>
+          <image width="50%" xml:id="plot-sawtooth-wave9">
+            <latex-image>
+          <![CDATA[
+  \begin{tikzpicture}[xscale=0.45,yscale=0.75]
+  \draw[->] (-10,0) -- (10,0) node [above right] {$x$};
+  \draw[->] (0,-0.25) -- (0,3.5) node [above right] {$y$};
+
+  % this draws all the fractional multiples of pi
+
+  %\foreach \x/\num/\den/\neg in {0.5*pi/\pi/2/,1.5*pi/3\pi/2/,-0.5*pi/\pi/2/-,-1.5*pi/3\pi/2/-} \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\neg \frac{\num}{\den}$};
+
+  % this draws all non fractional multiples of pi
+
+  \foreach \x/\val in {pi/\pi,2*pi/2\pi,3*pi/3\pi,-pi/-\pi,-2*pi/-2\pi,-3*pi/-3\pi}
+  \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\val$};
+
+  \foreach \y/\val in {0.5*pi/\frac{\pi}{2},pi/\pi} \draw (0.1,\y) -- (-0.1,\y) node [left] {$\val$};
+
+  \foreach \i in {-1,0,1} {
+  \draw ({2*pi*\i},0) -- ({2*pi*\i+pi},{pi});
+  \draw ({2*pi*\i-pi},{pi}) -- ({2*pi*\i},0);}
+
+
+  %
+  %\draw plot[domain=-10:10,samples=250] (\x,{pi/2+4/pi*(-263/315*cos(\x r)+656/945*pow(cos(\x r),3)-1936/525*pow(cos(\x r),5)+2560/441*pow(cos(\x r),7)-256/81*pow(cos(\x r),9))});
+  %
+  %\begin{luacode}
+  %local function wave(x)
+  %    sum = math.pi*0.5
+  %  for n = 1, 9, 2 do
+  %      sum = sum - 4*math.cos(n*x)/(math.pi*n*n)
+  %    end
+  %    return sum
+  %end
+%
+  %local xmin = -10
+  %local xmax = 10
+  %local x = xmin
+  %local numpoints = 500
+  %local y
+  %tex.print('\\draw[color=red]')
+  %for i = 0,numpoints-1 do
+  %    y = wave(x)
+  %    tex.print('(',x,',',y,') -- ')
+  %    x = x + (xmax-xmin)/numpoints
+  %end
+  %tex.print('(',x,',',y,');')
+
+  %\end{luacode}
+
+
+
+
+  \end{tikzpicture}
+  ]]>
+</latex-image>
+          </image>
+        </figure>
+
+        <p>and the two plots are indistinguishable on this scale.</p>
+      </solution>
+
+    </example>
+
+    <example
+      xml:id="ex-plot-square-wave">
+      <statement>
+        <p> In <xref ref="ex-FS-square-wave" />, the Fourier series of the square wave function was
+          found and the Fourier Coefficients are: </p>
+        <p>
+          <md>
+            <mrow>a_0 \amp = 0 </mrow>
+            <mrow>a_n \amp = 0 </mrow>
+            <mrow>b_n \amp = \frac{2}{n\pi} (1- (-1)^n)</mrow>
+          </md>
+        </p>
+        <p> Graph the square wave function and <m>f_{9}(x)</m>, the <m>9</m>th degree trigonometric
+          polynomial. </p>
+      </statement>
+      <solution>
+
+        <figure>
+          <caption>
+            Find a point on a line that minimizes distance
+          </caption>
+          <image width="50%" xml:id="plot-sawtooth-plus-fs">
+            <latex-image>
+          <![CDATA[
+  \begin{tikzpicture}[xscale=0.45,yscale=1.5]
+  \draw[->] (-10,0) -- (10,0) node [above right] {$x$};
+  \draw[->] (0,-1.25) -- (0,1.25) node [above right] {$y$};
+
+  % this draws all non fractional multiples of pi
+
+  \foreach \x/\val in {pi/\pi,2*pi/2\pi,3*pi/3\pi,-pi/-\pi,-2*pi/-2\pi,-3*pi/-3\pi}
+  \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\val$};
+
+  \foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+
+  \foreach \i in {-1,0,1} {
+  \draw ({2*pi*\i},1) -- ({2*pi*\i+pi},1);
+  \draw ({2*pi*\i-pi},-1) -- ({2*pi*\i},-1);}
+
+
+  %\begin{luacode}
+  %local function wave(x)
+  %    sum = 0.0
+  %  for n = 1, 9, 2 do
+  %      sum = sum + math.sin(n*x)/n
+  %    end
+  %    return sum*4/math.pi
+  %end
+%
+  %local xmin = -10
+  %local xmax = 10
+  %local x = xmin
+  %local numpoints = 500
+  %local y
+  %tex.print('\\draw[color=red]')
+  %for i = 0,numpoints-1 do
+  %    y = wave(x)
+  %    tex.print('(',x,',',y,') -- ')
+  %    x = x + (xmax-xmin)/numpoints
+  %end
+  %tex.print('(',x,',',y,');')
+%
+  %\end{luacode}
+%
+%
+  \end{tikzpicture}
+  ]]>
+</latex-image>
+          </image>
+        </figure>
+
+        <p> And in contrast to the previous example, the trigonometric polynomial <m>f_9(x)</m> and
+          the original function <m>f</m> are quite different. </p>
+      </solution>
+    </example>
+
+    <p> We will
+      explore this example in a bit more detail after seeing some important theorems.
+    </p>
+  </introduction>
+
+
+  <subsection>
+    <title>Theorems Related to Fourier Series</title>
+
+    <theorem>
+      <statement>
+        <p> The quantity <m>||F-F_N||^2</m> on the interval <m>[-\pi,\pi]</m> is the minimum if and
+          only if the coefficients of <m>F_N</m> in (2) ar the Fourier coefficients of <m>F</m>.
+          This minimum value is </p>
+        <p>
+          <men xml:id="eq-estar">
+            E^{\star} = \int_{-\pi}^{\pi} f^2 \, dx - 2A_0\pi - \pi \sum_{n=1}^{N} (A_n^2 + B_n^2)
+          </men>
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem
+      xml:id="thm-bessels-inequality">
+      <title>Bessel's Inequality</title>
+      <statement>
+        <p> Let <m>a_0, a_n</m> and <m>b_n</m> be the fourier coefficients related to the function <m>
+          f</m> on <m>[-\pi,\pi]</m>. Then </p>
+        <p>
+          <me>
+            2a_0^2 + \sum_{n=1}^N (a_n^2+b_n^2) \leq \frac{1}{\pi} \int_{-\pi}^{\pi} f^2 \, dx
+          </me>
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem
+      xml:id="thm-parsevals-theorem">
+      <title>Parseval's Theorem</title>
+      <statement>
+        <p> Let <m>a_0, a_n</m> and <m>b_n</m> be the fourier coefficients related to the function <m>
+          f</m> on <m>[-\pi,\pi]</m>. Then </p>
+        <p>
+          <me>
+            2a_0^2 + \sum_{n=1}^{\infty} (a_n^2+b_n^2) = \frac{1}{\pi} \int_{-\pi}^{\pi} f^2 \, dx
+          </me>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>There
+      are two important consequences of this theorem:
+    </p>
+    <p>
+      <ul>
+        <li>
+          <p> If the integral on the right side is finite, then the series on the left converges.
+            Functions in which the right side is finite are piecewise continuous functions.</p>
+        </li>
+
+        <li>
+          <p> The error, <m>E^{\star}</m> in (<xref ref="eq-estar" />) goes to zero. That is Fourier
+            Series converge to <m>f</m> (using the square error).</p>
+        </li>
+      </ul>
+    </p>
+
+    <example>
+      <statement>
+        <p> Calculate <m>E^{\star}</m> for the function: </p>
+        <p>
+          <me>
+            f(x) = \begin{cases}
+            \pi+x \amp x \in [-\pi,0) \\
+            \pi-x \amp x \in [0,\pi]
+            \end{cases}
+          </me>
+        </p>
+
+        <p> and extended periodically and let <m>N=5,10,25,50,100,250,500,1000</m>. </p>
+      </statement>
+      <solution>
+        <p>
+          The Fourier Series of this function is
+</p>
+        <p>
+          <me>
+            f(x) = \frac{\pi}{2} + \sum_{n=1}^{\infty} \frac{2}{\pi n^2} (1-(-1)^n) \cos nx
+          </me>
+        </p>
+        <p> or <m>a_0 = \pi/2</m> and <m>a_n = (2/\pi n^2)(1-(-1)^n) </m>
+        </p>
+        <p>
+          <md>
+            <mrow>E^{\star} \amp = \int_{-\pi}^{\pi} f^2 \, dx - 2A_0\pi - \pi \sum_{n=1}^{N} (A_n^2
+              + B_n^2) </mrow>
+            <mrow>\amp = 2\int_{0}^{\pi} (\pi-x)^2 \, dx - 2\biggl(\frac{\pi}{2}\biggr) - \pi
+              \sum_{n=1}^{N}\biggl(\frac{2}{\pi n^2} (1-(-1)^n) \biggr)</mrow>
+          </md>
+        </p>
+
+        <table>
+          <title></title>
+          <tabular>
+            <row>
+              <cell>
+                <m>n</m>
+              </cell>
+              <cell>
+                <m>E^{\star}</m>
+              </cell>
+            </row>
+            <row>
+              <cell>
+                5 </cell>
+              <cell> 0.00372 </cell>
+            </row>
+            <row>
+              <cell>10 </cell>
+              <cell> 0.000832 </cell>
+            </row>
+            <row>
+              <cell>25 </cell>
+              <cell> 0.0000482 </cell>
+            </row>
+            <row>
+              <cell>50 </cell>
+              <cell>
+                <m>6.78 \times 10^{-6} </m>
+              </cell>
+            </row>
+            <row>
+              <cell>100 </cell>
+              <cell>
+                <m>8.49 \times 10^{-8} </m>
+              </cell>
+            </row>
+            <row>
+              <cell>250 </cell>
+              <cell>
+                <m> 5.43 \times 10^{-8} </m>
+              </cell>
+            </row>
+            <row>
+              <cell>500 </cell>
+              <cell>
+                <m>6.79 \times 10^{-9} </m>
+              </cell>
+            </row>
+            <row>
+              <cell>1000 </cell>
+              <cell>
+                <m>8.48 \times 10^{-10} </m>
+              </cell>
+            </row>
+          </tabular>
+        </table>
+      </solution>
+    </example>
+
+    <p> A consequence of Parseval's Theorem is that for piecewise continuous functions, the Fourier
+      Series converges as <m>n \rightarrow \infty</m>. So in light of the plot in Example <xref
+        ref="ex-plot-square-wave" />, that it would appear that the plot of <m>f_N</m> would
+      approach the square wave as <m>N \rightarrow \infty</m>. However the plots of <m>f_{25}</m>
+      and <m>f_{100}</m> are shown below (with <m>n=25</m> on top): </p>
+
+    <figure>
+      <caption>
+        A square wave?????
+      </caption>
+      <image width="50%" xml:id="plot-square-wave2">
+        <latex-image>
+          <![CDATA[
+  \begin{tikzpicture}[xscale=0.45,yscale=1.5]
+  \draw[->] (-10,0) -- (10,0) node [above right] {$x$};
+  \draw[->] (0,-1.25) -- (0,1.25) node [above right] {$y$};
+
+  % this draws all non fractional multiples of pi
+
+  \foreach \x/\val in {pi/\pi,2*pi/2\pi,3*pi/3\pi,-pi/-\pi,-2*pi/-2\pi,-3*pi/-3\pi}
+  \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\val$};
+
+  \foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+
+  \foreach \i in {-1,0,1} {
+  \draw ({2*pi*\i},1) -- ({2*pi*\i+pi},1);
+  \draw ({2*pi*\i-pi},-1) -- ({2*pi*\i},-1);}
+
+  %\begin{luacode}
+  %local function wave(x)
+  %    sum = 0.0
+  %  for n = 1, 25, 2 do
+  %      sum = sum + math.sin(n*x)/n
+  %    end
+  %    return sum*4/math.pi
+  %end
+%
+  %local x = -10
+  %local numpoints = 250
+  %local y
+  %tex.print('\\draw[color=red]')
+  %for i = 0,numpoints-1,1 do
+  %    y = wave(x)
+  %    tex.print('(',x,',',y,') -- ')
+  %    x = x + 20/numpoints
+  %end
+  %tex.print('(',x,',',y,');')
+%
+  %\end{luacode}
+  \end{tikzpicture}
+  ]]>
+</latex-image>
+      </image>
+    </figure>
+
+
+    <figure>
+      <caption>
+        A square wave?????
+      </caption>
+      <image width="50%" xml:id="plot-square-wave3">
+        <latex-image>
+      <![CDATA[
+  \begin{tikzpicture}[xscale=0.45,yscale=1.5]
+  \draw[->] (-10,0) -- (10,0) node [above right] {$x$};
+  \draw[->] (0,-1.25) -- (0,1.25) node [above right] {$y$};
+
+  % this draws all non fractional multiples of pi
+
+  \foreach \x/\val in {pi/\pi,2*pi/2\pi,3*pi/3\pi,-pi/-\pi,-2*pi/-2\pi,-3*pi/-3\pi}
+  \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\val$};
+
+  \foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+
+  \foreach \i in {-1,0,1} {
+  \draw ({2*pi*\i},1) -- ({2*pi*\i+pi},1);
+  \draw ({2*pi*\i-pi},-1) -- ({2*pi*\i},-1);}
+
+  \draw[color=red](-10.0,0.9933)--
+  (-9.92,0.9903)--
+  (-9.84,1.0125)--
+  (-9.76,1.0094)--
+  (-9.68,0.9764)--
+  (-9.6,0.9932)--
+  (-9.52,1.066)--
+  (-9.44,0.8527)--
+  (-9.36,-0.9046)--
+  (-9.28,-1.0118)--
+  (-9.2,-1.0257)--
+  (-9.12,-0.988)--
+  (-9.04,-0.9876)--
+  (-8.96,-1.0112)--
+  (-8.88,-1.0061)--
+  (-8.8,-0.9898)--
+  (-8.72,-0.9979)--
+  (-8.64,-1.009)--
+  (-8.56,-0.9994)--
+  (-8.48,-0.9923)--
+  (-8.4,-1.0027)--
+  (-8.32,-1.0062)--
+  (-8.24,-0.9958)--
+  (-8.16,-0.9954)--
+  (-8.08,-1.0053)--
+  (-8.0,-1.0029)--
+  (-7.92,-0.9939)--
+  (-7.84,-0.9989)--
+  (-7.76,-1.0064)--
+  (-7.68,-0.9992)--
+  (-7.6,-0.9937)--
+  (-7.52,-1.0027)--
+  (-7.44,-1.0059)--
+  (-7.36,-0.9953)--
+  (-7.28,-0.995)--
+  (-7.2,-1.0068)--
+  (-7.12,-1.0035)--
+  (-7.04,-0.9911)--
+  (-6.96,-0.9987)--
+  (-6.88,-1.0113)--
+  (-6.8,-0.9978)--
+  (-6.72,-0.9857)--
+  (-6.64,-1.0083)--
+  (-6.56,-1.0188)--
+  (-6.48,-0.977)--
+  (-6.4,-0.9693)--
+  (-6.32,-1.1531)--
+  (-6.24,1.078)--
+  (-6.16,0.9514)--
+  (-6.08,0.9953)--
+  (-6.0,1.0227)--
+  (-5.92,0.9971)--
+  (-5.84,0.9859)--
+  (-5.76,1.0057)--
+  (-5.68,1.0092)--
+  (-5.6,0.993)--
+  (-5.52,0.9943)--
+  (-5.44,1.0074)--
+  (-5.36,1.0029)--
+  (-5.28,0.9926)--
+  (-5.2,0.9995)--
+  (-5.12,1.0069)--
+  (-5.04,0.9985)--
+  (-4.96,0.9939)--
+  (-4.88,1.0032)--
+  (-4.8,1.005)--
+  (-4.72,0.9954)--
+  (-4.64,0.9963)--
+  (-4.56,1.0057)--
+  (-4.48,1.0021)--
+  (-4.4,0.9934)--
+  (-4.32,0.9998)--
+  (-4.24,1.0071)--
+  (-4.16,0.998)--
+  (-4.08,0.9928)--
+  (-4.0,1.0045)--
+  (-3.92,1.0069)--
+  (-3.84,0.9925)--
+  (-3.76,0.9941)--
+  (-3.68,1.0113)--
+  (-3.6,1.0038)--
+  (-3.52,0.9829)--
+  (-3.44,1.0008)--
+  (-3.36,1.0287)--
+  (-3.28,0.9836)--
+  (-3.2,0.913)--
+  (-3.12,-1.0646)--
+  (-3.04,-1.0497)--
+  (-2.96,-0.9742)--
+  (-2.88,-0.9865)--
+  (-2.8,-1.0173)--
+  (-2.72,-1.0042)--
+  (-2.64,-0.9869)--
+  (-2.56,-1.0003)--
+  (-2.48,-1.0102)--
+  (-2.4,-0.997)--
+  (-2.32,-0.9922)--
+  (-2.24,-1.0047)--
+  (-2.16,-1.0055)--
+  (-2.08,-0.9942)--
+  (-2.0,-0.9966)--
+  (-1.92,-1.0063)--
+  (-1.84,-1.0014)--
+  (-1.76,-0.9935)--
+  (-1.68,-1.0005)--
+  (-1.6,-1.0062)--
+  (-1.52,-0.9977)--
+  (-1.44,-0.9944)--
+  (-1.36,-1.004)--
+  (-1.28,-1.0046)--
+  (-1.2,-0.9944)--
+  (-1.12,-0.9968)--
+  (-1.04,-1.007)--
+  (-0.96,-1.0013)--
+  (-0.88,-0.9917)--
+  (-0.8,-1.0011)--
+  (-0.72,-1.0093)--
+  (-0.64,-0.9957)--
+  (-0.56,-0.9899)--
+  (-0.48,-1.009)--
+  (-0.4,-1.0106)--
+  (-0.32,-0.9828)--
+  (-0.24,-0.9897)--
+  (-0.16,-1.0387)--
+  (-0.08,-1.0022)--
+  (0.0,0.0)--
+  (0.08,1.0022)--
+  (0.16,1.0387)--
+  (0.24,0.9897)--
+  (0.32,0.9828)--
+  (0.4,1.0106)--
+  (0.48,1.009)--
+  (0.56,0.9899)--
+  (0.64,0.9957)--
+  (0.72,1.0093)--
+  (0.8,1.0011)--
+  (0.88,0.9917)--
+  (0.96,1.0013)--
+  (1.04,1.007)--
+  (1.12,0.9968)--
+  (1.2,0.9944)--
+  (1.28,1.0046)--
+  (1.36,1.004)--
+  (1.44,0.9944)--
+  (1.52,0.9977)--
+  (1.6,1.0062)--
+  (1.68,1.0005)--
+  (1.76,0.9935)--
+  (1.84,1.0014)--
+  (1.92,1.0063)--
+  (2.0,0.9966)--
+  (2.08,0.9942)--
+  (2.16,1.0055)--
+  (2.24,1.0047)--
+  (2.32,0.9922)--
+  (2.4,0.997)--
+  (2.48,1.0102)--
+  (2.56,1.0003)--
+  (2.64,0.9869)--
+  (2.72,1.0042)--
+  (2.8,1.0173)--
+  (2.88,0.9865)--
+  (2.96,0.9742)--
+  (3.04,1.0497)--
+  (3.12,1.0646)--
+  (3.2,-0.913)--
+  (3.28,-0.9836)--
+  (3.36,-1.0287)--
+  (3.44,-1.0008)--
+  (3.52,-0.9829)--
+  (3.6,-1.0038)--
+  (3.68,-1.0113)--
+  (3.76,-0.9941)--
+  (3.84,-0.9925)--
+  (3.92,-1.0069)--
+  (4.0,-1.0045)--
+  (4.08,-0.9928)--
+  (4.16,-0.998)--
+  (4.24,-1.0071)--
+  (4.32,-0.9998)--
+  (4.4,-0.9934)--
+  (4.48,-1.0021)--
+  (4.56,-1.0057)--
+  (4.64,-0.9963)--
+  (4.72,-0.9954)--
+  (4.8,-1.005)--
+  (4.88,-1.0032)--
+  (4.96,-0.9939)--
+  (5.04,-0.9985)--
+  (5.12,-1.0069)--
+  (5.2,-0.9995)--
+  (5.28,-0.9926)--
+  (5.36,-1.0029)--
+  (5.44,-1.0074)--
+  (5.52,-0.9943)--
+  (5.6,-0.993)--
+  (5.68,-1.0092)--
+  (5.76,-1.0057)--
+  (5.84,-0.9859)--
+  (5.92,-0.9971)--
+  (6.0,-1.0227)--
+  (6.08,-0.9953)--
+  (6.16,-0.9514)--
+  (6.24,-1.078)--
+  (6.32,1.1531)--
+  (6.4,0.9693)--
+  (6.48,0.977)--
+  (6.56,1.0188)--
+  (6.64,1.0083)--
+  (6.72,0.9857)--
+  (6.8,0.9978)--
+  (6.88,1.0113)--
+  (6.96,0.9987)--
+  (7.04,0.9911)--
+  (7.12,1.0035)--
+  (7.2,1.0068)--
+  (7.28,0.995)--
+  (7.36,0.9953)--
+  (7.44,1.0059)--
+  (7.52,1.0027)--
+  (7.6,0.9937)--
+  (7.68,0.9992)--
+  (7.76,1.0064)--
+  (7.84,0.9989)--
+  (7.92,0.9939)--
+  (8.0,1.0029)--
+  (8.08,1.0053)--
+  (8.16,0.9954)--
+  (8.24,0.9958)--
+  (8.32,1.0062)--
+  (8.4,1.0027)--
+  (8.48,0.9923)--
+  (8.56,0.9994)--
+  (8.64,1.009)--
+  (8.72,0.9979)--
+  (8.8,0.9898)--
+  (8.88,1.0061)--
+  (8.96,1.0112)--
+  (9.04,0.9876)--
+  (9.12,0.988)--
+  (9.2,1.0257)--
+  (9.28,1.0118)--
+  (9.36,0.9046)--
+  (9.44,-0.8527)--
+  (9.52,-1.066)--
+  (9.6,-0.9932)--
+  (9.68,-0.9764)--
+  (9.76,-1.0094)--
+  (9.84,-1.0125)--
+  (9.92,-0.9903)--
+  (10.0,-0.9933);
+
+  %\begin{luacode}
+  %local function wave(x)
+  %    sum = 0.0
+  %  for n = 1, 100, 2 do
+  %      sum = sum + math.sin(n*x)/n
+  %    end
+  %    return sum*4/math.pi
+  %end
+
+  %local x = -10
+  %local numpoints = 250
+  %local y
+  %tex.print('\\draw[color=red]')
+  %for i = 0,numpoints-1,1 do
+  %    y = wave(x)
+  %    tex.print('(',x,',',y,') -- ')
+  %    x = x + 20/numpoints
+  %end
+  %tex.print('(',x,',',y,');')
+
+  % \end{luacode}
+
+  \end{tikzpicture}
+  ]]>
+</latex-image>
+      </image>
+    </figure>
+
+    <p> And despite the larger value of <m>N</m>, <m>f_N</m> does not appear to be approaching the
+      square wave function. The difference is pronounced near the discontinuities in the function.
+      This is called \emph{Gibbs Phenomena} and it can be shown in this situation that the local max
+      near <m>x=0</m> in fact grows without bound as <m>N \rightarrow \infty</m>, despite the fact
+      that <m>||f_N-f|| \rightarrow 0</m>. </p>
+  </subsection>
+</section>

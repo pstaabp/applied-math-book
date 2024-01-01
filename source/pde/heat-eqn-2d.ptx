@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="sect-2d-heat-eqn">
+	<title>Heat Equation in two spatial dimensions</title>
+	<p>
+		The Heat equation in two spatial dimensions can be written:
+	</p>
+
+	<p>
+		<men xml:id="eq-heat-eqn-2D">
+			\frac{1}{\kappa} \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial {x}^2}  + \frac{\partial^2 u}{\partial {y}^2}
+		</men>
+	</p>
+
+	<p>
+		In this case, let's say that we have the following boundary conditions:
+	</p>
+
+	<p>
+		<md>
+			<mrow> u\bigr\vert_{x=0} \amp = 0 \amp \frac{\partial u}{\partial x}\biggr\vert_{x=L} \amp = 0 </mrow>
+			<mrow>\frac{\partial u}{\partial y} \biggr\vert_{y=0} \amp = 0 \amp \frac{\partial u}{\partial y}\biggr\vert_{y = \ell}  \amp  = 0 </mrow>
+		</md>
+	</p>
+
+	<p>
+		which means that along the edge <m>x=0</m>, the temperature is 0 and the other three edges are insulated.
+		In addition, assume that the initial condition is
+	</p>
+
+	<p>
+		<me>
+			u(x,y,0) = f(x,y)
+		</me>
+	</p>
+
+	<p>
+		In this section, we will examine how to solve this problem using the separation of variables.
+		Since there are 3 variables, let's assume that the solution <m>u</m> can be written:
+	</p>
+
+	<p>
+		<me>
+			u  = X(x) Y(y) T(t)
+		</me>
+	</p>
+
+	<p>
+		and substituting this into the heat equation, we get:
+	</p>
+
+	<p>
+		<md>
+			<mrow>\frac{1}{\kappa} \frac{\partial XYT}{\partial t} \amp = \frac{\partial^2 XYT}{\partial {x}^2}  + \frac{\partial^2 XYT}{\partial {y}^2}  </mrow>
+			<mrow>\frac{1}{\kappa} XYT' \amp = X'' YT + XY''T </mrow>
+		</md>
+	</p>
+
+	<p>
+		dividing through by <m>XYT</m>
+	</p>
+
+	<p>
+		<md>
+			<mrow>\frac{1}{\kappa} \frac{T'}{T} \amp = \frac{X''}{X} + \frac{Y''}{Y} </mrow>
+		</md>
+	</p>
+
+	<p>
+		Since <m>T'/T</m> is only a function of <m>t</m>, <m>X''/X</m> is only a function of <m>x</m> and <m>Y''/Y</m> is only a function of <m>y</m>, the only option for allowing the above to be true is to assume that
+	</p>
+
+	<p>
+		<md>
+			<mrow> \frac{X''}{X} \amp = -k_1 \amp \frac{Y''}{Y} \amp = -k_2 </mrow>
+		</md>
+	</p>
+
+	<p>
+		The boundary condition can also be written in terms of <m>X</m> and <m>Y</m> as <m>X(0)=0, X'(L)=0, Y'(0)=0, Y'(\ell)=0</m>.
+		Thus, in this case, we have two Sturm-Liouville problems,
+	</p>
+
+	<p>
+		<md>
+			<mrow>X''+k_1 X \amp = 0 \amp X(0)=0, \quad X'(L) = 0 </mrow>
+			<mrow>Y''+k_1 Y \amp = 0 \amp Y'(0)=0, \quad Y'(\ell) = 0 </mrow>
+		</md>
+	</p>
+
+	<p>
+		The solution to the first is
+	</p>
+
+	<p>
+		<md>
+			<mrow>k_1 \amp = \frac{(2n-1)^2\pi^2}{4L^2} \amp \amp \text{for $n=1,2,3, \ldots$} </mrow>
+		</md>
+	</p>
+
+	<p>
+		and
+	</p>
+
+	<p>
+		<me>
+			X  = \sin \frac{(2n-1)\pi}{2L} x
+		</me>
+	</p>
+
+	<p>
+		The solution to the second is
+		<md>
+			<mrow>k_2 \amp = \frac{m^2\pi^2}{\ell^2} \amp \amp \text{for $m=0,1,2,3, \ldots$} </mrow>
+		</md>
+	</p>
+
+	<p>
+		and
+	</p>
+
+	<p>
+		<me>
+			Y  = \cos \frac{m\pi}{\ell} y
+		</me>
+	</p>
+
+	<p>
+		Next, then we need to solve
+	</p>
+
+	<p>
+		<md>
+			<mrow>\frac{1}{\kappa} \frac{T'}{T} \amp = -k_1 -k_2  \qquad \text{or} </mrow>
+			<mrow>T' + \kappa(k_1+k_2) T \amp = 0 </mrow>
+		</md>
+	</p>
+
+	<p>
+		which has the solution
+	</p>
+
+	<p>
+		<me>
+			T_{n,m} = e^{-\kappa(k_1+k_2)t}
+		</me>
+	</p>
+
+	<p>
+		Then put the solutions together:
+	</p>
+
+	<p>
+		<md>
+			<mrow>u_{n,m} \amp = T_{n,m}X_n Y_m </mrow>
+			<mrow>\amp = e^{-\kappa(k_1+k_2)t}\sin \frac{(2n-1) \pi x}{2L}\cos \frac{m \pi x}{\ell} </mrow>
+		</md>
+	</p>
+
+	<p>
+		and the solution that satisfies the boundary conditions is:
+	</p>
+
+	<p>
+		<me>
+			u = \sum_{n=1}^{\infty} \sum_{m=0}^{\infty} c_{n,m}  e^{-\kappa(k_1+k_2)t}\sin \frac{(2n-1) \pi x}{2L}\cos \frac{m \pi y}{\ell}  \,dy \, dx
+		</me>
+	</p>
+
+	<p>
+		Finally, we apply the initial condition.
+	</p>
+
+	<p>
+		<me>
+			u(x,y,0) = f(x,y) = \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} c_{n,m}  \sin \frac{(2n-1) \pi x}{2L}\cos \frac{m \pi y}{\ell}
+		</me>
+	</p>
+
+	<p>
+		which results in the generalized Fourier Series:
+	</p>
+
+	<p>
+		<me>
+			c_{n,m} = \frac{4}{L \ell} \int_0^L \int_0^{\ell} f(x,y) \sin \frac{(2n-1) \pi x}{2L}\cos \frac{m \pi y}{\ell}  \,dy \, dx
+		</me>
+	</p>
+
+	<example>
+		<statement>
+			<p>
+				Find the full solution if <m>L=\ell=\pi</m> and
+			</p>
+
+			<p>
+				<me>
+					f(x,y) = x y (\pi-y)
+				</me>
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				We only need to find <m>c_{m,n}</m>
+			</p>
+
+			<p>
+				<md>
+					<mrow>c_{n,m} \amp =\frac{4}{\pi^2} \int_0^{\pi}\int_0^{\pi} \sin (n+1/2) x \cos my  \, dx \, dy </mrow>
+					<mrow>\amp = 16 (-1)^{n+1} {\frac {1+(-1)^m}{{\pi } (2n+1)^2 {m}^{2}}} </mrow>
+				</md>
+			</p>
+
+			<p>
+				So the solution is
+			</p>
+
+			<p>
+				<me>
+					u = \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} 16 (-1)^{n+1} {\frac {1+(-1)^m}{{\pi } (2n+1)^2 {m}^{2}}}    e^{-\kappa(k_1+k_2)t}\sin (n+1/2)  x\cos my
+				</me>
+			</p>
+
+			<p>
+				where
+				<m>k_1= (n+1/2)^2</m> and <m>k_2=m^2</m>.
+			</p>
+		</solution>
+	</example>
+</section>

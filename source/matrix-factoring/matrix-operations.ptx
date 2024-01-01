@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section>
+	<title>Matrix Properties and Operations</title>
+	<introduction>
+		<p>
+			Although we have spent some time with matrices earlier in the text, we summarize these and
+			they will be important throughout this chapter.
+		</p>
+	</introduction>
+
+	<subsection xml:id="sect-matrix-transpose">
+		<title>The Matrix Transpose</title>
+		<p>
+			Let <m>A</m> be an <m>m</m> by <m>n</m> matrix.
+			The matrix transpose of <m>A</m> is denoted <m>
+			A^{\intercal}</m> and
+		</p>
+
+		<p>
+			<me>
+				(A^{\intercal})_{i,j} = A_{j,i}
+			</me>
+		</p>
+
+		<p>
+			or in other words, the <m>i</m>th row of the transpose is the <m>j</m>th column of <m>A</m>.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					If
+				</p>
+
+				<p>
+					<me>
+						A = \begin{bmatrix}
+						1 \amp -3 \amp 7 \\
+						2 \amp 0 \amp 5
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					then
+				</p>
+
+				<p>
+					<me>
+						A^{\intercal} =
+						\begin{bmatrix}
+						1 \amp 2 \\ -3 \amp 0 \\ 7 \amp 5
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+		</example>
+
+		<p>
+			The matrix <m>A^{\intercal}</m> is the matrix <m>A</m> flipped over the diagonal.
+		</p>
+		<!--(thinking
+		of the transpose in a more abstract manner) -->
+		<theorem xml:id="thm-matrix-transpose">
+			<title>Properties of the matrix transpose</title>
+			<statement>
+				<p>
+					The following are properties of the transpose.
+					Let <m>A</m> be an <m>m</m> by <m>n</m>
+					matrix (unless more restricted as noted).
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<m>(A^{\intercal})^{\intercal} = A</m>.
+								That is, the transpose of the transpose is
+								the original matrix back.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>(A+B)^{\intercal} = A^{\intercal} + B^{\intercal}</m>.
+								This is one of the
+								properties of linearity.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>(AB)^{\intercal} = B^{\intercal} A^{\intercal}</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>(cA)^{\intercal} = c A^{\intercal}</m>.
+								And this is the other linearly property.
+							</p>
+						</li>
+					</ol>
+				</p>
+
+				<p>
+					If, in addition, the matrix <m>A</m> is square, then
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<m>(A^{-1})^T=(A^T)^{-1}</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								The eigenvalues of <m>A</m> are the same as the eigenvalues of <m>A^T</m>.
+								Also,
+								the characteristic polynomial of <m>A</m> and <m>A^{\intercal}</m> are the same.
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+		</theorem>
+		<!-- Prove at least a few of these?  -->
+	</subsection>
+
+	<subsection xml:id="set-sym-matrices">
+		<title>Symmetric Matrices</title>
+		<introduction>
+			<p>
+				We have seen throughout this book examples where a matrix is symmetric in some sense.
+				However, there is a precise definition.
+			</p>
+
+			<definition>
+				<statement>
+					<p>
+						A matrix is <term>symmetric</term> if it is square and if <m>A= A^{\intercal}</m>.
+					</p>
+				</statement>
+			</definition>
+
+			<example>
+				<statement>
+					<p>
+						The following matrix is symmetric,
+					</p>
+
+					<p>
+						<me>
+							A = \begin{bmatrix}
+							1 \amp 2 \amp 0 \\
+							2 \amp 3 \amp -4 \\
+							0 \amp -4 \amp -5
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						and the following is not
+					</p>
+
+					<p>
+						<me>
+							A = \begin{bmatrix}
+							1 \amp 0 \amp -3 \\
+							0 \amp 3 \amp 1 \\
+							-3 \amp 1 \amp 0 \\
+							0 \amp 0 \amp 0
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						since it is not square.
+					</p>
+				</statement>
+			</example>
+
+			<p>
+				Notice that a symmetric matrix has the property that it symmetric over the main diagonal
+				(running from the upper left to lower right).
+			</p>
+		</introduction>
+
+		<subsubsection>
+			<title>Eigenvalues of Symmetric Matrices</title>
+			<p>
+				If we follow the techniques in <xref ref="sect-eigenvalues" />, we can find the
+				eigenvalues and eigenvectors of
+			</p>
+
+			<p>
+				<me>
+					A = \begin{bmatrix}
+					3 \amp 2 \amp 4 \\
+					2 \amp 0 \amp 2 \\
+					4 \amp 2 \amp 3
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				then the eigenvalues are <m>\lambda=8,-1,-1</m> and the corresponding eigenvectors are
+			</p>
+
+			<p>
+				<md>
+					<mrow>\vec{v}_1 \amp = \begin{bmatrix}
+					2 \\ 1 \\ 2
+					\end{bmatrix} \amp \vec{v}_2 \amp =
+					\begin{bmatrix}
+					-1 \\ 0 \\ 1
+					\end{bmatrix} \amp \vec{v}_3 \amp =
+					\begin{bmatrix}
+					-1 \\ 2 \\ 0
+					\end{bmatrix}</mrow>
+				</md>
+			</p>
+
+			<p>
+				which are both real eigenvalues and eigenvectors.
+				This fact is (as shown in the next
+				lemma) that the matrix is symmetric.
+			</p>
+
+			<lemma>
+				<statement>
+					<p>
+						Let <m>A</m> be a real symmetric matrix.
+						The eigenvalues and eigenvectors of <m>A</m>
+						are real.
+					</p>
+				</statement>
+			</lemma>
+
+
+			<proof>
+				<p>
+					Let <m>\lambda</m> be an eigenvalue of <m>A</m> with corresponding eigenvector <m>
+					\vec{v}</m>, then
+				</p>
+
+				<p>
+					<md>
+						<mrow xml:id="eqn-proof-sys-matrix1" number="yes">A\vec{v} \amp = \lambda \vec{v}</mrow>
+						<mrow>\amp \quad \quad \text{take the complex conjugate of both sides}</mrow>
+						<mrow>\overline{A} \overline{\vec{v}} \amp = \overline{\lambda} \overline{\vec{v}}</mrow>
+						<mrow>\amp \quad \quad \text{and since $A$ is real}</mrow>
+						<mrow xml:id="eqn-proof-sys-matrix2" number="yes">A \overline{\vec{v}} \amp =
+						\overline{\lambda} \overline{\vec{v}}</mrow>
+					</md>
+				</p>
+
+				<p>
+					If we left-multiply (<xref ref="eqn-proof-sys-matrix1" />) by <m>
+					\overline{\vec{v}}^{\intercal}</m>,
+				</p>
+
+				<p>
+					<md>
+						<mrow>\overline{\vec{v}}^{\intercal} A\vec{v} \amp = \overline{\vec{v}}^{\intercal}
+						(\lambda \vec{v})</mrow>
+						<mrow>\amp = \lambda \overline{\vec{v}}^{\intercal} \vec{v}</mrow>
+						<mrow>\amp \quad\quad \text{and solving for $\lambda$,}</mrow>
+						<mrow xml:id="eq-sym-matrix-lambda" number="yes">\lambda \amp = \frac{\overline{\vec{v}}^{\intercal}
+						A \vec{v}}{\overline{\vec{v}}^{\intercal}\vec{v}}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and left-multiply (<xref ref="eqn-proof-sys-matrix2" />) by <m>\vec{v}^{\intercal}</m>
+					to get:
+				</p>
+
+				<p>
+					<md>
+						<mrow> \vec{v}^{\intercal} \overline{A}\overline{\vec{v}} \amp = \vec{v}^{\intercal}
+						(\overline{\lambda} \overline{\vec{v}}) </mrow>
+						<mrow>\amp \quad \quad\text{and if we take the transpose of both sides of this}</mrow>
+						<mrow>(\vec{v}^{\intercal} \overline{A}\overline{\vec{v}})^{\intercal} \amp =
+						(\vec{v}^{\intercal} \overline{\lambda} \overline{\vec{v}})^{\intercal} \notag </mrow>
+						<mrow>\overline{\vec{v}}^{\intercal} A^{\intercal} \vec{v} \amp = \overline{\lambda}
+						\overline{\vec{v}}^{\intercal} \vec{v}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and since <m>A</m> is symmetric, <m>A=A^{\intercal}</m> and then solving for <m>
+					\overline{\lambda}</m>
+				</p>
+
+				<p>
+					<men xml:id="eq-sym-matrix-conj-lambda">
+						\overline{\lambda} = \frac{\overline{\vec{v}}^{\intercal} A
+						\vec{v}}{\overline{\vec{v}}^{\intercal} \vec{v} }
+					</men>
+				</p>
+
+				<p>
+					and since (<xref ref="eq-sym-matrix-lambda" />) is the same as (<xref
+					ref="eq-sym-matrix-conj-lambda" />), then <m>\lambda = \overline{\lambda}</m> so the
+					eigenvalue is real.
+				</p>
+
+				<p>
+					Since the eigenvalue of a symmetric matrix is real and the matrix <m>A</m> is real, then
+					the eigenvectors are also real.
+				</p>
+			</proof>
+
+			<p>
+				The fact that symmetric matrices have real eigenvalues with be used later in this section.
+			</p>
+		</subsubsection>
+	</subsection>
+
+	<subsection>
+		<title>Orthogonal Matrices</title>
+		<p>
+			An <term>orthogonal matrix</term>, <m>Q</m> is a square matrix that satisfies <m>QQ^{\intercal}
+			=Q^{\intercal}Q=I</m>.
+		</p>
+
+		<p>
+			The properties include:
+		</p>
+
+		<p>
+			<ul>
+				<li>
+					<p>
+						The columns of <m>Q</m> are orthogonal unit vectors.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						The rows of <m>Q</m> are orthogonal unit vectors.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						The inverse of <m>Q</m> is its transpose or <m>Q^{-1} = Q^{\intercal}</m>.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						The determinant of <m>Q</m> is <m>1</m> or <m>-1</m>.
+						This can be found by
+					</p>
+
+					<p>
+						<me>
+							1 = \det I = \det (QQ^{\intercal}) = \det(Q) \det(Q^{\intercal}) = \det(Q)^2
+						</me>
+					</p>
+
+					<p>
+						So the determinant is <m>1</m> or <m>-1</m>.
+					</p>
+				</li>
+			</ul>
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					The following are examples of 2 by 2 orthogonal matrices:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\begin{bmatrix}
+						0 \amp 1 \\
+						-1 \amp 0
+						\end{bmatrix}, \qquad \begin{bmatrix}
+						\frac{\sqrt{2}}{2} \amp -\frac{\sqrt{2}}{2} </mrow>
+						<mrow>\frac{\sqrt{2}}{2} \amp \frac{\sqrt{2}}{2}
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					And the following are 3 by 3 orthogonal matrices:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\begin{bmatrix}
+						\frac{2}{3} \amp -\frac{2}{3} \amp \frac{1}{3}\\[4pt]
+						-\frac{1}{\sqrt{5}} \amp 0 \amp \frac{2}{\sqrt{5}} \\[4pt]
+						\frac{4}{3\sqrt{5}} \amp \frac{5}{3\sqrt{5}} \amp \frac{2}{3\sqrt{5}}
+						\end{bmatrix} \amp\amp
+						\begin{bmatrix}
+						0 \amp 1 \amp 0 \\
+						1 \amp 0 \amp 0 \\
+						0 \amp 0 \amp 1
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					The matrix on the right is an example of a permutation matrix.
+					Every permutation matrix
+					is an orthogonal matrix.
+				</p>
+			</statement>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Upper- and Lower-Triangular Matrices</title>
+		<introduction>
+			<p>
+				An <term>upper triangle matrix</term> is a matrix (not-necessarily square) such that all
+				elements below the diagonal are 0.
+				A <term>lower triangular matrix</term> is a matrix such
+				that all elements above the diagonal are 0.
+				More precisely,
+			</p>
+
+			<definition>
+				<statement>
+					<p>
+						A <term>upper-triangular matrix</term> is an <m>m</m> by <m>n</m> matrix <m>A</m>, such
+						that <m>a_{i,j}=0</m> if <m>j \lt i</m>.
+						A <term>lower triangular matrix</term> is an <m>
+						m</m> by <m>n</m> matrix <m>A</m> such that <m>a_{i,j}=0</m> if <m>j \gt i</m>.
+					</p>
+				</statement>
+			</definition>
+
+			<example>
+				<statement>
+					<p>
+						The matrix <m>L</m> below is a lower triangular matrix and <m>U</m> is an upper
+						triangular matrix:
+					</p>
+
+					<p>
+						<md>
+							<mrow>L \amp = \begin{bmatrix}
+							3 \amp 0 \amp 0 \\
+							2 \amp -1 \amp 0 \\
+							0 \amp 5 \amp 2
+							\end{bmatrix} \amp
+							U \amp = \begin{bmatrix}
+							1 \amp -7 \amp -5 \\
+							0 \amp 3 \amp 2 \\
+							0 \amp 0 \amp -3
+							\end{bmatrix}</mrow>
+						</md>
+					</p>
+				</statement>
+			</example>
+
+			<p>
+				Hopefully that it's clear that a matrix in echelon form defined in Definition <xref
+				ref="def-echelon-form" /> is also upper triangular.
+			</p>
+		</introduction>
+
+		<subsubsection>
+			<title>Back Substitution</title>
+			<p>
+				An advantage to having an upper- or lower-triangular matrix is that solving the matrix is
+				quite straightforward.
+				In the case of a upper-triangular matrix, <m>U</m> the steps that
+				solve <m>U\vec{x}=\vec{b}</m> is called <term>back substitution</term>.
+				We will show the
+				steps in an example.
+			</p>
+
+			<example>
+				<statement>
+					<p>
+						If
+					</p>
+
+					<p>
+						<md>
+							<mrow>U \amp = \begin{bmatrix}
+							1 \amp -7 \amp -5 \\
+							0 \amp 3 \amp 2 \\
+							0 \amp 0 \amp -3
+							\end{bmatrix} \amp \vec{b} \amp = \begin{bmatrix}
+							2 \\ -5 \\ 6
+							\end{bmatrix},</mrow>
+						</md>
+					</p>
+
+					<p>
+						solve <m>U\vec{x}=\vec{b}</m>.
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						To illustrate back substitution, we write out the matrix equation as the corresponding
+						equations:
+					</p>
+
+					<p>
+						<md>
+							<mrow>x_1 -7x_2 -5x_3 \amp = 2 </mrow>
+							<mrow>3x_2 +2x_3 \amp = -5 </mrow>
+							<mrow>-3 x_3 \amp = -6</mrow>
+						</md>
+					</p>
+
+					<p>
+						and solving the 3rd equation above, <m>x_3=2</m>.
+						This is then substituted into the
+						2nd equation to get:
+					</p>
+
+					<p>
+						<me>
+							3x_2 +2(2) = -5
+						</me>
+					</p>
+
+					<p>
+						and solving leads to <m>x_2 =-3</m>.
+						And then lastly, <m>x_2</m> and <m>x_3</m> are
+						substituted into the first equation to get:
+					</p>
+
+					<p>
+						<me>
+							x_1 -7(-3)-5(2)=2
+						</me>
+					</p>
+
+					<p>
+						and solving this leads to <m>x_1=13</m>.
+						Thus the solution to <m>U\vec{x}=\vec{b}</m>
+						is
+					</p>
+
+					<p>
+						<me>
+							\vec{x} = \begin{bmatrix}
+							13 \\ -3 \\ 2
+							\end{bmatrix}
+						</me>
+					</p>
+				</solution>
+			</example>
+
+			<p>
+				In general, back substitution works the same way.
+			</p>
+
+			<remark>
+				<p>
+					To solve the matrix equation <m>U\vec{x}=\vec{b}</m>, where <m>U</m> is an <m>n</m> by <m>
+					n</m>, non-singular, upper-triangular matrix, first
+				</p>
+
+				<p>
+					<me>
+						x_n = \frac{b_n}{a_{nn}}
+					</me>
+				</p>
+
+				<p>
+					and assume that <m>x_{j+1}, x_{j+2}, \ldots, x_n</m> are known.
+					Then,
+				</p>
+
+				<p>
+					<me>
+						x_j = \frac{1}{a_{jj}} \bigl(b_j - \sum_{k=j+1}^n a_{jk} x_k\bigr) \qquad \text{for
+						$j=n-1,n-2,\ldots,1$}
+					</me>
+				</p>
+
+				<p>
+					and it is important that the steps are performed in reverse order.
+					This technique is
+					called <term>back substitution</term>.
+				</p>
+			</remark>
+		</subsubsection>
+
+		<subsubsection>
+			<title>Forward Substitution</title>
+			<p>
+				Similar to back substitution, if a matrix is in lower-diagonal form, then the matrix
+				equation <m>L\vec{y}=\vec{c}</m> can be solved in a straightforward manner.
+				We first look at
+				an example:
+			</p>
+
+			<example>
+				<statement>
+					<p>
+						Solve <m>L\vec{y}=\vec{c}</m> if
+					</p>
+
+					<p>
+						<md>
+							<mrow>L \amp = \begin{bmatrix}
+							3 \amp 0 \amp 0 \\
+							2 \amp -1 \amp 0 \\
+							0 \amp 5 \amp 2
+							\end{bmatrix} \amp \vec{c} \amp = \begin{bmatrix}
+							9 \\ 8 \\2 \end{bmatrix}</mrow>
+						</md>
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						We first write down the equations that correspond to these:
+					</p>
+
+					<p>
+						<md>
+							<mrow>3y_1 \amp = 9 </mrow>
+							<mrow>2y_1-y_2 \amp = 8 </mrow>
+							<mrow>5y_2 + 2y_3 \amp = 2</mrow>
+						</md>
+					</p>
+
+					<p>
+						Solving the first equation is <m>y_1=3</m>.
+						Then substitute this into the second
+						equation to get:
+					</p>
+
+					<p>
+						<me>
+							2(3) - y_2 = 8
+						</me>
+					</p>
+
+					<p>
+						which has the solution <m>y_2=-2</m>.
+						Lastly, we substitute these into the last
+						equation to get:
+					</p>
+
+					<p>
+						<me>
+							5(-2) +2y_3 = 2
+						</me>
+					</p>
+
+					<p>
+						which has the solution <m>y_3=6</m>.
+						Thus the solution to the matrix equation is
+					</p>
+
+					<p>
+						<me>
+							\vec{y} =\begin{bmatrix}
+							3 \\ -2 \\ 6
+							\end{bmatrix}
+						</me>
+					</p>
+				</solution>
+			</example>
+
+			<p>
+				Notice in this example, we solved the unknown's in the <m>\vec{y}</m> vector in order.
+				This is because of the structure of the lower-triangular matrix and hence why this technique
+				is called <term>forward substitution</term>.
+			</p>
+
+			<remark>
+				<p>
+					To solve the matrix equation <m>L\vec{y}=\vec{c}</m>, where <m>L</m> is an <m>n</m> by <m>
+					n</m>, nonsingular, lower-triangular matrix, first,
+				</p>
+
+				<p>
+					<me>
+						y_1 = \frac{c_1}{a_{11}}
+					</me>
+				</p>
+
+				<p>
+					and then assume that <m>y_1, y_2, \ldots, y_{j-1}</m> are known.
+					Then
+				</p>
+
+				<p>
+					<me>
+						y_j = \frac{1}{a_{jj}} \bigl(b_j - \sum_{k=1}^{j-1} a_{jk} x_k\bigr) \qquad \text{for
+						$j=2,3, \ldots n$}
+					</me>
+				</p>
+
+				<p>
+					and note that in this case, the steps are performed in order.
+					This technique is called <term>forward
+					substitution</term>.
+				</p>
+			</remark>
+		</subsubsection>
+	</subsection>
+</section>

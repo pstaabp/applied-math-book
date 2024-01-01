@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-heat-circular">
+	<title>The Heat Equation in a Circular Region</title>
+	<introduction>
+		<p>
+			Next, we examine how to solve the heat equation in a circular region:
+			<m>\{ (x,y) | x^2+y^2 \leq R^2 \}</m> as shown in the following figure.
+		</p>
+
+		<figure>
+			<caption> A circular region where a point is written in polar coordinates. </caption>
+			<image width="75%" xml:id="plot-heat-eqn3">
+				<latex-image>
+				<![CDATA[
+				\begin{tikzpicture}[scale=0.8]
+				\draw[->] (-6,0) -- (6,0) node [above right] {$x$};
+				\draw[->] (0,-6) -- (0,6) node [above right] {$y$};
+				\draw (0,0) circle [radius=5];
+				\draw[<-] (0,0) -- ({2*cos(120)},{2*sin(120)}) node [above left] {$R$};
+				\draw[->] ({2.8*cos(120)},{2.8*sin(120)}) -- ({5*cos(120)},{5*sin(120)});
+				\draw (0,0) -- ({3*cos(40)},{3*sin(40)}) -- ({3*cos(40},0);
+				\fill ({3*cos(40)},{3*sin(40)}) circle [radius=3pt] node [above right] {$P(x,y)$};
+				\draw ({1.5*cos(40)},0) node [below] {$x$};
+				\draw ({3*cos(40)},{1.5*sin(40)}) node [right] {$y$};
+				\draw ({1.6*cos(40)},{1.4*cos(40)}) node [above left] {$r$};
+				\draw (0.5,0) arc [start angle=0,end angle = 40, radius=0.5];
+				\draw (0.5,0) node [above right] {$\theta$};
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			Instead of solving the equation in cartesian coordinates, we look to write the heat equation in \emph{polar coordinates}.
+			A point in polar coordinates is labelled <m>(r,\theta)</m> where
+		</p>
+
+		<p>
+			<md>
+				<mrow>r \amp = \sqrt{x^2+y^2} \amp \theta \amp = \tan^{-1} \frac{y}{x} </mrow>
+			</md>
+		</p>
+
+		<p>
+			or written as <m>x</m> and <m>y</m> in terms of <m>r</m> and <m>\theta</m>,
+		</p>
+
+		<p>
+			<md>
+				<mrow>x \amp = r \cos \theta \amp y \amp = r \sin \theta .</mrow>
+			</md>
+		</p>
+
+		<p>
+			To convert the heat equation to polar coordinates, we need to write the right hand side of (<xref ref="eq-heat-eqn-2D" />) or
+		</p>
+
+		<p>
+			<me>
+				\frac{\partial^2 u}{\partial {x}^2} + \frac{\partial^2 u}{\partial {y}^2}
+			</me>
+		</p>
+
+		<p>
+			in terms of <m>r</m> and <m>\theta</m>.
+			This is basically an exercise in using the chain rule with multiple independent variables.
+			We start by finding the first partial derivatives of <m>u</m> with respect to <m>x</m> and <m>y</m>.
+		</p>
+
+		<p>
+			<md>
+				<mrow>u_x = \frac{\partial u}{\partial x} \amp = \frac{\partial u}{\partial r} \frac{\partial r}{\partial x} + \frac{\partial u}{\partial \theta} \frac{\partial \theta}{\partial x}  = u_r r_x + u_{\theta} \theta_x  </mrow>
+				<mrow>u_y = \frac{\partial u}{\partial y} \amp = \frac{\partial u}{\partial r} \frac{\partial r}{\partial y}+ \frac{\partial u}{\partial \theta} \frac{\partial \theta}{\partial y}     =  u_r r_y + u_{\theta} \theta_y</mrow>
+			</md>
+		</p>
+
+		<p>
+			and differentiating again, we get:
+		</p>
+
+		<p>
+			<md>
+				<mrow>u_{xx} \amp = (u_r r_x)_x + (u_{\theta} \theta_x)_x \qquad\text{using the product rule}</mrow>
+				<mrow>\amp = (u_r)_x r_x + u_r r_{xx} + (u_\theta)_x \theta_x + u_{\theta} \theta_{xx} </mrow>
+				<mrow>\amp = (u_{rr} r_x + u_{r\theta} \theta_x) r_x + u_r r_{xx} + (u_{\theta r} r_x + u_{\theta\theta} \theta_x) \theta_x + u_{\theta} \theta_{xx} </mrow>
+			</md>
+		</p>
+
+		<p>
+			and similarly,
+		</p>
+
+		<p>
+			<md>
+				<mrow>u_{yy} \amp =(u_rr_y)_y +(u_{\theta}\theta_y) _y </mrow>
+				<mrow>\amp = (u_r)_y r_y + u_r r_{yy} + (u_{\theta})_y \theta_y + u_{\theta} \theta_{yy} </mrow>
+				<mrow>\amp = (u_{rr} r_y + u_{r\theta} \theta_y )r_y + u_r r_{yy} + (u_{r\theta} r_y + u_{\theta\theta} \theta_y) \theta_y + u_{\theta} \theta_{yy} </mrow>
+			</md>
+		</p>
+
+		<p>
+			To complete this, we need to find <m>r_x, \theta_x, r_{xx}, \theta_{xx}</m>
+		</p>
+
+		<p>
+			<md>
+				<mrow>r_x \amp = \frac{x}{\sqrt{x^2+y^2}} = \frac{x}{r} </mrow>
+				<mrow>r_{xx} \amp = \frac{\partial }{\partial x} \frac{x}{r} = \frac{r -x r_x}{r^2}  = \frac{r-x(x/r)}{r^2} = \frac{r^2-x^2}{r^3} = \frac{y^2}{r^3}  </mrow>
+				<mrow>\theta_{x} \amp = \frac{1}{1+(y/x)^2} \frac{\partial }{\partial x} \biggl(\frac{y}{x}\biggr) = \frac{x^2}{x^2+y^2} \biggl( -\frac{y}{x^2} \biggr)  = -\frac{y}{r^2} </mrow>
+				<mrow>\theta_{xx} \amp = \frac{\partial }{\partial x} \biggl(  -\frac{y}{r^2} \biggr) = -y \frac{-2}{r^3} \frac{\partial r}{\partial x} =
+				\frac{2y}{r^3} \frac{x}{r} = \frac{2xy}{r^4}  </mrow>
+			</md>
+		</p>
+
+		<p>
+			as well as <m>r_y, \theta_y, r_{yy}</m> and <m>\theta_{yy}</m>.
+		</p>
+
+		<p>
+			<md>
+				<mrow>r_y \amp = \frac{y}{\sqrt{x^2+y^2}} = \frac{y}{r} </mrow>
+				<mrow>r_{yy} \amp = \frac{\partial }{\partial y} \biggl( \frac{y}{r} \biggr) = \frac{r - y\frac{\partial r}{\partial y} }{r^2} =
+				\frac{r-y(y/r)}{r^2} = \frac{r^2-y^2}{r^3} = \frac{x^2}{r^3}  </mrow>
+				<mrow>\theta_y \amp = \frac{1}{1+(y/x)^2} \frac{\partial }{\partial y} \biggl(\frac{y}{x}\biggr) = \frac{x^2}{x^2+y^2} \biggl( \frac{1}{x} \biggr)  = \frac{x}{r^2} </mrow>
+				<mrow>\theta_{yy} \amp = \frac{\partial }{\partial y}\biggl( \frac{x}{r^2} \biggr) = x \biggl( \frac{-2}{r^3}\biggr) \frac{\partial r}{\partial y}  = \frac{-2x}{r^3} \cdot \frac{y}{r} = -\frac{2xy}{r^4}</mrow>
+			</md>
+		</p>
+
+		<p>
+			So now we write <m>u_{xx}+u_{yy}</m>
+		</p>
+
+		<p>
+			<md>
+				<mrow>u_{xx} \amp = \biggl(u_{rr} \frac{x}{r} + u_{r\theta} \biggl(-\frac{y}{r^2} \biggr) \biggr)\frac{x}{r} + u_r \frac{y^2}{r^3} + \biggl(u_{r\theta}\frac{x}{r} + u_{\theta\theta}\biggl(-\frac{y}{r^2} \biggr) \biggr)\biggl(-\frac{y}{r^2} \biggr) </mrow>
+				<mrow>\amp \qquad \qquad + u_{\theta}\frac{2xy}{r^4}  </mrow>
+				<mrow>u_{yy} \amp = \biggl(u_{rr} \frac{y}{r} + u_{r\theta} \frac{x}{r^2} \biggr)\frac{y}{r} + u_r \frac{x^2}{r^3} + \biggl(u_{r \theta}\frac{y}{r} + u_{\theta\theta} \frac{x}{r^2} \biggr) \frac{x}{r^2} + u_{\theta}\frac{-2xy}{r^4} </mrow>
+				<mrow>u_{xx}+u_{yy} \amp = u_{rr} \frac{x^2+y^2}{r^2} + u_{r\theta} \biggl(-\frac{xy}{r^3} + \frac{xy}{r^3} \biggr) + u_r \biggl( \frac{y^2+x^2}{r^3}\biggr) </mrow>
+				<mrow>\amp \qquad \qquad  + u_{r \theta} \biggl(-\frac{xy}{r^3} + \frac{xy}{r^3} \biggr) + u_{\theta \theta}\biggl(\frac{y^2}{r^4} + \frac{x^2}{r^4} \biggr) + u_{\theta} \biggl( \frac{2xy}{r^4} - \frac{2xy}{r^4} \biggr) </mrow>
+				<mrow>\amp = u_{rr} + \frac{1}{r} u_r + \frac{1}{r^2} u_{\theta\theta}</mrow>
+			</md>
+		</p>
+
+		<p>
+			Thus the heat equation in polar coordinates is
+		</p>
+
+		<p>
+			<men xml:id="eq-heat-eqn-polar">
+				\frac{1}{\kappa} \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial {r}^2}  + \frac{1}{r} \frac{\partial u}{\partial r}+ \frac{1}{r^2} \frac{\partial^2 u}{\partial {\theta}^2}   \label{eq:heat:eqn:polar}
+			</men>
+		</p>
+
+		<p>
+			Before solving this equation in general, we will examine a simpler equation that is related.
+		</p>
+	</introduction>
+
+	<subsection>
+		<title>Rotationally Symmetric Solutions</title>
+		<p>
+			The general case is a bit hard to deal with, so we first start with a <em>rotationally symmetric solution</em>,
+			which means that there is no <m>\theta</m> dependence.
+			Thus the term <m> \frac{\partial^2 u}{\partial {\theta}^2} =0</m> and the heat equation becomes:
+		</p>
+
+		<p>
+			<me>
+				\frac{1}{\kappa} \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial {r}^2}  + \frac{1}{r} \frac{\partial u}{\partial r}
+			</me>
+		</p>
+
+		<p>
+			To solve this using separation of variables, let <m>u(r,t)=T(t) R(r)</m> and substitution into the PDE:
+		</p>
+
+		<p>
+			<md>
+				<mrow>\frac{1}{\kappa} T'R \amp = TR'' + \frac{1}{r} R' T \amp\amp \text{divide by $RT$} </mrow>
+				<mrow>\frac{1}{\kappa} \frac{T'}{T} \amp = \frac{r R'' + R'}{r R}</mrow>
+			</md>
+		</p>
+
+		<p>
+			As before, the only way that the left hand side can equal the right hand side is if each side only depends on a constant or
+		</p>
+
+		<p>
+			<md>
+				<mrow>r R'' + R' \amp = -\lambda r R \amp T' + \lambda \kappa T \amp = 0 </mrow>
+			</md>
+		</p>
+
+		<p>
+			The boundary conditions become <m>R(L)=0</m> and <m>R(0)</m> is finite, so we get the Sturm-Liouville problem:
+		</p>
+
+		<p>
+			<md>
+				<mrow>r R'' + R' + \lambda r R \amp = 0, \amp R(L)\amp = 0, \qquad  R(0) \text{ is finite} </mrow>
+			</md>
+		</p>
+
+		<p>
+			This is a difficult problem to solve in that letting <m>R(r) = e^{pr}</m> does not work.
+			There are techniques to solve this, but let's use Maple to get:
+		</p>
+
+		<p>
+			<me>
+				R(r) = c_1 J_0(\sqrt{\lambda} r) + c_2 Y_0(\sqrt{\lambda} r)
+			</me>
+		</p>
+
+		<p>
+			where <m>J_0</m> and <m>Y_0</m> are bessel functions.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Solving the Sturm-Liouville Problem</title>
+		<p>
+			If we apply the first ``boundary'' condition that <m>R(0)</m> must be finite, we take that <m>c_2=0</m>
+			since <m>Y_0(x)</m> is not finite at <m>x=0</m>.
+			The next boundary condition is <m>R(L)=0</m> or
+		</p>
+
+		<p>
+			<me>
+				R(L) = c_1 J_0(\sqrt{\lambda} L) = 0
+			</me>
+		</p>
+
+		<p>
+			and let <m>\sigma_n</m> be the <m>n</m>th root of <m>J_0(x)</m>.
+			so
+		</p>
+
+		<p>
+			<md>
+				<mrow>\sqrt{\lambda} L \amp = \sigma_n </mrow>
+				<mrow>\lambda \amp = \frac{\sigma_n^2}{L^2}</mrow>
+			</md>
+		</p>
+
+		<p>
+			are the eigenvalues of the problem with  eigenfunctions:
+		</p>
+
+		<p>
+			<me>
+				R_n(r) = J_0\biggl(\frac{\sigma_n x}{L}\biggr)
+			</me>
+		</p>
+
+		<p>
+			Next, the solution to
+		</p>
+
+		<p>
+			<me>
+				T' + \kappa \lambda T  = 0
+			</me>
+		</p>
+
+		<p>
+			is
+		</p>
+
+		<p>
+			<me>
+				T_n = e^{-\kappa \sigma_n t/L}
+			</me>
+		</p>
+
+		<p>
+			The full solution is
+		</p>
+
+		<p>
+			<md>
+				<mrow>u \amp = \sum_{n=1}^{\infty} u_n(r,t) </mrow>
+				<mrow>\amp = \sum_{n=1}^{\infty} c_n J_0\biggl(\frac{\sigma_n x}{L} \biggr) e^{-\kappa \sigma_n t/L}</mrow>
+			</md>
+		</p>
+
+		<p>
+			Lastly, using the initial condition, we get:
+		</p>
+
+		<p>
+			<me>
+				u(r,0) = f(r) =\sum_{n=1}^{\infty} c_n J_0\biggl(\frac{\sigma_n r}{L} \biggr)
+			</me>
+		</p>
+
+		<p>
+			which is a Fourier-type series with
+		</p>
+
+		<p>
+			<me>
+				c_n = \frac{\int_0^L r f(r) J_0(\sigma_n r/L) \, dr}{\int_0^{L} r J_0^2(\sigma_n r/L) \, dr}
+			</me>
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find the solution using the initial condition <m>f(r)=1-r</m> and let <m>L=1</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Again, we need only to find the Fourier Coefficients.
+					The first three are:
+				</p>
+
+				<p>
+					<md>
+						<mrow>c_1 \amp = \frac{\int_0^1  r(1-r) J_0(\sigma_1 r) \, dr}{\int_0^1 r J_0^2(\sigma_1 r) \, dr}  = 0.7845194227 </mrow>
+						<mrow>c_2 \amp = \frac{\int_0^1  r(1-r) J_0(\sigma_2 r) \, dr}{\int_0^1 r J_0^2(\sigma_2 r) \, dr}  = 0.06868885655</mrow>
+						<mrow>c_3 \amp = \frac{\int_0^1  r(1-r) J_0(\sigma_3 r) \, dr}{\int_0^1 r J_0^2(\sigma_3 r) \, dr}  = 0.05311413893</mrow>
+					</md>
+				</p>
+
+				<p>
+					So the solution is
+				</p>
+
+				<p>
+					<me>
+						u(r,t) = \sum_{n=1}^{\infty}c_n J_0(\sigma_n r) e^{-\kappa \sigma_n t}
+					</me>
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>General Circular Heat Equation</title>
+		<p>
+			To solve this (as we have seen before) we will use separation of variables.
+			Let <m>u = T(t) \Theta(\theta) R(r)</m>:
+		</p>
+
+		<p>
+			<md>
+				<mrow>T'\Theta R \amp= R'' T\Theta+ \frac{1}{r} R' T \Theta + \frac{1}{r^2} R T \Theta'' \amp\amp\text{divide by $RT\Theta$} </mrow>
+				<mrow>\frac{T'\Theta R}{RT\Theta} \amp= \frac{R'' T\Theta+ \frac{1}{r} R' T \Theta + \frac{1}{r^2} R T \Theta'' }{RT\Theta} </mrow>
+				<mrow>\frac{T'}{T} \amp = \frac{R''}{R} + \frac{1}{r} \frac{R'}{R} + \frac{1}{r^2} \frac{\Theta''}{\Theta}</mrow>
+			</md>
+		</p>
+
+		<p>
+			Assume that
+		</p>
+
+		<p>
+			<me>
+				\frac{\Theta''}{\Theta} = -\lambda
+			</me>
+		</p>
+
+		<p>
+			and then the right hand side becomes:
+		</p>
+
+		<p>
+			<me>
+				\frac{R''}{R} + \frac{1}{r} \frac{R'}{R} - \frac{\lambda}{r^2}  = \nu
+			</me>
+		</p>
+
+		<p>
+			mulitply through by <m>r^2</m> and rearrange
+		</p>
+
+		<p>
+			<me>
+				r^2 R'' + r R' + (r^2 \nu - \lambda) R = 0
+			</me>
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Sturm-Liouville Problems from the heat equation</title>
+		<p>
+			The first Sturm-Liouville problem is:
+		</p>
+
+		<p>
+			<me>
+				\Theta'' + \lambda \Theta = 0
+			</me>
+		</p>
+
+		<p>
+			and <m>\Theta(0) = \Theta(2\pi)</m> as well as <m>\Theta'(0) = \Theta'(2\pi)</m>.
+			If <m>\lambda &lt; 0</m>, then <m>\Theta(\theta) = c_1 e^{-\sqrt{-\lambda} \theta} + c_2 e^{\sqrt{-\lambda} \theta}</m>.
+			No solution of this exists that satsifies the boundary conditions.
+			If <m>\lambda = 0</m>, then <m>\Theta(\theta) = c_1 + c_2 \theta</m>.
+			To satisfy the boundary conditions <m>\Theta(\theta) = c_1</m>.
+			If <m>\lambda &gt; 0</m>, then <m>\Theta(\theta)  = c_1 \cos \sqrt{\lambda} \theta + c_2 \sin \sqrt{\lambda} \theta</m>.
+		</p>
+
+		<p>
+			<me>
+				\Theta (0) = c_1 = \Theta(2\pi) = c_1 \cos 2\pi\sqrt{\lambda} + c_2 \sin 2\pi \sqrt{\lambda}
+			</me>
+		</p>
+
+		<p>
+			which is satisfied when <m>\lambda = n^2</m>, for <m>n=1,2,3,\ldots</m>.
+			The derivative of <m>\Theta</m> is
+		</p>
+
+		<p>
+			<me>
+				\Theta(\theta) = -n c_1 \sin n \theta + n c_2 \cos n\theta
+			</me>
+		</p>
+
+		<p>
+			The second boundary condition:
+		</p>
+
+		<p>
+			<me>
+				\Theta'(0) = n c_2 \cos (0) = \Theta'(2\pi) = -n c_1(0) + n c_2 \cos 2\pi n
+			</me>
+		</p>
+
+		<p>
+			which is satisfied.
+			Thus
+		</p>
+
+		<p>
+			<md>
+				<mrow>\Theta(\theta) \amp = 1 \amp
+				\Theta(\theta) \amp= \sin n \theta \amp \amp \text{and} \amp \Theta(\theta) \amp = \cos n \theta</mrow>
+			</md>
+		</p>
+
+		<p>
+			each satisfy the boundary condition.
+			The next differential equation is
+		</p>
+
+		<p>
+			<me>
+				r^2 R''+ r R' + (r^2 \nu-n^2) R = 0
+			</me>
+		</p>
+
+		<p>
+			The solution of this is
+		</p>
+
+		<p>
+			<me>
+				R(r) = c_1 J_n(\sqrt{\nu} r) + c_2 Y_n(\sqrt{\nu} r)
+			</me>
+		</p>
+
+		<p>
+			and the boundary conditions are <m>R(0)</m> is finite and <m>R(L)=0</m>.
+			The condition at <m>r=0</m> sets <m>c_2=0</m> and the other condition:
+		</p>
+
+		<p>
+			<me>
+				0  = c_1 J_n(\sqrt{\nu}L)
+			</me>
+		</p>
+
+		<p>
+			results in
+		</p>
+
+		<p>
+			<me>
+				\sqrt{\nu} L = \sigma_{n,i}
+			</me>
+		</p>
+
+		<p>
+			where <m>\sigma_{n,i}</m> is the <m>i</m>th root of <m>J_n(x)</m>.
+			Thus the eigenvalue is
+		</p>
+
+		<p>
+			<me>
+				\nu  = \frac{\sigma_{n,i}^2}{L^2}
+			</me>
+		</p>
+
+		<p>
+			and the eigenfunction is
+		</p>
+
+		<p>
+			<me>
+				J_n\biggl(\frac{\sigma_{n,i} r}{L} \biggr)
+			</me>
+		</p>
+
+		<p>
+			The last DE is
+		</p>
+
+		<p>
+			<me>
+				\frac{1}{\kappa} \frac{T'}{T} = \nu = \frac{\sigma_{n,i}^2}{L^2}
+			</me>
+		</p>
+
+		<p>
+			of which the solution is:
+		</p>
+
+		<p>
+			<me>
+				T = e^{-\kappa (\sigma_{n,i}^2/L^2) t}
+			</me>
+		</p>
+
+		<p>
+			<md>
+				<mrow>u_{0,i} \amp = J_0\biggl(\frac{\sigma_{0,i} r}{L} \biggr) e^{-\kappa (\sigma_{0,i}^2/L^2) t} </mrow>
+				<mrow>u_{n,i} \amp = R_{n,i}(r) \Theta_n T_{n,i} </mrow>
+				<mrow>\amp = J_n\biggl(\frac{\sigma_{n,i} r}{L} \biggr) (a_n \cos n \theta + b_n \sin \theta) e^{-\kappa (\sigma_{n,i}^2/L^2) t}</mrow>
+			</md>
+		</p>
+
+		<p>
+			and using the principle of superposition the full solution is:
+		</p>
+
+		<p>
+			<md>
+				<mrow>u(r,\theta,t) \amp = \sum_{i=1}^{\infty} a_0 J_0\biggl(\frac{\sigma_{0,i} r}{L} \biggr) e^{-\kappa (\sigma_{0,i}^2/L^2) t}  + </mrow>
+				<mrow>\amp \qquad \sum_{i=1}^{\infty}  \sum_{n=1}^{\infty} J_n\biggl(\frac{\sigma_{n,i} r}{L} \biggr) ( a_n \cos n \theta + b_n \sin \theta) e^{-\kappa (\sigma_{n,i}^2/L^2) t}</mrow>
+			</md>
+		</p>
+
+		<p>
+			Finding the coefficients.
+			In this case we use the initial condition that
+		</p>
+
+		<p>
+			<me>
+				u(r,\theta,0) = f(r,\theta)
+			</me>
+		</p>
+
+		<p>
+			and substituting into the solution:
+		</p>
+
+		<p>
+			<me>
+				f(r,\theta) = \sum_{i=1}^{\infty} a_0 J_0\biggl(\frac{\sigma_{0,i} r}{L} \biggr) +
+				\sum_{i=1}^{\infty}  \sum_{n=1}^{\infty} J_n\biggl(\frac{\sigma_{n,i} r}{L} \biggr) ( a_n \cos n \theta + b_n \sin \theta)
+			</me>
+		</p>
+
+		<p>
+			The coefficients are:
+		</p>
+
+		<p>
+			<md>
+				<mrow>a_{0,i} \amp = \frac{\int_0^L \int_0^{2\pi} r f(r,\theta) J_0(\sigma_{0,i} r/L) \,d\theta \, dr}
+				{2\pi \int_0^L  r J_0(\sigma_{0,i} r/L)^2  \, dr}</mrow>
+				<mrow>a_{n,i} \amp = \frac{\int_0^L \int_0^{2\pi} r f(r,\theta) J_n(\sigma_{n,i} r/L)\cos n\theta \,d\theta \, dr}
+				{\pi \int_0^L  r J_n(\sigma_{0,i} r/L)^2  \, dr} </mrow>
+				<mrow>b_{n,i} \amp = \frac{\int_0^L \int_0^{2\pi} r f(r,\theta) J_n(\sigma_{n,i} r/L)\sin n\theta \,d\theta \, dr}
+				{\pi \int_0^L  r J_n(\sigma_{0,i} r/L)^2  \, dr}</mrow>
+			</md>
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Solve the equation above when <m>f(r,\theta) = J_1(\sigma_{1,1} r) \sin \theta</m>.
+					Use <m>\kappa=0.04</m> and <m>L=1</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Again, we just need to compute the coefficients above.
+					Use can either use Maple or make a symmetry argument to see that
+				</p>
+
+				<p>
+					<md>
+						<mrow>a_{0,i} \amp = 0 </mrow>
+						<mrow>a_{n,i} \amp = 0 </mrow>
+						<mrow>b_{1,1} \amp = 1 </mrow>
+						<mrow>a_{n,i} \amp = 0 \qquad n \neq 1, i \neq 1.</mrow>
+					</md>
+				</p>
+
+				<p>
+					So the solution is
+				</p>
+
+				<p>
+					<me>
+						u(r, \theta,t)  = J_1(\sigma_{1,1} r) \sin \theta e^{-0.04 \sigma{1,1}^2 t}
+					</me>
+				</p>
+			</solution>
+		</example>
+	</subsection>
+</section>

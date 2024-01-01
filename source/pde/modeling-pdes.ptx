@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-modeling-pdes">
+	<title>Modeling with PDEs</title>
+	<introduction>
+		<p>
+			In this section, we show where two important differential equations arise based on modeling the physical situation.
+			The first will be the heat transport or <term>heat equation</term> and the second will
+			be the <term>wave equation</term> by modeling the motion of a taut string.
+			In both situations we will only show this for motion in one-dimension although similar
+			PDEs model more complex behavior.
+		</p>
+	</introduction>
+
+	<subsection>
+		<title>The Heat Equation</title>
+		<p>
+			In this section, we will derive the transport of heat in a solid bar.
+			In short, heat moves in a substance from a warmer region to a cooler region and
+			if we know the direction of motion and the rate then we can understand heat flow.
+		</p>
+		<!-- %Considering a small surface patch, <m>S</m> in the substance and let <m>P(x_0,y_0,z_0)</m> be a point on that patch and <m>\vec{n}</m> be a vector normal to the patch at <m>P</m>.
+		%
+		%%\begin{center}
+		%%\begin{tikzpicture}
+		%%\begin{axis}[axis lines=none,view={60}{40}]
+		%%%\addplot3[mesh,domain=-1:1,samples=3] {1-0.02*x*x-0.02*y*y};
+		%%\addplot3[domain=-1:1](1,{x},{1-0.1*x*x});
+		%%\addplot3[domain=-1:1](-1,{x},{1-0.1*x*x});
+		%%\addplot3[domain=-1:1]({x},1,{1-0.1*x*x});
+		%%\addplot3[domain=-1:1]({x},-1,{1-0.1*x*x});
+		%%\addplot3[domain=-1:1]({x},-0.5,{1-0.1*x*x});
+		%%\addplot3 coordinates {(0,0,1) (0,0,1.2)};
+		%%\end{axis}
+		%%\end{tikzpicture}
+		%%\end{center}
+		%
+		% -->
+		<p>
+			We will consider a bar of length <m>L</m> with fixed density <m>\rho</m>, constant
+			cross sectional area <m>A</m> and insulated sides.
+			This derivation will result
+			in flow only in the direction of the length of the bar.
+			The shape of the
+			cross section and material in the bar does not matter but we will show a cylindrical bar.
+		</p>
+
+		<figure xml:id="fig-heat-eqn">
+			<caption> A bar </caption>
+			<image width="50%" xml:id="plot-heat-eqn">
+				<latex-image>
+				<![CDATA[
+				\begin{tikzpicture}
+				\draw (0,0) circle [x radius=0.5, y radius=1];
+				\draw (0,-1) -- (7,-1);
+				\draw (0,1) -- (7,1);
+				\draw (7,-1) arc [x radius=0.5, y radius=1, start angle=-90, end angle = 90];
+				\draw[gray] (3.25,0) circle [x radius=0.5, y radius=1];
+				\draw[gray] (3.75,-1) arc [x radius=0.5, y radius=1, start angle=-90, end angle = 90];
+				\draw[|<->|] (3.25,-1.25) -- (3.75,-1.25) node [midway, below] {$\Delta x$};
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			The small segment of rod has heat flux <m>Q(x,t)</m> entering in the left side and has heat
+			flux <m>Q(x+\Delta x,t)</m> exiting the right side.
+			The temperature is <m>T(x,t)</m> on the left and <m>T(x+\Delta x,t)</m> on the right.
+		</p>
+
+		<figure xml:id="fig-heat-eqn2">
+			<caption> A bar </caption>
+			<image width="50%" xml:id="plot-heat-eqn2">
+				<latex-image>
+				<![CDATA[
+				\begin{tikzpicture}
+				\draw (3.25,1) -- (3.75,1);
+				\draw (3.25,-1) -- (3.75,-1);
+				\draw[gray] (3.75,-1) arc [x radius=0.5, y radius=1, start angle=-90, end angle = 90];
+				\draw(3.25,0) circle [x radius=0.5, y radius=1];
+				\draw (3,0.5) node [above left] {$T(x,t)$};
+				\draw[->,very thick] (2.5,0) node [below left] {$Q(x,t)$} -- (3.25,0);
+				\draw (4,0.5) node [above right] {$T(x+\Delta x,t)$};
+				\draw[->,very thick] (4.25,0)  -- (5,0) node [below right] {$Q(x+\Delta,t)$};
+				\draw[|<->|] (3.25,-1.25) -- (3.75,-1.25) node [midway, below] {$\Delta x$};
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			Next, we consider the amount of heat in the segment.
+			The heat is proportional to the mass of the segment (<m>\rho \Delta x</m>) and the temperature.
+			The proportionality constant, <m>c</m> is called the specific heat.
+			The amount of heat in this small segment is:
+		</p>
+
+		<p>
+			<me>
+				c \rho T \Delta x
+			</me>
+		</p>
+
+		<p>
+			The temporal change in heat of this element is the derivative with respect to <m>T</m> and the only
+			quantity that depends on time is the temperature <m>T</m>:
+		</p>
+
+		<p>
+			<me>
+				c \rho \frac{\partial T}{\partial t} \Delta x
+			</me>
+		</p>
+
+		<p>
+			and is equal to the total amount of heat entering from the two ends or
+		</p>
+
+		<p>
+			<me>
+				c \rho \frac{\partial T}{\partial t} \Delta x   = Q(x,t) - Q(x+\Delta x,t)
+			</me>
+		</p>
+
+		<p>
+			Divide both sides of this equation by <m>\Delta x</m> and take the limit <m>\Delta x \rightarrow 0</m>,
+		</p>
+
+		<p>
+			<men xml:id="eq-heat-eqn-deriv">
+				c \rho \frac{\partial T}{\partial t}    = \lim_{\Delta x \rightarrow 0} Q(x,t) - Q(x+\Delta x,t)
+				=   -\frac{\partial Q}{\partial x}
+			</men>
+		</p>
+
+		<p>
+			The relationship between the heat flux, <m>Q</m> and the temperature is called
+			<term>Fourier's Law</term>, and states that the heat transferred across unit
+			area is proportional to the temperature gradient or
+		</p>
+
+		<p>
+			<me>
+				Q = -k \frac{\partial T}{\partial x}
+			</me>
+		</p>
+
+		<p>
+			where <m>k</m> is the proportionality constant called the thermal conductivity and the
+			negative sign is due to the fact that heat flows from hot to cold (in a negative direction).
+			Substituting Fourier's Law into (\ref{eq:heat:eqn:deriv}) results in
+		</p>
+
+		<p>
+			<me>
+				c \rho \frac{\partial T}{\partial t} = -\frac{\partial }{\partial x} \biggl(  -k \frac{\partial T}{\partial x} \biggr)
+			</me>
+		</p>
+
+		<p>
+			and assuming that <m>k</m> is a constant,
+		</p>
+
+		<p>
+			<me>
+				c \rho \frac{\partial T}{\partial t} = k \frac{\partial^2 T}{\partial {x}^2}
+			</me>
+		</p>
+
+		<p>
+			rearranging we get
+		</p>
+
+		<p>
+			<me>
+				\frac{\partial T}{\partial t} = \kappa \frac{\partial^2 T}{\partial {x}^2}
+			</me>
+		</p>
+
+		<p>
+			where <m>\kappa = k/c \rho</m> is called the thermal diffusivity.
+		</p>
+
+		<remark>
+			<p>
+				The <term>one-dimensional heat equation</term> is
+			</p>
+
+			<p>
+				<me>
+					\frac{\partial T}{\partial t} = \kappa \frac{\partial^2 T}{\partial {x}^2}
+				</me>
+			</p>
+
+			<p>
+				and is typically solved for a given initial condition <m>T(x,0)=f(x)</m> and often with boundary conditions.
+			</p>
+		</remark>
+	</subsection>
+
+	<subsection>
+		<title>Wave Equation: Modeling a Taut String</title>
+		<p>
+			Next, we turn to modeling the motion of a taut string fixed on both ends.
+			A common example of this is a guitar string.
+			We look at a small part of the string that has been displaced vertically from rest:
+		</p>
+
+		<figure xml:id="fig-wave-eqn">
+			<caption> A bar </caption>
+			<image width="50%" xml:id="plot-wave-eqn">
+				<latex-image>
+				<![CDATA[
+				\begin{tikzpicture}[scale=1.5]
+				\draw[<->,thick] (-1,-1) node [below left] {$\vec{T}$} -- (0,0) node [below right] {$u(x,t)$} ..
+				controls (0.5,0.5) and (1,0.75) ..
+				(1.5,1) node [below right] {$u(x+\Delta x,t)$} -- (2.5,1.5) node [right] {$\vec{T}'$} ;
+				\fill (0,0) circle [radius=2pt];
+				\fill (1.5,1) circle [radius=2pt];
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			where <m>u(x,t)</m> be the vertical position of the string at position <m>x</m> and
+			time <m>t</m> and the tension at <m>x</m> and <m>x+\Delta x</m> are the force vectors
+			<m>\vec{T}</m> and <m>\vec{T}'</m>.
+			To determine an equation that describes the motion of the string, we need to balance
+			the horizontal a vertical forces.
+			We can write the two force vectors <m>\mathbf{T}</m> and <m>\mathbf{T}'</m> in terms of
+			the horizontal and vertical components where the subscripts in this case are the components as shown in the figure below.
+		</p>
+
+		<figure>
+			<caption> The even extension of <m>f(x)=1-x</m>
+			</caption>
+
+			<image width="50%" xml:id="plot-some-plot1">
+				<latex-image>
+				<![CDATA[
+				\begin{tikzpicture}[scale=2]
+				\draw[<->,thick] (-1,0) node [left] {$\vec{T}_x$} -- (0,0) node [below right] {$u(x,t)$} ..
+				controls (0.5,0.5) and (1,0.75) ..
+				(1.5,1) node [below right] {$u(x+\Delta x,t)$} -- (2.5,1) node [above right] {$\vec{T}'_x$} ;
+				\fill (0,0) circle [radius=1pt];
+				\fill (1.5,1) circle [radius=1pt];
+				\draw[->,thick] (1.5,1) --(1.5,1.5) node [above right] {$\vec{T}'_y$};
+				\draw[->,thick] (0,0) -- (0,-1) node [below left] {$\vec{T}_y$};
+				\draw[->,dashed] (0,0) -- (-1,-1);
+				\draw (-0.2,0) arc [start angle = 180, end angle=225, radius=0.2] node [left] {$\alpha$};
+				\draw[->, dashed] (1.5,1) -- (2.5,1.5);
+				\draw (1.7,1) arc [start angle = 0, end angle = {atan(0.5)}, radius=0.2] node [right] {$\beta$};
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			And recall that using Newton's 2nd law of motion the sum of the forces on a
+			object is equal to the mass of the object times its acceleration in that
+			direction or <m>\sum F = ma</m>.
+			There is no horizontal motion of the string, so the horizontal
+			acceleration is zero and therefore:
+		</p>
+
+		<p>
+			<md>
+				<mrow>-\vec{T}_x +\vec{T}'_x \amp = 0 </mrow>
+				<mrow>-||\vec{T}|| \cos \alpha + || \vec{T}'|| \cos \beta \amp = 0  </mrow>
+			</md>
+		</p>
+
+		<p>
+			and solving for <m>||\vec{T}'||</m>
+		</p>
+
+		<p>
+			<men xml:id="eq-wave-eqn-derive">
+				||\vec{T}'|| = ||\vec{T}|| \frac{\cos \alpha}{\cos \beta}
+			</men>
+		</p>
+
+		<p>
+			Next, we examine the vertical forces.
+			The main difference is that there is a vertical acceleration which is the
+			2nd derivative of the position <m>u</m> with respect to <m>t</m>.
+		</p>
+
+		<p>
+			<md>
+				<mrow>\sum F \amp = ma </mrow>
+				<mrow>-\vec{T}_y + \vec{T}_y' \amp = ma </mrow>
+				<mrow>-||\vec{T}||\sin \alpha + ||\vec{T}'|| \sin \beta \amp = \rho \Delta x \frac{\partial^2 u}{\partial {t}^2}</mrow>
+			</md>
+		</p>
+
+		<p>
+			where the mass of the short piece is <m>\rho</m> the mass density of the string
+			and <m>\Delta x</m> is the horizontal length of the piece.
+			Substituting <xref ref="eq-wave-eqn-derive" /> into the equation above,
+		</p>
+
+		<p>
+			<me>
+				-||\vec{T}||\sin \alpha + ||\vec{T}|| \frac{\cos \alpha}{\cos \beta} \sin \beta
+				= \rho \Delta x \frac{\partial^2 u}{\partial {t}^2}
+			</me>
+		</p>
+
+		<p>
+			and dividing through by <m>||\vec{T}|| \cos \alpha</m>
+		</p>
+
+		<p>
+			<md>
+				<mrow>-\frac{\sin \alpha}{\cos \alpha} + \frac{\sin \beta}{\cos \beta} \amp = \frac{\rho \Delta x}{||\vec{T}|| \cos \alpha} \frac{\partial^2 u}{\partial {t}^2} </mrow>
+				<mrow>-\tan \alpha + \tan \beta  \amp = \frac{\rho \Delta x}{||\vec{T}|| \cos \alpha} \frac{\partial^2 u}{\partial {t}^2} </mrow>
+			</md>
+		</p>
+
+		<p>
+			The tangent of the angles are the slopes of the function <m>u(x,t)</m> at <m>x+\Delta x</m>
+			and <m>x </m> respectively, or <m>\frac{\partial u}{\partial x}</m> at <m>x+\Delta x</m>
+			and <m>x</m> therefore the above can be written
+		</p>
+
+		<p>
+			<md>
+				<mrow>\frac{\partial u}{\partial x} \biggr\vert_{x+\Delta x} - \frac{\partial u}{\partial x}  \biggr\vert_x \amp = \frac{\rho \Delta x}{||\vec{T}|| \cos \alpha} \frac{\partial^2 u}{\partial {t}^2}
+				</mrow>
+			</md>
+		</p>
+
+		<p>
+			Divide by <m>\Delta x</m> and let <m>T=||\vec{T}|| \cos \alpha</m> be the horizontal tension in the string
+		</p>
+
+		<p>
+			<md>
+				<mrow>\frac{1}{\Delta x} \biggl( \frac{\partial u}{\partial x} \biggr\vert_{x+\Delta x} - \frac{\partial u}{\partial x}  \biggr\vert_x \biggr) \amp = \frac{\rho}{T} \frac{\partial^2 u}{\partial {t}^2}</mrow>
+			</md>
+		</p>
+
+		<p>
+			take the limit as <m>\Delta x \rightarrow 0</m>
+		</p>
+
+		<p>
+			<md>
+				<mrow>\frac{\partial^2 u}{\partial {x}^2}  \amp = \frac{\rho}{T} \frac{\partial^2 u}{\partial {t}^2}</mrow>
+			</md>
+		</p>
+
+		<p>
+			The parameter <m>\rho/T</m> plays an important role in the solution, and we'll define <m>c=\sqrt{T/\rho}</m>, so the equation can be written:
+			<men xml:id="wave-eqn">
+				\frac{\partial^2 u}{\partial {t}^2} = c^2 \frac{\partial^2 u}{\partial {x}^2}
+			</men>
+		</p>
+
+		<p>
+			Typically, (\ref{wave:eqn}) is called the <term>wave equation</term> or since there is once one spatial variable, the <term>one-dimensional wave equation</term>.
+			The remainder of this chapter discusses solutions of the wave equation and related equations.
+		</p>
+	</subsection>
+</section>

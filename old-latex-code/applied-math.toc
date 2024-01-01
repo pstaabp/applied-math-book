@@ -1,0 +1,163 @@
+\contentsline {chapter}{\numberline {1}Basics of Linear Algebra}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Solving Linear Systems}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Gauss's Method}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Solving a Linear System with Gauss' Method}{5}{subsection.1.1.2}%
+\contentsline {subsubsection}{A fourth Row Operation}{8}{section*.2}%
+\contentsline {subsection}{\numberline {1.1.3}Echelon Form}{9}{subsection.1.1.3}%
+\contentsline {subsubsection}{Are there only unique and no solutions?}{12}{section*.3}%
+\contentsline {subsection}{\numberline {1.1.4}Describing the Solution Set}{12}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}Matrices}{15}{subsection.1.1.5}%
+\contentsline {subsubsection}{Matrices and Linear Systems}{16}{section*.4}%
+\contentsline {subsubsection}{Vectors as Solutions of Linear Systems}{19}{section*.5}%
+\contentsline {subsubsection}{Addition and Scalar Multiplication of Vectors}{19}{section*.6}%
+\contentsline {subsubsection}{Writing Solutions in Vector Form}{20}{section*.7}%
+\contentsline {subsection}{\numberline {1.1.6}General $=$ Particular $+$ Homogeneous}{21}{subsection.1.1.6}%
+\contentsline {subsubsection}{Non-homogeneous Systems}{22}{section*.8}%
+\contentsline {subsubsection}{Solving homogeneous Linear Systems}{25}{section*.9}%
+\contentsline {subsection}{\numberline {1.1.7}Singular and Nonsingular Matrices}{26}{subsection.1.1.7}%
+\contentsline {section}{\numberline {1.2}Linear Geometry of $n$-space}{28}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Summaries of Linear Systems}{30}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Vectors in $\mathbb {R}^n$}{30}{subsection.1.2.2}%
+\contentsline {subsubsection}{Vectors, Free Vectors and Points}{31}{section*.10}%
+\contentsline {subsubsection}{Scalar Multiplication of Vectors}{32}{section*.11}%
+\contentsline {subsubsection}{Vector Addition}{33}{section*.12}%
+\contentsline {subsubsection}{Geometry of Addition and Scalar Multiplication in $\mathbb {R}^n$}{34}{section*.13}%
+\contentsline {subsubsection}{Lines in Vector form in $\mathbb {R}^2$ and $\mathbb {R}^3$}{34}{section*.14}%
+\contentsline {subsubsection}{Planes in $\mathbb {R}^3$}{36}{section*.15}%
+\contentsline {subsubsection}{Geometry of Linear Systems}{37}{section*.16}%
+\contentsline {subsection}{\numberline {1.2.3}Length and Angle Measures}{37}{subsection.1.2.3}%
+\contentsline {subsubsection}{Angles of vectors in $\mathbb {R}^2$}{38}{section*.17}%
+\contentsline {subsubsection}{Angles of vectors in $\mathbb {R}^n$}{39}{section*.18}%
+\contentsline {subsubsection}{Properties of The Dot Product}{40}{section*.19}%
+\contentsline {section}{\numberline {1.3}Reduced Row Echelon Form}{44}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Gauss-Jordon Reduction}{44}{subsection.1.3.1}%
+\contentsline {subsubsection}{Matrix Reduction is Matrix Equivalence}{48}{section*.20}%
+\contentsline {subsection}{\numberline {1.3.2}Row Equivalence}{48}{subsection.1.3.2}%
+\contentsline {subsubsection}{Echelon Form and Linear Combinations of Rows}{50}{section*.21}%
+\contentsline {section}{\numberline {1.4}Matrix Operations}{52}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Matrix, Vector and Scalar Notation}{52}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Addition and Subtraction of Matrices}{52}{subsection.1.4.2}%
+\contentsline {subsubsection}{Scalar Multiplication of Vectors and Matrices}{53}{section*.22}%
+\contentsline {subsection}{\numberline {1.4.3}Transpose}{54}{subsection.1.4.3}%
+\contentsline {subsubsection}{Properties of Transposes}{54}{section*.23}%
+\contentsline {subsection}{\numberline {1.4.4}Multiplication of Vectors and Matrices}{54}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.5}Size Restrictions on Matrices}{55}{subsection.1.4.5}%
+\contentsline {subsection}{\numberline {1.4.6}Matrix-Vector Multiplication}{56}{subsection.1.4.6}%
+\contentsline {subsection}{\numberline {1.4.7}Reexamination of the Dot Product}{57}{subsection.1.4.7}%
+\contentsline {subsection}{\numberline {1.4.8}Matrix Multiplication and Linear Systems}{57}{subsection.1.4.8}%
+\contentsline {section}{\numberline {1.5}The Inverse of a Matrix}{59}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}The Identity Matrix}{59}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}The Inverse}{59}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Solving a simple linear equation}{59}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}The Inverse of a 2 by 2 matrix}{60}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Solving $A\vec {u}=\vec {b}$}{61}{subsection.1.5.5}%
+\contentsline {subsection}{\numberline {1.5.6}the Gauss-Jordan Method for Calculating Inverses}{63}{subsection.1.5.6}%
+\contentsline {section}{\numberline {1.6}Linear Combinations and the Span of a Set of Vectors}{69}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Linear Independence}{72}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Row Space, Column Space and Rank of a Matrix}{75}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Row Space of a Matrix}{75}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Column Space of a Matrix}{76}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Null Space of a Matrix}{78}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Relationship between the Rank and Nullity}{79}{subsection.1.8.4}%
+\contentsline {section}{\numberline {1.9}Determinants of Square Matrices}{81}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Properties of the Determinant}{81}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Calculating Determinants}{84}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Expansion Method for finding the Determinant}{85}{subsection.1.9.3}%
+\contentsline {subsection}{\numberline {1.9.4}Geometry of Determinants}{87}{subsection.1.9.4}%
+\contentsline {subsubsection}{Transformation of the Vectors and the size of the Parallelogram}{88}{section*.24}%
+\contentsline {section}{\numberline {1.10}Summary of the basics of linear algebra}{90}{section.1.10}%
+\contentsline {chapter}{\numberline {2}Vector Spaces, Inner Product Spaces and Linear Transformations}{95}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Vector Spaces}{95}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Examples of Vector Spaces}{96}{subsection.2.1.1}%
+\contentsline {subsubsection}{Is every set a vector space?}{101}{section*.25}%
+\contentsline {section}{\numberline {2.2}The Span and Basis of a Subspace}{103}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}The Span of a set of vectors}{105}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}The Basis and Dimension of a Vector Space}{106}{subsection.2.2.2}%
+\contentsline {subsubsection}{Representations in the natural basis}{108}{section*.26}%
+\contentsline {subsection}{\numberline {2.2.3}Dimension}{110}{subsection.2.2.3}%
+\contentsline {subsubsection}{Bases of Subspaces}{111}{section*.27}%
+\contentsline {section}{\numberline {2.3}Inner Product Spaces}{111}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Vector Norms and distance}{113}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Angles between vectors}{113}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Orthonormal sets of vectors}{114}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}The Gram-Schmidt Orthogonalization Process}{116}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Linear Transformations}{121}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Finding the Matrix Form of a Linear Transformation}{124}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}Projection Maps}{127}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Using Projections to solve Least-Squares Problems}{131}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Projecting onto a Vector Space}{132}{subsection.2.5.2}%
+\contentsline {chapter}{\numberline {3}Eigenvalues and Eigenvectors}{137}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Eigenvalues and Eigenvectors}{137}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Finding Eigenvalues and Eigenvectors}{138}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Eigenvalues and Linear Maps}{146}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Applications}{150}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Leslie Population Models}{151}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Second-Order Differential Equations Systems}{153}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Solutions of $\vec {x}'' = A\vec {x}$}{154}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Matrix Factoring}{157}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Matrix Properties and Operations}{157}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}The Matrix Transpose}{157}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Symmetric Matrices}{158}{subsection.4.1.2}%
+\contentsline {subsubsection}{Eigenvalues of Symmetric Matrices}{159}{section*.29}%
+\contentsline {subsection}{\numberline {4.1.3}Orthogonal Matrices}{160}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Upper- and Lower-Triangular Matrices}{161}{subsection.4.1.4}%
+\contentsline {subsubsection}{Back Substitution}{161}{section*.30}%
+\contentsline {subsubsection}{Forward Substitution}{162}{section*.31}%
+\contentsline {section}{\numberline {4.2}LU Factorization}{163}{section.4.2}%
+\contentsline {subsubsection}{LU factorization of a 3 by 3 matrix}{164}{section*.32}%
+\contentsline {subsubsection}{Extending LU factorization to invertible matrices}{166}{section*.33}%
+\contentsline {subsubsection}{Further Details}{167}{section*.34}%
+\contentsline {subsubsection}{Any Square Matrix has a LU Decomposition}{167}{section*.35}%
+\contentsline {subsubsection}{Applications of LU Decomposition}{167}{section*.36}%
+\contentsline {subsubsection}{Inverting a Matrix}{169}{section*.37}%
+\contentsline {section}{\numberline {4.3}Diagonalization of Matrices}{170}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Similar Matrices}{173}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Similar and Diagonalizable Matrices}{174}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Singular Value Decomposition}{176}{section.4.4}%
+\contentsline {subsubsection}{The geometry of the SVD}{179}{section*.39}%
+\contentsline {subsubsection}{Finding a best-fit line and plane using SVD}{180}{section*.40}%
+\contentsline {chapter}{\numberline {5}Fourier Series}{183}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Properties of Functions}{183}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Periodic Functions}{183}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}One-Side Limits and Derivatives; Piecewise Continuous Functions}{184}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Odd and Even Functions}{186}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Tabular Integration}{188}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Inner Products of Functions}{190}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}Fourier Series}{192}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Convergence of a Sum of a Fourier Series}{198}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Fourier Series of Functions of Period $2L$}{198}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Even and Odd Functions; Half-Range Expansions}{200}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}The Fourier Sine and Cosine Series}{201}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}Approximation by Trigonometric Polynomials}{203}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Theorems Related to Fourier Series}{206}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}The Fourier Series using the complex exponential}{208}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Partial Differential Equations}{211}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Partial Derivatives and Differential Equations}{211}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Higher-Order Partial Derivatives}{211}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Notation for Partial Derivatives}{212}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Differential Equations}{213}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Modeling with PDEs}{214}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}The Heat Equation}{214}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Wave Equation: Modeling a Taut String}{216}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Linear ordinary differential equations}{218}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Second-order Constant-Coefficient Homogeneous differential equations. }{218}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Solutions to Ordinary Differential Equations as Vector Spaces}{223}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Sturm-Liouville Problems }{223}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Solving the Wave Equation}{227}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Solution to the Wave Equation with a free boundary condition}{230}{subsection.6.5.1}%
+\contentsline {section}{\numberline {6.6}Solution to the 1D Heat Equation}{233}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Heat Equation in two spatial dimensions}{235}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Bessel's equation and Bessel Functions}{238}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Propeties of $J_n(x)$}{238}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Roots of the Bessel functions}{242}{subsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.8.3}Bessel Functions of the Second Kind}{243}{subsection.6.8.3}%
+\contentsline {section}{\numberline {6.9}The Heat Equation in a Circular Region}{243}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Rotationally Symmetric Solutions}{245}{subsection.6.9.1}%
+\contentsline {section}{\numberline {6.10}General Circular Heat Equation}{248}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Sturm-Liouville Problems from the heat equation}{249}{subsection.6.10.1}%
+\contentsline {chapter}{\numberline {7}Differential Equations on $\mathbb {R}$ and the Fourier Transform}{253}{chapter.7}%
+\contentsline {section}{\numberline {7.1}The Fourier Transform}{253}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Even and Odd Functions and Fourier Transforms}{254}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Physical Interpretation of the Fourier Transform}{255}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Properties of the Fourier Transform}{256}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Solving the Heat Equation using Fourier Transform}{256}{section.7.2}%

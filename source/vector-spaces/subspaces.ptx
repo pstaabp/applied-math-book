@@ -1,0 +1,1435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-subspaces"><title>The Span and Basis of a Subspace</title>
+	<introduction>
+		<p>
+			In <xref ref="sect-linear-comb-span" />, we saw the span of
+			vectors in <m>\mathbb{R}^n</m>.
+			We now extend this example to the span of
+			any subspace.
+			In addition, the notion of a basis  of the subspace is introduced.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					Let <m>U</m> be a subset of a vector space <m>V</m>.
+					If <m>U</m> is also
+					a vector space, then <m>U</m> is a <term>subspace</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					We showed in  <xref ref="ex-lines-through-origin-vector-space" /> that the
+					set of all lines in <m>\mathbb{R}^2</m> that pass through the origin is a
+					vector space.
+					Since the set is a subset of <m>\mathbb{R}^2</m>, it is a
+					subspace of <m>\mathbb{R}^2</m> as well.
+				</p>
+			</statement>
+		</example>
+
+		<example>
+			<statement>
+				<p>
+					Show that <m>\mathbb{R}^2</m> is a subspace of <m>\mathbb{R}^3</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Since <m>\mathbb{R}^2</m> is itself a vector space and a subset of <m>\mathbb{R}^3</m>,
+					then <m>\mathbb{R}^2</m> is a subspace.
+				</p>
+			</solution>
+		</example>
+
+		<example>
+			<statement>
+				<p>
+					Recall that the set
+					<me>
+						{\cal P}_2=\{ a_0 + a_1 x + a_2 x^2\; | \; a_0, a_1, a_2 \in \mathbb{R} \}
+					</me>
+					is the set of all quadratic functions.
+				</p>
+
+				<p>
+					The set <m>{\cal P}_1 = \{a_0 + a_1 x \; | \; a_0, a_1 \in \mathbb{R} \}</m>
+					of all linear functions is itself a vector space as well as a subset of
+					<m>{\cal P}_2</m>, therefore <m>{\cal P}_1</m> is a subspace of <m>{\cal P}_2</m>.
+				</p>
+
+				<p>
+					In addition, the set <m>\{ a x^2\; | \; a \in \mathbb{R}\}</m> is a vector
+					space as well as a subset of <m>{\cal P}_2</m>, therefore it is a subspace.
+				</p>
+			</statement>
+		</example>
+
+		<p>
+			The above examples show that there are many already known subspaces.
+			There are many cases though that aren't evident or to show it is a subspace,
+			we would need to prove all 10 properties that it is a vector space.
+			The next
+			lemma, however, shows that isn't the case.
+		</p>
+
+		<lemma xml:id="lemma-subspace" >
+			<statement>
+				<p>
+					Let <m>S</m> be a nonempty subset <m>S</m> of a vector space <m>V</m>, under the inherited operations.
+					If for all <m>\vec{s}_1</m> and <m>\vec{s}_2</m> in <m>S</m> and <m>r_1, r_2 \in \mathbb{R}</m>
+				</p>
+
+				<p>
+					<me>
+						r_1 \vec{s}_1 + r_2 \vec{s}_2 \in S
+					</me>
+				</p>
+
+				<p>
+					then <m>S</m> is a subspace.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					This means that if <m>S</m> is a subset of <m>V</m>, a vector space,
+					to prove that <m>S</m> is a subspace, we only need to check
+					if <m>r_1 \vec{s}_1 + r_2 \vec{s}_2 \in S</m>.
+				</p>
+
+				<p>
+					Since <m>S</m> is a subspace of <m>V</m>, properties (2)-(5) and (7)-(10) of
+					<xref ref="def-vector-space" /> hold for <m>S</m>.  Thus we only
+					need to prove closure under addition and scalar multiplication.
+				</p>
+
+				<p>
+					Property 1:  Because <m>r_1 \vec{s}_1 + r_2 \vec{s}_2 \in S</m>,
+					let <m>r_1=r_2=1</m>, thus <m>\vec{s}_1+\vec{s}_2 \in S</m>.
+				</p>
+
+				<p>
+					Property 6: Because <m>r_1 \vec{s}_1 + r_2 \vec{s}_2 \in S</m>,
+					let <m>r_2=0</m>, thus <m>r_1 \vec{s}_1 \in S</m>.
+				</p>
+			</proof>
+		</lemma>
+
+		<example>
+			<statement>
+				<p>
+					Show that
+				</p>
+
+				<p>
+					<me>
+						V = \left\{ \begin{bmatrix}
+						v_1 \\ v_2
+						\end{bmatrix} \; | \; v_2 = k v_1 \right\}
+					</me>
+				</p>
+
+				<p>
+					(that is, all vectors on a line of slope <m>k</m>) is a subspace of <m>\mathbb{R}^2</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					We will use <xref ref="lemma-subspace" />.
+					Let
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{u} \amp = \begin{bmatrix}
+						u_1 \\ u_2
+						\end{bmatrix} \amp \vec{v} \amp = \begin{bmatrix}
+						v_1 \\ v_2
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					be elements of <m>V</m>.
+					That is <m>v_2 = k v_1</m> and <m>u_2 = ku_1</m>.
+					Then
+				</p>
+
+				<p>
+					<md>
+						<mrow>r_1 \vec{u} + r_2 \vec{v} \amp = r_1 \begin{bmatrix}
+						u_1 \\ k u_1
+						\end{bmatrix} + r_2 \begin{bmatrix}
+						v_1 \\ k v_1
+						\end{bmatrix} =  \begin{bmatrix}
+						r_1 u_1 + r_2 v_1 \\ r_1 k u_1 + r_2 k v_1
+						\end{bmatrix} </mrow>
+						<mrow>\amp = \begin{bmatrix}
+						r_1 u_1 + r_2 v_1 \\ k (r_1 u_1 + r_2 v_1)
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					which is an element of <m>V</m> because the second component is <m>k</m> times
+					the first one.
+					Thus <m>V</m> is a subspace of <m>\mathbb{R}^2</m>.
+				</p>
+			</solution>
+		</example>
+
+		<example xml:id="eq-example-diag-matrix">
+			<statement>
+				<p>
+					Show using <xref ref="lemma-subspace" /> that
+				</p>
+
+				<p>
+					<me>
+						V =\{ \begin{bmatrix}
+						a \amp 0 \\
+						0 \amp b
+						\end{bmatrix} \; | \; a,b \in \mathbb{R} \}
+					</me>
+				</p>
+
+				<p>
+					the set of all diagonal matrices is a subspace of <m>{\cal M}_{2 \times 2}</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					In this case, if we show that for any two matrices
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp = \begin{bmatrix}
+						a_1 \amp 0 \\
+						0 \amp b_1
+						\end{bmatrix}, \amp B \amp = \begin{bmatrix}
+						a_2 \amp 0 \\
+						0 \amp b_2
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and scalars <m>r_1, r_2 \in \mathbb{R}</m> that  <m>r_1 A + r_2 B</m> is in the set.
+				</p>
+
+				<p>
+					<md>
+						<mrow>r_1 A + r_2 B \amp = r_1 \begin{bmatrix}
+						a_1 \amp 0 \\
+						0 \amp b_1
+						\end{bmatrix}+ r_2 \begin{bmatrix}
+						a_2 \amp 0 \\
+						0 \amp b_2
+						\end{bmatrix} </mrow>
+						<mrow>\amp = \begin{bmatrix}
+						r_1 a_1 + r_2 a_2 \amp 0 \\
+						0 \amp r_1 b_1 + r_2 b_2
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					which is a diagonal matrix, therefore in <m>V</m>, thus this is a subspace.
+				</p>
+			</solution>
+		</example>
+
+		<lemma>
+			<statement>
+				<p>
+					Let <m>A</m> be an <m>m</m> by <m>n</m> matrix.
+					The null space of <m>A</m> is a subspace of <m>\mathbb{R}^n</m>.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					We will use lemma <xref ref="lemma-subspace" /> to solve this.
+					Let both
+					<m>\vec{x}</m> and <m>\vec{y}</m> be in the null space of <m>A</m>.
+					This means that <m>A\vec{x}=\vec{0}</m> and <m>A\vec{y}=\vec{0}</m>.
+					We need to show that <m>r_1 \vec{x} + r_2 \vec{y}</m> is in the null space of <m>A</m>.
+				</p>
+
+				<p>
+					<md>
+						<mrow>A(r_1 \vec{x} + r_2 \vec{y}) \amp = r_1 A\vec{x} + r_2 A\vec{y} </mrow>
+						<mrow>\amp = r_1 (0) + r_2 (0) = 0</mrow>
+					</md>
+				</p>
+
+				<p>
+					Vectors in the null space are vectors of length <m>n</m>, so the null space is
+					a subset of <m>\mathbb{R}^n</m> and since  <m>r_1 \vec{x} + r_2 \vec{y}</m>
+					is in the null space of <m>A</m>, then the null space is a subspace of
+					<m>\mathbb{R}^n</m>.
+				</p>
+			</proof>
+		</lemma>
+
+		<p>
+			This is an important result that we will see in eigenvalues in the next chapter.
+		</p>
+	</introduction>
+
+	<subsection>
+		<title>The Span of a set of vectors</title>
+		<p>
+			We saw in  <xref ref="sect-linear-comb-span" /> the span of a set of
+			vectors in <m>\mathbb{R}^n</m>.
+			We now generalize this to any vector space.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					The <term>span</term> of a nonempty subset <m>S=\{\vec{s}_1, \vec{s}_2, \ldots, \vec{s}_n\}</m>
+					of a vector space is the set of all linear combinations of the vectors in <m>S</m>.
+					That is,
+				</p>
+
+				<p>
+					<me>
+						\text{span}(S) = \{ c_1 \vec{s}_1 + c_2 \vec{s}_2 + \cdots + c_n \vec{s}_n\; | \;
+						\text{$c_1, c_2, \ldots, c_n \in \mathbb{R}, \vec{s}_1, \vec{s}_2, \ldots, \vec{s}_n \in S$} \}.
+					</me>
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			To show that a subset of vectors span a subspace <m>S</m>, we need to show
+			that any vector in <m>S</m> can be written as a linear combination of
+			the spanning vectors.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Show that the set <m>\{2+x,1,x+x^2\}</m> spans <m>\mathcal{P}_2</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					In this case, we need show that a general polynomial in <m>\mathcal{P}_2</m>
+					can be written as a linear combination of elements of the given set.
+					That is
+				</p>
+
+				<p>
+					<me>
+						c_1 (2+x) + c_2 (1) + c_3 (x+x^2) = a_0 + a_1 x + a_2 x^2
+					</me>
+				</p>
+
+				<p>
+					and if there is a solution for the <m>c</m>'s, then that shows the the set
+					spans <m>\mathcal{P}_2</m>.
+					To find the solution, use the technique of
+					equating coefficients.
+					Write down the coefficients for the constant terms,
+					<m>x</m> terms and <m>x^2</m> terms respectively.
+				</p>
+
+				<p>
+					<md>
+						<mrow>2 c_1 + c_2 \amp = a_0 </mrow>
+						<mrow>c_1 + c_3 \amp = a_1 </mrow>
+						<mrow>c_3 \amp = a_2</mrow>
+					</md>
+				</p>
+
+				<p>
+					This has a solution <m>c_3=a_2, c_1 = a_1-a_2</m> and
+					<m>c_2 = a_0 - 2(a_1-a_2)</m>, so the given set spans <m>\mathcal{P}_2</m>.
+				</p>
+			</solution>
+		</example>
+
+		<lemma>
+			<statement>
+				<p>
+					The span of any subset of a vector space is a subspace.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					Let <m>S</m> be the subset and <m>\vec{s}_1, \vec{s}_2, \ldots, \vec{s}_n</m> be the elements of <m>S</m>.
+					Using Lemma <xref ref="lemma-subspace" />, we need to check that <m>\text{span}(S)</m> is closed under linear combinations.
+					Let
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{v} \amp = c_1 \vec{s}_1 + c_2 \vec{s}_2 + \cdots + c_n \vec{s}_n, </mrow>
+						<mrow>\vec{w} \amp = k_1 \vec{s}_1 + k_2 \vec{s}_2 + \cdots + k_n \vec{s}_n</mrow>
+					</md>
+				</p>
+
+				<p>
+					then
+				</p>
+
+				<p>
+					<md>
+						<mrow>r_1 \vec{v} + r_2 \vec{w} \amp = r_1 (c_1 \vec{s}_1 + c_2 \vec{s}_2 + \cdots + c_n \vec{s}_n) +
+						r_2 (k_1 \vec{s}_1 + k_2 \vec{s}_2 + \cdots + k_n \vec{s}_n) </mrow>
+						<mrow>\amp = (r_1 c_1 + r_2 k_1) \vec{s}_1 + (r_1c_2 + r_2 k_2) \vec{s}_2 + \cdots + (r_1 c_n + r_2 k_n) \vec{s}_n</mrow>
+					</md>
+				</p>
+
+				<p>
+					Since this shows that <m>r_1 \vec{v} + r_2 \vec{w}</m> is in <m>S</m>, then <m>S</m> is a subspace.
+				</p>
+			</proof>
+		</lemma>
+
+		<p>
+			This lemma allows us to talk about a vector space in terms of the vectors that span it.
+			For example, instead of thinking of <m>\mathcal{P}_2</m>,we think of the span of <m>\{2+x,1,x+x^2\}</m>
+			(in this case, it may not be more helpful, but other cases it is).
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Show that the following vectors span <m>\mathbb{R}^3</m>:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{e}_1 \amp =
+						\begin{bmatrix}
+						1 \\ 0 \\ 0
+						\end{bmatrix}, \amp \vec{e}_2 \amp =
+						\begin{bmatrix}
+						0 \\ 1 \\ 0
+						\end{bmatrix}, \amp \vec{e}_3 \amp =
+						\begin{bmatrix}
+						0 \\ 0 \\ 1
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Because the vector <m>\vec{x}=[x_1,x_2,x_3]^T</m> can be
+					written <m>\vec{x}=x_1 \vec{e}_1 + x_2 \vec{e}_2 + x_3 \vec{e}_3</m>,
+					then these vectors span <m>\mathbb{R}^3</m>.
+				</p>
+			</solution>
+		</example>
+
+		<example>
+			<statement>
+				<p>
+					Does <m>\{2+x,x^2 \}</m> span <m>\mathcal{P}_2</m>?
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					To determine this, we will try write a general polynomial in <m>\mathcal{P}_2</m>,
+				</p>
+
+				<p>
+					<me>
+						a_0 + a_1 x + a_2 x^2
+					</me>
+				</p>
+
+				<p>
+					as a linear combination of the set of vectors or
+				</p>
+
+				<p>
+					<me>
+						a_0 + a_1 x + a_2 x^2 = c_1 (2+x) + c_2 x^2
+					</me>
+				</p>
+
+				<p>
+					and equating coefficients,
+				</p>
+
+				<p>
+					<md>
+						<mrow>a_0 \amp = 2c_1  </mrow>
+						<mrow>a_1 \amp = c_1 </mrow>
+						<mrow>a_2 \amp = c_2</mrow>
+					</md>
+				</p>
+
+				<p>
+					There's no solution to this because <m>c_1</m> can't simultaneously
+					equal <m>a_1</m> and <m>a_0/2</m>, so  <m>\{2+x,x^2\}</m> does not
+					span <m>\mathcal{P}_2</m>.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>The Basis and Dimension of a Vector Space</title>
+		<introduction>
+			<p>
+				In the previous section, we saw that there some correspondence between a
+				vector space and a set of spanning vectors.
+				In this section, we formalize
+				this relationship.
+			</p>
+
+			<definition>
+				<statement>
+					<p>
+						The <term>basis</term> of a vector space is a tuple of vectors of the
+						vector space that form a linearly independent set that spans the vector space.
+					</p>
+				</statement>
+			</definition>
+
+			<p>
+				Note: the basis will be a tuple of vectors because the order of the
+				vectors will be important.
+				We will denote the tuple with
+				parentheses, <m>( \vec{s}_1, \vec{s}_2, \ldots )</m>.
+			</p>
+
+			<example>
+				<p>
+					We showed in <xref ref="ex-span-2" /> that the set
+				</p>
+
+				<p>
+					<me>
+						\left\{ \begin{bmatrix}
+						1 \\ 0
+						\end{bmatrix}, \begin{bmatrix}
+						1 \\1
+						\end{bmatrix} \right\}
+					</me>
+				</p>
+
+				<p>
+					spans <m>\mathbb{R}^2</m> and since the second is not a multiple
+					of the first, they are linearly independent.
+					Therefore the tuple
+				</p>
+
+				<p>
+					<me>
+						\left( \begin{bmatrix}
+						1 \\ 0
+						\end{bmatrix}, \begin{bmatrix}
+						1 \\1
+						\end{bmatrix} \right)
+					</me>
+				</p>
+
+				<p>
+					form a basis for <m>\mathbb{R}^2</m>.
+				</p>
+			</example>
+
+			<example>
+				<p>
+					The tuple of vectors
+				</p>
+
+				<p>
+					<me>
+						\left( \begin{bmatrix}
+						1 \\ 1
+						\end{bmatrix}, \begin{bmatrix}
+						1 \\0
+						\end{bmatrix} \right)
+					</me>
+				</p>
+
+				<p>
+					is a different basis of <m>\mathbb{R}^2</m> because of the order of vectors.
+					The fact that they span <m>\mathbb{R}^2</m> and are linearly independent do not depend on the order.
+				</p>
+			</example>
+
+			<example>
+				<statement>
+					<p>
+						There are many bases of a vector space.
+						For example,
+					</p>
+
+					<p>
+						<me>
+							\left( \begin{bmatrix}
+							1 \\ 0
+							\end{bmatrix}, \begin{bmatrix}
+							0 \\1
+							\end{bmatrix} \right)
+						</me>
+					</p>
+
+					<p>
+						also spans <m>\mathbb{R}^2</m> and are linearly independent.
+					</p>
+				</statement>
+			</example>
+
+			<example>
+				<statement>
+					<p>
+						Does
+					</p>
+
+					<p>
+						<me>
+							\left( \begin{bmatrix}
+							1 \\ 0
+							\end{bmatrix}, \begin{bmatrix}
+							1 \\1
+							\end{bmatrix},
+							\begin{bmatrix}
+							2 \\ 3
+							\end{bmatrix} \right)
+						</me>
+					</p>
+
+					<p>
+						form a basis of <m>\mathbb{R}^2</m>?
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						These three vectors are not linearly independent.
+						Although one can show this in general, note that
+					</p>
+
+					<p>
+						<me>
+							\begin{bmatrix}
+							2 \\ 3
+							\end{bmatrix} = 3 \begin{bmatrix}
+							1 \\ 1
+							\end{bmatrix} - \begin{bmatrix}
+							1 \\ 0
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						and since they are not linearly independent, then they cannot form a
+						basis of <m>\mathbb{R}^2</m>.
+					</p>
+				</solution>
+			</example>
+
+			<p>
+				Although there are lots of different bases for a given subspace,
+				there are some that are more useful than others.
+				There is a basis for
+				more subspaces called a standard basis.
+			</p>
+
+			<definition>
+				<statement>
+					<p>
+						The tuple
+					</p>
+
+					<p>
+						<me>
+							{\cal E}_n = \left(
+							\begin{bmatrix}
+							1 \\ 0 \\ 0 \\ \vdots \\ 0
+							\end{bmatrix}, \begin{bmatrix}
+							0 \\ 1 \\ 0 \\ \vdots \\ 0
+							\end{bmatrix}, \cdots
+							\begin{bmatrix}
+							0 \\ 0 \\ 0 \\ \vdots \\ 1
+							\end{bmatrix} \right)
+						</me>
+					</p>
+
+					<p>
+						is called the <term>standard basis</term> or <term>natural basis</term> of <m>\mathbb{R}^n</m>.
+						The vectors in the basis are called <m>\vec{e}_1, \vec{e}_2, \ldots</m>.
+					</p>
+				</statement>
+			</definition>
+
+			<remark>
+				<p>
+					The natural basis of <m>{\cal P}_3</m> is <m>( 1, x, x^2, x^3 )</m>.
+				</p>
+			</remark>
+
+			<p>
+				We saw bases of vector spaces (or subspaces) at the beginning of this course.
+				In <xref ref="ex-large-linear-solution" />, we solved a linear system.
+				It's associated homogeneous system is
+				<md>
+					<mrow>x_2 + 3x_3 -9 x_4 + 11 x_5 \amp = 0, </mrow>
+					<mrow>2x_3 \phantom{-9x_4} + 4x_5 \amp = 0, </mrow>
+					<mrow>3x_5 \amp = 0,</mrow>
+				</md>
+				The solution (which is a subspace of <m>\mathbb{R}^5</m>) can be written as
+				<me>
+					\left\{\begin{bmatrix}
+					1 \\ 0 \\ 0 \\ 0 \\ 0
+					\end{bmatrix} x_1 + \begin{bmatrix}
+					0 \\ 9 \\ 0 \\ 1 \\ 0
+					\end{bmatrix} x_4 \; | \; x_1, x_4 \in \mathbb{R}, \right\}
+				</me>
+				The two vectors in the solution are a basis of the solution space.
+				Since there are only two vectors and they are not constant multiples of each
+				other, it's easy to see that they are linearly independent.
+				Also because of
+				the form of the solution set, you can also see that that span the space.
+			</p>
+
+			<definition>
+				<statement>
+					<p>
+						In a vector space with basis <m>B</m>, the <term>representation of a vector
+						<m>\vec{v}</m> with respect to the basis <m>B</m></term> is the column vector
+						of the coefficients used to express <m>\vec{v}</m> as a linear combination of the basis vectors:
+					</p>
+
+					<p>
+						<me>
+							\text{Rep}_B (\vec{v}) = \begin{bmatrix}
+							c_1 \\ c_2 \\ \vdots \\ c_n
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						where <m>B=( \vec{\beta}_1, \vec{\beta}_2, \ldots , \vec{\beta}_n )</m> and
+					</p>
+
+					<p>
+						<me>
+							\vec{v} = c_1 \vec{\beta}_1 + c_2 \vec{\beta}_2 + \cdots + c_n \vec{\beta}_n
+						</me>
+					</p>
+				</statement>
+			</definition>
+
+			<example>
+				<p>
+					Consider the space <m>{\cal P}_2</m>, the space of quadratic functions.
+					Let <m>B=( 1, 1+x,1+x+x^2, )</m> be a basis of <m>{\cal P}_2</m> and
+					<m>\vec{v} = 2x+x^2</m>.
+					To find the representation,
+					we need to find <m>c_1, c_2</m> and <m>c_3</m> such that
+				</p>
+
+				<p>
+					<me>
+						c_1 \cdot 1 + c_2 \cdot (1+x) + c_3 \cdot (1+x+x^2)  = 2x+x^2
+					</me>
+				</p>
+
+				<p>
+					by equating coefficients this is same as solving the linear system:
+				</p>
+
+				<p>
+					<md>
+						<mrow>c_1 + c_2 + c_3 \amp = 0 </mrow>
+						<mrow>c_2 + c_3 \amp = 2 </mrow>
+						<mrow>c_3  \amp = 1</mrow>
+					</md>
+				</p>
+
+				<p>
+					resulting in <m>c_1=-2, c_2=1, c_3=1</m>, therefore
+				</p>
+
+				<p>
+					<me>
+						\text{Rep}_B (\vec{v}) = \begin{bmatrix}
+						-2 \\ 1 \\ 1
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					If instead the basis is given as <m>D=( 2,2x,x^2 )</m>, then
+				</p>
+
+				<p>
+					<me>
+						c_1 \cdot 2 + c_2 \cdot (2x) + c_3 \cdot (x^2)  = 2x+x^2
+					</me>
+				</p>
+
+				<p>
+					which shows that <m>c_1=0, c_2 =1, c_3 = 1</m>, therefore
+				</p>
+
+				<p>
+					<me>
+						\text{Rep}_D (\vec{v}) = \begin{bmatrix}
+						0 \\ 1 \\ 1
+						\end{bmatrix}
+					</me>
+				</p>
+			</example>
+		</introduction>
+
+		<subsubsection>
+			<title>Representations in the natural basis</title>
+			<p>
+				As we saw above, finding representations in a basis requires solving
+				another linear system.
+				However, representations in the natural basis are
+				simple calculations.
+				If we used the natural basis <m>E=( 1, x, x^2 )</m>
+				for the quadratic example above, then
+				<me>
+					\text{Rep}_E (\vec{v})  = \begin{bmatrix}
+					0 \\ 2 \\ 1
+					\end{bmatrix}
+				</me>
+				are just the coefficients of <m>x^n</m> terms of the vector <m>2x+x^2</m>.
+				The following example shows that the representation of a vector in
+				<m>\mathbb{R}^3</m> is what we expect, itself.
+			</p>
+
+			<example>
+				<statement>
+					<p>
+						Find the Representation of the vector
+					</p>
+
+					<p>
+						<me>
+							\vec{v} = \begin{bmatrix}
+							-3 \\ 2\\ 4
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						in the natural basis
+					</p>
+
+					<p>
+						<me>
+							{\cal E}_3  = \left(
+							\begin{bmatrix}
+							1 \\ 0 \\ 0
+							\end{bmatrix}, \begin{bmatrix}
+							0 \\ 1 \\ 0
+							\end{bmatrix},
+							\begin{bmatrix}
+							0 \\ 0 \\ 1
+							\end{bmatrix} \right)
+						</me>
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						We seek the vector <m>\vec{c}  = [c_1, c_2, c_3]^{\intercal}</m> such that
+					</p>
+
+					<p>
+						<me>
+							c_1 \begin{bmatrix}
+							1 \\ 0 \\ 0
+							\end{bmatrix} + c_2 \begin{bmatrix}
+							0 \\ 1 \\ 0
+							\end{bmatrix} + c_3 \begin{bmatrix}
+							0 \\ 0 \\ 1
+							\end{bmatrix} = \begin{bmatrix}
+							-3 \\ 2 \\ 4
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						which is just that <m>c_1=-3, c_2=2,</m> and <m>c_3=4</m> so the representation
+						of the vector in the basis <m>{\cal E}_3</m> is
+					</p>
+
+					<p>
+						<me>
+							\text{Rep}_{\cal E} (\vec{v})  =
+							\begin{bmatrix}
+							-3 \\ 2 \\ 4
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						which is just the original vector.
+					</p>
+				</solution>
+			</example>
+
+			<p>
+				The last example in this section uses matrices.
+				The natural
+				basis for <m>\mathcal{M}_{2 \times 2}</m> is
+			</p>
+
+			<p>
+				<me>
+					B = \left( \begin{bmatrix}
+					1 \amp 0 \\ 0 \amp 0
+					\end{bmatrix}, \begin{bmatrix}
+					0 \amp 1 \\ 0 \amp 0
+					\end{bmatrix}, \begin{bmatrix}
+					0 \amp 0 \\ 1 \amp 0
+					\end{bmatrix}, \begin{bmatrix}
+					0 \amp 0 \\ 0 \amp 1
+					\end{bmatrix} \right)
+				</me>
+			</p>
+
+			<example xml:id="ex-vect-rep-matrix">
+				<statement>
+					<p>
+						Find
+					</p>
+
+					<p>
+						<me>
+							\text{Rep}_B \biggl(
+							\begin{bmatrix}
+							1 \amp 2 \\ 3 \amp 4
+							\end{bmatrix} \biggr)
+						</me>
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						Formally, one needs to find <m>c_1, c_2, c_3</m> and <m>c_4</m> such that
+					</p>
+
+					<p>
+						<me>
+							\begin{bmatrix}
+							1 \amp 2 \\ 3 \amp 4
+							\end{bmatrix} = c_1 \begin{bmatrix}
+							1 \amp 0 \\ 0 \amp 0
+							\end{bmatrix} + c_2 \begin{bmatrix}
+							0 \amp 1 \\ 0 \amp 0
+							\end{bmatrix} + c_3 \begin{bmatrix}
+							0 \amp 0 \\ 1 \amp 0
+							\end{bmatrix} + c_4 \begin{bmatrix}
+							0 \amp 0 \\ 0 \amp 1
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						but since the nice structure of the basis <m>c_1=1,c_2=2,c_3=3,</m> and <m>c_4=4</m>, so
+					</p>
+
+					<p>
+						<me>
+							\text{Rep}_B \biggl(
+							\begin{bmatrix}
+							1 \amp 2 \\ 3 \amp 4
+							\end{bmatrix} \biggr) = \begin{bmatrix}
+							1 \\ 2 \\ 3 \\ 4
+							\end{bmatrix}
+						</me>
+					</p>
+				</solution>
+			</example>
+
+			<p>
+				One can generalize to show that
+				<me>
+					\text{Rep}_B \left( \begin{bmatrix}
+					a \amp b \\ c \amp d
+					\end{bmatrix} \right) = \begin{bmatrix}
+					a \\ b \\ c \\ d
+					\end{bmatrix}
+				</me>
+				and this shows that matrices (which are vectors in the formal sense of vector
+				spaces) can be represented by vectors by reshaping the matrix as a vector.
+			</p>
+		</subsubsection>
+	</subsection>
+
+	<subsection>
+		<title>Dimension</title>
+		<p>
+			We have been talking about a few big topics in this chapter.
+			One of those is the spanning set of a vector space.
+			We noted that
+			many different sets can span a vector space.
+			This brought in the
+			notation of linear independence and a basis.
+			However for a vector
+			space there can be many different bases.
+		</p>
+
+		<p>
+			Although we did introduce a natural basis, this works well for some
+			spaces, like <m>{\cal P}_2</m> and <m>\mathbb{R}^3</m>, however what is
+			the natural basis for a solution of homogeneous linear system.
+		</p>
+
+		<p>
+			Perhaps if two people argue over the basis of a vector space, one
+			thing they will agree on is the number of vectors in a basis as we will
+			see.
+			We noted earlier that disregarding extra vectors is generally a good
+			thing to result in a basis, but there is a unique thing about bases and
+			that is the number of vectors in any basis.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					A vector space is <term>finite dimensional</term> if it has a basis with only finitely-many vectors.
+				</p>
+			</statement>
+		</definition>
+
+		<theorem>
+			<statement>
+				<p>
+					In any finite-dimensional vector space, all of the bases have the same number of elements.
+				</p>
+			</statement>
+		</theorem>
+
+		<p>
+			Because of this theorem, we define the dimension in following manner.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					The <term>dimension</term> of a finite dimensional vector space is the number of vectors in any of its bases.
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					<ul>
+						<li>
+							<p>
+								The dimension of <m>\mathbb{R}^n</m> is <m>n</m>.
+								Although there are
+								many bases, consider <m>\mathcal{E}_n</m>, the natural basis, which
+								has <m>n</m> elements.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								The dimension of <m>{\cal P}_n</m> is <m>n+1</m>.
+								The natural basis
+								of <m>\mathcal{P}_n</m> is <m>(1,x,x^2, \ldots, x^n)</m> with <m>n+1</m> elements.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								The dimension of the vector space of all 2 by 2 matrices is 4.
+								A natural basis for this is:
+								<me>
+									\biggl( \begin{bmatrix}
+									1 \amp 0 \\ 0 \amp 0
+									\end{bmatrix}, \begin{bmatrix}
+									0 \amp 1 \\ 0 \amp 0
+									\end{bmatrix}, \begin{bmatrix}
+									0 \amp 0 \\ 1 \amp 0
+									\end{bmatrix}, \begin{bmatrix}
+									0 \amp 0 \\ 0 \amp 1
+									\end{bmatrix} \biggr)
+								</me>
+								and since there are 4 elements, the dimension is 4.
+							</p>
+						</li>
+					</ul>
+				</p>
+			</statement>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Bases of Subspaces</title>
+		<p>
+			There were a number of important ideas in this section, so a summary is
+			necessary.
+			The basis of a space or subspace is useful for writing down
+			elements in the space.
+			That is, if we know the basis, then we know what's
+			in the space.
+			Additionally, the representation of an element are the
+			coefficients in terms of the basis.
+		</p>
+
+		<p>
+			This means that any vector in a finite-dimensional vector space can
+			be represented as a vector and as we will see this will be helpful in
+			that we can use many of the nice techniques from chapter 1 to help.
+			We will start to see that since we can write any polynomial as a vector,
+			that many operations that we do to polynomials (such as  multiplication,
+			differentiation, and integration) can be done using matrices and vectors.
+		</p>
+	</subsection>
+	<!--
+	%\section[Null Spaces and Rank of a Matrix]{Row Spaces, Column Spaces, Null Spaces and Rank of a Matrix}
+	%
+	%
+	%
+	%
+	<definition>
+		%The <term>row space</term> of a matrix is the span of the set of its rows.
+		The <term>row rank</term> is the dimension of the row space, the number of linearly independent rows of the matrix.
+		%
+	</definition>
+	%
+	%
+	%
+	<example>
+		%The row space of
+		%%
+		%
+		<md>
+			%\begin{bmatrix}
+			%2 \amp 1 \\
+			%1 \amp 0
+			%\end{bmatrix}
+			%
+		</md>
+		%is the space of all <m>2</m>-component row vectors with the form:
+		%%
+		%
+		<md>
+			%\{ c_1 \cdot \begin{bmatrix}
+			%2 \amp 1
+			%\end{bmatrix} + c_2 \begin{bmatrix}
+			%1 \amp 0
+			%\end{bmatrix}, \; | \, c_1, c_2 \in \mathbb{R} \}
+			%
+		</md>
+		%and this space is the space of all <m>2</m>-component row vectors.
+		The row rank of this matrix is 2.
+		%
+	</example>
+	%
+	%
+	<example>
+		%The row space of
+		%%
+		%
+		<md>
+			%\begin{bmatrix}
+			%2 \amp 1 \\
+			%4 \amp 2
+			%\end{bmatrix}
+			%
+		</md>
+		%can be written as
+		%%
+		%
+		<md>
+			%\{ c_1 \cdot \begin{bmatrix}
+			%2 \amp 1
+			%\end{bmatrix} + c_2 \begin{bmatrix}
+			%4 \amp 2
+			%\end{bmatrix} \; | \; c_1, c_2 \in \mathbb{R} \}
+			%
+		</md>
+		%However, since the two vectors are not linearly independent, the row space can be written as
+		%%
+		%
+		<md>
+			%\{ c_1 \cdot \begin{bmatrix}
+			%2 \amp 1
+			%\end{bmatrix}\; | \; c_1 \in \mathbb{R} \}
+			%
+		</md>
+		%Therefore the row rank is 1.
+		%
+		%
+	</example>
+	%
+	%
+	%%
+	<lemma>
+		%%If the matrices <m>A</m> and <m>B</m> are related by transformation by an elementary row operation, then their row spaces are equivalent.
+		%%
+	</lemma>
+	%%
+	%%
+	<proof>
+		%%By the Linear Combination Lemma {\color{red}(????)}, each row of <m>B</m> is a linear combination of each row of <m>A</m>, therefore it is in the row space of <m>A</m> or <m>\text{rowspace}(B) \subset \text{rowspace}(A)</m>.
+		%%
+		%%Similarly, each row of <m>A</m> is a linear combination of <m>B</m>, so using the same argument, <m>\text{rowspace}(A) \subset \text{rowspace}(B</m>), therefore <m>\text{rowspace}(A)=\text{rowspace}(B)</m>.
+		%%
+	</proof>
+	%%
+	%%
+	%%
+	<lemma>
+		%%The nonzero rows of an echelon matrix make up a linearly independent set of rows.
+		%%
+	</lemma>
+	%%
+	%%
+	<proof>
+		%%Lemma {\color{red}???} (of the first chapter) states that in an echelon matrix, no nonzero row is a linear combination of the other rows.
+		%%
+	</proof>
+	%%
+	%%Although this proof is almost trivial, the main point of this is to reframe what we saw in the first chapter in terms of this newer framework.
+	%%
+	%%
+	%
+	<remark>
+		%Gaussian Reduction to echelon form eliminates linear dependence between the rows, leaves the row space unchanged, and results in a basis for the row space.
+		%
+	</remark>
+	%
+	%
+	<example>
+		%Consider the linear system (written as a matrix) from the first chapter:
+		%%
+		%
+		<md>
+			%\begin{bmatrix}
+			%4 \amp 0 \amp -1 \amp 0 \\
+			%1 \amp 3 \amp 2 \amp 3 \\
+			%0 \amp 3 \amp 5 \amp 14
+			%\end{bmatrix}
+			%
+		</md>
+		%Perform row operations to put it in echelon form and write down the basis of the row space.
+		%
+		%\solution
+		%
+		%The row operations are
+		%
+		<md>
+			%\begin{array}{r}
+			%-R_1+4R_2 \rightarrow R_2, \\
+			%-R_2 +4R_3 \rightarrow R_3
+			%\end{array}  \qquad
+			%\begin{bmatrix}
+			%4 \amp 0 \amp -1 \amp 0\\
+			%0 \amp 12 \amp 9 \amp 12\\
+			%0 \amp 0 \amp 11 \amp 44\\
+			%\end{bmatrix}
+			%
+		</md>
+		%and if Row 2 and row 3 are multiplied by <m>1/3</m> and <m>1/11</m> respectively, then the 3 rows form the basis for the row space or
+		%%
+		%
+		<md>
+			%( \begin{bmatrix}
+			%4 \amp 0 \amp -1 \amp 0
+			%\end{bmatrix}, \begin{bmatrix}
+			%0 \amp 4 \amp 3 \amp 4
+			%\end{bmatrix} ,
+			%\begin{bmatrix}
+			%0 \amp 0 \amp 1 \amp 4
+			%\end{bmatrix}, )
+			%
+		</md>
+		%
+	</example>
+	%
+	%
+	%
+	<subsection>
+		<title>Column Space of a Matrix</title>
+		%
+		%
+		<definition>
+			%The <term>column space</term> of a matrix is the span of the set of its columns.
+			The <term>column rank</term> is the dimension of the column space.
+			%
+		</definition>
+		%
+		%
+		<example>
+			%Find the column space of
+			%%
+			%
+			<md>
+				A \amp =
+				%\begin{bmatrix} % -2C1+C2
+				%1 \amp 3 \amp 1\\
+				%2 \amp 0 \amp  -4\\
+				%0 \amp 1 \amp 1 \\
+				%3 \amp 4 \amp -2
+				%\end{bmatrix}
+				%
+			</md>
+			%In this case, we look for a span of
+			%%
+			%
+			<md>
+				%\{ \begin{bmatrix}
+				%1 \\ 2 \\ 0 \\ 3
+				%\end{bmatrix}, \begin{bmatrix}
+				%3 \\ 0 \\ 1 \\ 4
+				%\end{bmatrix},
+				%\begin{bmatrix}
+				%1 \\ -4 \\ 1 \\ -2
+				%\end{bmatrix} \}
+				%
+			</md>
+			%
+			%
+		</example>
+		%
+		%Instead of trying to eliminate any linear dependence as written, note that if we treat the columns as rows.
+		%
+		%
+		<remark>
+			%To find the column space of a matrix <m>A</m>, find the row space of <m>A^{\intercal}</m> and transpose the resulting row space.
+			%
+		</remark>
+		%
+		%
+		<example>
+			%Find the column space and column rank of
+			%
+			<md>
+				A \amp =
+				%\begin{bmatrix} % -2C1+C2
+				%1 \amp 3 \amp 1\\
+				%2 \amp 0 \amp  -4\\
+				%0 \amp 1 \amp 1 \\
+				%3 \amp 4 \amp -2
+				%\end{bmatrix}
+				%
+			</md>
+			%
+			%
+			<ol>
+				%
+				<li>
+					<p>
+						First take the transpose
+						%%
+						%
+						<md>
+							%A^{\intercal} \amp = \begin{bmatrix}
+							%1 \amp 2 \amp 0 \amp 3 \\
+							%3 \amp 0 \amp 1 \amp 4 \\
+							%1 \amp -4 \amp 1 \amp -2
+							%\end{bmatrix}
+							%
+						</md>
+						%
+						<li>
+							<p>
+								Now row reduce the matrix:
+								%%
+								%
+								<md>
+									%\begin{array}{r}
+									%-3R_1 + R_2 \rightarrow R_2, \\
+									%-R_1 + R_3 \rightarrow R_3,
+									%\end{array} \qquad
+									%\begin{bmatrix}
+									%1\amp 2 \amp 0 \amp 3 \\
+									%0 \amp -6 \amp1 \amp -5 \\
+									%0 \amp -6 \amp 1 \amp -5
+									%\end{bmatrix} \\
+									%-R_2 + R_3 \rightarrow R_3 \qquad
+									%\begin{bmatrix}
+									%1\amp 2 \amp 0 \amp 3 \\
+									%0 \amp -6 \amp1 \amp -5 \\
+									%0 \amp 0 \amp 0 \amp 0 \\
+									%\end{bmatrix}
+									%
+								</md>
+								%which is now in echelon form, so we know that the non-zero rows are linearly independent.
+								%
+								%
+								<li>
+									<p>
+										Take the transpose of the first two row.
+										The span of this is the column space:
+										%%
+										%
+										<md>
+											%\text{colspace}(A) \amp = \text{span}(( \begin{bmatrix}
+											%1 \\ 2 \\ 0 \\ 3
+											%\end{bmatrix}, \begin{bmatrix}
+											%0 \\ -6 \\ 1 \\ -5
+											%\end{bmatrix} ) )
+											%
+										</md>
+										%
+									</ol>
+									%
+								</example>
+								%
+								%
+								%
+								<theorem>
+									%The row rank of a matrix equals its column rank.
+									%
+								</theorem>
+								%
+								%
+								<definition>
+									%The <term>rank</term> of its matrix equals the row or column rank of the matrix.
+									%
+								</definition>
+								%
+								%
+								<theorem>
+									%For linear systems with <m>n</m> unknowns and with a matrix of coefficients, <m>A</m>, the following statements are equivalent:
+									%
+									<ol>
+										%
+										<li>
+											<p>
+												The rank of <m>A</m> is <m>r</m>.
+												%
+												<li>
+													<p>
+														The solution space of the associated homogeneous system has dimension <m>n-r</m>.
+														%
+													</ol>
+													%
+												</theorem>
+												%
+												%
+												<proof>
+													%The matrix <m>A</m> can be Gaussian' reduced to echelon form with <m>r</m> nonzero rows, that is there are <m>r</m> leading variables and <m>n-r</m> free variables.
+													Since these statements are reversible, the statements in the theorem are equivalent.
+													%
+												</proof>
+												-->
+											</section>

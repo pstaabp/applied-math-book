@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-1d-heat-eqn">
+	<title>Solution to the 1D Heat Equation</title>
+	<p>
+		In this section we will investigate solving the 1D heat equation
+	</p>
+
+	<p>
+		<me>
+			\frac{1}{\kappa} \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial {x}^2}
+		</me>
+	</p>
+
+	<p>
+		with boundary conditions:
+	</p>
+
+	<p>
+		<md>
+			<mrow>\frac{\partial u}{\partial x} \biggr\vert_{x=0} \amp = 0 \amp  \frac{\partial u}{\partial x} \biggr\vert_{x=L} \amp = 0 </mrow>
+		</md>
+	</p>
+
+	<p>
+		indicating that the end are insulated and the initial condition is:
+	</p>
+
+	<p>
+		<me>
+			u(x,0) = f(x),\quad  \text{if $0 &lt; x &lt; L$ }
+		</me>
+	</p>
+
+	<p>
+		As with the wave equation, we use the technique of separation of variables.
+		That is let <m>u=X(x)T(t)</m> to get:
+	</p>
+
+	<p>
+		<md>
+			<mrow>\frac{1}{\kappa} T' X \amp = T X'' \amp\amp \text{divide through by $XT$} </mrow>
+			<mrow>\frac{1}{\kappa} \frac{T'}{T} \amp = \frac{X''}{X} </mrow>
+		</md>
+	</p>
+
+	<p>
+		since the left side only depends on <m>t</m> and the right side only depends on <m>X</m>, it must be that these must both equal only a constant, (call it <m>-\lambda</m>) therefore we get the two equations:
+	</p>
+
+	<p>
+		<md>
+			<mrow>\frac{1}{\kappa} \frac{T'}{T} \amp = -\lambda \amp \frac{X''}{X} = -\lambda </mrow>
+		</md>
+	</p>
+
+	<p>
+		or
+	</p>
+
+	<p>
+		<md>
+			<mrow>T' + \kappa \lambda T \amp = 0 \amp X'' + \lambda X \amp = 0</mrow>
+		</md>
+		The boundary conditions for the second equation becomes:
+	</p>
+
+	<p>
+		<me>
+			X'(0)=X'(L)=0
+		</me>
+	</p>
+
+	<p>
+		This is a Sturm-Liouville problem that we saw in  <xref ref="ex-sturm-liouville-2" />
+		which has the solution:
+	</p>
+
+	<p>
+		<md>
+			<mrow>\lambda_n \amp = \frac{n^2 \pi^2}{L^2} \quad \text{$n=0,1,2,\ldots$}  </mrow>
+			<mrow>X_n (x) \amp = \cos \frac{n \pi x}{L}</mrow>
+		</md>
+	</p>
+
+	<p>
+		if <m>n &gt; 1</m> and <m>\lambda_n=0</m> and <m>X_n = 1</m> is also a solution.
+		The solution to <m>T'+\kappa \lambda T = 0</m> can be found by letting <m>T= e^{at}</m> and
+		substituting in
+	</p>
+
+	<p>
+		<me>
+			a e^{at} + \kappa \lambda e^{at} = e^{at}(a + \kappa \lambda) = 0
+		</me>
+	</p>
+
+	<p>
+		or
+	</p>
+
+	<p>
+		<me>
+			a = - \kappa \lambda
+		</me>
+	</p>
+
+	<p>
+		therefore the solution is
+	</p>
+
+	<p>
+		<me>
+			T_n = e^{-\kappa \lambda t} = e^{-(\kappa/L^2) n^2 \pi^2 t}
+		</me>
+	</p>
+
+	<p>
+		A solution <m>u_n(x,t)</m> to the equation is
+	</p>
+
+	<p>
+		<md>
+			<mrow>u_n(x,t) \amp = X_n(x,t) T_n(x,t) </mrow>
+			<mrow>\amp = e^{-(\kappa/L^2) n^2 \pi^2 t} \cos \frac{n \pi x}{L}</mrow>
+		</md>
+	</p>
+
+	<p>
+		and using the principle of superposition the general solution to the PDE with given boundary
+		conditions is:
+	</p>
+
+	<p>
+		<me>
+			u  = \sum_{n=0}^{\infty} C_n e^{-(\kappa/L^2) n^2 \pi^2 t} \cos \frac{n \pi x}{L}
+		</me>
+	</p>
+
+	<p>
+		Next, the initial condition is:
+	</p>
+
+	<p>
+		<me>
+			u(x,0) = f(x) = \sum_{n=0}^{\infty} C_n \cos \frac{n \pi x}{L}
+		</me>
+	</p>
+
+	<p>
+		and the coefficients can be found by the Sturm-Liouville theorem to get:
+	</p>
+
+	<p>
+		<md>
+			<mrow>C_0 \amp = \frac{1}{L} \int_0^L f(x) \, dx </mrow>
+			<mrow>C_n \amp = \frac{2}{L} \int_0^L f(x) \cos \frac{ n \pi x}{L} \, dx </mrow>
+		</md>
+	</p>
+
+	<example>
+		<statement>
+			<p>
+				Find the solution to the heat equation given above if the initial condition is:
+			</p>
+
+			<p>
+				<me>
+					f(x) = 1+\cos \frac{2\pi x}{L}
+				</me>
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				In this case, we need to find <m>C_0</m> and <m>C_n</m>:
+			</p>
+
+			<p>
+				<md>
+					<mrow>C_0 \amp = \frac{1}{L} \int_0^L (1+ \cos \frac{2\pi x}{L}) \, dx  = 1 </mrow>
+					<mrow>C_n\amp = \frac{2}{L} \int_0^L \cos \frac{2\pi x}{L} \cos \frac{n \pi x}{L} \, dx </mrow>
+					<mrow>\amp = \begin{cases}
+					1 \amp \text{if $n=2$} \\
+					0 \amp \text{otherwise}
+					\end{cases} </mrow>
+				</md>
+			</p>
+
+			<p>
+				So the solution to the PDE is:
+			</p>
+
+			<p>
+				<me>
+					u(x,t) = 1 + e^{-(\kappa/L^2) 4 \pi^2 t } \cos \frac{2\pi x}{L}
+				</me>
+			</p>
+
+			<p>
+				To get a feeling for the solution, the following is a plot when <m>\kappa=0.001</m>,
+				<m>L=1</m> for <m>t=0,5,10,15</m>.
+			</p>
+
+			<figure xml:id="fig-heat-eqn-soln">
+				<caption> A bar </caption>
+				<image width="75%" xml:id="plot-heat-eqn-soln">
+					<latex-image>
+					<![CDATA[
+					\begin{tikzpicture}[xscale=9,yscale=3]
+					\draw[->] (-0.1,0) -- (1.1,0) node [above right] {$x$};
+					\foreach \x in {0.25,0.5,0.75,1} \draw (\x,0.05)--(\x,-0.05) node [below] {\x};
+					\foreach \y in {1,2} \draw (0.01,\y) -- (-0.01,\y) node [left] {\y};
+					\draw[->] (0,-0.1) -- (0,2.2) node [above right] {$u$};
+					\foreach \t in {0,10,...,50}
+					\draw plot[domain=0:1,samples=100] (\x,{1+exp(-0.001*4*pi*pi*\t)*cos(2*pi*\x r)}) node [right] {$t=\t$};
+					\end{tikzpicture}
+					]]>
+					</latex-image>
+				</image>
+			</figure>
+
+			<p>
+				The plot shows the temperature distribution for the initial case <m>t=0</m> and subsequent times.
+				The temperature evens out as time increases and in the limit the temperature would be 1 throughout, which is the average initial temperature.
+			</p>
+    </solution>
+		</example>
+	</section>
+

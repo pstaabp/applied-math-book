@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-linear-independence" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Independence</title>
+
+
+  <p> As we saw in Examples <xref ref="ex-span-2" /> and <xref ref="ex-span-3" /> two vectors seem
+    to span <m>\mathbb{R}^2</m> and a third vector does not contribute anything new (which is why
+    there was a free variable in Example <xref ref="ex-span-3" />). We will be able to explain this
+    with the notion of linear independence and dependence. </p>
+
+  <definition>
+    <statement>
+      <p> Let <m>S</m> be a set of vectors from <m>\mathbb{R}^n</m>. The set is <term>linearly
+        independent</term> if none of the elements of <m>S</m> can be written in terms of the other
+        elements of <m>S</m>. If it is not linearly independent, then <m>S</m> is said to be <term>linearly
+        dependent</term>. </p>
+
+      <p> Specifically, if the only solution to </p>
+      <p>
+        <me>
+          c_1 \vec{u}_1 + c_2 \vec{u}_2 + \cdots + c_n \vec{u}_n = \vec{0}
+        </me>
+      </p>
+      <p> is <m>c_1=c_2 = \cdots = c_n=0</m>, then the vectors, <m> \vec{u}_1, \vec{u}_2, \ldots,
+        \vec{u}_n</m> are linearly independent.</p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Show that
+      </p>
+      <p>
+        <me>
+          \left\{
+          \begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix}, \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix} \right\}
+        </me>
+      </p>
+      <p> is linearly independent. </p>
+
+    </statement>
+    <solution>
+
+      <p> In this case, there are only two vectors and it is fairly easy to
+        see that the second cannot be written as a linear combination of
+        the first (or vise versa). Therefore, this set is linearly independent. </p>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Is the set of vectors </p>
+      <p>
+        <me>
+          \{
+          \begin{bmatrix}
+          1 \\ 2
+          \end{bmatrix}, \begin{bmatrix}
+          2 \\ 4
+          \end{bmatrix} \}
+        </me>
+      </p>
+      <p> linearly independent or dependent?</p>
+    </statement>
+    <solution>
+      <p>
+        In this case, since the second vector is twice the first, these vectors are linearly
+        dependent.
+      </p>
+    </solution>
+  </example>
+
+
+  <p>
+    The example above had only two vectors in the set and two vectors are linear
+    independent if and only if they are not constant multipliers of one another.
+    We use the more-technical definition instead.</p>
+
+
+  <example>
+    <statement>
+      <p>
+        Show that</p>
+
+      <p>
+        <me>
+          \left\{
+          \begin{bmatrix}
+          1 \\ 0 \\ 0
+          \end{bmatrix},
+          \begin{bmatrix}
+          1 \\ 2 \\ 0
+          \end{bmatrix},
+          \begin{bmatrix}
+          0 \\ 0 \\ 1
+          \end{bmatrix} \right\}
+        </me>
+      </p>
+      <p>
+        is linearly independent.</p>
+    </statement>
+
+    <solution>
+      <p>
+        We will show that only solution to</p>
+
+      <p>
+        <md>
+          <mrow>
+            c_1 \vec{u}_1 + c_2 \vec{u}_2 + c_3 \vec{u}_3 \amp = \vec{0} \amp \text{or}\amp\amp
+            c_1 \begin{bmatrix}
+            1 \\ 0 \\ 0
+            \end{bmatrix}+ c_2 \begin{bmatrix}
+            1 \\2 \\ 0
+            \end{bmatrix} + c_3 \begin{bmatrix}
+            0 \\ 0 \\ 1
+            \end{bmatrix} \amp = \begin{bmatrix}
+            0 \\ 0 \\ 0
+            \end{bmatrix}
+          </mrow>
+        </md>
+      </p>
+      <p>
+        is the trivial solution. Writing down an equation for each component leads to </p>
+      <p>
+        <md>
+          <mrow>c_1 + c_2 \amp = 0</mrow>
+          <mrow>2 c_2 \amp = 0, </mrow>
+          <mrow>c_3 \amp = 0.</mrow>
+        </md>
+      </p>
+      <p>The latter two equation show that <m>c_2=c_3=0</m> and this can be used in the first
+        equation to show that <m>c_1=0</m>, thus this is the trivial solution. From the definition,
+        this set is linearly independent.</p>
+    </solution>
+  </example>
+
+  <p>The last example in this section will be a review of why we got the results in Example <xref
+      ref="ex-span-3" />. </p>
+
+  <example>
+    <statement>
+      <p>
+        Is the set of vectors</p>
+      <p>
+        <me>
+          \left\{ \begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix}, \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix}, \begin{bmatrix}
+          0 \\1
+          \end{bmatrix} \right\}
+        </me>
+      </p>
+      <p>
+        linearly independent or dependent?</p>
+    </statement>
+    <solution>
+      <p>
+        We solve a linear combination of these vectors and set them equal to the zero vector.
+      </p>
+
+      <p>
+        <me>
+          c_1\begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix}+c_2 \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix}+c_3 \begin{bmatrix}
+          0 \\1
+          \end{bmatrix} = \begin{bmatrix}
+          0 \\ 0
+          \end{bmatrix}
+        </me>
+      </p>
+      <p>or the linear system in terms of the <m>c</m>'s</p>
+
+      <p>
+        <md>
+          <mrow>c_1 + c_2 \amp = 0 </mrow>
+          <mrow>c_2 + c_3 \amp = 0</mrow>
+        </md>
+      </p>
+
+      <p> and in this case, let <m>c_3</m> be a free variable, then the solution </p>
+
+      <p>
+        <md>
+          <mrow>c_2 \amp = -c_3 </mrow>
+          <mrow>c_1 \amp = -c_2 = c_3</mrow>
+        </md>
+      </p>
+      <p>
+        Since this is not the trivial solution, then these vectors are linearly
+        dependent. The relationship between the constants shows the dependence.
+        That is</p>
+
+      <p>
+        <me>
+          c_3\begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix}-c_3 \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix}+c_3 \begin{bmatrix}
+          0 \\1
+          \end{bmatrix} = \begin{bmatrix}
+          0 \\ 0
+          \end{bmatrix}
+        </me>
+      </p>
+
+      <p>
+        or as a simple relationship
+      </p>
+
+      <p>
+        <me>
+          \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix} - \begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix} = \begin{bmatrix}
+          0 \\ 1
+          \end{bmatrix}
+        </me>
+      </p>
+    </solution>
+  </example>
+
+  <p>The following theorem shows the relationship between the number of
+    vectors and the space the vectors is in.</p>
+
+  <theorem>
+    <statement>
+      <p> Let <m>\{\vec{u}_1, \vec{u}_2, \ldots, \vec{u}_k\}</m> be a set of <m>k</m> vectors in <m>
+        \mathbb{R}^n</m>. If <m> k \gt n </m>, then the set of vectors is linearly dependent.</p>
+    </statement>
+  </theorem>
+
+</section>
+

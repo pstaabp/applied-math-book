@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+
+  <book xml:id="applied-mathematics-staab">
+    <title>Applied Mathematics</title>
+
+    <!-- Include frontmatter -->
+    <xi:include href="./frontmatter.ptx" />
+
+    <!-- Include chapters -->
+    <xi:include href="./ch-linear-systems.ptx" />
+    <xi:include href="./ch-matrices.ptx" />
+    <xi:include href="./ch-vector-spaces.ptx" />
+    <xi:include href="./ch-eigenvectors.ptx" />
+    <xi:include href="./ch-matrix-factoring.ptx" />
+    <xi:include href="./ch-fourier-series.ptx" />
+    <xi:include href="./ch-pde.ptx" />
+
+    <!-- Include backmatter -->
+    <xi:include href="./backmatter.ptx" />
+
+  </book>
+</pretext>

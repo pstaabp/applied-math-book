@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-linear-systems" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Linear Systems</title>
+	<p>
+		We start this section with three examples of linear systems.
+		One is about
+		a biathlon with running and biking legs, a traffic flow model and finally
+		an example from Chemistry.
+		Examples of linear systems are found from every
+		mathematical subfield and every science.
+	</p>
+
+	<example xml:id="ex-biathlon">
+		<title>Biathlon Example</title>
+		<statement>
+			<p>
+				Travis runs 6 mph and bikes 18 mph in a race with two events.
+				If the course is 29 miles long and it takes him 2 hours and 10 minutes
+				to complete the race, how long is each segment?
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				In this case, we need to know how long each segment is.
+				There are two legs to the race, so we will let
+			</p>
+
+			<p>
+				<md>
+					<mrow> x_1 \amp = \text{number of miles for the run,}</mrow>
+					<mrow> x_2 \amp = \text{number of miles for the bike.} </mrow>
+				</md>
+			</p>
+
+			<p>
+				The equations come from three statements in the problem above.
+				First, we know that the total course is 29 miles long or
+			</p>
+
+			<p>
+				<me>
+					x_1+x_2=29.
+				</me>
+			</p>
+
+			<p>
+				The remaining equation arises from the time it takes Travis to complete the race.
+				In general recall the relationship between speed (a rate), distance and time is
+			</p>
+
+			<p>
+				<me>
+					\text{speed} = \frac{\text{distance}}{\text{time}}
+				</me>
+			</p>
+
+			<p>
+				or solving for time,
+			</p>
+
+			<p>
+				<me>
+					\text{time} =\frac{\text{distance}}{\text{rate}}
+				</me>
+			</p>
+
+			<p>
+				For example, the time it takes Travis to finish the running leg is <m>x_1/6</m>.
+				The total
+				time it takes Travis to finish the race is
+			</p>
+
+			<p>
+				<me>
+					\frac{x_1}{6} + \frac{x_2}{18} = 2+ \frac{10}{60} = \frac{13}{6}
+				</me>
+			</p>
+
+			<p>
+				so the linear system is
+			</p>
+
+			<p>
+				<md>
+					<mrow>x_1+x_2 \amp =29, </mrow>
+					<mrow>\frac{x_1}{6} + \frac{x_2}{18} \amp =\frac{13}{6}.</mrow>
+				</md>
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		The next example examines the traffic flow in a very limited part of a city (Boston in this
+		case).
+	</p>
+
+	<example xml:id="ex-streets">
+		<title>Traffic Flow</title>
+		<p>
+			A simple model of traffic flow can be represented by the following graph:
+		</p>
+
+		<figure xml:id="fig-streets">
+			<caption>A map of a few streets in Boston where the arrows denote the direction of traffic flow (all of these streets are one-way) and
+			the numbers represent the numbers of cars driving down the street in a given time period.
+			The
+			letters <m>A</m> through <m>D</m> will be the names of the intersections.</caption>
+			<image width="75%" xml:id="streets">
+				<latex-image><![CDATA[
+				\begin{tikzpicture}[scale=1.5]
+				\draw[{Latex[length=2mm]}-] (0,1) -- (2,1) node [at start,below left] {Newbury St.};
+				\draw[-{Latex[length=2mm]}] (0,0) -- (3,0) node [at end,above right] {Bolyston St.} ;
+				\draw[{Latex[length=2mm]}-] (1,2) -- (1,-1) node [at start,above left=5pt+3pt] {Berkeley St.};
+				\draw[{Latex[length=2mm]}-] (2,-1) -- (2,2) node [at end,above right=5pt+3pt] {Arlington St.} ;
+				\draw[{Latex[length=2mm]}-] (2,1.5) -- (2,1.6);
+				\draw[{Latex[length=2mm]}-] (2,0.5) -- (2,0.6);
+				\draw[-{Latex[length=2mm]}] (1,-0.5) -- (1,-0.4);
+				\draw[-{Latex[length=2mm]}] (1,0.5) -- (1,0.6);
+				\draw[{Latex[length=2mm]}-] (0.5,0) -- (0.4,0);
+				\draw[{Latex[length=2mm]}-] (1.5,0) -- (1.4,0);
+				\draw[{Latex[length=2mm]}-] (1.5,1) -- (1.6,1);
+				\draw (3,0) node [below right] {400};
+				\draw (2,-1) node [below right] {200};
+				\draw (0,0) node [above left] {500};
+				\draw (1,-1) node [below left] {200};
+				\draw (0,1) node [above left] {$ x_1$};
+				\draw (1,2) node [above] {250};
+				\draw (2,2) node [above] {350};
+				\draw (1.5,0) node [below] {$ x_2$};
+				\draw (2,0.5) node [right] {$ x_3$};
+				\draw (1.5,1) node [above] {$ x_4$};
+				\draw (1,0.5) node [left] {$ x_5$};
+				\fill (1,1) circle[radius=1.5pt] node [above left] {$ A$};
+				\fill (2,1) circle[radius=1.5pt] node [above right] {$ B$};
+				\fill (1,0) circle[radius=1.5pt] node [above right] {$ C$};
+				\fill (2,0) circle[radius=1.5pt] node [below right] {$ D$};
+				\end{tikzpicture}
+				]]>
+				</latex-image>
+			</image>
+		</figure>
+
+		<p>
+			And a mathematical model can be written down by making sure that the total
+			number of cars that go into an intersection balances with the number of
+			cars exiting.
+			In this case, we have:
+		</p>
+
+		<p>
+			<md>
+				<mrow>x_4 + x_5 \amp = x_1 + 250</mrow>
+				<mrow>350 \amp = x_3 + x_4 </mrow>
+				<mrow>700 \amp = x_2 + x_5 </mrow>
+				<mrow>x_3 + x_2 \amp = 600 </mrow>
+			</md>
+		</p>
+
+		<p>
+			for intersections <m>A</m>, <m>B</m>, <m>C</m> and <m>D</m> respectively.
+		</p>
+	</example>
+
+	<p>
+		Linear equations exist in many different fields, especially the sciences.
+		The following comes from Chemistry in which a chemical equation is found
+		by balancing the number of atoms in the equation on both sides.
+	</p>
+
+	<example xml:id="ex-hydrazine">
+		<title>Chemical Reactions</title>
+		<p>
+			Hydrazine (<m>N_2H_4</m>) is an important nitrogen-based compound.
+			A chemical reaction to
+			produce it from ammonia and hydrogen peroxide is given by
+		</p>
+
+		<p>
+			<me>
+				k_1 NH_3 + k_2 H_2O_2 \rightarrow k_3 N_2 H_4 + k_4 H_2 O
+			</me>
+		</p>
+
+		<p>
+			The values of <m>k_1, k_2, k_3</m> and <m>k_4</m> can be found by solving the following
+			linear system which balances the number of nitrogen (N), hydrogen (H) and oxygen (O) atoms respectively in
+			the reaction or
+		</p>
+
+		<p>
+			<md>
+				<mrow>k_1 \amp = 2k_3, </mrow>
+				<mrow>3k_1 + 2k_2 \amp = 4k_3 + 2k_4, </mrow>
+				<mrow>2k_2 \amp = k_4.
+				</mrow>
+			</md>
+		</p>
+	</example>
+
+	<p>
+		With examples of linear algebra presented, we next move to a few definitions.
+	</p>
+
+	<definition>
+		<statement>
+			<p>
+				<ul>
+					<li>
+						<p>
+							A <term>linear combination</term> of <m>x_1, x_2, x_3, \ldots, x_n</m> has the form
+						</p>
+
+						<p>
+							<me>
+								a_1 x_1 + a_2 x_2 + \cdots + a_n x_n,
+							</me>
+						</p>
+
+						<p>
+							where the constants <m>a_1, a_2, \ldots, a_n \in \mathbb{R}</m> are the combinations
+							coefficients.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							A <term>linear equation</term> has the form
+						</p>
+
+						<p>
+							<men xml:id="eq-def-lin-eq">
+								a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b
+							</men>
+						</p>
+
+						<p>
+							where <m>b \in \mathbb{R}</m> is a constant.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							The <m>n</m>-tuple <m>(s_1,s_2,\ldots,s_n)</m> <term>satisfies</term> or is a <term>
+							solution</term> of (<xref ref="eq-def-lin-eq" />) if this point satisfies (<xref
+							ref="eq-def-lin-eq" />) or
+						</p>
+
+						<p>
+							<me>
+								a_1 s_1 + a_2 s_2 + \cdots + a_n s_n = b
+							</me>
+						</p>
+					</li>
+
+					<li>
+						<p>
+							A <term>system of linear equations</term> or <term>linear system</term> is a set of
+							linear equations:
+						</p>
+
+						<p>
+							<md>
+								<mrow>a_{1,1} x_1 + a_{1,2} x_2 + \cdots + a_{1,n} x_n \amp = b_1 , </mrow>
+								<mrow number="yes" xml:id="eq-def-lin-sys">a_{2,1} x_1 + a_{2,2} x_2 + \cdots +
+								a_{2,n} x_n \amp = b_2, </mrow>
+								<mrow>\vdots \amp = \vdots </mrow>
+								<mrow>a_{m,1} x_1 + a_{m,2} x_2 + \cdots + a_{m,n} x_n \amp = b_m, </mrow>
+							</md>
+						</p>
+
+						<p>
+							and this linear system has <m>m</m> equations and <m>n</m> unknowns (variables).
+						</p>
+					</li>
+
+					<li>
+						<p>
+							The <m>n</m>-tuple <m>(s_1,s_2,\ldots,s_n)</m> <term>satisfies</term> or is a <term>
+							solution</term> of (<xref ref="eq-def-lin-sys" />) if this point satisfies <em>every</em>
+							equation of (<xref ref="eq-def-lin-sys" />).
+						</p>
+					</li>
+				</ul>
+			</p>
+		</statement>
+	</definition>
+
+	<example>
+		<title>Linear Equations</title>
+		<p>
+			The following are linear equations:
+		</p>
+
+		<p>
+			<md>
+				<mrow>2x + 3y \amp = 6, \amp y_1 -y_2+y_3-y_4 \amp = 10, </mrow>
+				<mrow> 10x_1 - x_3 + 5x_5 \amp = 9, \amp \sum_{i=1}^{10} i x_i \amp = 0 </mrow>
+			</md>
+		</p>
+
+		<p>
+			where summation notation has been used in the last one and note that other variables names
+			can be used. The following equations are not linear:
+		</p>
+
+		<p>
+			<md>
+				<mrow>x_1^2+x_2 \amp = 6, \amp y_1y_2 + y_3 \amp = 5, </mrow>
+				<mrow>\frac{x_1+x_2}{x_3} \amp = 6, \amp \sin(x+y) \amp = z </mrow>
+			</md>
+		</p>
+
+		<p>
+			Each of the equations in the latter group have multiplications, squares
+			division or other functions between variables.
+		</p>
+	</example>
+
+	<p>
+		The next two examples give a way to determine if a point or <m>n</m>-tuple is a solution to a
+		linear system.
+	</p>
+
+	<example>
+		<title>Showing a Point is a Solution to a Linear System</title>
+		<statement>
+			<p>
+				Show that the point <m>(2,3)</m> is a solution of the linear system:
+			</p>
+
+			<p>
+				<md>
+					<mrow>3x_1 - x_2 \amp = 3 </mrow>
+					<mrow>2x_1 + 4x_2 \amp = 16 </mrow>
+				</md>
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				Substitute <m>x_1=2</m> and <m>x_2=3</m> into both equations and check.
+			</p>
+
+			<p>
+				<md>
+					<mrow>3(2) - 3 \amp = 3, </mrow>
+					<mrow>2(2) + 4(3) \amp = 16.
+					</mrow>
+				</md>
+			</p>
+
+			<p>
+				Since each equation is satisfied at the point <m>(2,3)</m> is a solution to the linear
+				system.
+			</p>
+		</solution>
+	</example>
+
+	<example>
+		<statement>
+			<p>
+				Recall that the linear system in Example <xref ref="ex-hydrazine" /> can be written:
+			</p>
+
+			<p>
+				<md>
+					<mrow>k_1 \phantom{+2k_2}- 2k_3\phantom{+2k_4} \amp = 0, </mrow>
+					<mrow>2k_2 + 2k_3 -2k_4 \amp = 0, </mrow>
+					<mrow>2k_2 \phantom{+2x_3}- k_4 \amp = 0, </mrow>
+				</md>
+			</p>
+
+			<p>
+				Is <m>(8,4,4,8)</m> a solution to this linear system? Is <m>(4,2,2,4)</m>? Is <m>
+				(6,1,3,2)</m>?
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				For <m>(8,4,4,8)</m>, we need to substitute this point in and check all the equations:
+			</p>
+
+			<p>
+				<md>
+					<mrow>8-2(4) \amp = 0 </mrow>
+					<mrow>2(4)+2(4)-2(8) \amp = 8+8-16 = 0 </mrow>
+					<mrow>2(4)-8 \amp = 8-8 = 0 </mrow>
+				</md>
+			</p>
+
+			<p>
+				so it is a solution.
+			</p>
+
+			<p>
+				For <m>(4,2,2,4)</m>, again check all of the equations:
+			</p>
+
+			<p>
+				<md>
+					<mrow>4-2(2) \amp = 0, </mrow>
+					<mrow>3(4)+2(2)-4(2)-2(4) \amp = 12+4-8-8=0, </mrow>
+					<mrow>2(2)-4\amp = 0</mrow>
+				</md>
+			</p>
+
+			<p>
+				so this is also a solution.
+			</p>
+
+			<p>
+				For <m>(6,1,3,2)</m>, we substitute this into the equation:
+			</p>
+
+			<p>
+				<md>
+					<mrow>6-2(3) \amp = 0 </mrow>
+					<mrow>3(6)+2(1)-4(3)-2(2) \amp = 18+2-12-4 = 4 \neq 0.
+					</mrow>
+					<mrow>2(1) - 2 \amp = 0 </mrow>
+				</md>
+			</p>
+
+			<p>
+				and it satisfies 2 of the equations, but not all, so this is not a solution.
+			</p>
+		</solution>
+	</example>
+	<!--
+	<subsection xml:id="sect-echelon-form" xmlns:xi="http://www.w3.org/2001/XInclude">
+		<title>Echelon Form</title>
+		<introduction>
+			<p>
+				Notice that the strategy laid out above gets the linear
+				system in a nice form for solving for all variables using back substitution.
+				We will now explicitly state what this nice form is.
+			</p>
+		</introduction>
+
+		<subsubsection xml:id="subsect-echelon-form">
+			<title>Putting linear systems in Echelon Form</title>
+			<definition xml:id="def-echelon-form">
+				<statement>
+					<p>
+						In each equation of a linear system, the first variable with a non-zero coefficient is
+						called the <term>leading variable</term>.
+						A system is in <term>echelon form</term> if
+						each leading variable is to the right of the leading variable of the equation above it
+						(except the first equation).
+					</p>
+				</statement>
+			</definition>
+
+			<p>
+				In the definition above, it's important that there is some order to the variables.
+				If the
+				variables are <m>x_1, x_2, \ldots</m>, then ``to the right'' means that there is a larger
+				subscript.
+				If the variables are <m>x,y,z,\ldots</m>, the to the right is just after
+				lexicographically.
+			</p>
+
+			<example>
+				<title>Echelon Form</title>
+				<statement>
+					<p>
+						Explain why the linear system in the example above:
+					</p>
+
+					<p>
+						<md>
+							<mrow>4x_1\phantom{+11x_3} -\phantom{9} x_3 \amp = 0, </mrow>
+							<mrow>12x_2 +9x_3 \amp = 12, </mrow>
+							<mrow>11x_3 \amp = 44, </mrow>
+						</md>
+					</p>
+
+					<p>
+						is in echelon form.
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						Note that the leading variable in equation 1 is <m>x_1</m>, the leading variable in
+						equation 2 is <m>x_2</m> and the leading variable in equation 3 is <m>x_3</m>.
+						Each
+						leading variable in each successive row is to the right of the one above.
+					</p>
+				</solution>
+			</example>
+
+			<p>
+				The next example determines if the system is in echelon form.
+			</p>
+
+			<example xml:id="ex-echelon-form-3by5">
+				<title>Echelon Form, Another Example</title>
+				<statement>
+					<p>
+						Determine if the following are in echelon form?
+					</p>
+
+					<p>
+						<ol>
+							<li>
+								<p>
+									<md>
+										<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
+										<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
+										<mrow>3x_5 \amp = 27,</mrow>
+									</md>
+								</p>
+							</li>
+
+							<li>
+								<p>
+									<md>
+										<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
+										<mrow>2x_1 -x_2 \amp = -10, </mrow>
+										<mrow>2x_2 \amp = 14 </mrow>
+									</md>
+								</p>
+							</li>
+						</ol>
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						<ol>
+							<li>
+								<p>
+									Yes, the leading variable in equation 1 is <m>x_1</m>, the leading variable in
+									equation 2 is <m>x_3</m> which is to the right of <m>x_1</m> and the leading
+									variable in equation 3 is <m>x_5</m>, which is to the right of <m>x_3</m>.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									the leading variables in both equation 1 and 2 are <m>x_1</m>.
+								</p>
+							</li>
+						</ol>
+					</p>
+				</solution>
+			</example>
+
+			<p>
+				Let's look more carefully at the last example.
+				It is not in echelon form,
+				but let's put it in echelon form and write down a solution.
+			</p>
+
+			<p>
+				<md>
+					<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
+					<mrow>2x_1 -x_2 \amp = -10, </mrow>
+					<mrow>2x_2 \amp = 8.
+					</mrow>
+				</md>
+			</p>
+
+			<p>
+				Eliminate <m>x_1</m> in the 2nd equation by doing the following:
+			</p>
+
+			<p>
+				<md>
+					<mrow>-2R_1+3R_2 \to R_2, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+					<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
+					<mrow>\amp \amp 2x_2 \amp = 8.</mrow>
+				</md>
+			</p>
+
+			<p>
+				then eliminate <m>x_2</m> in the third equation
+			</p>
+
+			<p>
+				<md>
+					<mrow> 2R_2 +11 R_3 \to R_3 \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+					<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
+					<mrow>\amp \amp 0x_2 \amp = 0.
+					</mrow>
+				</md>
+			</p>
+
+			<p>
+				Note that the last equation in the last linear system contains no information.
+				zero equals
+				zero.
+				We all knew that before.
+				We ignore that equation.
+				The 2nd equation can be solved to
+				yield <m>x_2=4</m> and substituting into the first equation,
+			</p>
+
+			<p>
+				<md>
+					<mrow>3x_1 + 4(4) \amp = 7, \amp \amp \text{or} </mrow>
+					<mrow>3x_1 \amp = -9, \amp \amp \text{or} </mrow>
+					<mrow>x_1 \amp = -3.</mrow>
+				</md>
+			</p>
+
+			<p>
+				so the solution is <m>(-3,4)</m>.
+			</p>
+
+			<p>
+				In comparison to the last example, consider the following very similar example:
+			</p>
+
+			<p>
+				<md>
+					<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
+					<mrow>2x_1 -x_2 \amp = -10, </mrow>
+					<mrow>3x_2 \amp = 6,</mrow>
+				</md>
+			</p>
+
+			<p>
+				eliminate the <m>x_1</m> term in the 2nd equation
+			</p>
+
+			<p>
+				<md>
+					<mrow>-2R_1+3R_2 \rightarrow R_2, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+					<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
+					<mrow>\amp \amp 3x_2 \amp = 6,</mrow>
+				</md>
+			</p>
+
+			<p>
+				eliminate the <m>x_2</m> term in the 3rd equation
+			</p>
+
+			<p>
+				<md>
+					<mrow>3R_2+11R_3 \rightarrow R_3, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+					<mrow>\amp\amp -11x_2 \amp = -44, </mrow>
+					<mrow>\amp\amp 0x_2 \amp = -66,</mrow>
+				</md>
+			</p>
+
+			<p>
+				And note in this case, that the last equation says <m>0=-66</m>, which is not true.
+				Therefore, this means that there is no solution.
+				This is in contrast to the the previous
+				example, which did have a solution.
+			</p>
+
+			<remark>
+				<title>Can solutions to linear system only be none or a unique solution?</title>
+				<p>
+					In the last example of this section, we will see that we can have many
+					solutions to a linear system.
+					If we have the following linear system
+					already in echelon form:
+				</p>
+
+				<p>
+					<md>
+						<mrow> x_1\phantom{+2x2} -2x_3\phantom{+x_4} \amp = 0, </mrow>
+						<mrow>2x_2 +2x_3 -2x_4 \amp = 0, </mrow>
+						<mrow>-2x_3 + x_4 \amp = 0,</mrow>
+					</md>
+				</p>
+
+				<p>
+					Notice that since there are 4 variables and 3 equations, that there is no way to get a
+					solution for <m>x_4</m> by itself (or any of the other 3 variables).
+					This has many
+					(actually infinitely many) solutions.
+					For example <m>(0,0,0,0)</m> is one as well as <m>
+					(2,1,1,2)</m> and <m>(-5,-5/2,-5/2,-5)</m>.
+					We will explore this is much more detail
+					later.
+				</p>
+			</remark>
+		</subsubsection>
+
+		<subsubsection xml:id="subsect-describe-solutions">
+			<title>Describing the Solution Set</title>
+			<p>
+				So far we have seen linear system with solution sets with different number of elements.
+				The
+				<em>no
+				solution</em> means that the solution set is empty, the <em>unique solution</em> means that
+				there is one element in the set.
+				But we haven't seen the <em>many solutions</em> and how do
+				we represent that.
+				We explore that here in this section.
+			</p>
+
+			<p>
+				For example, if we reduce the linear system:
+			</p>
+
+			<p>
+				<md>
+					<mrow>\amp \amp x\phantom{+2y} + 2z \amp = -6 </mrow>
+					<mrow>\amp \amp 2x-y\phantom{+3z}\amp = 1 </mrow>
+					<mrow>\amp \amp y+4z\amp = -13</mrow>
+				</md>
+			</p>
+
+			<p>
+				Eliminate the <m>x</m> term in the 2nd equation
+			</p>
+
+			<p>
+				<md>
+					<mrow>-2R_1+R_2 \rightarrow R_2 \qquad\amp \amp x\phantom{+2y} + 2z \amp = -6 </mrow>
+					<mrow>\amp\amp -y-4z\amp = 13 </mrow>
+					<mrow>\amp\amp y+4z\amp = -13</mrow>
+				</md>
+			</p>
+
+			<p>
+				Eliminate the <m>y</m> term in the 3rd equation
+			</p>
+
+			<p>
+				<men xml:id="eq-echelon-form-reduced-zero">
+					\begin{split}
+					R_2 + 2R_3 \rightarrow R_3 \qquad \amp \amp x\phantom{+2y} + 2z \amp = -6 \\
+					\amp \amp-y -4z \amp = 13 \\
+					\amp \amp0 \amp = 0.
+					\end{split}
+				</men>
+			</p>
+
+			<p>
+				As discussed above, this linear system has more that one solution.
+				Therefore it is the set of points that satisfy every one of the original
+				three equations or
+			</p>
+
+			<p>
+				<me>
+					\{ (x,y,z)\; | \; x+2z=-6, \; 2x-y = 1, \; y+4z =-13\}
+				</me>
+			</p>
+
+			<p>
+				However (and this is the main point of Gauss' method), using row
+				operations, any points that satisfy the 3rd system above is also a
+				solution, that is
+			</p>
+
+			<p>
+				<me>
+					\{ (x,y,z) \; | \; x + 2z = -6, \; -y-4z = 13 \}
+				</me>
+			</p>
+
+			<p>
+				This may be an improvement because there are only 2 equations
+				instead of 3, but it's still difficult to write down a point that
+				is in the solution set.
+			</p>
+
+			<p>
+				Alternatively, we return to the last linear system and solve the 2nd equation for <m>y</m>
+				or
+			</p>
+
+			<p>
+				<me>
+					y = -4z-13
+				</me>
+			</p>
+
+			<p>
+				and solving the first equation for <m>x</m> in the linear system above to get
+			</p>
+
+			<p>
+				<md>
+					<mrow>x+2z \amp = -6 \qquad\qquad\text{or}</mrow>
+					<mrow>x \amp = -2z -6 </mrow>
+				</md>
+			</p>
+
+			<p>
+				And now if we know <m>z</m>, we can find <m>x</m> and <m>y</m>, thus we can write the
+				solution set as
+			</p>
+
+			<p>
+				<me>
+					\{ (x,y,z) = (-2z-6, -4z-13,z) \; | \; z \in \mathbb{R} \}
+				</me>
+			</p>
+
+			<p>
+				and now we have a lot of information about the solution set.
+				For example, if <m>z=0</m>,
+				then <m>x=-6, y=-13</m>, so the point <m>(-6,-13,0)</m> is in the solution set.
+				Similarly if <m>
+				z=-3</m>, then <m>(0,-1,-3)</m> is also a point in the solution set and any point given a
+				value of <m>z</m>.
+			</p>
+
+			<p>
+				We also have a sense of the number of solutions and since <m>z</m> can take on any real
+				number, there are an infinite number of triples <m>3</m>-tuples in this solution set.
+			</p>
+
+			<p>
+				Also, the form of the solution set above is in <em>set builder</em> form.
+				That is is shows
+				how to create the set of points in the solution.
+			</p>
+
+			<definition>
+				<statement>
+					<p>
+						The non-leading variables in a linear system in echelon form are called the <term>free
+						variables</term> or <term>parameters</term>.
+					</p>
+				</statement>
+			</definition>
+
+			<p>
+				The next example shows that a linear system can have more than one free variables.
+			</p>
+
+			<example xml:id="ex-echelon-form-3by5-soln">
+				<statement>
+					<p>
+						In Example <xref ref="ex-echelon-form-3by5" />, we saw the following linear system
+						already in echelon form:
+					</p>
+
+					<p>
+						<md>
+							<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
+							<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
+							<mrow>3x_5 \amp = 27,</mrow>
+						</md>
+					</p>
+
+					<p>
+						Write the solution set in terms of the free variables.
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						First, we use back substitution to solve for the <em>leading variables</em>.
+						The third
+						equation states that <m>x_5 = 9</m>, and then substitute this into the 2nd equation:
+					</p>
+
+					<p>
+						<md>
+							<mrow>2x_3 +4(9) \amp = 10,\qquad\quad \text{or} </mrow>
+							<mrow>x_3 \amp = -13,</mrow>
+						</md>
+					</p>
+
+					<p>
+						and then substitute into the first equation
+					</p>
+
+					<p>
+						<md>
+							<mrow>x_1 + 3(-13) - 9 x_4 + 11 (9) \amp = 14 \quad\quad\text{or}</mrow>
+							<mrow>x_1 \amp = 9x_4 - 46</mrow>
+						</md>
+					</p>
+
+					<p>
+						Lastly, we write the solution in terms of <m>x_2</m> and <m>x_4</m> which are the two
+						free variables.
+					</p>
+
+					<p>
+						<me>
+							\{ (x_1,x_2,x_3,x_4,x_5) = (9x_4-46,x_2,-13,x_4,9) \; | \; x_2, x_4 \in \mathbb{R}\}
+						</me>
+					</p>
+				</solution>
+			</example>
+
+			<p>
+				We now find the solution to the Hydrazine chemistry problem in <xref ref="ex-hydrazine" />
+			</p>
+
+			<example xml:id="ex-hydrazine-solution">
+				<statement>
+					<p>
+						Find the solution set of the linear system in <xref ref="ex-hydrazine" />
+					</p>
+
+					<p>
+						<md>
+							<mrow>k_1\phantom{+2k_2}-2k_3\phantom{+2k_4} \amp = 0, </mrow>
+							<mrow>3k_1+2k_2-4k_3-2k_4 \amp = 0, </mrow>
+							<mrow>2k_2\phantom{+2x_3}-\phantom{2}k_4 \amp = 0, </mrow>
+						</md>
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						In this case, we will use Gauss's method to put the linear system in echelon form:
+					</p>
+
+					<p>
+						<md>
+							<mrow>-3R_1 +R_2 \rightarrow R_2, \qquad \amp \amp k_1 \phantom{+2k_2}-
+							2k_3\phantom{+2k_4} \amp = 0, </mrow>
+							<mrow>\amp \amp 2k_2 + 2k_3 -2k_4 \amp = 0, </mrow>
+							<mrow>\amp \amp 2k_2\phantom{+2x_3}-\phantom{2}k_4 \amp = 0,</mrow>
+						</md>
+					</p>
+
+					<p>
+						<md>
+							<mrow>-R_2 + R_3 \rightarrow R_3, \qquad \amp\amp k_1 \phantom{+2k_2}-
+							2k_3\phantom{+2k_4} \amp = 0</mrow>
+							<mrow>\amp \amp 2k_2 + 2k_3 -2k_4 \amp = 0, </mrow>
+							<mrow>\amp \amp -2k_3 + k_4 \amp = 0,</mrow>
+						</md>
+					</p>
+
+					<p>
+						which is now in echelon form.
+						We now use back substitution to solve for <m>k_1</m>, <m>
+						k_2</m> and <m>k_3</m>, the leading variables:
+					</p>
+
+					<p>
+						<me>
+							k_3 = \frac{1}{2} k_4 \\
+						</me>
+					</p>
+
+					<p>
+						then
+					</p>
+
+					<p>
+						<me>
+							k_2 = -k_3 + k_4 = - \frac{1}{2} k_4 + k_4 = \frac{1}{2} k_4,
+						</me>
+					</p>
+
+					<p>
+						and finally,
+					</p>
+
+					<p>
+						<me>
+							k_1 = 2k_3 = 2 \biggl( \frac{1}{2} k_4 \biggr) = k_4
+						</me>
+					</p>
+
+					<p>
+						Since <m>k_1, k_2</m> and <m>k_3</m> all depend on <m>k_4</m>, a free variable, there
+						are an infinite number of solutions to this linear system.
+						We can write this as
+					</p>
+
+					<p>
+						<me>
+							\{ (k_4, \frac{1}{2} k_4, \frac{1}{2} k_4, k_4) \; | \; k_4 \in \mathbb{R} \},
+						</me>
+					</p>
+
+					<p>
+						Solutions include <m>(0,0,0,0)</m>, <m>(2,1,1,2)</m>, <m>(-5,-5/2,-5/2,-5)</m>.
+					</p>
+				</solution>
+			</example>
+
+			<p>
+				Since the above example comes from Chemical equations, it is desirable to find a solution
+				of all positive integers, since the number represent the number of atoms in the reaction.
+				In
+				addition, typically the solution with smallest integers is desired.
+				In this case, the
+				solution <m>(2,1,1,2)</m> results in the following equation:
+				<me>
+					2 NH_3 + H_2O_2 \rightarrow N_2 H_4 + 2 H_2 O
+				</me>
+			</p>
+		</subsubsection>
+	</subsection>
+	-->
+	<!-- \subsubsection{Linear Systems and WebCAS}
+	As you can see from the previous section solving linear systems require being very organized and
+	not making any arithmetic errors.
+	In this section, we will see how to solve linear systems using
+	WebCAS, a computer program designed to learn row operations and the Gauss-Jordon method.
+	WebCAS is found at \url{http://webwork.fitchburgstate.edu/webcas} and you need a modern web browser
+	to use it.
+	You should also see the website above for video and help pages on how to use WebCAS
+	to solve linear systems.
+	As often, its easier to show you, then to tell you how to use a
+	computer program.
+	-->
+</section>

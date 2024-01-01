@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-sym-matrix-quad-form">
+  <title>Symmetric and Orthogonal Matrices and Quadratic Forms</title>
+
+  <introduction>
+    <definition>
+      <statement>
+        <p> A square matrix <m>A</m> is said to be <term>symmetric</term> if <m>A=A^T</m>. </p>
+      </statement>
+
+    </definition>
+
+    <theorem>
+      <statement>
+        <p>
+          The eigenvalues of a symmetric matrix are real.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p> Let <m>\lambda</m> be an eigenvalue of <m>A</m> with corresponding eigenvector <m>
+          \vec{v}</m> . </p>
+        <p>
+          <me>
+            A \vec{v} = \lambda \vec{v}
+          </me>
+        </p>
+        <p> Right multiply by <m>\vec{v}^T</m></p>
+
+        <p>
+          <me>
+            \vec{v}^T A \vec{v} = \lambda \vec{v}^T \vec{v}
+          </me>
+        </p>
+
+        <p>Take the complex conjugate of the eigenvector equation above: </p>
+
+        <p>
+          <md>
+            <mrow>\overline{\vec{v}}^T A^T \amp = \overline{\lambda} \overline {\vec{v}}^T </mrow>
+            <mrow>\overline{\vec{v}}^T A \amp = \overline{\lambda} \overline {\vec{v}}^T</mrow>
+          </md>
+        </p>
+        <p>left mulitply by <m>\vec{v}</m></p>
+        <p>
+          <md>
+            <mrow>\overline{\vec{v}}^T A \vec{v} \amp = \overline{\lambda} \overline{\vec{v}}^T
+              \vec{v} </mrow>
+            <mrow>\overline{\vec{v}}^T \lambda \vec{v} \amp = \overline{\lambda}
+              \overline{\vec{v}}^T
+              \vec{v} </mrow>
+            <mrow>\lambda \overline{\vec{v}}^T \vec{v} \amp = \overline{\lambda}
+              \overline{\vec{v}}^T
+              \vec{v}</mrow>
+          </md>
+        </p>
+        <p>so <m>\lambda = \overline{\lambda}</m>, hence it is real. </p>
+      </proof>
+    </theorem>
+
+    <theorem>
+      <statement>
+        <p>
+          The eigenvectors of a symmetric matrix are orthogonal.
+        </p>
+      </statement>
+
+    </theorem>
+
+
+    <definition>
+      <statement>
+        <p> A square matrix <m>Q=[\vec{q}_1\;\; \vec{q}_2\;\;\vec{q}_3\;\; \cdots\;\;\vec{q}_n] </m>
+          is said to be <term>orthogonal</term> if </p>
+
+        <p>
+          <me>
+            \vec{q}_i^T \vec{q}_j = 0
+          </me>
+        </p>
+
+        <p>for all <m>i \neq j</m>. If in addition that <m>\vec{q}_i^T\vec{q}_i = 1</m> for all <m>i</m>
+          then the matrix is also said to be <term>orthonormal</term>. </p>
+      </statement>
+    </definition>
+
+    <theorem>
+      <statement>
+        <p> If <m>Q</m> is a orthonormal matrix, then <m>Q^T = Q^{-1}</m>. </p>
+      </statement>
+    </theorem>
+  </introduction>
+
+  <subsection xml:id="sect-orthogonal-transformations">
+    <title>Orthogonal
+      Transformations</title>
+
+    <definition>
+      <statement>
+        <p> Let <m>Q</m> be a linear transformation from <m>\mathbb{R}^n</m> to <m>
+            \mathbb{R}^n</m>. If <m>Q</m> is an orthonormal matrix, then the linear transformation
+          is said to be an <term>orthogonal transformation</term>. </p>
+      </statement>
+    </definition>
+
+    <example>
+      <statement>
+        <p> Show that the rotational transformation
+          given in section 7.10 is an orthogonal transformation.
+        </p>
+      </statement>
+
+      <solution>
+        <p>Show that</p>
+        <p>
+          <me>
+            Q = \begin{bmatrix}
+            \cos \theta \amp -\sin \theta \\
+            \sin \theta \amp \cos \theta
+            \end{bmatrix}
+          </me>
+        </p>
+
+        <p> satisfies <m>Q^T = Q^{-1}</m>.</p>
+      </solution>
+    </example>
+
+    <definition>
+      <statement>
+        <p> A <term>quadratic form</term> is a polynomial function in <m>x_1, x_2, \ldots, x_n</m>
+          such that</p>
+
+        <p>
+          <me>
+            q(\vec{x}) = a_1 x_1^2 + a_2 x_2^2 + \cdots a_n x_n^2 + b_{12} x_1 x_2 + b_{13} x_1
+            x_3
+            +
+            \cdots
+          </me>
+        </p>
+      </statement>
+    </definition>
+
+    <p>Note
+      that a quadratic form can have squared terms and products between only two variables.</p>
+
+    <example>
+      <statement>
+        <p>
+          The following are examples of quadratic forms.</p>
+
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m>4x_1^2 + 7x_2^2 + 4x_1x_2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>x_1^2 + 4x_2^2 + 9 x_3^2 -2x_1x_2 + 3x_1x_3 + x_2x_3 </m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>And the following are not:</p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m>x_1^2 + 4x_2^2 + 9x_2+ 3</m>.</p>
+            </li>
+            <li>
+              <p>
+                <m>x_1^2 + 4x_2^2 + 3x_3^2 + 2x_1x_2 -3x_1 x_2 x_3 </m>.</p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </example>
+
+    <p>A quadratic form can be written as </p>
+
+    <p>
+      <me>
+        q(\vec{x}) = \vec{x}^T A \vec{x}
+</me>
+    </p>
+
+    <p>for some symmetric matrix <m>A</m> and <m>\vec{x}=[x_1\;\;x_2 \;\; \cdots \;\; x_n]^T</m>.</p>
+
+    <example>
+      <statement>
+        <p> Find the matrix <m>A</m> for the quadratic forms above: </p>
+      </statement>
+
+      <solution>
+        <p>
+          <md>
+            <mrow>A \amp= \begin{bmatrix}
+              4 \amp2 \\
+              2 \amp 7
+              \end{bmatrix}
+            </mrow>
+            <mrow>
+              \vec{x}^T A \vec{x} \amp = [x_1 \;\; x_2] \begin{bmatrix}
+              4 \amp2 \\
+              2 \amp 7
+              \end{bmatrix} \begin{bmatrix}
+              x_1 \\ x_2
+              \end{bmatrix}
+            </mrow>
+            <mrow>\amp = [x_1 \;\; x_2] \begin{bmatrix}
+              4x_1 + 2 x_2 \\
+              2 x_1 + 7 x_2
+              \end{bmatrix}</mrow>
+            <mrow>
+              \amp = 4x_1^2 + 2 x_1 x_2 + 2 x_1 x_2 + 7 x_2^2
+            </mrow>
+          </md>
+        </p>
+
+        <p> And for the second quadratic form: </p>
+
+        <p>
+          <me>
+            A = \begin{bmatrix}
+            1 \amp -1 \amp 3/2 \\
+            -1 \amp 4 \amp 1/2 \\
+            3/2 \amp 1/2 \amp 9
+            \end{bmatrix}
+          </me>
+        </p>
+
+      </solution>
+    </example>
+
+  </subsection>
+
+  <subsection xml:id="sect-quad-forms">
+    <title>Principle Axes of Quadratic Forms</title>
+
+    <p>For the quadratic form:</p>
+
+    <p><me>
+        q(\vec{x}) = \vec{x}^T A \vec{x}
+</me>
+</p>
+
+<p>if <m>A = P D P^{-1}</m> can be written: </p>
+
+<p>
+  <me>
+      q(\vec{x}) = \vec{x}^T P D P^{-1} \vec{x}
+  </me>
+</p>
+      <p>and since <m>A</m> is symmetric then the eigenvectors form an
+        orthonormal basis so <m>P^{-1} = P^T</m>.
+        </p>
+    <p>
+      <me>
+         q(\vec{x}) =\vec{y}^T D \vec{y}
+        </me>
+      </p>
+
+      <p>
+        where <m>\vec{y}= P^T \vec{x}</m>. Example of ellipse/contour plot. </p>
+  </subsection>
+</section>

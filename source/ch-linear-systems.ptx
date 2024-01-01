@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-linear-systems" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Solving Linear Systems</title>
+
+  <introduction>
+    <p> Text before the first section. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="linear-systems/linear-systems.ptx" />
+  <xi:include href="linear-systems/elementary-row-operations.ptx" />
+  <!-- <xi:include href="linear-systems/linear-geometry.ptx" /> -->
+  <xi:include href="linear-systems/gaussian-elimination.ptx" />
+  <xi:include href="linear-systems/vectors-as-solutions.ptx" />
+  <xi:include href="linear-systems/homo-nonhomo.ptx" />
+
+  <xi:include href="linear-systems/linear-geometry.ptx" />
+</chapter>

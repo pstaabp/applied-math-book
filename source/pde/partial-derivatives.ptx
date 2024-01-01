@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-part-deriv-diff-eqns"><title>Partial Derivatives and Differential Equations</title>
+	<introduction>
+		<definition>
+			<statement>
+				<p>
+					A <term>partial derivative</term> of <m>f(x,y,z)</m> with respect to <m>x</m> is the derivative
+					of <m>f</m> with respect to <m>x</m> keeping the other variables constant.
+					Technically
+				</p>
+
+				<p>
+					<me>
+						\frac{\partial f(x,y,z)}{\partial x} = \lim_{\Delta x \rightarrow 0} \frac{f(x+\Delta x,y,z)-f(x,y,z)}{\Delta x}
+					</me>
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					If <m>f(x,y) = x^2 + xy + y \sin x</m>, Find <m>\displaystyle \frac{\partial f}{\partial x}</m>
+					and <m>\displaystyle \frac{\partial f}{\partial y}</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					To find <m>\frac{\partial f}{\partial x}</m> consider <m>y</m> a constant, so
+				</p>
+
+				<p>
+					<me>
+						\frac{\partial f}{\partial x} = 2x + y + y \cos x
+					</me>
+				</p>
+
+				<p>
+					similarly to find <m>\frac{\partial f}{\partial y}</m> consider <m>x</m> a constant,
+				</p>
+
+				<p>
+					<me>
+						\frac{\partial f}{\partial y} = x + \sin x
+					</me>
+				</p>
+			</solution>
+		</example>
+	</introduction>
+
+	<subsection>
+		<title>Higher-Order Partial Derivatives</title>
+		<p>
+			As with ordinary derivatives, we can have higher-order partial derivatives.
+			That is we define the 2nd order partial derivative of <m>f</m> with respect to <m>x</m> as
+		</p>
+
+		<p>
+			<me>
+				\frac{\partial^2 f}{\partial x^2} = \frac{\partial}{\partial x} \frac{\partial f}{\partial x}
+			</me>
+		</p>
+
+		<p>
+			that is it is the partial derivative of the partial derivative.
+			Since ordinary derivatives involve only functions of one variable, the mixed derivative is a new concept.
+			If <m>f</m> is a function of <m>x</m> and <m>y</m> or <m>f(x,y)</m>, then we can have
+			the partial derivative of <m>\frac{\partial f}{\partial x}</m> with respect to <m>y</m>
+			or <m>\frac{\partial f}{\partial y}</m> with respect to <m>x</m>.
+			We write these as
+		</p>
+
+		<p>
+			<md>
+				<mrow>\frac{\partial^2 f}{\partial y \partial x} \amp = \frac{\partial}{\partial y} \frac{\partial f}{\partial x} </mrow>
+				<mrow>\frac{\partial^2 f}{\partial x \partial y} \amp = \frac{\partial}{\partial x} \frac{\partial f}{\partial y}</mrow>
+			</md>
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find all second-order derivatives of
+				</p>
+
+				<p>
+					<me>
+						f(x,y) = x^3 + x^2y + xe^y
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, let's find the two first derivatives:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\frac{\partial f}{\partial x} \amp = 3x^2 + 2xy + e^y </mrow>
+						<mrow>\frac{\partial f}{\partial y} \amp = x^2 + xe^y</mrow>
+					</md>
+				</p>
+
+				<p>
+					And then there are four 2nd-order derivatives:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\frac{\partial^2 f}{\partial x^2} \amp = \frac{\partial}{\partial x} \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} (3x^2 + 2xy + e^y) = 6x + 2y </mrow>
+						<mrow>\frac{\partial^2 f}{\partial y \partial x} \amp = \frac{\partial}{\partial y} \frac{\partial f}{\partial x} = \frac{\partial}{\partial y} (3x^2+2xy+e^y) = 2x + e^y </mrow>
+						<mrow>\frac{\partial^2 f}{\partial x \partial y} \amp = \frac{\partial}{\partial x} \frac{\partial f}{\partial y} = \frac{\partial}{\partial x} (x^2+xe^y) = 2x + e^y </mrow>
+						<mrow>\frac{\partial^2 f}{\partial y^2} \amp = \frac{\partial}{\partial y} \frac{\partial f}{\partial y} = \frac{\partial}{\partial y} (x^2+xe^y) = xe^y </mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			You probably noticed that the two derivatives involving both <m>x</m> and <m>y</m> resulted in the same results.
+			This is true for most functions as is shown in the next theorem:
+		</p>
+
+		<theorem>
+			<title>Clairaut's Theorem</title>
+			<statement>
+				<p>
+					If <m>f(x_1, x_2, \ldots, x_n)</m> is a real valued function with continuous second
+					derivatives at the point <m>(a_1, a_2, \ldots, a_n)</m>, then
+				</p>
+
+				<p>
+					<me>
+						\frac{\partial^2 f}{\partial x_i \partial x_j}(a_1,a_2, \ldots, a_n)
+						= \frac{\partial^2 f}{\partial x_j \partial x_i} (a_1,a_2,\ldots, a_n)
+					</me>
+				</p>
+
+				<p>
+					In other words, partial derivatives commute.
+				</p>
+			</statement>
+		</theorem>
+	</subsection>
+
+	<subsection>
+		<title>Notation for Partial Derivatives</title>
+		<p>
+			In terms of notation, it's often common to use a subscript as a derivative.
+			For example <m>f_x</m> can be used instead of <m>\frac{\partial f}{\partial x}</m>
+			or <m>f_y</m> instead of <m>\frac{\partial f}{\partial y}</m>.
+			This can also be extended to higher order derivatives as the following shows:
+		</p>
+
+		<p>
+			<md>
+				<mrow>f_{xx} \amp = \frac{\partial^2 f}{\partial x^2} \amp f_{yy} \amp = \frac{\partial^2 f}{\partial y^2}  </mrow>
+				<mrow>f_{yx} \amp = \frac{\partial^2 f}{\partial x \partial y} \amp f_{xy} \amp = \frac{\partial^2 f}{\partial y \partial x}  </mrow>
+				<mrow>f_{xxx} \amp = \frac{\partial^3 f}{\partial x^3} \amp f_{yyx} \amp = \frac{\partial^2 f}{\partial x\partial y^2}  </mrow>
+			</md>
+		</p>
+
+		<p>
+			and note that the order on the variables switch between the two notations.
+			This generally isn't a problem because of Clairaut's Theorem says that the derivative
+			is independent of the order taken on the derivatives.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Differential Equations</title>
+		<definition>
+			<statement>
+				<p>
+					A differential equation is an equation that contains derivatives.
+					If the differential equation has partial derivatives, then the equation is called a
+					<term>partial differential equation</term>,
+					if not it is called an <term>ordinary differential equation.</term>  The <term>order</term> of
+					the PDE is the highest degree of any derivative.
+					If the equation is linear in <m>u</m>, the
+					dependent variable and its derivatives, then the equation is <term>linear</term>, if not,
+					it is <term>nonlinear</term>.
+					Lastly, a linear differential equation is called <term>homogeneous</term>
+					if the only nonzero terms in the equation contain the dependent variable.
+					If a differential equation is not homogeneous, then it is called <term>nonhomogeneous</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					The following are ordinary differential equations.
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<m>\displaystyle y' = x</m>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>\displaystyle y' = \sin x</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>\displaystyle \frac{dy}{dx}  = y^2</m>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>\displaystyle y'' + 3y' + y = 0 </m>.
+							</p>
+						</li>
+					</ol>
+				</p>
+
+				<p>
+					Equations 1,2, and 4 are linear and 3 is nonlinear.
+					Note that even though <m>\sin x</m> is not a linear function, in order for a differential equation to be linear, it needs only be linear in its dependent variables (in all of these examples, <m>y</m> is dependent).
+					Equations 1 and 2 are nonhomogeneous and equation 4 is homogeneous.
+					Also, the first three are first-order equations and the 4th equation is 2nd order.
+					The following are partial differential equations:
+				</p>
+
+				<p>
+					<ul>
+						<li>
+							<p>
+								<m>\displaystyle \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} = 0</m>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>\displaystyle u_{t} -u  u_x = 0</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>\displaystyle \frac{\partial u}{\partial x} + \biggl(\frac{\partial^2 u}{\partial {t}^2}    \biggr)^2  = 0 </m>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>\displaystyle u_{t} +u_y - u_{xxx} = 0</m>.
+							</p>
+						</li>
+					</ul>
+				</p>
+
+				<p>
+					And the first and fourth equations are linear with the other two being nonlinear.
+					The first and second equations above are first order, the 3rd equation is
+					2nd order and the fourth is a third-order PDE.
+				</p>
+			</statement>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Important Second-Order PDEs</title>
+		<p>
+			<md>
+				<mrow>\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D wave equation} </mrow>
+				<mrow>\frac{\partial u}{\partial t}\amp = c^2  \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D heat equation} </mrow>
+				<mrow>\frac{\partial^2 u}{\partial {x}^2} + \frac{\partial^2 u}{\partial {y}^2} \amp = 0 \amp\amp \text{2D Laplace's equation} </mrow>
+				<mrow>\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D wave equation} </mrow>
+				<mrow>\frac{\partial u}{\partial t}\amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D heat equation} </mrow>
+			</md>
+		</p>
+	</subsection>
+</section>
+

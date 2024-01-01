@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section>
+	<title>Diagonalization of Matrices</title>
+	<introduction>
+		<p>
+			Consider a matrix <m>A</m>.
+			There are many application where the power of the
+			matrix, <m>A^n</m> is helpful.
+			One such cases is at the end of this this chapter.
+			One way to approach this is that the <m>n</m>th power is just the matrix product
+			with itself <m>n</m> times or
+		</p>
+
+		<p>
+			<md>
+				<mrow>A^2 \amp = A A \amp  A^3 \amp = A A A </mrow>
+			</md>
+		</p>
+
+		<p>
+			and this can be extended to any positive integer power.
+			However, finding the 50th power may not be practical.
+		</p>
+
+		<p>
+			To make this an easier task, let's assume that we can write <m>A</m> in the form:
+		</p>
+
+		<p>
+			<men xml:id="eq-diag-matrix">
+				A = P D P^{-1}
+			</men>
+		</p>
+
+		<p>
+			where <m>D</m> is a diagonal matrix and <m>P</m> is invertible.
+			If this is possible, then
+		</p>
+
+		<p>
+			<md>
+				<mrow>A^3 \amp = A A A </mrow>
+				<mrow>\amp = (P D P^{-1}) (P D P^{-1}(P D P^{-1})</mrow>
+				<mrow>\amp = P D^3 P^{-1}</mrow>
+			</md>
+		</p>
+
+		<p>
+			and <m>D^3</m> is easy to find because it is a diagonal matrix.
+		</p>
+
+		<p>
+			If it's possible to factor <m>A</m> as in (<xref ref="eq-diag-matrix" />), then we call a matrix
+			diagonalizable.
+			Here's a formal definition.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					An <m>n</m> by <m>n</m>  matrix <m>A</m> is said to be <term>diagonalizable</term> if it can be written
+				</p>
+
+				<p>
+					<me>
+						A = P D P^{-1}
+					</me>
+				</p>
+
+				<p>
+					where <m>D</m> is a diagonal matrix and <m>P</m> is invertible.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			Before explaining how starting with a matrix <m>A</m>, we can find matrices <m>D</m> and <m>P</m>,
+			let's look at one that is factored in this way.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Let
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp=
+						\begin{bmatrix}
+						1 \amp 2 \\ 4 \amp 3
+						\end{bmatrix}
+						\amp P\amp = \begin{bmatrix}
+						1 \amp  1 \\
+						-1 \amp 2
+						\end{bmatrix} \amp D \amp = \begin{bmatrix}
+						-1 \amp 0 \\
+						0 \amp 5
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					Show that <m> A = P D P^{-1}</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, recall that
+				</p>
+
+				<p>
+					<md>
+						<mrow>P^{-1} \amp = \frac{1}{|P|} \begin{bmatrix}
+						2 \amp -1 \\
+						1 \amp 1
+						\end{bmatrix} = \frac{1}{3} \begin{bmatrix}
+						2 \amp -1 \\
+						1 \amp 1
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and
+				</p>
+
+				<p>
+					<me>
+						P D = \begin{bmatrix}
+						-1 \amp 5 \\
+						1 \amp 10
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					then
+				</p>
+
+				<p>
+					<me>
+						P D P^{-1} =  \begin{bmatrix}
+						1 \amp 2 \\
+						4 \amp 3
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					which shows in this particular example that <m>A=PDP^{-1}</m>.
+				</p>
+			</solution>
+		</example>
+
+		<theorem>
+			<statement>
+				<p>
+					An <m>n</m> by <m>n</m> matrix <m>A</m> is diagonalizable if and only if it has <m>n</m> linearly independent eigenvectors.
+					The matrix <m>P</m> is a matrix of the eigenvectors and the matrix <m>D</m> is the diagonal matrix of eigenvalues.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					Thus we want to show that
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp = P D P^{-1} \amp\amp \text{or} </mrow>
+						<mrow>A P \amp = P D</mrow>
+					</md>
+				</p>
+
+				<p>
+					since <m>P</m> is invertible. Let
+				</p>
+
+				<p>
+					<md>
+						<mrow>
+						P  \amp = \begin{bmatrix}
+						\vec{v}_1 \amp \vec{v}_2 \amp  \cdots \amp \vec{v}_n
+						\end{bmatrix}
+						\amp D \amp = \begin{bmatrix}
+						\lambda_1 \amp 0 \amp 0 \amp \cdots \amp 0 \\
+						0 \amp \lambda_2 \amp 0 \amp \cdots \amp 0 \\
+						0 \amp 0 \amp \lambda_3 \amp \cdots \amp 0 \\
+						\vdots \amp \vdots \amp \vdots \amp  \amp \vdots \\
+						0 \amp 0 \amp 0 \amp \cdots \amp \lambda_n
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					where <m>\vec{v}_i</m> is the eigenvector associated with the eigenvalue <m>\lambda_i</m>.
+				</p>
+
+				<p>
+					<md>
+						<mrow>A P \amp = \begin{bmatrix}
+						A \vec{v}_1 \amp A \vec{v}_2 \amp \cdots A \vec{v}_n
+						\end{bmatrix} \\
+						\amp = \begin{bmatrix}
+						\lambda_1  \vec{v}_1 \amp  \lambda_2 \vec{v}_2 \amp \cdots \amp \lambda_n \vec{v}_n
+						\end{bmatrix} </mrow>
+						<mrow>\amp = \begin{bmatrix}
+						\vec{v}_1 \lambda_1 \amp \vec{v}_2 \lambda_2 \amp \cdots \amp \vec{v}_n \lambda_n
+						\end{bmatrix}
+						= P D</mrow>
+					</md>
+				</p>
+			</proof>
+		</theorem>
+
+		<example xml:id="ex-diag-2by2">
+			<statement>
+				<p>
+					Is the matrix
+				</p>
+
+				<p>
+					<me>
+						A = \begin{bmatrix}
+						1 \amp -1 \\
+						2 \amp 4
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					diagonalizable?  If so, find <m>P</m> and <m>D</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					To check this, we need to find the eigenvalues and eigenvectors.
+					First, find the eigenvalues by solving <m>|A-\lambda I|=0</m> or <m>\lambda^2-5\lambda+6=(\lambda-3)(\lambda-2)=0</m> or <m>\lambda_1=2</m> and <m>\lambda_2=3</m>
+					The associated eigenvectors are
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{v}_1 \amp= \begin{bmatrix}
+						1 \\ -1
+						\end{bmatrix}, \amp \vec{v}_2 \amp = \begin{bmatrix}
+						1 \\ -2
+						\end{bmatrix} </mrow>
+					</md>
+				</p>
+
+				<p>
+					(The steps to find these aren't shown, but follow the steps in section  <xref ref="sect-eigenvalues" />).
+					Since there are 2 linearly independent eigenvectors, this vector is diagonalizable and
+				</p>
+
+				<p>
+					<md>
+						<mrow>P \amp = \begin{bmatrix}
+						1 \amp 1 \\ -1 \amp -2
+						\end{bmatrix} \amp D \amp = \begin{bmatrix}
+						2 \amp 0 \\
+						0 \amp 3
+						\end{bmatrix} </mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+
+		<example>
+			<statement>
+				<p>
+					Is the matrix
+				</p>
+
+				<p>
+					<me>
+						A =
+						\begin{bmatrix}
+						1 \amp 0 \amp 0 \\
+						3 \amp -2 \amp 6 \\
+						2 \amp 1 \amp 3
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					diagonalizable? If so, find <m>P</m> and <m>D</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					From example <xref ref="ex-eigs-3by3" />, we found that <m>A</m> has eigenvalues <m>\lambda_1 = 1, \lambda_2 = 4, \lambda_3 = -3</m>.
+					It also has eigenvectors <m>\vec{v}_1 =[-4\;\;2\;\;3]^{\intercal} </m>, <m>\vec{v}_2 =[0\;\;1\;\;1]^{\intercal}</m> and <m>\vec{v}_3=[0\;\;-6\;\;1]^{\intercal}</m>.
+					Therefore the matrices:
+				</p>
+
+				<p>
+					<md>
+						<mrow>P \amp = \begin{bmatrix}
+						-4 \amp 0 \amp 0 \\
+						2 \amp 1 \amp -6 \\
+						3 \amp 1 \amp 1
+						\end{bmatrix} \amp
+						D \amp =
+						\begin{bmatrix}
+						1 \amp 0 \amp 0 \\ 0 \amp 4 \amp 0 \\ 0 \amp 0 \amp -3
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					satisfy <m>A = PDP^{-1}</m>
+				</p>
+			</solution>
+		</example>
+	</introduction>
+
+	<subsection>
+		<title>Powers of Diagonalizable Matrices</title>
+		<p>
+			One main reason for writing a matrix in diagonalizable form is that powers of the matrix are easy to compute.
+			Note that if <m>A = P^{-1} DP</m>,  then
+		</p>
+
+		<p>
+			<md>
+				<mrow>A^2 \amp = ( PDP^{-1})(PDP^{-1}) </mrow>
+				<mrow>\amp = PD^2P^{-1}</mrow>
+			</md>
+		</p>
+
+		<p>
+			and by induction:
+		</p>
+
+		<p>
+			<me>
+				A^k = PD^k P^{-1}
+			</me>
+		</p>
+
+		<p>
+			Note that raising the diagonal matrix <m>D</m> to a power is a simple process .
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Use the fact that <m>A</m> is diagonalizable to find
+				</p>
+
+				<p>
+					<me>
+						\begin{bmatrix}
+						1 \amp -1 \\
+						2 \amp 4
+						\end{bmatrix}^5
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					From <xref ref="ex-diag-2by2" />, <m>A</m> can be written <m>A=PDP^{-1}</m> with
+				</p>
+
+				<p>
+					<md>
+						<mrow>P \amp = \begin{bmatrix}
+						1 \amp 1 \\ -1 \amp -2
+						\end{bmatrix} \amp D \amp = \begin{bmatrix}
+						2 \amp 0 \\
+						0 \amp 3
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					Then, <m>A^5</m> can be written
+				</p>
+
+				<p>
+					<md>
+						<mrow>A^5 \amp = P D^5 P^{-1} \\
+						\amp = \begin{bmatrix}
+						1 \amp 1 \\
+						-1 \amp -2
+						\end{bmatrix} \begin{bmatrix}
+						2 \amp 0 \\
+						0 \amp 3
+						\end{bmatrix}^5  \begin{bmatrix}
+						2 \amp 1 \\
+						-1 \amp -1
+						\end{bmatrix} </mrow>
+						<mrow>\amp = \begin{bmatrix}
+						1 \amp 1 \\
+						-1 \amp -2
+						\end{bmatrix} \begin{bmatrix}
+						32 \amp 0 \\
+						0 \amp 243
+						\end{bmatrix} \begin{bmatrix}
+						2 \amp 1 \\
+						-1 \amp -1
+						\end{bmatrix} \\
+						\amp = \begin{bmatrix}
+						-179 \amp -211 \\
+						422 \amp 454
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Similar Matrices</title>
+		<definition>
+			<statement>
+				<p>
+					Two <m>n</m> by <m>n</m> matrices <m>A</m> and <m>B</m> are said to be <term>similar</term>
+					if there exists an invertible matrix <m>S</m> such that
+				</p>
+
+				<p>
+					<me>
+						B = S^{-1} A S
+					</me>
+				</p>
+			</statement>
+		</definition>
+
+		<theorem>
+			<statement>
+				<p>
+					If <m>A</m> and <m>B</m> are similar <m>n</m> by <m>n</m> matrices, then the following are identical for the two matrices:
+				</p>
+
+				<p>
+					<ul>
+						<li>
+							<p>
+								Rank
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Determinant
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Trace
+							</p>
+						</li>
+					</ul>
+				</p>
+			</statement>
+		</theorem>
+
+		<theorem>
+			<statement>
+				<p>
+					If <m>A</m> and <m>B</m> are similar <m>n</m> by <m>n</m> matrices, then <m>A</m> and <m>B</m>
+					have the same characteristic equation and therefore have the same eigenvalues.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					Let <m>A</m> satisfy the characteristic equation
+				</p>
+
+				<p>
+					<me>
+						\det(A - \lambda I) = 0
+					</me>
+				</p>
+
+				<p>
+					Since <m>A</m> and <m>B</m> are similar, then <m>A=S^{-1}BS</m>,
+				</p>
+
+				<p>
+					<md>
+						<mrow>\det(S^{-1} B S - \lambda I) \amp = 0 \qquad \text{Since $S^{-1}S=I=S^{-1} IS$}</mrow>
+						<mrow>\det(S^{-1} B S - \lambda S^{-1} I S) \amp = 0 \qquad\text{Factoring out a $S^{-1}$ from the left and $S$ from the right}</mrow>
+						<mrow>\det (S^{-1}(B - \lambda S I S^{-1}) S) \amp  = 0 </mrow>
+						<mrow>\det(S^{-1}) \det(B-\lambda I) \det(S) \amp = 0</mrow>
+						<mrow>\amp \qquad \text{since $\det(S^{-1}) \det(S)= \det(S^{-1}S)=\det(I)= 1$}</mrow>
+						<mrow>\det(B - \lambda I) \amp = 0</mrow>
+					</md>
+				</p>
+
+				<p>
+					so the characteristic equation is identical, thus the eigenvalues are the same.
+				</p>
+			</proof>
+		</theorem>
+
+		<p>
+			Note:  The eigenvectors are in general not the same in <m>A</m> and <m>B</m>.
+		</p>
+
+		<example xml:id="ex-sim-matrices">
+			<statement>
+				<p>
+					Show that
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp = \begin{bmatrix}
+						1 \amp -1 \\ 2 \amp 4
+						\end{bmatrix} \amp B \amp = \begin{bmatrix}
+						2 \amp 2 \\ 0 \amp 3
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					are similar matrices with
+				</p>
+
+				<p>
+					<me>
+						S = \begin{bmatrix}
+						-1 \amp 1 \\ 1 \amp 0
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, using the formula for the inverse of a <m>2 \times 2</m> matrix,
+				</p>
+
+				<p>
+					<me>
+						S^{-1}  =  \begin{bmatrix}
+						0 \amp 1 \\ 1 \amp 1
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					and
+				</p>
+
+				<p>
+					<md>
+						<mrow>S^{-1} A S \amp = \begin{bmatrix}
+						0 \amp 1 \\ 1 \amp 1
+						\end{bmatrix} \begin{bmatrix}
+						1 \amp -1 \\ 2 \amp 4
+						\end{bmatrix}\begin{bmatrix}
+						-1 \amp 1 \\ 1 \amp 0
+						\end{bmatrix} = \begin{bmatrix}
+						2\amp 2 \\ 0  \amp 3
+						\end{bmatrix} = B</mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Similar and Diagonalizable Matrices</title>
+		<p>
+			It appears that there is a connection to similar and diagonalizable matrices through at least their near identical formulas.
+			Notice that <m>A</m> and <m>B</m> are similar if there exists an invertible matrix <m>P</m> such that
+		</p>
+
+		<p>
+			<me>
+				A = S^{-1} B S
+			</me>
+		</p>
+
+		<p>
+			and <m>A</m> is diagonalizable if there exists a <m>P_1</m> such that
+		</p>
+
+		<p>
+			<men xml:id="eq-diag-A">
+				A  = P_1D_1 P^{-1}_1
+			</men>
+		</p>
+
+		<p>
+			for a diagonal matrix <m>D_1</m>.
+			Similarly <m>B</m> is diagonalizable if there exists an invertible <m>P_2</m> such that
+		</p>
+
+		<p>
+			<men xml:id="eq-diag-B">
+				B  = P_2 D_2 P_{2}^{-1}
+			</men>
+		</p>
+
+		<p>
+			for diagonal matrix <m>D_2</m>.
+			We know that the matrices <m>P_1</m> and <m>P_2</m> exist if there are <m>n</m> linearly independent eigenvectors,
+			but how do you find <m>S</m>?
+			Solving for <m>D_1</m> in (<xref ref="eq-diag-A" />) and <m>D_2</m> in (<xref ref="eq-diag-B" />),
+		</p>
+
+		<p>
+			<md>
+				<mrow>D_1 \amp = P_1^{-1}A P_1 \amp D_2 \amp = P_2^{-1} B P_2</mrow>
+			</md>
+		</p>
+
+		<p>
+			Also, since the eigenvalues of <m>A</m> and <m>B</m> are the same, we can rearrange the eigenvectors of <m>A</m> and
+			<m>B</m> to the same order thus without loss of generality, <m>D_1=D_2</m> and
+			<md>
+				<mrow>P_1^{-1} A P_1 \amp = P_2^{-1} B P_2</mrow>
+				<mrow>\text{left multiplying by $P_1$ and right multiplying by $P_1^{-1}$}</mrow>
+				<mrow>A \amp = P_1 P_2^{-1} B P_2 P_1^{-1}</mrow>
+			</md>
+		</p>
+
+		<p>
+			thus let
+		</p>
+
+		<p>
+			<men xml:id="eq-similar-matrix">
+				S = P_2 P_1^{-1}.
+			</men>
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Above we showed that the matrices
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp = \begin{bmatrix}
+						1 \amp -1 \\ 2 \amp 4
+						\end{bmatrix} \amp B \amp = \begin{bmatrix}
+						2 \amp 2 \\ 0 \amp 3
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					are similar.
+					Use the above discussion to find <m>S</m> such that <m>A=S^{-1}BS</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Briefly, we need to diagonalize both <m>A</m> and <m>B</m>.
+					In example <xref ref="ex-diag-2by2" />, we found that the eigenvalues of <m>A</m>
+					are <m>\lambda_1=2</m> and <m>\lambda_2=3</m> with associated eigenvectors
+					<m>\vec{v}_1=[1\;\;-1]^{\intercal}</m> and <m>\vec{v}_2=[1\;\;-2]^{\intercal}</m>.
+					Using the techniques of section <xref ref="sect-eigenvalues" />, the eigenvalues of <m>B</m>
+					are <m>\lambda_1=2</m> and <m>\lambda_2=3</m> with associated eigenvectors
+					<m>\vec{v}_1=[1\;\;4]^{\intercal}</m> and <m>\vec{v}_2=[0\;\;1]^{\intercal}</m>.
+					Letting <m>D_1</m> and <m>P_1</m> be the matrices associated with <m>A</m> and
+					<m>D_2</m> and <m>P_2</m>, those associated with <m>B</m>, let
+				</p>
+
+				<p>
+					<me>
+						D_1 = D_2 = \begin{bmatrix}
+						3 \amp 0 \\ 0 \amp 2
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					and
+				</p>
+
+				<p>
+					<md>
+						<mrow>P_1 \amp = \begin{bmatrix}
+						1 \amp 1 \\
+						-1 \amp -2
+						\end{bmatrix}, \amp P_2 \amp = \begin{bmatrix}
+						2 \amp 1 \\
+						1 \amp 0
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and using <xref ref="eq-similar-matrix" />,
+				</p>
+
+				<p>
+					<me>
+						S = P_{2} P_1^{-1} = \begin{bmatrix}
+						2 \amp 1 \\ 1 \amp 0
+						\end{bmatrix} \begin{bmatrix}
+						-1 \amp -1\\
+						2 \amp 1\\
+						\end{bmatrix}= \begin{bmatrix}
+						0 \amp  -1 \\
+						-1 \amp -1
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					And although this <m>S</m> is not the same <m>S</m> as  <xref ref="ex-sim-matrices" />,
+					this matrix <m>S</m> is the negative of the inverse of that matrix in
+					<xref ref="ex-sim-matrices" />.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+</section>

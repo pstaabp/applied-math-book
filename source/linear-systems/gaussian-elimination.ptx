@@ -1,0 +1,2315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-gaussian-elimination">
+	<title>Echelon Forms and Gaussian Elimination</title>
+	<introduction>
+		<p>
+			In this section, we formalize the solving of linear systems using matrices.
+			You will learn:
+		</p>
+
+		<p>
+			<ul>
+				<li>
+					<p>
+						Important forms of matrices called <term>row-echelon</term> and <term>reduced
+						row-echelon</term> forms.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						An algorithm to get any matrix into these forms.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						How to write the solution to a linear system in these forms.
+					</p>
+				</li>
+			</ul>
+		</p>
+
+		<p>
+			Recall from <xref ref="sect-elementary-row-operations" /> how to convert any linear system into
+			an augmented coefficient matrix.
+			This will be needed to solve linear systems.
+		</p>
+	</introduction>
+
+	<subsection xml:id="subsect-echelon-form">
+		<title>Row-Echelon and Reduced Row-Echelon Form</title>
+		<p>
+			Notice that the strategy laid out above gets the linear
+			system in a nice form for solving for all variables using back substitution.
+			We will now explicitly state what this nice form is.
+		</p>
+
+		<definition xml:id="def-echelon-form">
+			<statement>
+				<p>
+					In each row of a matrix, the left-most entry that is non-zero is called the <term>leading
+					term</term>.
+					A matrix is in <term>row-echelon form</term> if
+				</p>
+
+				<p>
+					<ul>
+						<li>
+							<p>
+								there are any rows that are all zero, they are at the bottom of the matrix.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								each leading term is to the right of the leading term of the row above it (except
+								the first row).
+							</p>
+						</li>
+					</ul>
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<title>Matrices in Row-Echelon Form</title>
+			<statement>
+				<p>
+					The following matrices are in row-echelon form:
+				</p>
+
+				<p>
+					<md>
+						<mrow>
+						\begin{bmatrix}
+						3 \amp 0 \amp -2 \amp 11 \\
+						0 \amp 0 \amp 9 \amp 2 \\
+						0 \amp 0 \amp 0 \amp -4
+						\end{bmatrix}
+						\amp \amp \begin{bmatrix}
+						0 \amp 0 \amp 2 \amp -5 \amp 9 \amp \pi \\
+						0 \amp 0 \amp 0 \amp 9 \amp 2 \amp 0 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 7
+						\end{bmatrix}
+						\amp \amp \begin{bmatrix}
+						1 \amp 2 \amp 3 \\
+						0 \amp 4 \amp 5 \\
+						0 \amp 0 \amp 6 \\
+						0 \amp 0 \amp 0 \\
+						0 \amp 0 \amp 0
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+			</statement>
+		</example>
+
+		<definition xml:id="def-rref">
+			<statement>
+				<p>
+					A matrix is in <term>reduced row-echelon form</term> if it is echelon form and has the
+					following properties:
+				</p>
+
+				<p>
+					<ul>
+						<li>
+							<p>
+								The leading term of each non-zero row is 1.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Every column with a leading term should be all zeros except the leading term.
+							</p>
+						</li>
+					</ul>
+				</p>
+
+				<p>
+					In each row of a matrix, the left-most term that is non-zero is called the <term>leading
+					term</term>.
+					A matrix is in <term>echelon form</term> if each leading term is to the right
+					of the leading term of the row above it (except the first row).
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					The following matrix are reduced row-echelon form:
+				</p>
+
+				<p>
+					<md>
+						<mrow>
+						\begin{bmatrix}
+						1 \amp 0 \amp 0 \amp 9 \\
+						0 \amp 0 \amp 1 \amp 3/2 \\
+						0 \amp 0 \amp 0 \amp 1
+						\end{bmatrix}
+						\amp \amp \begin{bmatrix}
+						0 \amp 0 \amp 1 \amp 0 \amp 3 \amp 0 \\
+						0 \amp 0 \amp 0 \amp 1 \amp 9 \amp 0 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1
+						\end{bmatrix}
+						\amp \amp \begin{bmatrix}
+						1 \amp 0 \amp 0 \\
+						0 \amp 1 \amp 0 \\
+						0 \amp 0 \amp 1 \\
+						0 \amp 0 \amp 0 \\
+						0 \amp 0 \amp 0
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					and the following are not in reduced-row echelon form
+				</p>
+
+				<p>
+					<md>
+						<mrow>
+						\begin{bmatrix}
+						3 \amp 0 \amp -2 \amp 11 \\
+						0 \amp 0 \amp 9 \amp 2 \\
+						0 \amp 0 \amp 0 \amp -4
+						\end{bmatrix}
+						\amp \amp \begin{bmatrix}
+						0 \amp 0 \amp 1 \amp -5 \\
+						0 \amp 1 \amp 0 \amp 9 \\
+						0 \amp 0 \amp 0 \amp 0
+						\end{bmatrix}
+						\amp \amp \begin{bmatrix}
+						0 \amp 0 \amp 0 \\
+						1 \amp 2 \amp 0 \\
+						0 \amp 0 \amp 1
+						\end{bmatrix}
+						\amp \amp \begin{bmatrix}
+						1 \amp -2 \amp 0 \\
+						0 \amp 1 \amp 0 \\
+						0 \amp 0 \amp 1
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					The first matrix is in echelon form, but the leading coefficients are not 1.
+					The second
+					matrix isn't in echelon form.
+					The leading coefficient in the 2nd row is to the left of the
+					row above.
+					The third matrix has a row of zeros that is not at the bottom.
+					The fourth
+					matrix doesn't have the leading term in a column that is zero otherwise.
+				</p>
+			</statement>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Solving Linear Systems with Matrices</title>
+		<p>
+			Returing to the solution of linear systems, in the context of matrices, we seek to put an
+			augmented matrix into either row-echelon or reduced row-echelon form.
+			The following strategy
+			for a system with 3 equations and 3 variables is often helpful, however, as we will see not
+			guaranteed.
+		</p>
+
+		<p>
+			As we will see, it is desirable to get zeros in parts of the matrix.
+			This is generate done with the following:
+		</p>
+
+		<definition xml:id="def-eliminate-step">
+			<statement>
+				<p>
+					If there is a 1 in row <m>i</m>, the row operation
+				</p>
+
+				<p>
+					<men xml:id="eq-eliminate-step">
+						-c R_i + R_j \to R_j
+					</men>
+				</p>
+
+				<p>
+					where <m>c</m> is the value in the <m>j</m>th row in the same column will put a
+					0 in that location.
+					This is called the <term>Elimination Opeation</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<remark xml:id="row-echelon-form-strategy">
+			<title>Strategy for putting a matrix in Row-Echelon Form</title>
+			<p>
+				Consider a general <m>3 \times 4</m> matrix representating a linear system with 3 equations
+				and 3 variables.
+				The <m>\star</m> means the value of entry can be any number.
+			</p>
+
+			<p>
+				<me>
+					\left[\begin{array}{rrr|r}
+					\star \amp \star \amp \star \amp \star \\
+					\star \amp \star \amp \star \amp \star \\
+					\star \amp \star \amp \star \amp \star
+					\end{array}\right]
+				</me>
+			</p>
+
+			<p>
+				The first step is to get a 1 in the first column, first row or
+			</p>
+
+			<p>
+				<me>
+					\left[\begin{array}{rrr|r}
+					1 \amp \star \amp \star \amp \star \\
+					\star \amp \star \amp \star \amp \star \\
+					\star \amp \star \amp \star \amp \star
+					\end{array}\right]
+				</me>
+			</p>
+
+			<p>
+				We next desire to zero out the rest of the first column, which we do
+				with the elimination operation from <xref ref="def-eliminate-step"/>.
+			</p>
+
+			<p>
+				Next, we will use this to zero out the 2nd and 3rd rows in the first column to get:
+			</p>
+
+			<p>
+				<me>
+					\left[\begin{array}{rrr|r}
+					1 \amp \star \amp \star \amp \star \\
+					0 \amp \star \amp \star \amp \star \\
+					0 \amp \star \amp \star \amp \star
+					\end{array}\right]
+				</me>
+			</p>
+
+			<p>
+				Next, we seek a 1 in the 2nd row, 2nd column.
+				or
+			</p>
+
+			<p>
+				<me>
+					\left[\begin{array}{rrr|r}
+					1 \amp \star \amp \star \amp \star \\
+					0 \amp 1 \amp \star \amp \star \\
+					0 \amp \star \amp \star \amp \star
+					\end{array}\right]
+				</me>
+			</p>
+
+			<p>
+				And then if we are looking for a matrix in echelon form, zero out the 3rd row, 2nd column.
+				We use the same general row operation in (<xref ref="eq-eliminate-step" />) however using
+				the 2nd row instead or
+			</p>
+
+			<p>
+				<me>
+					\left[\begin{array}{rrr|r}
+					1 \amp \star \amp \star \amp \star \\
+					0 \amp 1 \amp \star \amp \star \\
+					0 \amp 0 \amp \star \amp \star
+					\end{array}\right]
+				</me>
+			</p>
+
+			<p>
+				This matrix is now in row-echelon form.
+				If instead reduced-row-echelon form is desired, in
+				the previous step, the 2nd column, first row can be eliminated and then another set of steps
+				can be used to get the 3rd row in the correct form.
+			</p>
+		</remark>
+
+		<example xml:id="ex-solve-linear-syst">
+			<title>Solving a Linear System</title>
+			<statement>
+				<p>
+					Use the strategy in <xref ref="row-echelon-form-strategy" /> to put the augmented matrix
+					of the linear system:
+				</p>
+
+				<p>
+					<md>
+						<mrow>4x_1 \phantom{+3x_2}- x_3 \amp = 0, </mrow>
+						<mrow>x_1+3x_2 +2x_3 \amp = 3, </mrow>
+						<mrow>3x_2 + 5x_3 \amp = 14.</mrow>
+					</md>
+				</p>
+
+				<p>
+					into row-echelon form.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, put the linear system into an augmented coefficient matrix:
+				</p>
+
+				<p>
+					<me>
+						\left[\begin{array}{rrr|r}
+						4 \amp 0 \amp -1 \amp 0 \\
+						1 \amp 3 \amp 2 \amp 3 \\
+						0 \amp 3 \amp 5 \amp 14
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					We first try to get a 1 in the first row, first column.
+					The easiest way to do this is to
+					swap the first two rows:
+				</p>
+
+				<p>
+					<me>
+						R_1 \leftrightarrow R_2 \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp 3 \amp 2 \amp 3 \\
+						4 \amp 0 \amp -1 \amp 0 \\
+						0 \amp 3 \amp 5 \amp 14
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					Now eliminate the term in the 2nd row, first column:
+				</p>
+
+				<p>
+					<me>
+						-4R_1 +R_2 \to R_2 \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp 3 \amp 2 \amp 3 \\
+						0 \amp -12 \amp -9 \amp -12 \\
+						0 \amp 3 \amp 5 \amp 14
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					Then try to get a 1 in the second row, second column.
+					You should only use the bottom two
+					rows to do this becaues using the top row would mess up the structure of the first column.
+					We'll just divide the second row by <m>-12</m>.
+				</p>
+
+				<p>
+					<me>
+						-\frac{1}{12} R_2 \to R_2 \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp 3 \amp 2 \amp 3 \\
+						0 \amp 1 \amp \frac{3}{4} \amp 1 \\
+						0 \amp 3 \amp 5 \amp 14
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					We have introduced fractions, which is generally not desired.
+					An alternative would have
+					been to wait until later to get a 1 in the second row, second column, but often fractions
+					is unavoidable.
+					Next, eliminate the 3rd row, 2nd column.
+				</p>
+
+				<p>
+					<me>
+						-3 R_2 + R_3 \to R_3 \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp 3 \amp 2 \amp 3 \\
+						0 \amp 1 \amp \frac{3}{4} \amp 1 \\
+						0 \amp 0 \amp \frac{11}{4} \amp 11
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					The last step to get this in row-echelon form is to get the 3rd row, 3rd column to be a
+					1.
+					Multiply the third row by <m>4/11</m>.
+				</p>
+
+				<p>
+					<me>
+						\frac{4}{11} R_3 \to R_3 \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp 3 \amp 2 \amp 3 \\
+						0 \amp 1 \amp \frac{3}{4} \amp 1 \\
+						0 \amp 0 \amp 1 \amp 4
+						\end{array}\right]
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			One of the advantages of putting an augmented coefficient matrix in row-echelon form is that
+			the solution can be found using <term>back substitution</term>, where generally the last
+			variable is solved for in the last equation and then substituted into previous equations.
+			We
+			see this for the previous example.
+		</p>
+
+		<p>
+			We now write the matrix <xref ref="ex-solve-linear-syst" /> as a linear system and use back
+			substitution to solve it.
+		</p>
+
+		<p>
+			The augmented matrix can be written as the equations:
+		</p>
+
+		<p>
+			<md>
+				<mrow>x + 3y + 2z \amp = 3 </mrow>
+				<mrow>y + \frac{3}{4} z \amp =1 </mrow>
+				<mrow> z \amp =4</mrow>
+			</md>
+		</p>
+
+		<p>
+			The solution for <m>z</m> is now plugged into the second equation:
+		</p>
+
+		<p>
+			<me>
+				y + \frac{3}{4} \cdot 4 = 1
+			</me>
+		</p>
+
+		<p>
+			leading to <m>y = 1-3 = -2</m>.
+			Plugging the solutions for <m>y</m> and <m>z</m> into the
+			first equation leads to
+		</p>
+
+		<p>
+			<me>
+				x + 3 (-2) + 2(4) = 3
+			</me>
+		</p>
+
+		<p>
+			leading to <m>x = 1</m>.
+		</p>
+
+		<example xml:id="ex-biathlon-solution">
+			<title>Solving the Biathlon Problem</title>
+			<statement>
+				<p>
+					Solve the linear system for the biathlon race in example <xref ref="ex-biathlon" />
+				</p>
+
+				<p>
+					<md>
+						<mrow>x_1+x_2\amp =29, </mrow>
+						<mrow>\frac{x_1}{6} + \frac{x_2}{18} \amp =\frac{13}{6}, </mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					We start with the augmented coefficient matrix:
+				</p>
+
+				<p>
+					<me>
+						\left[\begin{array}{rr|r}
+						1 \amp 1 \amp 29 \\
+						\frac{1}{6} \amp \frac{1}{18} \amp \frac{13}{6}
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					First to make life easier, let's multiple the 2nd row by 18 to rid the fractions.
+				</p>
+
+				<p>
+					<me>
+						18 R_2 \rightarrow R_2\quad \left[\begin{array}{rr|r}
+						1 \amp 1 \amp 29 \\
+						3 \amp 1 \amp 39
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					Then we eliminate the <m>x</m> in the 2nd equation by doing the following step,
+				</p>
+
+				<p>
+					<me>
+						-3R_1 + R_2 \rightarrow R_2\qquad\left[\begin{array}{rr|r}
+						1 \amp 1 \amp 29 \\
+						0 \amp -2 \amp -48
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					and at this point, the matrix is in row echelon form and we rewrite the matrix in
+					equaiton form:
+				</p>
+
+				<p>
+					<md>
+						<mrow> x_1 + x_2 \amp = 29 </mrow>
+						<mrow> -2x_2 \amp = -48</mrow>
+					</md>
+				</p>
+
+				<p>
+					And we can solve for <m>x_2</m> in the last equation using back substitution.
+					<m>x_2=24</m>
+					and then
+				</p>
+
+				<p>
+					<me>
+						x_1 + 24 = 29
+					</me>
+				</p>
+
+				<p>
+					therefore,
+				</p>
+
+				<p>
+					<me>
+						x_1 = 5
+					</me>
+				</p>
+
+				<p>
+					So the running part of the race is 5 miles and the biking is 24 miles.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Linear Systems and Reduced Row-Echelon Form</title>
+		<p>
+			Throughout this section, we have used Gauss's method to take a linear system
+			as an augmented matrix and put the matrix in row echelon form, a convenient matrix
+			for using back substitution to find the solution to the linear system.
+			For the
+			remainder of the section, we will still use row operations, but put the matrix
+			in <em>reduced row-echelon form</em>.
+			Despite the fact that it takes more steps
+			to put in the form, the result is generally easier to find the solution.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					Solving a linear system by reducing its corresponding augmented matrix
+					to a reduced row-echelon form matrix, then interpreting its solution is called
+					Gauss-Jordon reduction.
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					Solve
+				</p>
+
+				<p>
+					<md>
+						<mrow>4x_1 - x_3 \amp = 0, </mrow>
+						<mrow>x_1+3x_2 +2x_3 \amp = 3, </mrow>
+						<mrow>3x_2 + 5x_3 \amp = 14.</mrow>
+					</md>
+				</p>
+
+				<p>
+					using Gauss-Jordon reduction
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First put the linear system into an augmented matrix and then use
+					elementary row operations.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp\left[\begin{array}{rrr|r}
+						4 \amp 0 \amp -1 \amp 0 \\
+						1 \amp 3 \amp 2 \amp 3 \\
+						0 \amp 3 \amp 5 \amp 14
+						\end{array} \right]
+						</mrow>
+						<mrow>R_1 \leftrightarrow R_2, \qquad\amp
+						\left[\begin{array}{rrr|r}
+						1 \amp 3 \amp 2 \amp 3 \\
+						4 \amp 0 \amp -1 \amp 0 \\
+						0 \amp 3 \amp 5 \amp 14
+						\end{array} \right] </mrow>
+						<mrow>-4R_1 + 4R_2 \rightarrow R_2, \qquad \amp
+						\left[\begin{array}{rrr|r}
+						1 \amp 3 \amp 2 \amp 3 \\
+						0 \amp -12 \amp -9 \amp -12 \\
+						0 \amp 3 \amp 5 \amp 14
+						\end{array} \right]</mrow>
+						<mrow>-\frac{1}{12} R_2 \to R_2, \qquad \amp
+						\left[\begin{array}{rrr|r}
+						1 \amp 3 \amp 2 \amp 3 \\
+						0 \amp 1 \amp 3/4 \amp 1 \\
+						0 \amp 3 \amp 5 \amp 14
+						\end{array} \right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					At this point when doing Gaussian Elimination, we generally just zeroed out the 3 in the 3rd row, 2nd column.
+					However, to get things in reduced row echelon form, we will zero out the 3 in the first row, 2nd column
+					as well.
+				</p>
+
+				<p>
+					<md>
+						<mrow>-\begin{array}{r}
+						-3 R_2 + R_1 \rightarrow R_1 \\
+						-3R_2 + R_3 \rightarrow R_3,
+						\end{array}, \qquad \amp
+						\left[\begin{array}{rrr|r}
+						1 \amp 0 \amp -1/4 \amp 0 \\
+						0 \amp 1 \amp 3/4 \amp 1 \\
+						0 \amp 0 \amp 11/4 \amp 11
+						\end{array} \right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					<md>
+						<mrow>\frac{4}{11} R_3 \to R_3, \qquad \amp\amp
+						\left[\begin{array}{rrr|r}
+						1 \amp 0 \amp -1/4 \amp 0 \\
+						0 \amp 1 \amp 3/4 \amp 1 \\
+						0 \amp 0 \amp 1 \amp 4
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					Now we can zero out the first and second rows of the third column using the
+					standard elimination steps.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\begin{array}{r}-\frac{3}{4} R_3 + R_2\to R_2,\\
+						\frac{1}{4} R_3 + R_1 \to R_1
+						\end{array} \qquad \amp\amp
+						\left[\begin{array}{rrr|r}
+						1 \amp 0 \amp 0\amp 1 \\
+						0 \amp 1 \amp 0 \amp -2 \\
+						0 \amp 0 \amp 1 \amp 4
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					And now, like before, we write down the equations from the augmented coefficient
+					matrix:
+				</p>
+
+				<p>
+					<md>
+						<mrow>x \amp = 1 </mrow>
+						<mrow>y \amp = -2 </mrow>
+						<mrow>z \amp = 4 </mrow>
+					</md>
+				</p>
+
+				<p>
+					And notice that the solution in this case is simply the right hand side
+					of the matrix above.
+				</p>
+			</solution>
+		</example>
+
+		<example xml:id="ex-traffic-solution">
+			<title>Solving the Traffic Problem</title>
+			<statement>
+				<p>
+					Solve the linear system in <xref ref="ex-streets" /> or written in standard form:
+				</p>
+
+				<p>
+					<md>
+						<mrow>-x_1 + x_4 + x_5 \amp = 250</mrow>
+						<mrow>x_3 + x_4 \amp = 350 </mrow>
+						<mrow>x_2 + x_5 \amp = 700 </mrow>
+						<mrow>x_3 + x_2 \amp = 600 </mrow>
+					</md>
+				</p>
+
+				<p>
+					by writing the augmented coefficient matrix and putting the matrix in reduced row-echelon
+					form.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					We first write the augmented coefficient matrix:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp \left[\begin{array}{rrrrr|r}
+						-1 \amp 0 \amp 0 \amp 1 \amp 1 \amp 250 \\
+						0 \amp 0 \amp 1 \amp 1 \amp 0 \amp 350 \\
+						0 \amp 1 \amp 0 \amp 0 \amp 1 \amp 700 \\
+						0 \amp 1 \amp 1 \amp 0 \amp 0 \amp 600
+						\end{array}\right]
+						</mrow>
+						<mrow>-R_1 \to R_1 \qquad \amp \left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp -1 \amp -1 \amp -250 \\
+						0 \amp 0 \amp 1 \amp 1 \amp 0 \amp 350 \\
+						0 \amp 1 \amp 0 \amp 0 \amp 1 \amp 700 \\
+						0 \amp 1 \amp 1 \amp 0 \amp 0 \amp 600
+						\end{array}\right]</mrow>
+						<mrow>R_2 \leftrightarrow R_3\qquad \amp
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp -1 \amp -1 \amp -250 \\
+						0 \amp 1 \amp 0 \amp 0 \amp 1 \amp 700 \\
+						0 \amp 0 \amp 1 \amp 1 \amp 0 \amp 350 \\
+						0 \amp 1 \amp 1 \amp 0 \amp 0 \amp 600
+						\end{array}\right]
+						</mrow>
+						<mrow>-R_2 +R_4 \to R_4\qquad \amp
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp -1 \amp -1 \amp -250 \\
+						0 \amp 1 \amp 0 \amp 0 \amp 1 \amp 700 \\
+						0 \amp 0 \amp 1 \amp 1 \amp 0 \amp 350 \\
+						0 \amp 0 \amp 1 \amp 0 \amp -1 \amp -100
+						\end{array}\right]
+						</mrow>
+						<mrow>-R_3 +R_4 \to R_4\qquad \amp
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp -1 \amp -1 \amp -250 \\
+						0 \amp 1 \amp 0 \amp 0 \amp 1 \amp 700 \\
+						0 \amp 0 \amp 1 \amp 1 \amp 0 \amp 350 \\
+						0 \amp 0 \amp 0 \amp -1 \amp -1 \amp -450
+						\end{array}\right]
+						</mrow>
+						<mrow>-R_4 \to R_4\qquad \amp
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp -1 \amp -1 \amp -250 \\
+						0 \amp 1 \amp 0 \amp 0 \amp 1 \amp 700 \\
+						0 \amp 0 \amp 1 \amp 1 \amp 0 \amp 350 \\
+						0 \amp 0 \amp 0 \amp 1 \amp 1 \amp 450
+						\end{array}\right]
+						</mrow>
+						<mrow>
+						\begin{array}{r}
+						-R_4 +R_3 \to R_3 \\
+						R_4 + R_1 \to R_1
+						\end{array} \qquad \amp
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 200 \\
+						0 \amp 1 \amp 0 \amp 0 \amp 1 \amp 700 \\
+						0 \amp 0 \amp 1 \amp 0 \amp -1 \amp -100 \\
+						0 \amp 0 \amp 0 \amp 1 \amp 1 \amp 450
+						\end{array}\right]
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					The last step is to rewrite the matrix as a linear system.
+					This matrix can be written as:
+				</p>
+
+				<p>
+					<md>
+						<mrow> x_1 \amp =200 </mrow>
+						<mrow> x_2 + x_5 \amp =700</mrow>
+						<mrow>x_3 -x_5 \amp =-100 </mrow>
+						<mrow>x_4 + x_5 \amp =450 </mrow>
+					</md>
+				</p>
+
+				<p>
+					And notice that we can solve for <m>x_1, x_2, x_3, x_4</m>, but not <m>x_5</m>, which is
+					a <term>free variable</term> or
+				</p>
+
+				<p>
+					<md>
+						<mrow> x_1 \amp =200 </mrow>
+						<mrow> x_2 \amp = -x_5 + 700</mrow>
+						<mrow>x_3 \amp= x_5 -100 </mrow>
+						<mrow>x_4 \amp= -x_5 + 450 </mrow>
+					</md>
+				</p>
+
+				<p>
+					It may seem odd that there are multiple solutions to this problem, but if you look
+					at this on a more global scale for the map shown above there are <m>350+500+200=1050</m>
+					cars entering the area and <m>250+400+200+x_1</m> leaving.
+					If we also include another
+					equation that would balance these (and that makes sense), there is an free variable
+					as we found.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection xml:id="subsect-describe-solutions">
+		<title>Describing the Solution Set</title>
+		<p>
+			So far we have seen linear system with solution sets with different number of elements.
+			The <em>no
+			solution</em> means that the solution set is empty, the <em>unique solution</em> means that
+			there is one element in the set.
+			This was the case in <xref ref="ex-biathlon-solution" />
+			and in <xref ref="ex-traffic-solution"/>, there is a free variable resulting in
+			<em>infinitely many solutions</em>.
+			We examine this last case in more detail.
+		</p>
+
+		<p>
+			For example, if we reduce the linear system:
+		</p>
+
+		<p>
+			<md>
+				<mrow>\amp \amp x\phantom{+2y} + 2z \amp = -6 </mrow>
+				<mrow>\amp \amp 2x-y\phantom{+3z}\amp = 1 </mrow>
+				<mrow>\amp \amp y+4z\amp = -13</mrow>
+			</md>
+		</p>
+
+		<p>
+			First, write the linear system as a augmented matrix as
+		</p>
+
+		<p>
+			<me>
+				\left[\begin{array}{rrr|r}
+				1 \amp 0 \amp 2 \amp -6 \\
+				2 \amp -1 \amp 0 \amp 1 \\
+				0 \amp 1 \amp 4 \amp -13
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			Eliminate the 2 in the first column, second row.
+		</p>
+
+		<p>
+			<me>
+				-2R_1+R_2 \rightarrow R_2 \qquad
+				\left[\begin{array}{rrr|r}
+				1 \amp 0 \amp 2 \amp -6 \\
+				0 \amp -1 \amp -4 \amp 13 \\
+				0 \amp 1 \amp 4 \amp -13
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			Eliminate the 1 in the 3rd row, 2nd column.
+		</p>
+
+		<p>
+			<md>
+				<mrow>R_2+R_3 \rightarrow R_3 \qquad \amp
+				\left[\begin{array}{rrr|r}
+				1 \amp 0 \amp 2 \amp -6 \\
+				0 \amp -1 \amp -4 \amp 13 \\
+				0 \amp 0 \amp 0 \amp 0
+				\end{array}\right] </mrow>
+				<mrow>-R_2 \to R_2 \qquad \amp
+				\left[\begin{array}{rrr|r}
+				1 \amp 0 \amp 2 \amp -6 \\
+				0 \amp 1 \amp 4 \amp -13 \\
+				0 \amp 0 \amp 0 \amp 0
+				\end{array}\right] </mrow>
+			</md>
+		</p>
+
+		<p>
+			This is now in reduced row echelon form and we rewrite as a linear system as
+		</p>
+
+		<p>
+			<md>
+				<mrow>x\phantom{+2y} + 2z \amp = -6</mrow>
+				<mrow>y +4z \amp = -13 </mrow>
+			</md>
+		</p>
+
+		<p>
+			where the last row of the matrix isn't written, because <m>0=0</m> conveys no
+			relevant information.
+			Notice in this case, we can solve the first equation for <m>x</m> and
+			the second equation for <m>y</m> in terms of <m>z</m> as
+		</p>
+
+		<p>
+			<md>
+				<mrow> x \amp = -2z-6 </mrow>
+				<mrow>y \amp = -4z -13 </mrow>
+			</md>
+		</p>
+
+		<p>
+			In this case <m>z</m> is a <em>free variable</em> and we can write the set of points
+			that solve this in the following way:
+		</p>
+
+		<p>
+		</p>
+
+		<p>
+			<me>
+				\{ (-2z-6,-4z-13,z)\; |\; z \in \mathbb{R}\}
+			</me>
+		</p>
+
+		<p>
+			and now we have a lot of information about the solution set.
+			For example, if <m>z=0</m>, then <m>x=-6,
+			y=-13</m>, so the point <m>(-6,-13,0)</m> is in the solution set.
+			Similarly if <m>z=-3</m>,
+			then <m>(0,-1,-3)</m> is also a point in the solution set and any point given a value of <m>
+			z</m> .
+		</p>
+
+		<p>
+			We also have a sense of the number of solutions and since <m>z</m> can take on any real
+			number, there are an infinite number of triples <m>3</m>-tuples in this solution set.
+		</p>
+
+		<p>
+			Also, the form of the solution set above is in <em>set builder</em> form.
+			That is is shows
+			how to create the set of points in the solution.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					The non-leading variables in a linear system in echelon form are called the <term>free
+					variables</term> or <term>parameters</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			The next example shows that a linear system can have more than one free variables.
+		</p>
+
+		<example xml:id="ex-echelon-form-3by5">
+			<statement>
+				<p>
+					Consider the linear system
+				</p>
+
+				<p>
+					<md>
+						<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
+						<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
+						<mrow>3x_5 \amp = 27,</mrow>
+					</md>
+				</p>
+
+				<p>
+					Write the solution set in terms of the free variables.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, let's put this in augmented matrix form as
+				</p>
+
+				<p>
+					<me>
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 3 \amp -9 \amp 11 \amp 14 \\
+						0 \amp 0 \amp 2 \amp 0 \amp 4 \amp 10 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 3 \amp 27
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					Notice that this is already in row-echelon form, but we will do a couple of row
+					operation steps to get it into reduced row echelon form.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\begin{array}{r}
+						\frac{1}{3} R_3 \to R_3\\
+						\frac{1}{2} R_2 \to R_2
+						\end{array} \qquad \amp
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 3 \amp -9 \amp 11 \amp 14 \\
+						0 \amp 0 \amp 1 \amp 0 \amp 2 \amp 5 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+						\end{array}\right] </mrow>
+						<mrow>\begin{array}{r}
+						-3R_2 + R_1 \to R_1
+						\end{array} \qquad \amp
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp -9 \amp 5 \amp -1 \\
+						0 \amp 0 \amp 1 \amp 0 \amp 2 \amp 5 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+						\end{array}\right] </mrow>
+						<mrow>\begin{array}{r}
+						-2R_3 + R_2 \to R_2 \\
+						-5R_3 + R_1 \to R_1
+						\end{array} \qquad \amp
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp -9 \amp 0 \amp -46 \\
+						0 \amp 0 \amp 1 \amp 0 \amp 0 \amp -13 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+						\end{array}\right] </mrow>
+					</md>
+				</p>
+
+				<p>
+					which is now in reduced row-echelon form.
+					Note that from here we can see that the
+					leading variables are <m>x_1, x_3</m> and <m>x_5</m> and the remaining variables <m>x_2</m> and
+					<m>x_4</m> are free.
+					Converting this matrix to equations results in
+				</p>
+
+				<p>
+					<md>
+						<mrow>x_1 -9x_4 \amp = -46 </mrow>
+						<mrow>x_3 \amp = -13 </mrow>
+						<mrow>x_5 \amp = 9</mrow>
+					</md>
+				</p>
+
+				<p>
+					and solving the first equation is
+				</p>
+
+				<p>
+					<md>
+						<mrow>x_1\amp = 9x_4 -46 </mrow>
+						<mrow>x_3 \amp = -13 </mrow>
+						<mrow>x_5 \amp = 9</mrow>
+					</md>
+				</p>
+
+				<p>
+					We can now write down the solution in the same form (set-builder) as before as
+				</p>
+
+				<p>
+					<me>
+						\{ (x_1,x_2,x_3,x_4,x_5) = (9x_4-46,x_2,-13,x_4,9) \; | \; x_2, x_4 \in \mathbb{R}\}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			We now find the solution to the Hydrazine chemistry problem in Example <xref
+			ref="ex-hydrazine" />
+		</p>
+
+		<example xml:id="ex-hydrazine-solution">
+			<statement>
+				<p>
+					Find the solution set of the linear system in <xref ref="ex-hydrazine" />
+				</p>
+
+				<p>
+					<md>
+						<mrow>k_1\phantom{+2k_2}-2k_3\phantom{+2k_4} \amp = 0, </mrow>
+						<mrow>3k_1+2k_2-4k_3-2k_4 \amp = 0, </mrow>
+						<mrow>2k_2\phantom{+2x_3}-\phantom{2}k_4 \amp = 0, </mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					We will first put this into an augmented matrix, then use Gauss's methodl
+				</p>
+
+				<p>
+					<me>
+						\left[\begin{array}{rrrr|r}
+						1 \amp 0 \amp -2 \amp 0 \amp 0 \\
+						3 \amp 2 \amp -4 \amp -2 \amp 0 \\
+						0 \amp 2 \amp 0 \amp -1 \amp 0
+						\end{array}\right]
+					</me>
+					<me>
+						-3 R_1 + R_2 \to R_2 \qquad \left[\begin{array}{rrrr|r}
+						1 \amp 0 \amp -2 \amp 0 \amp 0 \\
+						0 \amp 2 \amp 2 \amp -2 \amp 0 \\
+						0 \amp 2 \amp 0 \amp -1 \amp 0
+						\end{array}\right]
+					</me>
+					<me>
+						-R_2 + R_3 \to R_3 \qquad \left[\begin{array}{rrrr|r}
+						1 \amp 0 \amp -2 \amp 0 \amp 0 \\
+						0 \amp 2 \amp 2 \amp -2 \amp 0 \\
+						0 \amp 0 \amp -2 \amp 1 \amp 0
+						\end{array}\right]
+					</me>
+					<me>
+						\begin{array}{r}
+						\frac{1}{2} R_2 \to R_2 \\
+						-\frac{1}{2} R_3 \to R_3
+						\end{array} \qquad \left[\begin{array}{rrrr|r}
+						1 \amp 0 \amp -2 \amp 0 \amp 0 \\
+						0 \amp 1 \amp 1 \amp -1 \amp 0 \\
+						0 \amp 0 \amp 1 \amp -1/2 \amp 0
+						\end{array}\right]
+					</me>
+					<me>
+						\begin{array}{r}
+						-R_3 + R_2 \to R_2 \\
+						2R_3 + R_1 \to R_1
+						\end{array} \qquad \left[\begin{array}{rrrr|r}
+						1 \amp 0 \amp 0 \amp -1 \amp 0 \\
+						0 \amp 1 \amp 0 \amp -1/2 \amp 0 \\
+						0 \amp 0 \amp 1 \amp -1/2 \amp 0
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					Rewriting as equations results in
+				</p>
+
+				<p>
+					<md>
+						<mrow> k_1 -k_4 \amp = 0 </mrow>
+						<mrow> k_2 -\frac{1}{2}k_4 \amp = 0 </mrow>
+						<mrow>k_3-\frac{1}{2}k_4 \amp = 0 </mrow>
+					</md>
+				</p>
+
+				<p>
+					or solving for the leading variables <m>k_1, k_2, k_3</m>
+				</p>
+
+				<p>
+					<md>
+						<mrow> k_1 \amp =k_4 </mrow>
+						<mrow> k_2 \amp =\frac{1}{2}k_4</mrow>
+						<mrow>k_3 \amp = \frac{1}{2}k_4  </mrow>
+					</md>
+				</p>
+
+				<p>
+					Since <m>k_1, k_2</m> and <m>k_3</m> all depend on <m>k_4</m>, a free variable, there are
+					an infinite number of solutions to this linear system.
+					We can write this as
+				</p>
+
+				<p>
+					<me>
+						\{ (k_4, \frac{1}{2} k_4, \frac{1}{2} k_4, k_4) \; | \; k_4 \in \mathbb{R} \},
+					</me>
+				</p>
+
+				<p>
+					Solutions include <m>(0,0,0,0)</m>, <m>(2,1,1,2)</m>, <m>(-5,-5/2,-5/2,-5)</m>.
+				</p>
+
+				<p>
+					Since the above example comes from Chemical equations, it is desirable to find a solution of
+					all positive integers, since the number represent the number of atoms in the reaction.
+					In
+					addition, typically the solution with smallest integers is desired.
+					In this case, the solution <m>
+					(2,1,1,2)</m> results in the following equation:
+					<me>
+						2 NH_3 + H_2O_2 \rightarrow N_2 H_4 + 2 H_2 O
+					</me>
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Row Equivalence</title>
+		<p>
+			We have used the term <em>matrix reduction</em> in converting a matrix to either echelon or
+			reduced row echelon form.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					If matrix <m>A</m> can be converted to matrix <m>B</m> by elementary row operations,
+					then we say that <m>A</m> and <m>B</m> are <term>row equivalent</term> or just <term>equivalent</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					Show that the following matrices are row equivalent
+				</p>
+
+				<p>
+					<md>
+						<mrow>\begin{bmatrix}3 \amp 4 \\ 0 \amp -2 \end{bmatrix} \amp \amp
+						\begin{bmatrix}1 \amp 2\\ 0 \amp -2 \end{bmatrix} \amp \amp
+						\begin{bmatrix}1 \amp 0\\ 0 \amp -2 \end{bmatrix}</mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					One method to showing matrices are equivalent is to find the row operation to go from one to the
+					other.
+					However, generally an easier way is to put both (or in this case all three) in reduced row
+					echelon form.
+					In this case all three of these matrices reduce to
+				</p>
+
+				<p>
+					<me>
+						\begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<lemma>
+			<statement>
+				<p>
+					A linear combination of linear combinations is a linear combination.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					Consider the <m>m</m> linear combinations <m>c_{1,1} x_1 + \cdots + c_{1,n} x_n</m>
+					through <m>c_{m,1} x_1 + \cdots + c_{m,n} x_n</m>.
+					A linear combination of these is
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp d_1 (c_{1,1} x_1 + \cdots + c_{1,n} x_n ) + \cdots + d_m (c_{m,1} x_1 +
+						\cdots + c_{m,n} x_n)</mrow>
+						<mrow>\amp \qquad = d_1 c_{1,1} x_1 + \cdots + d_1 c_{1,n} x_n + \cdots + d_m c_{m,1}
+						x_1 + \cdots + d_m c_{m,n} x_n </mrow>
+						<mrow>\amp \qquad = (d_1 c_{1,1} + \cdots + d_m c_{m,1}) x_1 + \cdots + (d_1 c_{1,n} +
+						\cdots + d_m c_{m,n}) x_n</mrow>
+					</md>
+				</p>
+			</proof>
+		</lemma>
+
+		<p>
+			We will use the following standard notation for matrices.
+			A matrix is named with a roman
+			capital letter, the <m>i</m>th row will be denoted with the equivalent lower-case greek with
+			subscript <m>i</m>, that is
+		</p>
+
+		<p>
+			<md>
+				<mrow>A \amp = \begin{bmatrix}
+				\cdots \amp \alpha_1 \amp \cdots \\
+				\cdots \amp \alpha_2 \amp \cdots \\
+				\amp \vdots \amp \\
+				\cdots \amp \alpha_n \amp \cdots \\
+				\end{bmatrix} \amp
+				B \amp = \begin{bmatrix}
+				\cdots \amp \beta_1 \amp \cdots \\
+				\cdots \amp \beta_2 \amp \cdots \\
+				\amp \vdots \amp \\
+				\cdots \amp \beta_n \amp \cdots \\
+				\end{bmatrix}
+				</mrow>
+			</md>
+		</p>
+
+		<corollary xml:id="cor-rows-linear-comb">
+			<statement>
+				<p>
+					When one matrix is transformed to another matrix, each row of the second
+					is a linear combination of the first.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					The base step, we prove that zero row operations that transforms <m>A</m> to <m>B</m>,
+					satisfies the corollary.
+					In this case,
+				</p>
+
+				<p>
+					<me>
+						\vec{\beta}_i = 0 \cdot \alpha_1+ 0 \alpha_2 + \cdots
+						+ 1 \cdot \alpha_i + \cdots + 0 \cdot \alpha_n \qquad
+						\text{for each} \;i=1, 2, \ldots, n.
+					</me>
+				</p>
+
+				<p>
+					so each row of <m>B</m> is a linear combination of <m>A</m>.
+				</p>
+
+				<p>
+					For the inductive step, assume that transforming <m>A</m> to <m>B</m> in <m>t+1</m>
+					steps.
+					Also assume that the matrix in the step before <m>B</m> is called <m>G</m>, or
+				</p>
+
+				<p>
+					<me>
+						A \rightarrow \cdots \rightarrow G \rightarrow B
+					</me>
+				</p>
+
+				<p>
+					with each arrow denoting a row operation.
+					Now we proceed showing that each of the 3
+					elementary row operations are linear combinations.
+					If <m>G \rightarrow B</m> is given by
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<m>c R_i \rightarrow R_i</m>, then
+							</p>
+
+							<p>
+								<me>
+									\vec{\beta}_j = \begin{cases}
+									c \vec{\gamma}_j \amp \text{if]}\;\; i=j \\
+									\vec{\gamma}_j \amp \text{otherwise}
+									\end{cases}
+								</me>
+							</p>
+
+							<p>
+								each of which is a linear combination of the rows of <m>G</m>,
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>R_i \leftrightarrow R_j</m>, for <m>i \neq j</m>, then
+							</p>
+
+							<p>
+								<me>
+									\vec{\beta}_k = \begin{cases}
+									\vec{\gamma}_i \amp \text{if}\;\; k=j \\
+									\vec{\gamma}_j \amp \text{if}\;\; k=i \\
+									\vec{\gamma}_k \amp \text{otherwise}
+									\end{cases}
+								</me>
+							</p>
+
+							<p>
+								again, each of which is a linear combination of the rows of <m>G</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>c R_i + R_j \rightarrow R_j</m> for <m>i \neq j</m>, then
+							</p>
+
+							<p>
+								<me>
+									\vec{\beta}_k = \begin{cases}
+									c \vec{\gamma}_k+ \vec{\gamma}_j \amp \text{if}\;\; k=i \\
+									\vec{\gamma}_k \amp \text{otherwise}
+									\end{cases}
+								</me>
+							</p>
+
+							<p>
+								again, each of which is a linear combination of the rows of <m>G</m>.
+							</p>
+						</li>
+					</ol>
+				</p>
+
+				<p>
+					Now this proves that for the step <m>G \rightarrow B</m>, each row of <m>B</m> is a
+					linear combination of rows of <m>G</m>.
+				</p>
+
+				<p>
+					Now, using induction, since the first <m>t</m> steps transforming <m>A</m> to <m>G</m>
+					is a linear combination, the steps from <m>A</m> to <m>B</m>, each row of <m>B</m> is a
+					linear combination of rows of <m>A</m> because linear combinations of linear
+					combinations are linear combinations.
+				</p>
+			</proof>
+		</corollary>
+
+		<example>
+			<statement>
+				<p>
+					Show that the steps that transform:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp\begin{bmatrix}
+						0 \amp 3 \\
+						1 \amp 2
+						\end{bmatrix}</mrow>
+						<mrow>R_1 \leftrightarrow R_2 \qquad \amp
+						\begin{bmatrix}
+						1 \amp 2 \\
+						0 \amp 3 \\
+						\end{bmatrix}</mrow>
+						<mrow>\frac{1}{3} R_2 \rightarrow R_2 \qquad \amp
+						\begin{bmatrix}
+						1 \amp 2 \\
+						0 \amp 1 \\
+						\end{bmatrix}</mrow>
+						<mrow>-2 R_2 + R_1 \rightarrow R_1 \qquad \amp
+						\begin{bmatrix}
+						1 \amp 0 \\
+						0 \amp 1
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					are each linear combinations of row operations.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Call the 4 matrices, <m>A</m>, <m>D</m>, <m>G</m> and <m>B</m>, then
+				</p>
+
+				<p>
+					<md>
+						<mrow>\begin{split}
+						\delta_1 \amp = \alpha_2 \\
+						\delta_2 \amp = \alpha_1
+						\end{split} \amp\amp\amp
+						\begin{split}
+						\gamma_1 \amp = \alpha_1 \\
+						\gamma_2 \amp = \frac{1}{3} \alpha_2 \\
+						\end{split} \amp\amp\amp
+						\begin{split}
+						\beta_1 \amp = -2 \gamma_2 + \gamma_1 \\
+						\beta_2 \amp = \gamma_2
+						\end{split}
+						</mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Echelon Form and Linear Combinations of Rows</title>
+		<p>
+			Let's return to echelon form.
+			Why is this a nice form? Well we can use
+			back substitution to solve for the leading variables.
+			The reason
+			this works is the following lemma.
+		</p>
+
+		<lemma xml:id="lem-ech-ind">
+			<p>
+				In an echelon form matrix, no nonzero row is a linear combination of the other rows.
+			</p>
+		</lemma>
+
+		<p>
+			In lieu of a proof, let's take a look at an example.
+			Consider the echelon form matrix of a
+			the linear system from <xref ref="ex-large-linear-solution" />.
+		</p>
+
+		<p>
+			<me>
+				\left[\begin{array}{rrrrr|r}
+				0 \amp 1 \amp 3 \amp -9 \amp 11 \amp 14 \\
+				0 \amp 0 \amp 2 \amp 0 \amp 4 \amp 9 \\
+				0 \amp 0 \amp 0 \amp 0 \amp 3 \amp 27 \\
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			We look and determine if the second row (as an example) is a linear combination of the other
+			two rows.
+			Thus:
+		</p>
+
+		<p>
+			<md>
+				<mrow>\begin{bmatrix}
+				0 \amp 0 \amp 2 \amp 0 \amp 4 \amp 9 \\
+				\end{bmatrix} \amp = c_1 \begin{bmatrix}
+				0 \amp 1 \amp 3 \amp -9 \amp 11 \amp 14
+				\end{bmatrix} + c_2 \begin{bmatrix}
+				0 \amp 0 \amp 0 \amp 0 \amp 3 \amp 27
+				\end{bmatrix}</mrow>
+			</md>
+		</p>
+
+		<p>
+			Each component then becomes an equation for the linear system:
+		</p>
+
+		<p>
+			<md>
+				<mrow>0 c_1 + 0 c_2 \amp = 0 </mrow>
+				<mrow>c_1 + 0 c_2 \amp = 0 </mrow>
+				<mrow>3 c_1 + 0 c_2 \amp = 2 </mrow>
+				<mrow>-9 c_1 + 0 c_2 \amp = 0 </mrow>
+				<mrow>11 c_1 + 3 c_2 \amp = 4 </mrow>
+				<mrow>14 c_1 + 27 c_2 \amp = 9</mrow>
+			</md>
+		</p>
+
+		<p>
+			which can be written as the augmented matrix:
+		</p>
+
+		<p>
+			<me>
+				\left[\begin{array}{rr|r}
+				0 \amp 0 \amp 0 \\
+				1 \amp 0 \amp 0 \\
+				3 \amp 0 \amp 2 \\
+				-9 \amp 0 \amp 0 \\
+				11 \amp 3 \amp 4 \\
+				14 \amp 27 \amp 9\\
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			if we transform this to row echelon form we get:
+		</p>
+
+		<p>
+			<me>
+				\left[\begin{array}{rr|r}
+				14 \amp 27 \amp 9\\
+				0 \amp -3 \amp -1\\
+				0 \amp 0 \amp 28\\
+				0 \amp 0 \amp 0\\
+				0 \amp 0 \amp 0\\
+				0 \amp 0 \amp 0\\
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			and the 3rd row says ``no solution'', so that the 2nd row is not a
+			linear combination of the other two rows.
+		</p>
+
+		<p>
+			The notation of rows not being linear combinations of other rows is called <term>
+			independence</term> and will be defined more-explicitly later in the course, however this
+			example should give you a sense of what independence means.
+		</p>
+
+
+		<proof>
+			<title>Proof of <xref ref="lem-ech-ind" /></title>
+			<p>
+				This will be a proof by contradiction.
+				Assume that the <m>i</m>th row is a linear
+				combination of the other rows of the matrix that is it can be written:
+			</p>
+
+			<p>
+				<men xml:id="eq-row-linear-comb">
+					\alpha_i = c_1 \alpha_1 + c_2 \alpha_2 + \cdots + c_{i-1} \alpha_{i-1} + c_{i+1}
+					\alpha_{i+1} + \cdots + c_m \alpha_m
+				</men>
+			</p>
+
+			<p>
+				The matrix <m>A</m> can be written as
+			</p>
+
+			<p>
+				<me>
+					A =
+					\begin{bmatrix}
+					0 \amp \cdots \amp 0 \amp \alpha_{1,\ell_1} \amp \alpha_{1, \ell_1+1} \amp \cdots \amp
+					\alpha_{1,\ell_i} \amp \cdots \amp \alpha_{1,\ell_m} \\
+					0 \amp \cdots \amp 0 \amp 0 \amp \alpha_{2,\ell_2} \amp \cdots \amp \alpha_{2,\ell_i}
+					\amp
+					\cdots \amp \alpha_{2, \ell_m} \\
+					\amp \amp \amp \amp \amp \amp \vdots \amp \amp \amp \vdots \\
+					\vdots \amp \amp \vdots \amp \amp 0 \amp \amp \alpha_{i,\ell_i} \amp \amp \vdots \\
+					0 \amp \cdots \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \\
+					0 \amp \cdots \amp \amp \amp \amp \amp0 \amp0 \amp \alpha_{m,\ell_m}
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				To find the values of <m>c_j</m> in (\ref{eq:row:linear:comb}), evaluate that equation
+				for any column.
+				To begin, consider <m>\ell_1</m>, the column of the leading coefficient of
+				the first row.
+				Because the matrix is in echelon form, <m>\alpha_{2,\ell_1},
+				\alpha_{3,\ell_1},
+				\ldots, \alpha_{m,\ell_1}</m> are all zero.
+				Thus, examining the <m>\ell_1</m>th element
+				of <xref
+				ref="eq-row-linear-comb" />, one gets:
+			</p>
+
+			<p>
+				<me>
+					0 = c_1 \alpha_{1,\ell_1} + c_2 \cdot 0 + \cdots + c_m \cdot 0
+				</me>
+			</p>
+
+			<p>
+				and because <m>\alpha_{1,\ell_1}\neq 0</m> (it is a leading element), <m>c_1=0</m>.
+			</p>
+
+			<p>
+				Inductively, assume that <m>c_1,c_2, \ldots, c_{k-1}=0</m>.
+				Let <m>\ell_k</m> be the
+				column with the leading element in row <m>k</m>.
+				This means that <m>\alpha_{k+1,\ell_k},
+				\alpha_{k+2,\ell_k}, \ldots, \alpha_{m,\ell_k}</m> are all zero.
+				If we examine the <m>
+				\ell_k</m>th component of <xref ref="eq-row-linear-comb" />, then
+			</p>
+
+			<p>
+				Let <m>\ell_i</m> be the column with the leading element in row <m>i</m>.
+				If the <m>
+				\ell_i</m>th element of (\ref{eq:row:linear:comb}) is extracted, one gets
+			</p>
+
+			<p>
+				<md>
+					<mrow>\alpha_{i,\ell_k} \amp = (0) \alpha_{1,\ell_k} + (0) \alpha_{2,\ell_k} + \cdots +
+					(0) \alpha_{i-1,\ell_k} + (0) \alpha_{i+1,\ell_k} </mrow>
+					<mrow>\amp \qquad + \cdots + c_k\alpha_{k,\ell_k} + c_{k+1} \cdot 0 + \cdots + c_m \cdot
+					0 </mrow>
+				</md>
+			</p>
+
+			<p>
+				If <m>i>k</m>, then <m>\alpha_{i,\ell_k}=0</m>, and this implied that <m>c_k=0</m>.
+				If <m>i
+				\lt k</m>, then
+			</p>
+		</proof>
+
+		<lemma>
+			<statement>
+				<p>
+					If two echelon form matrices are row equivalent then the leading
+					entries in their first rows lie in the same column.
+					The same is
+					true of all the nonzero rows---the leading entries in their second
+					rows lie in the same column, etc.
+				</p>
+			</statement>
+		</lemma>
+	</subsection>
+</section>
+<!--
+<subsection>
+	<title>???</title>
+	<p>
+		The main advantage of matrices is to simplify the solving of linear systems.
+		We will see this with the example above:
+	</p>
+
+	<p>
+		<md>
+			<mrow>4x_1 - x_3 \amp = 0,</mrow>
+			<mrow>x_1+3x_2 +2x_3 \amp = 3,</mrow>
+			<mrow>3x_2 + 5x_3 \amp = 14.</mrow>
+		</md>
+	</p>
+
+	<p>
+		We will write this as an augmented coefficient matrix, then use row
+		operations as we saw for the linear system:
+	</p>
+
+	<p>
+		<md>
+			<mrow>\left[\begin{array}{rrr|r}
+			4 \amp 0 \amp -1 \amp 0 \\
+			1 \amp 3 \amp 2 \amp 3 \\
+			0 \amp 3 \amp 5 \amp 14
+			\end{array} \right]
+			</mrow>
+			<mrow>R_1 \leftrightarrow R_2, \qquad\amp
+			\left[\begin{array}{rrr|r}
+			1 \amp 3 \amp 2 \amp 3 \\
+			4 \amp 0 \amp -1 \amp 0 \\
+			0 \amp 3 \amp 5 \amp 14
+			\end{array} \right] </mrow>
+			<mrow>-4R_1 + 4R_2 \rightarrow R_2, \qquad \amp
+			\left[\begin{array}{rrr|r}
+			1 \amp 3 \amp 2 \amp 3 \\
+			0 \amp -12 \amp -9 \amp -12 \\
+			0 \amp 3 \amp 5 \amp 14
+			\end{array} \right]</mrow>
+			<mrow>-\frac{1}{12} R_2 \to R_2, \qquad \amp
+			\left[\begin{array}{rrr|r}
+			1 \amp 3 \amp 2 \amp 3 \\
+			0 \amp 1 \amp 3/4 \amp -1 \\
+			0 \amp 3 \amp 5 \amp 14
+			\end{array} \right]</mrow>
+		</md>
+	</p>
+
+	<p>
+		At this point when doing Gaussian Elimination, we generally just zeroed out the 3 in the 3rd row, 2nd column.
+		However, to get things in reduced row echelon form, we will zero out the 3 in the first row, 2nd column
+		as well.
+	</p>
+
+	<p>
+		<md>
+			<mrow>-\begin{array}{r}
+			-3 R_2 + R_1 \rightarrow R_1 \\
+			-3R_2 + R_3 \rightarrow R_3,
+			\end{array}, \qquad \amp
+			\left[\begin{array}{rrr|r}
+			1 \amp 0 \amp -1/4 \amp 7 \\
+			0 \amp 1 \amp 3/4 \amp -1 \\
+			0 \amp 0 \amp 3/2 \amp 11
+			\end{array} \right]</mrow>
+		</md>
+	</p>
+
+	<p>
+		where the last row operation was a bit nonstandard because the and this matrix is now in echelon form, so we can use back substitution to find the solution <m>
+		(1,-2,4)</m>.
+	</p>
+
+	<example>
+		<title>Solve a Linear System using matrices</title>
+		<statement>
+			<p>
+				Solve the following linear system use matrices and Gauss' method.
+			</p>
+
+			<p>
+				<md>
+					<mrow>x-2y + 4z \amp = -15 </mrow>
+					<mrow>-3x +0y + 2z \amp = -7 </mrow>
+					<mrow>x-2y + 4z \amp = -15 </mrow>
+				</md>
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				First write the linear system as a matrix
+			</p>
+
+			<p>
+				<md>
+					<mrow>\left[\begin{array}{rrr|r}
+					-1 \amp -4 \amp 10 \amp -37 \\
+					-3 \amp 0 \amp 2 \amp -7 \\
+					1 \amp -2 \amp 4 \amp -15 \\
+					\end{array} \right] </mrow>
+					<mrow>\begin{array}{r}
+					-3 R_1 + R_2 \rightarrow R_2 \\
+					R_1 + R_3 \rightarrow R_3,
+					\end{array} \qquad
+					\left[\begin{array}{rrr|r}
+					-1 \amp -4 \amp 10 \amp -37 \\
+					0 \amp 12 \amp -28 \amp 104 \\
+					0 \amp -6 \amp 14 \amp -52
+					\end{array}\right] </mrow>
+					<mrow number="yes" xml:id="eq-ex-echelon-form">R_2 +2R_3 \rightarrow R_3, \qquad
+					\left[\begin{array}{rrr|r}
+					-1 \amp -4 \amp 10 \amp -37 \\
+					0 \amp 12 \amp -28 \amp 104 \\
+					0 \amp 0 \amp 0 \amp 0
+					\end{array}\right] </mrow>
+				</md>
+			</p>
+
+			<p>
+				The matrix in (<xref ref="eq-ex-echelon-form" />) is in echelon form, so we use back
+				substitution to solve for <m>x_1</m> and <m>x_2</m> in terms of <m>x_3</m>, the free
+				variable.
+				The 2nd row of (<xref ref="eq-ex-echelon-form" />) can be written:
+			</p>
+
+			<p>
+				<me>
+					12 x_2 = 104 + 28 x_3
+				</me>
+			</p>
+
+			<p>
+				or
+			</p>
+
+			<p>
+				<me>
+					x_2 = 17 + \frac{7}{3} x_3
+				</me>
+			</p>
+
+			<p>
+				and using this in the first equation of (<xref ref="eq-ex-echelon-form" />)
+			</p>
+
+			<p>
+				<me>
+					-x_1 - 4(17+\frac{7}{3} x_3) + 10 x_3 = -37
+				</me>
+			</p>
+
+			<p>
+				and solving for <m>x_1</m>
+			</p>
+
+			<p>
+				<me>
+					x_1 = -31+\frac{2}{3} x_3
+				</me>
+			</p>
+		</solution>
+	</example>
+</subsection>
+-->
+<!-- <subsection xml:id="sect-reduced-row-echelon-form">
+<title>Reduced Row Echelon Form</title>
+<introduction>
+</introduction>
+
+<subsubsection>
+	<title>Gauss-Jordon Reduction</title>
+	<p>
+		We solved the linear system from <xref ref="ex-solve-linear-syst" />.
+	</p>
+
+	<p>
+		<md>
+			<mrow>4x_1 - x_3 \amp = 0, </mrow>
+			<mrow>x_1+3x_2 +2x_3 \amp = 3, </mrow>
+			<mrow>3x_2 + 5x_3 \amp = 14.</mrow>
+		</md>
+	</p>
+
+	<p>
+		by putting the array in echelon form using elementary row operations,
+	</p>
+
+	<p>
+		then using back-substitution.
+	</p>
+
+	<p>
+		Note that there is still work to be done to get the solution using back-substitution.
+		Instead, we can continue to use Gauss' method to further reduce the
+		matrix into a nicer form:
+	</p>
+
+	<p>
+		<md>
+			<mrow>\frac{1}{11} R_3 \rightarrow R_3, \amp \qquad
+			\left[\begin{array}{rrr|r}
+			4 \amp 0 \amp -1 \amp 0 \\
+			0 \amp 12 \amp 9 \amp 12 \\
+			0 \amp 0 \amp 1 \amp 4 \\
+			\end{array}\right] </mrow>
+			<mrow>\begin{array}{r}
+			-9R_3+R_2 \rightarrow R_2, \\
+			R_3 + R_1 \rightarrow R_1,
+			\end{array} \amp \qquad
+			\left[\begin{array}{rrr|r}
+			4 \amp 0 \amp 0 \amp 4 \\
+			0 \amp 12 \amp 0 \amp -24 \\
+			0 \amp 0 \amp 1 \amp 4 \\
+			\end{array}\right] </mrow>
+			<mrow>\begin{array}{r}
+			\frac{1}{12} R_2 \rightarrow R_2, \\[4pt]
+			\frac{1}{4} R_1 \rightarrow R_1,
+			\end{array} \amp \qquad
+			\left[\begin{array}{rrr|r}
+			1 \amp 0 \amp 0 \amp 1 \\
+			0 \amp 1 \amp 0 \amp -2 \\
+			0 \amp 0 \amp 1 \amp 4 \\
+			\end{array}\right] </mrow>
+		</md>
+	</p>
+
+	<p>
+		Now this is a nicer form, because if the linear system is written from the matrix, then:
+	</p>
+
+	<p>
+		<md>
+			<mrow>x \amp = 1, </mrow>
+			<mrow>y \amp = -2, </mrow>
+			<mrow>z \amp = 4.</mrow>
+		</md>
+	</p>
+
+	<p>
+		or in vector form
+	</p>
+
+	<p>
+		<me>
+			\vec{x} = \begin{bmatrix}
+			1 \\ -2 \\ 4
+			\end{bmatrix}
+		</me>
+	</p>
+
+	<p>
+		which is the last column of the matrix.
+	</p>
+
+	<definition>
+		<statement>
+			<p>
+				A matrix is in <term>reduced row-echelon form</term> if in addition to being in
+				echelon form, that each leading entry is a 1, and the leading entry is the only non-zero
+				entry in the column.
+			</p>
+		</statement>
+	</definition>
+
+	<example xml:id="ex-matrices-reduced-row-echelon">
+		<p>
+			The following matrices are in reduced row echelon form.
+		</p>
+
+		<p>
+			<md>
+				<mrow>\begin{bmatrix}
+				1 \amp 0 \amp 3 \\
+				0 \amp 1 \amp -2
+				\end{bmatrix} \amp\amp
+				\begin{bmatrix}
+				1 \amp 2 \amp 0 \amp 0 \amp 5 \\
+				0 \amp 0 \amp 1 \amp 0 \amp -2 \\
+				0 \amp 0 \amp 0 \amp 1 \amp 3 \\
+				\end{bmatrix} \amp\amp
+				\begin{bmatrix}
+				1 \amp 0 \amp 3 \amp 2 \\
+				0 \amp 1 \amp 2 \amp 9 \\
+				0 \amp 0 \amp 0 \amp 0
+				\end{bmatrix} </mrow>
+			</md>
+		</p>
+	</example>
+
+	<example xml:id="ex-not-in-rref">
+		<statement>
+			<p>
+				Explain why the following are not in reduced row echelon form:
+			</p>
+
+			<p>
+				<md>
+					<mrow>
+					\begin{bmatrix}
+					2 \amp 0 \amp 4 \\
+					0 \amp 1 \amp 3
+					\end{bmatrix} \amp\amp
+					\begin{bmatrix}
+					1 \amp 3 \amp 2 \\
+					0 \amp 1 \amp -1
+					\end{bmatrix} \amp\amp
+					\begin{bmatrix}
+					0 \amp 1 \amp 3 \amp 3 \\
+					1 \amp 0 \amp 2 \amp -1
+					\end{bmatrix}
+					</mrow>
+				</md>
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				<ul>
+					<li>
+						The first matrix is not in row reduced echelon form because the leading
+						term in row 1 needs to be a 1, not a 2.
+					</li>
+
+					<li>
+						The second matrix is not in row reduced echelon form because the column
+						with the leading term in row 2 (which is column 2) should be 0 except the
+						1 in the second row.
+					</li>
+
+					<li>
+						The third matrix is not in row reduced echelon form because the matrix is not in
+						echelon form.
+					</li>
+				</ul>
+			</p>
+		</solution>
+	</example>
+
+	<definition>
+		<statement>
+			<p>
+				The reduction of a matrix to reduced row echelon form using the three standard row
+				operations is called <term>Gauss-Jordon reduction</term> or the <term>Gauss-Jordon
+				method</term> .
+			</p>
+		</statement>
+	</definition>
+
+	<p>
+		As seen above, reduced row echelon form makes linear systems with a unique
+		solution very easy to write down- - -the solution is in the last row.
+		We will
+		also see that this form makes solutions with many solutions easier to write
+		down as well.
+	</p>
+
+	<example>
+		<statement>
+			<p>
+				Put the following linear system:
+			</p>
+
+			<p>
+				<md>
+					<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
+					<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
+					<mrow>3x_5 \amp = 27,</mrow>
+				</md>
+			</p>
+
+			<p>
+				into reduced row echelon form.
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				First, this is already in echelon form, so we only need to do the steps to get to
+				reduced
+				row echelon form:
+			</p>
+
+			<p>
+				<md>
+					<mrow>\amp\amp \qquad
+					\left[\begin{array}{rrrrr|r}
+					1 \amp 0 \amp 3 \amp -9 \amp 11 \amp 14 \\
+					0 \amp 0 \amp 2 \amp 0 \amp 4 \amp 9 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 3 \amp 27
+					\end{array}\right] </mrow>
+					<mrow>\frac{1}{3} R_3 \rightarrow R_3, \amp \amp \qquad
+					\left[\begin{array}{rrrrr|r}
+					1 \amp 0 \amp 3 \amp -9 \amp 11 \amp 14 \\
+					0 \amp 0 \amp 2 \amp 0 \amp 4 \amp 9 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+					\end{array}\right] </mrow>
+					<mrow>\begin{array}{r}
+					-4 R_3 + R_2 \rightarrow R_2, \\
+					-11R_3 + R_1 \rightarrow R_1,
+					\end{array} \amp \amp \qquad
+					\left[\begin{array}{rrrrr|r}
+					1 \amp 0 \amp 3 \amp -9 \amp 0 \amp -85 \\
+					0 \amp 0 \amp 2 \amp 0 \amp 0 \amp -26 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+					\end{array}\right] </mrow>
+					<mrow>\frac{1}{2} R_2 \rightarrow R_2, \amp \amp \qquad
+					\left[\begin{array}{rrrrr|r}
+					1 \amp 0 \amp 3 \amp -9 \amp 0 \amp -85 \\
+					0 \amp 0 \amp 1 \amp 0 \amp 0 \amp -13 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+					\end{array}\right] </mrow>
+					<mrow>-3R_2 + R_1 \rightarrow R_1, \amp \amp \qquad
+					\left[\begin{array}{rrrrr|r}
+					1 \amp 0 \amp 0 \amp -9 \amp 0 \amp -46 \\
+					0 \amp 0 \amp 1 \amp 0 \amp 0 \amp -13 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+					\end{array}\right] </mrow>
+				</md>
+			</p>
+
+			<p>
+				And now this is in reduced row echelon form.
+				The linear system from this
+				equation can be written by solving for the leading variables:
+			</p>
+
+			<p>
+				<md>
+					<mrow>x_1 \amp = -46 + 9x_4,</mrow>
+					<mrow>x_3 \amp = -13 </mrow>
+					<mrow>x_5 \amp = 9</mrow>
+				</md>
+			</p>
+
+			<p>
+				and then the solution can be written in vector form as
+			</p>
+
+			<p>
+				<me>
+					\left\{ \begin{bmatrix}
+					-46 \\
+					0 \\
+					-13 \\
+					0 \\
+					9
+					\end{bmatrix} +
+					\begin{bmatrix}
+					0 \\ 1 \\ 0 \\ 0 \\ 0
+					\end{bmatrix} x_2 + \begin{bmatrix}
+					9 \\ 0 \\ 0 \\ 1 \\ 0
+					\end{bmatrix} x_4 \; | \; x_2, x_4 \in \mathbb{R}, \right\}
+				</me>
+			</p>
+
+			<p>
+				which is the same solution as that from that in <xref ref="ex-large-linear-solution" />
+			</p>
+
+			<p>
+				An alternative way to read off the solution from the reduced row echelon matrix
+				is to add rows of zeros where the free variables would be.
+				In this case in
+				row 2 and 4 and shifting others down to get
+			</p>
+
+			<p>
+				<me>
+					\left[\begin{array}{rrrrr|r}
+					1 \amp 0 \amp 0 \amp 0 \amp 0 \amp -46 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+					0 \amp 0 \amp 1 \amp 0 \amp 0 \amp -13 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9 \\
+					\end{array}\right]
+				</me>
+			</p>
+
+			<p>
+				The particular solution is now the last column.
+				The solution also contains <m>x_2</m>
+				terms which is the second column with a 1 instead of a 0 in the second row and also the
+				fourth column with a 1 instead of a 0 in the fourth row times <m>x_4</m>.
+			</p>
+		</solution>
+	</example>
+
+	<example>
+		<p>
+			Write down the solution set of the following linear system given in
+			the reduced row echelon form of the matrix:
+		</p>
+
+		<p>
+			<me>
+				\left[\begin{array}{rrrrrr|r}
+				1 \amp 0 \amp 3 \amp 0 \amp 0 \amp 5 \amp 11 \\
+				0 \amp 1 \amp -4 \amp 0 \amp 0 \amp 9 \amp -4 \\
+				0 \amp 0 \amp 0 \amp 1 \amp 0 \amp 3 \amp 5 \\
+				0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 0 \amp -2 \\
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			If we add a row between the 2nd and 3rd rows as well as after the fourth row, the matrix
+			is:
+		</p>
+
+		<p>
+			<me>
+				\left[\begin{array}{rrrrrr|r}
+				1 \amp 0 \amp 3 \amp 0 \amp 0 \amp 5 \amp 11 \\
+				0 \amp 1 \amp -4 \amp 0 \amp 0 \amp 9 \amp -4 \\
+				0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+				0 \amp 0 \amp 0 \amp 1 \amp 0 \amp 3 \amp 5 \\
+				0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 0 \amp -2 \\
+				0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			The the solution set is
+		</p>
+
+		<p>
+			<me>
+				\left\{ \begin{bmatrix}
+				11 \\ -4 \\ 0 \\ 5 \\ -2 \\ 0
+				\end{bmatrix} + \begin{bmatrix}
+				-3 \\ 4 \\ 1 \\ 0 \\ 0 \\ 0
+				\end{bmatrix} x_3 +
+				\begin{bmatrix}
+				-5 \\ -9 \\ 0 \\ -3 \\ 0 \\ 1
+				\end{bmatrix} x_6 \; | \; x_3, x_6 \in \mathbb{R} \right\}
+			</me>
+		</p>
+
+		<p>
+			Recalling that you need to replace the 0 in the 3rd row of the <m>x_3</m> vector with a
+			1 and replace the 0 in the 6th row of the <m>x_6</m> vector with a 1.
+		</p>
+	</example>
+</subsubsection>
+-->

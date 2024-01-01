@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-1d-wave-eqn">
+	<title>Solving the 1D Wave Equation</title>
+	<introduction>
+		<p>
+			We derived the 1D wave equation in section <xref ref="sect-modeling-pdes" />.
+			We will now solve this as an initial value problem.
+			Consider
+		</p>
+
+		<p>
+			<md>
+				<mrow>\frac{\partial^2 u}{\partial {t}^2} \amp= c^2 \frac{\partial^2 u}{\partial {x}^2}</mrow>
+			</md>
+		</p>
+
+		<p>
+			with boundary conditions
+		</p>
+
+		<p>
+			<md>
+				<mrow>u(0,t) \amp = u(L,t) = 0, \qquad \text{for $t \geq 0$}</mrow>
+			</md>
+		</p>
+
+		<p>
+			and initial conditions
+		</p>
+
+		<p>
+			<md>
+				<mrow>u(x,0) \amp = f(x)  \qquad  \text{for $0 \leq x \leq L$ } </mrow>
+				<mrow>u_t(x,0) \amp = 0 \qquad \text{for $0 \leq x \leq L$}</mrow>
+			</md>
+		</p>
+
+		<p>
+			The technique of <term>separation of variables</term> is the standard way to solve this and other linear PDEs.
+			First start by assuming that the solution <m>u(x,t)</m> can be written as a product of functions solely of
+			<m>x</m> and <m>t</m> or <m>u(x,t) = X(x) T(t)</m>.
+			Then substituting this into the PDE:
+		</p>
+
+		<p>
+			<md>
+				<mrow>\frac{\partial^2 (X(x)T(t))}{\partial {t}^2} \amp = c^2 \frac{\partial^2 (X(x) T(t))}{\partial {x}^2} </mrow>
+				<mrow>XT'' \amp = c^2 X'' T \amp\amp \text{dividing by $c^2XT$} </mrow>
+				<mrow>\frac{1}{c^2}\frac{T''}{T} \amp = \frac{X''}{ X} </mrow>
+			</md>
+		</p>
+
+		<p>
+			Now since <m>T</m> (and therefore <m>T''</m>) depends only on <m>t</m> and <m>X</m> (and also <m>X''</m>)
+			only depends on <m>x</m>, each side of the PDE must be equal to a constant (independent of
+			either <m>x</m> or <m>t</m>).
+			Let's say it is <m>-\lambda</m> or
+		</p>
+
+		<p>
+			<me>
+				\frac{1}{c^2} \frac{T''}{T} = \frac{X''}{X} = -\lambda
+			</me>
+		</p>
+
+		<p>
+			This results in two equations:
+		</p>
+
+		<p>
+			<md>
+				<mrow number="yes" xml:id="eq-sep-vars-T">T'' +c^2\lambda T \amp= 0</mrow>
+				<mrow number="yes" xml:id="eq-sep-vars-X"> X'' + \lambda X \amp = 0</mrow>
+			</md>
+		</p>
+
+		<p>
+			The boundary conditions are <m>u(0) = u(L) = 0</m> for all <m>t</m>, so substituting <m>u=XT</m> we get
+		</p>
+
+		<p>
+			<me>
+				X(0)T(t) = X(L) T(t) = 0
+			</me>
+		</p>
+
+		<p>
+			for all <m>t</m> or <m>X(0)=X(L)=0</m>.
+			The ODE for <m>X</m> is that in (<xref ref="eq-sep-vars-X" />) with these
+			boundary conditions.
+			This is a Sturm-Liouville problem that was solved in example <xref ref="ex-sturm-liouville" />.
+			We know that the only form of the solution is when <m>\lambda &gt; 0</m>
+			and from the problem that we solved above we know that
+		</p>
+
+		<p>
+			<men xml:id="eq-sep-vars-eigenvalues">
+				\lambda \amp = \frac{n^2 \pi^2}{L^2}
+			</men>
+		</p>
+
+		<p>
+			and the solution for <m>X</m> are the eigenfunctions of the problem:
+		</p>
+
+		<p>
+			<me>
+				X_n(x) = \sin \frac{n \pi x}{L}
+			</me>
+		</p>
+
+		<p>
+			for <m>n=1,2,3,\ldots</m>.
+			Next, we need to solve (<xref ref="eq:sep:vars:T" />) and using the
+			eigenvalues in (<xref ref="eq:sep:vars:eigenvalues" />)
+		</p>
+
+		<p>
+			<me>
+				T'' + c^2 \frac{n^2 \pi^2}{L^2} T = 0
+			</me>
+		</p>
+
+		<p>
+			The solution to this is found by assuming <m>T(t) = e^{r t}</m> and
+			getting the characteristic equation
+		</p>
+
+		<p>
+			<me>
+				r^2 + c^2 \frac{n^2 \pi^2}{L^2} = 0
+			</me>
+		</p>
+
+		<p>
+			and thus
+		</p>
+
+		<p>
+			<me>
+				r = \pm i \frac{n c \pi}{L}
+			</me>
+		</p>
+
+		<p>
+			and the solution to this is
+		</p>
+
+		<p>
+			<me>
+				T_n(t) = a_n \cos \biggl( \frac{n c \pi }{L} \biggr) t + b_n \sin \biggl( \frac{n c \pi }{L} \biggr) t
+			</me>
+		</p>
+
+		<p>
+			We know then that the following is a solution to the PDE:
+		</p>
+
+		<p>
+			<me>
+				u_n(x,t) = X_n(x) T_n(t) = \biggl( a_n \cos \biggl( \frac{n c \pi }{L} \biggr) t + b_n \sin \biggl( \frac{n c \pi }{L} \biggr) t \biggr) \sin \frac{n \pi x}{L}
+			</me>
+		</p>
+
+		<p>
+			The <term>principle of superposition</term> states that a sum of these solutions is also a solution to the original PDE and in fact the most general solution is
+		</p>
+
+		<p>
+			<md>
+				<mrow>u(x,t) \amp = \sum_{n=1}^{\infty} u_n(x,t) </mrow>
+				<mrow>\amp = \sum_{n=1}^{\infty} \biggl( a_n \cos \biggl( \frac{n c \pi }{L} \biggr) t + b_n \sin \biggl( \frac{n c \pi }{L} \biggr) t \biggr) \sin \frac{n \pi x}{L} </mrow>
+			</md>
+		</p>
+
+		<p>
+			Lastly, we use the initial conditions <m>u(x,0)=f(x)</m>  and <m>u_t(x,0)=0</m>  for <m>0 \leq x \leq L</m> to solve for <m>a_n</m> and <m>b_n</m> above.
+			We will look at the second condition first:
+		</p>
+
+		<p>
+			<me>
+				u_t(x,t) = \sum_{n=1}^{\infty} \frac{n c \pi}{L} \biggl( -a_n \sin \biggl( \frac{n c \pi }{L} \biggr) t + b_n \cos \biggl( \frac{n c \pi }{L} \biggr) t \biggr) \sin \frac{n \pi x}{L}
+			</me>
+		</p>
+
+		<p>
+			and evaluated at <m>t=0</m>:
+		</p>
+
+		<p>
+			<me>
+				u_t(x,0) = \sum_{n=1}^{\infty} \frac{n c \pi}{L} \biggl( 0 + b_n \biggr) \sin \frac{n \pi x}{L}
+			</me>
+		</p>
+
+		<p>
+			and since <m>u_t(x,0)\equiv 0</m>, then <m>b_n=0</m>.
+			The first condition:
+		</p>
+
+		<p>
+			<me>
+				u(x,0) = f(x) = \sum_{n=1}^{\infty}  a_n \sin \frac{n \pi x}{L}
+			</me>
+		</p>
+
+		<p>
+			is the Fourier sine series for <m>0 \leq x \leq L</m>.
+			Thus
+		</p>
+
+		<p>
+			<me>
+				a_n = \frac{2}{L} \int_{0}^L f(x) \sin \frac{n \pi x}{L} \, dx
+			</me>
+		</p>
+
+		<p>
+			We summarize the solution to the wave equation.
+		</p>
+
+		<remark>
+			<p>
+				The solution to the wave equation
+			</p>
+
+			<p>
+				<me>
+					u_{tt} =c^2 u_{xx}
+				</me>
+			</p>
+
+			<p>
+				with boundary conditions
+			</p>
+
+			<p>
+				<me>
+					u(0,t) = u(L,t) = 0
+				</me>
+			</p>
+
+			<p>
+				and initial conditions
+			</p>
+
+			<p>
+				<md>
+					<mrow>(x,0) \amp = f(x),</mrow>
+					<mrow>u_t(x,0) \amp = 0</mrow>
+				</md>
+			</p>
+
+			<p>
+				is
+			</p>
+
+			<p>
+				<me>
+					u(x,t) = \sum_{n=1}^{\infty}  a_n \cos \biggl( \frac{n c \pi }{L} \biggr) t  \sin \frac{n \pi x}{L}
+				</me>
+			</p>
+
+			<p>
+				where
+			</p>
+
+			<p>
+				<me>
+					a_n  = \frac{2}{L} \int_0^L f(x) \sin \frac{n\pi x}{L} \, dx
+				</me>
+			</p>
+		</remark>
+
+		<p>
+			The following two examples show specific solutions for given functions <m>f(x)</m>.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find the specific solution to the wave equation if <m>f(x) = 0.1 \sin (\pi x/L)</m>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Specifically, we only need to find the coefficients <m>a_n</m> above:
+				</p>
+
+				<p>
+					<md>
+						<mrow>a_n \amp = \frac{2}{L} \int_0^L 0.1 \sin \frac{\pi x}{L}  \sin \frac{n\pi x}{L}  \, dx </mrow>
+						<mrow>\amp = \begin{cases}
+						0.1 \qquad \text{if $n=1$} \\
+						0 \qquad \text{otherwise}
+						\end{cases}</mrow>
+					</md>
+				</p>
+
+				<p>
+					Thus the full solution to the PDE is:
+				</p>
+
+				<p>
+					<me>
+						u(x,t) = 0.1 \sin \frac{\pi x}{L} \cos \frac{\pi t}{L}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<example>
+			<statement>
+				<p>
+					Find the solution to the wave equation above if the initial shape of the string is
+				</p>
+
+				<p>
+					<me>
+						f(x) = \begin{cases}
+						kx,\amp  \text{if $0\leq x &lt; L/2$} \\
+						k(L-x),\amp \text{if $L/2 \leq x \leq L$}
+						\end{cases}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					As before, we only need to find the coefficients of <m>a_n</m> given by
+				</p>
+
+				<p>
+					<md>
+						<mrow>a_n \amp = \frac{2}{L} \int_0^L  f(x)  \sin \frac{n \pi x}{L} \, dx </mrow>
+						<mrow>\amp = \frac{2}{L} \int_0^{L/2} kx \sin \frac{n \pi x}{L} \, dx + \frac{2}{L} \int_{L/2}^L k(L-x) \sin \frac{n \pi x}{L} \, dx </mrow>
+						<mrow>\amp = \begin{cases}
+						\frac{4k L}{n^2 \pi^2} (-1)^{(n-1)/2} , \amp \text{if $n$ is odd} \\
+						0, \amp \text{otherwise}
+						\end{cases}</mrow>
+					</md>
+				</p>
+
+				<p>
+					And thus the full solution to the wave equation is:
+				</p>
+
+				<p>
+					<md>
+						<mrow>u(x,t) \amp = \sum_{n=1}^{\infty}a_n \sin \biggl(\frac{n \pi x}{L} \biggr) \sin \biggl(\frac{n \pi t}{L} \biggr)  </mrow>
+						<mrow>\amp = \sum_{n=1}^{\infty} \frac{4 k L (-1)^{n+1}}{\pi^2 (2n-1)^2} \sin \biggl( \frac{(2n-1) \pi x}{L} \biggr)   \sin \biggl(\frac{(2n-1) \pi t}{L} \biggr) </mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+	</introduction>
+
+	<subsection>
+		<title>Solution to the Wave Equation with a free boundary condition</title>
+		<p>
+			We now look at the wave equation with what is termed a free boundary condition.
+			Consider
+		</p>
+
+		<p>
+			<me>
+				\frac{\partial^2 u}{\partial {t}^2} = c^2 \frac{\partial^2 u}{\partial {x}^2}
+			</me>
+		</p>
+
+		<p>
+			with boundary conditions
+		</p>
+
+		<p>
+			<men xml:id="eqn-wave-bc-free">
+				u(0,t) = 0 \qquad u_x(L,t) = 0, \qquad \text{for $t \geq 0$}
+			</men>
+		</p>
+
+		<p>
+			<md>
+				<mrow number="yes" xml:id="eq-wave-free-ic1">u(x,0) \amp = f(x) \qquad \text{for $0 \leq x \leq L$ } </mrow>
+				<mrow number="yes" xml:id="eq-wave-free-ic2">u_t(x,0) \amp = 0 \qquad \text{for $0 \leq x \leq L$} </mrow>
+			</md>
+		</p>
+
+		<p>
+			and the difference between this and the initial value problem at the beginning of
+			the section is the boundary condition at <m>x=L</m>.
+			Above, the function <m>u</m> was forced to be 0 there and in this case,
+			the derivative is 0 at <m>x=L</m>.
+			Using separation of variables by assuming that <m>u(x,t)=X(x)T(t)</m>, and
+			substituting into the wave equation and dividing through by <m>c^2 XT</m>, we again get the equation
+		</p>
+
+		<p>
+			<me>
+				\frac{1}{c^2} \frac{T''}{T} = \frac{X''}{X} = -\lambda^2
+			</me>
+		</p>
+
+		<p>
+			where again since each term only depends on <m>t</m> or <m>x</m>, it must be a constant,
+			which we say is <m>-\lambda</m>.
+			The differential equation in <m>X</m> is
+		</p>
+
+		<p>
+			<md>
+				<mrow>X'' + \lambda X \amp = 0 \amp X(0)\amp = 0, X'(L)=0</mrow>
+			</md>
+		</p>
+
+		<p>
+			where the boundary conditions came from (<xref ref="eq-wave-bc-free" />).
+			The solution to this Sturm-Liouville problem is similar to those in  <xref ref="ex-sturm-liouville" />
+			and <xref ref="ex-sturm-liouville-2" />, however the details of this are not shown.
+			The eigenfunctions and eigenvalues of this are
+		</p>
+
+		<p>
+			<md>
+				<mrow>X_n(x) \amp = \sin \lambda_n x \amp \lambda_n \amp = \frac{(2n-1)\pi}{2L}</mrow>
+			</md>
+		</p>
+
+		<p>
+			Next, we seek the solution to <m>T''+c^2 \lambda^2 T = 0</m> which again, similar
+			to solution of the wave equation with fixed boundary conditions, is
+		</p>
+
+		<p>
+			<me>
+				T = a \cos c \lambda t + b \sin c \lambda t
+			</me>
+		</p>
+
+		<p>
+			which has a solution for each value of <m>n</m> or
+		</p>
+
+		<p>
+			<me>
+				T_n = a_n \cos c \frac{(2n-1)\pi}{2L} t + b_n \sin c \frac{(2n-1)\pi}{2L} t
+			</me>
+		</p>
+
+		<p>
+			Using the principle of superposition, the sum of solutions is also a solution, so
+		</p>
+
+		<p>
+			<men xml:id="eqn-wave-free-eq1">
+				u(x,t) \amp = \sum_{n=1}^{\infty} \biggl(a_n \cos c \frac{(2n-1)\pi}{2L} t + b_n \sin c \frac{(2n-1)\pi}{2L} t \biggr) \sin \frac{(2n-1)\pi x}{2L}
+			</men>
+		</p>
+
+		<p>
+			To find the particular solution, we need to find the constants <m>a_n</m> and <m>b_n</m>
+			which can be found using the initial conditions of the problem.
+			Similar to the problem above with the fixed boundary conditions, we will use the initial
+			condition in (<xref ref="eq-wave-free-ic2" />) first, which requires that we know the derivative.
+			And
+		</p>
+
+		<p>
+			<me>
+				u_t = \sum_{n=1}^{\infty} c \lambda_n \biggl(-a_n \sin c \frac{(2n-1)\pi}{2L} t + b_n \cos c \frac{(2n-1)\pi}{2L} t \biggr) \sin \frac{(2n-1)\pi x}{2L}
+			</me>
+		</p>
+
+		<p>
+			Applying the initial condition in (<xref ref="eq-wave-free-ic2" />),
+		</p>
+
+		<p>
+			<me>
+				u_t(x,0)=0 = \sum_{n=1}^{\infty}b_n c \lambda_n  \sin \frac{(2n-1)\pi x}{2L}
+			</me>
+		</p>
+
+		<p>
+			which implies that <m>b_n=0</m> for all <m>n</m>.
+			Next, if we substitute this into (<xref ref="eq-wave-free-eq1" />) and
+			apply the boundary condition in (<xref ref="eq-wave-free-ic1" />),
+		</p>
+
+		<p>
+			<me>
+				u(x,0) = f(x) = \sum_{n=1}^{\infty} a_n \sin \frac{(2n-1)\pi x}{2L}
+			</me>
+		</p>
+
+		<p>
+			and the coefficients can be found using Theorem <xref ref="thm-sturm-liouville" />, to be
+		</p>
+
+		<p>
+			<md>
+				<mrow>a_n \amp = \frac{\langle f(x), X_n(x) \rangle}{\langle X_n(x), X_n(x) \rangle} </mrow>
+				<mrow>\amp = \frac{\int_0^L f(x) \sin (2n-1)\pi x/(2L) \, dx }{\int_0^L \sin^2 (2n-1)\pi x/(2L) \, dx } </mrow>
+				<mrow>\amp = \frac{2}{L} \int_0^L f(x) \sin  \frac{(2n-1)\pi x}{2L} \, dx</mrow>
+			</md>
+		</p>
+
+		<remark>
+			<p>
+				To summarize, the solution to the 1D wave equation
+			</p>
+
+			<p>
+				<me>
+					\frac{\partial^2 u}{\partial {t}^2} = c^2 \frac{\partial^2 u}{\partial {x}^2}
+				</me>
+			</p>
+
+			<p>
+				with boundary conditions
+			</p>
+
+			<p>
+				<md>
+					<mrow>u(0,t) \amp = 0 \qquad u_x(L,t) = 0, \qquad \text{for $t \geq 0$} </mrow>
+				</md>
+			</p>
+
+			<p>
+				and initial conditions
+			</p>
+
+			<p>
+				<md>
+					<mrow>u(x,0) \amp = f(x)  \qquad  \text{for $0 \leq x \leq L$} </mrow>
+					<mrow>u_t(x,0) \amp = 0 \qquad \text{for $0 \leq x \leq L$}</mrow>
+				</md>
+			</p>
+
+			<p>
+				is
+			</p>
+
+			<p>
+				<men xml:id="eq-wave-free-solution">
+					u(x,t) \amp = \sum_{n=1}^{\infty} a_n \cos c \frac{(2n-1)\pi}{2L} t  \sin \frac{(2n-1)\pi x}{2L}
+				</men>
+			</p>
+
+			<p>
+				where
+			</p>
+
+			<p>
+				<men xml:id="eq-wave-free-fourier-coeffs">
+					a_n \amp = \frac{2}{L} \int_0^L f(x) \sin  \frac{(2n-1)\pi x}{2L} \, dx
+				</men>
+			</p>
+		</remark>
+
+		<example>
+			<statement>
+				<p>
+					Find the solution to the 1D wave equation with free boundary condition at <m>x=1</m> if
+				</p>
+
+				<p>
+					<md>
+						<mrow>f(x) \amp= x^2 \amp \amp\text{for $0 \leq x \leq 1$}</mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					In this case, we only need to find the constants <m>a_n</m> as defined in (<xref ref="eq-wave-free-fourier-coeffs" />),
+				</p>
+
+				<p>
+					<md>
+						<mrow>a_n \amp = 2 \int_0^1 x^2 \sin \frac{(2n-1)\pi x}{2} \, dx </mrow>
+						<mrow>\amp = \frac{(-1)^n (8\pi + 16\pi n) -16}{(2n-1)^3 \pi^3}</mrow>
+					</md>
+				</p>
+
+				<p>
+					So the full solution to this wave equation is
+				</p>
+
+				<p>
+					<me>
+						u(x,t) = \sum_{n=1}^{\infty} \frac{(-1)^n (8\pi + 16\pi n) -16}{(2n-1)^3 \pi^3} \cos c \frac{(2n-1)\pi}{2L} t  \sin \frac{(2n-1)\pi x}{2L}
+					</me>
+				</p>
+			</solution>
+		</example>
+	</subsection>
+</section>

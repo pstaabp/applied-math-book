@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-linear-ode">
+	<title>Linear ordinary differential equations</title>
+	<introduction>
+		<p>
+			As discussed in section <xref ref="sect-part-deriv-diff-eqns" />, a differential equation
+			is linear if it is linear in its dependent variable and derivatives of the dependent variable.
+			Let's assume that <m>y</m> is the dependent variable and <m>x</m> is the independent variable.
+			The most general <m>n</m>th order ordinary linear differential equation as the form:
+		</p>
+
+		<p>
+			<men xml:id="eq-ODE-linear">
+				a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \cdots + a_1(x) y' + a_0 (x) y = f(x)
+			</men>
+		</p>
+
+		<p>
+			In the most general terms, this differential equation is very difficult to solve despite being linear.
+			However, there are cases when this has nice solutions.
+			For the most part, we'll look at such equations in this section.
+		</p>
+	</introduction>
+
+	<subsection>
+		<title>Second-order Constant-Coefficient Homogeneous differential equations
+		</title>
+
+		<p>
+			The most important ordinary differential equations that arise from solving the wave and heat
+			equation are 2nd-order constant coefficient homogeneous differential equations.
+			If <m>f(x) \equiv 0</m> in <xref ref="eq-ODE-linear" />, then it is called homogeneous and if the
+			coefficients of the <m>y</m> terms and its derivatives are not dependent on <m>x</m>, then the equation is constant-coefficient.
+			A general 2nd-order ODE with these characteristics can be written:
+		</p>
+
+		<p>
+			<me>
+				a y'' + b y' + cy = 0
+			</me>
+		</p>
+
+		<p>
+			where <m>a,b,c</m> are real constants.
+			To solve these, if we let <m>y=e^{rx}</m> and substitute this into the ODE,
+		</p>
+
+		<p>
+			<md>
+				<mrow>ar^2 e^{rx} + br e^{rx} + ce^{rx} \amp = 0 </mrow>
+				<mrow>e^{rx}(ar^2 + br +c) \amp = 0 </mrow>
+			</md>
+			and since <m>e^{rx}</m> is never 0
+			<md>
+				<mrow>ar^2+br+c=0</mrow>
+			</md>
+		</p>
+
+		<p>
+			is called the <term>characteristic equation</term> related to the ODE.
+			In general, there are two solutions to this equation, <m>r_1</m> and <m>r_2</m>.
+			The general solution to the equation will thus be
+		</p>
+
+		<p>
+			<me>
+				y = c_1 e^{r_1 x} + c_2 e^{r_2 x}
+			</me>
+		</p>
+
+		<example xml:id="ex-solution-DE-image">
+			<statement>
+				<p>
+					Find the general solution to
+				</p>
+
+				<p>
+					<me>
+						y'' + 3y' + 2y = 0
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					The characteristic equation is
+				</p>
+
+				<p>
+					<md>
+						<mrow>r^2 + 3r+2 \amp = 0 </mrow>
+						<mrow> (r+2)(r+1) \amp = 0</mrow>
+					</md>
+				</p>
+
+				<p>
+					which has solutions <m>r=-2</m> and <m>r=-1</m>.
+					The general solution thus is
+				</p>
+
+				<p>
+					<me>
+						y = c_1 e^{-2x} + c_2 e^{-x}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			To find the values of <m>c_1</m> and <m>c_2</m> in the example above or any other
+			differential equation, additional information must be given.
+			This is analogous to using a point to find the integration constant from an
+			indefinite integral.
+			The information is generally framed in the language of initial conditions and
+			initial value problems as defined below.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					A differential equation has <term>initial conditions</term> if at some point
+					<m>t_0</m>, then <m>y(t_0)</m>, <m>y'(t_0), \ldots, y^{(n-1)}(t_0)</m>
+					are known, where <m>n</m> is the order of the differential equation.
+					The differential equation together with the initial conditions is known as
+					a <term>initial value problem</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			The next example shows how to fully solve an initial value problem:
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find the solution to the initial value problem
+				</p>
+
+				<p>
+					<me>
+						y''+3y'+2y = 0 \qquad \text{$y(0)=3, y'(0) = -4$}.
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					To solve the initial value problem we first solve the differential equation,
+					and this was done in <xref ref="ex-solution-DE-image" />
+					And the general solution is
+				</p>
+
+				<p>
+					<men xml:id="eq-ivp-ex1">
+						y  = c_1 e^{-2x} + c_2 e^{-x}
+					</men>
+				</p>
+
+				<p>
+					Since the initial conditions include knowing the derivative, we will need
+				</p>
+
+				<p>
+					<men xml:id="eq-ivp-ex2">
+						y'  = -2c_1 e^{-2x} -c_2 e^{-x}
+					</men>
+				</p>
+
+				<p>
+					and then we will substitute <m>y(0)=3</m> into <xref ref="eq-ivp-ex1" />
+					and <m>y'(0)=-4</m> into <xref ref="eq-ivp-ex2" />
+				</p>
+
+				<p>
+					<md>
+						<mrow>3 \amp = c_1 + c_2 </mrow>
+						<mrow>-4 \amp = -2c_1 -c_2</mrow>
+					</md>
+				</p>
+
+				<p>
+					and the solution to this is <m>c_1=1</m> and <m>c_2=2</m>.
+					Therefore the solution to the initial value problem is
+				</p>
+
+				<p>
+					<me>
+						y  = e^{-2x} + 2e^{-x}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<example>
+			<statement>
+				<p>
+					Find the general solution to  <m>y'' + 9y=0</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					The characteristic equation is
+				</p>
+
+				<p>
+					<md>
+						<mrow>r^2+9 \amp = 0 </mrow>
+						<mrow>r \amp = \pm 3i</mrow>
+					</md>
+				</p>
+
+				<p>
+					Thus the general solution is
+				</p>
+
+				<p>
+					<me>
+						y = c_1 e^{3i x} + c_2 e^{-3ix}
+					</me>
+				</p>
+
+				<p>
+					However, we will use Euler's Formula:
+				</p>
+
+				<p>
+					<me>
+						e^{ki\theta} = \cos k\theta + i \sin k\theta
+					</me>
+				</p>
+
+				<p>
+					to write the equation as a real function:
+				</p>
+
+				<p>
+					<md>
+						<mrow>y \amp = c_1 (\cos 3x + i \sin 3x) + c_2 (\cos 3x - i \sin 3x) </mrow>
+						<mrow>\amp = (c_1+c_2) \cos 3x + (ic_1 - ic_2) \sin 3x </mrow>
+					</md>
+				</p>
+
+				<p>
+					letting <m>C_1 = c_1 + c_2</m>, <m>C_2 = ic_1-ic_2</m>
+				</p>
+
+				<p>
+					<md>
+						<mrow>y \amp = C_1 \cos 3x + C_2 \sin 3x</mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The characteristic equation for this next example has complex roots.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find the solution to <m>y'' + 4y' +5y=0</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					The characteristic equation for this differential equation is
+				</p>
+
+				<p>
+					<me>
+						r^2 + 4r + 5  = 0
+					</me>
+				</p>
+
+				<p>
+					and since this can't be factored, we'll use the quadratic equation to solve this:
+				</p>
+
+				<p>
+					<me>
+						r = \frac{-4 \pm \sqrt{16-20}}{2} = -2 \pm i
+					</me>
+				</p>
+
+				<p>
+					and  using <m>y=e^{rx}</m> the general solution to this would be written
+				</p>
+
+				<p>
+					<md>
+						<mrow>y \amp = c_1 e^{(-2 + i)x} + c_2 e^{(-2-i)x}</mrow>
+						<mrow>\amp = e^{-2x} (c_1 e^{ix} + c_2 e^{-ix}) </mrow>
+						<mrow>\amp = e^{-2x} \bigl( c_1 (\cos x + i \sin x) + c_2 (\cos x - i \sin x) \bigr) </mrow>
+						<mrow>\amp = e^{-2x} \bigl( C_1 \cos x + C_2 \sin x \bigr)</mrow>
+					</md>
+				</p>
+
+				<p>
+					where <m>C_1 = c_1+c_2</m> and <m>C_2 = i (c1-c_2)</m>.
+				</p>
+			</solution>
+		</example>
+
+		<lemma xml:id="lem-soln-2nd-order-DE-homo">
+			<statement>
+				<p>
+					Consider the general 2nd-order constant-coefficient linear homogeneous differential equation,
+				</p>
+
+				<p>
+					<men xml:id="eq-general-2nd-order-DE-homo">
+						a y'' + b y' + c y = 0
+					</men>
+				</p>
+
+				<p>
+					and let <m>r_1</m> and <m>r_2</m> be the roots of the characteristic equation.
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								If <m>r_1</m> and <m>r_2</m> are real and distinct, then the general solution to
+								<xref ref="eq-general-2nd-order-DE-homo" /> is
+							</p>
+
+							<p>
+								<men xml:id="eq-soln-2nd-order-DE-homo-eq1">
+									y = c_1 e^{r_1 x} + c_2 e^{r_2 x}
+								</men>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								If <m>r_1=r_2</m> is the only real root of the characteristic equation then the general
+								solution to <xref ref="eq-general-2nd-order-DE-homo"/> is
+							</p>
+
+							<p>
+								<men xml:id="eq-soln-2nd-order-DE-homo-eq2">
+									y = e^{r_1 x} (c_1 + c_2 x )
+								</men>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								If the roots of the characteristic equation are pure imaginary, that
+								is <m>r_1=\beta i</m> and <m>r_2=-\beta i</m>, then the solution
+								to <xref ref="eq-general-2nd-order-DE-homo"/> is
+							</p>
+
+							<p>
+								<men xml:id="eq-soln-2nd-order-DE-homo-eq3">
+									y = c_1 \sin \beta x + c_2 \cos \beta x
+								</men>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								and if the roots of the characteristic equation are complex conjugates,
+								that is <m>r_1=\alpha + \beta i </m> and <m>r_1=\alpha - \beta i </m>, then
+								the solution to (<xref ref="eq-general-2nd-order-DE-homo" />) is
+							</p>
+
+							<p>
+								<men xml:id="eq-soln-2nd-order-DE-homo-eq4">
+									y = e^{ax} \bigl( c_1 \sin \beta x + c_2 \cos \beta x)
+								</men>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					First, recall that the characteristic equation of (<xref ref="eq-general-2nd-order-DE-homo" />) is
+				</p>
+
+				<p>
+					<me>
+						a r^2 + br+c = 0
+					</me>
+				</p>
+
+				<p>
+					We will prove each statement in order.
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								The derivatives of (<xref ref="eq-soln-2nd-order-DE-homo-eq1" />) are
+							</p>
+
+							<p>
+								<md>
+									<mrow>y' \amp = c_1 r_1 e^{r_1 x} + c_2 r_2 e^{r_2 x} </mrow>
+									<mrow>y'' \amp = c_1 r_1^2 e^{r_1 x} + c_2 r_2^2 e^{r_2 x}</mrow>
+								</md>
+							</p>
+
+							<p>
+								and substituting these into (<xref ref="eq-general-2nd-order-DE-homo" />),
+							</p>
+
+							<p>
+								<md>
+									<mrow>a y'' + b y' + c y \amp =
+									a (c_1 r_1^2 e^{r_1 x} + c_2 r_2^2 e^{r_2 x}  ) + b(c_1 r_1 e^{r_1 x} </mrow>
+									<mrow>\amp \qquad + c_2 r_2 e^{r_2 x}) + c(c_1 e^{r_1 x} + c_2 e^{r_2 x})</mrow>
+								</md>
+							</p>
+
+							<p>
+								rearranging
+							</p>
+
+							<p>
+								<md>
+									<mrow>\amp =  c_1 (a r_1^2 + b r_1 + c) e^{r_1 x} + c_2 (a r_2^2 + b r_2 + c) e^{r_2 x}</mrow>
+								</md>
+							</p>
+
+							<p>
+								and since <m>r_1</m> and <m>r_2</m> are roots of the characteristic equation,
+								then both terms in parentheses are zero and
+							</p>
+
+							<p>
+								<me>
+									a y'' + b y' + c y =  0
+								</me>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								The derivatives of <xref ref="eq-soln-2nd-order-DE-homo-eq2" /> are
+							</p>
+
+							<p>
+								<md>
+									<mrow>y' \amp = e^{r_1 x} (r_1 c_1 + c_2 + r_1 c_2  x ) </mrow>
+									<mrow>y'' \amp = e^{r_1 x} (r_1^2 c_1 + 2 r_1 c_2 + r_1^2 c_2 x)</mrow>
+								</md>
+							</p>
+
+							<p>
+								where the product rule has been used.
+								In this case, recall also that since <m>r_1</m> is the only real root,
+								that <m>r_1 = -b/(2a)</m> from the quadratic formula with the discriminant <m>b^2-4ac=0</m>.
+								Substituting into <xref ref="eq-general-2nd-order-DE-homo" />
+							</p>
+
+							<p>
+								<md>
+									<mrow>a y'' + by' + cy \amp = a e^{r_1 x} (r_1^2 c_1 + 2 r_1 c_2 + r_1^2 c_2 x) </mrow>
+									<mrow>\amp  \qquad + be^{r_1 x} (r_1 c_1 + c_2 + r_1 c_2  x ) + c (c_1 + c_2 x )e^{r_1 x} </mrow>
+									<mrow>\amp = \bigl( c_1 (a r_1^2 + b r_1 + c) + c_2 (2 a r_1 + b) </mrow>
+									<mrow>\amp \qquad \qquad + c_2 x (a r_1^2  + br_1  + c)) \bigr) e^{r_1 x}  =0</mrow>
+								</md>
+							</p>
+
+							<p>
+								where the term with factor <m>c_1</m>  and the term with factor <m>c_2 x</m> are each 0,
+								because <m>r_1</m> is a root of the characteristic equation.
+								Lastly, the term with factor <m>c_2</m> is 0 because as stated about <m>r_1=-b/(2a)</m>.
+								\item Note that since the roots are pure imaginary, then then <m>b=0</m> in
+								(<xref ref="eq-general-2nd-order-DE-homo" />) and therefore <m>r_1</m> and <m>r_2</m>
+								satisfy <m>r^2=-c/a</m> and since <m>r_1=\beta i</m>, then <m>\beta^2=c/a</m>.
+								The derivatives of (<xref ref="eq-soln-2nd-order-DE-homo-eq3" />) are
+							</p>
+
+							<p>
+								<md>
+									<mrow>y' \amp = c_1 \beta \cos \beta x - c_2 \beta \sin \beta x </mrow>
+									<mrow>y'' \amp = - c_1 \beta^2 \sin \beta x  -c_2 \beta^2 \cos \beta x</mrow>
+								</md>
+							</p>
+
+							<p>
+								and then substituting into (<xref ref="eq-general-2nd-order-DE-homo" />) with <m>b=0</m>,
+							</p>
+
+							<p>
+								<md>
+									<mrow>ay'' + c y \amp = a (-c_1 \beta^2 \sin \beta x - c_2 \beta^2 \cos \beta x)
+									+ c ( c_1 \sin \beta x  +c_2 \cos \beta x ) </mrow>
+									<mrow>\amp = c_1 (-a\beta^2  + c) \sin \beta x + c_2 (-a\beta^2 +c) \cos \beta x =0
+									</mrow>
+								</md>
+							</p>
+
+							<p>
+								since <m>\beta^2=c/a</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								In this case, since the roots are complex conjugates,
+								we can write <m>r_1=\alpha+i\beta </m> and <m>r_2=\alpha-i\beta</m>.
+								The characteristic equation can be written:
+							</p>
+
+							<p>
+								<md>
+									<mrow>a(r-r_1)(r-r_2) \amp = a(r-(\alpha + i \beta))(r-(\alpha-i\beta)) </mrow>
+									<mrow>\amp = a r^2 - 2 a \alpha r + a(\alpha^2+\beta^2) = 0</mrow>
+								</md>
+							</p>
+
+							<p>
+								which implies that <m>b=-2a \alpha</m> and <m>c=a(\alpha^2+\beta^2)</m>.
+								The derivatives of <xref ref="eq-soln-2nd-order-DE-homo-eq4" /> are
+							</p>
+
+							<p>
+								<md>
+									<mrow>y' \amp = e^{\alpha x} \bigl( (c_1 \alpha - c_2 \beta) \sin \beta x + (c_2 \alpha + c_1 \beta) \cos \beta x \bigr) </mrow>
+									<mrow>y'' \amp = e^{\alpha x} \bigl( (c_1 \alpha^2 -2 c_2 \alpha \beta - c_1 \beta^2) \sin \beta x </mrow>
+									<mrow>\amp \qquad \qquad + (c_2 \alpha^2 + 2 c_1 \alpha \beta - c_2 \beta^2) \cos \beta x\bigr)</mrow>
+								</md>
+							</p>
+
+							<p>
+								and substituting them into <xref ref="eq-general-2nd-order-DE-homo" />,
+							</p>
+
+							<p>
+								<md>
+									<mrow>a y'' + by' + cy \amp = a e^{\alpha x} \bigl( (c_1 \alpha^2 -2 c_2 \alpha \beta - c_1 \beta^2) \sin \beta x </mrow>
+									<mrow>\amp \qquad \qquad + (c_2 \alpha^2 + 2 c_1 \alpha \beta - c_2 \beta^2) \cos \beta x\bigr) </mrow>
+									<mrow>\amp \qquad + b e^{\alpha x} \bigl( (c_1 \alpha - c_2 \beta) \sin \beta x + (c_2 \alpha + c_1 \beta) \cos \beta x \bigr)  </mrow>
+									<mrow>\amp \qquad + c e^{ax} \bigl( c_1 \sin \beta x + c_2 \cos \beta x) </mrow>
+									<mrow>\amp = e^{\alpha x} \bigl( c_1 (a\alpha^2-a\beta^2 +b\alpha + c) \sin \beta x </mrow>
+									<mrow>\amp \qquad + c_1 (2a\alpha\beta+b\beta) \cos \beta x + c_2 (-2a\alpha \beta-b\beta) \sin \beta x  </mrow>
+									<mrow number="yes" xml:id="eq-soln-2nd-order-DE-homo-eq4-proof">\amp \qquad + c_2 (a \alpha^2 - a \beta^2 + b \alpha + c) \bigr) </mrow>
+								</md>
+							</p>
+
+							<p>
+								And using <m>b=-2a\alpha</m> and <m>c=a(\alpha^2+\beta^2)</m>, the right hand side of (<xref ref="eq-soln-2nd-order-DE-homo-eq4-proof" />) is 0, therefore
+								(<xref ref="eq-soln-2nd-order-DE-homo-eq4" />) is a solution.
+							</p>
+						</li>
+					</ol>
+				</p>
+			</proof>
+		</lemma>
+	</subsection>
+
+	<subsection>
+		<title>Solutions Differential Equations as Vector Spaces</title>
+		<p>
+			We studied vector spaces in section <xref ref="sect-vector-spaces" /> and a common
+			example of a vector space that is not <m>\mathbb{R}^n</m> is that of functions.
+			It can be shown that the set related to the differential equation in
+			<xref ref="ex-solution-DE-image" />
+		</p>
+
+		<p>
+			<me>
+				V  = \{ y \in \mathcal{C}^{(2)}(\mathbb{R}) \; | \; y'' + 9 y = 0 \}
+			</me>
+		</p>
+
+		<p>
+			is a vector space or a subspace of <m>\mathcal{C}^{(2)}</m>, the vector space of all functions with continuous 2nd derivatives.
+			The basis of the subspace are the two solutions of the differential equation or <m>B=(\cos 3x, \sin 3x)</m>.
+			Note that the general solution to the differential equation is the linear
+			combination of the basis vectors or the span of the two solutions.
+		</p>
+	</subsection>
+</section>
+

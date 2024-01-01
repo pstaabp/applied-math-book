@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-eigenvalues">
+  <title>Eigenvalues and Eigenvectors</title>
+
+  <introduction>
+    <definition>
+      <statement>
+        <p> For a square matrix <m>A</m>, an <term>eigenvalue</term> <m>\lambda</m> with related <term>
+          eigenvector</term> <m>\vec{v}</m> satisfy</p>
+
+        <p>
+          <me>
+            A \vec{v} = \lambda \vec{v}
+          </me>
+        </p>
+
+        <p>as long as <m>\vec{v}</m> is not the zero vector. </p>
+      </statement>
+    </definition>
+
+    <p> Recall that the matrix operation <m>A \vec{v}</m> is a linear transformation on <m>\vec{v}</m>,
+      that is, it take a vector <m>\vec{v}</m> to another vector. Thus the eigenvector of a matrix
+      is a vector such that <m>A\vec{v}</m> results in a vector in the same direction as <m>\vec{v}</m>.
+      The eigenvalue is the scalar transformation associated with this. </p>
+
+    <example>
+      <statement>
+        <p> Show that <m>\vec{v}=[1\;\;1]^T</m> is a eigenvector of</p>
+        <p>
+          <me>
+            A =\begin{bmatrix}
+            3 \amp 4 \\
+            2 \amp 5
+            \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+
+        <p> We need to show that this satisfies <m>A \vec{v} = \lambda \vec{v}</m> for some scalar <m>
+          \lambda</m>. Since</p>
+
+        <p>
+          <me>
+            A \vec{v} =
+            \begin{bmatrix}
+            3 \amp 4 \\
+            2 \amp 5
+            \end{bmatrix}
+            \begin{bmatrix}
+            1 \\ 1
+            \end{bmatrix} =
+            \begin{bmatrix}
+            7 \\ 7
+            \end{bmatrix}
+          </me>
+        </p>
+        <p> and since this matrix is 7 times the vector <m>\vec{v}</m>, this proves that <m>\vec{v}</m>
+          is an eigenvector. The scale number 7 is the eigenvalue. </p>
+      </solution>
+    </example>
+
+  </introduction>
+
+  <subsection xml:id="sect-finding-eigenvalues-eigenvectors">
+    <title>Finding Eigenvalues and Eigenvectors</title>
+
+    <p> We will first find the eigenvalues of a given matrix. Start with the eigenvector equation:</p>
+    <p>
+      <md>
+        <mrow>A \vec{v} \amp = \lambda \vec{v} \amp \amp \text{subtract $\lambda \vec{v}$}</mrow>
+        <mrow>A \vec{v} - \lambda \vec{v} \amp = \vec{0}, \amp \amp \text{introduce an identity
+          matrix}</mrow>
+        <mrow>A \vec{v} - \lambda I \vec{v} \amp = \vec{0}, \amp \amp
+          \text{factor out the $\vec{v}$}</mrow>
+        <mrow xml:id="eq-eigenvector-homo">(A - \lambda I) \vec{v} \amp = \vec{0}</mrow>
+      </md>
+    </p>
+    <p>and we have transformed this into a homogeneous matrix equation. As stated in the definition
+      of the eigenvector, it cannot be the zero vector, and by <xref ref="thm-sing-matrices" />, the
+      only solution where <m>\vec{v}</m> is nonzero is when</p>
+    <p>
+      <men xml:id="eq-char-equation">
+        \det(A-\lambda I) = 0
+      </men>
+    </p>
+    <p>This equation is called the characteristic equation. </p>
+
+    <p>To find an eigenvector associated with the eigenvalue, solve </p>
+    <p>
+      <me>
+        (A - \lambda I) \vec{v} = \vec{0}
+      </me>
+    </p>
+    <p> for <m>\vec{v}</m>, that is find the basis of the null space of the matrix <m>A - \lambda I</m>
+      . </p>
+
+    <p> Note: as we will see in all of the examples in this section that the null space of <m>A-\lambda
+      I</m> has at least dimension 1 and that the reduced echelon form of <m>A-\lambda I</m> has at
+      least one row of zeros, indicating that the rank of <m>A-\lambda I</m> is less than <m>n</m>.
+      The reason for this is because of <xref
+        ref="thm-sing-matrices" />. This is helpful for detecting errors in finding
+      eigenvalues/eigenvectors. </p>
+
+    <example xml:id="ex-eigs-real1">
+      <statement>
+        <p> Find all eigenvalues and eigenvectors of </p>
+        <p>
+          <me>
+            \begin{bmatrix}
+            3 \amp 4 \\
+            2 \amp 5
+            \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p> First, solve <m>|A-\lambda I| = 0</m>, </p>
+
+        <p>
+          <md>
+            <mrow>|A - \lambda I| \amp =
+              \begin{vmatrix}
+              3-\lambda \amp 4 \\
+              2 \amp 5 - \lambda
+              \end{vmatrix} =
+              (3-\lambda)(5-\lambda) - 8 </mrow>
+            <mrow>\amp = \lambda^2 -8\lambda +7 = (\lambda-1)(\lambda-7) =0</mrow>
+          </md>
+        </p>
+        <p> so <m>\lambda = 1,7</m>. </p>
+
+        <p>Next, we need to find an eigenvector for each eigenvalue. When <m>\lambda=1</m>, </p>
+        <p>
+          <me>
+            (A-1 I)\vec{v} =
+            \begin{bmatrix}
+            2 \amp 4 \\
+            2 \amp 4
+            \end{bmatrix} \vec{v} = 0
+          </me>
+        </p>
+        <p>To solve this matrix equation, we'll use gaussian elimination on the augmented matrix: </p>
+        <p>
+          <md>
+            <mrow>\amp \qquad \left[\begin{array}{rr|r}
+              2 \amp4 \amp 0 \\
+              2 \amp 4 \amp 0
+              \end{array}\right] </mrow>
+            <mrow>-R_1 + R_2 \rightarrow R_2 \amp \qquad
+              \left[\begin{array}{rr|r}
+              2 \amp4 \amp 0 \\
+              0 \amp 0 \amp 0
+              \end{array}\right] </mrow>
+            <mrow>\frac{1}{2} R_1 \rightarrow R_1 \amp \qquad
+              \left[\begin{array}{rr|r}
+              1 \amp 2 \amp 0 \\
+              0 \amp 0 \amp 0
+              \end{array}\right] </mrow>
+          </md>
+        </p>
+
+        <p>The first row of the matrix corresponds to <m>
+            x_1+2x_2=0</m> so the null space of <m>A-\lambda I</m> is</p>
+        <p>
+          <me>
+            \left\{
+            \begin{bmatrix}
+            -2 \\ 1
+            \end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
+          </me>
+        </p>
+        <p> The eigenvector(s) associated with <m>\lambda=1</m> is the basis of this space or </p>
+        <p>
+          <me>
+            \vec{v} =
+            \begin{bmatrix}
+            -2 \\ 1
+            \end{bmatrix}
+          </me>
+        </p>
+        <p> And to find the eigenvector associated with <m>\lambda = 7</m>, solve </p>
+
+        <p>
+          <me>
+            (A - 7 I) \vec{v} =
+            \begin{bmatrix}
+            -4 \amp 4 \\
+            2 \amp -2
+            \end{bmatrix} \vec{v} = \vec{0}
+          </me>
+        </p>
+        <p>and use Gaussian Elimination to reduce</p>
+
+        <p>
+          <md>
+            <mrow>\amp \qquad \left[\begin{array}{rr|r}
+              -4 \amp 4 \amp 0 \\
+              2 \amp -2 \amp 0
+              \end{array}\right] </mrow>
+            <mrow>\begin{array}{r}
+              -\frac{1}{4} R_1 \rightarrow R_1 \\
+              -2 R_1 + R_2 \rightarrow R_2
+              \end{array} \amp \qquad
+              \left[\begin{array}{rr|r}
+              1 \amp -1 \amp 0 \\
+              0 \amp 0 \amp 0
+              \end{array}\right]</mrow>
+          </md>
+        </p>
+        <p> The null space of <m>A-7I</m> is</p>
+
+        <p>
+          <me>
+            \left\{
+            \begin{bmatrix}
+            1 \\ 1
+            \end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
+          </me>
+        </p>
+        <p>so the eigenvector associated with <m>\lambda=7</m> is the basis of this space or </p>
+        <p>
+          <me>
+            \vec{v} =
+            \begin{bmatrix}
+            1 \\ 1
+            \end{bmatrix}
+          </me>
+        </p>
+        <p>Overall, there are two eigenvalues and two related eigenvectors they are </p>
+        <p>
+          <md>
+            <mrow>\lambda_1 \amp = 1, \quad \vec{v}_1 = \begin{bmatrix}
+              -2 \\1
+              \end{bmatrix} \amp
+              \lambda_2 \amp = 7, \quad \vec{v}_2 = \begin{bmatrix}
+              1 \\1
+              \end{bmatrix}</mrow>
+          </md>
+        </p>
+      </solution>
+
+    </example>
+
+    <p>This example showed that this <m>2 \times 2</m> matrix has two real eigenvalues and two
+      corresponding eigenvectors. Also, although it seemed that these eigenvectors may be unique,
+      we'll show that <m>
+        [-3\;\;-3]^{\intercal}</m> is also a eigenvector of the matrix in <xref ref="ex-eigs-real1" />
+      .</p>
+    <p>
+      <me>
+        \begin{bmatrix}
+        3 \amp 4 \\ 2 \amp 5
+        \end{bmatrix}\begin{bmatrix}
+        -3 \\ -3
+        \end{bmatrix} = \begin{bmatrix}
+        -21 \\ -21
+        \end{bmatrix} = 7 \begin{bmatrix}
+        -3 \\ -3
+        \end{bmatrix}
+      </me>
+    </p>
+    <p>which shows directly that <m>[-3\;\;-3]^{\intercal}</m> is an eigenvector with corresponding
+      eigenvalue 7. Does this mean that there are other eigenvectors? Yes. The following lemma shows
+      this. </p>
+
+    <lemma xml:id="lem-eigenvector-scale">
+      <statement>
+        <p> If <m>\vec{v}</m> is an eigenvector of <m>A</m> with corresponding eigenvalue <m>\lambda</m>,
+          then <m>k\vec{v}</m> is also an eigenvector of <m>A</m> with corresponding eigenvalue <m>
+          \lambda</m> if <m>k \neq 0</m>. </p>
+      </statement>
+
+      <proof>
+        <p>Since <m>\vec{v}</m> is an eigenvector of <m>A</m> with corresponding eigenvalue <m>
+          \lambda</m>, then <m>A \vec{v} = \lambda \vec{v}</m>. Multiplying this by <m>k</m> results
+          in </p>
+        <p>
+          <md>
+            <mrow>k(A \vec{v}) \amp = k (\lambda \vec{v}) </mrow>
+            <mrow>A (k \vec{v}) \amp = \lambda (k \vec{v})</mrow>
+          </md>
+        </p>
+        <p> which shows the result. Also note, that <m>k</m> cannot be zero, because <m>0\vec{v}</m>
+          is the zero vector, which is not an eigenvector. </p>
+      </proof>
+    </lemma>
+
+    <p> There are other possibilities of eigenvalues and eigenvectors of <m>2 \times 2</m> matrices.
+      The following has complex eigenvalues. </p>
+
+
+    <example xml:id="ex-eigs-complex">
+      <statement>
+        <p> Find the eigenvalues and eigenvectors of</p>
+        <p>
+          <me>
+            \begin{bmatrix}
+            0 \amp 2 \\ -2 \amp 0
+            \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p> To find the eigenvalues, we find</p>
+        <p>
+          <me>
+            \begin{vmatrix}
+            -\lambda \amp 2 \\ -2 \amp -\lambda
+            \end{vmatrix} = 0
+          </me>
+        </p>
+
+        <p>or <m>\lambda^2+ 4 =0</m>, which has the solutions <m>\lambda = \pm 2i</m>. </p>
+
+        <p> To find the eigenvectors, we find the null space associated with each of the two
+          eigenvalues.
+        </p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m>\lambda = 2i</m>
+              </p>
+              <p> Find the null space of <m>A-2iI</m>: <md>
+                  <mrow>\amp \qquad \begin{bmatrix}
+                    -2i \amp 2 \\ -2 \amp -2i
+                    \end{bmatrix} </mrow>
+                  <mrow>\frac{1}{-2i} R_1 \rightarrow R_1
+                    \amp \qquad \begin{bmatrix}
+                    1 \amp i \\ -2 \amp -2i
+                    \end{bmatrix}
+                  </mrow>
+                </md>
+              </p>
+              <p> where <m>\frac{-2}{2i}=\frac{-1}{i} =\frac{-i}{i^2}=\frac{-i}{-1}=i</m> is used </p>
+              <p>
+                <md>
+                  <mrow>2R_1 + R_2 \rightarrow R_2, \amp \qquad
+                    \begin{bmatrix}
+                    1 \amp i \\ 0 \amp 0
+                    \end{bmatrix}</mrow>
+                </md>
+              </p>
+              <p> and the top equation says <m>x_1 = - ix_2</m>, so the null space is </p>
+              <p>
+                <me>
+                  \left\{ \begin{bmatrix}
+                  -i \\ 1
+                  \end{bmatrix}x_2 \; | \; x_2 \in \mathbb{R} \right\}
+                </me>
+              </p>
+              <p> so the eigenvector is <m>[-i \; \; 1]^{\intercal}</m>. </p>
+            </li>
+            <li>
+              <p>
+                <m>\lambda = -2i</m>
+              </p>
+
+              <p>Find the null space of <m>A-2iI</m>: </p>
+              <p>
+                <md>
+                  <mrow>\amp \qquad \begin{bmatrix}
+                    2i \amp 2 \\ -2 \amp 2i
+                    \end{bmatrix} </mrow>
+                  <mrow>\frac{1}{2i} R_1 \rightarrow R_1
+                    \amp \qquad \begin{bmatrix}
+                    1 \amp -i \\ -2 \amp -2i
+                    \end{bmatrix} </mrow>
+                  <mrow>2R_1 + R_2 \rightarrow R_2, \amp \qquad
+                    \begin{bmatrix}
+                    1 \amp -i \\ 0 \amp 0
+                    \end{bmatrix}</mrow>
+                </md>
+              </p>
+              <p> and the top equation says <m>x_1 = ix_2</m>, so the null space is </p>
+              <p>
+                <me>
+                  \left\{ \begin{bmatrix}
+                  i \\ 1
+                  \end{bmatrix}x_2 \; | \; x_2 \in \mathbb{R} \right\}
+                </me>
+              </p>
+
+              <p>so the eigenvector is <m>[i \; \; 1]^{\intercal}</m>. </p>
+            </li>
+          </ul>
+        </p>
+      </solution>
+    </example>
+
+    <p>Notice in the last example that there where complex conjugate pairs of eigenvalues and
+      associated eigenvectors. This always occurs with a real matrix <m>A</m>. The following theorem
+      summarizes this. </p>
+
+
+    <theorem>
+      <statement>
+        <p> Let <m>A</m> be a real matrix. If <m>\lambda</m> is an complex eigenvalue with
+          corresponding eigenvector, <m>\vec{v}</m>, then the complex conjugate of <m>\lambda,</m>
+          denoted <m>\overline{\lambda}</m> is also an eigenvalue with corresponding complex
+          conjuate eigenvector <m>\overline{\vec{v}}</m>. </p>
+      </statement>
+
+      <proof>
+        <p> If <m>\lambda</m>, <m>\vec{v}</m> is an eigenvalue-eigenvector pair of <m>A</m>, then</p>
+        <p>
+          <me>
+            A\vec{v} = \lambda \vec{v}
+          </me>
+        </p>
+        <p> And taking the complex conjugate of
+          this equation.</p>
+        <p>
+          <md>
+            <mrow>\overline{A\vec{v}} \amp = \overline{\lambda \vec{v}} </mrow>
+            <mrow>A \overline{\vec{v}} \amp = \overline{\lambda} \, \overline{\vec{v}}</mrow>
+          </md>
+        </p>
+        <p> where <m>\overline{A}=A</m> because <m>A</m> is real. This shows that <m>
+          \overline{\lambda}</m>, <m>
+            \overline{\vec{v}}</m> is a eigenvalue-eigenvector pair of <m>A</m>. </p>
+      </proof>
+    </theorem>
+
+
+    <p> The result of this theorem will save work if you have a real matrix and find a complex
+      eigenvalue. For example in Example <xref ref="ex-eigs-complex" />, the first
+      eigenvalue-eigenvector pairs was <m>
+        \lambda_1=2i</m> and <m>\vec{v}_1=[-i \; \; 1]^{\intercal}</m>. The above theorem shows that <m>\lambda_2=\overline{\lambda_1}
+      = -2i</m> and <m>\vec{v}_2=\overline{\vec{v}_1} = [i \; \; 1]^{\intercal}</m> is another
+      eigenvalue-eigenvector pair. The next example has real eigenvalue and eigenvector, but has a
+      different feature than Example <xref ref="ex-eigs-real1" />. </p>
+
+
+    <example>
+      <statement>
+        <p> Find the eigenvalues and eigenvectors of</p>
+        <p>
+          <me>
+            \begin{bmatrix}
+            2 \amp -1 \\ 1 \amp 4
+            \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p> The eigenvalues are found by solving the characteristic equation </p>
+        <p>
+          <md>
+            <mrow>|A-\lambda I| \amp = \begin{vmatrix}
+              2-\lambda \amp -1 \\ 1 \amp 4-\lambda
+              \end{vmatrix} = (2-\lambda)(4-\lambda)+1 </mrow>
+            <mrow>\amp = \lambda^2-6\lambda + 9</mrow>
+          </md>
+        </p>
+        <p> And solving <m>|A-\lambda I|=0</m> has the single root <m>\lambda = 3</m>. To find the
+          associated eigenvector, we solve for the null space of <m>A-3I</m>
+        </p>
+        <p>
+          <md>
+            <mrow> A-3I = \amp \begin{bmatrix}
+              -1 \amp -1 \\
+              1 \amp 1
+              \end{bmatrix} </mrow>
+            <mrow>R_1 + R_2 \rightarrow R_2 \qquad \amp \begin{bmatrix}
+              -1 \amp -1 \\
+              0 \amp 0
+              \end{bmatrix}</mrow>
+          </md>
+        </p>
+        <p> which has the only equation <m>-x_1 = x_2</m> or <m>x_1
+            =-x_2</m> which shows that the null space is </p>
+        <p>
+          <me>
+            \left\{ \begin{bmatrix}
+            -1 \\ 1
+            \end{bmatrix} x_2 \; | \; x_2 \in \mathbb{R} \right\}
+          </me>
+        </p>
+        <p> and the eigenvector is <m>\vec{v} = [-1\;\; 1]^{\intercal}</m>. </p>
+      </solution>
+    </example>
+
+    <p>
+      And this next example has only one eigenvalue however has two linearly independent
+      eigenvectors.
+    </p>
+
+    <example xml:id="ex-eigs-scale2">
+      <statement>
+        <p> Find the eigenvalues and eigenvectors of</p>
+        <p>
+          <me>
+            \begin{bmatrix}
+            2 \amp 0 \\ 0 \amp 2
+            \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p> This has the characteristic equation <m>(\lambda-2)^2
+            = 0</m> or the single root <m>\lambda = 2</m>. To find the eigenvectors we find the null
+          space of <m>A-2I</m> or</p>
+        <p>
+          <me>
+            \begin{bmatrix}
+            0 \amp 0 \\ 0 \amp 0
+            \end{bmatrix}
+          </me>
+        </p>
+        <p> and any vector in <m>\mathbb{R}^2</m> is in the null space. We can write down the space
+          using the standard basis vectors </p>
+        <p>
+          <me>
+            \left\{ \begin{bmatrix}
+            1 \\ 0
+            \end{bmatrix} x_1 + \begin{bmatrix}
+            0 \\ 1
+            \end{bmatrix} x_2 \;|\; x_1, x_2 \in \mathbb{R} \right\}
+          </me>
+        </p>
+        <p> so <m>\vec{v}_1 = [1\;\;0]^{\intercal}</m> and <m>\vec{v}_2=[0\; \;1]^{\intercal}</m>
+          are both eigenvectors associated with <m>\lambda=2</m>. </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="sect-eigen-2by2">
+    <title>Possible Eigenvalue/Eigenvector combinations of a <m>2\times 2</m> matrix</title>
+
+    <p>In the previous examples, we have seen the following:</p>
+    <p>
+      <ul>
+        <li>
+          <p> 2 real eigenvalues, 2 linearly independent eigenvectors </p>
+        </li>
+        <li>
+          <p> 2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors
+            (complex conjugates).</p>
+        </li>
+        <li>
+          <p> 1 real eigenvalue, 2 linearly independent eigenvectors</p>
+        </li>
+        <li>
+          <p> 1 real eigenvalue, 1 eigenvector.</p>
+        </li>
+      </ul>
+    </p>
+    <p>In fact, these are the
+      possibilities for any 2 by 2 real matrix. We now examine two examples of the
+      eigenvalues/eigenvectors of 3 by 3 matrices. </p>
+  </subsection>
+
+
+  <subsection xml:id="sect-eigen-3by3">
+    <title>Eigenvalues and Eigenvectors of <m>3 \times 3</m> matrices</title>
+
+    <p>Finding the eigenvalues and eigenvectors for matrices larger than <m>2 \times 2</m> goes
+      through the same steps. It is just a bit more complicated. We show two examples of these.</p>
+
+    <example xml:id="ex-eigs-3by3">
+      <statement>
+        <p> Find the eigenvalues and eigenvectors of the 3 by 3 matrix</p>
+        <p>
+          <me>
+            \begin{bmatrix}
+            1 \amp 0 \amp 0 \\
+            3 \amp -2 \amp 6 \\
+            2 \amp 1 \amp 3
+            \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p> To find the eigenvalues, we solve the characteristic equation <m>|A-\lambda I|=0</m> or
+          expanding across the first row to find the determinant and we solve</p>
+        <p>
+          <md>
+            <mrow>|A-\lambda I| \amp= \begin{vmatrix}
+              1-\lambda \amp 0 \amp 0 \\
+              3 \amp -2-\lambda \amp 6 \\
+              2 \amp 1 \amp 3-\lambda
+              \end{vmatrix} = (1-\lambda) \begin{vmatrix}
+              -2 - \lambda \amp 6 \\ 1 \amp 3-\lambda
+              \end{vmatrix} </mrow>
+            <mrow>\amp=(1-\lambda)( (-2-\lambda)(3-\lambda) -6) =0</mrow>
+          </md>
+        </p>
+        <p> which has roots <m>\lambda=1,4,-3</m>. To find the corresponding eigenvectors, we solve
+          for the null space of <m>A-\lambda I</m> for each <m>\lambda</m></p>
+        <p>
+
+          <ul>
+            <li>
+              <p>
+                <m>\lambda=1</m>
+              </p>
+              <p>
+                <md>
+                  <mrow>A-I = \amp \begin{bmatrix}
+                    0 \amp 0 \amp 0 \\
+                    3 \amp -3 \amp 6 \\
+                    2 \amp 1 \amp 2
+                    \end{bmatrix}</mrow>
+                  <mrow>\begin{array}{r}
+                    R_2 \leftrightarrow R_1\\
+                    R_3 \leftrightarrow R_2
+                    \end{array}
+                    \qquad \amp
+                    \begin{bmatrix}
+                    3 \amp -3 \amp 6 \\
+                    2 \amp 1 \amp 2\\
+                    0 \amp 0 \amp 0 \\
+                    \end{bmatrix} </mrow>
+                  <mrow>\frac{1}{3} R_1 \rightarrow R_1 \qquad \amp
+                    \begin{bmatrix}
+                    1 \amp -1 \amp 2 \\
+                    2 \amp 1 \amp 2\\
+                    0 \amp 0 \amp 0 \\
+                    \end{bmatrix} </mrow>
+                  <mrow>-2 R_1 + R_2 \rightarrow R_2 \qquad \amp
+                    \begin{bmatrix}
+                    1 \amp -1 \amp 2 \\
+                    0 \amp 3 \amp -2\\
+                    0 \amp 0 \amp 0 \\
+                    \end{bmatrix}</mrow>
+                  <mrow>R_2 + 3R_1 \rightarrow R_1 \qquad \amp
+                    \begin{bmatrix}
+                    3 \amp 0 \amp 4 \\
+                    0 \amp 3 \amp -2\\
+                    0 \amp 0 \amp 0 \\
+                    \end{bmatrix}</mrow>
+                </md>
+              </p>
+              <p> and other that a factor of 3, this is
+                in reduced row echelon form. The top two equations are</p>
+              <p>
+                <md>
+                  <mrow>x_1 \amp = -\frac{4}{3} x_3 </mrow>
+                  <mrow>x_2 \amp = \frac{2}{3} x_3</mrow>
+                </md>
+              </p>
+              <p> and the null space is</p>
+              <p>
+                <me>
+                  \left\{\begin{bmatrix}
+                  -4/3 \\ 2/3 \\ 1
+                  \end{bmatrix} x_3 \; | \; x_3 \right\}
+                </me>
+              </p>
+              <p> And we could take <m>[-4/3\;\;2/3\;\;
+                  1]^{\intercal}</m> as an eigenvector, however, from <xref
+                  ref="lem-eigenvector-scale" />, a scalar multiple of an eigenvector is also an
+                eigenvector, so multiplying by 3 results in <m>
+                  \vec{v}_1=[-4\;\;2\;\;3]^{\intercal}</m>. </p>
+            </li>
+            <li>
+              <p>
+                <m>\lambda=4</m>
+              </p>
+              <p>
+                <md>
+                  <mrow>A-4I = \amp \begin{bmatrix}
+                    3 \amp 0 \amp 0 \\
+                    3 \amp -6 \amp 6 \\
+                    2 \amp 1 \amp -1
+                    \end{bmatrix} </mrow>
+                  <mrow>\frac{1}{3} R_1 \rightarrow R_1 \qquad \amp
+                    \begin{bmatrix}
+                    1 \amp 0 \amp 0 \\
+                    3 \amp -6 \amp 6 \\
+                    2 \amp 1 \amp -1
+                    \end{bmatrix} </mrow>
+                  <mrow>\begin{array}{r}
+                    -3R_1 + R_2 \rightarrow R_2 \\
+                    -2R_1 + R_3 \rightarrow R_3
+                    \end{array} \qquad \amp
+                    \begin{bmatrix}
+                    1 \amp 0 \amp 0 \\
+                    0 \amp -6 \amp 6 \\
+                    0 \amp 1 \amp -1
+                    \end{bmatrix} </mrow>
+                  <mrow>-\frac{1}{6} R_2 \rightarrow R_2 \qquad \amp
+                    \begin{bmatrix}
+                    1 \amp 0 \amp 0 \\
+                    0 \amp 1 \amp -1 \\
+                    0 \amp 1 \amp -1
+                    \end{bmatrix} </mrow>
+                  <mrow>-R_2 + R_3 \rightarrow R_3 \qquad \amp
+                    \begin{bmatrix}
+                    1 \amp 0 \amp 0 \\
+                    0 \amp 1 \amp -1 \\
+                    0 \amp 0 \amp 0
+                    \end{bmatrix} </mrow>
+                </md> and the top two equations are <m>
+                x_1=0</m> and <m>x_2=x_3</m> so the null space can be written <me>
+                  \left\{ \begin{bmatrix}
+                  0 \\ 1 \\ 1
+                  \end{bmatrix} x_3 \; |\; x_3 \in \mathbb{R} \right\}
+                </me></p>
+              <p> so the eigenvectors is <m>[0\;\;1\;\;1]^{\intercal}</m>. </p>
+            </li>
+            <li>
+              <p>
+                <m>\lambda=-3</m>
+              </p>
+              <p>
+                <md>
+                  <mrow>A+3I = \amp\begin{bmatrix}
+                    4 \amp 0 \amp 0 \\
+                    3 \amp 1 \amp 6 \\
+                    2 \amp 1 \amp 6
+                    \end{bmatrix}</mrow>
+                  <mrow>\frac{1}{4} R_1 \rightarrow R_1 \qquad \amp
+                    \begin{bmatrix}
+                    1 \amp 0 \amp 0 \\
+                    3 \amp 1 \amp 6 \\
+                    2 \amp 1 \amp 6
+                    \end{bmatrix}</mrow>
+                  <mrow>\begin{array}{r}
+                    -3R_1 + R_2 \rightarrow R_2 \\
+                    -2R_1 + R_3 \rightarrow R_3
+                    \end{array} \qquad \amp
+                    \begin{bmatrix}
+                    1 \amp 0 \amp 0 \\
+                    0 \amp 1 \amp 6 \\
+                    0 \amp 1 \amp 6
+                    \end{bmatrix}</mrow>
+                  <mrow>-R_2 + R_3 \rightarrow R_3 \qquad \amp
+                    \begin{bmatrix}
+                    1 \amp 0 \amp 0 \\
+                    0 \amp 1 \amp 6 \\
+                    0 \amp 0 \amp 0
+                    \end{bmatrix}</mrow>
+                </md>
+              </p>
+              <p> and the top two equations are <m>x_1=0</m> , <m>x_2=-6x_3</m> so the null space is</p>
+              <p>
+                <me>
+                  \left\{ \begin{bmatrix}
+                  0 \\ -6 \\ 1
+                  \end{bmatrix} x_3 \; | \; x_3 \in \mathbb{R} \right\}
+                </me>
+              </p>
+              <p> Therefore the eigenvector is <m>\vec{v}_3=[0\;\;-6\;\;1]^{\intercal}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p> Find the eigenvalues and eigenvectors of</p>
+        <p>
+          <me>
+            A = \begin{bmatrix}
+            1 \amp 0 \amp 2 \\
+            2 \amp 0 \amp 4 \\
+            -1 \amp 0 \amp -2
+            \end{bmatrix}
+          </me>
+
+        </p>
+      </statement>
+
+      <solution>
+        <p>First, we solve for the eigenvectors by solving <m>|A-\lambda I|=0</m>,</p>
+
+        <p>
+          <md>
+            <mrow>|A-\lambda I| \amp = \begin{vmatrix}
+              1-\lambda \amp 0 \amp 2 \\
+              2 \amp -\lambda \amp 4 \\
+              -1 \amp 0 \amp -2- \lambda
+              \end{vmatrix} </mrow>
+            <mrow>\amp = -\lambda \begin{vmatrix}
+              1-\lambda \amp 2 \\
+              -1 \amp -2-\lambda
+              \end{vmatrix} = -\lambda \bigl( (1-\lambda)(-2-\lambda)+2 \bigr) </mrow>
+            <mrow>\amp = -\lambda (\lambda^2 - \lambda -2 + 2) = -\lambda^3 - \lambda^2</mrow>
+          </md>
+        </p>
+
+        <p> and this is 0, when <m>\lambda=0</m> and <m>\lambda = -1</m>. Next, find the
+          eigenvectors. The eigenvectors with <m>\lambda=0</m> are found by finding the null space
+          of <m>A-0I</m>: </p>
+
+        <p>
+          <md>
+            <mrow>\amp \qquad \begin{bmatrix}
+              1 \amp 0 \amp 2 \\
+              2 \amp 0 \amp 4 \\
+              -1 \amp 0 \amp -2
+              \end{bmatrix} </mrow>
+            <mrow>\begin{array}{r}
+              -2R_1 + R_2 \rightarrow R_2 \\
+              R_1+R_3 \rightarrow R_3
+              \end{array}
+              \amp \qquad
+              \begin{bmatrix}
+              1 \amp0 \amp 2 \\
+              0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 0
+              \end{bmatrix}</mrow>
+          </md>
+        </p>
+
+        <p> and since the only equation is <m>x_1 +2x_3=0</m>, both <m>x_2</m> and <m>x_3</m> are
+          free variables and the solution space (therefore the null space) can be written: </p>
+
+        <p>
+          <me>
+            \left\{ \begin{bmatrix}
+            0 \\ 1 \\ 0
+            \end{bmatrix} x_2 + \begin{bmatrix}
+            -2 \\ 0 \\ 1
+            \end{bmatrix} x_3 \; | \; x_2, x_3 \in \mathbb{R} \right\}
+          </me>
+        </p>
+
+        <p>This shows that the vectors</p>
+
+        <p>
+          <md>
+            <mrow> \vec{v}_1 \amp = \begin{bmatrix}
+              0 \\ 1\\ 0
+              \end{bmatrix}\amp \vec{v}_2 \amp = \begin{bmatrix}
+              -2 \\ 0 \\ 1
+              \end{bmatrix}</mrow>
+          </md>
+        </p>
+
+        <p>are both eigenvectors associated with <m>\lambda=0</m>. The eigenvectors associated with <m>\lambda
+          = -1</m> is found by seeking the null space of <m>
+            A-I</m>: </p>
+
+        <p>
+          <md>
+            <mrow> \amp \qquad \begin{bmatrix}
+              2 \amp 0 \amp 2 \\
+              2 \amp 1 \amp 4 \\
+              -1 \amp 0 \amp -1
+              \end{bmatrix} </mrow>
+            <mrow>\frac{1}{2}R_1 \rightarrow R_1 \amp \qquad
+              \begin{bmatrix}
+              1 \amp 0 \amp 1 \\
+              2 \amp 1 \amp 4 \\
+              -1 \amp 0 \amp -1
+              \end{bmatrix} </mrow>
+            <mrow>\begin{array}{r}
+              -2R_1 + R_2 \rightarrow R_2, \\
+              R_1 + R_3 \rightarrow R_3,
+              \end{array}
+              \amp \qquad \begin{bmatrix}
+              1 \amp 0 \amp 1 \\
+              0 \amp 1 \amp 2 \\
+              0 \amp 0 \amp 0
+              \end{bmatrix}</mrow>
+          </md>
+        </p>
+
+        <p> These equations are </p>
+
+        <p>
+          <md>
+            <mrow> x_1 \amp = -x_3 </mrow>
+            <mrow>x_2 \amp = -2x_3</mrow>
+          </md>
+        </p>
+        <p> so the solution set (and the null space) is </p>
+        <p>
+          <me>
+            \left\{ \begin{bmatrix}
+            -1 \\ -2 \\ 1
+            \end{bmatrix} x_3 \; \ \; x_3 \in \mathbb{R} \right\}
+          </me>
+        </p>
+        <p>so the eigenvector associated with <m>\lambda_3 =-1</m> is </p>
+
+        <p>
+          <me>
+            \begin{bmatrix}
+            -1 \\ -2 \\ 1
+            \end{bmatrix}
+          </me>
+        </p>
+      </solution>
+    </example>
+
+
+  </subsection>
+
+</section>

@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-funct-props">
+  <title>Properties of Functions</title>
+
+  <introduction>
+    <p>In <xref ref="sect-inner-product" />, we reviewed inner product spaces and saw orthonormal
+      sets of vectors (both in <m>\mathbb{R}^3</m> as well as polynomials). In this section, we will
+      examine another set of functions, sines and cosines that are orthogonal. First, let's see a
+      short review of periodic functions.</p>
+  </introduction>
+
+  <subsection>
+    <title>Periodic Functions</title>
+
+    <definition>
+      <statement>
+        <p> A function is <term>periodic with period <m>p</m></term> if </p>
+        <p>
+          <me>
+            f(t) = f(t+p)
+          </me>
+        </p>
+        <p> for all <m>t</m> in the domain of <m>f</m>. The smallest value of <m>p>0</m> that makes
+          this true is called the <term>period</term> of the function.</p>
+      </statement>
+    </definition>
+
+    <example>
+      <statement>
+        <p> Show that <m>f(t) = \sin t</m> is periodic with period <m>2\pi</m>. </p>
+      </statement>
+      <solution>
+        <p>
+          <me>
+            f(t+2\pi) = \sin (t + 2 \pi) = \sin t \cos 2\pi + \sin 2\pi \cos t = \sin t
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p> What is the period of the function <m>f(t) = \cos kt</m>. </p>
+      </statement>
+
+      <solution>
+        <p> We know that the period of <m>\cos t</m> is also the same as <m>\sin t</m> or <m>2\pi</m>.
+          If we let <m>u=kt</m>, then <m>f(u)=\cos u</m> has period <m>p=2\pi</m> since it is the
+          smallest value of <m>p</m> such that <m>f(u)=f(u+p)</m> for all <m>u</m>. The function <m>
+          f(t)</m> would then had period <m>p=2\pi/k</m>, since <m>t=u/k</m>. </p>
+      </solution>
+    </example>
+
+    <p>The standard period functions that we will be using in this text are the sine and cosine
+      function. We review here a few convenient identities with these functions and the complex
+      exponential. From Euler's formula,</p>
+    <p>
+      <me>
+        e^{i \theta} = \cos \theta + i \sin \theta
+</me>
+    </p>
+    <p> we can then write sine and cosine in terms of <m>e^{i \theta}</m>
+    </p>
+    <p>
+      <me>
+        \sin \theta = \frac{e^{i \theta}- e^{-i \theta}}{2i} \cos \theta  = \frac{e^{i
+        \theta} + e^{-i \theta}}{2}
+      </me>
+    </p>
+    <p>
+      Euler's formula also leads to the following:
+    </p>
+
+    <remark>
+      <title>The Most Interesting Equation in Mathematics</title>
+      <p>
+        <men xml:id="eq-e-to-the-i-pi">
+          e^{i\pi} + 1 = 0
+        </men>
+      </p>
+    </remark>
+
+    <p>and this is often called the most interesting equation in mathematics because it arguably
+      contains the 5 most important mathematical constants: 0, 1, <m>e</m>, <m>i</m>, <m>\pi</m>.</p>
+
+
+    <lemma xml:id="lem-int-complex-exp">
+      <statement>
+        <p> If <m>k \in \mathbb{Z}</m>, and <m>x_0 \in \mathbb{R}</m> then</p>
+        <p>
+          <me>
+            \int_{x_0}^{x_0 + 2\pi} e^{i kx} \, dx = \begin{cases}
+            2\pi \amp k = 0, \\
+            0 \amp \text{otherwise}.
+            \end{cases}
+          </me>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p> If <m>k=0</m>, then the integral is of the constant function 1 over a interval of length <m>
+          2\pi</m>, so the lemma holds, If <m>k \neq 0</m>, </p>
+        <p>
+          <md>
+            <mrow>\int_{x_0}^{x_0 + 2\pi} e^{i kx} \, dx \amp = \frac{e^{i k x}}{i k} \biggr
+              \vert_{x_0} ^{x_0 + 2\pi} </mrow>
+            <mrow>\amp = \frac{1}{ik} \bigl( e^{ik(x_0+2\pi)} - e^{ikx_0} \bigr) </mrow>
+            <mrow>\amp = \frac{1}{ik} e^{ikx_0} (e^{2\pi i k} -1 ) </mrow>
+            <mrow>\amp = \frac{1}{ik} e^{ikx_0} ( (e^{i\pi})^{2k} -1 ) = 0</mrow>
+          </md>
+        </p>
+        <p> because <m>e^{i\pi}=-1</m> from (<xref ref="eq-e-to-the-i-pi" />), but this is raised to
+          an even power so <m>(e^{i\pi})^{2k}=1</m>
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+
+  <subsection>
+    <title>One-Side Limits and Derivatives; Piecewise Continuous Functions</title>
+
+    <p> As we will see, the notion of a piecewise continuous function is a function that is
+      continuous
+      on subintervals. However, there are some technical details that we need before a formal
+      definition.</p>
+
+    <definition>
+      <statement>
+        <p> A function <m>f</m> has a <term>left-hand limit</term> at <m>x=x_0</m> if </p>
+        <p>
+          <me>
+            f(x_0^-) = \lim_{x \rightarrow x_0^-} f(x)
+          </me>
+        </p>
+        <p> exists. In addition, a function <m>f</m> has a <term>right-hand limit</term> at <m>x=x_0</m>
+          if </p>
+        <p>
+          <me>
+            f(x_0^+) = \lim_{x \rightarrow x_0^-} f(x)
+          </me>
+        </p>
+        <p>
+          exists.</p>
+      </statement>
+    </definition>
+
+    <p>If one is talking about either a left- or right-handed limit, these are typically called
+      one-sided
+      limits. </p>
+
+    <definition>
+      <statement>
+        <p> A function <m>f</m> has a <term>left-hand derivative</term> at <m>x=x_0</m> if </p>
+        <p>
+          <me>
+            f'(x_0^-) = \lim_{h \rightarrow 0^-} \frac{f(x_0+h)-f(x)}{h}
+          </me>
+        </p>
+        <p> exists. Similarly, a function <m>f</m> has a <term>right-hand derivative</term> at <m>
+          x=x_0</m> if</p>
+        <p>
+
+          <me>
+            f'(x_0^+) = \lim_{h \rightarrow 0^+} \frac{f(x_0+h)-f(x)}{h}
+          </me>
+        </p>
+        <p> exists.</p>
+      </statement>
+    </definition>
+
+    <p> If one is talking about either a left- or right-handed derivative, these are typically
+      called
+      one-sided derivatives. </p>
+
+    <definition>
+      <statement>
+        <p> A function <m>f</m> is <term>piecewise continuous</term> on an interval <m>[a,b]</m> if <m>
+          f</m> is continuous on all <m>x \in [a,b]</m> except for a finite number of points <m>x_i</m>.
+          In addition for all <m>x_i</m>, <m>f(x_i^+)</m> and <m>f(x_i^-)</m> exist.</p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-piecewise-cont-function">
+      <statement>
+        <p> The following function is piecewise continuous on <m>[-1,1]</m>
+        </p>
+        <p>
+          <me>
+            f(x) = \begin{cases}
+            1 \amp -1 \leq x \lt 0 \\
+            x \amp 0 \leq x \lt 1/2 \\
+            1-x^2 \amp 1/2 \leq x \leq 1
+            \end{cases}
+          </me>
+        </p>
+
+        <p> Also, the graph of piecewise functions are helpful. These are found by finding the
+          graphs of <m>
+            f</m> on each given interval. The graph of <m>f</m> is shown below. </p>
+
+        <figure xml:id="fig-piece-function">
+          <caption>
+            Graph of a piecewise function
+          </caption>
+          <image width="50%"
+            xml:id="plot-piece-function">
+            <latex-image>
+        <![CDATA[
+          \begin{tikzpicture}[scale=2]
+          \draw[->] (-1.5,0) -- (1.5,0) node [above right] {$x$};
+          \draw[->] (0,-1.5) -- (0,1.5) node [above right] {$y$};
+
+
+          % this draws all non fractional multiples of pi
+
+
+          \draw[*-o](-1.05,1) -- (0.05,1);
+          \draw[*-o](-0.05,0) -- (0.55,0.5);
+          \draw[*-*] plot [domain=0.45:1.05] (\x,{1-\x*\x});
+
+          \foreach \x/\val in {0.5/\frac{1}{2},1/1,-0.5/-\frac{1}{2},-1/-1}
+          \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\val$};
+
+          \foreach \y in {-1,1} \draw (-0.1,\y) -- (0.1,\y) node [right] {\y};
+
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+          </image>
+        </figure>
+
+
+        <p>In addition, we need to show
+          that all of the one-sided limits exist.
+          piece-function</p>
+        <p>
+          <md>
+            <mrow>\lim_{x \rightarrow 0^-} f(x) \amp = 1 \amp \lim_{x \rightarrow 0^+} f(x) \amp = 0 </mrow>
+            <mrow>\lim_{x \rightarrow \frac{1}{2}^-} f(x) \amp = \frac{1}{2} \amp \lim_{x
+              \rightarrow
+              \frac{1}{2}^+} f(x) \amp = \frac{3}{4} </mrow>
+          </md>
+        </p>
+        <p> And since the function is continuous at all points except at 0 and 1/2, but the
+          one-sided limits are finite here, then the function <m>f</m> is piecewise continuous. </p>
+      </statement>
+    </example>
+
+    <example>
+      <statement>
+        <p> Find both the left- and right-handed derivatives of the function defined in example <xref
+            ref="ex-piecewise-cont-function" /> at <m>x=0</m> and <m>x=1/2</m>. </p>
+      </statement>
+
+      <solution>
+
+        <p>First, consider the derivative of the function</p>
+        <p>
+          <me>
+            f'(x) = \begin{cases}
+            0 \amp -1 \lt x \lt 0 \\
+            1 \amp 0 \lt x \lt 1/2 \\
+            -2x \amp 1/2 \lt x \lt 1
+            \end{cases}
+</me>
+        </p>
+        <p>
+          where the equality parts of the derivative have been removed (and explained later).</p>
+        <p>
+
+          Since</p>
+        <p>
+
+          <md>
+            <mrow>\lim_{x \rightarrow 0^{-}} f'(x) \amp = 0 \amp \lim_{x \rightarrow 0^+} \amp = 1 </mrow>
+            <mrow>\lim_{x \rightarrow \frac{1}{2}^{-}} f'(x) \amp = 1 \amp \lim_{x \rightarrow
+              \frac{1}{2}^+} \amp = -1 </mrow>
+          </md>
+        </p>
+        <p>then the left-handed derivative at 0 is 0, the right-handed derivative of <m>f</m> at 1,
+          the left-handed derivative at 1/2 is 1 and the right-handed derivative of <m>f</m> at 1/2
+          is -1. </p>
+      </solution>
+    </example>
+
+
+    <example>
+      <statement>
+        <p> Show that <m>f(x)=1/x</m> is not a piecewise continuous function on <m>[-1,1]</m>. </p>
+      </statement>
+
+      <solution>
+        <p> The problem in this function on the interval <m>[-1,1]</m> is at <m>x=0</m>. Also </p>
+        <p>
+          <md>
+            <mrow>\lim_{x \rightarrow 0^-} f(x) \amp = -\infty \amp \lim_{x \rightarrow 0^+} f(x)
+              \amp = \infty</mrow>
+          </md>
+        </p>
+        <p> and since the one-sided limits do not exist, <m>f</m> is not piecewise continuous on <m>
+          [-1,1]</m>. </p>
+      </solution>
+    </example>
+
+  </subsection>
+  <subsection xml:id="sect-even-odd-functions">
+    <title>Odd and Even Functions</title>
+
+    <definition>
+      <statement>
+        <p> A function <m>f(x)</m> is an <term>odd function</term> if <m>f(-x) = -f(x)</m> for all <m>
+          x</m> in its domain. </p>
+      </statement>
+
+    </definition>
+
+    <p> Note: recall that an odd function is symmetric about the origin, meaning that if the graph
+      of <m>f</m> is rotated a half circle about the origin, that one gets the graph back.</p>
+
+    <definition>
+      <statement>
+        <p> A function <m>f(x)</m> is an <term>even function</term> if <m>f(-x)=f(x)</m> for all <m>
+          x</m> in its domain. </p>
+      </statement>
+    </definition>
+
+    <p> Recall that an even function is symmetric about the <m>y</m>-axis. This means that if the
+      graph is reflected over the <m>y</m>-axis that one gets the same graph upon the reflection.</p>
+
+
+    <example>
+      <statement>
+        <p>
+          Here's a list of a few functions that are odd or even (without showing details):</p>
+        <p>
+          <ul>
+            <li>
+              <p> The following functions are odd: <m>x, x^3, x^5, \sin x, \tan x</m></p>
+            </li>
+
+            <li>
+              <p> The following functions are even: <m>1,x^2,x^4, \cos x</m>.</p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </example>
+
+    <p>The following theorem is helpful for finding whether or not products of functions are odd or
+      even.</p>
+
+    <theorem>
+      <p>
+        <ul>
+          <li>
+            <p> The product of two odd functions is even.</p>
+          </li>
+          <li>
+            <p> The product of two even functions is even.</p>
+          </li>
+          <li>
+            <p> The product of an even and an odd function is odd.</p>
+          </li>
+        </ul>
+      </p>
+    </theorem>
+
+    <lemma>
+      <statement>
+        <p>
+          The derivative of an even function is odd. The derivative of an odd function is even.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>Let <m>f</m> be an even function, then <m>f(-x) = f(x)</m> for all <m>x</m>.</p>
+        <p>
+          <me>
+            \frac{d}{dx} f(x) = \frac{d}{dx} f(-x) = -\frac{df(-x)}{dx}
+          </me>
+        </p>
+        <p>
+          by the chain rule. And the proof that the derivative of an odd function is similar.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>And as a corollary, antiderivatives work in the same way. </p>
+
+    <corollary>
+      <statement>
+        <p>
+          <ul>
+            <li>
+              <p> Let <m>f</m> be an odd function. Any antiderivative of <m>f</m> is even.</p>
+            </li>
+            <li>
+              <p> Let <m>g</m> be an even function and <m>G</m> be its antiderivative. The
+                antiderivative <m>G(x)+C</m> such that <m>C=-G(0)</m> is odd.</p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </corollary>
+
+
+    <theorem xml:id="thm-even-odd-integrals">
+      <statement>
+        <p> Let <m>f</m> be a piecewise continuous function on the interval <m>[-a,a]</m> for <m>a>0</m>
+          .</p>
+        <p>
+          <ul>
+            <li>
+              <p> If <m>f</m> is an odd function then</p>
+              <p>
+                <me>
+                  \int_{-a}^a f(x) \, dx = 0
+                </me>
+              </p>
+            </li>
+            <li>
+              <p> If <m>f</m> is an even function then</p>
+              <p>
+                <me>
+                  \int_{-a}^a f(x) \, dx = 2 \int_{0}^a f(x) \, dx
+                </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+
+      <proof>
+        <p> First, examine the first statement. Let <m>F(x)</m> be an antiderivative of <m>f(x)</m>,
+          an odd function. The function <m>F(x)</m> can be written as <m>F(x)=G(x)+C</m> where <m>
+          G(x)</m> is an even function. </p>
+        <p>
+          <me>
+            \int_{-a}^a f(x) \,dx G(x) + C \biggl\vert_{-a}^a = G(-a)+C - (G(a)+C) = 0
+          </me>
+        </p>
+        <p> since <m>G(x)</m> is even. The proof of the second statement is similar.</p>
+      </proof>
+    </theorem>
+
+  </subsection>
+
+
+  <subsection>
+    <title>Tabular Integration</title>
+    <p> A very handy formula for many integrations in this section is called <term>tabular
+      integration</term>, which is just a recursive version of integration by parts that works well
+      for integrals of a certain type. Before we show this, recall that the integration by parts
+      formula is</p>
+    <p>
+      <me>
+        \int u \, dv = uv - \int v \, du
+      </me>
+    </p>
+    <p> and integration by parts is helpful for rewriting
+      one integral (on the left) in terms of a second integral (on the right) and generally it is
+      used
+      to create a simpler integral. The next example shows a standard integration done with
+      integration by parts.</p>
+    <example>
+      <statement>
+        <p>
+          Find</p>
+        <p>
+          <me>
+            \int x e^x \, dx
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p> In this case, we'll let <m>u= x</m> and <m>dv = e^x \, dx</m>, finding the differential <m>
+          u</m> results in <m>du=dx</m> and finding an antiderivative of <m>dv</m> results in <m>v=
+          e^x</m>, so using integration by parts to get </p>
+        <p>
+          <md>
+            <mrow>\int x e^x \, dx \amp = x e^x - \int e^x \, dx \amp = x e^x - e^x + C</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+
+    <p> This example shows that in order to integrate with the by parts
+      formula, one must replace one integral with another. In more difficult examples, this may need
+      to be done multiple times until the resulting integral is able to be done without by parts.
+      This
+      is the case when tabular integration is useful.
+    </p>
+
+    <remark>
+      <p>The technique of <term>tabular integration</term> applied to</p>
+      <p>
+        <me>
+          \int f(x) g(x) \, dx
+        </me>
+      </p>
+      <p> where there exists an <m>n</m> such that <m>f^{(n)}(x)=0</m>, that is eventually the
+        derivative of <m>f(x)</m> is 0. Creates a table of three columns with</p>
+      <p>
+        <ol>
+          <li>
+            <p> The function <m>f(x)</m> and its derivatives until you reach zero.</p>
+          </li>
+          <li>
+            <p> The signs <m>+</m> and <m>-</m>, starting with <m>+</m> and alternating signs.</p>
+          </li>
+          <li>
+            <p> The function <m>g(x)</m> and its antiderivatives.</p>
+          </li>
+        </ol>
+      </p>
+      <p> For
+        columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find
+        the antiderivative, draw arrows from each function in the first column, to a function in the
+        third column one row below. The result is the sum of the product of each pair of functions
+        connected by the arrows with the sign of that above the given arrow.</p>
+    </remark>
+
+    <p>This is best seen with a couple of examples.</p>
+
+    <example>
+      <statement>
+        <p>
+          <me>
+            \int x^3 e^x \, dx
+</me>
+        </p>
+        <p> using tabular integration.</p>
+      </statement>
+      <solution>
+        <p> First, we will build the table:
+        </p>
+        <figure>
+          <caption> tabular integration of <m>\int x^3 e^x \, dx</m>
+          </caption>
+          <image width="40%" xml:id="plot-tab-int-table">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}[every node/.style={anchor=base}]
+                  \matrix
+                  {
+                    \node (f1){$f'(x)$}; \amp \node{$\pm$}; \amp \node (g1) {$\int g(x) \, dx$}; \\ \hline
+                    \node (f2){$x^3$}; \amp \node {$+$}; \amp \node (g2) {$e^x$}; \\
+                    \node (f3) {$3x^2$}; \amp \node {$-$}; \amp \node (g3) {$e^x$}; \\
+                    \node (f4){$6x$}; \amp \node {$+$}; \amp \node (g4) {$e^x$}; \\
+                    \node (f5){$6$}; \amp \node {$-$}; \amp \node (g5) {$e^x$}; \\
+                    \node (f6){$0$}; \amp \node {$+$}; \amp \node (g6) {$e^x$}; \\
+                  };
+                    \draw[->] (f2)--(g3);
+                    \draw[->] (f3)--(g4);
+                    \draw[->] (f4)--(g5);
+                    \draw[->] (f5)--(g6);
+                \end{tikzpicture}
+              ]]>
+            </latex-image>
+          </image>
+        </figure>
+
+        <p>and then read off the result
+          which is the product of terms connected by the arrows with the sign above each arrow.</p>
+        <p>
+          <me>
+            \int x^3 e^x \, dx = x^3 e^x - 3x^2 e^x + 6x e^x - 6 e^x + C
+          </me>
+        </p>
+        <p> and don't forget the <m>C</m> for an indefinite integral. </p>
+      </solution>
+    </example>
+
+    <p> And the following is an example that is similar as
+      we will see below: </p>
+
+    <example>
+      <statement>
+        <p>
+          <me>
+            \int_0^{\pi} x^2 \cos 2x \, dx
+</me>
+        </p>
+        <p>using tabular integration.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First, we will
+          build the table:</p>
+        <figure>
+          <caption>
+            Find a point on a line that minimizes distance
+          </caption>
+          <image width="40%" xml:id="plot-tab-int-table2">
+            <latex-image>
+              <![CDATA[
+            \begin{tikzpicture}[every node/.style={anchor=base}]
+              \matrix
+              {
+                \node (f1){$f'(x)$}; \amp \node{$\pm$}; \amp \node (g1) {$\int g(x) \, dx$}; \\
+                \node (f2){$x^2$}; \amp \node {$+$}; \amp \node (g2) {$\cos 2x $}; \\
+                \node (f3) {$2x$}; \amp \node {$-$}; \amp \node (g3) {$\frac{1}{2} \sin 2x$}; \\
+                \node (f4){$2$}; \amp \node {$+$}; \amp \node (g4) {$-\frac{1}{4} \cos 2x$}; \\
+                \node (f5){$0$}; \amp \node {$-$}; \amp \node (g5) {$-\frac{1}{8} \sin 2x $}; \\
+              };
+                \draw[->] (f2)--(g3);
+                \draw[->] (f3)--(g4);
+                \draw[->] (f4)--(g5);
+            \end{tikzpicture}
+            ]]>
+            </latex-image>
+          </image>
+        </figure>
+
+        <p>and then read off the result
+          which is the product of terms connected by the arrows with the sign above each arrow.</p>
+
+        <p>
+          <md>
+            <mrow>\int_0^{\pi} x^2 \cos 2x \, dx \amp = \biggl( \frac{x^2}{2} \sin 2x + \frac{x}{2}
+              \cos 2x - \frac{1}{4} \sin 2x \biggr) \biggr \vert_{0}^{\pi} </mrow>
+            <mrow>\amp = \biggl(\frac{\pi^2}{2} \sin 2\pi + \frac{\pi}{2} \cos 2\pi - \frac{1}{4}
+              \sin
+              2\pi \biggr) </mrow>
+            <mrow>\amp \qquad - \biggl(0 + 0 - \frac{1}{4} \sin 0 \biggr) </mrow>
+            <mrow>\amp = \frac{\pi}{2}</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+
+  <subsection>
+    <title>Inner Products of Functions</title>
+
+    <p> As we saw in section <xref ref="sect-inner-product" />, the inner product of two functions
+      can be defined using the integral. In this section, we consider functions that are piecewise
+      continuous on <m>[a,b]</m> and </p>
+    <p>
+      <me>
+        \langle f, g \rangle = \int_a^b f(x) g(x) \, dx
+</me>
+    </p>
+    <p> In the standard way, the norm of <m>f</m> is defined as </p>
+    <p>
+      <me>
+        || f || = \langle f, f \rangle^{1/2} = \biggl( \int_a^b f^2(x) \, dx \biggr)^{1/2}
+</me>
+    </p>
+
+    <definition>
+      <statement>
+        <p> An infinite set of continuous function <m>\{f_1,f_2, \ldots\}</m> is said to be <term>orthogonal
+          on <m>[a,b]</m></term> if <m>\langle f_n, f_m \rangle =0</m> for all <m>n,m</m>, <m>n
+          \neq m</m>. If in addition, <m>||f_n||=1</m> for all <m>n</m>, the set is said to be <term>
+          orthonormal</term>. </p>
+      </statement>
+    </definition>
+
+    <p>In the next couple of examples, we examine a couple of the most important orthogonal and
+      orthonormal sets of functions.</p>
+
+
+    <example>
+      <statement>
+        <p> Show that <m>f_n(x) = \sin nx</m> for <m>n=1,2,3,\ldots</m> form an orthogonal set on <m>
+          [-\pi,\pi]</m>. </p>
+      </statement>
+      <solution>
+        <p> In this case, we will expand on the example <xref ref="ex-orthog-set" /> and use the
+          handy alternative definition of the sine function. Find the inner product if <m>n \neq m</m>
+          , </p>
+        <p>
+          <md>
+            <mrow>\langle f_n, f_m \rangle \amp = \int_{-\pi}^{\pi} \sin nx \sin mx \, dx </mrow>
+            <mrow>\amp = \int_{-\pi}^{\pi} \frac{e^{i n x} - e^{-i n x}}{2i}\frac{e^{i mx} - e^{-i m
+              x}}{2i} \, dx </mrow>
+            <mrow>\amp = -\frac{1}{4} \int_{-\pi}^{\pi} \bigl( e^{i(m+n)x} - e^{i(m-n) x}- e^{i(n-m)
+              x} + e^{-i(m+n) x} \bigr) \, dx</mrow>
+            <mrow>\amp = 0</mrow>
+          </md>
+        </p>
+        <p> Where <xref ref="lem-int-complex-exp" /> is used on the second to last row above. </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-trig-ortho-set">
+      <statement>
+        <p>
+          Show that the set of functions
+</p>
+        <p>
+          <me>
+            \biggl\{ \frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{\pi}} \cos x , \frac{1}{\sqrt{\pi}} \sin
+            x, \frac{1}{\sqrt{\pi}} \cos 2x, \frac{1}{\sqrt{\pi}} \sin 2x, \ldots \biggr\}
+</me>
+        </p>
+        <p> for an orthonormal set on <m>[-\pi,\pi]</m>. </p>
+      </statement>
+
+      <solution>
+
+        <p>We showed above that <m>\langle \sin mx, \sin nx \rangle=0</m> for all <m>m,n</m> when <m>m
+          \neq n</m>. Therefore <m>\langle (\sin mx)/\sqrt{\pi}, (\sin nx)/\sqrt{\pi} \rangle</m>.
+          For simpler notation let <md>
+            <mrow>s_n(x) \amp = \frac{1}{\sqrt{\pi}}\sin n x, \qquad \text{for $n \gt 0$} </mrow>
+            <mrow>c_n(x) \amp = \begin{cases}
+              \frac{1}{\sqrt{2\pi}} \amp n = 0, \\
+              \frac{1}{\sqrt{\pi}} \cos nx \amp n \gt 0,
+              \end{cases}</mrow>
+          </md>
+        </p>
+        <p> First, we will show that <m>\langle s_m (x), c_n(x) \rangle=0</m> for all <m>n, m \gt 0</m>
+          . </p>
+        <p>
+          <md>
+            <mrow>\langle s_m (x), c_n (x) \rangle \amp = \biggl\langle \frac{1}{\sqrt{\pi}}\sin mx,
+              \frac{1}{\sqrt{\pi}}\cos nx \biggr\rangle </mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \sin mx \cos nx \,dx </mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \frac{e^{imx} - e^{-imx}}{2i}
+              \frac{e^{inx}+e^{-inx}}{2} \, dx </mrow>
+            <mrow>\amp = \frac{1}{4i\pi} \int_{-\pi}^{\pi} \bigl(
+              e^{i(m+n)x}-e^{i(n-m)x}+e^{i(m-n)x}-e^{-i(m+n)x} \bigr) \, dx \\ \amp = 0</mrow>
+          </md>
+        </p>
+        <p> since each integral is zero from Lemma <xref ref="lem-int-complex-exp" />. Next, we will
+          show that\\ <m>\langle c_m(x), c_n(x) \rangle = 0</m> for all <m>n,m >0</m> such that <m>n
+          \neq m</m>. </p>
+        <p>
+          <md>
+            <mrow>\langle c_m (x), c_n (x) \rangle \amp =\biggl\langle \frac{1}{\sqrt{\pi}}\cos mx,
+              \frac{1}{\sqrt{\pi}}\cos nx \biggr\rangle</mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \cos mx \cos nx \,dx</mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \frac{e^{imx} + e^{-imx}}{2}
+              \frac{e^{inx}+e^{-inx}}{2} \, dx</mrow>
+            <mrow>\amp = \frac{1}{4\pi} \int_{-\pi}^{\pi} \bigl( e^{i(m+n)x}
+              +e^{i(n-m)x}+e^{i(m-n)x}+e^{-i(m+n)x} \bigr) \, dx </mrow>
+            <mrow>\amp= 0</mrow>
+          </md>
+        </p>
+        <p> because again each integral is zero from Lemma <xref ref="lem-int-complex-exp" />. </p>
+        <p>
+          Lastly, we need to show that the norm of each of the functions is 1.</p>
+        <p>
+          <md>
+            <mrow>\langle c_0, c_0 \rangle \amp = \int_{-\pi}^{\pi} \biggl(\frac{1}{\sqrt{2\pi}}
+              \biggr)^2 \, dx = 1 ,</mrow>
+            <mrow>\langle c_n, c_n \rangle \amp =\frac{1}{\pi} \int_{-\pi}^{\pi} \cos^2 nx \, dx </mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \biggl( \frac{e^{inx} + e^{-inx}}{2}
+              \biggr)^2 \, dx </mrow>
+            <mrow>\amp = \frac{1}{4\pi} \int_{-\pi}^{\pi} \bigl( e^{2inx} + 2 + e^{-2inx} \bigr) \,
+              dx</mrow>
+          </md>
+        </p>
+        <p>and the integrals of the first and third terms are zero from Lemma <xref
+            ref="lem-int-complex-exp" />.</p>
+        <p>
+          <md>
+            <mrow>\amp = \frac{1}{4\pi} \int_{-\pi}^{\pi} 2 \, dx = 1 </mrow>
+            <mrow>\langle s_n, s_n \rangle \amp =\frac{1}{\pi} \int_{-\pi}^{\pi} \sin^2 nx \, dx </mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \biggl( \frac{e^{inx} - e^{-inx}}{2i}
+              \biggr)^2 \, dx </mrow>
+            <mrow>\amp = \frac{1}{(2i)^2\pi} \int_{-\pi}^{\pi} \bigl( e^{2inx} - 2 + e^{-2inx}
+              \bigr) \, dx</mrow>
+          </md>
+        </p>
+        <p>and the integrals of the first and third terms are zero from Lemma <xref
+            ref="lem-int-complex-exp" />.</p>
+        <p>
+          <md>
+            <mrow>\amp = \frac{1}{-4\pi} \int_{-\pi}^{\pi} -2 \, dx = 1 </mrow>
+          </md>
+        </p>
+        <p>
+          This shows that the set of functions given above is an orthonormal set of functions. </p>
+      </solution>
+    </example>
+  </subsection>
+</section>
+

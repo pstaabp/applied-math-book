@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-matrices-vectors">
+  <title>Vectors and Matrices</title>
+
+  <introduction>
+    <p>The previous section discussed linear equations, linear systems and a method to attempt to
+      solve them.   As we noted the variables themselves played no role in the solution, however the coefficients
+      of the    variables clearly did. In this section, we examine the main two structures of linear algebra,
+      vectors and   matrices. </p>
+  </introduction>
+
+  <subsection>
+    <title>Vectors in <m>\mathbb{R}^2</m></title>
+
+    <p>Let's start simple and with something we know. The notation <m>\mathbb{R}</m> is the set of
+      all real numbers. It is often drawn as </p>
+
+    <figure xml:id="fig-number-line">
+      <caption>A standard number line</caption>
+      <image width="50%" xml:id="plot-number-line">
+
+        <latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \draw[<->,very thick](-3,0) -- (3,0);
+
+          \foreach \x in {-2,-1,...,2} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$\x$};}
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+
+    <p> and we use the number line to help with a number of mathematical concepts. For example, <m>3
+      + 2</m> means start at the point <m>3</m> and go 2 spaces to the right (positive direction).
+      The point of this is that there is direction and magnitude on <m>\mathbb{R}</m>. </p>
+
+    <definition>
+      <title>Alternative Definition of a Vector</title>
+      <statement>
+        <p>A <term>vector</term> is a mathematical object with a magnitude and a direction. </p>
+      </statement>
+    </definition>
+
+    <p> In <m>\mathbb{R}</m>, for two points, the vector between them is the distance between the
+      point with the direction (left as negative and right as positive). </p>
+
+    <p> In <m>\mathbb{R}^2</m>, vectors are often drawn as </p>
+
+    <figure xml:id="fig-plot-vectors">
+      <caption>A plot of a few vectors</caption>
+      <image width="50%" xml:id="plot-vectors">
+
+        <latex-image>
+          <![CDATA[
+          \begin{tikzpicture}
+          \draw [->] (-4,0) -- (4,0);
+          \draw [->] (0,-4) -- (0,4);
+          \foreach \x in {-3,-2,-1,1,2,3} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$\x$};}
+          \foreach \y in {-3,-2,-1,1,2,3} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$\y$};}
+          \draw [->,very thick] (0,0) -- (3,2);
+          \draw [->,very thick] (-3,-1) -- (0,1);
+          \draw [->, very thick] (2,-1) -- (2,-2);
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>with the magnitude being the length of the arrow and the direction as the
+      angle (typically from the positive horizontal axis). </p>
+
+    <p>The left 2 vectors above are identical above because the have the same
+      magnitude and direction. That is the origin does not matter. </p>
+
+    <p> To connect these concepts with that of vectors that we saw in <xref ref="sect-matrices-vectors" />
+      above, we saw that the two different vectors in the plot above are <md>
+        <mrow>\begin{bmatrix}
+          3 \\ 2
+          \end{bmatrix} \amp\amp\amp \begin{bmatrix}
+          0 \\ -1
+          \end{bmatrix}</mrow>
+      </md> and as we will see that this formulation is much easier
+      that writing down a vectors as a length and an angle. </p>
+
+  </subsection>
+
+
+  <subsection>
+    <title>Vectors, Free Vectors and Points</title>
+
+    <p> As noted above, vectors by definition have only a direction and magnitude which is why two
+      of the vectors in the figure above are equal. Often, to clarify that the source point of the
+      vector does not matter, the term <term>free vector</term> is used. However, generally, unless
+      indicated a vector is a free vector.</p>
+
+    <p>One case where a vector has a fixed point is when the source point is the origin. For
+      example: </p>
+
+    <figure xml:id="fig-plot-origin-vector">
+      <caption>A plot of a vector starting at the origin</caption>
+      <image width="75%" xml:id="plot-origin-vector">
+
+        <latex-image><![CDATA[
+
+          \begin{tikzpicture}
+          \draw [->] (-3,0) -- (3,0);
+          \draw [->] (0,-3) -- (0,3);
+          \foreach \x in {-2,-1,1,2} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
+          \foreach \y in {-2,-1,1,2} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
+          \draw [->,very thick] (0,0) -- (2,1) node [above] {$ \vec{v}$};
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+
+    <p>The vector starts at the origin and the end point is at the point <m>(2,1)</m>. This vector
+      is </p>
+    <p>
+      <me> \vec{v} =
+        \begin{bmatrix}
+        2 \\1
+        \end{bmatrix}
+      </me>
+    </p>
+    <p> and the vector and the end point are identical. This can be very handy in many cases as we will we see. </p>
+
+  </subsection>
+
+
+  <subsection xml:id="sect-vectors-rn">
+    <title>Vectors in <m>\mathbb{R}^n</m></title>
+
+    <p>We extend the ideas from the previous section to a vector of any length.  A vector <m>\vec{u}</m>
+      which has length <m>n</m> is written</p>
+      <p>
+
+      <me>
+        \vec{u} = \begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ v_n \end{bmatrix}
+      </me>
+    </p>
+
+  </subsection>
+
+
+</section>

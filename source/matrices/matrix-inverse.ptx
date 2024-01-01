@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-matrix-inverse" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>The Inverse of a Matrix</title>
+	<introduction>
+		<p>
+			At the end of the previous section, we learned how to write a linear system in the form <m>
+			A\vec{u}=\vec{b}</m>.
+			In this section, we will learn how to find an inverse and then use it to
+			solve the matrix equation <m>A\vec{u}=\vec{b}</m>.
+		</p>
+	</introduction>
+
+	<subsection>
+		<title>The Identity Matrix</title>
+		<definition>
+			<statement>
+				<p>
+					The <term>identity matrix</term> of size <m>n</m> is an <m>n</m> by <m>n</m> matrix of
+					all zeros except ones on the diagonal (from upper left to lower right).
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			The following are identity matrices of sizes 2, 3, and 4
+		</p>
+
+		<p>
+			<md>
+				<mrow>I \amp =\begin{bmatrix}
+				1 \amp 0 \\ 0 \amp 1
+				\end{bmatrix},
+				\amp I =\amp
+				\begin{bmatrix}
+				1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1
+				\end{bmatrix},
+				\amp I = \amp
+				\begin{bmatrix}
+				1 \amp 0 \amp 0 \amp 0\\ 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp
+				0 \amp 1
+				\end{bmatrix}.</mrow>
+			</md>
+		</p>
+
+		<p>
+			The identity matrix is a matrix such that <m>IA = AI = A</m>.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>The Inverse</title>
+		<p>
+			Recall that we showed at the end of the previous section that a linear system can be written
+			as:
+			<me>
+				A \vec{u} = \vec{b},
+			</me>
+			where <m>A</m> is the coefficient matrix of the unknowns, <m>
+			\vec{u}</m> is a column vector of unknowns, and <m>\vec{b}</m> is the right hand sides of each
+			equation.
+		</p>
+
+		<p>
+			We possibly would like to say that:
+			<me>
+				\vec{u} = \frac{\vec{b}}{A},
+			</me>
+			but how do we divide through by <m>A</m>? We can't
+			because there is no matrix division.
+			However, we will see that there is a matrix which will
+			let us multiply through to give the answer.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Solving a simple linear equation</title>
+		<p>
+			To motivate solving a matrix equation, let's look at solving <m>a x = b</m>, where each is
+			simply a number (or technically a scalar).
+			The solution is <m>x=b/a</m>, but we can also write
+			it as <m>x = a^{-1}b</m>, where <m>a^{-1}=\frac{1}{a}</m> is the reciprocal of <m>a</m>, which
+			has the property
+		</p>
+
+		<p>
+			<me>
+				a^{-1} a = a a^{-1} = 1
+			</me>
+		</p>
+
+		<p>
+			for any value of <m>a \neq 0</m>.
+			And the important part of this is that the solution <m>
+			x=a^{-1}b</m> uses only multiplication for the solution.
+		</p>
+
+		<p>
+			We wish to do the same for matrices, which means that we'd like to find a matrix <m>A^{-1}</m>
+			(called <m>A</m> inverse) such that
+		</p>
+
+		<p>
+			<me>
+				A^{-1} A = A A^{-1} = I
+			</me>
+		</p>
+
+		<p>
+			And later we will see how to solve <m>A\vec{u}=\vec{b}</m>.
+			First, let's determine how to
+			find an inverse matrix and we'll start with the inverse of a 2 by 2 matrix.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>The Inverse of a 2 by 2 matrix</title>
+		<lemma>
+			<statement>
+				<p>
+					The inverse of a 2 by 2 matrix is given by
+				</p>
+
+				<p>
+					<men xml:id="eq-def-2by2-inverse">
+						A^{-1} = \frac{1}{ad-bc}
+						\begin{bmatrix}
+						d \amp -b \\ -c \amp a
+						\end{bmatrix}
+					</men>
+				</p>
+
+				<p>
+					if <m>ad-bc \neq 0</m>.
+					If <m>ad-bc =0</m>, the matrix does not have an inverse.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					We will prove this, by showing that if <m>A^{-1}</m> is an inverse then <m>AA^{-1}=I</m>
+					(or <m>A^{-1}A=I</m>).
+				</p>
+
+				<p>
+					<me>
+						A A^{-1} = \begin{bmatrix}
+						a \amp b \\ c \amp d
+						\end{bmatrix} \frac{1}{ad-bc}
+						\begin{bmatrix}
+						d \amp -b \\ -c \amp a
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Although we haven't shown this, the scalar <m>1/ad-bc</m> can be written out front.
+				</p>
+
+				<p>
+					<me>
+						= \frac{1}{ad-bc}
+						\begin{bmatrix}
+						a \amp b \\ c \amp d
+						\end{bmatrix}
+						\begin{bmatrix}
+						d \amp -b \\ -c \amp a
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Multiply the two matrices like we did in the previous section.
+				</p>
+
+				<p>
+					<me>
+						= \frac{1}{ad-bc}\begin{bmatrix}
+						ad-bc \amp -ac+ac \\ da-da \amp ad-bc
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					simplify and multiply through by <m>ad-bc=ad-bc</m>.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp= \begin{bmatrix}
+						\frac{ad-bc}{ad-bc} \amp 0 \\ 0 \amp \frac{ad-bc}{ad-bc}
+						\end{bmatrix} </mrow>
+						<mrow>\amp =
+						\begin{bmatrix}
+						1 \amp 0 \\ 0 \amp 1
+						\end{bmatrix}
+						= I.</mrow>
+					</md>
+				</p>
+
+				<p>
+					And since we have shown that <m>AA^{-1}=I</m>, this proves the formula for the inverse
+					in (<xref ref="eq-def-2by2-inverse" />).
+				</p>
+			</proof>
+		</lemma>
+
+		<p>
+			The following example uses the formula in (<xref ref="eq-def-2by2-inverse" />) to find the
+			inverse matrix of a 2 by 2 matrix.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find the inverse of
+				</p>
+
+				<p>
+					<me>
+						A = \begin{bmatrix}
+						3 \amp 2 \\ 2 \amp 1
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Since (<xref ref="eq-def-2by2-inverse" />) has the determinant of <m>A</m> as part of it,
+					first, we will find <m>ad-bc = 3(1)-(2)(2) = -1</m>.
+					Then apply the formula,
+				</p>
+
+				<p>
+					<me>
+						A^{-1} = \frac{1}{-1} \begin{bmatrix}
+						1 \amp -2 \\ -2 \amp 3
+						\end{bmatrix} = \begin{bmatrix}
+						-1 \amp 2 \\ 2 \amp -3
+						\end{bmatrix}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The next example shows that not every matrix has an inverse.
+			Since a matrix inverse is
+			similar to the reciprocal of a number, a matrix with no inverse is similar to a number with no
+			reciprocal.
+			And this occurs for the number 0 because <m>1/0</m> is undefined.
+		</p>
+
+		<example xml:id="ex-2by2-noinverse">
+			<statement>
+				<p>
+					Show that the matrix
+				</p>
+
+				<p>
+					<me>
+						A = \begin{bmatrix}
+						2 \amp 1 \\ 4 \amp 2
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					does not have an inverse.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Again we use (<xref ref="eq-def-2by2-inverse" />), but because <m>ad-bc = 2(2)-4(1) = 0</m>,
+					the matrix does not have an inverse.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Solving <m>A\vec{u}=\vec{b}</m></title>
+		<p>
+			At the end of <xref ref="section-matrix-multiplication-linear-systems" />, we learned how to
+			take a linear system and write it as the matrix equation <m>A\vec{u}=\vec{b}</m>.
+			In this
+			section we will learn how to solve a system written in this form.
+			If we start with the
+			equation,
+			<md>
+				<mrow>A\vec{u} \amp =\vec{b} \amp \text{Multiply this by $A^{-1}$} </mrow>
+				<mrow>A^{-1} A \vec{u}\amp = A^{-1} \vec{b} \amp \text{Use the fact that $A^{-1}A=I$} </mrow>
+				<mrow>I \vec{u} \amp = A^{-1} \vec{b} \amp \text{And $I\vec{u}=\vec{u}$
+				for any vector $\vec{u}$.} </mrow>
+				<mrow>\vec{u} \amp= A^{-1}\vec{b} </mrow>
+			</md>
+			so if we can find the inverse of a
+			matrix, then solving linear systems becomes matrix multiplication.
+		</p>
+
+		<remark>
+			<p>
+				If you are trying to solve the matrix equation
+			</p>
+
+			<p>
+				<me>
+					A\vec{u} = \vec{b}
+				</me>
+			</p>
+
+			<p>
+				for a square matrix <m>A</m> and the inverse matrix <m>A^{-1}</m> exists, then
+			</p>
+
+			<p>
+				<me>
+					\vec{u} = A^{-1} \vec{b}
+				</me>
+			</p>
+		</remark>
+
+		<example xml:id="ex-solve-by-inverse">
+			<statement>
+				<p>
+					Solve the system:
+				</p>
+
+				<p>
+					<md>
+						<mrow>3x + 4y \amp = 1, </mrow>
+						<mrow>2x - y \amp = -3,</mrow>
+					</md>
+				</p>
+
+				<p>
+					by writing the system as <m>A \vec{u} = \vec{b}</m>, then finding <m>A^{-1}</m> and
+					finally by writing <m>\vec{u} = A^{-1} \vec{b}</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, write down <m>A</m>, <m>\vec{u}</m> and <m>\vec{b}</m>.
+					(We learned how to do
+					this in <xref ref="section-matrix-multiplication-linear-systems" />.)
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp = \begin{bmatrix}
+						3 \amp 4 \\ 2 \amp -1
+						\end{bmatrix},
+						\amp \vec{u} \amp=
+						\begin{bmatrix}
+						x \\ y
+						\end{bmatrix}, \amp \vec{b} \amp =
+						\begin{bmatrix}
+						1 \\ -3
+						\end{bmatrix}.</mrow>
+					</md>
+				</p>
+
+				<p>
+					Then find the inverse of <m>A</m>, which is a 2 by 2 matrix, so we will use (<xref
+					ref="eq-def-2by2-inverse" />).
+					Since <m>ad-bc = -3 -8 =
+					-11</m>.
+				</p>
+
+				<p>
+					<me>
+						A^{-1} = \frac{1}{-11}
+						\begin{bmatrix}
+						-1 \amp -4 \\ -2 \amp 3
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Then
+					write down the solution:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{u} \amp = A^{-1} \vec{b} </mrow>
+						<mrow>\amp = \frac{1}{-11}
+						\begin{bmatrix}
+						-1 \amp -4 \\ -2 \amp 3
+						\end{bmatrix}
+						\begin{bmatrix}
+						1 \\ -3
+						\end{bmatrix}
+						</mrow>
+						<mrow>\amp = \frac{1}{-11} \begin{bmatrix}
+						-1+12 \\ -2-9
+						\end{bmatrix} = \frac{1}{-11} \begin{bmatrix}
+						11 \\ -11
+						\end{bmatrix} =
+						\begin{bmatrix}
+						-1 \\ 1
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					So the solution is <m>\vec{u} =
+					\begin{bmatrix}
+					-1 \\ 1
+					\end{bmatrix}</m> or <m>x=-1</m> and <m>y=1</m>.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The next example shows how to perform the same steps for a 3 by 3
+			matrix, although we don't know how to find an inverse of a 3 by 3
+			matrix yet.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					We will later show that if
+				</p>
+
+				<p>
+					<me>
+						A = \begin{bmatrix}
+						-4 \amp -5 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					then
+				</p>
+
+				<p>
+					<me>
+						A^{-1} = \begin{bmatrix}
+						\frac{11}{2} \amp \frac{23}{2} \amp 8 \\
+						-5 \amp -10 \amp -7 \\ 2 \amp 4 \amp 3
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Use this to find the solution to:
+				</p>
+
+				<p>
+					<md>
+						<mrow>-4 x-5y -z \amp = -12, </mrow>
+						<mrow>2 x + y - 3 z \amp = 6, </mrow>
+						<mrow>2y + 5z \amp = 10.</mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, the linear system can be written as <m>A\vec{u}=\vec{b}</m> if
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp =
+						\begin{bmatrix}
+						-4 \amp -5 \amp -1 \\
+						2 \amp1 \amp -3 \\
+						0 \amp 2 \amp 5
+						\end{bmatrix},
+						\amp \vec{u} \amp =
+						\begin{bmatrix}
+						x \\ y\\ z
+						\end{bmatrix}, \amp \vec{b} \amp =
+						\begin{bmatrix}
+						-12 \\ 6 \\ 10
+						\end{bmatrix}.</mrow>
+					</md>
+					Then we write the solution to this systems as
+					<md>
+						<mrow>\vec{u} \amp = A^{-1} \vec{b}, </mrow>
+						<mrow>\amp = \begin{bmatrix}
+						\frac{11}{2} \amp \frac{23}{2} \amp 8 \\
+						-5 \amp -10 \amp -7 \\ 2 \amp 4 \amp 3
+						\end{bmatrix}
+						\begin{bmatrix}
+						-12 \\ 6 \\ 10
+						\end{bmatrix}, </mrow>
+						<mrow>\amp = \begin{bmatrix}
+						83 \\ -70 \\ 30
+						\end{bmatrix},</mrow>
+					</md>
+				</p>
+
+				<p>
+					therefore the solution is <m>x=83, y=-70,</m> and <m>
+					z=30</m>.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>the Gauss-Jordan Method for Calculating Inverses</title>
+		<p>
+			As we have seen, often
+			matrices are larger than 2 by 2 and thus
+			far we have no method to find an inverse of a matrix of this size.
+			In this section, we will see that the Gauss-Jordon method can help us
+			do this.
+		</p>
+
+		<p>
+			If we write a matrix <m>A</m> of the form
+		</p>
+
+		<p>
+			<me>
+				\begin{bmatrix}
+				A \amp | \amp I
+				\end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			where
+			the matrix <m>
+			A</m> is on the left and the identity matrix is on the right and apply Gauss-Jordon to get
+			the identity matrix on the left, then the matrix will look like,
+		</p>
+
+		<p>
+			<me>
+				\begin{bmatrix}
+				I \amp | \amp A^{-1}
+				\end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			and
+			the matrix on the right half is the inverse matrix, <m>A^{-1}</m>.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Use the Gauss-Jordan Method to find the inverse of
+				</p>
+
+				<p>
+					<me>
+						A = \begin{bmatrix}
+						3 \amp 2 \\ 2 \amp 1
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, write the matrix <m>[\;A\; | \;I\;]</m> and then perform Gaussian Elimination.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp \qquad
+						\left[\begin{array}{rr|rr}
+						3 \amp 2 \amp 1 \amp 0 \\
+						2 \amp 1 \amp 0 \amp 1
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					We desire a 1 in the upper right.
+					Instead of
+					dividing the first row by 3, we will do the following,
+				</p>
+
+				<p>
+					<md>
+						<mrow>-R_2 + R_1 \rightarrow R_1 \amp \qquad
+						\left[\begin{array}{rr|rr}
+						1 \amp 1 \amp 1 \amp -1 \\
+						2 \amp 1 \amp 0 \amp 1
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					Then eliminate the lower right element on the
+					left side,
+				</p>
+
+				<p>
+					<md>
+						<mrow>-2 R_1 + R_2 \rightarrow R_2 \amp \qquad
+						\left[\begin{array}{rr|rr}
+						1 \amp 1 \amp 1 \amp -1 \\
+						0 \amp -1 \amp -2 \amp 3
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					Multiply through by <m>-1</m> to get a 1 in the lower right of the left side
+				</p>
+
+				<p>
+					<md>
+						<mrow>- R_2 \rightarrow R_2 \amp \qquad
+						\left[\begin{array}{rr|rr}
+						1 \amp 1 \amp 1 \amp -1 \\
+						0 \amp 1 \amp 2 \amp -3
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					And finally zero out the 2nd column, 1st row.
+				</p>
+
+				<p>
+					<md>
+						<mrow>- R_2 + R_1 \rightarrow R_1 \amp \qquad
+						\left[\begin{array}{rr|rr}
+						1 \amp 0 \amp -1 \amp 2 \\
+						0 \amp 1 \amp 2 \amp -3
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					We stop here because the left half of the
+					matrix is the identity matrix.
+					The right half is now the inverse.
+					Therefore:
+				</p>
+
+				<p>
+					<me>
+						A^{-1} = \begin{bmatrix}
+						-1 \amp 2 \\ 2 \amp -3
+						\end{bmatrix}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			This example showed how to find the inverse of a 2 by 2 matrix using the Gauss-Jordan method.
+			We
+			saw the formula in (<xref ref="eq-def-2by2-inverse" />), and generally it is easier to compute
+			the inverse using that formula.
+			However, the formula in (<xref ref="eq-def-2by2-inverse" />)
+			only works for 2 by 2 matrices.
+			The next example shows how to use the Gauss-Jordan method to
+			find the inverse of a 3 by 3 matrix.
+		</p>
+
+		<example xml:id="ex-3by3-matrix-inverse">
+			<statement>
+				<p>
+					Find the inverse of
+				</p>
+
+				<p>
+					<me>
+						A = \begin{bmatrix}
+						3 \amp 3 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, we write <m>[\;A\;|\;I\;]</m> and then use the Gauss-Jordon Method.
+					<md>
+						<mrow>\amp \qquad \left[\begin{array}{rrr|rrr}
+						3 \amp 3 \amp -1 \amp 1 \amp 0 \amp 0\\
+						2 \amp 1 \amp -3 \amp 0 \amp 1 \amp 0\\
+						0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					Since we want a 1 in the upper right and don't want fractions, try
+				</p>
+
+				<p>
+					<md>
+						<mrow>-R_2 + R_1 \rightarrow R_2 \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\
+						2 \amp 1 \amp -3 \amp 0 \amp 1 \amp 0\\
+						0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					And zero out the rest of the first column.
+				</p>
+
+				<p>
+					<md>
+						<mrow>-2 R_1 + R_2 \rightarrow R_2 \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\
+						0 \amp -3 \amp -7 \amp -2 \amp 3 \amp 0\\
+						0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
+						\end{array}\right] </mrow>
+					</md>
+				</p>
+
+				<p>
+					Again, to avoid fractions, try
+				</p>
+
+				<p>
+					<md>
+						<mrow>2 R_3 + R_2 \rightarrow R_2 \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\
+						0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\
+						0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					And zero out the other elements in the 2nd column.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\begin{array}{r}
+						-2 R_2 + R_3 \rightarrow R_3 \\
+						- 2R_2 + R_1 \rightarrow R_1
+						\end{array} \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 0 \amp -4 \amp 5 \amp -7 \amp -4\\
+						0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\
+						0 \amp 0 \amp -1 \amp 4 \amp -6 \amp -3\\
+						\end{array}\right] </mrow>
+					</md>
+				</p>
+
+				<p>
+					Next, we need a 1 where the <m>-1</m> is.
+				</p>
+
+				<p>
+					<md>
+						<mrow>-R_3 \rightarrow R_3 \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 0 \amp -4 \amp 5 \amp -7 \amp -4\\
+						0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\
+						0 \amp 0 \amp 1 \amp -4 \amp 6 \amp 3\\
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					And lastly zero out the rest of the 3rd column.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\begin{array}{r}
+						-3 R_3 + R_2 \rightarrow R_2 \\
+						4 R_3 + R_1 \rightarrow R_1
+						\end{array} \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 0 \amp 0 \amp -11 \amp 17 \amp 8\\
+						0 \amp 1 \amp 0 \amp 10 \amp -15 \amp -7\\
+						0 \amp 0 \amp 1 \amp -4 \amp 6 \amp 3\\
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					Since we have found the 3 by 3 identity on the left, the inverse is on the right or
+				</p>
+
+				<p>
+					<me>
+						A^{-1} =
+						\begin{bmatrix}
+						-11 \amp 17 \amp 8 \\
+						10 \amp -15 \amp -7 \\
+						-4 \amp 6 \amp 3\\
+						\end{bmatrix}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			As
+			we saw with some 2 by 2 matrices (as in <xref ref="ex-2by2-noinverse" />), their inverse does
+			not exist.
+			We see how using the Gauss-Jordon method results in this situation for a 3 by 3
+			example.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Show that the matrix
+				</p>
+
+				<p>
+					<me>
+						\begin{bmatrix}
+						1 \amp -5 \amp 3 \\
+						-2 \amp 3 \amp 7 \\
+						-1 \amp -2 \amp 10
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					does not have an inverse.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, write <m>[\;A\;|\;I\;]</m> and then use the Gauss-Jordan Method to alter the
+					matrix.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp \qquad \left[\begin{array}{rrr|rrr}
+						1 \amp -5 \amp 3 \amp 1 \amp 0 \amp 0 \\
+						-2 \amp 3 \amp 7 \amp 0 \amp 1 \amp 0 \\
+						-1 \amp -2 \amp 10 \amp 0 \amp 0 \amp 1 \\
+						\end{array}\right] </mrow>
+						<mrow>\begin{array}{r}
+						2 R_1 + R_2 \rightarrow R_2 \\
+						R_1 + R_3 \rightarrow R_3
+						\end{array} \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp -5 \amp 3 \amp 1 \amp 0 \amp 0 \\
+						0 \amp -7 \amp 13 \amp 2 \amp 1 \amp 0 \\
+						0 \amp -7 \amp 13 \amp 1 \amp 0 \amp 1 \\
+						\end{array}\right] </mrow>
+						<mrow>-R_2 + R_3 \rightarrow R_3 \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp -5 \amp 3 \amp 1 \amp 0 \amp 0 \\
+						0 \amp -7 \amp 13 \amp 2 \amp 1 \amp 0 \\
+						0 \amp 0 \amp 0 \amp -1 \amp 0 \amp 1 \\
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					And we stop since the row of zeros on the
+					bottom of the left half of the matrix indicates that we cannot get an
+					identity matrix on the left half of the matrix.
+					This shows that the matrix is not
+					invertible.
+				</p>
+			</solution>
+		</example>
+
+		<example>
+			<statement>
+				<p>
+					Consider the linear system
+				</p>
+
+				<p>
+					<md>
+						<mrow>x+2y \amp = 3, </mrow>
+						<mrow>y-z \amp = 0, </mrow>
+						<mrow>x+ y \amp = 5.</mrow>
+					</md>
+				</p>
+
+				<p>
+					Write this system as <m>A\vec{u}=\vec{b}</m> and then solve it use the inverse matrix.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, let
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp =
+						\begin{bmatrix}
+						1 \amp 2 \amp 0 \\
+						0 \amp 1 \amp -1 \\
+						1 \amp 1 \amp 0
+						\end{bmatrix}
+						\amp \vec{u} \amp = \begin{bmatrix}
+						x \\ y \\ z
+						\end{bmatrix}
+						\amp \vec{b} \amp = \begin{bmatrix}
+						3 \\ 0 \\ 5
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					We need to find <m>A^{-1}</m> and will use Gauss-Jordan:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp \qquad \left[\begin{array}{rrr|rrr}
+						1 \amp 2 \amp 0 \amp 1 \amp 0 \amp 0 \\
+						0 \amp 1 \amp -1 \amp 0 \amp 1 \amp 0 \\
+						1 \amp 1 \amp 0 \amp 0 \amp 0 \amp 1 \\
+						\end{array}\right] </mrow>
+						<mrow>-R_1 + R_3 \rightarrow R_3
+						\amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 2 \amp 0 \amp 1 \amp 0 \amp 0 \\
+						0 \amp 1 \amp -1 \amp 0 \amp 1 \amp 0 \\
+						0 \amp -1 \amp 0 \amp -1 \amp 0 \amp 1 \\
+						\end{array}\right]</mrow>
+						<mrow>\begin{array}{r}
+						-2R_2 +R_1 \rightarrow R_1 \\
+						R_2 +R_3 \rightarrow R_3
+						\end{array} \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 0 \amp 2 \amp 1 \amp -2 \amp 0 \\
+						0 \amp 1 \amp -1 \amp 0 \amp 1 \amp 0 \\
+						0 \amp 0 \amp -1 \amp -1 \amp 1 \amp 1 \\
+						\end{array}\right]</mrow>
+						<mrow>-R_3 \rightarrow R_3 \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 0 \amp 2 \amp 1 \amp -2 \amp 0 \\
+						0 \amp 1 \amp -1 \amp 0 \amp 1 \amp 0 \\
+						0 \amp 0 \amp 1 \amp 1 \amp -1 \amp -1 \\
+						\end{array}\right] </mrow>
+						<mrow>\begin{array}{r}
+						R_3+R_2\rightarrow R_2 \\
+						-2R_3 + R_1 \rightarrow R_1
+						\end{array} \amp \qquad
+						\left[\begin{array}{rrr|rrr}
+						1 \amp 0 \amp 0 \amp -1 \amp 0 \amp 2 \\
+						0 \amp 1 \amp 0 \amp 1 \amp 0 \amp -1 \\
+						0 \amp 0 \amp 1 \amp 1 \amp -1 \amp -1 \\
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					Thus the inverse is:
+				</p>
+
+				<p>
+					<me>
+						A^{-1}=
+						\begin{bmatrix}
+						-1 \amp 0 \amp 2\\
+						1 \amp 0 \amp -1 \\
+						1 \amp -1 \amp -1
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Next, we solve the linear system by writing
+				</p>
+
+				<p>
+					<md>
+						<mrow> \vec{u} \amp = A^{-1}\vec{b} \\
+						\amp = \begin{bmatrix}
+						-1 \amp 0 \amp 2\\
+						1 \amp 0 \amp -1 \\
+						1 \amp -1 \amp -1
+						\end{bmatrix}
+						\begin{bmatrix}
+						3\\ 0 \\ 5
+						\end{bmatrix} </mrow>
+						<mrow>\amp =
+						\begin{bmatrix}
+						7 \\ -2 \\ -2
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and therefore the solution to the linear system is <m>x=7, y=-2</m>, and <m>z=-2</m>.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The last example shows how to perform a linear system solve using the inverse matrix technique
+			of a linear system with 4 equations and 4 unknowns.
+			The technique is exactly the same as the
+			previous example, however there are quite a few steps to find the inverse.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Use Matrix Inversion to solve:
+				</p>
+
+				<p>
+					<md>
+						<mrow>2 x + y \amp = 5, </mrow>
+						<mrow>x + 2y + z \amp = 0, </mrow>
+						<mrow>y + 2 z + w \amp = 5, </mrow>
+						<mrow>z + 2 w \amp = 0.</mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, we need to find the inverse.
+					Use the Gauss-Jordan method:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp \quad
+						\left[\begin{array}{rrrr|rrrr}
+						2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \amp 0 \\
+						1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+						0 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \\
+						0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1
+						\end{array}\right]</mrow>
+						<mrow>\begin{array}{r}
+						R_1 \leftrightarrow R_2, \\R_2 \leftrightarrow R_3, \\R_3 \leftrightarrow R_4,
+						\end{array}
+						\amp \quad
+						\left[\begin{array}{rrrr|rrrr}
+						1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+						0 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \\
+						0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1 \\
+						2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \amp 0
+						\end{array}\right]</mrow>
+						<mrow>-2 R_1 + R_4 \rightarrow R_4, \amp \quad
+						\left[\begin{array}{rrrr|rrrr}
+						1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+						0 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \\
+						0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1 \\
+						0 \amp -3 \amp -2 \amp 0 \amp 1 \amp -2 \amp 0 \amp 0
+						\end{array}\right]</mrow>
+						<mrow>\begin{array}{r}
+						3 R_2 + R_4 \rightarrow R_4 \\
+						-2R_2 + R_1 \rightarrow R_1
+						\end{array} \amp \quad
+						\left[\begin{array}{rrrr|rrrr}
+						1 \amp 0 \amp -3 \amp -2 \amp 0 \amp 1 \amp -2 \amp 0\\
+						0 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0\\
+						0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1\\
+						0 \amp 0 \amp 4 \amp 3 \amp 1 \amp -2 \amp 3 \amp 0\\
+						\end{array}\right]</mrow>
+						<mrow>\begin{array}{r}
+						-4 R_3 + R_4 \rightarrow R_4 \\
+						-2R_3+R_2 \rightarrow R_2 \\
+						3R_3 + R_1 \rightarrow R_1
+						\end{array}
+						\amp \quad
+						\left[\begin{array}{rrrr|rrrr}
+						1 \amp 0 \amp 0 \amp 4 \amp 0 \amp 1 \amp -2 \amp 3\\
+						0 \amp 1 \amp 0 \amp -3 \amp 0 \amp 0 \amp 1 \amp -2\\
+						0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1\\
+						0 \amp 0 \amp 0 \amp -5 \amp 1 \amp -2 \amp 3 \amp -4\\
+						\end{array}\right]</mrow>
+						<mrow>\begin{array}{r}
+						2 R_4 + 5R_3 \rightarrow R_3, \\
+						-3R_4 + 5R_2 \rightarrow R_2,\\
+						4R_4 + 5R_1 \rightarrow R_1,
+						\end{array}
+						\amp \quad
+						\left[\begin{array}{rrrr|rrrr}
+						5 \amp 0 \amp 0 \amp 0 \amp 4 \amp -3 \amp 2 \amp -1\\
+						0 \amp 5 \amp 0 \amp 0 \amp -3 \amp 6 \amp -4 \amp 2\\
+						0 \amp 0 \amp 5 \amp 0 \amp 2 \amp -4 \amp 6 \amp -3\\
+						0 \amp 0 \amp 0 \amp -5 \amp 1 \amp -2 \amp 3 \amp -4\\
+						\end{array}\right]</mrow>
+						<mrow>\begin{array}{r}
+						\frac{1}{5} R_1 \rightarrow R_1, \\
+						\frac{1}{5} R_2 \rightarrow R_2, \\
+						\frac{1}{5} R_3 \rightarrow R_3, \\
+						-\frac{1}{5} R_4 \rightarrow R_4, \\
+						\end{array} \amp \quad
+						\left[\begin{array}{rrrr|rrrr}
+						1 \amp 0 \amp 0 \amp 0 \amp 4/5 \amp -3/5 \amp 2/5 \amp -1/5\\
+						0 \amp 1 \amp 0 \amp 0 \amp -3/5 \amp 6/5 \amp -4/5 \amp 2/5\\
+						0 \amp 0 \amp 1 \amp 0 \amp 2/5 \amp -4/5 \amp 6/5 \amp -3/5\\
+						0 \amp 0 \amp 0 \amp 1 \amp -1/5 \amp 2/5 \amp -3/5 \amp 4/5\\
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					Therefore:
+				</p>
+
+				<p>
+					<me>
+						A^{-1} =
+						\left[\begin{array}{rrrr}
+						4/5 \amp -3/5 \amp 2/5 \amp - 1/5 \\
+						-3/5 \amp 6/5 \amp -4/5 \amp 2/5 \\
+						2/5 \amp -4/5 \amp 6/5 \amp -3/5 \\
+						-1/5 \amp 2/5 \amp -3/5 \amp 4/5 \\
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					and then the solution to <m>AX=B</m>, where <m>B=[5\;0\;5\;0]^{\intercal}</m> is
+				</p>
+
+				<p>
+					<me>
+						X =
+						\begin{bmatrix}
+						4/5 \amp -3/5 \amp 2/5 \amp - 1/5 \\
+						-3/5 \amp 6/5 \amp -4/5 \amp 2/5 \\
+						2/5 \amp -4/5 \amp 6/5 \amp -3/5 \\
+						-1/5 \amp 2/5 \amp -3/5 \amp 4/5 \\
+						\end{bmatrix}
+						\begin{bmatrix}
+						5 \\ 0 \\ 5 \\ 0
+						\end{bmatrix}
+						= \begin{bmatrix}
+						6 \\ -7 \\ 8 \\ -4
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Note that since the matrix <m>A</m> is symmetric (in many ways), the matrix <m>A^{-1}</m> is
+					also symmetric.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Properties of the Inverse Matrix</title>
+		<p>
+			Fill this section out a bit more
+		</p>
+
+		<theorem xml:id="thm-matrix-inverse">
+      <title>Product of Matrix Inverses</title>
+			<statement>
+				<p>
+					Let <m>A</m> and <m>B</m> be invertible matrices.
+					Then
+				</p>
+
+				<p>
+					<me>
+						(AB)^{-1} = B^{-1}A^{-1}
+					</me>
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					<md>
+						<mrow>(AB)^{-1} (AB) \amp = I </mrow>
+            <mrow>(AB)^{-1} (AB) B^{-1} \amp = I B^{-1} = B^{-1} </mrow>
+            <mrow>(AB)^{-1} A I  \amp = I B^{-1} = B^{-1} </mrow>
+            <mrow>(AB)^{-1} A \amp =  B^{-1} </mrow>
+            <mrow>(AB)^{-1} A A^{-1} \amp =  B^{-1} A^{-1} </mrow>
+            <mrow>(AB)^{-1}I  \amp =  B^{-1} A^{-1} </mrow>
+            <mrow>(AB)^{-1} \amp =  B^{-1} A^{-1} </mrow>
+					</md>
+				</p>
+			</proof>
+		</theorem>
+	</subsection>
+</section>
+<!--
+%
+</subsection>
+
+<subsection>
+	<title>Problems</title>
+	%
+	%\begin{enumerate}
+	%	\item If
+	%	%
+	%
+	<md>
+		%	A \amp =
+		%\begin{bmatrix}
+		%	2 \amp -1 \\ 3 \amp 4
+		%\end{bmatrix}
+		%
+	</md>
+	%show explicitly that <m>AI=A</m> and <m>IA=A</m>.
+	%
+	%\end{enumerate}
+	%
+	%For problems 2- -4, a 2 by 2 matrix is given.
+	Determine if each matrix has an inverse and if it
+	does find it using the formula in (<xref ref="eq-def-2by2-inverse" />).
+	%
+	%\begin{multicols}{3}
+	%
+	%\begin{enumerate}[start=2]
+	%	\item $ \displaystyle
+	%\begin{bmatrix}
+	%	2 \amp -1 \\ 4 \amp 3
+	%\end{bmatrix}$
+	%
+	%\item $\displaystyle
+	%\begin{bmatrix}
+	%	3 \amp 1 \\ -6 \amp -2
+	%\end{bmatrix}$
+	%\end{enumerate}
+	%\begin{enumerate}[start=4]
+	%\item $\displaystyle
+	%\begin{bmatrix}
+	%	3 \amp 2 \\ 2 \amp 1
+	%\end{bmatrix}$
+	%\end{enumerate}
+	%
+	%\end{multicols}
+	%
+	%Problems 5- -7.
+	Find the inverse of the 2 by 2 matrices in problems 2- -4 using the Gauss-Jordan
+	method.
+	If the inverse does not exist, indicate so.
+	%
+	%For problems 8- -10, find the inverse of the given matrices.
+	%
+	%\begin{multicols}{3}
+	%\begin{enumerate}[start=8]
+	%\item $\displaystyle
+	%\begin{bmatrix}
+	%1 \amp 3 \amp 1 \\ -3 \amp 2 \amp 1 \\ 2 \amp 1 \amp 0
+	%\end{bmatrix}$
+	%
+	%
+	%\item $\displaystyle
+	%\begin{bmatrix}
+	%	2 \amp 3 \amp 0 \\ 1 \amp 0 \amp 1 \\  0 \amp 2 \amp -2
+	%\end{bmatrix}$
+	%
+	%\item $\displaystyle
+	%\begin{bmatrix}
+	%	0 \amp 1 \amp 0 \amp 2 \\ 3 \amp 0 \amp 2 \amp 1 \\ 0 \amp 2 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0
+	\amp 2
+	%\end{bmatrix}$
+	%
+	%\end{enumerate}
+	%
+	%\end{multicols}
+	%
+	%
+	%
+	%Solve  the linear systems in problems 11- -13 using the inverse matrix.
+	(Hint: The results of
+	problem 10 of this section is helpful for solving problem 13).
+	%
+	%\begin{multicols}{2}
+	%\begin{enumerate} [start=11]
+	%\item
+	%
+	<md>
+		\begin{cases} \hspace{-0.1in}
+		%\begin{split}
+		%	2x + 7y \amp = 10, \\
+		%	-3x + 4y \amp = 17.
+		%	\end{split}
+		%	\end{cases}
+		%
+	</md>
+	%
+	%\item
+	<md>
+		%\begin{cases}\hspace{-0.1in}
+		%\begin{split}
+		%	x + 2z \amp = 9, \\
+		%	-2y + 4z \amp = 22, \\
+		%	2x - y \amp = 5.
+		%	\end{split}
+		%	\end{cases}
+		%
+	</md>
+	%
+	%
+	%
+	%
+	%\end{enumerate}
+	%
+	%\end{multicols}
+	%
+	%\begin{multicols}{2}
+	%\begin{enumerate}[start=13]
+	%\item
+	%
+	<md>
+		%\begin{cases}\hspace{-0.1in}
+		%\begin{split}
+		%	y + w \amp = 3, \\
+		%	3x + 2z + w \amp = -6, \\
+		%	2y + z \amp = -12, \\
+		%	x + 2w \amp = 5.
+		%	\end{split}
+		%	\end{cases}
+		%
+	</md>
+	%
+	%
+	%\end{enumerate}
+	%
+	%\columnbreak
+	%
+	%~
+	%\vfill
+	%~
+	%\end{multicols}
+	%
+	%\vfill \pagebreak
+	%\section{Linear System of Equations and  Gauss' method}
+	%
+	%{\color{red}  Is this section needed?}
+	%
+	%A linear system is a system of linear equations.
+	If we have
+	%%
+	%
+	<md>
+		%\begin{cases}
+		%\begin{split}
+		% a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n \amp = b_1 \\
+		% a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n \amp = b_2 \\
+		% \vdots \amp \\
+		% a_{m1} x_1 + a_{m2} x_2 + \cdots + a_{mn} x_n \amp = b_m \\
+		%\end{split}
+		%\end{cases}
+		%
+	</md>
+	%the this can be written as
+	%%
+	%
+	<md>
+		% A \vec{x} \amp = \vec{b},
+		%
+	</md>
+	%%
+	%where
+	%
+	<md>
+		% A \amp =
+		%\begin{bmatrix}
+		% a_{11} \amp a_{12} \amp \cdots \amp a_{1n} \\
+		% a_{21} \amp a_{22} \amp  \cdots \amp a_{2n} \\
+		% \vdots \amp \amp \ddots \amp \vdots \\
+		% a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn}
+		%\end{bmatrix}
+		%\amp \vec{x} \amp =
+		%\begin{bmatrix}
+		% x_1 \\ x_2 \\ \vdots \\ x_n
+		%\end{bmatrix} \amp
+		%\vec{b} \amp =
+		%\begin{bmatrix}
+		% b_1 \\ b_2 \\ \vdots \\ b_n
+		%\end{bmatrix}
+		%
+	</md>
+	%
+	%%\begin{itemize} -->

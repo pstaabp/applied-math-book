@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-eigenvalues-eigenvectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Eigenvalues and Eigenvectors</title>
+
+  <introduction>
+    <p> There is another very important aspect to linear algebra that will play
+      a very important role in applied mathematics.  This is the notion of an
+      eigenvector and eigenvalue. Briefly, these are a vector and scalar in
+      an equation, however, first, there is a strong geometric role behind
+      them and secondly, eigenvectors and eigenvalues play an important role
+      in many parts of linear algebra.  Lastly, we will see an extension of
+      them for functions later in the text.   </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="eigenvectors/eigenvalues-eigenvectors.ptx" />
+  <xi:include href="eigenvectors/linear-maps.ptx" />
+  <xi:include href="eigenvectors/quadratic-forms.ptx" />
+  <xi:include href="eigenvectors/applications.ptx" />
+</chapter>

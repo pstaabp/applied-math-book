@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-linear-transformations">
+	<title>Linear Transformations</title>
+	<introduction>
+		<p>
+			This section
+			discusses linear transformations.
+			In short, such a
+			transformation will map vectors to vectors in a linear way.
+			The definition
+			of a linear transformation (or linear map) is the following:
+		</p>
+		<definition
+		xml:id="def-linear-trans">
+		<title>Linear Transformation</title>
+		<statement>
+			<p>
+				Let <m>V</m> and <m>W</m> be vector spaces.
+				A <term>linear transformation</term> or <term>linear
+				map</term> <m>T</m> from <m>V</m> to <m>W</m> is a function that assigns to each vector <m>\vec{v}
+				\in V</m> a unique vector <m>T\vec{v} \in W</m> and that satisfies for each <m>\vec{u}</m>
+				and <m>
+				\vec{v}</m> in <m>V</m> and each scalar <m>\alpha</m>,
+				<md>
+					<mrow xml:id="eq-linear-map-add" number="yes">(\vec{u} + \vec{v}) \amp = T(\vec{u}) + T
+					(\vec{v}), </mrow>
+					<mrow xml:id="eq-linear-map-prod" number="yes">T(\alpha \vec{v}) \amp = \alpha T
+					(\vec{v}), </mrow>
+				</md>
+			</p>
+		</statement>
+	</definition>
+
+	<p>
+		These are also called <term>
+		homomorphisms</term> and the notation explaining that a map <m>T</m> goes from <m>V</m> to <m>
+		W</m> is <m>T: V \rightarrow W</m>.
+	</p>
+
+	<example xml:id="ex-reflect-map">
+		<title>Reflection Map</title>
+		<statement>
+			<p>
+				The reflection of any vector in <m>\mathbb{R}^2</m> across the horizontal axis is a
+				linear map.
+				Specifically this is given as
+			</p>
+
+			<p>
+				<me>
+					T(\begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix})= \begin{bmatrix}
+					x_1 \\ -x_2
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				and geometrically you can see this as:
+			</p>
+
+			<figure xml:id="fig-reflection-map">
+				<caption>Mapping a vector over the <m>x</m>-axis</caption>
+				<image width="50%" xml:id="plot-reflection-map">
+					<latex-image>
+					<![CDATA[
+					\begin{tikzpicture}[scale=1.5]
+					\draw[->] (-1,0) -- (2,0);  \draw[->] (0,-1) -- (0,1);
+					\draw[->, thick] (0,0) -- (1.5,0.5) node [above right] {$\displaystyle \begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix}$};
+					\draw[->, thick] (0,0) -- (1.5,-0.5) node [below right] {$\displaystyle \begin{bmatrix}
+					x_1 \\ -x_2
+					\end{bmatrix}$};
+					\end{tikzpicture}
+					]]>
+					</latex-image>
+				</image>
+			</figure>
+
+			<p>
+				Show that this is a linear transformation.
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				Specifically, we need to show that <m>T</m> defined above satisfies <xref
+				ref="eq-linear-map-add" /> and <xref ref="eq-linear-map-prod" />.
+				Let
+			</p>
+
+			<p>
+				<md>
+					<mrow>\vec{x} \amp = \begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix}, \amp \vec{y} \amp = \begin{bmatrix}
+					y_1 \\ y_2
+					\end{bmatrix}
+					</mrow>
+				</md>
+			</p>
+
+			<p>
+				and
+			</p>
+
+			<p>
+				<m>\alpha \in \mathbb{R}</m>, then
+			</p>
+
+			<p>
+				<md>
+					<mrow>T(\vec{x}+\vec{y}) \amp = T \biggl( \begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix}+ \begin{bmatrix}
+					y_1 \\ y_2
+					\end{bmatrix} \biggr) = T \biggl( \begin{bmatrix}
+					x_1 + y_1 \\ x_2 + y_2
+					\end{bmatrix} \biggr) </mrow>
+					<mrow>\amp = \begin{bmatrix}
+					x_1 + y_1 \\ -(x_2+y_2)
+					\end{bmatrix} = \begin{bmatrix}
+					x_1 + y_1 \\ -x_2 -y_2
+					\end{bmatrix} </mrow>
+					<mrow>\amp = \begin{bmatrix}
+					x_1 \\ -x_2
+					\end{bmatrix} + \begin{bmatrix}
+					y_1 \\ -y_2
+					\end{bmatrix} = T(\vec{x}) + T(\vec{y}).</mrow>
+				</md>
+			</p>
+
+			<p>
+				so <xref ref="eq-linear-map-add" /> is satisfied.
+				Next,
+			</p>
+
+			<p>
+				<md>
+					<mrow>T(\alpha \vec{x}) \amp = T \biggl( \alpha \begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix} \biggr) = T \biggl( \begin{bmatrix}
+					\alpha x_1 \\ \alpha x_2
+					\end{bmatrix} \biggr) </mrow>
+					<mrow>\amp = \begin{bmatrix}
+					\alpha x_1 \\ -\alpha x_2
+					\end{bmatrix} = \alpha \begin{bmatrix}
+					x_1 \\ -x_2
+					\end{bmatrix} = \alpha T(\vec{x}).</mrow>
+				</md>
+			</p>
+
+			<p>
+				so <xref
+				ref="eq-linear-map-prod" /> is satisfied.
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		A very important linear map in <m>\mathbb{R}^2</m> is the rotational map that takes any
+		vector in the plane and rotates it a given angle.
+		The next example, derives this map.
+	</p>
+
+	<example xml:id="ex-rotational-trans">
+		<title>Rotational Map in <m>\mathbb{R}^2</m></title>
+		<statement>
+			<p>
+				Let
+				<me>
+					\vec{x} =
+					\begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix}
+				</me>
+				be a vector in <m>\mathbb{R}^2</m>.
+				Let the function <m>T</m> take
+				the vector <m>\vec{x}</m> and rotate it by <m>\theta</m> radians in the counterclockwise
+				direction.
+				Call the new vector
+				<me>
+					\vec{y} =\begin{bmatrix}
+					y_1 \\ y_2
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<figure xml:id="fig-rotational-map">
+				<caption>Diagram of the rotational map</caption>
+				<image width="50%" xml:id="plot-rotational-map">
+					<latex-image>
+					<![CDATA[
+					\begin{tikzpicture}[scale=1.5]
+					\draw (0.2,0.2) node [above right] {$ \theta $};
+					\draw[->] (-2,0) -- (2,0);  \draw[->] (0,-2) -- (0,2);
+					\draw[->, thick] (0,0) -- (1.5,0.5);   \fill (1.5,0.5) circle (1pt) node [above right] {$ (x_1,x_2) $};
+					\draw[->,thick] (0,0) -- (0.5,1.5); \fill (0.5,1.5) circle (1pt) node [above right] {$ (y_1,y_2) $};
+					\draw (0.3,0.1) arc [start angle={atan(1/3)}, end angle={atan(3)}, radius={sqrt(0.1)}];
+					\draw (0.45,0) arc [start angle=0, end angle={atan(1/3)}, radius=0.45];
+					\draw (0.6,0) node [above right] {$ \alpha $};
+					\end{tikzpicture}
+					]]>
+					</latex-image>
+				</image>
+			</figure>
+
+			<p>
+				Derive the formula for the rotational map.
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				Let <m>r = ||\vec{x}||</m> and since <m>\vec{y}</m> is the rotated version of <m>\vec{x}</m>
+				it has the same length, therefore <m>r=||\vec{y}||</m>.
+				The values <m>x_1, x_2, y_1,y_2</m>
+				can be written in terms of <m>\alpha</m>, the angle that the vector <m>\vec{x}</m> makes
+				with the positive horizontal axis, and <m>\theta</m> the angle between the vectors as
+				follows.
+			</p>
+
+			<p>
+				<md>
+					<mrow>x_1 \amp = r \cos \alpha, \amp x_2 \amp = r \sin \alpha, </mrow>
+					<mrow>y_1 \amp = r \cos (\alpha+\theta), \amp y_2 \amp= r \sin (\alpha + \theta) </mrow>
+					<mrow>\amp = r \cos \alpha \cos \theta - r \sin \theta \sin \alpha, \amp y_2 \amp = r
+					\sin
+					\theta \cos \alpha + r \sin \alpha \cos \theta </mrow>
+					<mrow>\amp = x_1 \cos \theta - x_2 \sin \theta, \amp \amp = x_1 \sin \theta + x_2 \cos
+					\theta</mrow>
+				</md>
+			</p>
+
+			<p>
+				and note that these can be written:
+			</p>
+
+			<p>
+				<md>
+					<mrow>\begin{bmatrix}
+					y_1 \\ y_2
+					\end{bmatrix} \amp =
+					\begin{bmatrix}
+					\cos \theta \amp - \sin \theta \\ \sin \theta \amp \cos \theta
+					\end{bmatrix}
+					\begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix}
+					</mrow>
+				</md>
+			</p>
+
+			<p>
+				This is a linear transformation (as we will explain later) and is called a <term>rotational
+				transformation</term>.
+			</p>
+		</solution>
+	</example>
+
+	<example xml:id="ex-scale-map">
+		<title>Linear Scale Map</title>
+		<statement>
+			<p>
+				Consider the map <m>S: \mathbb{R}^2 \rightarrow \mathbb{R}^2</m> that scales any vector
+				in the plane by a factor of <m>k</m> given by
+			</p>
+
+			<p>
+				<me>
+					S(\vec{x}) = k \vec{x}
+				</me>
+			</p>
+
+			<p>
+				which can be visualized in the following diagram where <m> k=2</m>:
+			</p>
+
+			<figure xml:id="fig-scale-map">
+				<caption>Scaling Map</caption>
+				<image width="50%" xml:id="plot-scale-map">
+					<latex-image>
+					<![CDATA[
+					\begin{tikzpicture}[scale=0.8]
+					\draw[->] (-4,0) -- (4,0) node [above right] {$ x $};
+					\draw[->] (0,-4) -- (0,4) node [above right] {$ y $};
+					\foreach \x in {-3,-2,-1,1,2,3} {\draw (\x,0.15) -- (\x,-0.15) node [below] {$ \x $};}
+					\foreach \y in {-3,-2,-1,1,2,3} {\draw (0.15,\y) -- (-0.15,\y) node [left] {$ \y $};}
+					\draw[->] (0,0) -- (1,1); \draw[->,thick] (0,0)  -- (2,2);
+					\draw[->] (0,0) -- (2,1); \draw[->,thick] (0,0)  -- (4,2);
+					\draw[->] (0,0) -- (-1,1.5); \draw[->,thick] (0,0)  -- (-2,3);
+					\draw[->] (0,0) -- (-1.5,-1); \draw[->,thick] (0,0)  -- (-3,-2);
+					\end{tikzpicture}
+					]]>
+					</latex-image>
+				</image>
+			</figure>
+
+			<p>
+				where every vector under the map results in a new vector that is twice as long as the
+				original.
+				In general, the scale <m>k</m> will scale the vector by a factor of <m>k</m> and
+				recall that if <m>k \lt 0</m>, then the direction changes.
+				Show that this is a linear map.
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				Again, we show that <xref ref="eq-linear-map-add" /> and <xref
+				ref="eq-linear-map-prod" /> are satisfied.
+				Let <m>\vec{x}</m> and <m>\vec{y}</m> be
+				elements of <m>\mathbb{R}^2</m>.
+			</p>
+
+			<p>
+				<me>
+					S(\vec{x}+\vec{y}) = k(\vec{x}+\vec{y}) = k\vec{x} + k \vec{y} = S(\vec{x}) + S(\vec{y})
+				</me>
+			</p>
+
+			<p>
+				so <xref ref="eq-linear-map-add" /> is satisfied and
+			</p>
+
+			<p>
+				<me>
+					S(\alpha \vec{x}) = k (\alpha \vec{x} ) = \alpha (k \vec{x}) = \alpha S(\vec{x})
+				</me>
+			</p>
+
+			<p>
+				so <xref ref="eq-linear-map-add" /> is satisfied so <m>S</m> is a linear map.
+			</p>
+		</solution>
+	</example>
+	<theorem
+	xml:id="thm-matrix-linear-trans">
+	<statement>
+		<p>
+			If a transformation map <m>T</m> is written as a matrix or <m>T(\vec{x}) = A\vec{x}</m>,
+			then <m>T</m> is a linear transformation.
+		</p>
+	</statement>
+
+
+	<proof>
+		<p>
+			This is a consequence of matrix operations.
+			<md>
+				<mrow>T(\vec{x}+\vec{y}) &amp;= A(\vec{x}+\vec{y}) = A\vec{x} + A \vec{y} = T(\vec{x}) +
+				T(\vec{y}) </mrow>
+				<mrow>T(\alpha \vec{x}) &amp; = A (\alpha \vec{x}) = \alpha A\vec{x} = \alpha T(\vec{x}).</mrow>
+			</md>
+		</p>
+	</proof>
+</theorem>
+
+<p>
+	Note that the rotational transformation that was defined in  <xref ref="ex-rotational-trans" /> is easily
+	shown to be a linear transformation because from  <xref ref="thm-matrix-linear-trans" />, any
+	transformation shown as a matrix, is a linear transformation.
+	The next theorem shows the counter direction to <xref ref="thm-matrix-linear-trans" />,
+	that is that any linear transformation can be written as a matrix.
+</p>
+
+<theorem xml:id="thm-linear-trans-matrix">
+	<statement>
+		<p>
+			Let <m>T: \mathbb{R}^n \rightarrow \mathbb{R}^m</m> be a linear transformation.
+			Then
+			there exists a unique <m>m</m> by <m>n</m> matrix <m>A_T</m> such that
+			<me>
+				T \vec{x} = A_T \vec{x} \qquad \qquad \text{for every $\vec{x} \in \mathbb{R}^n.$}
+			</me>
+		</p>
+	</statement>
+</theorem>
+
+<p>
+	We won't prove this here, but instead will motivate this below.
+	In short, if <m>
+	T</m> is a linear transformation, then the matrix <m>A_T</m> corresponding to the linear
+	transformation is called the <term>transformation matrix</term>.
+</p>
+</introduction>
+
+<subsection>
+	<title>Finding the
+	Matrix Form of a Linear Transformation</title>
+	<p>
+		The theorem above shows that any linear
+		transformation, <m>T: V \rightarrow W</m> can be written in matrix form.
+		This section explains
+		how to find it.
+		Let <m>B_V=(\vec{v}_1,\vec{v}_2, \ldots, \vec{v}_m)</m> be a basis of <m>V</m>
+		and <m>B_W=(\vec{w}_1,\vec{w}_2,
+		\ldots, \vec{w}_n)</m> be a basis of <m>W</m>.
+		Any vector <m>\vec{x}</m> in <m>V</m> can be
+		written
+		<me>
+			\vec{x} = c_1 \vec{v}_1 + c_2 \vec{v}_2 + \cdots + c_m \vec{v}_m = \sum_{j=1}^m c_j
+			\vec{v}_j
+		</me>
+		or in other words <m>\text{Rep}_{B_V}(\vec{x}) = \vec{c}</m>.
+		Applying the map to <m>\vec{x}</m>
+		is
+		<me>
+			T(\vec{x}) = T\biggl(\sum_{j=1}^m c_j \vec{v}_j \biggr) \notag
+		</me>
+		and since it is a linear map
+		<men xml:id="eq-lin-trans1">
+			T(\vec{x})= \sum_{j=1}^m c_j T(\vec{v}_j)
+		</men>
+		Next, we write the transformation in terms of the basis vectors of <m>W</m> or
+		<men xml:id="eq-lin-trans2">
+			T(\vec{v}_j) = a_{1,j} \vec{w}_1 + a_{2,j} \vec{w}_2 + \cdots + a_{n,j} \vec{w}_n =
+			\sum_{i=1}^n a_{i,j} \vec{w}_i
+		</men>
+		Substituting <xref ref="eq-lin-trans2" /> into <xref ref="eq-lin-trans1" /> results in
+		<me>
+			T(\vec{x}) = \sum_{j=1}^m c_j \sum_{i=1}^n a_{i,j} \vec{w}_i
+			= \sum_{i=1}^n \sum_{j=1}^m a_{i,j} c_j \vec{w}_i
+		</me>
+		and letting <m>A_T</m> be the <m>m \times n</m> matrix with entries <m>a_{i,j}</m> then
+		<me>
+			\text{Rep}_{B_W} (T(\vec{x}))  = A_T\vec{c}
+		</me>
+		or in other words, the matrix
+		performs the map on the coefficients.
+		Equation <xref ref="eq-lin-trans2" /> also shows how the
+		matrix <m>A_T</m> can be created from the linear map.
+		That equation can also be thought of as a
+		representation of the basis vectors or
+		<me>
+			\text{Rep}_{B_W} ( T(\vec{v}_j)) = \vec{a}_j
+		</me>
+		where <m>a_j</m> is the <m>j</m>th
+		column of <m>A</m>.
+		The following summarizes how to find the matrix.
+	</p>
+
+	<remark>
+		<p>
+			If <m>A_T</m> is
+			the matrix representation of the map <m>T</m>, then the <m>j</m>th column of <m>A_T</m> is the
+			vector <m>
+			\text{Rep}_{B_W}(T(\vec{v}_j))</m>, the map applied to the <m>j</m>th basis vector of <m>V</m>
+			written in terms of the basis of <m>W</m>.
+		</p>
+	</remark>
+
+	<p>
+		We now show many examples on how to apply
+		this.
+	</p>
+
+	<example>
+		<statement>
+			<p>
+				The matrix representation of the reflection map from <xref ref="ex-reflect-map" /> given by
+			</p>
+
+			<p>
+				<me>
+					T\biggl(\begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix} \biggr) = \begin{bmatrix}
+					x_1 \\ -x_2
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				where the representation will be in terms of the standard basis vectors.
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				In this case,
+				we need to determine how the standard basis vectors map under the reflection.
+				Thus
+			</p>
+
+			<p>
+				<md>
+					<mrow>   \vec{v}_1 \amp = \begin{bmatrix}
+					1 \\ 0
+					\end{bmatrix} \amp \vec{v}_2 = \begin{bmatrix}
+					0 \\ 1
+					\end{bmatrix}</mrow>
+				</md>
+			</p>
+
+			<p>
+				and
+			</p>
+
+			<p>
+				<md>
+					<mrow>T(\vec{v}_1) \amp = \begin{bmatrix}
+					1 \\ 0
+					\end{bmatrix} \amp T(\vec{v}_2) \amp = \begin{bmatrix}
+					0 \\ -1
+					\end{bmatrix}</mrow>
+				</md>
+			</p>
+
+			<p>
+				Because we are using the standard basis vectors, the representations of these vectors are
+				themselves therefore,
+			</p>
+
+			<p>
+				<me>
+					A_T = \begin{bmatrix}
+					1 \amp 0 \\
+					0 \amp -1
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				and just to verify,
+			</p>
+
+			<p>
+				<md>
+					<mrow>T\biggl(\begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix} \biggr) \amp = \begin{bmatrix}
+					1 \amp 0 \\
+					0 \amp -1
+					\end{bmatrix} \begin{bmatrix}
+					x_1 \\ x_2
+					\end{bmatrix} = \begin{bmatrix}
+					x_1 \\ - x_2
+					\end{bmatrix}</mrow>
+				</md>
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		This next example shows how to contruct the transformation matrix for
+		the scale map.
+	</p>
+
+	<example xml:id="ex-scale-map-matrix-rep">
+		<statement>
+			<p>
+				Find the matrix representation of the scale map in Example <xref ref="ex-scale-map" />.
+				\solution We need to map the basis vectors <m>
+				[1\;\;0]^{\intercal}</m> and <m>[0\;\;1]^{\intercal}</m> to determine the columns of the
+				matrix representation.
+			</p>
+
+			<p>
+				<md>
+					<mrow>
+					S \biggl(\begin{bmatrix}
+					1 \\ 0
+					\end{bmatrix} \biggr) \amp = \begin{bmatrix}
+					k \\ 0
+					\end{bmatrix} \amp S\biggl( \begin{bmatrix}
+					0 \\ 1
+					\end{bmatrix} \biggr) \amp = \begin{bmatrix}
+					0 \\ k
+					\end{bmatrix}</mrow>
+				</md>
+			</p>
+
+			<p>
+				so the matrix representation is
+			</p>
+
+			<p>
+				<me>
+					A_S = \begin{bmatrix}
+					k \amp 0 \\
+					0 \amp k
+					\end{bmatrix}
+				</me>
+			</p>
+		</statement>
+	</example>
+
+	<p>
+		And the next example shows that a common matrix operation, the trace
+		is a linear map.
+	</p>
+
+	<example>
+		<statement>
+			<p>
+				Let <m>T: \mathcal{M}_{2 \times 2} \rightarrow \mathbb{R}</m>
+			</p>
+
+			<p>
+				<me>
+					\begin{bmatrix}
+					a \amp b \\ c\amp d
+					\end{bmatrix} \rightarrow a + d
+				</me>
+			</p>
+
+			<p>
+				which is the trace of a 2 by 2 matrix.
+				Show that the trace is a linear map and find the matrix
+				representation of the trace.
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				First, to prove that the trace is a linear map, we need
+				to show that it satisfies <xref ref="eq-linear-map-add" /> and <xref ref="eq-linear-map-prod" />.
+				Let
+			</p>
+
+			<p>
+				<md>
+					<mrow>A_1 \amp = \begin{bmatrix}
+					a_1 \amp b_1 \\ c_1\amp d_1
+					\end{bmatrix} \amp A_2 \amp = \begin{bmatrix}
+					a_2 \amp b_2 \\ c_2\amp d_2
+					\end{bmatrix}
+					</mrow>
+				</md>
+			</p>
+
+			<p>
+				Then
+			</p>
+
+			<p>
+				<md>
+					<mrow>T(A_1+A_2) \amp = T \left( \begin{bmatrix}
+					a_1 \amp b_1 \\ c_1\amp d_1
+					\end{bmatrix} + \begin{bmatrix}
+					a_2 \amp b_2 \\ c_2\amp d_2
+					\end{bmatrix} \right) = T \left( \begin{bmatrix}
+					a_1 + a_2 \amp b_1 + b_2 \\ c_1 + c_2 \amp d_1 + d_2
+					\end{bmatrix} \right) </mrow>
+					<mrow>\amp = (a_1 + a_2) + (d_1 + d_2) \\
+					\amp = (a_1 + d_1) + (a_2 + d_2) = T(A_1) + T(A_2)
+					</mrow>
+				</md>
+			</p>
+
+			<p>
+				Similarly,
+			</p>
+
+			<p>
+				<md>
+					<mrow>T(\alpha A_1) \amp = T \biggl( \alpha \begin{bmatrix}
+					a_1 \amp b_1 \\ c_1\amp d_1
+					\end{bmatrix}\biggr) = T\biggl(\begin{bmatrix}
+					\alpha a_1 \amp \alpha b_1 \\ \alpha c_1\amp \alpha d_1
+					\end{bmatrix} \biggr) </mrow>
+					<mrow>\amp = \alpha a_1 + \alpha d_1 = \alpha (a_1 + d_1) = \alpha T(A_1)
+					</mrow>
+				</md>
+			</p>
+
+			<p>
+				Next, we want to find the matrix representation of the trace.
+				To do this, we need to determine
+				how the map affects the basis of the vector space <m>\mathcal{M}_{2 \times 2}</m>, which is
+			</p>
+
+			<p>
+				<me>
+					\left( \begin{bmatrix}
+					1 \amp 0 \\ 0 \amp 0
+					\end{bmatrix}, \begin{bmatrix}
+					0 \amp 1 \\ 0 \amp 0
+					\end{bmatrix}, \begin{bmatrix}
+					0 \amp 0 \\ 1 \amp 0
+					\end{bmatrix}, \begin{bmatrix}
+					0 \amp 0 \\ 0 \amp 1
+					\end{bmatrix} \right)
+				</me>
+			</p>
+
+			<p>
+				and since
+			</p>
+
+			<p>
+				<md>
+					<mrow>\begin{bmatrix}
+					1 \amp 0 \\ 0 \amp 0
+					\end{bmatrix} \amp\mapsto 1, \amp
+					\begin{bmatrix}
+					0 \amp 1 \\ 0 \amp 0
+					\end{bmatrix} \amp\mapsto 0, </mrow>
+					<mrow>
+					\begin{bmatrix}
+					0 \amp 0 \\ 1 \amp 0
+					\end{bmatrix} \amp\mapsto 0, \amp
+					\begin{bmatrix}
+					0 \amp 0 \\ 0 \amp 1
+					\end{bmatrix} \amp \mapsto 1, </mrow>
+				</md>
+				The matrix representation is
+				<me>
+					A_T = \begin{bmatrix}
+					1 \amp 0 \amp 0 \amp 1
+					\end{bmatrix}
+				</me>
+				Note that it may be surprising that the matrix representation is just a row
+				vector, however, recall that the trace maps from a <m>2 \times 2</m> matrix
+				that can be represented as a column vector of length 4 to the reals, so the
+				matrix representation should be a <m>1 \times 4</m> matrix.
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		To verify the above results, recall that from Example <xref ref="ex-vect-rep-matrix" /> that the
+		representation of a matrix is the unfolded matrix or in the <m>2 \times 2</m> case, that
+		<me>
+			\text{Rep}_B \biggl( \begin{bmatrix}
+			a \amp b \\ c \amp d
+			\end{bmatrix}\biggr) = \begin{bmatrix}
+			a \\ b \\ c \\ d
+			\end{bmatrix}
+		</me>
+		where <m>B</m> is the natural basis of <m>\mathcal{M}_{2 \times 2}</m>.
+		So the matrix trace can
+		be written as
+		<me>
+			\begin{bmatrix}
+			1 \amp 0 \amp 0 \amp 1
+			\end{bmatrix}\text{Rep}_B (A) = \begin{bmatrix}
+			1 \amp 0 \amp 0 \amp 1
+			\end{bmatrix}\begin{bmatrix}
+			a \\ b \\ c \\ d
+			\end{bmatrix} = a + d
+		</me>
+	</p>
+</subsection>
+</section>

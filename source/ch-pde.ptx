@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-pde" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Partial Differential Equations</title>
+
+	<introduction>
+		<p> Partial differential equations (or PDEs) are very common in modeling many
+			physical phenomena including understanding wave propagation, heat transport,
+			and the motion of fluids as just a limited selection of examples.   We will derive
+			equations for some simple examples in the section using conservation from physics. </p>
+<p>
+			Before getting to the derivation and solution of PDEs, we need to review and introduce a few concepts.  </p>
+
+</introduction>
+
+	<!-- include sections -->
+	<xi:include href="pde/partial-derivatives.ptx" />
+	<xi:include href="pde/modeling-pdes.ptx" />
+	<xi:include href="pde/linear-ode.ptx" />
+	<xi:include href="pde/sturm-liouville-probs.ptx" />
+	<xi:include href="pde/heat-eqn-1d.ptx" />
+	<xi:include href="pde/heat-eqn-2d.ptx" />
+	<xi:include href="pde/bessel.ptx" />
+	<xi:include href="pde/heat-circular.ptx" />
+</chapter>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-vector-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector and Inner Product Spaces</title>
+
+  <introduction>
+    <p> This chapter explores linear systems in a more abstract manner.  We
+      will see that framing vector and matrix addition and scalar multiplication
+      in a more general way will allow us to make connections between
+      seemingly disparate parts of mathematics and then discover new
+      things because of this.   </p>
+
+      <p>We first investigate vector spaces, which at first seem like
+        they are just sets of vectors, but are actually much more.
+        Then we will see inner product spaces, another way of looking
+        at vectors and finally linear transformations.
+       </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="vector-spaces/vector-spaces.ptx" />
+  <xi:include href="vector-spaces/subspaces.ptx" />
+  <xi:include href="vector-spaces/inner-product-spaces.ptx" />
+  <xi:include href="vector-spaces/linear-transformations.ptx" />
+  <xi:include href="vector-spaces/projection-maps.ptx" />
+</chapter>

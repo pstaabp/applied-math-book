@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-inner-product">
+	<title>Inner Product Spaces</title>
+	<introduction>
+		<p>
+			In <xref ref="sect-length-angles" />, we examined the dot product between two
+			vectors.
+			Recall that we can write the dot product between two vectors <m>\vec{u}</m> and <m>
+			\vec{v}</m> in <m>\mathbb{R}^n</m> is
+		</p>
+
+		<p>
+			<me>
+				\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + \cdots +u_nv_n
+			</me>
+		</p>
+
+		<p>
+			We used the dot product
+			for finding the angle between two vectors and we'll show that there are many other
+			applications that the dot product later in the text.
+			In this section, we extend that to any
+			vector space and call this an inner product space.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					The vector space <m>V</m> is called an <term>inner product space</term> if for every pair
+					of vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <m>V</m> there is a unique number <m>\langle
+					\vec{u}, \vec{v} \rangle</m>, called the <term>inner product</term> of <m>\vec{u}</m> and <m>
+					\vec{v}</m> such that for all <m>\vec{u}, \vec{v}</m> and <m>\vec{w}</m> in <m>V</m> and <m>a,
+					b \in \mathbb{R}</m> then the following properties are satisfied:
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<m>\langle \vec{u}, \vec{v} \rangle = \langle \vec{v}, \vec{u} \rangle</m>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>\langle a \vec{u} + b \vec{v}, \vec{w} \rangle = a \langle \vec{u},
+								\vec{w} \rangle + b \langle \vec{v}, \vec{w} \rangle</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>\langle \vec{u}, \vec{u} \rangle \geq 0</m> and equals 0 if and only if <m>\vec{u}
+								= \vec{0}</m>.
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					Show that <m>\mathbb{R}^n</m> is an inner product space with
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{u} \amp= \begin{bmatrix}
+						u_1 \\ u_2 \\ \vdots \\ u_n
+						\end{bmatrix} \amp \vec{v} \amp =
+						\begin{bmatrix}
+						v_1 \\ v_2 \\ \vdots \\ v_n
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and
+				</p>
+
+				<p>
+					<m>\langle \vec{u}, \vec{v} \rangle = \vec{u}^T\vec{v}</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, the set <m>\mathbb{R}^n</m> is a vector space.
+					Next, we need to show that the
+					three properties are satisfied for <m>\langle \vec{u}, \vec{v} \rangle = \vec{u}^T
+					\vec{v}</m>.
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<md>
+									<mrow>\langle \vec{u}, \vec{v} \rangle \amp = \vec{u}^T \vec{v}</mrow>
+								</md>
+								since the transpose of a number is itself
+								<md>
+									<mrow>\amp = (\vec{u}^T \vec{v})^T </mrow>
+								</md>
+								using the
+								properties of transposes in <xref ref="sect-transpose" />.
+								<md>
+									<mrow>\amp = \vec{v}^T (\vec{u}^T)^T = \vec{v}^T \vec{u} = \langle \vec{v},
+									\vec{u}
+									\rangle.</mrow>
+								</md>
+								so the first property is satisfied.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<md>
+									<mrow>\langle a \vec{u} + b \vec{v}, \vec{w} \rangle \amp = (a \vec{u} +
+									b\vec{v})^T
+									\vec{w} = (a \vec{u}^T + b \vec{v}^T) \vec{w} </mrow>
+									<mrow>\amp = a \vec{u}^T \vec{w} + b \vec{v}^T \vec{w} = a \langle \vec{u},
+									\vec{w}
+									\rangle + b \langle \vec{v}, \vec{w} \rangle.</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<me>
+									\langle \vec{u}, \vec{u} \rangle = \vec{u}^T \vec{u} = u_1^2 + u_2^2 + u_3^2 +
+									\cdots + u_n^2
+								</me>
+							</p>
+
+							<p>
+								which satisfies <m>\geq 0</m>.
+								The only time that this quantity equals 0, is when <m>u_1=u_2
+								= \cdots =u_n</m> or <m>\vec{u} = \vec{0}</m>.
+							</p>
+						</li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The next example shows that the notion of an inner product is not limited to the dot product
+			of vectors in <m>\mathbb{R}^n</m>.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Show that <m>\mathcal{P}_n</m> on the interval <m>[0,1]</m> is a inner product space with
+				</p>
+
+				<p>
+					<me>
+						\langle p,q \rangle = \int_0^1 p q \, dx
+					</me>
+				</p>
+
+				<p>
+					for any <m>p, q \in \mathcal{P}_n</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					We have seen above that <m>\mathcal{P}_n</m> is a vector space and limiting this to the
+					interval <m>[0,1]</m> does not change that fact.
+					We need to show that the inner product
+					defined as an integral satisfies the three properties of inner products.
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<me>
+									\langle p, q \rangle = \int_0^1 pq \, dx = \int_0^1 q p \, dx = \langle q, p
+									\rangle.
+								</me>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Let <m>r</m> also be in <m>\mathcal{P}_n</m> and <m>a,b \in \mathbb{R}</m>.
+							</p>
+
+							<p>
+								<md>
+									<mrow>\langle ap+bq,r \rangle \amp = \int_0^1 (ap+bq)r \, dx = \int_0^1 (apr+bqr)
+									\,dx </mrow>
+									<mrow>\amp = a \int_0^1 pr \, dx + b \int_0^1 qr \, dx = a \langle p,r \rangle + b
+									\langle q,r \rangle</mrow>
+								</md>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<me>
+									\langle p, p \rangle = \int_0^1 p^2 \, dx
+								</me>
+							</p>
+
+							<p>
+								and this is greater than or equal or zero and can be shown that equals 0 if and
+								only if <m>p(x)\equiv 0</m>.
+							</p>
+						</li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+	</introduction>
+
+	<subsection>
+		<title>Vector Norms and distance</title>
+		<definition>
+			<statement>
+				<p>
+					Let <m>\vec{u}</m> be an element of an inner product space.
+					The norm of the vector <m>
+					\vec{u}</m> is given by
+				</p>
+
+				<p>
+					<me>
+						|| \vec{u} || = \sqrt{\langle \vec{u},\vec{u} \rangle}
+					</me>
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			Note: if <m>\vec{u} \in \mathbb{R}^n</m> then the vector norm is the length of the vector.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					The distance between vectors <m>\vec{u}</m> and <m>\vec{v}</m> denoted <m>
+					d(\vec{u},\vec{v})</m> and is defined as
+				</p>
+
+				<p>
+					<me>
+						d(\vec{u},\vec{v})=||\vec{u}-\vec{v}||.
+					</me>
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			Note: if <m>\vec{u}</m> and <m>\vec{v}</m> are in <m>\mathbb{R}^n</m>, then the distance
+			function is the standard distance function where the vectors are considered to be points.
+		</p>
+
+		<lemma xml:id="lem-distance-zero">
+			<statement>
+				<p>
+					The distance <m>||\vec{u}-\vec{v}||=0</m> if and only if <m>\vec{u}=\vec{v}</m>.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					<m>\Longrightarrow</m> Let <m>||\vec{u}-\vec{v}||=0</m>, then <m>\langle
+					\vec{u}-\vec{v},\vec{u}-\vec{v} \rangle=0</m> By definition, this is only zero if <m>
+					\vec{u}-\vec{v}=\vec{0}</m>, therefore <m>\vec{u}=\vec{v}</m>.
+				</p>
+
+				<p>
+					<m>\Longleftarrow</m> If <m>\vec{u}=\vec{v}</m>, then <m>||\vec{u}-\vec{v}|| =
+					||\vec{0}||=0</m>.
+				</p>
+			</proof>
+		</lemma>
+
+		<p>
+			Except for the example of the inner product as an integral, all of the other discussion in
+			this section has been about vectors in <m>\mathbb{R}^n</m>, and this is mainly because it is
+			the canonical vector and inner product space and some of the interpretations of length of
+			vectors don't make a lot of sense when talking about polynomials or other functions.
+		</p>
+
+		<p>
+			However, distance does have some interpretation with functions.
+			<xref ref="lem-distance-zero" />
+			can be used to show when two functions are equal (at least on the interval of the
+			integration), but can also be useful to determine when they are close to equal (when the
+			integrals are close to one another).
+			This will be useful in future chapters.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Angles between vectors</title>
+		<p>
+			If <m>\vec{u}</m> and <m>\vec{v}</m> are vectors in <m>\mathbb{R}^2</m> then we saw in <xref
+			ref="sect-length-angles" /> that
+		</p>
+
+		<p>
+			<me>
+				\cos \theta = \frac{\langle \vec{u},\vec{v} \rangle}{||\vec{u}||\, || \vec{v}||}
+			</me>
+			and thus the angle between the vectors can be found.
+		</p>
+
+		<p>
+			This notion generalizes to any vectors in an inner product space, <m>V</m>.
+			Most helpful,
+			two vectors meet at a right angle if <m>\langle \vec{u},\vec{v}\rangle=0</m> and it is said
+			that if this holds then <m>\vec{u}</m> and <m>\vec{v}</m> are orthogonal.
+			The next section
+			talks about how an entire set of vectors can be orthogonal .
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Orthonormal sets of vectors</title>
+		<definition>
+			<statement>
+				<p>
+					Let <m>\{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\}</m> each be elements of an inner
+					product space, <m>V</m>.
+					The set is called an <term>orthonormal set</term> if
+				</p>
+
+				<p>
+					<me>
+						\langle \vec{v}_i, \vec{v}_j \rangle = 0 \qquad \text{if $i \neq j$}
+					</me>
+				</p>
+
+				<p>
+					and
+				</p>
+
+				<p>
+					<me>
+						||\vec{v}_i|| = \sqrt{\langle \vec{v}_i, \vec{v}_i \rangle} = 1
+					</me>
+				</p>
+
+				<p>
+					If only the first condition holds, the set is called <term>orthogonal</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					Show that
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{v}_1 \amp=
+						\begin{bmatrix}
+						1 \\ 0 \\ 0
+						\end{bmatrix}, \amp
+						\vec{v}_2 \amp =
+						\begin{bmatrix}
+						0 \\ 1/\sqrt{2} \\ 1/\sqrt{2}
+						\end{bmatrix}, \amp
+						\vec{v}_3 \amp =
+						\begin{bmatrix}
+						0 \\ 1/\sqrt{2} \\ -1/\sqrt{2}
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					is an orthonormal set where each vector is an element of <m>\mathbb{R}^3</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					We need to show that the three inner products between the vectors are zero
+				</p>
+
+				<p>
+					<md>
+						<mrow>\langle \vec{v}_1, \vec{v}_2 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
+						(0)(1/\sqrt{2}) = 0 </mrow>
+						<mrow>\langle \vec{v}_1, \vec{v}_3 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
+						(0)(-1/\sqrt{2}) = 0 </mrow>
+						<mrow>\langle \vec{v}_2, \vec{v}_3 \rangle \amp = (0)(0) + (1/\sqrt{2})(1/\sqrt{2}) +
+						(1/\sqrt{2})(-1/\sqrt{2}) = \frac{1}{2} - \frac{1}{2} = 0 </mrow>
+					</md>
+				</p>
+
+				<p>
+					and that the norms of each vector is 1.
+				</p>
+
+				<p>
+					<md>
+						<mrow>||\vec{v}_1|| \amp = \sqrt{(1)^2 + (0)^2 + (0^2)} = 1 </mrow>
+						<mrow>||\vec{v}_2|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (1/\sqrt{2})^2} = \sqrt{0 +
+						\frac{1}{2} + \frac{1}{2}} = 1 </mrow>
+						<mrow>||\vec{v}_3|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (-1/\sqrt{2})^2} = \sqrt{0 +
+						\frac{1}{2} + \frac{1}{2}} = 1</mrow>
+					</md>
+				</p>
+
+				<p>
+					Note: this set of vectors is also a basis for <m> \mathbb{R}^3</m>.
+				</p>
+			</solution>
+		</example>
+
+		<example xml:id="ex-orthog-set">
+			<statement>
+				<p>
+					Show that
+				</p>
+
+				<p>
+					<me>
+						\{\sin x, \sin 2x, \sin 3x\}
+					</me>
+				</p>
+
+				<p>
+					form an orthogonal set on <m> [-\pi,\pi]</m> with the inner product taken to be the
+					definite integral on <m>[-\pi,\pi]</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Note: the following integrals will come up in the next few chapters a
+					number of times and the technique shown below is helpful for such integrals.
+					This also shows that even though in most cases in this text so far, that
+					using complex numbers helps out tremendously.
+				</p>
+
+				<p>
+					Recall that
+				</p>
+
+				<p>
+					<md>
+						<mrow>
+						\sin x \amp = \frac{e^{ix} - e^{-ix}}{2i} \amp \cos x \amp = \frac{e^{ix} +
+						e^{-ix}}{2}
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					and using this we find the integrals of all pairs of functions on <m>[-\pi,\pi]</m>
+				</p>
+
+				<p>
+					<md>
+						<mrow>\langle \sin x, \sin 2x \rangle \amp = \int_{-\pi}^{\pi} \sin x \sin 2x \, dx
+						= \int_{-\pi}^{\pi} \frac{e^{ix} - e^{-ix}}{2i} \frac{e^{2ix} - e^{-2ix}}{2i}\,dx </mrow>
+						<mrow>\amp = \frac{1}{-4} \int_0^{\pi} (e^{3ix} -e^{ix} -e^{-ix} + e^{-3ix} ) \, dx </mrow>
+						<mrow>\amp = -\frac{1}{4} \biggl( \frac{e^{3ix}}{3i} - \frac{e^{ix}}{i} -
+						\frac{e^{-ix}}{-i} + \frac{e^{-3ix}}{-3i} \biggr) \biggr\vert_{-\pi}^{\pi} </mrow>
+						<mrow>\amp = -\frac{1}{4} \biggl( \frac{e^{3i\pi}}{3i} - \frac{e^{i\pi}}{i} -
+						\frac{e^{-i\pi}}{-i} + \frac{e^{-3i\pi}}{-3i} \biggr) </mrow>
+						<mrow>\amp \qquad +\frac{1}{4} \biggl( \frac{e^{-3i\pi}}{3i} - \frac{e^{-i\pi}}{i} -
+						\frac{e^{i\pi}}{-i} + \frac{e^{3i\pi}}{-3i} \biggr) = 0</mrow>
+					</md>
+				</p>
+
+				<p>
+					and as it can be seen that all term made with the substitution <m>x=\pi</m> cancel with
+					terms made with the substitution <m>x=-\pi</m>.
+				</p>
+
+				<p>
+					The other two inner products are similar.
+					In fact it can be shown (and we will later)
+					that
+				</p>
+
+				<p>
+					<me>
+						\langle \sin kx, \sin \ell x \rangle = \int_{-\pi}^{\pi} \sin kx \sin \ell x \, dx = 0
+					</me>
+				</p>
+
+				<p>
+					if <m>k \neq \ell</m>.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			We saw the following theorem applied to vectors in <m>\mathbb{R}^n</m> in <xref
+			ref="sect-dot-prod-props" />.
+			It was a consequence of the triangle inequality.
+			We again
+			generalize this to the inner product.
+		</p>
+
+		<theorem xml:id="thm-cauchy-swartz">
+			<title>Cauchy-Swartz Inequality</title>
+			<statement>
+				<p>
+					If <m>\vec{u}</m> and <m>\vec{v}</m> are elements of an inner product space then
+				</p>
+
+				<p>
+					<me>
+						| \langle \vec{u}, \vec{v} \rangle| \leq || \vec{u} ||\, ||\vec{v}||
+					</me>
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					If <m>\vec{v}=\vec{0}</m>, then the inequality is satisfied.
+					Assume <m>\vec{v} \neq
+					\vec{0}</m> and define
+				</p>
+
+				<p>
+					<me>
+						\lambda = \langle \vec{v},\vec{v} \rangle^{-1} \langle \vec{u},\vec{v} \rangle.
+					</me>
+				</p>
+
+				<p>
+					By definition of the inner product,
+				</p>
+
+				<p>
+					<md>
+						<mrow>0 \leq\amp \langle \vec{u} - \lambda \vec{v}, \vec{u} -\lambda \vec{v} \rangle</mrow>
+					</md>
+				</p>
+
+				<p>
+					Using properties of the inner product,
+				</p>
+
+				<p>
+					<md>
+						<mrow>0 \leq \amp \langle \vec{u}, \vec{u} \rangle - 2 \lambda \langle \vec{u}, \vec{v}
+						\rangle + \lambda^2 \langle \vec{v},\vec{v} \rangle </mrow>
+						<mrow>= \amp \langle \vec{u},\vec{u} \rangle - 2 \langle \vec{v},\vec{v} \rangle^{-1}
+						\langle \vec{u},\vec{v} \rangle \langle \vec{u}, \vec{v} \rangle + \bigl(\langle
+						\vec{v},\vec{v} \rangle^{-1} \langle \vec{u},\vec{v} \rangle \bigr)^2 \langle
+						\vec{v},\vec{v} \rangle.
+						</mrow>
+						<mrow>= \amp \langle \vec{u}, \vec{u} \rangle - \langle \vec{v},\vec{v} \rangle^{-1}
+						\langle \vec{u},\vec{v} \rangle ^2</mrow>
+					</md>
+				</p>
+
+				<p>
+					Multiply through by <m>\langle\vec{v},\vec{v}\rangle</m>
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp \langle \vec{u},\vec{u} \rangle \langle \vec{v},\vec{v} \rangle - \langle
+						\vec{u},\vec{v} \rangle^2</mrow>
+					</md>
+				</p>
+
+				<p>
+					This can be rearranged to get:
+				</p>
+
+				<p>
+					<me>
+						\langle \vec{u},\vec{v} \rangle^2 \leq \langle \vec{u},\vec{u} \rangle \langle \vec{v},
+						\vec{v} \rangle
+					</me>
+				</p>
+
+				<p>
+					and taking the square root, you get the desired result.
+				</p>
+			</proof>
+		</theorem>
+
+		<p>
+			The Cauchy-Swartz inequality has numerous uses (which is not unexpected for a theorem named
+			after such famous mathematicians).
+			One such is to show that the angle between two vectors in <m>
+			\mathbb{R}^n</m> and actually in any inner product space is defined.
+		</p>
+
+		<p>
+			Recall that above in this section, the angle between two vectors was defined as the angle <m>
+			\theta</m> that satisfies
+		</p>
+
+		<p>
+			<me>
+				\cos \theta = \frac{\langle \vec{u}, \vec{v} \rangle}{||\vec{u}||\, ||\vec{v}||}
+			</me>
+		</p>
+
+		<p>
+			and solving for the inner product,
+		</p>
+
+		<p>
+			<me>
+				\langle \vec{u}, \vec{v} \rangle = ||\vec{u}||\, ||\vec{v}|| \cos \theta
+			</me>
+		</p>
+
+		<p>
+			and using the Cauchy-Swartz Inequality,
+		</p>
+
+		<p>
+			<me>
+				|\langle \vec{u}, \vec{v} \rangle | = \bigl\vert ||\vec{u}||\, ||\vec{v}|| \cos \theta
+				\bigr\vert
+				\leq ||\vec{u}||\, ||\vec{v}||
+			</me>
+		</p>
+
+		<p>
+			which results in
+		</p>
+
+		<p>
+			<me>
+				|\cos \theta| \leq 1
+			</me>
+		</p>
+
+		<p>
+			which is satisfied for all <m>\theta</m>.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>The Gram-Schmidt Orthogonalization Process</title>
+		<p>
+			We saw above that an orthonormal set of vectors has the property that any two different
+			vectors in the set are orthogonal (inner product of zero) and have norm of one.
+			Often, if we
+			have a set of vectors (say a basis), they aren't orthonormal, but it is advantageous to have
+			another set that is.
+			The <term>Gram-Schmidt</term> algorithm creates an orthonormal set of
+			vectors from a set of linearly independent vectors.
+		</p>
+
+		<p>
+			We first see the idea from a pair of vectors in the following example.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find a orthonormal set of vectors that span the same set as <m>
+					\{\vec{u}_1,\vec{u}_2\}</m>, where
+				</p>
+
+				<p>
+					<md>
+						<mrow>\vec{u}_1 \amp= \begin{bmatrix}
+						2 \\ 0
+						\end{bmatrix}, \amp \vec{u}_2 \amp = \begin{bmatrix}
+						1 \\ 1
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					There are many ways of doing this, but the following will always work.
+					First, let's
+					start by finding a unit vector in the same direction as <m>\vec{u}_1</m>.
+					We denote this
+					as <m>\hat{v}_1</m> and this can be found by dividing <m>\vec{u}_1</m> by its length:
+				</p>
+
+				<p>
+					<me>
+						\hat{v}_1 = \frac{1}{||\vec{u}_1||} \vec{u}_1 = \frac{1}{2} \begin{bmatrix}
+						2 \\ 0
+						\end{bmatrix} = \begin{bmatrix}
+						1 \\ 0
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Next, we will form a new vector <m>\vec{v}_2</m> which is a linear combination of <m>
+					\hat{v}_1</m> and <m>\vec{u}_2</m> and has the property that it is orthogonal to <m>
+					\vec{v}_1</m>
+				</p>
+
+				<p>
+					<me>
+						\vec{v}_2 = c_1 \hat{v}_1 + c_2 \vec{u}_2
+					</me>
+				</p>
+
+				<p>
+					and we can take <m>c_1=1</m> without loss of generality.
+					with
+				</p>
+
+				<p>
+					<md>
+						<mrow>0 \amp = \langle \vec{v}_2, \hat{v}_1 \rangle </mrow>
+						<mrow>\amp = \langle \hat{v}_1 + c_2 \vec{u}_2, \hat{v}_1 \rangle </mrow>
+						<mrow>\amp = \langle \hat{v}_1 \hat{v_1} \rangle + c_2 \langle \vec{u}_2, \hat{v}_1
+						\rangle </mrow>
+					</md>
+				</p>
+
+				<p>
+					and solving for <m>c_2</m>,
+				</p>
+
+				<p>
+					<md>
+						<mrow>c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
+						{\langle \hat{v}_1 \hat{v_1} \rangle}
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					and since <m>\vec{v}_1</m> is a unit vector
+				</p>
+
+				<p>
+					<me>
+						= -\langle \vec{u}_2, \hat{v}_1 \rangle = -1
+					</me>
+				</p>
+
+				<p>
+					So
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp \vec{v}_2 \amp = \hat{v}_1 - \vec{u}_2 = \begin{bmatrix}
+						1 \\ 0
+						\end{bmatrix} - \begin{bmatrix}
+						1 \\ 1
+						\end{bmatrix} = \begin{bmatrix}
+						0 \\ -1
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					Now since <m>\vec{v}_2</m> is already a unit vector, normalization is not needed.
+					If it
+					were, then dividing by its length would create a unit vector.
+					A orthonormal set that spans
+					the set is
+				</p>
+
+				<p>
+					<me>
+						\left\{ \begin{bmatrix}
+						1\\0
+						\end{bmatrix}, \begin{bmatrix}
+						0 \\ -1
+						\end{bmatrix} \right\}
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			If there are more than two vectors in the set, then the process is similar in that
+			iteratively,
+			one creates a new vector that is orthogonal to all previous vectors and then normalizes each
+			one.
+		</p>
+
+		<remark>
+			<p>
+				The <term>Gram-Schmidt Orthogonalization</term> algorithm is the following.
+				Consider a set
+				of vectors <m>\{\vec{u}_1,\vec{u}_2, \ldots, \vec{u}_n\}</m> which is the basis for some
+				vector space.
+			</p>
+
+			<p>
+				<ol>
+					<li>
+						<p>
+							Let <m>\vec{v}_1=\vec{u}_1</m>.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							Let <m>\vec{v}_2 = \vec{u}_2 - \dfrac{\langle \vec{v}_1,\vec{u}_2 \rangle}{\langle
+							\vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1</m>
+						</p>
+					</li>
+
+					<li>
+						<p>
+							Let <m>\vec{v}_3 = \vec{u}_3 - \dfrac{\langle \vec{v}_2,\vec{u}_3 \rangle}{\langle
+							\vec{v}_2,\vec{v}_2 \rangle} \vec{v}_2-\dfrac{\langle \vec{v}_1,\vec{u}_3
+							\rangle}{\langle
+							\vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1</m>.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							And so on with
+							<md>
+								<mrow>\vec{v}_k \amp = \vec{u}_k - \frac{\langle \vec{v}_{k-1},\vec{u}_k
+								\rangle}{\langle \vec{v}_{k-1},\vec{v}_{k-1} \rangle} \vec{v}_{k-1}-\frac{\langle
+								\vec{v}_{k-2},\vec{u}_k \rangle}{\langle \vec{v}_{k-2},\vec{v}_{k-2} \rangle}
+								\vec{v}_{k-2} </mrow>
+								<mrow>\amp \qquad \qquad \cdots - \frac{\langle \vec{v}_2,\vec{u}_k \rangle}{\langle
+								\vec{v}_2,\vec{v}_2 \rangle} \vec{v}_2-\frac{\langle \vec{v}_1,\vec{u}_k
+								\rangle}{\langle
+								\vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1 </mrow>
+								<mrow>\amp = \vec{u}_k - \sum_{i=1}^{k-1} \dfrac{\langle \vec{v}_i, \vec{u}_k
+								\rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \vec{v}_i</mrow>
+							</md>
+						</p>
+					</li>
+				</ol>
+			</p>
+
+			<p>
+				The resulting set of vectors <m>\{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\}</m> are
+				orthogonal.
+				If the set also needs to be orthonormal, for each vector <m>\vec{v}_k</m> divide
+				through by its length.
+			</p>
+		</remark>
+
+
+		<proof>
+			<title>Proof of Gram-Schmidt Orthogonalization</title>
+			<p>
+				To prove Gram-Schmidt orthogonalization works, we will prove that <m>\vec{v}_k</m> is
+				orthogonal to <m>\vec{v}_i</m> for all <m>i \lt k</m>.
+				We will show this by induction.
+				First
+				show that <m>\vec{v}_2</m> is orthogonal to <m>\vec{v}_1</m> :
+			</p>
+
+			<p>
+				<md>
+					<mrow>\langle \vec{v}_2 , \vec{v}_1 \rangle \amp = \biggl\langle \vec{u}_2 -
+					\dfrac{\langle
+					\vec{v}_1,\vec{u}_2 \rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1, \vec{v}_1
+					\biggr\rangle </mrow>
+					<mrow>\amp = \langle \vec{u}_2, \vec{v}_1 \rangle - \dfrac{\langle \vec{v}_1,\vec{u}_2
+					\rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \langle \vec{v}_1, \vec{v}_1 \rangle </mrow>
+					<mrow>\amp = \langle \vec{u}_2, \vec{v}_1\rangle - \langle \vec{v}_1, \vec{u}_2 \rangle =
+					0</mrow>
+				</md>
+			</p>
+
+			<p>
+				Now assume that <m>\vec{v}_k</m> is orthogonal to all other <m>
+				\vec{v}</m>'s or <m>\langle\vec{v}_k, \vec{v}_i \rangle =0</m> for <m>i=k-1,k-2,\ldots,
+				2,1</m>.
+				Now we will prove that <m>\vec{v}_{k+1}</m>, given by Gram-Schmidt is orthogonal
+				to all other <m>\vec{v}</m>'s.
+				For all <m>j=1,2,\ldots,k</m>,
+			</p>
+
+			<p>
+				<md>
+					<mrow>\langle \vec{v}_{k+1}, \vec{v}_j \rangle \amp =
+					\biggl \langle \vec{u}_{k+1} - \sum_{i=1}^{k} \dfrac{\langle \vec{v}_i, \vec{u}_{k+1}
+					\rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \vec{v}_i , \vec{v}_j \biggl \rangle, </mrow>
+					<mrow>\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle - \sum_{i=1}^k \dfrac{\langle
+					\vec{v}_i, \vec{u}_{k+1} \rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \langle
+					\vec{v}_i,
+					\vec{v}_j \rangle</mrow>
+				</md>
+			</p>
+
+			<p>
+				The only term that is not apparantly nonzero in the sum is when <m>i=j</m>
+			</p>
+
+			<p>
+				<md>
+					<mrow>\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle - \dfrac{\langle \vec{v}_j,
+					\vec{u}_{k+1} \rangle}{\langle \vec{v}_j,\vec{v}_i \rangle} \langle \vec{v}_j, \vec{v}_j
+					\rangle </mrow>
+					<mrow>\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle -\langle \vec{v}_j, \vec{u}_{k+1}
+					\rangle = 0</mrow>
+				</md>
+			</p>
+
+			<p>
+				Therefore <m>\vec{v}_{k+1}</m> is orthogonal to all other <m>
+				\vec{v}</m>'s and thus the basis consisting of <m>\vec{v}</m> form an orthonormal set.
+			</p>
+		</proof>
+
+		<example>
+			<statement>
+				<p>
+					Find a orthogonal set of vectors than spans the same subspace as
+					<me>
+						\left\{ \begin{bmatrix}
+						1 \\ 0 \\ 1
+						\end{bmatrix}, \begin{bmatrix}
+						1 \\ 1 \\ 0
+						\end{bmatrix}, \begin{bmatrix}
+						0 \\ 1 \\ 1
+						\end{bmatrix} \right\}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Let <m>\vec{u}_1, \vec{u}_2</m> and <m>\vec{u}_3</m> be these three vectors.
+					We now use
+					Gram-Schmidt orthogonalization to find an orthogonal set.
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<me>
+									\vec{v}_1 = \vec{u}_1 = \begin{bmatrix}
+									1 \\ 0 \\ 1
+									\end{bmatrix}
+								</me>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<me>
+									\vec{v}_2 = \vec{u}_2 - \frac{\langle \vec{u}_2, \vec{v}_1 \rangle}{\langle
+									\vec{v}_1, \vec{v}_1 \rangle} \vec{v}_1 = \begin{bmatrix}
+									1 \\ 1\\ 0
+									\end{bmatrix} - \frac{1}{2} \begin{bmatrix}
+									1 \\ 0 \\ 1
+									\end{bmatrix} = \begin{bmatrix}
+									1/2 \\ 1\\ -1/2
+									\end{bmatrix}
+								</me>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<md>
+									<mrow>\vec{v}_3 \amp = \vec{u}_3 - \frac{\langle \vec{u}_3, \vec{v}_2
+									\rangle}{\langle \vec{v}_2, \vec{v}_2 \rangle}
+									\vec{v}_2- \frac{\langle \vec{u}_3, \vec{v}_1 \rangle}{\langle \vec{v}_1,
+									\vec{v}_1 \rangle} \vec{v}_1
+									</mrow>
+									<mrow>\amp = \begin{bmatrix}
+									0 \\ 1 \\ 1
+									\end{bmatrix} - \frac{1/2}{3/2} \begin{bmatrix}
+									1/2 \\ 1 \\ -1/2
+									\end{bmatrix}- \frac{1}{2} \begin{bmatrix}
+									1 \\ 0 \\ 1
+									\end{bmatrix} = \begin{bmatrix}
+									-2/3 \\ 2/3 \\ 2/3
+									\end{bmatrix}</mrow>
+								</md>
+							</p>
+						</li>
+					</ol>
+				</p>
+
+				<p>
+					And the set <m>\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}</m> is now orthogonal (check it).
+				</p>
+
+				<p>
+					Note:	there are many other orthogonal sets that span this subspace.
+					For example, the standard basis does this or if we would have shuffled the
+					original three vectors, so this is not unique.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			Although the example shown here uses vectors in <m>\mathbb{R}^3</m>, Gram-Schmidt can be done
+			on any set of vectors from an inner product space.
+			This is very common for polynomials and
+			will show an example with this next.
+			Also, in  <xref ref="ch-fourier-series" />, we
+			will also show this with trigonometric functions.
+		</p>
+
+		<example xml:id="example-gram-schmidt-p3">
+			<statement>
+				<p>
+					Use Gram-Schmidt orthogonalization to find a orthogonal set that spans <m>
+					\mathcal{P}_3[-1,1]</m>, the set of all cubic functions on the interval <m>[-1,1]</m> with
+					inner product
+				</p>
+
+				<p>
+					<me>
+						\langle p, q \rangle = \int_{-1}^1 p(x) q(x) \, dx
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					To begin, we need a set of vectors (polynomials) on the set and we can take the standard
+					basis <m>\{1,x,x^2,x^3\}</m>.
+					Call these <m>p_0,p_1,p_2,p_3</m> and we'll use Gram-Schmidt
+					to find a set <m>\{q_0,q_1,q_2,q_3\}</m> that is orthogonal.
+				</p>
+
+				<p>
+					It is very helpful to recall that <m>x^n</m> is an odd function if <m>n</m> is odd.
+					Also <m>\int_{-1}^1
+					x^n \,dx =0</m> if <m>
+					n</m> is odd.
+					<md>
+						<mrow>q_0 \amp= p_0 = 1, </mrow>
+						<mrow>q_1 \amp= p_1 - \frac{\langle p_1,q_0 \rangle}{\langle q_0,q_0 \rangle } q_0 </mrow>
+						<mrow>\amp = x - \frac{\int_{-1}^1 x \cdot 1 \, dx} {\int_{-1}^1 1 \cdot 1 \, dx} 1</mrow>
+					</md>
+				</p>
+
+				<p>
+					and since <m>x\cdot 1= x</m> is odd, the integral in the numerator is 0, so <m>q_1=x</m> and
+				</p>
+
+				<p>
+					<md>
+						<mrow>q_2 \amp = p_2 - \frac{\langle p_2,q_1 \rangle}{\langle q_1,q_1 \rangle } q_1 -
+						\frac{\langle p_2,q_0 \rangle}{\langle q_0,q_0 \rangle } q_0 </mrow>
+						<mrow>\amp = x^2 - \frac{\int_{-1}^1 x^2 \cdot x \, dx}{ \int_{-1}^1 x \cdot x \, dx} -
+						\frac{\int_{-1}^1 x^2 \cdot 1 \, dx}{\int_{-1}^1 1 \cdot 1 \, dx} 1 </mrow>
+					</md>
+				</p>
+
+				<p>
+					and <m>x^2\cdot x=x^3</m> is odd, so the first integral is 0 and also <m>\int_{-1}^1 1
+					\,dx = 2</m>,
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp = x^2 - \frac{x^3/3 \bigl\vert_{-1}^1}{2} 1 = x^2-\frac{1}{3} </mrow>
+						<mrow>q_3 \amp = q_3 - \frac{\langle p_3,q_2 \rangle}{\langle q_2,q_2 \rangle } q_2 -
+						\frac{\langle p_3,q_1 \rangle}{\langle q_1,q_1 \rangle } q_1 - \frac{\langle p_3,q_0
+						\rangle}{\langle q_0,q_0 \rangle } q_0 </mrow>
+						<mrow>\amp = x^3 - \frac{\int_{-1}^1 x^3 (x^2-1/3) \,dx}{\int_{-1}^1 (x^2-1/3)^2 \, dx }
+						\bigl(x^2-\frac{1}{3} \bigr) - \frac{\int_{-1}^1 x^3 \cdot x \, dx}{\int_{-1}^1 x
+						\cdot x
+						\, dx}
+						x - \frac{\int_{-1}^1 x^3 \cdot 1 \,dx }{\int_{-1}^1 1 \cdot 1 \, dx}</mrow>
+					</md>
+				</p>
+
+				<p>
+					and the integrals in the numerators of the 2nd and 4th terms are 0 due to the functions
+					being odd, so
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp = x^3 - \frac{ x^5/5 \bigr\vert_{-1}^1}{x^3/3 \bigr\vert_{-1}^1} x </mrow>
+						<mrow>\amp = x^3 - \frac{3}{5} x</mrow>
+					</md>
+				</p>
+
+				<p>
+					There an orthogonal set of cubic polynomials that span <m>\mathcal{P}_3[-1,1]</m> is
+				</p>
+
+				<p>
+					<me>
+						\{1,x,x^2-\frac{1}{3},x^3-\frac{3}{5}x \}
+					</me>
+				</p>
+
+				<p>
+					and these are the first four Legendre Polynomials.
+					Also, they are a basis of <m>\mathcal{P}_3[-1,1]</m>.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+</section>

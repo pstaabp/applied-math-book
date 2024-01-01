@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-echelon-form" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Row-Echelon and Reduced Row-Echelon Forms of a Matrix</title>
+	<introduction>
+		<p>
+			From the previous section, we saw that row operations were used to change the matrix in
+			a way that allows a solution to be found easier.
+			We formalize these steps in this
+			section.
+		</p>
+	</introduction>
+	<!--
+	<p>
+		Explain why the linear system in the example above:
+	</p>
+
+	<p>
+		<md>
+			<mrow>4x_1\phantom{+11x_3} -\phantom{9} x_3 \amp = 0, </mrow>
+			<mrow>12x_2 +9x_3 \amp = 12, </mrow>
+			<mrow>11x_3 \amp = 44, </mrow>
+		</md>
+	</p>
+
+	<p>
+		is in echelon form.
+	</p>
+</statement>
+
+<solution>
+	<p>
+		Note that the leading variable in equation 1 is <m>x_1</m>, the leading variable in
+		equation 2 is <m>x_2</m> and the leading variable in equation 3 is <m>x_3</m>.
+		Each
+		leading variable in each successive row is to the right of the one above.
+	</p>
+</solution>
+-->
+<p>
+	The next example determines if the system is in echelon form.
+</p>
+
+<example xml:id="ex-echelon-form-3by5">
+	<title>Echelon Form, Another Example</title>
+	<statement>
+		<p>
+			Determine if the following are in echelon form?
+		</p>
+
+		<p>
+			<ol>
+				<li>
+					<p>
+						<md>
+							<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
+							<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
+							<mrow>3x_5 \amp = 27,</mrow>
+						</md>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						<md>
+							<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
+							<mrow>2x_1 -x_2 \amp = -10, </mrow>
+							<mrow>2x_2 \amp = 14 </mrow>
+						</md>
+					</p>
+				</li>
+			</ol>
+		</p>
+	</statement>
+
+	<solution>
+		<p>
+			<ol>
+				<li>
+					<p>
+						Yes, the leading variable in equation 1 is <m>x_1</m>, the leading variable in
+						equation 2 is <m>x_3</m> which is to the right of <m>x_1</m> and the leading
+						variable in equation 3 is <m>x_5</m>, which is to the right of <m>x_3</m>.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						the leading variables in both equation 1 and 2 are <m>x_1</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+	</solution>
+</example>
+
+<p>
+	Let's look more carefully at the last example.
+	It is not in echelon form,
+	but let's put it in echelon form and write down a solution.
+</p>
+
+<p>
+	<md>
+		<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
+		<mrow>2x_1 -x_2 \amp = -10, </mrow>
+		<mrow>2x_2 \amp = 8.
+		</mrow>
+	</md>
+</p>
+
+<p>
+	Eliminate <m>x_1</m> in the 2nd equation by doing the following:
+</p>
+
+<p>
+	<md>
+		<mrow>-2R_1+3R_2 \to R_2, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+		<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
+		<mrow>\amp \amp 2x_2 \amp = 8.</mrow>
+	</md>
+</p>
+
+<p>
+	then eliminate <m>x_2</m> in the third equation
+</p>
+
+<p>
+	<md>
+		<mrow> 2R_2 +11 R_3 \to R_3 \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+		<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
+		<mrow>\amp \amp 0x_2 \amp = 0.
+		</mrow>
+	</md>
+</p>
+
+<p>
+	Note that the last equation in the last linear system contains no information.
+	zero equals
+	zero.
+	We all knew that before.
+	We ignore that equation.
+	The 2nd equation can be solved to
+	yield <m>x_2=4</m> and substituting into the first equation,
+</p>
+
+<p>
+	<md>
+		<mrow>3x_1 + 4(4) \amp = 7, \amp \amp \text{or} </mrow>
+		<mrow>3x_1 \amp = -9, \amp \amp \text{or} </mrow>
+		<mrow>x_1 \amp = -3.</mrow>
+	</md>
+</p>
+
+<p>
+	so the solution is <m>(-3,4)</m>.
+</p>
+
+<p>
+	In comparison to the last example, consider the following very similar example:
+</p>
+
+<p>
+	<md>
+		<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
+		<mrow>2x_1 -x_2 \amp = -10, </mrow>
+		<mrow>3x_2 \amp = 6,</mrow>
+	</md>
+</p>
+
+<p>
+	eliminate the <m>x_1</m> term in the 2nd equation
+</p>
+
+<p>
+	<md>
+		<mrow>-2R_1+3R_2 \rightarrow R_2, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+		<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
+		<mrow>\amp \amp 3x_2 \amp = 6,</mrow>
+	</md>
+</p>
+
+<p>
+	eliminate the <m>x_2</m> term in the 3rd equation
+</p>
+
+<p>
+	<md>
+		<mrow>3R_2+11R_3 \rightarrow R_3, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+		<mrow>\amp\amp -11x_2 \amp = -44, </mrow>
+		<mrow>\amp\amp 0x_2 \amp = -66,</mrow>
+	</md>
+</p>
+
+<p>
+	And note in this case, that the last equation says <m>0=-66</m>, which is not true.
+	Therefore, this means that there is no solution.
+	This is in contrast to the the previous
+	example, which did have a solution.
+</p>
+
+<remark>
+	<title>Can solutions to linear system only be none or a unique solution?</title>
+	<p>
+		In the last example of this section, we will see that we can have many
+		solutions to a linear system.
+		If we have the following linear system
+		already in echelon form:
+	</p>
+
+	<p>
+		<md>
+			<mrow> x_1\phantom{+2x2} -2x_3\phantom{+x_4} \amp = 0, </mrow>
+			<mrow>2x_2 +2x_3 -2x_4 \amp = 0, </mrow>
+			<mrow>-2x_3 + x_4 \amp = 0,</mrow>
+		</md>
+	</p>
+
+	<p>
+		Notice that since there are 4 variables and 3 equations, that there is no way to get a
+		solution for <m>x_4</m> by itself (or any of the other 3 variables).
+		This has many
+		(actually infinitely many) solutions.
+		For example <m>(0,0,0,0)</m> is one as well as <m>
+		(2,1,1,2)</m> and <m>(-5,-5/2,-5/2,-5)</m>.
+		We will explore this is much more detail
+		later.
+	</p>
+</remark>
+</subsubsection>
+
+<subsubsection xml:id="subsect-describe-solutions">
+	<title>Describing the Solution Set</title>
+	<p>
+		So far we have seen linear system with solution sets with different number of elements.
+		The <em>no
+		solution</em> means that the solution set is empty, the <em>unique solution</em> means that
+		there is one element in the set.
+		But we haven't seen the <em>many solutions</em> and how do
+		we represent that.
+		We explore that here in this section.
+	</p>
+
+	<p>
+		For example, if we reduce the linear system:
+	</p>
+
+	<p>
+		<md>
+			<mrow>\amp \amp x\phantom{+2y} + 2z \amp = -6 </mrow>
+			<mrow>\amp \amp 2x-y\phantom{+3z}\amp = 1 </mrow>
+			<mrow>\amp \amp y+4z\amp = -13</mrow>
+		</md>
+	</p>
+
+	<p>
+		Eliminate the <m>x</m> term in the 2nd equation
+	</p>
+
+	<p>
+		<md>
+			<mrow>-2R_1+R_2 \rightarrow R_2 \qquad\amp \amp x\phantom{+2y} + 2z \amp = -6 </mrow>
+			<mrow>\amp\amp -y-4z\amp = 13 </mrow>
+			<mrow>\amp\amp y+4z\amp = -13</mrow>
+		</md>
+	</p>
+
+	<p>
+		Eliminate the <m>y</m> term in the 3rd equation
+	</p>
+
+	<p>
+		<men xml:id="eq-echelon-form-reduced-zero">
+			\begin{split}
+			R_2 + 2R_3 \rightarrow R_3 \qquad \amp \amp x\phantom{+2y} + 2z \amp = -6 \\
+			\amp \amp-y -4z \amp = 13 \\
+			\amp \amp0 \amp = 0.
+			\end{split}
+		</men>
+	</p>
+
+	<p>
+		As discussed above, this linear system has more that one solution.
+		Therefore it is the set of points that satisfy every one of the original
+		three equations or
+	</p>
+
+	<p>
+		<me>
+			\{ (x,y,z)\; | \; x+2z=-6, \; 2x-y = 1, \; y+4z =-13\}
+		</me>
+	</p>
+
+	<p>
+		However (and this is the main point of Gauss' method), using row
+		operations, any points that satisfy the 3rd system above is also a
+		solution, that is
+	</p>
+
+	<p>
+		<me>
+			\{ (x,y,z) \; | \; x + 2z = -6, \; -y-4z = 13 \}
+		</me>
+	</p>
+
+	<p>
+		This may be an improvement because there are only 2 equations
+		instead of 3, but it's still difficult to write down a point that
+		is in the solution set.
+	</p>
+
+	<p>
+		Alternatively, we return to the last linear system and solve the 2nd equation for <m>y</m>
+		or
+	</p>
+
+	<p>
+		<me>
+			y = -4z-13
+		</me>
+	</p>
+
+	<p>
+		and solving the first equation for <m>x</m> in the linear system above to get
+	</p>
+
+	<p>
+		<md>
+			<mrow>x+2z \amp = -6 \qquad\qquad\text{or}</mrow>
+			<mrow>x \amp = -2z -6 </mrow>
+		</md>
+	</p>
+
+	<p>
+		And now if we know <m>z</m>, we can find <m>x</m> and <m>y</m>, thus we can write the
+		solution set as
+	</p>
+
+	<p>
+		<me>
+			\{ (x,y,z) = (-2z-6, -4z-13,z) \; | \; z \in \mathbb{R} \}
+		</me>
+	</p>
+
+	<p>
+		and now we have a lot of information about the solution set.
+		For example, if <m>z=0</m>,
+		then <m>x=-6,
+		y=-13</m>, so the point <m>(-6,-13,0)</m> is in the solution set.
+		Similarly if <m>z=-3</m>,
+		then <m>(0,-1,-3)</m> is also a point in the solution set and any point given a value of <m>
+		z</m> .
+	</p>
+
+	<p>
+		We also have a sense of the number of solutions and since <m>z</m> can take on any real
+		number, there are an infinite number of triples <m>3</m>-tuples in this solution set.
+	</p>
+
+	<p>
+		Also, the form of the solution set above is in <em>set builder</em> form.
+		That is is shows
+		how to create the set of points in the solution.
+	</p>
+
+	<definition>
+		<statement>
+			<p>
+				The non-leading variables in a linear system in echelon form are called the <term>free
+				variables</term> or <term>parameters</term>.
+			</p>
+		</statement>
+	</definition>
+
+	<p>
+		The next example shows that a linear system can have more than one free variables.
+	</p>
+
+	<example xml:id="ex-echelon-form-3by5-soln">
+		<statement>
+			<p>
+				In Example <xref ref="ex-echelon-form-3by5" />, we saw the following linear system
+				already in echelon form:
+			</p>
+
+			<p>
+				<md>
+					<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
+					<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
+					<mrow>3x_5 \amp = 27,</mrow>
+				</md>
+			</p>
+
+			<p>
+				Write the solution set in terms of the free variables.
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				First, we use back substitution to solve for the <em>leading variables</em>.
+				The third
+				equation states that <m>x_5 = 9</m>, and then substitute this into the 2nd equation:
+			</p>
+
+			<p>
+				<md>
+					<mrow>2x_3 +4(9) \amp = 10,\qquad\quad \text{or} </mrow>
+					<mrow>x_3 \amp = -13,</mrow>
+				</md>
+			</p>
+
+			<p>
+				and then substitute into the first equation
+			</p>
+
+			<p>
+				<md>
+					<mrow>x_1 + 3(-13) - 9 x_4 + 11 (9) \amp = 14 \quad\quad\text{or}</mrow>
+					<mrow>x_1 \amp = 9x_4 - 46</mrow>
+				</md>
+			</p>
+
+			<p>
+				Lastly, we write the solution in terms of <m>x_2</m> and <m>x_4</m> which are the two
+				free variables.
+			</p>
+
+			<p>
+				<me>
+					\{ (x_1,x_2,x_3,x_4,x_5) = (9x_4-46,x_2,-13,x_4,9) \; | \; x_2, x_4 \in \mathbb{R}\}
+				</me>
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		We now find the solution to the Hydrazine chemistry problem in Example <xref
+		ref="ex-hydrazine" />
+	</p>
+
+	<example xml:id="ex-hydrazine-solution">
+		<statement>
+			<p>
+				Find the solution set of the linear system in Example <xref ref="ex-hydrazine" />
+			</p>
+
+			<p>
+				<md>
+					<mrow>k_1\phantom{+2k_2}-2k_3\phantom{+2k_4} \amp = 0, </mrow>
+					<mrow>3k_1+2k_2-4k_3-2k_4 \amp = 0, </mrow>
+					<mrow>2k_2\phantom{+2x_3}-\phantom{2}k_4 \amp = 0, </mrow>
+				</md>
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				In this case, we will use Gauss's method to put the linear system in echelon form:
+			</p>
+
+			<p>
+				<md>
+					<mrow>-3R_1 +R_2 \rightarrow R_2, \qquad \amp \amp k_1 \phantom{+2k_2}-
+					2k_3\phantom{+2k_4} \amp = 0, </mrow>
+					<mrow>\amp \amp 2k_2 + 2k_3 -2k_4 \amp = 0, </mrow>
+					<mrow>\amp \amp 2k_2\phantom{+2x_3}-\phantom{2}k_4 \amp = 0,</mrow>
+				</md>
+				<md>
+					<mrow>-R_2 + R_3 \rightarrow R_3, \qquad \amp\amp k_1 \phantom{+2k_2}-
+					2k_3\phantom{+2k_4} \amp = 0</mrow>
+					<mrow>\amp \amp 2k_2 + 2k_3 -2k_4 \amp = 0, </mrow>
+					<mrow>\amp \amp -2k_3 + k_4 \amp = 0,</mrow>
+				</md>
+			</p>
+
+			<p>
+				which is now in echelon form.
+				We now use back substitution to solve for <m>k_1</m>, <m>
+				k_2</m> and <m>k_3</m>, the leading variables:
+			</p>
+
+			<p>
+				<me>
+					k_3 = \frac{1}{2} k_4 \\
+				</me>
+			</p>
+
+			<p>
+				then
+			</p>
+
+			<p>
+				<me>
+					k_2 = -k_3 + k_4 = - \frac{1}{2} k_4 + k_4 = \frac{1}{2} k_4,
+				</me>
+			</p>
+
+			<p>
+				and finally,
+			</p>
+
+			<p>
+				<me>
+					k_1 = 2k_3 = 2 \biggl( \frac{1}{2} k_4 \biggr) = k_4
+				</me>
+			</p>
+
+			<p>
+				Since <m>k_1, k_2</m> and <m>k_3</m> all depend on <m>k_4</m>, a free variable, there
+				are an infinite number of solutions to this linear system.
+				We can write this as
+			</p>
+
+			<p>
+				<me>
+					\{ (k_4, \frac{1}{2} k_4, \frac{1}{2} k_4, k_4) \; | \; k_4 \in \mathbb{R} \},
+				</me>
+			</p>
+
+			<p>
+				Solutions include <m>(0,0,0,0)</m>, <m>(2,1,1,2)</m>, <m>(-5,-5/2,-5/2,-5)</m>.
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		Since the above example comes from Chemical equations, it is desirable to find a solution
+		of all positive integers, since the number represent the number of atoms in the reaction.
+		In
+		addition, typically the solution with smallest integers is desired.
+		In this case, the
+		solution <m>
+		(2,1,1,2)</m> results in the following equation:
+		<me>
+			2 NH_3 + H_2O_2 \rightarrow N_2 H_4 + 2 H_2 O
+		</me>
+	</p>
+</subsubsection>
+</subsection>
+
+<subsection xml:id="sect-reduced-row-echelon-form">
+	<title>Reduced Row Echelon Form</title>
+	<introduction>
+		<p>
+			As we have seen in <xref ref="subsect-linear-system-examples" />, there are numerous ways
+			to reduce a matrix (or a linear system) to echelon form using Gauss's method.
+			For example:
+		</p>
+
+		<p>
+			<me>
+				\begin{bmatrix}
+				3 \amp 4 \\
+				1 \amp 2
+				\end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			can be reduced to any of the following:
+		</p>
+
+		<p>
+			<md>
+				<mrow>
+				\begin{bmatrix}
+				3 \amp 4 \\
+				0 \amp -2
+				\end{bmatrix} \amp\amp
+				\begin{bmatrix}
+				1 \amp 2 \\
+				0 \amp -2
+				\end{bmatrix} \amp\amp
+				\begin{bmatrix}
+				1 \amp 0 \\
+				0 \amp -2
+				\end{bmatrix}
+				</mrow>
+			</md>
+		</p>
+
+		<p>
+			What row operations get us to these matrices?
+		</p>
+
+		<p>
+			A question arises with this differences in the echelon forms of the matrices.
+			Are the
+			solution sets equivalent? The answer is yes.
+			Are the number, free variables the same? The
+			way we will answer this last question is by putting the matrix in <term>reduced row echelon
+			form</term>.
+		</p>
+	</introduction>
+
+	<subsubsection>
+		<title>Gauss-Jordon Reduction</title>
+		<p>
+			We solved the linear system from <xref ref="ex-solve-linear-syst" />.
+		</p>
+
+		<p>
+			<md>
+				<mrow>4x_1 - x_3 \amp = 0, </mrow>
+				<mrow>x_1+3x_2 +2x_3 \amp = 3, </mrow>
+				<mrow>3x_2 + 5x_3 \amp = 14.</mrow>
+			</md>
+		</p>
+
+		<p>
+			by putting the array in echelon form using elementary row operations,
+		</p>
+
+		<p>
+			<md>
+				<mrow>\amp \amp \left[\begin{array}{rrr|r}
+				4 \amp 0 \amp -1 \amp 0 \\
+				1 \amp 3 \amp 2 \amp 3 \\
+				0 \amp 3 \amp 5 \amp 14
+				\end{array}\right] </mrow>
+				<mrow>-R_1 + 4R_2 \rightarrow R_2, \qquad \amp\amp
+				\left[\begin{array}{rrr|r}
+				4 \amp 0 \amp -1 \amp 0 \\
+				0 \amp 12 \amp 9 \amp 12 \\
+				0 \amp 3 \amp 5 \amp 14
+				\end{array}\right] </mrow>
+				<mrow>-R_2 + 4R_3 \rightarrow R_3, \qquad \amp\amp
+				\left[\begin{array}{rrr|r}
+				4 \amp 0 \amp -1 \amp 0 \\
+				0 \amp 12 \amp 9 \amp 12 \\
+				0 \amp 0 \amp 11 \amp 44
+				\end{array}\right]</mrow>
+			</md>
+		</p>
+
+		<p>
+			then using back-substitution.
+		</p>
+
+		<p>
+			Note that there is still work to be done to get the solution using back-substitution.
+			Instead, we can continue to use Gauss' method to further reduce the
+			matrix into a nicer form:
+		</p>
+
+		<p>
+			<md>
+				<mrow>\frac{1}{11} R_3 \rightarrow R_3, \amp \qquad
+				\left[\begin{array}{rrr|r}
+				4 \amp 0 \amp -1 \amp 0 \\
+				0 \amp 12 \amp 9 \amp 12 \\
+				0 \amp 0 \amp 1 \amp 4 \\
+				\end{array}\right] </mrow>
+				<mrow>\begin{array}{r}
+				-9R_3+R_2 \rightarrow R_2, \\
+				R_3 + R_1 \rightarrow R_1,
+				\end{array} \amp \qquad
+				\left[\begin{array}{rrr|r}
+				4 \amp 0 \amp 0 \amp 4 \\
+				0 \amp 12 \amp 0 \amp -24 \\
+				0 \amp 0 \amp 1 \amp 4 \\
+				\end{array}\right] </mrow>
+				<mrow>\begin{array}{r}
+				\frac{1}{12} R_2 \rightarrow R_2, \\[4pt]
+				\frac{1}{4} R_1 \rightarrow R_1,
+				\end{array} \amp \qquad
+				\left[\begin{array}{rrr|r}
+				1 \amp 0 \amp 0 \amp 1 \\
+				0 \amp 1 \amp 0 \amp -2 \\
+				0 \amp 0 \amp 1 \amp 4 \\
+				\end{array}\right] </mrow>
+			</md>
+		</p>
+
+		<p>
+			Now this is a nicer form, because if the linear system is written from the matrix, then:
+		</p>
+
+		<p>
+			<md>
+				<mrow>x \amp = 1, </mrow>
+				<mrow>y \amp = -2, </mrow>
+				<mrow>z \amp = 4.</mrow>
+			</md>
+		</p>
+
+		<p>
+			or in vector form
+		</p>
+
+		<p>
+			<me>
+				\vec{x} = \begin{bmatrix}
+				1 \\ -2 \\ 4
+				\end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			which is the last column of the matrix.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					A matrix is in <term>reduced row-echelon form</term> if in addition to being in
+					echelon form, that each leading entry is a 1, and the leading entry is the only non-zero
+					entry in the column.
+				</p>
+			</statement>
+		</definition>
+
+		<example xml:id="ex-matrices-reduced-row-echelon">
+			<p>
+				The following matrices are in reduced row echelon form.
+			</p>
+
+			<p>
+				<md>
+					<mrow>\begin{bmatrix}
+					1 \amp 0 \amp 3 \\
+					0 \amp 1 \amp -2
+					\end{bmatrix} \amp\amp
+					\begin{bmatrix}
+					1 \amp 2 \amp 0 \amp 0 \amp 5 \\
+					0 \amp 0 \amp 1 \amp 0 \amp -2 \\
+					0 \amp 0 \amp 0 \amp 1 \amp 3 \\
+					\end{bmatrix} \amp\amp
+					\begin{bmatrix}
+					1 \amp 0 \amp 3 \amp 2 \\
+					0 \amp 1 \amp 2 \amp 9 \\
+					0 \amp 0 \amp 0 \amp 0
+					\end{bmatrix} </mrow>
+				</md>
+			</p>
+		</example>
+
+		<example xml:id="ex-not-in-rref">
+			<statement>
+				<p>
+					Explain why the following are not in reduced row echelon form:
+				</p>
+
+				<p>
+					<md>
+						<mrow>
+						\begin{bmatrix}
+						2 \amp 0 \amp 4 \\
+						0 \amp 1 \amp 3
+						\end{bmatrix} \amp\amp
+						\begin{bmatrix}
+						1 \amp 3 \amp 2 \\
+						0 \amp 1 \amp -1
+						\end{bmatrix} \amp\amp
+						\begin{bmatrix}
+						0 \amp 1 \amp 3 \amp 3 \\
+						1 \amp 0 \amp 2 \amp -1
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					<ul>
+						<li>
+							The first matrix is not in row reduced echelon form because the leading
+							term in row 1 needs to be a 1, not a 2.
+						</li>
+
+						<li>
+							The second matrix is not in row reduced echelon form because the column
+							with the leading term in row 2 (which is column 2) should be 0 except the
+							1 in the second row.
+						</li>
+
+						<li>
+							The third matrix is not in row reduced echelon form because the matrix is not in
+							echelon form.
+						</li>
+					</ul>
+				</p>
+			</solution>
+		</example>
+
+		<definition>
+			<statement>
+				<p>
+					The reduction of a matrix to reduced row echelon form using the three standard row
+					operations is called <term>Gauss-Jordon reduction</term> or the <term>Gauss-Jordon
+					method</term> .
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			As seen above, reduced row echelon form makes linear systems with a unique
+			solution very easy to write down---the solution is in the last row.
+			We will
+			also see that this form makes solutions with many solutions easier to write
+			down as well.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Put the following linear system:
+				</p>
+
+				<p>
+					<md>
+						<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
+						<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
+						<mrow>3x_5 \amp = 27,</mrow>
+					</md>
+				</p>
+
+				<p>
+					into reduced row echelon form.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, this is already in echelon form, so we only need to do the steps to get to
+					reduced
+					row echelon form:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp\amp \qquad
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 3 \amp -9 \amp 11 \amp 14 \\
+						0 \amp 0 \amp 2 \amp 0 \amp 4 \amp 9 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 3 \amp 27
+						\end{array}\right] </mrow>
+						<mrow>\frac{1}{3} R_3 \rightarrow R_3, \amp \amp \qquad
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 3 \amp -9 \amp 11 \amp 14 \\
+						0 \amp 0 \amp 2 \amp 0 \amp 4 \amp 9 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+						\end{array}\right] </mrow>
+						<mrow>\begin{array}{r}
+						-4 R_3 + R_2 \rightarrow R_2, \\
+						-11R_3 + R_1 \rightarrow R_1,
+						\end{array} \amp \amp \qquad
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 3 \amp -9 \amp 0 \amp -85 \\
+						0 \amp 0 \amp 2 \amp 0 \amp 0 \amp -26 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+						\end{array}\right] </mrow>
+						<mrow>\frac{1}{2} R_2 \rightarrow R_2, \amp \amp \qquad
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 3 \amp -9 \amp 0 \amp -85 \\
+						0 \amp 0 \amp 1 \amp 0 \amp 0 \amp -13 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+						\end{array}\right] </mrow>
+						<mrow>-3R_2 + R_1 \rightarrow R_1, \amp \amp \qquad
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp -9 \amp 0 \amp -46 \\
+						0 \amp 0 \amp 1 \amp 0 \amp 0 \amp -13 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9
+						\end{array}\right] </mrow>
+					</md>
+				</p>
+
+				<p>
+					And now this is in reduced row echelon form.
+					The linear system from this
+					equation can be written by solving for the leading variables:
+				</p>
+
+				<p>
+					<md>
+						<mrow>x_1 \amp = -46 + 9x_4,</mrow>
+						<mrow>x_3 \amp = -13 </mrow>
+						<mrow>x_5 \amp = 9</mrow>
+					</md>
+				</p>
+
+				<p>
+					and then the solution can be written in vector form as
+				</p>
+
+				<p>
+					<me>
+						\left\{ \begin{bmatrix}
+						-46 \\
+						0 \\
+						-13 \\
+						0 \\
+						9
+						\end{bmatrix} +
+						\begin{bmatrix}
+						0 \\ 1 \\ 0 \\ 0 \\ 0
+						\end{bmatrix} x_2 + \begin{bmatrix}
+						9 \\ 0 \\ 0 \\ 1 \\ 0
+						\end{bmatrix} x_4 \; | \; x_2, x_4 \in \mathbb{R}, \right\}
+					</me>
+				</p>
+
+				<p>
+					which is the same solution as that from that in <xref ref="ex-large-linear-solution" />
+				</p>
+
+				<p>
+					An alternative way to read off the solution from the reduced row echelon matrix
+					is to add rows of zeros where the free variables would be.
+					In this case in
+					row 2 and 4 and shifting others down to get
+				</p>
+
+				<p>
+					<me>
+						\left[\begin{array}{rrrrr|r}
+						1 \amp 0 \amp 0 \amp 0 \amp 0 \amp -46 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+						0 \amp 0 \amp 1 \amp 0 \amp 0 \amp -13 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+						0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 9 \\
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					The particular solution is now the last column.
+					The solution also contains <m>x_2</m>
+					terms which is the second column with a 1 instead of a 0 in the second row and also the
+					fourth column with a 1 instead of a 0 in the fourth row times <m>x_4</m>.
+				</p>
+			</solution>
+		</example>
+
+		<example>
+			<p>
+				Write down the solution set of the following linear system given in
+				the reduced row echelon form of the matrix:
+			</p>
+
+			<p>
+				<me>
+					\left[\begin{array}{rrrrrr|r}
+					1 \amp 0 \amp 3 \amp 0 \amp 0 \amp 5 \amp 11 \\
+					0 \amp 1 \amp -4 \amp 0 \amp 0 \amp 9 \amp -4 \\
+					0 \amp 0 \amp 0 \amp 1 \amp 0 \amp 3 \amp 5 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 0 \amp -2 \\
+					\end{array}\right]
+				</me>
+			</p>
+
+			<p>
+				If we add a row between the 2nd and 3rd rows as well as after the fourth row, the matrix
+				is:
+			</p>
+
+			<p>
+				<me>
+					\left[\begin{array}{rrrrrr|r}
+					1 \amp 0 \amp 3 \amp 0 \amp 0 \amp 5 \amp 11 \\
+					0 \amp 1 \amp -4 \amp 0 \amp 0 \amp 9 \amp -4 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+					0 \amp 0 \amp 0 \amp 1 \amp 0 \amp 3 \amp 5 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 0 \amp -2 \\
+					0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+					\end{array}\right]
+				</me>
+			</p>
+
+			<p>
+				The the solution set is
+			</p>
+
+			<p>
+				<me>
+					\left\{ \begin{bmatrix}
+					11 \\ -4 \\ 0 \\ 5 \\ -2 \\ 0
+					\end{bmatrix} + \begin{bmatrix}
+					-3 \\ 4 \\ 1 \\ 0 \\ 0 \\ 0
+					\end{bmatrix} x_3 +
+					\begin{bmatrix}
+					-5 \\ -9 \\ 0 \\ -3 \\ 0 \\ 1
+					\end{bmatrix} x_6 \; | \; x_3, x_6 \in \mathbb{R} \right\}
+				</me>
+			</p>
+
+			<p>
+				Recalling that you need to replace the 0 in the 3rd row of the <m>x_3</m> vector with a
+				1 and replace the 0 in the 6th row of the <m>x_6</m> vector with a 1.
+			</p>
+		</example>
+	</subsubsection>
+
+	<subsubsection>
+		<title>Row Equivalence</title>
+		<p>
+			We have used the term <em>matrix reduction</em> in converting a matrix to either echelon or
+			reduced row echelon form.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					Two matrices that are interreducible by the elementary row operations are <term>row
+					equivalent</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<lemma>
+			<statement>
+				<p>
+					A linear combination of linear combinations is a linear combination.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					Consider the <m>m</m> linear combinations <m>c_{1,1} x_1 + \cdots + c_{1,n} x_n</m>
+					through <m>c_{m,1} x_1 + \cdots + c_{m,n} x_n</m>.
+					A linear combination of these is
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp d_1 (c_{1,1} x_1 + \cdots + c_{1,n} x_n ) + \cdots + d_m (c_{m,1} x_1 +
+						\cdots + c_{m,n} x_n)</mrow>
+						<mrow>\amp \qquad = d_1 c_{1,1} x_1 + \cdots + d_1 c_{1,n} x_n + \cdots + d_m c_{m,1}
+						x_1 + \cdots + d_m c_{m,n} x_n </mrow>
+						<mrow>\amp \qquad = (d_1 c_{1,1} + \cdots + d_m c_{m,1}) x_1 + \cdots + (d_1 c_{1,n} +
+						\cdots + d_m c_{m,n}) x_n</mrow>
+					</md>
+				</p>
+			</proof>
+		</lemma>
+
+		<p>
+			We will use the following standard notation for matrices.
+			A matrix is named with a roman
+			capital letter, the <m>i</m>th row will be denoted with the equivalent lower-case greek with
+			subscript <m>i</m>, that is
+		</p>
+
+		<p>
+			<md>
+				<mrow>A \amp = \begin{bmatrix}
+				\cdots \amp \alpha_1 \amp \cdots \\
+				\cdots \amp \alpha_2 \amp \cdots \\
+				\amp \vdots \amp \\
+				\cdots \amp \alpha_n \amp \cdots \\
+				\end{bmatrix} \amp
+				B \amp = \begin{bmatrix}
+				\cdots \amp \beta_1 \amp \cdots \\
+				\cdots \amp \beta_2 \amp \cdots \\
+				\amp \vdots \amp \\
+				\cdots \amp \beta_n \amp \cdots \\
+				\end{bmatrix}
+				</mrow>
+			</md>
+		</p>
+
+		<corollary xml:id="cor-rows-linear-comb">
+			<statement>
+				<p>
+					When one matrix is transformed to another matrix, each row of the second
+					is a linear combination of the first.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					The base step, we prove that zero row operations that transforms <m>A</m> to <m>B</m>,
+					satisfies the corollary.
+					In this case,
+				</p>
+
+				<p>
+					<me>
+						\vec{\beta}_i = 0 \cdot \alpha_1+ 0 \alpha_2 + \cdots
+						+ 1 \cdot \alpha_i + \cdots + 0 \cdot \alpha_n \qquad
+						\text{for each} \;i=1, 2, \ldots, n.
+					</me>
+				</p>
+
+				<p>
+					so each row of <m>B</m> is a linear combination of <m>A</m>.
+				</p>
+
+				<p>
+					For the inductive step, assume that transforming <m>A</m> to <m>B</m> in <m>t+1</m>
+					steps.
+					Also assume that the matrix in the step before <m>B</m> is called <m>G</m>, or
+				</p>
+
+				<p>
+					<me>
+						A \rightarrow \cdots \rightarrow G \rightarrow B
+					</me>
+				</p>
+
+				<p>
+					with each arrow denoting a row operation.
+					Now we proceed showing that each of the 3
+					elementary row operations are linear combinations.
+					If <m>G \rightarrow B</m> is given by
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<m>c R_i \rightarrow R_i</m>, then
+							</p>
+
+							<p>
+								<me>
+									\vec{\beta}_j = \begin{cases}
+									c \vec{\gamma}_j \amp \text{if]}\;\; i=j \\
+									\vec{\gamma}_j \amp \text{otherwise}
+									\end{cases}
+								</me>
+							</p>
+
+							<p>
+								each of which is a linear combination of the rows of <m>G</m>,
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>R_i \leftrightarrow R_j</m>, for <m>i \neq j</m>, then
+							</p>
+
+							<p>
+								<me>
+									\vec{\beta}_k = \begin{cases}
+									\vec{\gamma}_i \amp \text{if}\;\; k=j \\
+									\vec{\gamma}_j \amp \text{if}\;\; k=i \\
+									\vec{\gamma}_k \amp \text{otherwise}
+									\end{cases}
+								</me>
+							</p>
+
+							<p>
+								again, each of which is a linear combination of the rows of <m>G</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>c R_i + R_j \rightarrow R_j</m> for <m>i \neq j</m>, then
+							</p>
+
+							<p>
+								<me>
+									\vec{\beta}_k = \begin{cases}
+									c \vec{\gamma}_k+ \vec{\gamma}_j \amp \text{if}\;\; k=i \\
+									\vec{\gamma}_k \amp \text{otherwise}
+									\end{cases}
+								</me>
+							</p>
+
+							<p>
+								again, each of which is a linear combination of the rows of <m>G</m>.
+							</p>
+						</li>
+					</ol>
+				</p>
+
+				<p>
+					Now this proves that for the step <m>G \rightarrow B</m>, each row of <m>B</m> is a
+					linear combination of rows of <m>G</m>.
+				</p>
+
+				<p>
+					Now, using induction, since the first <m>t</m> steps transforming <m>A</m> to <m>G</m>
+					is a linear combination, the steps from <m>A</m> to <m>B</m>, each row of <m>B</m> is a
+					linear combination of rows of <m>A</m> because linear combinations of linear
+					combinations are linear combinations.
+				</p>
+			</proof>
+		</corollary>
+
+		<example>
+			<statement>
+				<p>
+					Show that the steps that transform:
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp\begin{bmatrix}
+						0 \amp 3 \\
+						1 \amp 2
+						\end{bmatrix}</mrow>
+						<mrow>R_1 \leftrightarrow R_2 \qquad \amp
+						\begin{bmatrix}
+						1 \amp 2 \\
+						0 \amp 3 \\
+						\end{bmatrix}</mrow>
+						<mrow>\frac{1}{3} R_2 \rightarrow R_2 \qquad \amp
+						\begin{bmatrix}
+						1 \amp 2 \\
+						0 \amp 1 \\
+						\end{bmatrix}</mrow>
+						<mrow>-2 R_2 + R_1 \rightarrow R_1 \qquad \amp
+						\begin{bmatrix}
+						1 \amp 0 \\
+						0 \amp 1
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					are each linear combinations of row operations.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Call the 4 matrices, <m>A</m>, <m>D</m>, <m>G</m> and <m>B</m>, then
+				</p>
+
+				<p>
+					<md>
+						<mrow>\begin{split}
+						\delta_1 \amp = \alpha_2 \\
+						\delta_2 \amp = \alpha_1
+						\end{split} \amp\amp\amp
+						\begin{split}
+						\gamma_1 \amp = \alpha_1 \\
+						\gamma_2 \amp = \frac{1}{3} \alpha_2 \\
+						\end{split} \amp\amp\amp
+						\begin{split}
+						\beta_1 \amp = -2 \gamma_2 + \gamma_1 \\
+						\beta_2 \amp = \gamma_2
+						\end{split}
+						</mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+	</subsubsection>
+
+	<subsubsection>
+		<title>Echelon Form and Linear Combinations of Rows</title>
+		<p>
+			Let's return to echelon form.
+			Why is this a nice form? Well we can use
+			back substitution to solve for the leading variables.
+			The reason
+			this works is the following lemma.
+		</p>
+
+		<lemma xml:id="lem-ech-ind">
+			<p>
+				In an echelon form matrix, no nonzero row is a linear combination of the other rows.
+			</p>
+		</lemma>
+
+		<p>
+			In lieu of a proof, let's take a look at an example.
+			Consider the echelon form matrix of a
+			the linear system from <xref ref="ex-large-linear-solution" />.
+		</p>
+
+		<p>
+			<me>
+				\left[\begin{array}{rrrrr|r}
+				0 \amp 1 \amp 3 \amp -9 \amp 11 \amp 14 \\
+				0 \amp 0 \amp 2 \amp 0 \amp 4 \amp 9 \\
+				0 \amp 0 \amp 0 \amp 0 \amp 3 \amp 27 \\
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			We look and determine if the second row (as an example) is a linear combination of the other
+			two rows.
+			Thus:
+		</p>
+
+		<p>
+			<md>
+				<mrow>\begin{bmatrix}
+				0 \amp 0 \amp 2 \amp 0 \amp 4 \amp 9 \\
+				\end{bmatrix} \amp = c_1 \begin{bmatrix}
+				0 \amp 1 \amp 3 \amp -9 \amp 11 \amp 14
+				\end{bmatrix} + c_2 \begin{bmatrix}
+				0 \amp 0 \amp 0 \amp 0 \amp 3 \amp 27
+				\end{bmatrix}</mrow>
+			</md>
+		</p>
+
+		<p>
+			Each component then becomes an equation for the linear system:
+		</p>
+
+		<p>
+			<md>
+				<mrow>0 c_1 + 0 c_2 \amp = 0 </mrow>
+				<mrow>c_1 + 0 c_2 \amp = 0 </mrow>
+				<mrow>3 c_1 + 0 c_2 \amp = 2 </mrow>
+				<mrow>-9 c_1 + 0 c_2 \amp = 0 </mrow>
+				<mrow>11 c_1 + 3 c_2 \amp = 4 </mrow>
+				<mrow>14 c_1 + 27 c_2 \amp = 9</mrow>
+			</md>
+		</p>
+
+		<p>
+			which can be written as the augmented matrix:
+		</p>
+
+		<p>
+			<me>
+				\left[\begin{array}{rr|r}
+				0 \amp 0 \amp 0 \\
+				1 \amp 0 \amp 0 \\
+				3 \amp 0 \amp 2 \\
+				-9 \amp 0 \amp 0 \\
+				11 \amp 3 \amp 4 \\
+				14 \amp 27 \amp 9\\
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			if we transform this to row echelon form we get:
+		</p>
+
+		<p>
+			<me>
+				\left[\begin{array}{rr|r}
+				14 \amp 27 \amp 9\\
+				0 \amp -3 \amp -1\\
+				0 \amp 0 \amp 28\\
+				0 \amp 0 \amp 0\\
+				0 \amp 0 \amp 0\\
+				0 \amp 0 \amp 0\\
+				\end{array}\right]
+			</me>
+		</p>
+
+		<p>
+			and the 3rd row says ``no solution'', so that the 2nd row is not a
+			linear combination of the other two rows.
+		</p>
+
+		<p>
+			The notation of rows not being linear combinations of other rows is called <term>
+			independence</term> and will be defined more-explicitly later in the course, however this
+			example should give you a sense of what independence means.
+		</p>
+
+
+		<proof>
+			<title>Proof of <xref ref="lem-ech-ind" /></title>
+			<p>
+				This will be a proof by contradiction.
+				Assume that the <m>i</m>th row is a linear
+				combination of the other rows of the matrix that is it can be written:
+			</p>
+
+			<p>
+				<men xml:id="eq-row-linear-comb">
+					\alpha_i = c_1 \alpha_1 + c_2 \alpha_2 + \cdots + c_{i-1} \alpha_{i-1} + c_{i+1}
+					\alpha_{i+1} + \cdots + c_m \alpha_m
+				</men>
+			</p>
+
+			<p>
+				The matrix <m>A</m> can be written as
+			</p>
+
+			<p>
+				<me>
+					A =
+					\begin{bmatrix}
+					0 \amp \cdots \amp 0 \amp \alpha_{1,\ell_1} \amp \alpha_{1, \ell_1+1} \amp \cdots \amp
+					\alpha_{1,\ell_i} \amp \cdots \amp \alpha_{1,\ell_m} \\
+					0 \amp \cdots \amp 0 \amp 0 \amp \alpha_{2,\ell_2} \amp \cdots \amp \alpha_{2,\ell_i}
+					\amp
+					\cdots \amp \alpha_{2, \ell_m} \\
+					\amp \amp \amp \amp \amp \amp \vdots \amp \amp \amp \vdots \\
+					\vdots \amp \amp \vdots \amp \amp 0 \amp \amp \alpha_{i,\ell_i} \amp \amp \vdots \\
+					0 \amp \cdots \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \\
+					0 \amp \cdots \amp \amp \amp \amp \amp0 \amp0 \amp \alpha_{m,\ell_m}
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				To find the values of <m>c_j</m> in (\ref{eq:row:linear:comb}), evaluate that equation
+				for any column.
+				To begin, consider <m>\ell_1</m>, the column of the leading coefficient of
+				the first row.
+				Because the matrix is in echelon form, <m>\alpha_{2,\ell_1},
+				\alpha_{3,\ell_1},
+				\ldots, \alpha_{m,\ell_1}</m> are all zero.
+				Thus, examining the <m>\ell_1</m>th element
+				of <xref
+				ref="eq-row-linear-comb" />, one gets:
+			</p>
+
+			<p>
+				<me>
+					0 = c_1 \alpha_{1,\ell_1} + c_2 \cdot 0 + \cdots + c_m \cdot 0
+				</me>
+			</p>
+
+			<p>
+				and because <m>\alpha_{1,\ell_1}\neq 0</m> (it is a leading element), <m>c_1=0</m>.
+			</p>
+
+			<p>
+				Inductively, assume that <m>c_1,c_2, \ldots, c_{k-1}=0</m>.
+				Let <m>\ell_k</m> be the
+				column with the leading element in row <m>k</m>.
+				This means that <m>\alpha_{k+1,\ell_k},
+				\alpha_{k+2,\ell_k}, \ldots, \alpha_{m,\ell_k}</m> are all zero.
+				If we examine the <m>
+				\ell_k</m>th component of <xref ref="eq-row-linear-comb" />, then
+			</p>
+
+			<p>
+				Let <m>\ell_i</m> be the column with the leading element in row <m>i</m>.
+				If the <m>
+				\ell_i</m>th element of (\ref{eq:row:linear:comb}) is extracted, one gets
+			</p>
+
+			<p>
+				<md>
+					<mrow>\alpha_{i,\ell_k} \amp = (0) \alpha_{1,\ell_k} + (0) \alpha_{2,\ell_k} + \cdots +
+					(0) \alpha_{i-1,\ell_k} + (0) \alpha_{i+1,\ell_k} </mrow>
+					<mrow>\amp \qquad + \cdots + c_k\alpha_{k,\ell_k} + c_{k+1} \cdot 0 + \cdots + c_m \cdot
+					0 </mrow>
+				</md>
+			</p>
+
+			<p>
+				If <m>i>k</m>, then <m>\alpha_{i,\ell_k}=0</m>, and this implied that <m>c_k=0</m>.
+				If <m>i
+				\lt k</m>, then
+			</p>
+		</proof>
+
+		<lemma>
+			<statement>
+				<p>
+					If two echelon form matrices are row equivalent then the leading
+					entries in their first rows lie in the same column.
+					The same is
+					true of all the nonzero rows---the leading entries in their second
+					rows lie in the same column, etc.
+				</p>
+			</statement>
+		</lemma>
+	</subsubsection>
+</subsection>
+
+<p>
+	The main advantage of matrices is to simplify the solving of linear systems.
+	We will see this with the example above:
+</p>
+
+<p>
+	<md>
+		<mrow>4x_1 - x_3 \amp = 0,</mrow>
+		<mrow>x_1+3x_2 +2x_3 \amp = 3,</mrow>
+		<mrow>3x_2 + 5x_3 \amp = 14.</mrow>
+	</md>
+</p>
+
+<p>
+	We will write this as an augmented coefficient matrix, then use row
+	operations as we saw for the linear system:
+</p>
+
+<p>
+	<md>
+		<mrow>\left[\begin{array}{rrr|r}
+		4 \amp 0 \amp -1 \amp 0 \\
+		1 \amp 3 \amp 2 \amp 3 \\
+		0 \amp 3 \amp 5 \amp 14
+		\end{array} \right]
+		</mrow>
+		<mrow>-R_1 + 4R_2 \rightarrow R_2, \qquad\amp
+		\left[\begin{array}{rrr|r}
+		4 \amp 0 \amp -1 \amp 0 \\
+		0 \amp 12 \amp 9 \amp 12 \\
+		0 \amp 3 \amp 5 \amp 14
+		\end{array} \right] </mrow>
+		<mrow>-R_2 + 4R_3 \rightarrow R_3, \qquad \amp
+		\left[\begin{array}{rrr|r}
+		4 \amp 0 \amp -1 \amp 0 \\
+		0 \amp 12 \amp 9 \amp 12 \\
+		0 \amp 0 \amp 11 \amp 44
+		\end{array} \right]</mrow>
+	</md>
+</p>
+
+<p>
+	and this matrix is now in echelon form, so we can use back substitution to find the solution <m>
+	(1,-2,4)</m>.
+</p>
+
+<example>
+	<title>Solve a Linear System using matrices</title>
+	<statement>
+		<p>
+			Solve the following linear system use matrices and Gauss' method.
+		</p>
+
+		<p>
+			<md>
+				<mrow>x-2y + 4z \amp = -15 </mrow>
+				<mrow>-3x +0y + 2z \amp = -7 </mrow>
+				<mrow>x-2y + 4z \amp = -15 </mrow>
+			</md>
+		</p>
+	</statement>
+
+	<solution>
+		<p>
+			First write the linear system as a matrix
+		</p>
+
+		<p>
+			<md>
+				<mrow>\left[\begin{array}{rrr|r}
+				-1 \amp -4 \amp 10 \amp -37 \\
+				-3 \amp 0 \amp 2 \amp -7 \\
+				1 \amp -2 \amp 4 \amp -15 \\
+				\end{array} \right] </mrow>
+				<mrow>\begin{array}{r}
+				-3 R_1 + R_2 \rightarrow R_2 \\
+				R_1 + R_3 \rightarrow R_3,
+				\end{array} \qquad
+				\left[\begin{array}{rrr|r}
+				-1 \amp -4 \amp 10 \amp -37 \\
+				0 \amp 12 \amp -28 \amp 104 \\
+				0 \amp -6 \amp 14 \amp -52
+				\end{array}\right] </mrow>
+				<mrow number="yes" xml:id="eq-ex-echelon-form">R_2 +2R_3 \rightarrow R_3, \qquad
+				\left[\begin{array}{rrr|r}
+				-1 \amp -4 \amp 10 \amp -37 \\
+				0 \amp 12 \amp -28 \amp 104 \\
+				0 \amp 0 \amp 0 \amp 0
+				\end{array}\right] </mrow>
+			</md>
+		</p>
+
+		<p>
+			The matrix in (<xref ref="eq-ex-echelon-form" />) is in echelon form, so we use back
+			substitution to solve for <m>x_1</m> and <m>x_2</m> in terms of <m>x_3</m>, the free
+			variable.
+			The 2nd row of (<xref ref="eq-ex-echelon-form" />) can be written:
+		</p>
+
+		<p>
+			<me>
+				12 x_2 = 104 + 28 x_3
+			</me>
+		</p>
+
+		<p>
+			or
+		</p>
+
+		<p>
+			<me>
+				x_2 = 17 + \frac{7}{3} x_3
+			</me>
+		</p>
+
+		<p>
+			and using this in the first equation of (<xref ref="eq-ex-echelon-form" />)
+		</p>
+
+		<p>
+			<me>
+				-x_1 - 4(17+\frac{7}{3} x_3) + 10 x_3 = -37
+			</me>
+		</p>
+
+		<p>
+			and solving for <m>x_1</m>
+		</p>
+
+		<p>
+			<me>
+				x_1 = -31+\frac{2}{3} x_3
+			</me>
+		</p>
+	</solution>
+</example>
+</section>

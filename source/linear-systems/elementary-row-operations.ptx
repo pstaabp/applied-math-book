@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-elementary-row-operations">
+	<title>Elementary Row Operations</title>
+	<introduction>
+		<p>
+			We now seek a method to solve the above linear systems (and any linear system).
+			Gauss'
+			method and variations of it are the standard ways that all large linear systems are solved
+			presently.
+			The next section shows how to systematically solve a linear system using rules of
+			algebra that keep linear equations linear.
+		</p>
+
+		<p>
+			Consider the following example of two linear equations:
+		</p>
+
+		<p>
+			<md>
+				<mrow number="yes" xml:id="eq-ex-lin-sys-1">x+2y+3z \amp =6 </mrow>
+				<mrow number="yes" xml:id="eq-ex-lin-sys-2">-2x+3y-z \amp =4 </mrow>
+			</md>
+		</p>
+
+		<p>
+			We seek to find operations on these equations that keep these equations linear and
+			don't change the solution.
+			First, the order that we wrote them down doesn't matter
+			and we could swap these equations as in:
+		</p>
+
+		<p>
+			<md>
+				<mrow>-2x+3y-z \amp =4 </mrow>
+				<mrow>x+2y+3z \amp =6 </mrow>
+			</md>
+		</p>
+
+		<p>
+			The second possible operation is to multiply a single equation by a constant.
+			For example,
+			if we multiply the first equation of <xref ref="eq-ex-lin-sys-1" /> by 2, we get the system:
+		</p>
+
+		<p>
+			<md>
+				<mrow>2x+4y+6z \amp =12 </mrow>
+				<mrow>-2x+3y-z \amp =4 </mrow>
+			</md>
+		</p>
+
+		<p>
+			The third operation is that we can add two equations and the replace one of the equations
+			with the sum.
+			For example adding <xref ref="eq-ex-lin-sys-1"/> and
+			<xref ref="eq-ex-lin-sys-2"/> and putting the sum in the 2nd row results in
+		</p>
+
+		<p>
+			<md>
+				<mrow>x+2y+3z \amp =6 </mrow>
+				<mrow>-x+5y+2z \amp =10 </mrow>
+			</md>
+		</p>
+
+		<p>
+			A more common operation is to combine the last two operations and that is to multiply an equation
+			by a constant and add to another.
+			If we multiply <xref ref="eq-ex-lin-sys-1"/> by 2 and add to
+			<xref ref="eq-ex-lin-sys-2"/> we get the system:
+		</p>
+
+		<p>
+			<md>
+				<mrow>x+2y+3z \amp =6 </mrow>
+				<mrow>7y + 5z \amp = 16 </mrow>
+			</md>
+		</p>
+
+		<definition>
+			<title>Elementary Row Operations</title>
+			<statement>
+				<p>
+					The three operations
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							Two equations of the linear system are swapped,
+						</li>
+
+						<li>
+							An equation is multiplied by a nonzero number,
+						</li>
+
+						<li>
+							An equation is replaced by the sum of itself and a multiple of another equation,
+						</li>
+					</ol>
+				</p>
+
+				<p>
+					are called the <term>elementary row operations</term> of a linear system.
+				</p>
+			</statement>
+		</definition>
+	</introduction>
+
+	<subsection xml:id="sect-gauss-method" xmlns:xi="http://www.w3.org/2001/XInclude">
+		<title>Gauss's Method</title>
+		<p>
+			The following example shows how to use the elementary row operations seen above to
+			solve a linear system with a technique called <em>Gauss's	Method</em>.
+		</p>
+
+		<p>
+			<md>
+				<mrow>x -2y + 3z \amp = 6, </mrow>
+				<mrow>2x + 2y\phantom{+3z} \amp = 6, </mrow>
+				<mrow>-3x \phantom{+2y}+\phantom{3} z \amp = 0.
+				</mrow>
+			</md>
+		</p>
+
+		<p>
+			If one equation had only one variable, it would be quite easy to find the solution to that
+			equation.
+			The following steps will result in such a system.
+			For example, if the first equation
+			is multiplied by <m>-2</m> and added to the second equation and the second equation is
+			replaced (which we denote with <m>-2R_1+R_2 \rightarrow R_2</m>), then the above equations are
+			replaced with
+		</p>
+
+		<p>
+			<md>
+				<mrow>\amp \amp x -2y + 3z \amp = 6, </mrow>
+				<mrow>-2R_1+R_2 \rightarrow R_2\qquad\amp \amp 6 y-6z \amp = -6, </mrow>
+				<mrow>\amp \amp -3x \phantom{+2y}+\phantom{3} z \amp = 0.</mrow>
+			</md>
+		</p>
+
+		<p>
+			Next, we'd like to get rid of the <m>x</m> term in the 3rd equation.
+			We can do that by multiplying the first equation by 3 and adding to the 3rd and writing down this operation as
+			well we get:
+		</p>
+
+		<p>
+			<md>
+				<mrow>\amp \amp x -2y + \phantom{1}3z \amp = 6, </mrow>
+				<mrow>3R_1+R_3 \rightarrow R_3\quad \amp \amp 6 y-\phantom{1}6z \amp = -6, </mrow>
+				<mrow>\amp \amp -6y+10z \amp = 18.</mrow>
+			</md>
+		</p>
+
+		<p>
+			Next we will eliminate the <m>y</m> term in the 3rd equation.
+			We can do that by adding
+			equations 2 and 3 and putting the result in equation 3.
+		</p>
+
+		<p>
+			<md>
+				<mrow> \amp \amp x -2y + 3z \amp = 6, </mrow>
+				<mrow number="yes" xml:id="eq-gauss-method">R_2+R_3 \rightarrow R_3\quad \amp \amp 6 y-6z
+				\amp =
+				-6 </mrow>
+				<mrow>\amp \amp 4z \amp = 12.
+				</mrow>
+			</md>
+		</p>
+
+		<p>
+			At this point we can solve for <m>z</m> in the third equation of (<xref ref="eq-gauss-method" />)
+			to get <m>z=3</m>.
+			From this, plug in <m>z=3</m> into the second equation of (<xref
+			ref="eq-gauss-method" />) to get
+		</p>
+
+		<p>
+			<md>
+				<mrow>6y -6(3) \amp = -6 </mrow>
+				<mrow>6y \amp = 12 </mrow>
+				<mrow>y \amp = 2</mrow>
+			</md>
+		</p>
+
+		<p>
+			and finally we can use <m>z=3</m> and <m>y=2</m> to substitute into the first equation of (<xref
+			ref="eq-gauss-method" />) to get
+		</p>
+
+		<p>
+			<md>
+				<mrow>x-2(2)+3(3)\amp = 6 </mrow>
+				<mrow>x-4+9\amp = 6 </mrow>
+				<mrow>x \amp = 1</mrow>
+			</md>
+		</p>
+
+		<p>
+			therefore, <m>x=1</m>.
+			The point <m>(1,2,3)</m> is a solution to linear system.
+			Because this
+			is the only point that satisfies all equations, this point is <em>unique</em>.
+			We will also
+			use the terminology triple to describe <m>(1,2,3)</m>.
+		</p>
+
+		<theorem xml:id="thm-gauss-method">
+			<title>Gauss's Method</title>
+			<statement>
+				<p>
+					If a linear system (<m>A</m>) is changed into a second linear system (<m>B</m>) by one of
+					the elemenatary row operations then linear systems (<m>A</m>) and (<m>B</m>)
+					have the same set of solutions.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					We will consider only the first operation in this proof.
+					Let's assume that we swap
+					equations <m>i</m> and <m>j</m>, thus system (<m>A</m>),
+				</p>
+
+				<p>
+					<md>
+						<mrow>a_{1,1} x_1 + a_{1,2} x_2 + \cdots + a_{1,n} x_n \amp = b_1 , </mrow>
+						<mrow>a_{2,1} x_1 + a_{2,2} x_2 + \cdots + a_{2,n} x_n \amp = b_2, </mrow>
+						<mrow>\vdots \qquad \qquad \amp \vdots </mrow>
+						<mrow>a_{i,1} x_1 + a_{i,2} x_2 + \cdots + a_{i,n} x_n \amp = b_i, </mrow>
+						<mrow>\vdots \qquad \qquad \amp \vdots </mrow>
+						<mrow>a_{j,1} x_1 + a_{j,2} x_2 + \cdots + a_{j,n} x_n \amp = b_j, </mrow>
+						<mrow>\vdots \qquad \qquad \amp \vdots </mrow>
+						<mrow>a_{m,1} x_1 + a_{m,2} x_2 + \cdots + a_{m,n} x_n \amp = b_m, </mrow>
+					</md>
+				</p>
+
+				<p>
+					is transformed to
+				</p>
+
+				<p>
+					<md>
+						<mrow>a_{1,1} x_1 + a_{1,2} x_2 + \cdots + a_{1,n} x_n \amp = b_1 , </mrow>
+						<mrow>a_{2,1} x_1 + a_{2,2} x_2 + \cdots + a_{2,n} x_n \amp = b_2, </mrow>
+						<mrow>\vdots \qquad \qquad \amp \vdots </mrow>
+						<mrow>a_{j,1} x_1 + a_{j,2} x_2 + \cdots + a_{j,n} x_n \amp = b_j, </mrow>
+						<mrow>\vdots \qquad \qquad \amp \vdots </mrow>
+						<mrow>a_{i,1} x_1 + a_{i,2} x_2 + \cdots + a_{i,n} x_n \amp = b_i, </mrow>
+						<mrow>\vdots \qquad \qquad \amp \vdots </mrow>
+						<mrow>a_{m,1} x_1 + a_{m,2} x_2 + \cdots + a_{m,n} x_n \amp = b_m, </mrow>
+					</md>
+				</p>
+
+				<p>
+					Let <m>(s_1,s_2, \ldots, s_n)</m> be a solution of (<m>A</m>) if it exists and note it
+					may be one of many <m>n</m>-tuples in the solution.
+					Thus it satisfies each equation of
+					linear system (<m>A</m>).
+					Since the exact same equations are in (<m>B</m>) in just a
+					different order, <m>(s_1,s_2,\ldots,s_n)</m> is a solution to (<m>B</m>).
+					If there is more than one <m>n</m>-tuple in the solution to (<m>A</m>), repeat this for every one.
+					If there is no solution to (<m>A</m>), then there will be no solution to (<m>B</m>) since it is the same
+					set of equations.
+				</p>
+
+				<p>
+					Proof of #2 and #3 above are quite similar and are not shown.
+				</p>
+			</proof>
+		</theorem>
+
+		<note xml:id="note-elimination">
+			<p>
+				Although Gauss' Method is very flexible, generally, one tries to eliminate all <m>x_1</m>
+				terms in all equations below equation 1, <m>x_2</m> terms in all equations below equation 2
+				and so on.
+			</p>
+		</note>
+		<!--
+		<remark>
+			<title> A fourth operation</title>
+			<p>
+				Another handy row operation is that of replacing a row with linear
+				combination of itself and another row.
+				In general this is
+			</p>
+
+			<p>
+				<me>
+					c_i R_i + c_j R_j \rightarrow R_j
+				</me>
+			</p>
+
+			<p>
+				Since this is a combination of two row operations together, we will use it,
+				however, not consider it a separate (fourth) row operation.
+			</p>
+		</remark>
+		-->
+	</subsection>
+
+	<subsection xml:id="sect-matrices">
+		<title>Matrices</title>
+		<p>
+			When we solved a linear system above, you probably noticed that the variables didn't play
+			much
+			of a role, the coefficients changed
+			and the variables stayed in the same place as we solved for them.
+			Because of this, we will
+			adopt that technique to only works with the coefficients.
+			We first define a matrix that we
+			will use to solve linear systems for the rest of this book.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					An <term><m>m</m> by <m>n</m> matrix</term> is a rectangular grid of numbers with <m>m</m>
+					rows and <m>n</m> columns.
+					The <term>size</term> of a matrix is the pair of number <m>m</m>
+					and <m>n</m> and is typically written <m>m</m> by <m>n</m> or <m>m \times n</m>.
+					Each
+					number of the matrix is called the <term>entry</term> or <term>element</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<example xml:id="ex-matrices">
+			<title>Matrices</title>
+			<p>
+				The following are examples of matrices:
+			</p>
+
+			<p>
+				<me>
+					\begin{bmatrix}
+					1 \amp 2 \amp 3 \\
+					4 \amp 5 \amp 6
+					\end{bmatrix} \qquad
+					\begin{bmatrix}
+					\pi \amp 2 \\
+					-1 \amp 4 \\
+					2.5 \amp 7/3 \\
+					-11 \amp 1000
+					\end{bmatrix} \qquad
+					\begin{bmatrix}
+					2 \\ 4 \\ 6 \\ 8 \\ 9
+					\end{bmatrix} \qquad
+					\begin{bmatrix}
+					8 \amp -3 \amp 2
+					\end{bmatrix}
+				</me>
+			</p>
+		</example>
+
+		<p>
+			A common notation for a matrix is to use upper case letters (and often bold), for example <m>
+			A</m>, <m>B</m> and <m>C</m> are common matrices.
+			The entry or element in the <m>i</m>th row
+			and <m>j</m>th column of <m>A</m> is <m>a_{i,j}</m>.
+			Also, the set of all <m>m</m> by <m>n</m>
+			matrices is denoted <m>{\cal M}_{m \times n}</m>.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					A matrix with only 1 row is called a <term>row vector</term>.
+					A matrix with only 1
+					column is called a <term>column vector</term>.
+					The <term>size</term> of a vector is the
+					number of rows (for a column vector) or the number of columns (for a row vector).
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			The 3rd matrix in Example <xref ref="ex-matrices" /> above is a column vector of size 5.
+			The
+			4th matrix is a row vector of size 3.
+			Vectors are very important and will see them throughout
+			this book.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Matrices and Linear Systems</title>
+		<p>
+			Let's look at the following linear system.
+		</p>
+
+		<p>
+			<md>
+				<mrow> x + 2y \amp = 7, </mrow>
+				<mrow>4x -3 y \amp = 6.
+				</mrow>
+			</md>
+		</p>
+
+		<p>
+			We will write the coefficients of the variables and the right hand side in a matrix called an
+			an <term>augmented
+			coefficient matrix.</term> The following is this matrix for the linear system above.
+		</p>
+
+		<p>
+			<me>
+				\left[
+				\begin{array}{rr|r}
+				1 \amp 2 \amp 7 \\
+				4 \amp -3 \amp 6 \\
+				\end{array}
+				\right]
+			</me>
+		</p>
+
+		<p>
+			and the two rows of the matrix represent the two equations.
+			The first column represents the
+			coefficient of the <m>x</m> variable, and the second column represents the coefficient of the <m>
+			y</m> variable.
+			The last column is the right hand sides of the linear system, and the vertical
+			line occurs where the equal sign is in the equations.
+		</p>
+
+		<example>
+			<title>Linear System as an Augmented Matrix</title>
+			<statement>
+				<p>
+					Write down the following linear system as an augmented matrix:
+				</p>
+
+				<p>
+					<md>
+						<mrow>3x -2 y + z \amp = 11, </mrow>
+						<mrow>2x + 4y -3z \amp = 2, </mrow>
+						<mrow>-4x + y + 4z \amp = 0.
+						</mrow>
+					</md>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					<me>
+						\left[
+						\begin{array}{rrr|r}
+						3 \amp -2 \amp 1 \amp 11 \\
+						2 \amp 4 \amp -3 \amp 2 \\
+						-4 \amp 1 \amp 4 \amp 0 \\
+						\end{array}
+						\right]
+					</me>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			And the next example shows how to rewrite a matrix as a linear system.
+		</p>
+
+		<example>
+			<title>Augmented Matrix as a Linear System</title>
+			<statement>
+				<p>
+					Write down the following augmented matrix as a linear system:
+				</p>
+
+				<p>
+					<me>
+						\left[
+						\begin{array}{rrr|r}
+						3 \amp 0 \amp -1 \amp 7 \\
+						-2 \amp 1 \amp 5 \amp 6 \\
+						0 \amp 3 \amp 4 \amp 8 \\
+						\end{array}
+						\right]
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					In this case, we are doing the opposite of the step above.
+					That is, take
+					a matrix and find the linear system.
+				</p>
+
+				<p>
+					Since the matrix has 4 columns, there are 3 variables (the last column is the right hand
+					side).
+					Let's use <m>x</m>, <m>y</m> and <m>z</m>.
+				</p>
+
+				<p>
+					<md>
+						<mrow> 3x + 0 y - z \amp = 7 </mrow>
+						<mrow>-2x + y + 5z \amp = 6 </mrow>
+						<mrow>0x + 3y + 4 z \amp = 8</mrow>
+					</md>
+				</p>
+
+				<p>
+					Alternatively, we could have used <m>x_1,x_2</m> and <m>x_3</m> as variables.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection xml:id="sect-row-operations-and-matrices">
+		<title>Row Operations and Matrices</title>
+		<p>
+			We can perform the same row operations that we have seen above on matrices.
+		</p>
+
+		<p>
+			<dl>
+			<li>
+				<title>Row Swap</title>
+				<p>
+					<m> R_i \leftrightarrow R_j</m> swaps rows <m>i</m> and <m>j</m>.
+				</p>
+			</li>
+
+			<li>
+				<title>Multiply by a number </title>
+				<p>
+					<m>c R_i</m> multiplies row <m>i</m> by <m>c</m>.
+					The notation <m>c R_i \to R_i</m> is
+					also used.
+				</p>
+			</li>
+
+			<li>
+				<title>Multiply by a number and add to another</title>
+				<p>
+					<m>cR_i + R_j</m> multiplies row <m>i</m> by <m>c</m> and adds to row <m>j</m>.
+					The
+					notation <m>cR_i + R_j \to R_j</m> is also used.
+				</p>
+			</li>
+			</dl>
+		</p>
+
+		<p>
+			In the next section, we will formalize the solving of linear system using matrices, however,
+			the last example here reproduces the same solution technique for the example in <xref
+			ref="sect-gauss-method" />.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Solve the linear system
+				</p>
+
+				<p>
+					<md>
+						<mrow>x -2y + 3z \amp = 6, </mrow>
+						<mrow>2x + 2y\phantom{+3z} \amp = 6, </mrow>
+						<mrow>-3x \phantom{+2y}+\phantom{3} z \amp = 0.
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					by first writing as an augmented coefficient matrix and then performing elementary row
+					operations on the matrix.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, the augmented coefficient matrix is
+				</p>
+
+				<p>
+					<me>
+						\left[\begin{array}{rrr|r}
+						1 \amp -2 \amp 3 \amp 6 \\
+						2 \amp 2 \amp 0 \amp 6 \\
+						-3 \amp 0 \amp 1 \amp 0
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					Now perform the same elementary row operations as above.
+					We first seek to change the
+					second row, first column to a 0
+				</p>
+
+				<p>
+					<me>
+						-2 R_1 + R_2 \to R_2 \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp -2 \amp 3 \amp 6 \\
+						0 \amp 6 \amp -6 \amp -6 \\
+						-3 \amp 0 \amp 1 \amp 0
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					and notice that this is the matrix representation of the second step in the solution
+					listed in <xref ref="sect-gauss-method" />.
+					Next, we seek to change the 3rd row, first column from <m>-3</m> to a 0.
+				</p>
+
+				<p>
+					<me>
+						3 R_1 + R_3 \to R_3 \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp -2 \amp 3 \amp 6 \\
+						0 \amp 6 \amp -6 \amp -6 \\
+						0 \amp -6 \amp 10 \amp 18
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					And since we seek to get only a single variable in the third row, only one more step is
+					needed.
+				</p>
+
+				<p>
+					<me>
+						R_2 + R_3 \to R_3 \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp -2 \amp 3 \amp 6 \\
+						0 \amp 6 \amp -6 \amp -6 \\
+						0 \amp 0 \amp 4 \amp 12
+						\end{array}\right]
+					</me>
+				</p>
+
+				<p>
+					At this point, if we return the augmented matrix to a set of equations, we get
+				</p>
+
+				<p>
+					<md>
+						<mrow>x - 2y + 3z \amp = 6 </mrow>
+						<mrow>6y - 6z \amp = -6</mrow>
+						<mrow>4z \amp = 12</mrow>
+					</md>
+				</p>
+
+				<p>
+					and we can get the same solution using the same steps as above to get <m>z=3, y=2, x=1</m>
+					.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			We will see in the next section that actually if we continue working with the matrix, we can
+			more easily find the solution as well as find solutions for a broader range of linear systems.
+		</p>
+	</subsection>
+
+	<subsection xml:id="sect-geom-lin-sys-2var">
+		<title>Geometry of Linear Systems of 2 variables</title>
+		<p>
+			If we consider only linear systems with two variables, then each equation is
+			just a line, which we can graph on a set of axes.
+			We are going to examine
+			the geometry of linear systems of two variables.
+		</p>
+
+		<p>
+			First, we are going to look at three linear systems that each have
+			different types of solutions.
+			We can see the solutions by looking at the graphs.
+		</p>
+
+		<p>
+			<ul>
+				<li>
+					<p>
+						The graph of each line in the linear system
+					</p>
+
+					<p>
+						<men xml:id="eq-linear-system-geom1">
+							\begin{aligned}
+							x + 2 y \amp = 5, \\
+							2x - 3 y \amp = -4,
+							\end{aligned}
+						</men>
+					</p>
+
+					<p>
+						is
+					</p>
+
+					<figure xml:id="fig-plot-lines">
+						<caption>Plot of two intersecting lines</caption>
+						<image width="75%" xml:id="plot-intersect-lines">
+							<latex-image><![CDATA[
+							\begin{tikzpicture}[scale=0.8]
+							\draw[->] (-4,0) -- (4,0) node [above right] {$x$};
+							\draw[->] (0,-4) -- (0,4) node [above right] {$y$};
+							\foreach \x in {-3,-2,-1,1,2,3} {\draw (\x,0.15) -- (\x,-0.15) node [below] {$\x$};}
+							\foreach \y in {-3,-2,-1,1,2,3} {\draw (0.15,\y) -- (-0.15,\y) node [left] {$\y$};}
+							\draw[<->,thick] (-4,4.5) -- (4,0.5);
+							\draw[<->,thick] (-4,{(-4+8)/-3}) -- (4,{(-4-8)/-3});
+							\end{tikzpicture} ]]>
+							</latex-image>
+						</image>
+					</figure>
+
+					<p>
+						The solution of the system is the point at which they cross.
+						In this case it looks like
+						the point <m>(1,2)</m> or <m>x=1</m> and <m>y=2</m>.
+						This is an example where there is
+						only one solution (or a <term>unique solution</term>).
+					</p>
+				</li>
+
+				<li>
+					<p>
+						If we graph the lines in the linear system
+					</p>
+
+					<p>
+						<men xml:id="eq-linear-system-geom2">
+							\begin{aligned}
+							3x + 7 y \amp= 10, \\
+							6 x + 14 y \amp= 5,
+							\end{aligned}
+						</men>
+					</p>
+
+					<p>
+						we get
+					</p>
+
+					<figure xml:id="fig-plot-lines-2">
+						<caption>Plot of two intersecting lines</caption>
+						<image width="75%" xml:id="plot-intersect-lines2">
+							<latex-image><![CDATA[
+							\begin{tikzpicture}[scale=0.8]
+							\draw[->] (-4,0) -- (4,0) node [above right] {$ x$};
+							\draw[->] (0,-4) -- (0,4) node [above right] {$ y$};
+							\foreach \x in {-3,-2,-1,1,2,3} {\draw (\x,0.15) -- (\x,-0.15) node [below] {$ \x$};}
+							\foreach \y in {-3,-2,-1,1,2,3} {\draw (0.15,\y) -- (-0.15,\y) node [left] {$ \y$};}
+							\draw[<->,thick] (-4,{(5+24)/14}) -- (4,{(5-24)/14});
+							\draw[<->,thick] (-4,{(10+12)/7}) -- (4,{(10-12)/7});
+							\end{tikzpicture}
+							]]>
+							</latex-image>
+						</image>
+					</figure>
+
+					<p>
+						As you can see, it doesn't appear that the lines cross anywhere.
+						In fact, they don't
+						because the lines are parallel.
+						This is an example of a linear system with <term>no
+						solution</term>.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						The linear system
+					</p>
+
+					<p>
+						<men xml:id="eq-linear-system-geom3">
+							\begin{aligned}
+							x + 2 y = 5, \\
+							2x + 4 y = 10,
+							\end{aligned}
+						</men>
+					</p>
+
+					<p>
+						has the following graph for each line
+					</p>
+
+					<figure xml:id="fig-plot-lines3">
+						<caption>A plot of two equivalent lines</caption>
+						<image width="75%" xml:id="plot-lines3">
+							<latex-image><![CDATA[
+							\begin{tikzpicture}[scale=0.8]
+							\draw[->] (-4,0) -- (4,0) node [above right] {$ x$};
+							\draw[->] (0,-4) -- (0,4) node [above right] {$ y$};
+							\foreach \x in {-3,-2,-1,1,2,3} {\draw (\x,0.15) -- (\x,-0.15) node [below] {$ \x$};}
+							\foreach \y in {-3,-2,-1,1,2,3} {\draw (0.15,\y) -- (-0.15,\y) node [left] {$ \y$};}
+							\draw[<->,thick] (-4,{(5+4)/2}) -- (4,{(5-4)/2});
+							\end{tikzpicture}
+							]]>
+							</latex-image>
+						</image>
+					</figure>
+
+					<p>
+						It appears that there is only one line.
+						This is because both lines have the same graph.
+						Each point on the line is a solution to the linear system and since there are an
+						infinite number of such points, this is an example of a linear system with <term>infinite
+						number of solutions</term>.
+					</p>
+				</li>
+			</ul>
+		</p>
+
+		<p>
+			You can see if you have two lines, each with two variables, the example in (<xref
+			ref="eq-linear-system-geom1" />) is what happens if the two slopes are different.
+			In this
+			case, there is one (or a <term>unique</term>) solution.
+		</p>
+
+		<p>
+			In the other two cases as in equations (<xref ref="eq-linear-system-geom2" />) and (<xref
+			ref="eq-linear-system-geom3" />), both sets of lines have the same slope.
+			In the case of (<xref
+			ref="eq-linear-system-geom2" />) the lines have different <m>y</m>-intercepts, and therefore
+			the lines are parallel and thus there is <term>no solution</term> to the linear system.
+			In the
+			case of (<xref ref="eq-linear-system-geom3" />), both the slope and <m>y</m>-intercepts are
+			equal, so the lines are equal and thus any point on the line is a solution, and this system
+			has an <term>infinite number of solutions</term>.
+		</p>
+	</subsection>
+</section>

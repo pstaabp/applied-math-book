@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-linear-comb-span" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Combinations and the Span of a Set of Vectors</title>
+
+
+  <p>In <xref ref="sect-gaussian-elimination" />, we discussed a linear combination of
+    rows in a matrix. We can find a linear combination of any vector (or as we will see more
+    generally other things) as well. For example, a linear combination of the vectors <m>[1\;\;2]</m>
+    and <m>[3\;\;4]</m> is</p>
+
+  <p>
+    <me>
+      c_1 \begin{bmatrix}
+      1 \\2
+      \end{bmatrix} + c_2 \begin{bmatrix}
+      3 \\4
+      \end{bmatrix}
+    </me>
+  </p>
+
+  <p>and these can be any number of vectors and the vectors can be any length. </p>
+
+  <definition>
+    <statement>
+      <p>A <term>linear combination</term> of a set of vectors <m>\{ \vec{s}_1, \vec{s}_2, \ldots,
+        \vec{s}_n \}</m> is</p>
+
+      <p>
+        <me>
+          c_1 \vec{s}_1+ c_2 \vec{s}_2 + \cdots + c_n \vec{s}_n
+        </me>
+      </p>
+
+      <p>for some <m>c_1, c_2, \ldots, c_n \in \mathbb{R}</m>.</p>
+    </statement>
+  </definition>
+
+  <p>For example, the solutions of homogeneous systems is an excellent example of a linear
+    combination. <xref ref="ex-large-linear-solution" /> shows a linear system. The associated
+    homogenous system is</p>
+
+  <p>
+    <md>
+      <mrow>x_2 + 3x_3 -9 x_4 + 11 x_5 \amp = 0, </mrow>
+      <mrow>2x_3 \phantom{-9x_4} + 4x_5 \amp = 0, </mrow>
+      <mrow>3x_5 \amp = 0,</mrow>
+    </md>
+  </p>
+
+  <p>and the solution in vector form is</p>
+
+  <p>
+    <me>
+      \left\{ \begin{bmatrix}
+      1 \\ 0 \\ 0 \\ 0 \\0
+      \end{bmatrix} x_1 +
+      \begin{bmatrix}
+      0 \\ 9 \\ 0 \\ 1 \\ 0
+      \end{bmatrix} x_4 \; | \; x_1, x_4 \in \mathbb{R} \right\}.
+    </me>
+  </p>
+
+  <p>and thus this solution is a linear combination of the vectors</p>
+
+  <p>
+    <me> \left\{
+      \begin{bmatrix}
+      1 \\ 0 \\ 0 \\ 0 \\0
+      \end{bmatrix},
+      \begin{bmatrix}
+      0 \\ 9 \\ 0 \\ 1 \\ 0
+      \end{bmatrix} \right\}
+    </me>
+  </p>
+
+  <p>
+    The solution is the set of all linear combinations and this plays an important role, so it
+    defined as the span of a set of vectors.
+  </p>
+
+
+  <definition>
+    <statement>
+      <p> The <term>span</term> of a nonempty set subset <m>S=\{\vec{s}_1,\ldots, \vec{s}_n\}</m> of
+        a vector space is the set of all linear combinations of the vectors in <m>S</m>. In
+        particular, </p>
+
+      <p>
+        <me>
+          \text{span}(S) = \{ c_1 \vec{s}_1 + \cdots + c_n \vec{s}_n\; | \; \text{$c_1, c_2, \ldots,
+          c_n \in \mathbb{R}$} \}.
+        </me>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Understanding the span in a more general way is important.
+    Often the span of a set of vectors is something we already know
+    as the next example shows.
+  </p>
+
+  <example xml:id="ex-span-2">
+    <statement>
+      <p>
+        Show that
+      </p>
+
+      <p>
+        <me>
+          \text{span}\biggl( \biggl\{\begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix}, \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix} \biggr\} \biggr)
+        </me>
+      </p>
+
+      <p>can be written as</p>
+
+      <p>
+        <me>
+          \left\{ \begin{bmatrix}
+          x_1 \\ x_2
+          \end{bmatrix} \; | \; x_1,x_2 \in \mathbb{R} \right\}
+        </me>
+      </p>
+    </statement>
+    <solution>
+
+      <p> In order to show this, we show that for any vector of the form</p>
+
+      <p>
+        <me>
+          \begin{bmatrix}
+          x_1 \\ x_2
+          \end{bmatrix}
+        </me>
+      </p>
+
+      <p>there exist <m>c_1, c_2</m> such that</p>
+
+      <p>
+        <me>
+          c_1 \begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix} + c_2 \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix} = \begin{bmatrix}
+          x_1 \\ x_2
+          \end{bmatrix}.
+        </me>
+      </p>
+
+      <p>The constants <m>c_1</m> and <m>c_2</m> can be found by the following linear system:</p>
+
+      <p>
+        <md>
+          <mrow>c_1 + c_2 \amp = x_1 </mrow>
+          <mrow>c_2 \amp = x_2</mrow>
+        </md>
+      </p>
+
+      <p>with the solution <m>c_1 = x_1-x_2</m> and <m>c_2=x_2</m>. </p>
+
+      <p> Since we found by <m>c_1</m> and <m>c_2</m>, a linear combination of these two vectors can
+        produce any vector in <m>\mathbb{R}^2</m>. </p>
+    </solution>
+  </example>
+
+  <p> We saw that the span of the two vectors in the example above was <m>\mathbb{R}^2</m>. What if
+    we add a third vector? The following example answers this question. </p>
+
+  <example xml:id="ex-span-3">
+    <statement>
+      <p>Find</p>
+
+      <p>
+        <me>
+          \text{span}\biggl( \biggl\{ \begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix}, \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix}, \begin{bmatrix}
+          0 \\1
+          \end{bmatrix} \biggr\} \biggr)
+        </me>
+      </p>
+    </statement>
+
+    <solution>
+
+      <p>In the case, it is the set formed by the linear combination or specifically</p>
+
+      <p>
+        <me>
+          \left\{ c_1 \begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix} + c_2 \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix} + c_3 \begin{bmatrix}
+          0 \\ 1
+          \end{bmatrix} \; | \; c_1, c_2, c_3 \in \mathbb{R} \right\}
+        </me>
+      </p>
+
+      <p>and it seems that this set is also <m>\mathbb{R}^2</m>. In order to show this, we'll take <m>x_1,
+        x_2 \in \mathbb{R}</m>, we will solve</p>
+
+      <p>
+        <me>
+          c_1 \begin{bmatrix}
+          1 \\ 0
+          \end{bmatrix} + c_2 \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix} + c_3 \begin{bmatrix}
+          0 \\ 1
+          \end{bmatrix} = \begin{bmatrix}
+          x_1 \\ x_2
+          \end{bmatrix}
+        </me>
+      </p>
+
+      <p>and this can be solved with the linear system</p>
+
+      <p>
+        <md>
+          <mrow>c_1 + c_2 \amp = x_1</mrow>
+          <mrow>c_2 + c_3 \amp = x_2.</mrow>
+        </md>
+      </p>
+
+      <p>If we take <m>c_3</m> as the free variable, we get</p>
+
+      <p>
+        <md>
+          <mrow>c_2 \amp = x_2 - c_3 </mrow>
+          <mrow>c_1 \amp = x_1 -c_2 = x_1 - (x_2-c_3) = x_1 - x_2 + c_3</mrow>
+        </md>
+      </p>
+
+      <p> and since there is a solution, these vectors span <m>\mathbb{R}^2</m>. It appears that
+        adding another vector does not change the span. This actually does not depend on this
+        vector, but we'll need information in the next section to show this. </p>
+    </solution>
+  </example>
+
+  <p> And if we continue to investigate this, what if we have two vectors in <m>\mathbb{R}^3</m>. Is
+    the span equal to <m>\mathbb{R}^3</m>? The next example looks as this. </p>
+
+  <example>
+    <statement>
+      <p>Is</p>
+
+      <p>
+        <me>
+          \text{span}\biggl(\biggl\{ \begin{bmatrix}
+          1 \\ 0 \\ 1
+          \end{bmatrix}, \begin{bmatrix}
+          1 \\ 1 \\ 0
+          \end{bmatrix} \biggr\} \biggr)
+        </me>
+      </p>
+      <p>equal to <m>\mathbb{R}^3</m>?</p>
+
+    </statement>
+
+    <solution>
+
+      <p>In order to check this, then we try to find <m>c_1</m> and <m>c_2</m> such that</p>
+
+      <p>
+        <me>
+          c_1 \begin{bmatrix}
+          1 \\ 0 \\ 1
+          \end{bmatrix} + c_2 \begin{bmatrix}
+          1 \\ 1 \\ 0
+          \end{bmatrix} = \begin{bmatrix}
+          x_1 \\ x_2 \\ x_3
+          \end{bmatrix}
+        </me>
+      </p>
+
+      <p>or the linear system</p>
+
+      <p>
+        <md>
+          <mrow>c_1 + c_2 \amp = x_1</mrow>
+          <mrow>c_2 \amp = x_2 </mrow>
+          <mrow>c_1 \amp = x_3</mrow>
+        </md>
+      </p>
+
+      <p> however from the latter two equations, there is a contradiction with the first equation
+        which would say <m>x_2+x_3 = x_1</m> therefore there is no solution. This means that the two
+        given vectors do not span <m>\mathbb{R}^3</m>. </p>
+    </solution>
+  </example>
+
+  <p> If we consider the above example, one of the reasons that this happened is that we don't have
+    enough vectors. The span of two vectors in <m>\mathbb{R}^3</m> form a plane as we saw in section <xref
+      ref="sect-planes-r3" />. One way to look at <m>\mathbb{R}^3</m> is that is the set of all
+    points in <m>\mathbb{R}^3</m>, so there is no way a plane can equal all points. </p>
+</section>

@@ -1,0 +1,254 @@
+<section>
+  <title>Even and Odd Functions; Half-Range Expansions</title>
+
+  <introduction>
+    <p>We saw above that the periodic extension of <m>f(x)=x</m> on <m>[-1,1]</m> in Example <xref
+        ref="ex-FS-x" /> resulted in a odd function and that only the sine terms of the Fourier
+      Series was left. That is, all of the Fourier coefficients for the cosine terms were 0. In this
+      section, we use this idea to produce only even and odd extensions which results in only sine
+      expansions or cosine expansions.</p>
+    <p>
+
+      To begin, let's clearly define an even- and odd-periodic extension.</p>
+
+    <definition>
+      <statement>
+        <p> Let <m>f</m> be defined on <m>[0,L]</m> for some <m>L \gt 0</m>. </p>
+        <p>
+          <ul>
+            <li>
+              <p> The even periodic extension of <m>f</m> is called <m>F(x)</m> and is defined: </p>
+              <p>
+                <me> F(x) = \begin{cases} f(x) \amp 0 \leq x \leq L \\ f(-x) \amp -L \leq x \lt 0 \\
+                  f(x+2kL) \amp \text{otherwise for appropriate integer $k$} \end{cases} </me>
+              </p>
+            </li>
+            <li>
+              <p> The odd periodic extension of <m>f</m> is called <m>F(x)</m> and is defined: </p>
+              <p>
+                <me> F(x) = \begin{cases}
+                  f(x) \amp 0 \leq x \leq L \\ -f(-x) \amp -L \leq x \lt 0 \\
+                  f(x+2kL) \amp \text{otherwise for appropriate integer $k$}
+                  \end{cases} </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+
+    <example>
+      <statement>
+        <p>Graph the even- and odd-periodic extension of</p>
+        <p>
+
+          <me>
+            f(x) = 1-x
+          </me>
+        </p>
+        <p> defined on <m>[0,1]</m>. </p>
+      </statement>
+      <solution>
+
+        <p> For the even extension, we first graph the function on <m>[0,1]</m>, then make the even
+          extension of it on <m>[-1,0]</m>. The original function is shown below as a solid line and
+          the even extension is dashed.</p>
+
+
+        <figure>
+          <caption> The even extension of <m>f(x)=1-x</m>
+          </caption>
+          <image width="50%" xml:id="plot-even-extension">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}
+                \draw[->] (-3.5,0) -- (3.5,0) node [above right] {$x$};
+                \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+                \draw[->] (0,-1.5) -- (0,1.5) node [above right] {$y$};
+                \foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+
+                \draw (0,1) -- (1,0);
+                \draw[dashed] (0,1) -- (-1,0);
+                \end{tikzpicture}
+                ]]>
+            </latex-image>
+          </image>
+        </figure>
+
+        <p>and then we produce the period extension of period 2.</p>
+
+        <figure>
+          <caption> The even extension of <m>f(x)=1-x</m>
+          </caption>
+          <image width="50%" xml:id="plot-even-extension2">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}
+                \draw[->] (-3.5,0) -- (3.5,0) node [above right] {$x$};
+                \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+                \draw[->] (0,-1.5) -- (0,1.5) node [above right] {$y$};
+                \foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+
+                \foreach \i in {-1,0,1} \draw ({-1+2*\i},0) -- ({2*\i},1) -- ({1+2*\i},0);
+                \draw[->] (3,0) -- (3.5,0.5);
+                \draw[<-] (-3.5,0.5) -- (-3,0);
+                \end{tikzpicture}
+              ]]>
+            </latex-image>
+          </image>
+        </figure>
+
+        <p>To find the odd extension, flip the original function on <m>[0,1]</m> around the origin
+          to get:</p>
+
+        <figure>
+          <caption> Odd extension of <m>f(x)=1-x</m>
+          </caption>
+          <image width="50%" xml:id="plot-odd-extension">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}
+                \draw[->] (-3.5,0) -- (3.5,0) node [above right] {$x$};
+                \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+                \draw[->] (0,-1.5) -- (0,1.5) node [above right] {$y$};
+                \foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+
+                \draw (0,1) -- (1,0);
+                \draw[dashed] (0,-1) -- (-1,0);
+                \end{tikzpicture}
+                ]]>
+              </latex-image>
+          </image>
+        </figure>
+
+        <p>Then extend the function on <m>[-1,1]</m> in a periodic way.</p>
+
+        <figure>
+          <caption>
+            Periodic version of ...
+          </caption>
+          <image width="50%" xml:id="plot-periodic">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}
+                \draw[->] (-3.5,0) -- (3.5,0) node [above right] {$x$};
+                \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+                \draw[->] (0,-1.5) -- (0,1.5) node [above right] {$y$};
+                \foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+
+                \foreach \i in {-2,-1,0,1} \draw ({2*\i},1) -- ({2+2*\i},-1);
+                \end{tikzpicture}
+              ]]>
+            </latex-image>
+          </image>
+        </figure>
+
+      </solution>
+    </example>
+
+  </introduction>
+  <subsection>
+    <title>The Fourier Sine and Cosine Series</title>
+
+    <p> We now address the Fourier series of the even- and odd-periodic extensions of <m>f</m> on <m>
+      [0,L]</m>. As in Example <xref ref="ex-FS-x" />, there are no cosine terms and the Fourier
+      series of the odd periodic extension of <m>f</m> can be written </p>
+    <p>
+      <md>
+        <mrow xml:id="eq-FS-sine" number="yes">(x) \amp = \sum_{n=1}^{\infty} b_n \sin
+          \biggl(\frac{n\pi x}{L} \biggr)</mrow>
+        <mrow>\amp \quad\text{where,}</mrow>
+        <mrow xml:id="eq-FS-sine-bn" number="yes">b_n \amp = \frac{2}{L} \int_{0}^L f(x) \sin
+          \biggl(\frac{n\pi x}{L} \biggr) \,dx </mrow>
+      </md>
+    </p>
+    <p> and this is often called the <term>Fourier sine series</term>. </p>
+    <p> Similarly, the Fourier series of the even periodic extension of <m>f</m> is </p>
+    <p>
+      <md>
+        <mrow xml:id="eq-FS-cosine" number="yes">f(x) \amp= a_0 + \sum_{n=1}^{\infty} a_n \cos
+          \biggl( \frac{n \pi x}{L} \biggr)</mrow>
+        <mrow> \amp \qquad\text{where} </mrow>
+        <mrow xml:id="eq-FS-cosine-a0" number="yes">a_0 \amp = \frac{1}{L} \int_{0}^L f(x) \, dx</mrow>
+        <mrow xml:id="eq-FS-cosine-an" number="yes">a_n \amp = \frac{2}{L} \int_0^L f(x) \cos
+          \biggl( \frac{n\pi x}{L} \biggr)\, dx</mrow>
+      </md>
+    </p>
+    <p> and is called the <term>Fourier cosine series</term>. </p>
+
+    <example>
+      <statement>
+        <p>Find the Fourier Cosine Series of <m>f(x) = x</m> for <m>0 \leq x \leq 1</m>.</p>
+      </statement>
+      <solution>
+        <p> For this, we need to find the coefficients in (<xref ref="eq-FS-cosine-a0" />) and (<xref
+            ref="eq-FS-cosine-an" />), </p>
+        <p>
+          <md>
+            <mrow>a_0 \amp = \frac{1}{1} \int_0^1 x \,dx = \frac{1}{2} </mrow>
+            <mrow>a_n \amp = \frac{2}{1} \int_0^1 x \cos n \pi x \, dx </mrow>
+            <mrow>\amp = \frac{2(\cos n\pi -1)}{n \pi} = \frac{2}{n\pi} \bigl((-1)^n-1\bigr)</mrow>
+          </md>
+        </p>
+        <p> and use (<xref ref="eq-FS-cosine" />) to find </p>
+        <p>
+          <me>
+            f(x) = \frac{1}{2} + \sum_{n=1}^{\infty} \frac{2}{n\pi} \bigl((-1)^n-1\bigr) \cos n \pi
+            x
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p> Find the odd periodic extension of <m>f(x) = x^2</m> on <m>[0,2]</m>. A graph of this
+          is: </p>
+        <figure>
+          <caption> Graph of odd extension of <m>f(x) = x^2</m> on <m>[0,2]</m>
+          </caption>
+          <image width="50%" xml:id="plot-odd-extension-x-squared">
+            <latex-image>
+              <![CDATA[
+                \begin{tikzpicture}[xscale=1,yscale=0.75]
+                \draw[->] (-6.5,0) -- (6.5,0) node [above right] {$x$};
+                \foreach \x in {-6,-5,...,-1,1,2,...,6} \draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
+                \draw[->] (0,-4.5) -- (0,4.5) node [above right] {$y$};
+                \foreach \y in {-4,-3,-2,-1,1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+
+                \foreach \i in {-1,0,1} {
+                \draw plot[domain={4*\i+0}:{4*\i+2}] (\x,{(\x-4*\i)*(\x-4*\i)});
+                \draw plot[domain={4*\i-2}:{4*\i+0}] (\x,{-1*(\x-4*\i)*(\x-4*\i)});
+                }
+                \end{tikzpicture}
+              ]]>
+            </latex-image>
+          </image>
+        </figure>
+      </statement>
+      <solution>
+        <p> For this, we need to find <m>b_n</m> from (<xref ref="eq-FS-sine-bn" />), </p>
+        <p>
+          <md>
+            <mrow>b_n \amp = \frac{2}{2} \int_0^2 x^2 \sin \biggl( \frac{n \pi x}{2} \biggr) \, dx</mrow>
+            <mrow>\amp\qquad \text{and again, this can be done using tabular integration,}</mrow>
+            <mrow>\amp = -\frac{2 \, x^{2}}{n \pi} \cos \biggl( \frac{n \pi x}{2} \biggr) +
+              \frac{8 \, x}{n^2\pi^2} \sin \biggl( \frac{n \pi x}{2} \biggr) +
+              \frac{16}{n^3\pi^3} \cos \biggl( \frac{n \pi x}{2} \biggr)
+              \biggr \vert_0^2 </mrow>
+            <mrow>\amp = -\frac{8}{n \pi} \cos (n \pi) + \frac{16}{n^3\pi^3} \cos (n \pi) =
+              \frac{16-8n^2\pi^2}{n^3 \pi^3} (-1)^n</mrow>
+          </md>
+        </p>
+        <p> and then use this in (<xref ref="eq-FS-sine" />) </p>
+        <p>
+          <me>
+            f(x) = \sum_{n=1}^{\infty}\frac{16-8n^2\pi^2}{n^3 \pi^3} (-1)^n \sin \biggl(\frac{n \pi
+            x}{2} \biggr)
+          </me>
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+</section>
