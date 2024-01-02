@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.24)  30 SEP 2023 05:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.24)  1 JAN 2024 09:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -710,7 +710,7 @@ Writing index file applied-math.idx
 LaTeX Warning: Unused global option(s):
     [display=portrait].
 
-(./applied-math.aux)
+No file applied-math.aux.
 \openout1 = `applied-math.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -731,7 +731,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
-
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
@@ -11930,29 +11929,29 @@ or  <return>  to continue without it.
 
 [214]
 
-LaTeX Warning: Reference `eq:heat:eqn:deriv' on page 215 undefined on input line 262.
+LaTeX Warning: Reference `eq:heat:eqn:deriv' on page 215 undefined on input line 267.
 
 
-./ch06.tex:275: LaTeX Error: Environment Boxed* undefined.
+./ch06.tex:280: LaTeX Error: Environment Boxed* undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.275 \begin{Boxed*}
+l.280 \begin{Boxed*}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:284: LaTeX Error: \begin{document} ended by \end{Boxed*}.
+./ch06.tex:289: LaTeX Error: \begin{document} ended by \end{Boxed*}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.284 \end{Boxed*}
+l.289 \end{Boxed*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -11960,34 +11959,34 @@ or  <return>  to continue without it.
 
 [215] [216]
 
-LaTeX Warning: Reference `eq:wave:eqn:derive' on page 217 undefined on input line 340.
+LaTeX Warning: Reference `eq:wave:eqn:derive' on page 217 undefined on input line 345.
 
 
-LaTeX Warning: Reference `wave:eqn' on page 217 undefined on input line 362.
+LaTeX Warning: Reference `wave:eqn' on page 217 undefined on input line 367.
 
 [217]
 
-LaTeX Warning: Reference `sect:part:deriv:diff:eqns' on page 218 undefined on input line 367.
+LaTeX Warning: Reference `sect:part:deriv:diff:eqns' on page 218 undefined on input line 372.
 
 
-LaTeX Warning: Reference `eq:ODE:linear' on page 218 undefined on input line 377.
+LaTeX Warning: Reference `eq:ODE:linear' on page 218 undefined on input line 382.
 
 
-./ch06.tex:398: LaTeX Error: Environment example undefined.
+./ch06.tex:403: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.398 \begin{example}
+l.403 \begin{example}
                        \label{ex:solution:DE:image}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [218]
-./ch06.tex:405: Undefined control sequence.
-l.405 \solution
+./ch06.tex:410: Undefined control sequence.
+l.410 \solution
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11996,59 +11995,59 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./ch06.tex:419: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:424: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.419 \end{example}
+l.424 \end{example}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:423: LaTeX Error: Environment definition undefined.
+./ch06.tex:428: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.423 \begin{definition}
+l.428 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:425: LaTeX Error: \begin{document} ended by \end{definition}.
+./ch06.tex:430: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.425 \end{definition}
+l.430 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:430: LaTeX Error: Environment example undefined.
+./ch06.tex:435: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.430 \begin{example}
+l.435 \begin{example}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:437: Undefined control sequence.
-l.437 \solution
+./ch06.tex:442: Undefined control sequence.
+l.442 \solution
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12057,42 +12056,42 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `ex:solution:DE:image' on page 219 undefined on input line 439.
+LaTeX Warning: Reference `ex:solution:DE:image' on page 219 undefined on input line 444.
 
 
-LaTeX Warning: Reference `eq:ivp:ex1' on page 219 undefined on input line 450.
+LaTeX Warning: Reference `eq:ivp:ex1' on page 219 undefined on input line 455.
 
 
-LaTeX Warning: Reference `eq:ivp:ex2' on page 219 undefined on input line 450.
+LaTeX Warning: Reference `eq:ivp:ex2' on page 219 undefined on input line 455.
 
 
-./ch06.tex:462: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:467: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.462 \end{example}
+l.467 \end{example}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:467: LaTeX Error: Environment example undefined.
+./ch06.tex:472: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.467 \begin{example}
+l.472 \begin{example}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:470: Undefined control sequence.
-l.470 \solution
+./ch06.tex:475: Undefined control sequence.
+l.475 \solution
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12102,33 +12101,33 @@ and I'll forget about whatever was undefined.
 
 [219]
 
-./ch06.tex:497: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:502: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.497 \end{example}
+l.502 \end{example}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:501: LaTeX Error: Environment example undefined.
+./ch06.tex:506: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.501 \begin{example}
+l.506 \begin{example}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:504: Undefined control sequence.
-l.504 \solution
+./ch06.tex:509: Undefined control sequence.
+l.509 \solution
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12137,122 +12136,122 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./ch06.tex:525: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:530: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.525 \end{example}
+l.530 \end{example}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:527: LaTeX Error: Environment lemma undefined.
+./ch06.tex:532: LaTeX Error: Environment lemma undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.527 \begin{lemma}
+l.532 \begin{lemma}
                     \label{lem:soln:2nd:order:DE:homo}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 220 undefined on input line 535.
-
-
 LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 220 undefined on input line 540.
 
+
+LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 220 undefined on input line 545.
+
 [220]
-
-LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 221 undefined on input line 545.
-
 
 LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 221 undefined on input line 550.
 
 
-./ch06.tex:556: LaTeX Error: \begin{document} ended by \end{lemma}.
+LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 221 undefined on input line 555.
+
+
+./ch06.tex:561: LaTeX Error: \begin{document} ended by \end{lemma}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.556 \end{lemma}
+l.561 \end{lemma}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 221 undefined on input line 559.
+LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 221 undefined on input line 564.
 
 
-LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq1' on page 221 undefined on input line 569.
+LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq1' on page 221 undefined on input line 574.
 
 
-LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 221 undefined on input line 575.
+LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 221 undefined on input line 580.
 
 
-LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq2' on page 221 undefined on input line 586.
+LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq2' on page 221 undefined on input line 591.
 
 
-LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 221 undefined on input line 592.
+LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 221 undefined on input line 597.
 
 [221]
 
-LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 222 undefined on input line 602.
+LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 222 undefined on input line 607.
 
 
-LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq3' on page 222 undefined on input line 602.
+LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq3' on page 222 undefined on input line 607.
 
 
-LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 222 undefined on input line 608.
+LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 222 undefined on input line 613.
 
 
-LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq4' on page 222 undefined on input line 625.
+LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq4' on page 222 undefined on input line 630.
 
 
-LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 222 undefined on input line 632.
+LaTeX Warning: Reference `eq:general:2nd:order:DE:homo' on page 222 undefined on input line 637.
 
 [222]
 
-LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq4:proof' on page 223 undefined on input line 643.
+LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq4:proof' on page 223 undefined on input line 648.
 
 
-LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq4' on page 223 undefined on input line 644.
+LaTeX Warning: Reference `eq:soln:2nd:order:DE:homo:eq4' on page 223 undefined on input line 649.
 
 
-LaTeX Warning: Reference `sect:vector:space' on page 223 undefined on input line 658.
+LaTeX Warning: Reference `sect:vector:space' on page 223 undefined on input line 663.
 
 
-LaTeX Warning: Reference `ex:solution:DE:image' on page 223 undefined on input line 658.
+LaTeX Warning: Reference `ex:solution:DE:image' on page 223 undefined on input line 663.
 
 
-./ch06.tex:671: LaTeX Error: Environment definition undefined.
+./ch06.tex:676: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.671 \begin{definition}
+l.676 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:686: LaTeX Error: \begin{document} ended by \end{definition}.
+./ch06.tex:691: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.686 \end{definition}
+l.691 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -12260,20 +12259,20 @@ or  <return>  to continue without it.
 
 [223]
 
-./ch06.tex:690: LaTeX Error: Environment example undefined.
+./ch06.tex:695: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.690 \begin{example}
+l.695 \begin{example}
                       \label{ex:sturm:liouville}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:696: Undefined control sequence.
-l.696 \solution
+./ch06.tex:701: Undefined control sequence.
+l.701 \solution
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12282,78 +12281,78 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `eq:sturm:liouville:ex:eq1' on page 224 undefined on input line 723.
+LaTeX Warning: Reference `eq:sturm:liouville:ex:eq1' on page 224 undefined on input line 728.
 
 
-LaTeX Warning: Reference `eq:sturm:liouville:ex:eq1' on page 224 undefined on input line 729.
+LaTeX Warning: Reference `eq:sturm:liouville:ex:eq1' on page 224 undefined on input line 734.
 
 
-LaTeX Warning: Reference `eq:sturm:liouville:ex:eq2' on page 224 undefined on input line 731.
+LaTeX Warning: Reference `eq:sturm:liouville:ex:eq2' on page 224 undefined on input line 736.
 
 
-LaTeX Warning: Reference `eq:sturm:liouville:ex:eq2' on page 224 undefined on input line 742.
+LaTeX Warning: Reference `eq:sturm:liouville:ex:eq2' on page 224 undefined on input line 747.
 
 
-LaTeX Warning: Reference `eq:sturm:liouville:ex:eq3' on page 224 undefined on input line 744.
+LaTeX Warning: Reference `eq:sturm:liouville:ex:eq3' on page 224 undefined on input line 749.
 
 [224]
 
-LaTeX Warning: Reference `eq:sturm:liouville:ex:eigs' on page 225 undefined on input line 764.
+LaTeX Warning: Reference `eq:sturm:liouville:ex:eigs' on page 225 undefined on input line 769.
 
 
-./ch06.tex:770: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:775: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.770 \end{example}
+l.775 \end{example}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:775: LaTeX Error: Environment theorem undefined.
+./ch06.tex:780: LaTeX Error: Environment theorem undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.775 \begin{theorem}
+l.780 \begin{theorem}
                       \label{thm:sturm:liouville}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:792: LaTeX Error: \begin{document} ended by \end{theorem}.
+./ch06.tex:797: LaTeX Error: \begin{document} ended by \end{theorem}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.792 \end{theorem}
+l.797 \end{theorem}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:794: LaTeX Error: Environment example undefined.
+./ch06.tex:799: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.794 \begin{example}
+l.799 \begin{example}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:797: Undefined control sequence.
-l.797 \solution
+./ch06.tex:802: Undefined control sequence.
+l.802 \solution
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12363,33 +12362,33 @@ and I'll forget about whatever was undefined.
 
 [225]
 
-./ch06.tex:805: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:810: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.805 \end{example}
+l.810 \end{example}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:808: LaTeX Error: Environment example undefined.
+./ch06.tex:813: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.808 \begin{example}
+l.813 \begin{example}
                       \label{ex:sturm:liouville:2}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:815: Undefined control sequence.
-l.815 \solution
+./ch06.tex:820: Undefined control sequence.
+l.820 \solution
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12398,80 +12397,80 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `ex:sturm:liouville' on page 226 undefined on input line 817.
+LaTeX Warning: Reference `ex:sturm:liouville' on page 226 undefined on input line 822.
 
 
-./ch06.tex:862: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:867: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.862 \end{example}
+l.867 \end{example}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `sect:modeling:pdes' on page 226 undefined on input line 869.
+LaTeX Warning: Reference `sect:modeling:pdes' on page 226 undefined on input line 874.
 
 [226]
 
-LaTeX Warning: Reference `eq:sep:vars:X' on page 227 undefined on input line 904.
+LaTeX Warning: Reference `eq:sep:vars:X' on page 227 undefined on input line 909.
 
 
-LaTeX Warning: Reference `ex:sturm:liouville' on page 227 undefined on input line 904.
+LaTeX Warning: Reference `ex:sturm:liouville' on page 227 undefined on input line 909.
 
 [227]
 
-LaTeX Warning: Reference `eq:sep:vars:T' on page 228 undefined on input line 916.
+LaTeX Warning: Reference `eq:sep:vars:T' on page 228 undefined on input line 921.
 
 
-LaTeX Warning: Reference `eq:sep:vars:eigenvalues' on page 228 undefined on input line 916.
+LaTeX Warning: Reference `eq:sep:vars:eigenvalues' on page 228 undefined on input line 921.
 
 [228]
 
-./ch06.tex:973: LaTeX Error: Environment Boxed* undefined.
+./ch06.tex:978: LaTeX Error: Environment Boxed* undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.973 \begin{Boxed*}
+l.978 \begin{Boxed*}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:998: LaTeX Error: \begin{document} ended by \end{Boxed*}.
+./ch06.tex:1003: LaTeX Error: \begin{document} ended by \end{Boxed*}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.998 \end{Boxed*}
-                  
+l.1003 \end{Boxed*}
+                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:1006: LaTeX Error: Environment example undefined.
+./ch06.tex:1011: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 \begin{example}
+l.1011 \begin{example}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:1009: Undefined control sequence.
-l.1009 \solution
+./ch06.tex:1014: Undefined control sequence.
+l.1014 \solution
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12480,26 +12479,26 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./ch06.tex:1025: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:1030: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1025 \end{example}
+l.1030 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:1028: LaTeX Error: Environment example undefined.
+./ch06.tex:1033: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1028 \begin{example}
+l.1033 \begin{example}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -12507,13 +12506,13 @@ or  <return>  to continue without it.
 
 [229]
 
-./ch06.tex:1055: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:1060: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1055 \end{example}
+l.1060 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -12521,72 +12520,72 @@ or  <return>  to continue without it.
 
 [230]
 
-LaTeX Warning: Reference `eq:wave:bc:free' on page 231 undefined on input line 1081.
+LaTeX Warning: Reference `eq:wave:bc:free' on page 231 undefined on input line 1086.
 
 
-LaTeX Warning: Reference `ex:sturm:liouville' on page 231 undefined on input line 1081.
+LaTeX Warning: Reference `ex:sturm:liouville' on page 231 undefined on input line 1086.
 
 
-LaTeX Warning: Reference `ex:sturm:liouville:2' on page 231 undefined on input line 1081.
+LaTeX Warning: Reference `ex:sturm:liouville:2' on page 231 undefined on input line 1086.
 
 
-LaTeX Warning: Reference `eq:wave:free:ic2' on page 231 undefined on input line 1104.
+LaTeX Warning: Reference `eq:wave:free:ic2' on page 231 undefined on input line 1109.
 
 
-LaTeX Warning: Reference `eq:wave:free:ic2' on page 231 undefined on input line 1110.
+LaTeX Warning: Reference `eq:wave:free:ic2' on page 231 undefined on input line 1115.
 
 
-LaTeX Warning: Reference `eq:wave:free:eq1' on page 231 undefined on input line 1114.
+LaTeX Warning: Reference `eq:wave:free:eq1' on page 231 undefined on input line 1119.
 
 
-LaTeX Warning: Reference `eq:wave:free:ic1' on page 231 undefined on input line 1114.
+LaTeX Warning: Reference `eq:wave:free:ic1' on page 231 undefined on input line 1119.
 
 
-LaTeX Warning: Reference `thm:sturm:liouville' on page 231 undefined on input line 1119.
+LaTeX Warning: Reference `thm:sturm:liouville' on page 231 undefined on input line 1124.
 
 [231]
 
-./ch06.tex:1127: LaTeX Error: Environment Boxed* undefined.
+./ch06.tex:1132: LaTeX Error: Environment Boxed* undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127 \begin{Boxed*}
+l.1132 \begin{Boxed*}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:1146: LaTeX Error: \begin{document} ended by \end{Boxed*}.
+./ch06.tex:1151: LaTeX Error: \begin{document} ended by \end{Boxed*}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1146 \end{Boxed*}
+l.1151 \end{Boxed*}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:1149: LaTeX Error: Environment example undefined.
+./ch06.tex:1154: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1149 \begin{example}
+l.1154 \begin{example}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:1156: Undefined control sequence.
-l.1156 \solution
-                	
+./ch06.tex:1161: Undefined control sequence.
+l.1161 \solution
+                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -12594,41 +12593,41 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `eq:wave:free:fourier:coeffs' on page 232 undefined on input line 1158.
+LaTeX Warning: Reference `eq:wave:free:fourier:coeffs' on page 232 undefined on input line 1163.
 
 [232]
 
-./ch06.tex:1171: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:1176: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1171 \end{example}
+l.1176 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `ex:sturm:liouville:2' on page 233 undefined on input line 1209.
+LaTeX Warning: Reference `ex:sturm:liouville:2' on page 233 undefined on input line 1214.
 
 [233]
 
-./ch06.tex:1258: LaTeX Error: Environment example undefined.
+./ch06.tex:1263: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1258 \begin{example}
+l.1263 \begin{example}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:1265: Undefined control sequence.
-l.1265 \solution
+./ch06.tex:1270: Undefined control sequence.
+l.1270 \solution
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12638,13 +12637,13 @@ and I'll forget about whatever was undefined.
 
 [234]
 
-./ch06.tex:1301: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:1306: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1301 \end{example}
+l.1306 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -12652,20 +12651,20 @@ or  <return>  to continue without it.
 
 [235] [236]
 
-./ch06.tex:1412: LaTeX Error: Environment example undefined.
+./ch06.tex:1417: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1412 \begin{example}
+l.1417 \begin{example}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:1419: Undefined control sequence.
-l.1419 \solution
+./ch06.tex:1424: Undefined control sequence.
+l.1424 \solution
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12674,13 +12673,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./ch06.tex:1435: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:1440: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1435 \end{example}
+l.1440 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -12688,38 +12687,38 @@ or  <return>  to continue without it.
 
 [237]
 
-LaTeX Warning: Reference `eq:bessel:eqn' on page 238 undefined on input line 1453.
+LaTeX Warning: Reference `eq:bessel:eqn' on page 238 undefined on input line 1458.
 
 
-./ch06.tex:1463: LaTeX Error: Environment luacode undefined.
+./ch06.tex:1468: LaTeX Error: Environment luacode undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1463 \begin{luacode}
+l.1468 \begin{luacode}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:1495: LaTeX Error: \begin{document} ended by \end{luacode}.
+./ch06.tex:1500: LaTeX Error: \begin{document} ended by \end{luacode}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1495 \end{luacode}
+l.1500 \end{luacode}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:1506: Undefined control sequence.
+./ch06.tex:1511: Undefined control sequence.
 \bplot ->\directlua 
                     {besselplot()}
-l.1506 \bplot
+l.1511 \bplot
              
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12744,106 +12743,106 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [238]
 
-LaTeX Warning: Reference `eq:bessel:function:power:series' on page 239 undefined on input line 1511.
+LaTeX Warning: Reference `eq:bessel:function:power:series' on page 239 undefined on input line 1516.
 
 
-LaTeX Warning: Reference `eq:bessel:eqn' on page 239 undefined on input line 1520.
+LaTeX Warning: Reference `eq:bessel:eqn' on page 239 undefined on input line 1525.
 
 
-./ch06.tex:1528: LaTeX Error: Environment lemma undefined.
+./ch06.tex:1533: LaTeX Error: Environment lemma undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1528 \begin{lemma}
+l.1533 \begin{lemma}
                      \label{lem:bessel:identities}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:1536: LaTeX Error: \begin{document} ended by \end{lemma}.
+./ch06.tex:1541: LaTeX Error: \begin{document} ended by \end{lemma}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1536 \end{lemma}
+l.1541 \end{lemma}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `eq:bessel:id1' on page 239 undefined on input line 1538.
+LaTeX Warning: Reference `eq:bessel:id1' on page 239 undefined on input line 1543.
 
 
-LaTeX Warning: Reference `eq:bessel:function:power:series' on page 239 undefined on input line 1538.
+LaTeX Warning: Reference `eq:bessel:function:power:series' on page 239 undefined on input line 1543.
 
 [239]
 
-LaTeX Warning: Reference `eq:bessel:id2' on page 240 undefined on input line 1552.
+LaTeX Warning: Reference `eq:bessel:id2' on page 240 undefined on input line 1557.
 
 
-./ch06.tex:1558: LaTeX Error: Environment lemma undefined.
+./ch06.tex:1563: LaTeX Error: Environment lemma undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1558 \begin{lemma}
+l.1563 \begin{lemma}
                      \label{lem:bessel:recurrence}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:1564: LaTeX Error: \begin{document} ended by \end{lemma}.
+./ch06.tex:1569: LaTeX Error: \begin{document} ended by \end{lemma}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1564 \end{lemma}
+l.1569 \end{lemma}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `eq:bessel:id1' on page 240 undefined on input line 1566.
+LaTeX Warning: Reference `eq:bessel:id1' on page 240 undefined on input line 1571.
 
 
-LaTeX Warning: Reference `eq:bessel:id2' on page 240 undefined on input line 1566.
+LaTeX Warning: Reference `eq:bessel:id2' on page 240 undefined on input line 1571.
 
 
-LaTeX Warning: Reference `eq:bessel:recur2' on page 240 undefined on input line 1578.
+LaTeX Warning: Reference `eq:bessel:recur2' on page 240 undefined on input line 1583.
 
 
-LaTeX Warning: Reference `eq:bessel:recur2' on page 240 undefined on input line 1578.
+LaTeX Warning: Reference `eq:bessel:recur2' on page 240 undefined on input line 1583.
 
 
-./ch06.tex:1584: LaTeX Error: Environment example undefined.
+./ch06.tex:1589: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1584 \begin{example}
+l.1589 \begin{example}
                        \label{ex:bessel:J3}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `lem:bessel:identities' on page 240 undefined on input line 1585.
+LaTeX Warning: Reference `lem:bessel:identities' on page 240 undefined on input line 1590.
 
 
-LaTeX Warning: Reference `lem:bessel:recurrence' on page 240 undefined on input line 1585.
+LaTeX Warning: Reference `lem:bessel:recurrence' on page 240 undefined on input line 1590.
 
-./ch06.tex:1587: Undefined control sequence.
-l.1587 \solution
+./ch06.tex:1592: Undefined control sequence.
+l.1592 \solution
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12852,22 +12851,22 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `eq:bessel:recur1' on page 240 undefined on input line 1589.
+LaTeX Warning: Reference `eq:bessel:recur1' on page 240 undefined on input line 1594.
 
 
-LaTeX Warning: Reference `eq:bessel:recur1' on page 240 undefined on input line 1596.
+LaTeX Warning: Reference `eq:bessel:recur1' on page 240 undefined on input line 1601.
 
 
-LaTeX Warning: Reference `eq:bessel:recur1' on page 240 undefined on input line 1596.
+LaTeX Warning: Reference `eq:bessel:recur1' on page 240 undefined on input line 1601.
 
 
-./ch06.tex:1598: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:1603: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1598 \end{example}
+l.1603 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -12875,26 +12874,26 @@ or  <return>  to continue without it.
 
 [240]
 
-./ch06.tex:1604: LaTeX Error: Environment example undefined.
+./ch06.tex:1609: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1604 \begin{example}
+l.1609 \begin{example}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `lem:bessel:identities' on page 241 undefined on input line 1605.
+LaTeX Warning: Reference `lem:bessel:identities' on page 241 undefined on input line 1610.
 
 
-LaTeX Warning: Reference `lem:bessel:recurrence' on page 241 undefined on input line 1605.
+LaTeX Warning: Reference `lem:bessel:recurrence' on page 241 undefined on input line 1610.
 
-./ch06.tex:1607: Undefined control sequence.
-l.1607 \solution
+./ch06.tex:1612: Undefined control sequence.
+l.1612 \solution
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12903,57 +12902,57 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1609.
+LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1614.
 
 
-LaTeX Warning: Reference `eq:bessel:recur2' on page 241 undefined on input line 1619.
+LaTeX Warning: Reference `eq:bessel:recur2' on page 241 undefined on input line 1624.
 
 
-LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1619.
+LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1624.
 
 
-LaTeX Warning: Reference `eq:bessel:recur2' on page 241 undefined on input line 1619.
+LaTeX Warning: Reference `eq:bessel:recur2' on page 241 undefined on input line 1624.
 
 
-LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1619.
+LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1624.
 
 
-LaTeX Warning: Reference `eq:bessel:recur2' on page 241 undefined on input line 1622.
+LaTeX Warning: Reference `eq:bessel:recur2' on page 241 undefined on input line 1627.
 
 
-LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1627.
+LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1632.
 
 
-LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1627.
+LaTeX Warning: Reference `eq:bessel:recur1' on page 241 undefined on input line 1632.
 
 
-./ch06.tex:1630: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:1635: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1630 \end{example}
+l.1635 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./ch06.tex:1634: LaTeX Error: Environment example undefined.
+./ch06.tex:1639: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1634 \begin{example}
+l.1639 \begin{example}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:1637: Undefined control sequence.
-l.1637 \solution
+./ch06.tex:1642: Undefined control sequence.
+l.1642 \solution
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12962,92 +12961,92 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `eq:bessel:id1' on page 241 undefined on input line 1645.
+LaTeX Warning: Reference `eq:bessel:id1' on page 241 undefined on input line 1650.
 
 
-LaTeX Warning: Reference `eq:bessel:id1' on page 241 undefined on input line 1645.
+LaTeX Warning: Reference `eq:bessel:id1' on page 241 undefined on input line 1650.
 
 
-LaTeX Warning: Reference `eq:bessel:id1' on page 241 undefined on input line 1645.
+LaTeX Warning: Reference `eq:bessel:id1' on page 241 undefined on input line 1650.
 
 
-LaTeX Warning: Reference `eq:bessel:id1' on page 241 undefined on input line 1645.
+LaTeX Warning: Reference `eq:bessel:id1' on page 241 undefined on input line 1650.
 
 [241]
 
-./ch06.tex:1646: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:1651: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1646 \end{example}
+l.1651 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `eq:bessel:eqn' on page 242 undefined on input line 1651.
+LaTeX Warning: Reference `eq:bessel:eqn' on page 242 undefined on input line 1656.
 
 
-LaTeX Warning: Reference `eq:bessel:eqn' on page 242 undefined on input line 1679.
+LaTeX Warning: Reference `eq:bessel:eqn' on page 242 undefined on input line 1684.
 
 [242] [243]
 
-LaTeX Warning: Reference `eq:heat:eqn:2D' on page 244 undefined on input line 1731.
+LaTeX Warning: Reference `eq:heat:eqn:2D' on page 244 undefined on input line 1736.
 
 [244]
 
-LaTeX Warning: Reference `eq:rx' on page 245 undefined on input line 1779.
+LaTeX Warning: Reference `eq:rx' on page 245 undefined on input line 1784.
 
 
-LaTeX Warning: Reference `eq:thetayy' on page 245 undefined on input line 1779.
+LaTeX Warning: Reference `eq:thetayy' on page 245 undefined on input line 1784.
 
 
-LaTeX Warning: Reference `eq:uxx' on page 245 undefined on input line 1779.
+LaTeX Warning: Reference `eq:uxx' on page 245 undefined on input line 1784.
 
 
-LaTeX Warning: Reference `eq:uyy' on page 245 undefined on input line 1779.
+LaTeX Warning: Reference `eq:uyy' on page 245 undefined on input line 1784.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:2D' on page 245 undefined on input line 1793.
+LaTeX Warning: Reference `eq:heat:eqn:2D' on page 245 undefined on input line 1798.
 
 [245]
 
-LaTeX Warning: Reference `eq:heat:eqn:rot:sum:R' on page 246 undefined on input line 1826.
+LaTeX Warning: Reference `eq:heat:eqn:rot:sum:R' on page 246 undefined on input line 1831.
 
 
-LaTeX Warning: Reference `eq:bessel:eqn' on page 246 undefined on input line 1832.
+LaTeX Warning: Reference `eq:bessel:eqn' on page 246 undefined on input line 1837.
 
 
-LaTeX Warning: Reference `eq:bessel:eqn' on page 246 undefined on input line 1840.
+LaTeX Warning: Reference `eq:bessel:eqn' on page 246 undefined on input line 1845.
 
 
-LaTeX Warning: Reference `sect:bessel:functions' on page 246 undefined on input line 1840.
+LaTeX Warning: Reference `sect:bessel:functions' on page 246 undefined on input line 1845.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:rot:sum:R' on page 246 undefined on input line 1840.
+LaTeX Warning: Reference `eq:heat:eqn:rot:sum:R' on page 246 undefined on input line 1845.
 
 
-LaTeX Warning: Reference `sect:bessel:functions' on page 246 undefined on input line 1852.
+LaTeX Warning: Reference `sect:bessel:functions' on page 246 undefined on input line 1857.
 
 [246]
 
-./ch06.tex:1893: LaTeX Error: Environment example undefined.
+./ch06.tex:1898: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1893 \begin{example}
+l.1898 \begin{example}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:1896: Undefined control sequence.
-l.1896 \solution
+./ch06.tex:1901: Undefined control sequence.
+l.1901 \solution
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13058,72 +13057,72 @@ and I'll forget about whatever was undefined.
 <heat-eqn-radially-sym-plot.pdf, id=1506, 557.08125pt x 557.08125pt>
 File: heat-eqn-radially-sym-plot.pdf Graphic file (type pdf)
 <use heat-eqn-radially-sym-plot.pdf>
-Package pdftex.def Info: heat-eqn-radially-sym-plot.pdf  used on input line 1915.
+Package pdftex.def Info: heat-eqn-radially-sym-plot.pdf  used on input line 1920.
 (pdftex.def)             Requested size: 289.07999pt x 289.0889pt.
 [247]
 
-./ch06.tex:1918: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:1923: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1918 \end{example}
+l.1923 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `sect:heat:eqn:polar' on page 248 undefined on input line 1928.
+LaTeX Warning: Reference `sect:heat:eqn:polar' on page 248 undefined on input line 1933.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:polar' on page 248 undefined on input line 1928.
+LaTeX Warning: Reference `eq:heat:eqn:polar' on page 248 undefined on input line 1933.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:polar' on page 248 undefined on input line 1948.
+LaTeX Warning: Reference `eq:heat:eqn:polar' on page 248 undefined on input line 1953.
 
 [248 <./heat-eqn-radially-sym-plot.pdf>]
 
-LaTeX Warning: Reference `eq:bessel:eqn' on page 249 undefined on input line 1970.
+LaTeX Warning: Reference `eq:bessel:eqn' on page 249 undefined on input line 1975.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:polar:theta' on page 249 undefined on input line 1970.
+LaTeX Warning: Reference `eq:heat:eqn:polar:theta' on page 249 undefined on input line 1975.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:polar:r' on page 249 undefined on input line 1970.
+LaTeX Warning: Reference `eq:heat:eqn:polar:r' on page 249 undefined on input line 1975.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:polar:bc1' on page 249 undefined on input line 1970.
+LaTeX Warning: Reference `eq:heat:eqn:polar:bc1' on page 249 undefined on input line 1975.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:polar:bc2' on page 249 undefined on input line 1970.
+LaTeX Warning: Reference `eq:heat:eqn:polar:bc2' on page 249 undefined on input line 1975.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:polar:theta' on page 249 undefined on input line 1977.
+LaTeX Warning: Reference `eq:heat:eqn:polar:theta' on page 249 undefined on input line 1982.
 
 
-LaTeX Warning: Reference `eq:heat:eqn:polar:bc2' on page 249 undefined on input line 1982.
+LaTeX Warning: Reference `eq:heat:eqn:polar:bc2' on page 249 undefined on input line 1987.
 
 
-LaTeX Warning: Reference `sect:sturm:liouville' on page 249 undefined on input line 1984.
+LaTeX Warning: Reference `sect:sturm:liouville' on page 249 undefined on input line 1989.
 
 [249] [250]
 
-./ch06.tex:2093: LaTeX Error: Environment example undefined.
+./ch06.tex:2098: LaTeX Error: Environment example undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2093 \begin{example}
+l.2098 \begin{example}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./ch06.tex:2096: Undefined control sequence.
-l.2096 \solution
+./ch06.tex:2101: Undefined control sequence.
+l.2101 \solution
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13132,13 +13131,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./ch06.tex:2113: LaTeX Error: \begin{document} ended by \end{example}.
+./ch06.tex:2118: LaTeX Error: \begin{document} ended by \end{example}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2113 \end{example}
+l.2118 \end{example}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -13416,15 +13415,15 @@ Package rerunfilecheck Info: Checksums for `applied-math.out':
 ### simple group (level 1) entered at line 43 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 36193 strings out of 476001
- 823935 string characters out of 5789199
+ 36191 strings out of 476001
+ 823901 string characters out of 5789199
  1883074 words of memory out of 5000000
  55408 multiletter control sequences out of 15000+600000
  531840 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,21n,104p,955b,19001s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on applied-math.pdf (263 pages, 908604 bytes).
+Output written on applied-math.pdf (263 pages, 908408 bytes).
 PDF statistics:
  1816 PDF objects out of 2073 (max. 8388607)
  1492 compressed objects within 15 object streams
