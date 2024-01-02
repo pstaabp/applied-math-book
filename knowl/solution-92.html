@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.1.10.1</span><span class="period">.</span>
+</h4>
+<div class="para">First, we solve for the eigenvectors by solving <span class="process-math">\(|A-\lambda I|=0\text{,}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+|A-\lambda I| \amp = \begin{vmatrix}
+1-\lambda \amp 0 \amp 2 \\
+2 \amp -\lambda \amp 4 \\
+-1 \amp 0 \amp -2- \lambda
+\end{vmatrix} \\
+\amp = -\lambda \begin{vmatrix}
+1-\lambda \amp 2 \\
+-1 \amp -2-\lambda
+\end{vmatrix} = -\lambda \bigl( (1-\lambda)(-2-\lambda)+2 \bigr) \\
+\amp = -\lambda (\lambda^2 - \lambda -2 + 2) = -\lambda^3 - \lambda^2
+\end{align*}
+</div></div> <div class="para">and this is 0, when <span class="process-math">\(\lambda=0\)</span> and <span class="process-math">\(\lambda = -1\text{.}\)</span> Next, find the eigenvectors. The eigenvectors with <span class="process-math">\(\lambda=0\)</span> are found by finding the null space of <span class="process-math">\(A-0I\text{:}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\amp \qquad \begin{bmatrix}
+1 \amp 0 \amp 2 \\
+2 \amp 0 \amp 4 \\
+-1 \amp 0 \amp -2
+\end{bmatrix} \\
+\begin{array}{r}
+-2R_1 + R_2 \rightarrow R_2 \\
+R_1+R_3 \rightarrow R_3
+\end{array}
+\amp \qquad
+\begin{bmatrix}
+1 \amp0 \amp 2 \\
+0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0
+\end{bmatrix}
+\end{align*}
+</div></div> <div class="para">and since the only equation is <span class="process-math">\(x_1 +2x_3=0\text{,}\)</span> both <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_3\)</span> are free variables and the solution space (therefore the null space) can be written:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix}
+0 \\ 1 \\ 0
+\end{bmatrix} x_2 + \begin{bmatrix}
+-2 \\ 0 \\ 1
+\end{bmatrix} x_3 \; | \; x_2, x_3 \in \mathbb{R} \right\}
+\end{equation*}
+</div></div> <div class="para">This shows that the vectors</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\vec{v}_1 \amp = \begin{bmatrix}
+0 \\ 1\\ 0
+\end{bmatrix}\amp \vec{v}_2 \amp = \begin{bmatrix}
+-2 \\ 0 \\ 1
+\end{bmatrix}
+\end{align*}
+</div></div> <div class="para">are both eigenvectors associated with <span class="process-math">\(\lambda=0\text{.}\)</span> The eigenvectors associated with <span class="process-math">\(\lambda
+= -1\)</span> is found by seeking the null space of <span class="process-math">\(A-I\text{:}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\amp \qquad \begin{bmatrix}
+2 \amp 0 \amp 2 \\
+2 \amp 1 \amp 4 \\
+-1 \amp 0 \amp -1
+\end{bmatrix} \\
+\frac{1}{2}R_1 \rightarrow R_1 \amp \qquad
+\begin{bmatrix}
+1 \amp 0 \amp 1 \\
+2 \amp 1 \amp 4 \\
+-1 \amp 0 \amp -1
+\end{bmatrix} \\
+\begin{array}{r}
+-2R_1 + R_2 \rightarrow R_2, \\
+R_1 + R_3 \rightarrow R_3,
+\end{array}
+\amp \qquad \begin{bmatrix}
+1 \amp 0 \amp 1 \\
+0 \amp 1 \amp 2 \\
+0 \amp 0 \amp 0
+\end{bmatrix}
+\end{align*}
+</div></div> <div class="para">These equations are</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x_1 \amp = -x_3 \\
+x_2 \amp = -2x_3
+\end{align*}
+</div></div> <div class="para">so the solution set (and the null space) is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix}
+-1 \\ -2 \\ 1
+\end{bmatrix} x_3 \; \ \; x_3 \in \mathbb{R} \right\}
+\end{equation*}
+</div></div> <div class="para">so the eigenvector associated with <span class="process-math">\(\lambda_3 =-1\)</span> is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+-1 \\ -2 \\ 1
+\end{bmatrix}
+\end{equation*}
+</div></div>
+</div>
+<span class="incontext"><a class="internal" href="sect-eigenvalues.html#solution-92">in-context</a></span>
+</body>
+</html>

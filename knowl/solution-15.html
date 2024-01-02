@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.3.24.1</span><span class="period">.</span>
+</h4>
+<div class="para">First write the linear system as a matrix</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align}
+\left[\begin{array}{rrr|r}
+-1 \amp -4 \amp 10 \amp -37 \\
+-3 \amp 0 \amp 2 \amp -7 \\
+1 \amp -2 \amp 4 \amp -15 \\
+\end{array} \right] \notag\\
+\begin{array}{r}
+-3 R_1 + R_2 \rightarrow R_2 \\
+R_1 + R_3 \rightarrow R_3,
+\end{array} \qquad
+\left[\begin{array}{rrr|r}
+-1 \amp -4 \amp 10 \amp -37 \\
+0 \amp 12 \amp -28 \amp 104 \\
+0 \amp -6 \amp 14 \amp -52
+\end{array}\right] \notag\\
+R_2 +2R_3 \rightarrow R_3, \qquad
+\left[\begin{array}{rrr|r}
+-1 \amp -4 \amp 10 \amp -37 \\
+0 \amp 12 \amp -28 \amp 104 \\
+0 \amp 0 \amp 0 \amp 0
+\end{array}\right] \tag{1.3.3}
+\end{align}
+</div></div> <div class="para">The matrix in (<a href="" class="xref" data-knowl="./knowl/eq-ex-echelon-form.html" title="Equation 1.3.3">(1.3.3)</a>) is in echelon form, so we use back substitution to solve for <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> in terms of <span class="process-math">\(x_3\text{,}\)</span> the free variable. The 2nd row of (<a href="" class="xref" data-knowl="./knowl/eq-ex-echelon-form.html" title="Equation 1.3.3">(1.3.3)</a>) can be written:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+12 x_2 = 104 + 28 x_3
+\end{equation*}
+</div></div> <div class="para">or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+x_2 = 17 + \frac{7}{3} x_3
+\end{equation*}
+</div></div> <div class="para">and using this in the first equation of (<a href="" class="xref" data-knowl="./knowl/eq-ex-echelon-form.html" title="Equation 1.3.3">(1.3.3)</a>)</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+-x_1 - 4(17+\frac{7}{3} x_3) + 10 x_3 = -37 
+\end{equation*}
+</div></div> <div class="para">and solving for <span class="process-math">\(x_1\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+x_1 = -31+\frac{2}{3} x_3
+\end{equation*}
+</div></div>
+</div>
+<span class="incontext"><a class="internal" href="sect-gaussian-elimination.html#solution-15">in-context</a></span>
+</body>
+</html>

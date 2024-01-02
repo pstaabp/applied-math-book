@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.10</span><span class="period">.</span>
+</h4>
+<div class="para">Find the Fourier Series of the periodic extension (of period 2) of <span class="process-math">\(f(x) = x\)</span> for <span class="process-math">\(x
+\in [-1,1]\)</span> as shown in the graph below:</div> <figure class="figure figure-like"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/plot-another-one.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.11<span class="period">.</span></span><span class="space"> </span>Another plot</figcaption></figure><div class="solutions"><details class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">To find the Fourier series, we first need to find the Fourier coefficients, by evaluating the integrals in (<a href="" class="xref" data-knowl="./knowl/eq-coeff-period-2L-a0.html" title="Equation 6.2.6">(6.2.6)</a>)--(<a href="" class="xref" data-knowl="./knowl/eq-coeff-period-2L-bn.html" title="Equation 6.2.8">(6.2.8)</a>),</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+a_0 \amp = \frac{1}{2} \int_{-1}^1 x \, dx = 0 \qquad\text{because $x$ is an odd
+function}\\
+a_n \amp = \frac{1}{1} \int_{-1}^1 x \cos n \pi x \, dx = 0 \qquad \text{because
+$x$ times $\cos n\pi x$ is odd}\\
+b_n \amp = \frac{1}{1} \int_{-1}^1 x \sin n \pi x \, dx \qquad\text{because $x$
+times $\sin n\pi x$ is even}\\
+\amp = 2\int_0^1 x \sin n\pi x \\
+\amp \qquad \text{using tabular integration,}\\
+b_n \amp = -\frac{x}{n\pi} \cos (n \pi x) + \frac{1}{n^2 \pi^2} \sin (n\pi x)
+\biggr\vert_{-1}^1 \\
+\amp = -\frac{2}{n\pi} \cos (n\pi) = \frac{2}{n\pi} (-1)^{n+1}
+\end{align*}
+</div></div> <div class="para">The Fourier Series of the function is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{2}{n\pi} (-1)^{n+1} \sin n \pi x
+\end{equation*}
+</div></div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sect-fourier-series.html#ex-FS-x">in-context</a></span>
+</body>
+</html>

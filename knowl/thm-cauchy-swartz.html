@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Swartz Inequality.</span>
+</h4>
+<div class="para">If <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> are elements of an inner product space then</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+| \langle \vec{u}, \vec{v} \rangle| \leq || \vec{u} ||\, ||\vec{v}||
+\end{equation*}
+</div></div></article><details class="hiddenproof"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">If <span class="process-math">\(\vec{v}=\vec{0}\text{,}\)</span> then the inequality is satisfied. Assume <span class="process-math">\(\vec{v} \neq
+\vec{0}\)</span> and define</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\lambda = \langle \vec{v},\vec{v} \rangle^{-1} \langle \vec{u},\vec{v} \rangle.
+\end{equation*}
+</div></div> <div class="para">By definition of the inner product,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+0 \leq\amp \langle \vec{u} - \lambda \vec{v}, \vec{u} -\lambda \vec{v} \rangle
+\end{align*}
+</div></div> <div class="para">Using properties of the inner product,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+0 \leq \amp \langle \vec{u}, \vec{u} \rangle - 2 \lambda \langle \vec{u}, \vec{v}
+\rangle + \lambda^2 \langle \vec{v},\vec{v} \rangle \\
+= \amp \langle \vec{u},\vec{u} \rangle - 2 \langle \vec{v},\vec{v} \rangle^{-1}
+\langle \vec{u},\vec{v} \rangle \langle \vec{u}, \vec{v} \rangle + \bigl(\langle
+\vec{v},\vec{v} \rangle^{-1} \langle \vec{u},\vec{v} \rangle \bigr)^2 \langle
+\vec{v},\vec{v} \rangle. \\
+= \amp \langle \vec{u}, \vec{u} \rangle - \langle \vec{v},\vec{v} \rangle^{-1}
+\langle \vec{u},\vec{v} \rangle ^2
+\end{align*}
+</div></div> <div class="para">Multiply through by <span class="process-math">\(\langle\vec{v},\vec{v}\rangle\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\amp \langle \vec{u},\vec{u} \rangle \langle \vec{v},\vec{v} \rangle - \langle
+\vec{u},\vec{v} \rangle^2
+\end{align*}
+</div></div> <div class="para">This can be rearranged to get:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\langle \vec{u},\vec{v} \rangle^2 \leq \langle \vec{u},\vec{u} \rangle \langle \vec{v},
+\vec{v} \rangle
+\end{equation*}
+</div></div> <div class="para">and taking the square root, you get the desired result.</div></article></details><span class="incontext"><a class="internal" href="sect-inner-product.html#thm-cauchy-swartz">in-context</a></span>
+</body>
+</html>

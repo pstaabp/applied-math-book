@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.5</span><span class="period">.</span>
+</h3>
+<div class="para">Find the solution of the Sturm-Liouville problem</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+y'' + \lambda y \amp= 0 \amp y'(0) = 0, \amp\amp y'(L) \amp = 0
+\end{align*}
+</div></div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">Since this the same differential equation as in <a href="" class="xref" data-knowl="./knowl/xref/ex-sturm-liouville.html" title="Example 7.4.2">Example 7.4.2</a>, we note that when <span class="process-math">\(\lambda &gt; 0\text{,}\)</span> there was no solution and the same is true here. In the case of <span class="process-math">\(\lambda=0\text{,}\)</span> the solution is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+y = A+Bx
+\end{equation*}
+</div></div> <div class="para">and the derivative is needed as well,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+y'  = B
+\end{equation*}
+</div></div> <div class="para">and then applying the boundary condition <span class="process-math">\(y'(0)=y'(L)=0\text{,}\)</span> implies that <span class="process-math">\(B=0\text{,}\)</span> however, <span class="process-math">\(A\)</span> is not determined and <span class="process-math">\(y=A\)</span> is a solution. Next, we turn to  <span class="process-math">\(\lambda &gt; 0\text{,}\)</span> with the solution,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+y  = C_1 \cos \sqrt{\lambda} x + C_2 \sin \sqrt{\lambda} x
+\end{equation*}
+</div></div> <div class="para">and again, we need the derivative,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+y' = - C_1 \sqrt{\lambda} \sin \sqrt{\lambda} x + C_2 \sqrt{\lambda} \cos \sqrt{\lambda} x
+\end{equation*}
+</div></div> <div class="para">Applying the boundary condition, <span class="process-math">\(y'(0)=0\text{,}\)</span> results in</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+y'(0) = C_2 \sqrt{\lambda} = 0
+\end{equation*}
+</div></div> <div class="para">which implies that <span class="process-math">\(C_2=0\text{.}\)</span> Applying the boundary condition <span class="process-math">\(y'(L)=0\)</span> results in</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+y'(L)  = -C_1 \sqrt{\lambda} \sin \sqrt{\lambda} L = 0
+\end{equation*}
+</div></div> <div class="para">and if <span class="process-math">\(C_1=0\text{,}\)</span> this results in the trivial solution, <span class="process-math">\(\lambda\)</span> cannot be zero, however</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\sin \sqrt{\lambda} L  = 0
+\end{equation*}
+</div></div> <div class="para">when <span class="process-math">\(\sqrt{\lambda} L = n \pi\)</span> or <span class="process-math">\(\lambda = n^2 \pi^2/L^2\text{.}\)</span> The eigenvalues and eigenfunctions of this problem then are <span class="process-math">\(\lambda_0 =0\)</span> and <span class="process-math">\(\phi_0=1\text{,}\)</span> and</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\lambda_n \amp = \frac{n^2 \pi^2}{L^2} \amp \phi_n \amp = \cos \frac{n \pi x}{L} 
+\end{align*}
+</div></div>
+</div></details></div></article><span class="incontext"><a class="internal" href="ch-pde-6.html#ex-sturm-liouville-2">in-context</a></span>
+</body>
+</html>

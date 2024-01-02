@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">Note: the following integrals will come up in the next few chapters a number of times and the technique shown below is helpful for such integrals. This also shows that even though in most cases in this text so far, that using complex numbers helps out tremendously.</div> <div class="para">Recall that</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\sin x \amp = \frac{e^{ix} - e^{-ix}}{2i} \amp \cos x \amp = \frac{e^{ix} +
+e^{-ix}}{2}
+\end{align*}
+</div></div> <div class="para">and using this we find the integrals of all pairs of functions on <span class="process-math">\([-\pi,\pi]\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\langle \sin x, \sin 2x \rangle \amp = \int_{-\pi}^{\pi} \sin x \sin 2x \, dx
+= \int_{-\pi}^{\pi} \frac{e^{ix} - e^{-ix}}{2i} \frac{e^{2ix} - e^{-2ix}}{2i}\,dx \\
+\amp = \frac{1}{-4} \int_0^{\pi} (e^{3ix} -e^{ix} -e^{-ix} + e^{-3ix} ) \, dx \\
+\amp = -\frac{1}{4} \biggl( \frac{e^{3ix}}{3i} - \frac{e^{ix}}{i} -
+\frac{e^{-ix}}{-i} + \frac{e^{-3ix}}{-3i} \biggr) \biggr\vert_{-\pi}^{\pi} \\
+\amp = -\frac{1}{4} \biggl( \frac{e^{3i\pi}}{3i} - \frac{e^{i\pi}}{i} -
+\frac{e^{-i\pi}}{-i} + \frac{e^{-3i\pi}}{-3i} \biggr) \\
+\amp \qquad +\frac{1}{4} \biggl( \frac{e^{-3i\pi}}{3i} - \frac{e^{-i\pi}}{i} -
+\frac{e^{i\pi}}{-i} + \frac{e^{3i\pi}}{-3i} \biggr) = 0
+\end{align*}
+</div></div> <div class="para">and as it can be seen that all term made with the substitution <span class="process-math">\(x=\pi\)</span> cancel with terms made with the substitution <span class="process-math">\(x=-\pi\text{.}\)</span>
+</div> <div class="para">The other two inner products are similar. In fact it can be shown (and we will later) that</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\langle \sin kx, \sin \ell x \rangle = \int_{-\pi}^{\pi} \sin kx \sin \ell x \, dx = 0
+\end{equation*}
+</div></div> <div class="para">if <span class="process-math">\(k \neq \ell\text{.}\)</span>
+</div>
+</div></body>
+</html>

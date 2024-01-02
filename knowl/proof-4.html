@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h5 class="heading"><span class="title">Proof of Lemma 1.3.22.</span></h5> <div class="para">This will be a proof by contradiction. Assume that the <span class="process-math">\(i\)</span>th row is a linear combination of the other rows of the matrix that is it can be written:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation}
+\alpha_i = c_1 \alpha_1 + c_2 \alpha_2 + \cdots + c_{i-1} \alpha_{i-1} + c_{i+1}
+\alpha_{i+1} + \cdots + c_m \alpha_m\tag{1.3.2}
+\end{equation}
+</div></div> <div class="para">The matrix <span class="process-math">\(A\)</span> can be written as</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+A =
+\begin{bmatrix}
+0 \amp \cdots \amp 0 \amp \alpha_{1,\ell_1} \amp \alpha_{1, \ell_1+1} \amp \cdots \amp
+\alpha_{1,\ell_i} \amp \cdots \amp \alpha_{1,\ell_m} \\
+0 \amp \cdots \amp 0 \amp 0 \amp \alpha_{2,\ell_2} \amp \cdots \amp \alpha_{2,\ell_i}
+\amp
+\cdots \amp \alpha_{2, \ell_m} \\
+\amp \amp \amp \amp \amp \amp \vdots \amp \amp \amp \vdots \\
+\vdots \amp \amp \vdots \amp \amp 0 \amp \amp \alpha_{i,\ell_i} \amp \amp \vdots \\
+0 \amp \cdots \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \\
+0 \amp \cdots \amp \amp \amp \amp \amp0 \amp0 \amp \alpha_{m,\ell_m}
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">To find the values of <span class="process-math">\(c_j\)</span> in (\ref{eq:row:linear:comb}), evaluate that equation for any column. To begin, consider <span class="process-math">\(\ell_1\text{,}\)</span> the column of the leading coefficient of the first row. Because the matrix is in echelon form, <span class="process-math">\(\alpha_{2,\ell_1},
+\alpha_{3,\ell_1},
+\ldots, \alpha_{m,\ell_1}\)</span> are all zero. Thus, examining the <span class="process-math">\(\ell_1\)</span>th element of <a href="" class="xref" data-knowl="./knowl/eq-row-linear-comb.html" title="Equation 1.3.2">(1.3.2)</a>, one gets:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+0 = c_1 \alpha_{1,\ell_1} + c_2 \cdot 0 + \cdots + c_m \cdot 0
+\end{equation*}
+</div></div> <div class="para">and because <span class="process-math">\(\alpha_{1,\ell_1}\neq 0\)</span> (it is a leading element), <span class="process-math">\(c_1=0\text{.}\)</span>
+</div> <div class="para">Inductively, assume that <span class="process-math">\(c_1,c_2, \ldots, c_{k-1}=0\text{.}\)</span> Let <span class="process-math">\(\ell_k\)</span> be the column with the leading element in row <span class="process-math">\(k\text{.}\)</span> This means that <span class="process-math">\(\alpha_{k+1,\ell_k},
+\alpha_{k+2,\ell_k}, \ldots, \alpha_{m,\ell_k}\)</span> are all zero. If we examine the <span class="process-math">\(\ell_k\)</span>th component of <a href="" class="xref" data-knowl="./knowl/eq-row-linear-comb.html" title="Equation 1.3.2">(1.3.2)</a>, then</div> <div class="para">Let <span class="process-math">\(\ell_i\)</span> be the column with the leading element in row <span class="process-math">\(i\text{.}\)</span> If the <span class="process-math">\(\ell_i\)</span>th element of (\ref{eq:row:linear:comb}) is extracted, one gets</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\alpha_{i,\ell_k} \amp = (0) \alpha_{1,\ell_k} + (0) \alpha_{2,\ell_k} + \cdots +
+(0) \alpha_{i-1,\ell_k} + (0) \alpha_{i+1,\ell_k} \\
+\amp \qquad + \cdots + c_k\alpha_{k,\ell_k} + c_{k+1} \cdot 0 + \cdots + c_m \cdot
+0 
+\end{align*}
+</div></div> <div class="para">If <span class="process-math">\(i&gt;k\text{,}\)</span> then <span class="process-math">\(\alpha_{i,\ell_k}=0\text{,}\)</span> and this implied that <span class="process-math">\(c_k=0\text{.}\)</span> If <span class="process-math">\(i
+\lt k\text{,}\)</span> then</div></article><span class="incontext"><a class="internal" href="sect-gaussian-elimination.html#proof-4">in-context</a></span>
+</body>
+</html>

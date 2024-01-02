@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.2.10.1</span><span class="period">.</span>
+</h4>
+<div class="para">First, the augmented coefficient matrix is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{rrr|r}
+1 \amp -2 \amp 3 \amp 6 \\
+2 \amp 2 \amp 0 \amp 6 \\
+-3 \amp 0 \amp 1 \amp 0
+\end{array}\right]
+\end{equation*}
+</div></div> <div class="para">Now perform the same elementary row operations as above. We first seek to change the second row, first column to a 0</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+-2 R_1 + R_2 \to R_2 \qquad
+\left[\begin{array}{rrr|r}
+1 \amp -2 \amp 3 \amp 6 \\
+0 \amp 6 \amp -6 \amp -6 \\
+-3 \amp 0 \amp 1 \amp 0
+\end{array}\right]
+\end{equation*}
+</div></div> <div class="para">and notice that this is the matrix representation of the second step in the solution listed in <a href="sect-elementary-row-operations.html#sect-elem-row-ops" class="internal" title="Subsection 1.2.1: Elementary Row Operations">Subsection 1.2.1</a>. Next, we seek to change the 3rd row, first column from <span class="process-math">\(-3\)</span> to a 0.</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+3 R_1 + R_3 \to R_3 \qquad
+\left[\begin{array}{rrr|r}
+1 \amp -2 \amp 3 \amp 6 \\
+0 \amp 6 \amp -6 \amp -6 \\
+0 \amp -6 \amp 10 \amp 18
+\end{array}\right]
+\end{equation*}
+</div></div> <div class="para">And since we seek to get only a single variable in the third row, only one more step is needed.</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+R_2 + R_3 \to R_3 \qquad
+\left[\begin{array}{rrr|r}
+1 \amp -2 \amp 3 \amp 6 \\
+0 \amp 6 \amp -6 \amp -6 \\
+0 \amp 0 \amp 4 \amp 12
+\end{array}\right]
+\end{equation*}
+</div></div> <div class="para">At this point, if we return the augmented matrix to a set of equations, we get</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x - 2y + 3z \amp = 6 \\
+6y - 6z \amp = -6\\
+4z \amp 12
+\end{align*}
+</div></div> <div class="para">and we can get the same solution using the same steps as above to get <span class="process-math">\(z=3, y=2, x=1\)</span> .</div>
+</div>
+<span class="incontext"><a class="internal" href="sect-elementary-row-operations.html#solution-6">in-context</a></span>
+</body>
+</html>

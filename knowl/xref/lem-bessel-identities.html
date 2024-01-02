@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.7.2</span><span class="period">.</span>
+</h4>
+<div class="para">Consider <span class="process-math">\(n\geq 1\text{,}\)</span> where <span class="process-math">\(n\)</span> is an integer. Then</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align}
+\frac{d}{dx} \bigl( x^n J_n(x) \bigr) \amp = x^n J_{n-1} (x) \tag{7.7.3}\\
+\frac{d}{dx} \bigl( x^{-n} J_n(x) \bigr) \amp = -x^{-n} J_{n+1} (x)\tag{7.7.4}
+\end{align}
+</div></div> <div class="para">for all <span class="process-math">\(x &gt; 0\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">First we will prove (<a href="" class="xref" data-knowl="./knowl/xref/eq-bessel-id1.html" title="Equation 7.7.3">(7.7.3)</a>). Using (<a href="" class="xref" data-knowl="./knowl/xref/eq-bessel-function-power-series.html" title="Equation 7.7.2">(7.7.2)</a>), we can write</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x^nJ_n(x) \amp = x^n \biggl( \frac{x^{n}}{2^{n}} \sum_{m=0}^{\infty} \frac{(-1)^m}{2^m m! (m+n)!} x^{2m} \biggr) \\
+\amp = \sum_{m=0}^{\infty} \frac{(-1)^m}{2^{m+n} m! (m+n)!} x^{2m+2n} 
+\end{align*}
+</div></div> <div class="para">and differentiating,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\frac{d}{dx} \bigl(x^nJ_n(x)\bigr) \amp =  \sum_{m=0}^{\infty} \frac{(-1)^m(2m+2n)}{2^{m+n} m! (m+n)!} x^{2m+2n-1} \\
+\amp = \frac{x^{n-1}}{2^{n-1}}  \sum_{m=0}^{\infty} \frac{(-1)^m2(m+n)}{2^{m+1} m! (m+n)!} x^{2m+n} \\
+\amp = x^n \biggl(\frac{x^{n-1}}{2^{n-1}}  \sum_{m=0}^{\infty} \frac{(-1)^m}{2^{m} m! (m+n-1)!} x^{2m}) \\
+\amp  = x^{n} J_{n-1}(x) 
+\end{align*}
+</div></div> <div class="para">The proof for (<a href="" class="xref" data-knowl="./knowl/xref/eq-bessel-id2.html" title="Equation 7.7.4">(7.7.4)</a>) is very similar and is not shown.</div></article></details><span class="incontext"><a class="internal" href="ch-pde-9.html#lem-bessel-identities">in-context</a></span>
+</body>
+</html>

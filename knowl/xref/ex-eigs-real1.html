@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
+</h4>
+<div class="para">Find all eigenvalues and eigenvectors of</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+3 \amp 4 \\
+2 \amp 5
+\end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">First, solve <span class="process-math">\(|A-\lambda I| = 0\text{,}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+|A - \lambda I| \amp =
+\begin{vmatrix}
+3-\lambda \amp 4 \\
+2 \amp 5 - \lambda
+\end{vmatrix} =
+(3-\lambda)(5-\lambda) - 8 \\
+\amp = \lambda^2 -8\lambda +7 = (\lambda-1)(\lambda-7) =0
+\end{align*}
+</div></div> <div class="para">so <span class="process-math">\(\lambda = 1,7\text{.}\)</span>
+</div> <div class="para">Next, we need to find an eigenvector for each eigenvalue. When <span class="process-math">\(\lambda=1\text{,}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+(A-1 I)\vec{v} =
+\begin{bmatrix}
+2 \amp 4 \\
+2 \amp 4
+\end{bmatrix} \vec{v} = 0
+\end{equation*}
+</div></div> <div class="para">To solve this matrix equation, we’ll use gaussian elimination on the augmented matrix:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\amp \qquad \left[\begin{array}{rr|r}
+2 \amp4 \amp 0 \\
+2 \amp 4 \amp 0
+\end{array}\right] \\
+-R_1 + R_2 \rightarrow R_2 \amp \qquad
+\left[\begin{array}{rr|r}
+2 \amp4 \amp 0 \\
+0 \amp 0 \amp 0
+\end{array}\right] \\
+\frac{1}{2} R_1 \rightarrow R_1 \amp \qquad
+\left[\begin{array}{rr|r}
+1 \amp 2 \amp 0 \\
+0 \amp 0 \amp 0
+\end{array}\right] 
+\end{align*}
+</div></div> <div class="para">The first row of the matrix corresponds to <span class="process-math">\(x_1+2x_2=0\)</span> so the null space of <span class="process-math">\(A-\lambda I\)</span> is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left\{
+\begin{bmatrix}
+-2 \\ 1
+\end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
+\end{equation*}
+</div></div> <div class="para">The eigenvector(s) associated with <span class="process-math">\(\lambda=1\)</span> is the basis of this space or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{v} =
+\begin{bmatrix}
+-2 \\ 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">And to find the eigenvector associated with <span class="process-math">\(\lambda = 7\text{,}\)</span> solve</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+(A - 7 I) \vec{v} =
+\begin{bmatrix}
+-4 \amp 4 \\
+2 \amp -2
+\end{bmatrix} \vec{v} = \vec{0}
+\end{equation*}
+</div></div> <div class="para">and use Gaussian Elimination to reduce</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\amp \qquad \left[\begin{array}{rr|r}
+-4 \amp 4 \amp 0 \\
+2 \amp -2 \amp 0
+\end{array}\right] \\
+\begin{array}{r}
+-\frac{1}{4} R_1 \rightarrow R_1 \\
+-2 R_1 + R_2 \rightarrow R_2
+\end{array} \amp \qquad
+\left[\begin{array}{rr|r}
+1 \amp -1 \amp 0 \\
+0 \amp 0 \amp 0
+\end{array}\right]
+\end{align*}
+</div></div> <div class="para">The null space of <span class="process-math">\(A-7I\)</span> is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left\{
+\begin{bmatrix}
+1 \\ 1
+\end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
+\end{equation*}
+</div></div> <div class="para">so the eigenvector associated with <span class="process-math">\(\lambda=7\)</span> is the basis of this space or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{v} =
+\begin{bmatrix}
+1 \\ 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">Overall, there are two eigenvalues and two related eigenvectors they are</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\lambda_1 \amp = 1, \quad \vec{v}_1 = \begin{bmatrix}
+-2 \\1
+\end{bmatrix} \amp
+\lambda_2 \amp = 7, \quad \vec{v}_2 = \begin{bmatrix}
+1 \\1
+\end{bmatrix}
+\end{align*}
+</div></div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sect-eigenvalues.html#ex-eigs-real1">in-context</a></span>
+</body>
+</html>

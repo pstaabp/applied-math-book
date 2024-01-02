@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(T: \mathcal{M}_{2 \times 2} \rightarrow \mathbb{R}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+a \amp b \\ c\amp d
+\end{bmatrix} \rightarrow a + d
+\end{equation*}
+</div></div> <div class="para">which is the trace of a 2 by 2 matrix. Show that the trace is a linear map and find the matrix representation of the trace. \solution First, to prove that the trace is a linear map, we need to show that it satisfies (<a href="" class="xref" data-knowl="./knowl/eq-linear-map-add.html" title="Equation 3.4.1">(3.4.1)</a>) and (<a href="" class="xref" data-knowl="./knowl/eq-linear-map-prod.html" title="Equation 3.4.2">(3.4.2)</a>). Let</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+A_1 \amp = \begin{bmatrix}
+a_1 \amp b_1 \\ c_1\amp d_1
+\end{bmatrix} \amp A_2 \amp = \begin{bmatrix}
+a_2 \amp b_2 \\ c_2\amp d_2
+\end{bmatrix}
+\end{align*}
+</div></div> <div class="para">Then</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+T(A_1+A_2) \amp = T \left( \begin{bmatrix}
+a_1 \amp b_1 \\ c_1\amp d_1
+\end{bmatrix} + \begin{bmatrix}
+a_2 \amp b_2 \\ c_2\amp d_2
+\end{bmatrix} \right) = T \left( \begin{bmatrix}
+a_1 + a_2 \amp b_1 + b_2 \\ c_1 + c_2 \amp d_1 + d_2
+\end{bmatrix} \right) \\
+\amp = (a_1 + a_2) + (d_1 + d_2) \\
+\amp = (a_1 + d_1) + (a_2 + d_2) = T(A_1) + T(A_2)
+\end{align*}
+</div></div> <div class="para">Similarly,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+T(\alpha A_1) \amp = T \biggl( \alpha \begin{bmatrix}
+a_1 \amp b_1 \\ c_1\amp d_1
+\end{bmatrix}\biggr) = T\biggl(\begin{bmatrix}
+\alpha a_1 \amp \alpha b_1 \\ \alpha c_1\amp \alpha d_1
+\end{bmatrix} \biggr) \\
+\amp = \alpha a_1 + \alpha d_1 = \alpha (a_1 + d_1) = \alpha T(A_1)
+\end{align*}
+</div></div> <div class="para">Next, we want to find the matrix representation of the trace. To do this, we need to determine how the map affects the basis of the vector space <span class="process-math">\(\mathcal{M}_{2 \times 2}\text{,}\)</span> which is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left( \begin{bmatrix}
+1 \amp 0 \\ 0 \amp 0
+\end{bmatrix}, \begin{bmatrix}
+0 \amp 1 \\ 0 \amp 0
+\end{bmatrix}, \begin{bmatrix}
+0 \amp 0 \\ 1 \amp 0
+\end{bmatrix}, \begin{bmatrix}
+0 \amp 0 \\ 0 \amp 1
+\end{bmatrix} \right)
+\end{equation*}
+</div></div> <div class="para">and since</div> <div class="para logical">
+<div class="displaymath process-math">
+\begin{align*}
+\begin{bmatrix}
+1 \amp 0 \\ 0 \amp 0
+\end{bmatrix} \amp\mapsto 1, \amp
+\begin{bmatrix}
+0 \amp 1 \\ 0 \amp 0
+\end{bmatrix} \amp\mapsto 0, \\
+\begin{bmatrix}
+0 \amp 0 \\ 1 \amp 0
+\end{bmatrix} \amp\mapsto 0, \amp
+\begin{bmatrix}
+0 \amp 0 \\ 0 \amp 1
+\end{bmatrix} \amp \mapsto 1, 
+\end{align*}
+</div>
+<div class="para">The matrix representation is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_T = \begin{bmatrix}
+1 \amp 0 \amp 0 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Note that it may be surprising that the matrix representation is just a row vector, however, recall that the trace maps from a <span class="process-math">\(2 \times 2\)</span> matrix that can be represented as a column vector of length 4 to the reals, so the matrix representation should be a <span class="process-math">\(1 \times 4\)</span> matrix.</div>
+</div></article><span class="incontext"><a class="internal" href="sect-linear-transformations.html#example-105">in-context</a></span>
+</body>
+</html>

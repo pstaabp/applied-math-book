@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h4>
+<div class="para">Use the steps above to find matrices <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> such that <span class="process-math">\(A=LU\)</span> for</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+3 \amp -2 \amp 1 \\
+6 \amp 0 \amp 4 \\
+-6 \amp -8 \amp -7 \\
+\end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">As above,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+B_{21} = \begin{bmatrix}
+1 \amp 0 \amp 0 \\ -\frac{6}{3} \amp 1 \amp 0 \\
+0 \amp 0 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">And</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+B_{21} A = \begin{bmatrix}
+3 \amp -2 \amp 1 \\
+0 \amp 4 \amp 2 \\
+-6 \amp -8 \amp -7
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">And if</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+B_{31} = \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+-\frac{-6}{3} \amp 0 \amp 1
+\end{bmatrix} = \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+2 \amp 0 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">and</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+B_{31} B_{21} A =
+\begin{bmatrix}
+3 \amp -2 \amp 1 \\
+0 \amp 4 \amp 2 \\
+0 \amp -12 \amp -5
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">And we will call this matrix <span class="process-math">\(A^{(1)}\text{.}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+B_{32}  = \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp -\frac{-12}{4} \amp 1 \\
+\end{bmatrix}
+= \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 3 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+B_{32} A^{(1)} = \begin{bmatrix}
+3 \amp -2 \amp 1 \\
+0 \amp 4 \amp 2 \\
+0 \amp 0 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">and we will call this <span class="process-math">\(U\text{.}\)</span> And <span class="process-math">\(L\)</span> is found by</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+L = A U^{-1} = \begin{bmatrix}
+3 \amp -2 \amp 1 \\
+6 \amp 0 \amp 4 \\
+-6 \amp -8 \amp -7
+\end{bmatrix} \begin{bmatrix}
+1/3 \amp 1/6 \amp -2/3 \\
+0 \amp 1/4 \amp -1/2 \\
+0 \amp 0 \amp 1
+\end{bmatrix} = \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+2 \amp 1 \amp 0 \\
+-2 \amp -3 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div></div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sect-lu-factorization.html#ex-lu-decomp">in-context</a></span>
+</body>
+</html>

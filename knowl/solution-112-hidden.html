@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">Let <span class="process-math">\(f(x)\)</span> be the sawtooth wave defined in the picture above. We can write it as a piecewise function as</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+f(x) = \begin{cases}
+x \amp 0 \leq x \leq \pi \\
+-x \amp -\pi \lt x \lt 0
+\end{cases}
+\end{equation*}
+</div></div> <div class="para">and extending it periodically.</div> <div class="para">Then using the formulas in (<a href="" class="xref" data-knowl="./knowl/eq-fourier-coeff-a0.html" title="Equation 6.2.2">(6.2.2)</a>)--(<a href="" class="xref" data-knowl="./knowl/eq-fourier-coeff-bn.html" title="Equation 6.2.4">(6.2.4)</a>) and we will take advantage of the fact that <span class="process-math">\(f(x)\)</span> is an even function.</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+a_0 \amp = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) \, dx \\
+\amp = \frac{2}{2\pi} \int_0^{\pi} x \,dx \\
+\amp = \frac{1}{\pi} \frac{x^2}{2} \biggr \vert_0^{\pi} = \frac{\pi}{2}
+\end{align*}
+</div></div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+a_n \amp = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \, dx\\
+\amp = \frac{2}{\pi} \int_{0}^{\pi} x\cos nx \, dx
+\end{align*}
+</div></div> <div class="para">where <a href="" class="xref" data-knowl="./knowl/thm-even-odd-integrals.html" title="Theorem 6.1.19">Theorem 6.1.19</a> is used and since <span class="process-math">\(\cos nx\)</span> is even and the product of even functions is even. Also this is a good example to use tabular integration.</div> <figure class="figure figure-like"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="generated/latex-image/plot-tab-integration-x-cosnx.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.7<span class="period">.</span></span><span class="space"> </span>tabular integration of <span class="process-math">\(x \cos nx\text{.}\)</span></figcaption></figure> <div class="para">and then using the table to find</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+a_n \amp =\frac{2}{\pi} \biggl( \frac{x}{n} \sin nx + \frac{1}{n^2} \cos nx
+\biggr) \biggr \vert_0^{\pi} \\
+\amp = \frac{2}{\pi}\biggl(\biggl(\frac{\pi}{n} \sin n \pi + \frac{1}{n^2} \cos
+n\pi \biggr) -
+\biggl( 0 +\frac{1}{n^2} \cos 0 \biggr) \biggr)\\
+\amp = \frac{2}{\pi n^2} \bigl( (-1)^n - 1)
+\end{align*}
+</div></div> <div class="para">Lastly,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx
+\end{equation*}
+</div></div> <div class="para">but this is a product of a even and an odd function, which is odd and integrating an odd function over a symmetric interval is 0. Therefore the Fourier series is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+F(x) = \frac{\pi}{2} + \sum_{n=1}^{\infty} \frac{2}{\pi n^2} \bigl( (-1)^n - 1) \cos nx
+\end{equation*}
+</div></div>
+</div></body>
+</html>

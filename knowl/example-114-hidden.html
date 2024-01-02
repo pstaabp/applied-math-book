@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"><div class="para">Consider the mass-spring system above with <span class="process-math">\(m_1=1\text{,}\)</span> <span class="process-math">\(m_2=2\text{,}\)</span> <span class="process-math">\(k_1 = 1\text{,}\)</span> and <span class="process-math">\(k_2
+= 2\text{,}\)</span> then the mass matrix and stiffness matrix are:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+M \amp =
+\begin{bmatrix}
+1 \amp 0 \\ 0 \amp 2
+\end{bmatrix} \amp
+K \amp = \begin{bmatrix}
+-3 \amp 2 \\ -2 \amp 4 \end{bmatrix}
+\end{align*}
+</div></div> <div class="para">resulting in the system:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{x}'' = \begin{bmatrix}
+-3 \amp 2 \\ -1 \amp 2
+\end{bmatrix} \vec{x}
+\end{equation*}
+</div></div> <div class="para">The eigenvalues and eigenvectors are:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\lambda_1 \amp = -4 \amp \vec{v}_1 \amp = (-2,1)^T \\
+\lambda_2 \amp = -1 \amp \vec{v}_2 \amp = (1,1)^T
+\end{align*}
+</div></div> <div class="para">Therefore the solution is:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation}
+\vec{x} = (a_1 \cos 2t + b_1 \sin 2t) \begin{bmatrix}
+-2 \\ 1
+\end{bmatrix} + (a_2 \cos t + b_2 \sin t) \begin{bmatrix}
+1 \\1
+\end{bmatrix}\tag{4.4.1}
+\end{equation}
+</div></div> <div class="para">Next, let’s find the values of the <span class="process-math">\(a\)</span>’s and <span class="process-math">\(b\)</span>’s if <span class="process-math">\(x_1=1\)</span> and <span class="process-math">\(x_2=2\)</span> when <span class="process-math">\(t=0\)</span> or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{x}(0) = \begin{bmatrix}
+1 \\ 2
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">and <span class="process-math">\(\vec{x}'(0)=\vec{0}\text{.}\)</span> First use the initial value <span class="process-math">\(\vec{x}(0)\)</span> in (<a href="" class="xref" data-knowl="./knowl/eq-mass-spring-solution.html" title="Equation 4.4.1">(4.4.1)</a>),</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix} = a_1 \begin{bmatrix}
+-2 \\ 1
+\end{bmatrix} + a_2 \begin{bmatrix}
+1 \\ 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">and this is true when <span class="process-math">\(a_1=1/3\)</span> and <span class="process-math">\(a_2=5/3\text{.}\)</span> To find <span class="process-math">\(b_1\)</span> and <span class="process-math">\(b_2\text{,}\)</span> differentiate (<a href="" class="xref" data-knowl="./knowl/eq-mass-spring-solution.html" title="Equation 4.4.1">(4.4.1)</a>),</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\vec{x}'(t) \amp = (-2a_1 \sin 2t + 2b_1
+\cos 2t ) \begin{bmatrix} -2 \\ 1 \end{bmatrix} + (-a_2 \sin t + b_2 \cos t)
+\begin{bmatrix} 1
+1 \end{bmatrix} 
+\end{align*}
+</div></div> <div class="para">and evaluate it at <span class="process-math">\(t=0\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{x}'(0) = \begin{bmatrix} 0 \\ 0
+\end{bmatrix} = 2b_1 \begin{bmatrix} -2 \\ 1 \end{bmatrix} + 2b_2 \begin{bmatrix} 1 \\ 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">or <span class="process-math">\(b_1=0\)</span> and <span class="process-math">\(b_2=0\text{.}\)</span> The solution with the given initial condition,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{x}(t) = \frac{1}{3} \cos 2t \begin{bmatrix}
+-2 \\ 1
+\end{bmatrix} + \frac{5}{3} \cos t \begin{bmatrix}
+1 \\ 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">The value of <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\text{,}\)</span> the position of the two masses are the first and second components. A plot of these two are:</div> <figure class="figure figure-like"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="generated/latex-image/plot-second-order-de-solution.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.5<span class="period">.</span></span><span class="space"> </span>Solution of a second-order differential equation.</figcaption></figure></article></body>
+</html>

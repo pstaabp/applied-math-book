@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">Following the steps above, the LU decomposition is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+L \amp = \begin{bmatrix}
+1 \amp 0 \amp 0 \\ 2/3 \amp 1 \amp 0 \\
+0 \amp -2 \amp 1
+\end{bmatrix} \amp U \amp = \begin{bmatrix}
+3 \amp 3 \amp -1 \\
+0 \amp -1 \amp -7/3 \\
+0 \amp 0 \amp 1/3
+\end{bmatrix}
+\end{align*}
+</div></div> <div class="para">and we will solve <span class="process-math">\(A\vec{x}=LU\vec{x}=\vec{e}_j\text{,}\)</span> where <span class="process-math">\(\vec{e}_j\)</span> is the <span class="process-math">\(j\)</span>th column of the 3 by 3 identity matrix.</div> <div class="para">Solving <span class="process-math">\(LU\vec{x} = \vec{e}_1\)</span> by solving <span class="process-math">\(L\vec{y}_1 = (1,0,0)^{\intercal}\)</span> or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{y_1} = \begin{bmatrix}
+1 \\ -2/3 \\ -4/3
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">then solve <span class="process-math">\(U\vec{x}_1 = \vec{y}_1\)</span> for <span class="process-math">\(\vec{x}_1\)</span> or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{x}_1 = \begin{bmatrix}
+-11 \\ 10 \\ -4
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">Repeating this for <span class="process-math">\(\vec{b}=\vec{e}_2\text{,}\)</span> first solving <span class="process-math">\(L\vec{y}_2 =
+(0,1,0)^{\intercal}\)</span> or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{y}_2 = \begin{bmatrix}
+0 \\ 1 \\ 2
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">then solve <span class="process-math">\(U\vec{x}_2 = \vec{y}_2\)</span> for <span class="process-math">\(\vec{x}_2\)</span> or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{x}_2 = \begin{bmatrix}
+17 \\ -15 \\ 6
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">and lastly, solve <span class="process-math">\(L\vec{y}_3 = (0,0,1)^{\intercal}\)</span> or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{y}_3 = \begin{bmatrix}
+0 \\ 0 \\ 1
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">and solving <span class="process-math">\(U\vec{x}_3 = \vec{y}_3\)</span> results in</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{x}_3 = \begin{bmatrix}
+8 \\ -7 \\ 3
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">The inverse matrix is then the matrix with <span class="process-math">\(\vec{x}_j\)</span> as the columns or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+A^{-1} = \begin{bmatrix}
+-11 \amp 17 \amp 8 \\
+10 \amp -15 \amp -7 \\
+-4 \amp 6 \amp 3
+\end{bmatrix}
+\end{equation*}
+</div></div>
+</div></body>
+</html>

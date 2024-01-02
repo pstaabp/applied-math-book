@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span>
+</h4>
+<div class="para">Find a orthonormal set of vectors that span the same set as <span class="process-math">\(\{\vec{u}_1,\vec{u}_2\}\text{,}\)</span> where</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\vec{u}_1 \amp= \begin{bmatrix}
+2 \\ 0
+\end{bmatrix}, \amp \vec{u}_2 \amp = \begin{bmatrix}
+1 \\ 1
+\end{bmatrix}
+\end{align*}
+</div></div>
+<div class="solutions"><details class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">There are many ways of doing this, but the following will always work. First, let’s start by finding a unit vector in the same direction as <span class="process-math">\(\vec{u}_1\text{.}\)</span> We denote this as <span class="process-math">\(\hat{v}_1\)</span> and this can be found by dividing <span class="process-math">\(\vec{u}_1\)</span> by its length:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\hat{v}_1 = \frac{1}{||\vec{u}_1||} \vec{u}_1 = \frac{1}{2} \begin{bmatrix}
+2 \\ 0
+\end{bmatrix} = \begin{bmatrix}
+1 \\ 0
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">Next, we will form a new vector <span class="process-math">\(\vec{v}_2\)</span> which is a linear combination of <span class="process-math">\(\hat{v}_1\)</span> and <span class="process-math">\(\vec{u}_2\)</span> and has the property that it is orthogonal to <span class="process-math">\(\vec{v}_1\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\vec{v}_2 = c_1 \hat{v}_1 + c_2 \vec{u}_2
+\end{equation*}
+</div></div> <div class="para">and we can take <span class="process-math">\(c_1=1\)</span> without loss of generality. with</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+0 \amp = \langle \vec{v}_2, \hat{v}_1 \rangle \\
+\amp = \langle \hat{v}_1 + c_2 \vec{u}_2, \hat{v}_1 \rangle \\
+\amp = \langle \hat{v}_1 \hat{v_1} \rangle + c_2 \langle \vec{u}_2, \hat{v}_1
+\rangle 
+\end{align*}
+</div></div> <div class="para">and solving for <span class="process-math">\(c_2\text{,}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
+{\langle \hat{v}_1 \hat{v_1} \rangle}
+\end{align*}
+</div></div> <div class="para">and since <span class="process-math">\(\vec{v}_1\)</span> is a unit vector</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+= -\langle \vec{u}_2, \hat{v}_1 \rangle = -1
+\end{equation*}
+</div></div> <div class="para">So</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\amp \vec{v}_2 \amp = \hat{v}_1 - \vec{u}_2 = \begin{bmatrix}
+1 \\ 0
+\end{bmatrix} - \begin{bmatrix}
+1 \\ 1
+\end{bmatrix} = \begin{bmatrix}
+0 \\ -1
+\end{bmatrix}
+\end{align*}
+</div></div> <div class="para">Now since <span class="process-math">\(\vec{v}_2\)</span> is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix}
+1\\0
+\end{bmatrix}, \begin{bmatrix}
+0 \\ -1
+\end{bmatrix} \right\}
+\end{equation*}
+</div></div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sect-inner-product.html#example-97">in-context</a></span>
+</body>
+</html>

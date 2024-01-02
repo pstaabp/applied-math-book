@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.2.8.1</span><span class="period">.</span>
+</h4>
+<div class="para">First, write the matrix <span class="process-math">\([\;A\; | \;I\;]\)</span> and then perform Gaussian Elimination.</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\amp \qquad
+\left[\begin{array}{rr|rr}
+3 \amp 2 \amp 1 \amp 0 \\
+2 \amp 1 \amp 0 \amp 1
+\end{array}\right]
+\end{align*}
+</div></div> <div class="para">We desire a 1 in the upper right. Instead of dividing the first row by 3, we will do the following,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+-R_2 + R_1 \rightarrow R_1 \amp \qquad
+\left[\begin{array}{rr|rr}
+1 \amp 1 \amp 1 \amp -1 \\
+2 \amp 1 \amp 0 \amp 1
+\end{array}\right]
+\end{align*}
+</div></div> <div class="para">Then eliminate the lower right element on the left side,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+-2 R_1 + R_2 \rightarrow R_2 \amp \qquad
+\left[\begin{array}{rr|rr}
+1 \amp 1 \amp 1 \amp -1 \\
+0 \amp -1 \amp -2 \amp 3
+\end{array}\right]
+\end{align*}
+</div></div> <div class="para">Multiply through by <span class="process-math">\(-1\)</span> to get a 1 in the lower right of the left side</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+- R_2 \rightarrow R_2 \amp \qquad
+\left[\begin{array}{rr|rr}
+1 \amp 1 \amp 1 \amp -1 \\
+0 \amp 1 \amp 2 \amp -3
+\end{array}\right]
+\end{align*}
+</div></div> <div class="para">And finally zero out the 2nd column, 1st row.</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+- R_2 + R_1 \rightarrow R_1 \amp \qquad
+\left[\begin{array}{rr|rr}
+1 \amp 0 \amp -1 \amp 2 \\
+0 \amp 1 \amp 2 \amp -3
+\end{array}\right]
+\end{align*}
+</div></div> <div class="para">We stop here because the left half of the matrix is the identity matrix. The right half is now the inverse. Therefore:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+A^{-1} = \begin{bmatrix}
+-1 \amp 2 \\ 2 \amp -3
+\end{bmatrix}
+\end{equation*}
+</div></div>
+</div>
+<span class="incontext"><a class="internal" href="sect-matrix-inverse.html#solution-35">in-context</a></span>
+</body>
+</html>

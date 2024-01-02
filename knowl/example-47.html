@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span>
+</h4>
+<div class="para">Show that the matrix</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp -5 \amp 3 \\
+-2 \amp 3 \amp 7 \\
+-1 \amp -2 \amp 10
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para">does not have an inverse.</div>
+<div class="solutions"><details class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">First, write <span class="process-math">\([\;A\;|\;I\;]\)</span> and then use the Gauss-Jordan Method to alter the matrix.</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\amp \qquad \left[\begin{array}{rrr|rrr}
+1 \amp -5 \amp 3 \amp 1 \amp 0 \amp 0 \\
+-2 \amp 3 \amp 7 \amp 0 \amp 1 \amp 0 \\
+-1 \amp -2 \amp 10 \amp 0 \amp 0 \amp 1 \\
+\end{array}\right] \\
+\begin{array}{r}
+2 R_1 + R_2 \rightarrow R_2 \\
+R_1 + R_3 \rightarrow R_3
+\end{array} \amp \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp -5 \amp 3 \amp 1 \amp 0 \amp 0 \\
+0 \amp -7 \amp 13 \amp 2 \amp 1 \amp 0 \\
+0 \amp -7 \amp 13 \amp 1 \amp 0 \amp 1 \\
+\end{array}\right] \\
+-R_2 + R_3 \rightarrow R_3 \amp \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp -5 \amp 3 \amp 1 \amp 0 \amp 0 \\
+0 \amp -7 \amp 13 \amp 2 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp -1 \amp 0 \amp 1 \\
+\end{array}\right]
+\end{align*}
+</div></div> <div class="para">And we stop since the row of zeros on the bottom of the left half of the matrix indicates that we cannot get an identity matrix on the left half of the matrix. This shows that the matrix is not invertible.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sect-matrix-inverse.html#example-47">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Matrices and Matrix Operations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Applied Mathematics">
+<meta property="book:author" content="Peter Staab">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.31/pretext_search.js"></script><link href="https://pretextbook.org/css/0.81/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.31</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.31/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.31/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.31/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.81/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="applied-mathematics-staab.html"><span class="title">Applied Mathematics</span></a></h1>
+<p class="byline">Peter Staab</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sect-echelon-form.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-linear-algebra-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-homo-non-homo.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-linear-algebra-basics.html" class="internal"><span class="codenumber">1</span> <span class="title">Linear Algebra Basics</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-solving-linear-systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Solving Linear Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsect-linear-system-examples" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Examples of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsect-gauss-method" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Gauss’s Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#sect-elem-row-ops" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-solving-linear-systems.html#sect-echelon-form" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Echelon Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsect-echelon-form" class="internal"><span class="codenumber">1.1.4.1</span> <span class="title">Putting linear systems in Echelon Form</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsect-describe-solutions" class="internal"><span class="codenumber">1.1.4.2</span> <span class="title">Describing the Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-solving-linear-systems.html#sec-matrices" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-3" class="internal"><span class="codenumber">1.1.5.1</span> <span class="title">Introduction to Matrices</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-4" class="internal"><span class="codenumber">1.1.5.2</span> <span class="title">Matrices and Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-5" class="internal"><span class="codenumber">1.1.5.3</span> <span class="title">Vectors as Solutions of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-6" class="internal"><span class="codenumber">1.1.5.4</span> <span class="title">Addition and Scalar Multiplication of Vectors</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-7" class="internal"><span class="codenumber">1.1.5.5</span> <span class="title">Writing Solutions in Vector Form</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-row-ops.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-echelon-form.html#subsect-echelon-form" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Putting linear systems in Echelon Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-echelon-form.html#subsect-describe-solutions" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Describing the Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection active">
+<div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Matrices and Matrix Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-matrices.html#subsubsection-8" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Introduction to Matrices</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-matrices.html#subsubsection-9" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Matrices and Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-matrices.html#subsubsection-10" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Vectors as Solutions of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-matrices.html#subsubsection-11" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Addition and Scalar Multiplication of Vectors</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-matrices.html#subsubsection-12" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Writing Solutions in Vector Form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-homo-non-homo.html" class="internal"><span class="codenumber">1.4</span> <span class="title">General <span class="process-math">\(=\)</span> Homogeneous <span class="process-math">\(+\)</span> Nonhomogeneous</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homo-non-homo.html#subsect-nonhomo-system" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Non-homogeneous Systems</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="subsection" id="sec-matrices"><h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Matrices and Matrix Operations</span>
+</h2>
+<section class="subsubsection" id="subsubsection-8"><h3 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">Introduction to Matrices</span>
+</h3>
+<article class="definition definition-like" id="definition-11"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-243">An <dfn class="terminology"><span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrix</dfn> is a rectangular grid of numbers with <span class="process-math">\(m\)</span> rows and <span class="process-math">\(n\)</span> columns. The <dfn class="terminology">size</dfn> of a matrix is the pair of number <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> and is typically written <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> or <span class="process-math">\(m \times n\text{.}\)</span>  Each number of the matrix is called the <dfn class="terminology">entry</dfn> or <dfn class="terminology">element</dfn>.</div></article><article class="example example-like" id="ex-matrices"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-matrices"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Matrices.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-matrices"><article class="example example-like"> <div class="para" id="p-244">The following are examples of matrices:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp  2 \amp 3 \\
+4 \amp  5 \amp  6
+\end{bmatrix} \qquad
+\begin{bmatrix}
+\pi \amp  2 \\
+-1 \amp  4 \\
+2.5 \amp  7/3 \\
+-11 \amp  1000
+\end{bmatrix} \qquad
+\begin{bmatrix}
+2 \\ 4 \\ 6 \\ 8 \\ 9
+\end{bmatrix} \qquad
+\begin{bmatrix}
+8 \amp  -3 \amp  2
+\end{bmatrix}
+\end{equation*}
+</div></article></div>
+<div class="para" id="p-245">A common notation for a matrix is to use upper case letters (and often bold), for example <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> are common matrices.  The entry or element in the <span class="process-math">\(i\)</span>th row and <span class="process-math">\(j\)</span>th column of <span class="process-math">\(A\)</span> is <span class="process-math">\(a_{i,j}\text{.}\)</span> Also, the set of all <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrices is denoted <span class="process-math">\({\cal M}_{m \times n}\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="definition-12"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span>
+</h4>A matrix with only 1 row is called a <dfn class="terminology">row vector</dfn>.  A matrix with only 1 column is called a <dfn class="terminology">column vector</dfn>.  The <dfn class="terminology">size</dfn> of a vector is the number of rows (for a column vector) or the number of columns (for a row vector).</article><div class="para" id="p-246">The 3rd matrix in Example <a href="" class="xref" data-knowl="./knowl/ex-matrices.html" title="Example 1.1.23: Matrices">Example 1.1.23</a> above is a column vector of size 5.  The 4th matrix is a row vector of size 3.</div></section><section class="subsubsection" id="subsubsection-9"><h3 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">Matrices and Linear Systems</span>
+</h3>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html" id="md-98">
+\begin{align*}
+x + 2y \amp  = 7, \\
+4x -3 y \amp  = 6. 
+\end{align*}
+</div>
+<div class="para" id="p-247">When we solved it above, the variables didn’t play much of a role, the coefficients changed and the variables stayed in the same place as we solved for them.  Because of this, we will adopt that technique to only works with the coefficients---the numbers themselves---as a grid or as it is called an <dfn class="terminology">augmented coefficient matrix.</dfn> The following is this matrix for the linear system above.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html">
+\begin{equation*}
+\left[
+\begin{array}{rr|r}
+1 \amp  2 \amp  7 \\
+3 \amp  -1 \amp  7 \\
+\end{array}
+\right]
+\end{equation*}
+</div>
+<div class="para" id="p-248">and the two rows of the matrix represent the two equations. The first column represents the coefficient of the <span class="process-math">\(x\)</span> variable, and the second column represents the coefficient of the <span class="process-math">\(y\)</span> variable. The last column is the right hand sides of the linear system, and the vertical line occurs where the equal sign is in the equations.</div>
+<article class="example example-like" id="example-27"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-27"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented Matrix.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-27"><article class="example example-like"><div class="para" id="p-249">Write down the following linear system as an augmented matrix:</div>
+<div class="displaymath process-math" id="md-99">
+\begin{align*}
+3x -2 y + z \amp  = 11, \\
+2x + 4y -3z \amp  = 2, \\
+-4x + y + 4z \amp  = 0. 
+\end{align*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like"><div class="displaymath process-math">
+\begin{equation*}
+\left[
+\begin{array}{rrr|r}
+3 \amp  -2 \amp  1 \amp  11 \\
+2 \amp  4 \amp  -3 \amp  2 \\
+-4 \amp  1 \amp  4 \amp  0 \\
+\end{array}
+\right]
+\end{equation*}
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-250">And the next example shows how to rewrite a matrix as a linear system.</div>
+<article class="example example-like" id="example-28"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-28"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented Matrix as a Linear System.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-28"><article class="example example-like"><div class="para" id="p-251">Write down the following augmented matrix as a linear system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[
+\begin{array}{rrr|r}
+3 \amp  0 \amp  -1 \amp  7 \\
+-2 \amp  1 \amp  5 \amp  6 \\
+0 \amp  3 \amp  4 \amp  8 \\
+\end{array}
+\right]
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
+<div class="para" id="p-252">In this case, we are doing the opposite of the step above.  That is, take a matrix and find the linear system.</div> <div class="para" id="p-253">Since the matrix has 4 columns, there are 3 variables (the last column is the right hand side).  Let’s use <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="md-100">
+\begin{align*}
+3x + 0 y - z \amp  = 7 \\
+-2x + y + 5z \amp  = 6 \\
+0x + 3y + 4 z \amp  = 8
+\end{align*}
+</div>
+<div class="para" id="p-254">(We could have used <span class="process-math">\(x_1,x_2\)</span> and <span class="process-math">\(x_3\)</span> alternatively.)</div>
+</div></div>
+</div></article></div>
+<div class="para" id="p-255">The main advantage of matrices is to simplify the solving of linear systems. We will see this with the example above:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html" id="md-101">
+\begin{align*}
+4x_1 - x_3 \amp  = 0,\\
+x_1+3x_2 +2x_3 \amp  = 3,\\
+3x_2 + 5x_3 \amp  = 14.
+\end{align*}
+</div>
+<div class="para" id="p-256">We will write this as an augmented coefficient matrix, then use row operations as we saw for the linear system:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html" id="md-102">
+\begin{align*}
+\left[\begin{array}{rrr|r}
+4 \amp  0 \amp  -1 \amp  0 \\
+1 \amp  3 \amp  2 \amp  3 \\
+0 \amp  3 \amp  5 \amp  14
+\end{array} \right]\\
+-R_1 + 4R_2 \rightarrow R_2,  \qquad\amp
+\left[\begin{array}{rrr|r}
+4 \amp  0 \amp  -1 \amp  0 \\
+0 \amp  12 \amp  9 \amp  12 \\
+0 \amp  3 \amp  5 \amp  14
+\end{array} \right] \\
+-R_2 + 4R_3 \rightarrow R_3, \qquad \amp
+\left[\begin{array}{rrr|r}
+4 \amp  0 \amp  -1 \amp  0 \\
+0 \amp  12 \amp  9 \amp  12 \\
+0 \amp  0 \amp  11 \amp  44
+\end{array} \right]
+\end{align*}
+</div>
+<div class="para" id="p-257">and this matrix is now in echelon form, so we can use back substitution to find the solution <span class="process-math">\((1,-2,4)\text{.}\)</span>
+</div>
+<article class="example example-like" id="example-29"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-29"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Solve a Linear System using matrices.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-29"><article class="example example-like"><div class="para" id="p-258">Solve the following linear system use matrices and Gauss’ method.</div>
+<div class="displaymath process-math" id="md-103">
+\begin{align*}
+x-2y + 4z \amp  = -15 \\
+-3x +0y + 2z \amp  = -7 \\
+x-2y + 4z \amp  = -15 
+\end{align*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
+<div class="para" id="p-259">First write the linear system as a matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html" id="md-104">
+\begin{align}
+\left[\begin{array}{rrr|r}
+-1 \amp  -4 \amp  10 \amp  -37 \\
+-3 \amp  0 \amp  2 \amp  -7 \\
+1 \amp  -2 \amp  4 \amp  -15 \\
+\end{array} \right] \notag\\
+\begin{array}{r}
+-3 R_1 + R_2 \rightarrow R_2 \\
+R_1 + R_3 \rightarrow R_3,
+\end{array}  \qquad
+\left[\begin{array}{rrr|r}
+-1 \amp  -4 \amp  10 \amp  -37 \\
+0 \amp  12 \amp  -28 \amp  104 \\
+0 \amp  -6 \amp  14 \amp  -52
+\end{array}\right] \notag\\
+R_2 +2R_3 \rightarrow R_3, \qquad
+\left[\begin{array}{rrr|r}
+-1 \amp  -4 \amp  10 \amp  -37 \\
+0 \amp  12 \amp  -28 \amp  104 \\
+0 \amp  0 \amp  0 \amp  0
+\end{array}\right] \tag{1.1.2}
+\end{align}
+</div>
+<div class="para" id="p-260">The matrix in (<a href="" class="xref" data-knowl="./knowl/eq-ex-echelon-form.html" title="Equation 1.1.5">(1.1.5)</a>) is in echelon form, so we use back substitution to solve for <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> in terms of <span class="process-math">\(x_3\text{,}\)</span> the free variable.  The 2nd row of (<a href="" class="xref" data-knowl="./knowl/eq-ex-echelon-form.html" title="Equation 1.1.5">(1.1.5)</a>) can be written:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html">
+\begin{equation*}
+12 x_2   = 104 + 28 x_3
+\end{equation*}
+</div>
+<div class="para" id="p-261">or</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html">
+\begin{equation*}
+x_2   = 17 + \frac{7}{3} x_3
+\end{equation*}
+</div>
+<div class="para" id="p-262">and using this in the first equation of (<a href="" class="xref" data-knowl="./knowl/eq-ex-echelon-form.html" title="Equation 1.1.5">(1.1.5)</a>)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html">
+\begin{equation*}
+-x_1 - 4(17+\frac{7}{3} x_3) + 10 x_3  = -37 
+\end{equation*}
+</div>
+<div class="para" id="p-263">and solving for <span class="process-math">\(x_1\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html ./knowl/eq-ex-echelon-form.html">
+\begin{equation*}
+x_1  = -31+\frac{2}{3} x_3
+\end{equation*}
+</div>
+</div></div>
+</div></article></div></section><section class="subsubsection" id="subsubsection-10"><h3 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="space"> </span><span class="title">Vectors as Solutions of Linear Systems</span>
+</h3>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{s} = \begin{bmatrix}
+s_1 \\ s_2 \\ \vdots \\ s_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para" id="p-264">with <span class="process-math">\(s_1, s_2, \ldots, s_n\)</span> real numbers is a solution to the linear equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_1 x_1 + a_2 x_2 + \cdots + a_n x_n  = b
+\end{equation*}
+</div>
+<div class="para" id="p-265">if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_1 s_1 + a_2 s_2 + \cdots + a_n s_n = b.
+\end{equation*}
+</div></section><section class="subsubsection" id="subsubsection-11"><h3 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="space"> </span><span class="title">Addition and Scalar Multiplication of Vectors</span>
+</h3>
+<div class="para" id="p-266">The <dfn class="terminology">sum of two vectors</dfn> <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> is defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{u} + \vec{v} = \begin{bmatrix}
+u_1 \\ u_2 \\ \vdots \\ u_n
+\end{bmatrix} + \begin{bmatrix}
+v_1 \\ v_2 \\ \vdots \\ v_n
+\end{bmatrix} = \begin{bmatrix}
+u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para" id="p-267">and the multiplication of a vector <span class="process-math">\(\vec{u}\)</span> by a scalar <span class="process-math">\(r \in \mathbb{R}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r \vec{u}  = r  \begin{bmatrix}
+u_1 \\ u_2 \\ \vdots \\ u_n
+\end{bmatrix} = \begin{bmatrix}
+r u_1 \\ r u_2 \\ \vdots \\r  u_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<article class="example example-like" id="example-30"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-30"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.14</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><div class="para" id="p-268">Let</div>
+<div class="displaymath process-math" id="md-105">
+\begin{align*}
+\vec{u} \amp  = \begin{bmatrix}
+3 \\ -3 \\ 4
+\end{bmatrix}, \amp  \vec{v} \amp  = \begin{bmatrix}
+2 \\ 3/2 \\ 9
+\end{bmatrix}.
+\end{align*}
+</div>
+<div class="para" id="p-269">Find <span class="process-math">\(\vec{u}+\vec{v}\)</span> and <span class="process-math">\(4 \vec{v}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like"><div class="displaymath process-math" id="md-106">
+\begin{align*}
+\vec{u} + \vec{v} \amp  = \begin{bmatrix}
+3+2 \\ -3 + 3/2 \\ 4+9
+\end{bmatrix} = \begin{bmatrix}
+5 \\ -3/2 \\ 13
+\end{bmatrix},
+\amp   4 \vec{v} \amp  = \begin{bmatrix}
+4 \cdot 2, \\ 4 \cdot \frac{3}{2}, \\ 4 \cdot 9
+\end{bmatrix} =
+\begin{bmatrix}
+8 \\ 6 \\ 36
+\end{bmatrix}
+\end{align*}
+</div></div></div>
+</div></article></div></section><section class="subsubsection" id="subsubsection-12"><h3 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="space"> </span><span class="title">Writing Solutions in Vector Form</span>
+</h3>
+<div class="para" id="p-270">There are a couple of advantages to writing a solution in vector form. We will see some of them later in the course,  however, right now, we can write down specific points that are in the solution set quite easily.  There’s little advantage to using vectors for unique and no solution linear systems, but when you have multiple (infinite number of) solutions, then vectors shine through.</div>
+<article class="example example-like" id="example-31"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-31"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.15</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><div class="para" id="p-271">Consider the linear system (<a href="" class="xref" data-knowl="./knowl/eq-echelon-form-reduced-zero.html" title="Equation 1.1.4">(1.1.4)</a>) in echelon form:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-echelon-form-reduced-zero.html" id="md-107">
+\begin{align*}
+x\phantom{+2y} + 2z \amp  = -6\\
+-y -4z \amp  = 13 \\
+0 \amp  = 0
+\end{align*}
+</div>
+<div class="para" id="p-272">Recall that the solution in terms of <span class="process-math">\(z\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-echelon-form-reduced-zero.html" id="md-108">
+\begin{gather*}
+\end{gather*}
+</div>
+<div class="para" id="p-273">Write the solution in terms of a vector.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like">
+<div class="para" id="p-274">There is one parameter in this case <span class="process-math">\(z\)</span> and thus the solution can be written as</div>
+<div class="displaymath process-math" id="md-109">
+\begin{align*}
+\begin{bmatrix}
+-2z-6, \\ -4z-13 \\ z
+\end{bmatrix} \amp  = \begin{bmatrix}
+-2z \\ -4z \\ z
+\end{bmatrix} + \begin{bmatrix}
+-6 \\ -13 \\ 0
+\end{bmatrix} \\
+\amp  = \begin{bmatrix}
+-2 \\ -4 \\ 1
+\end{bmatrix} z + \begin{bmatrix}
+-6 \\ -13 \\ 0
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="para" id="p-275">And this form makes it quite easy to find individual points.  If we let <span class="process-math">\(z=0\text{,}\)</span> then <span class="process-math">\((-6,-13,0)\)</span> is a point in the solution set, if let <span class="process-math">\(z=-3\text{,}\)</span> then <span class="process-math">\((0,-1,-3)\)</span> is a point.</div>
+</div></div>
+</div></article></div>
+<div class="para" id="p-276">Note that it takes a little work to get a linear system in echelon form into a solution in vector form.  We will see in the next section that there is another form that the linear system (matrix) can be put into for an easier transition to this form.</div>
+<article class="example example-like" id="ex-large-linear-solution"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-large-linear-solution"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.16</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-large-linear-solution"><article class="example example-like"><div class="para" id="p-277">Write the solution to the linear system that we saw in Example <a href="" class="xref" data-knowl="./knowl/ex-echelon-form-3by5.html" title="Example 1.1.17: Echelon Form, Another Example">Example 1.1.17</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-echelon-form-3by5.html" id="md-110">
+\begin{align*}
+\end{align*}
+</div>
+<div class="para" id="p-278">in vector form.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like">
+<div class="para" id="p-279">In example <a href="" class="xref" data-knowl="./knowl/ex-echelon-form-3by5-soln.html" title="Example 1.1.20">Example 1.1.20</a>, the solution set was found to be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-echelon-form-3by5-soln.html">
+\begin{equation*}
+\{ (x_1,x_2,x_3,x_4,x_5) = (9x_4-46,x_2,-13,x_4,9) \; | \; x_2, x_4 \in \mathbb{R}\}
+\end{equation*}
+</div>
+<div class="para" id="p-280">with the free variables <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_4\text{.}\)</span>  This can be written as a vector as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-echelon-form-3by5-soln.html">
+\begin{equation*}
+\begin{bmatrix}
+9x_4 - 46 \\
+x_2 \\
+-13 \\
+x_4 \\
+9
+\end{bmatrix} =
+\begin{bmatrix}
+0 \\ 1 \\ 0 \\ 0 \\0
+\end{bmatrix} x_2 +
+\begin{bmatrix}
+9 \\ 0 \\ 0 \\ 1 \\ 0
+\end{bmatrix} x_4 +
+\begin{bmatrix}
+-46 \\ 0 \\ -13 \\ 0 \\ 9
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para" id="p-281">Thus the solution can be written:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-echelon-form-3by5-soln.html">
+\begin{equation*}
+\{ \begin{bmatrix}
+0 \\ 1 \\ 0 \\ 0 \\0
+\end{bmatrix} x_2 +
+\begin{bmatrix}
+9 \\ 0 \\ 0 \\ 1 \\ 0
+\end{bmatrix} x_4 +
+\begin{bmatrix}
+-46 \\ 0  \\ -13 \\ 0 \\ 9
+\end{bmatrix} \;  | \; x_2, x_4 \in \mathbb{R} \}.
+\end{equation*}
+</div>
+<div class="para" id="p-282">This is the most general form of the solution to the linear system in this example and as before one can write down solutions with specific values of free variables.  For example, if <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_4\)</span> are both 0, the the point <span class="process-math">\((-46,0,-13,0,9)\)</span> is a solution to the linear system. (Try it!)  This is an example of a particular solution as we define below.</div>
+</div></div>
+</div></article></div>
+<span class="process-math">\((s_1,s_2,\ldots,s_n)\)</span><span class="process-math">\(s_1, s_2, \ldots, s_n\)</span><span class="process-math">\((s_1,s_2,\ldots,s_n)\)</span><dfn class="terminology">particular solution</dfn></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sect-echelon-form.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-homo-non-homo.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

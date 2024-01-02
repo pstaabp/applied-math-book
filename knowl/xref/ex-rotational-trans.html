@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Rotational Map in <span class="process-math">\(\mathbb{R}^2\)</span>.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{x} =
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">be a vector in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span> Let the function <span class="process-math">\(T\)</span> take the vector <span class="process-math">\(\vec{x}\)</span> and rotate it by <span class="process-math">\(\theta\)</span> radians in the counterclockwise direction. Call the new vector</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{y} =\begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix}
+\end{equation*}
+</div>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-rotational-map.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.5<span class="period">.</span></span><span class="space"> </span>Diagram of the rotational map</figcaption></figure> <div class="para">Derive the formula for the rotational map.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">Let <span class="process-math">\(r = ||\vec{x}||\)</span> and since <span class="process-math">\(\vec{y}\)</span> is the rotated version of <span class="process-math">\(\vec{x}\)</span> it has the same length, therefore <span class="process-math">\(r=||\vec{y}||\text{.}\)</span> The values <span class="process-math">\(x_1, x_2, y_1,y_2\)</span> can be written in terms of <span class="process-math">\(\alpha\text{,}\)</span> the angle that the vector <span class="process-math">\(\vec{x}\)</span> makes with the positive horizontal axis, and <span class="process-math">\(\theta\)</span> the angle between the vectors as follows.</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x_1 \amp = r \cos \alpha, \amp x_2 \amp = r \sin \alpha, \\
+y_1 \amp = r \cos (\alpha+\theta), \amp y_2 \amp= r \sin (\alpha + \theta) \\
+\amp = r \cos \alpha \cos \theta - r \sin \theta \sin \alpha, \amp y_2 \amp = r
+\sin
+\theta \cos \alpha + r \sin \alpha \cos \theta \\
+\amp = x_1 \cos \theta - x_2 \sin \theta, \amp \amp = x_1 \sin \theta + x_2 \cos
+\theta
+\end{align*}
+</div></div> <div class="para">and note that these can be written:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix} \amp =
+\begin{bmatrix}
+\cos \theta \amp - \sin \theta \\ \sin \theta \amp \cos \theta
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix}
+\end{align*}
+</div></div> <div class="para">This is a linear transformation (as we will explain later) and is called a <dfn class="terminology">rotational transformation</dfn>.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sect-linear-transformations.html#ex-rotational-trans">in-context</a></span>
+</body>
+</html>

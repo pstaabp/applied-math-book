@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="title">Proof of Gram-Schmidt Orthogonalization.</span></h4> <div class="para">To prove Gram-Schmidt orthogonalization works, we will prove that <span class="process-math">\(\vec{v}_k\)</span> is orthogonal to <span class="process-math">\(\vec{v}_i\)</span> for all <span class="process-math">\(i \lt k\text{.}\)</span> We will show this by induction. First show that <span class="process-math">\(\vec{v}_2\)</span> is orthogonal to <span class="process-math">\(\vec{v}_1\)</span> :</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\langle \vec{v}_2 , \vec{v}_1 \rangle \amp = \biggl\langle \vec{u}_2 -
+\dfrac{\langle
+\vec{v}_1,\vec{u}_2 \rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1, \vec{v}_1
+\biggr\rangle \\
+\amp = \langle \vec{u}_2, \vec{v}_1 \rangle - \dfrac{\langle \vec{v}_1,\vec{u}_2
+\rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \langle \vec{v}_1, \vec{v}_1 \rangle \\
+\amp = \langle \vec{u}_2, \vec{v}_1\rangle - \langle \vec{v}_1, \vec{u}_2 \rangle =
+0
+\end{align*}
+</div></div> <div class="para">Now assume that <span class="process-math">\(\vec{v}_k\)</span> is orthogonal to all other <span class="process-math">\(\vec{v}\)</span>’s or <span class="process-math">\(\langle\vec{v}_k, \vec{v}_i \rangle =0\)</span> for <span class="process-math">\(i=k-1,k-2,\ldots,
+2,1\text{.}\)</span> Now we will prove that <span class="process-math">\(\vec{v}_{k+1}\text{,}\)</span> given by Gram-Schmidt is orthogonal to all other <span class="process-math">\(\vec{v}\)</span>’s. For all <span class="process-math">\(j=1,2,\ldots,k\text{,}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\langle \vec{v}_{k+1}, \vec{v}_j \rangle \amp =
+\biggl \langle \vec{u}_{k+1} - \sum_{i=1}^{k} \dfrac{\langle \vec{v}_i, \vec{u}_{k+1}
+\rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \vec{v}_i , \vec{v}_j \biggl \rangle, \\
+\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle - \sum_{i=1}^k \dfrac{\langle
+\vec{v}_i, \vec{u}_{k+1} \rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \langle
+\vec{v}_i,
+\vec{v}_j \rangle
+\end{align*}
+</div></div> <div class="para">The only term that is not apparantly nonzero in the sum is when <span class="process-math">\(i=j\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle - \dfrac{\langle \vec{v}_j,
+\vec{u}_{k+1} \rangle}{\langle \vec{v}_j,\vec{v}_i \rangle} \langle \vec{v}_j, \vec{v}_j
+\rangle \\
+\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle -\langle \vec{v}_j, \vec{u}_{k+1}
+\rangle = 0
+\end{align*}
+</div></div> <div class="para">Therefore <span class="process-math">\(\vec{v}_{k+1}\)</span> is orthogonal to all other <span class="process-math">\(\vec{v}\)</span>’s and thus the basis consisting of <span class="process-math">\(\vec{v}\)</span> form an orthonormal set.</div></article><span class="incontext"><a class="internal" href="sect-inner-product.html#proof-19">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Inverse of a Matrix</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Applied Mathematics">
+<meta property="book:author" content="Peter Staab">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.31/pretext_search.js"></script><link href="https://pretextbook.org/css/0.81/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.31</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.31/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.31/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.31/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.81/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="applied-mathematics-staab.html"><span class="title">Applied Mathematics</span></a></h1>
+<p class="byline">Peter Staab</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-matrix-operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-linear-algebra-basics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-linear-algebra-basics.html" class="internal"><span class="codenumber">1</span> <span class="title">Linear Algebra Basics</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-solving-linear-systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Solving Linear Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsect-linear-system-examples" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Examples of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsect-gauss-method" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Gauss’s Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#sect-elem-row-ops" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-solving-linear-systems.html#sect-echelon-form" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Echelon Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsect-echelon-form" class="internal"><span class="codenumber">1.1.4.1</span> <span class="title">Putting linear systems in Echelon Form</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsect-describe-solutions" class="internal"><span class="codenumber">1.1.4.2</span> <span class="title">Describing the Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-solving-linear-systems.html#sect-matrices" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-3" class="internal"><span class="codenumber">1.1.5.1</span> <span class="title">Introduction to Matrices</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-4" class="internal"><span class="codenumber">1.1.5.2</span> <span class="title">Matrices and Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-5" class="internal"><span class="codenumber">1.1.5.3</span> <span class="title">Vectors as Solutions of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-6" class="internal"><span class="codenumber">1.1.5.4</span> <span class="title">Addition and Scalar Multiplication of Vectors</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsubsection-7" class="internal"><span class="codenumber">1.1.5.5</span> <span class="title">Writing Solutions in Vector Form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-solving-linear-systems.html#sec-homo-non-homo" class="internal"><span class="codenumber">1.1.6</span> <span class="title">General <span class="process-math">\(=\)</span> Homogeneous <span class="process-math">\(+\)</span> Nonhomogeneous</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsect-nonhomo-system" class="internal"><span class="codenumber">1.1.6.1</span> <span class="title">Non-homogeneous Systems</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-linear-systems.html#subsection-7" class="internal"><span class="codenumber">1.1.7</span> <span class="title">Singular and Nonsingular Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-linear-geometry.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Linear Geometry of <span class="process-math">\(n\)</span>-space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#subsection-8" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Summaries of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#subsection-9" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Vectors in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#subsection-10" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Vectors, Free Vectors and Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#subsection-11" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Scalar Multiplication of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#subsection-12" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Vector Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#subsection-13" class="internal"><span class="codenumber">1.2.6</span> <span class="title">Geometry of Addition and Scalar Multiplication in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#subsection-14" class="internal"><span class="codenumber">1.2.7</span> <span class="title">Lines in Vector form in <span class="process-math">\(\mathbb{R}^2\)</span> and <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-planes-r3" class="internal"><span class="codenumber">1.2.8</span> <span class="title">Planes in <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#subsection-16" class="internal"><span class="codenumber">1.2.9</span> <span class="title">Geometry of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-length-angles" class="internal"><span class="codenumber">1.2.10</span> <span class="title">Length and Angle Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#subsection-18" class="internal"><span class="codenumber">1.2.11</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-angles-vectors" class="internal"><span class="codenumber">1.2.12</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-dot-prod-props" class="internal"><span class="codenumber">1.2.13</span> <span class="title">Properties of The Dot Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-reduced-row-echelon.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Reduced Row Echelon Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reduced-row-echelon.html#subsection-21" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Gauss-Jordon Reduction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reduced-row-echelon.html#subsection-22" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Row Equivalence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reduced-row-echelon.html#subsection-23" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Echelon Form and Linear Combinations of Rows</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-operations.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Matrix Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsection-24" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Matrix, Vector and Scalar Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsection-25" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Addition and Subtraction of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsection-26" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Scalar Multiplication of Vectors and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-transpose" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Transpose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-mult-matrix" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Multiplication of Vectors and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsection-29" class="internal"><span class="codenumber">1.4.6</span> <span class="title">Size Restrictions on Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsection-30" class="internal"><span class="codenumber">1.4.7</span> <span class="title">Matrix-Vector Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsection-31" class="internal"><span class="codenumber">1.4.8</span> <span class="title">Reexamination of the Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#section-matrix-multiplication-linear-systems" class="internal"><span class="codenumber">1.4.9</span> <span class="title">Matrix Multiplication and Linear Systems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-matrix-inverse.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-inverse.html#subsection-33" class="internal"><span class="codenumber">1.5.1</span> <span class="title">The Identity Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-inverse.html#subsection-34" class="internal"><span class="codenumber">1.5.2</span> <span class="title">The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-inverse.html#subsection-35" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-inverse.html#subsection-36" class="internal"><span class="codenumber">1.5.4</span> <span class="title">The Inverse of a 2 by 2 matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-inverse.html#subsection-37" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-inverse.html#subsection-38" class="internal"><span class="codenumber">1.5.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-6.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Linear Independence</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-row-col-space-rank.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Row Space, Column Space and Rank of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#subsection-39" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Row Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#subsection-40" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Column Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#subsection-41" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Null Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#subsection-42" class="internal"><span class="codenumber">1.8.4</span> <span class="title">Relationship between the Rank and Nullity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Determinants of Square Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsection-43" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsection-44" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Calculating Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsection-45" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsection-46" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Geometry of Determinants</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-matrix-inverse"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">The Inverse of a Matrix</span>
+</h2>
+<section class="introduction" id="introduction-8"><div class="para" id="p-343">At the end of the previous section, we learned how to write a linear system in the form <span class="process-math">\(A\vec{u}=\vec{b}\text{.}\)</span>  In this section, we will learn how to find an inverse and then use it to solve the matrix equation <span class="process-math">\(A\vec{u}=\vec{b}\text{.}\)</span>
+</div></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="space"> </span><span class="title">The Identity Matrix</span>
+</h3>
+<article class="definition definition-like" id="definition-24"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
+</h4>The <dfn class="terminology">identity matrix</dfn> of size <span class="process-math">\(n\)</span> is an <span class="process-math">\(n\)</span> by <span class="process-math">\(n\)</span> matrix of all zeros except ones on the diagonal (from upper left to lower right).</article><div class="para logical" id="p-344">
+<div class="para">The following are identity matrices of sizes 2, 3, and 4</div>
+<div class="displaymath process-math" id="md-133">
+\begin{align*}
+I \amp =\begin{bmatrix}
+1 \amp 0 \\ 0 \amp 1
+\end{bmatrix},
+\amp I =\amp
+\begin{bmatrix}
+1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1
+\end{bmatrix},
+\amp I = \amp
+\begin{bmatrix}
+1 \amp 0 \amp 0 \amp 0\\ 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1
+\end{bmatrix}.
+\end{align*}
+</div>
+<div class="para">The identity matrix is a matrix such that <span class="process-math">\(IA = AI = A\text{.}\)</span>
+</div>
+</div></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="space"> </span><span class="title">The Inverse</span>
+</h3>
+<div class="para logical" id="p-345">
+<div class="para">Recall that we showed at the end of the previous section that a linear system can be written as:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \vec{u} = \vec{b},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(A\)</span> is the coefficient matrix of the unknowns, <span class="process-math">\(\vec{u}\)</span> is a column vector of unknowns, and <span class="process-math">\(\vec{b}\)</span> is the right hand sides of each equation.</div>
+</div>
+<div class="para logical" id="p-346">
+<div class="para">We possibly would like to say that:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{u} = \frac{\vec{b}}{A},
+\end{equation*}
+</div>
+<div class="para">but how do we divide through by <span class="process-math">\(A\text{?}\)</span>  We can’t because there is no matrix division.   However, we will see that there is a matrix which will let us multiply through to give the answer.</div>
+</div></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="space"> </span><span class="title">Solving a simple linear equation</span>
+</h3>
+<div class="para logical" id="p-347">
+<div class="para">To motivate solving a matrix equation, let’s look at solving <span class="process-math">\(a x = b\text{,}\)</span> where each is simply a number (or technically a scalar). The solution is <span class="process-math">\(x=b/a\text{,}\)</span> but we can also write it as <span class="process-math">\(x = a^{-1}b\text{,}\)</span> where <span class="process-math">\(a^{-1}=\frac{1}{a}\)</span> is the reciprocal of <span class="process-math">\(a\text{,}\)</span> which has the property</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a^{-1} a = a a^{-1} = 1
+\end{equation*}
+</div>
+<div class="para">for any value of <span class="process-math">\(a \neq 0\text{.}\)</span>  And the important part of this is that the solution <span class="process-math">\(x=a^{-1}b\)</span> uses only multiplication for the solution.</div>
+</div>
+<div class="para logical" id="p-348">
+<div class="para">We wish to do the same for matrices, which means that we’d like to find a matrix <span class="process-math">\(A^{-1}\)</span> (called <span class="process-math">\(A\)</span> inverse)  such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1} A   = A A^{-1} = I
+\end{equation*}
+</div>
+<div class="para">And later we will see how to solve <span class="process-math">\(A\vec{u}=\vec{b}\text{.}\)</span> First, let’s determine how to find an inverse matrix and we’ll start with the inverse of a 2 by 2 matrix.</div>
+</div></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="space"> </span><span class="title">The Inverse of a 2 by 2 matrix</span>
+</h3>
+<article class="lemma theorem-like" id="lemma-7"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-349">
+<div class="para">The inverse of a 2 by 2 matrix is given by</div>
+<div class="displaymath process-math" id="eq-def-2by2-inverse">
+\begin{equation}
+A^{-1} = \frac{1}{ad-bc}
+\begin{bmatrix}
+d \amp -b \\ -c \amp a
+\end{bmatrix}\tag{1.5.1}
+\end{equation}
+</div>
+<div class="para">if <span class="process-math">\(ad-bc \neq 0\text{.}\)</span>  If <span class="process-math">\(ad-bc =0\text{,}\)</span> the matrix does not have an inverse.</div>
+</div></article><article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><div class="para logical" id="p-350">
+<div class="para">We will prove this, by showing that if <span class="process-math">\(A^{-1}\)</span> is an inverse then  <span class="process-math">\(AA^{-1}=I\)</span> (or <span class="process-math">\(A^{-1}A=I\)</span>).</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-def-2by2-inverse.html">
+\begin{equation*}
+A A^{-1} = \begin{bmatrix}
+a \amp b \\ c \amp d
+\end{bmatrix} \frac{1}{ad-bc}
+\begin{bmatrix}
+d \amp -b \\ -c \amp a
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Although we haven’t shown this, the scalar <span class="process-math">\(1/ad-bc\)</span> can be written out front.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-def-2by2-inverse.html">
+\begin{equation*}
+= \frac{1}{ad-bc}
+\begin{bmatrix}
+a \amp b \\ c \amp d
+\end{bmatrix}
+\begin{bmatrix}
+d \amp -b \\ -c \amp a
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Multiply the two matrices like we did in the previous section.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-def-2by2-inverse.html">
+\begin{equation*}
+=  \frac{1}{ad-bc}\begin{bmatrix}
+ad-bc \amp -ac+ac \\ da-da \amp ad-bc
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">simplify and multiply through by <span class="process-math">\(ad-bc=ad-bc\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-def-2by2-inverse.html" id="md-134">
+\begin{align*}
+\amp= \begin{bmatrix}
+\frac{ad-bc}{ad-bc} \amp 0 \\ 0 \amp \frac{ad-bc}{ad-bc}
+\end{bmatrix} \\
+\amp =
+\begin{bmatrix}
+1 \amp 0 \\ 0 \amp 1
+\end{bmatrix}
+= I.
+\end{align*}
+</div>
+<div class="para">And since we have shown that <span class="process-math">\(AA^{-1}=I\text{,}\)</span> this proves the formula for the inverse in (<a href="" class="xref" data-knowl="./knowl/eq-def-2by2-inverse.html" title="Equation 1.5.1">(1.5.1)</a>).</div>
+</div></article></div>
+<div class="para" id="p-351">The following example uses the formula in (<a href="" class="xref" data-knowl="./knowl/eq-def-2by2-inverse.html" title="Equation 1.5.1">(1.5.1)</a>) to find the inverse matrix of a 2 by 2 matrix.</div>
+<article class="example example-like" id="example-39"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-39"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><div class="para logical" id="p-352">
+<div class="para">Find the inverse of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+3 \amp 2 \\ 2 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like"><div class="para logical" id="p-353">
+<div class="para">Since (<a href="" class="xref" data-knowl="./knowl/eq-def-2by2-inverse.html" title="Equation 1.5.1">(1.5.1)</a>) has the determinant of <span class="process-math">\(A\)</span> as part of it, first, we will find <span class="process-math">\(ad-bc = 3(1)-(2)(2) = -1\text{.}\)</span> Then apply the formula,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-def-2by2-inverse.html">
+\begin{equation*}
+A^{-1} = \frac{1}{-1} \begin{bmatrix}
+1 \amp -2 \\ -2 \amp 3
+\end{bmatrix} = \begin{bmatrix}
+-1 \amp 2 \\ 2 \amp -3
+\end{bmatrix}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-354">The next example shows that not every matrix has an inverse. Since a matrix inverse is similar to the reciprocal of a number, a matrix with no inverse is similar to a number with no reciprocal. And this occurs for the number 0 because <span class="process-math">\(1/0\)</span> is undefined.</div>
+<article class="example example-like" id="ex-2by2-noinverse"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-2by2-noinverse"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-2by2-noinverse"><article class="example example-like"><div class="para logical" id="p-355">
+<div class="para">Show that the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+2 \amp 1 \\ 4 \amp 2
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">does not have an inverse.</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like"><div class="para" id="p-356">Again we use (<a href="" class="xref" data-knowl="./knowl/eq-def-2by2-inverse.html" title="Equation 1.5.1">(1.5.1)</a>), but because <span class="process-math">\(ad-bc = 2(2)-4(1) = 0\text{,}\)</span>  the matrix does not have an inverse.</div></div></div>
+</div></article></div></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="space"> </span><span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span>
+</h3>
+<div class="para logical" id="p-357">
+<div class="para">At the end of  <a href="sec-matrix-operations.html#section-matrix-multiplication-linear-systems" class="internal" title="Subsection 1.4.9: Matrix Multiplication and Linear Systems">Subsection 1.4.9</a>, we learned how to take a linear system and write it as the matrix equation <span class="process-math">\(A\vec{u}=\vec{b}\text{.}\)</span>  In this section we will learn how to solve a system written in this form. If we start with the equation,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/section-matrix-multiplication-linear-systems.html" id="md-135">
+\begin{align*}
+A\vec{u} \amp =\vec{b}  \amp \text{Multiply this by $A^{-1}$} \\
+A^{-1} A \vec{u}\amp = A^{-1} \vec{b} \amp \text{Use the fact that $A^{-1}A=I$} \\
+I \vec{u} \amp  = A^{-1} \vec{b} \amp \text{And $I\vec{u}=\vec{u}$
+for any vector $\vec{u}$.} \\
+\vec{u} \amp= A^{-1}\vec{b} 
+\end{align*}
+</div>
+<div class="para">so if we can find the inverse of a matrix, then solving linear systems becomes matrix multiplication.</div>
+</div>
+<article class="remark remark-like" id="remark-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
+</h4>If you are trying to solve the matrix equation<div class="displaymath process-math">
+\begin{equation*}
+A\vec{u} = \vec{b}
+\end{equation*}
+</div>for a square matrix <span class="process-math">\(A\)</span> and the inverse matrix <span class="process-math">\(A^{-1}\)</span> exists, then<div class="displaymath process-math">
+\begin{equation*}
+\vec{u} = A^{-1} \vec{b}
+\end{equation*}
+</div></article><article class="example example-like" id="ex-solve-by-inverse"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-solve-by-inverse"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-solve-by-inverse"><article class="example example-like"><div class="para logical" id="p-358">
+<div class="para">Solve the system:</div>
+<div class="displaymath process-math" id="md-136">
+\begin{align*}
+3x + 4y \amp = 1, \\
+2x - y \amp = -3,
+\end{align*}
+</div>
+<div class="para">by writing the system as <span class="process-math">\(A \vec{u} = \vec{b}\text{,}\)</span> then finding <span class="process-math">\(A^{-1}\)</span> and finally by writing <span class="process-math">\(\vec{u}  = A^{-1} \vec{b}\text{.}\)</span>
+</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like"><div class="para logical" id="p-359">
+<div class="para">First, write down <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{b}\text{.}\)</span> (We learned how to do this in <a href="sec-matrix-operations.html#section-matrix-multiplication-linear-systems" class="internal" title="Subsection 1.4.9: Matrix Multiplication and Linear Systems">Subsection 1.4.9</a>.)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/section-matrix-multiplication-linear-systems.html ./knowl/eq-def-2by2-inverse.html" id="md-137">
+\begin{align*}
+A \amp = \begin{bmatrix}
+3 \amp 4 \\ 2 \amp -1
+\end{bmatrix},
+\amp \vec{u} \amp=
+\begin{bmatrix}
+x \\ y
+\end{bmatrix}, \amp \vec{b} \amp =
+\begin{bmatrix}
+1 \\ -3
+\end{bmatrix}.
+\end{align*}
+</div>
+<div class="para">Then find the inverse of <span class="process-math">\(A\text{,}\)</span> which is a 2 by 2 matrix, so we will use (<a href="" class="xref" data-knowl="./knowl/eq-def-2by2-inverse.html" title="Equation 1.5.1">(1.5.1)</a>).    Since <span class="process-math">\(ad-bc = -3 -8 = -11\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/section-matrix-multiplication-linear-systems.html ./knowl/eq-def-2by2-inverse.html">
+\begin{equation*}
+A^{-1} = \frac{1}{-11}
+\begin{bmatrix}
+-1 \amp -4 \\ -2 \amp 3
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Then write down the solution:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/section-matrix-multiplication-linear-systems.html ./knowl/eq-def-2by2-inverse.html" id="md-138">
+\begin{align*}
+\vec{u} \amp = A^{-1} \vec{b} \\
+\amp = \frac{1}{-11}
+\begin{bmatrix}
+-1 \amp -4 \\ -2 \amp 3
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ -3
+\end{bmatrix}\\
+\amp = \frac{1}{-11} \begin{bmatrix}
+-1+12 \\ -2-9
+\end{bmatrix} = \frac{1}{-11} \begin{bmatrix}
+11 \\ -11
+\end{bmatrix} =
+\begin{bmatrix}
+-1 \\ 1
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">So the solution is <span class="process-math">\(\vec{u} =
+\begin{bmatrix}
+-1 \\ 1
+\end{bmatrix}\)</span> or <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(y=1\text{.}\)</span>
+</div>
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-360">The next example shows how to perform the same steps for a 3 by 3 matrix, although we don’t know how to find an inverse of a 3 by 3 matrix yet.</div>
+<article class="example example-like" id="example-42"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-42"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-42"><article class="example example-like"><div class="para logical" id="p-361">
+<div class="para">We will later show that if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+-4 \amp  -5 \amp  -1 \\ 2 \amp  1 \amp  -3 \\ 0 \amp  2 \amp  5
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1} = \begin{bmatrix}
+\frac{11}{2} \amp \frac{23}{2} \amp 8 \\
+-5 \amp -10 \amp -7 \\ 2 \amp 4 \amp 3
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Use this to find the solution to:</div>
+<div class="displaymath process-math" id="md-139">
+\begin{align*}
+-4 x-5y -z \amp = -12, \\
+2 x + y - 3 z \amp = 6, \\
+2y + 5z \amp = 10.
+\end{align*}
+</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like"><div class="para logical" id="p-362">
+<div class="para">First, the linear system can be written as <span class="process-math">\(A\vec{u}=\vec{b}\)</span> if</div>
+<div class="displaymath process-math" id="md-140">
+\begin{align*}
+A \amp =
+\begin{bmatrix}
+-4 \amp -5 \amp -1 \\
+2 \amp1 \amp -3 \\
+0 \amp 2 \amp 5
+\end{bmatrix},
+\amp \vec{u} \amp =
+\begin{bmatrix}
+x \\ y\\ z
+\end{bmatrix}, \amp \vec{b} \amp =
+\begin{bmatrix}
+-12 \\ 6 \\ 10
+\end{bmatrix}.
+\end{align*}
+</div>
+<div class="para">Then we write the solution to this systems as</div>
+<div class="displaymath process-math" id="md-141">
+\begin{align*}
+\vec{u} \amp = A^{-1} \vec{b}, \\
+\amp = \begin{bmatrix}
+\frac{11}{2} \amp \frac{23}{2} \amp 8 \\
+-5 \amp -10 \amp -7 \\ 2 \amp 4 \amp 3
+\end{bmatrix}
+\begin{bmatrix}
+-12 \\ 6 \\ 10
+\end{bmatrix}, \\
+\amp = \begin{bmatrix}
+83 \\ -70 \\ 30
+\end{bmatrix},
+\end{align*}
+</div>
+<div class="para">therefore the solution is <span class="process-math">\(x=83, y=-70,\)</span> and <span class="process-math">\(z=30\text{.}\)</span>
+</div>
+</div></div></div>
+</div></article></div></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="space"> </span><span class="title">the Gauss-Jordan Method for Calculating Inverses</span>
+</h3>
+<div class="para" id="p-363">As we have seen, often matrices are larger than 2 by 2 and thus far we have no method to find an inverse of a matrix of this size. In this section, we will see that the Gauss-Jordon method can help us do this.</div>
+<div class="para logical" id="p-364">
+<div class="para">If we write a matrix <span class="process-math">\(A\)</span> of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+A \amp | \amp I
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">where the matrix <span class="process-math">\(A\)</span> is on the left and the identity matrix is on the right and apply Gauss-Jordon to get the identity matrix on the left, then the matrix will look like,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+I \amp | \amp A^{-1}
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">and the matrix on the right half is the inverse matrix, <span class="process-math">\(A^{-1}\text{.}\)</span>
+</div>
+</div>
+<article class="example example-like" id="example-43"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-43"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-43"><article class="example example-like"><div class="para logical" id="p-365">
+<div class="para">Use the Gauss-Jordan Method to find the inverse of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A  = \begin{bmatrix}
+3 \amp 2 \\ 2 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><div class="para logical" id="p-366">
+<div class="para">First, write the matrix <span class="process-math">\([\;A\; | \;I\;]\)</span> and then perform Gaussian Elimination.</div>
+<div class="displaymath process-math" id="md-142">
+\begin{align*}
+\amp \qquad
+\left[\begin{array}{rr|rr}
+3 \amp 2 \amp 1 \amp 0 \\
+2 \amp 1 \amp 0 \amp 1
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">We desire a 1 in the upper right.  Instead of dividing the first row by 3, we will do the following,</div>
+<div class="displaymath process-math" id="md-143">
+\begin{align*}
+-R_2 + R_1  \rightarrow R_1 \amp \qquad
+\left[\begin{array}{rr|rr}
+1 \amp 1 \amp 1 \amp -1 \\
+2 \amp 1 \amp 0 \amp 1
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">Then eliminate the lower right element on the left side,</div>
+<div class="displaymath process-math" id="md-144">
+\begin{align*}
+-2 R_1 + R_2 \rightarrow R_2  \amp  \qquad
+\left[\begin{array}{rr|rr}
+1 \amp 1 \amp 1 \amp -1 \\
+0 \amp -1 \amp -2 \amp 3
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">Multiply through by <span class="process-math">\(-1\)</span> to get a 1 in the lower right of the left side</div>
+<div class="displaymath process-math" id="md-145">
+\begin{align*}
+- R_2 \rightarrow R_2  \amp \qquad
+\left[\begin{array}{rr|rr}
+1 \amp 1 \amp 1 \amp -1 \\
+0 \amp 1 \amp 2 \amp -3
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">And finally zero out the 2nd column, 1st row.</div>
+<div class="displaymath process-math" id="md-146">
+\begin{align*}
+- R_2 + R_1 \rightarrow R_1  \amp  \qquad
+\left[\begin{array}{rr|rr}
+1 \amp 0 \amp -1 \amp 2 \\
+0 \amp 1 \amp 2 \amp -3
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">We stop here because the left half of the matrix is the identity matrix. The right half is now the inverse.  Therefore:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1}  = \begin{bmatrix}
+-1 \amp 2 \\ 2 \amp -3
+\end{bmatrix}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-367">This example showed how to find the inverse of a 2 by 2 matrix using the Gauss-Jordan method.  We saw the formula in (<a href="" class="xref" data-knowl="./knowl/eq-def-2by2-inverse.html" title="Equation 1.5.1">(1.5.1)</a>), and generally it is easier to compute the inverse using that formula.  However, the formula in (<a href="" class="xref" data-knowl="./knowl/eq-def-2by2-inverse.html" title="Equation 1.5.1">(1.5.1)</a>) only works for 2 by 2 matrices. The next example shows how to use the Gauss-Jordan method to find the inverse of a 3 by 3 matrix.</div>
+<article class="example example-like" id="ex-3by3-matrix-inverse"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-3by3-matrix-inverse"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-3by3-matrix-inverse"><article class="example example-like"><div class="para logical" id="p-368">
+<div class="para">Find the inverse of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+3 \amp 3 \amp  -1 \\ 2 \amp  1 \amp  -3 \\ 0 \amp  2 \amp  5
+\end{bmatrix}
+\end{equation*}
+</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like"><div class="para logical" id="p-369">
+<div class="para">First, we write <span class="process-math">\([\;A\;|\;I\;]\)</span> and then use the Gauss-Jordon Method.</div>
+<div class="displaymath process-math" id="md-147">
+\begin{align*}
+\amp \qquad \left[\begin{array}{rrr|rrr}
+3 \amp 3 \amp -1 \amp 1 \amp 0 \amp 0\\
+2 \amp 1 \amp -3 \amp 0 \amp 1 \amp 0\\
+0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">Since we want a 1 in the upper right and don’t want fractions, try</div>
+<div class="displaymath process-math" id="md-148">
+\begin{align*}
+-R_2 + R_1 \rightarrow R_2  \amp  \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\
+2 \amp 1 \amp -3 \amp 0 \amp 1 \amp 0\\
+0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">And zero out the rest of the first column.</div>
+<div class="displaymath process-math" id="md-149">
+\begin{align*}
+-2 R_1 + R_2 \rightarrow R_2 \amp  \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\
+0 \amp -3 \amp -7 \amp -2 \amp 3 \amp 0\\
+0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
+\end{array}\right] 
+\end{align*}
+</div>
+<div class="para">Again, to avoid fractions, try</div>
+<div class="displaymath process-math" id="md-150">
+\begin{align*}
+2 R_3 + R_2 \rightarrow R_2 \amp  \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\
+0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\
+0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">And zero out the other elements in the 2nd column.</div>
+<div class="displaymath process-math" id="md-151">
+\begin{align*}
+\begin{array}{r}
+-2 R_2 + R_3 \rightarrow R_3 \\
+- 2R_2 + R_1 \rightarrow R_1
+\end{array} \amp  \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 0 \amp -4 \amp 5 \amp -7 \amp -4\\
+0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\
+0 \amp 0 \amp -1 \amp 4 \amp -6 \amp -3\\
+\end{array}\right] 
+\end{align*}
+</div>
+<div class="para">Next, we need a 1 where the <span class="process-math">\(-1\)</span> is.</div>
+<div class="displaymath process-math" id="md-152">
+\begin{align*}
+-R_3 \rightarrow R_3 \amp  \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 0 \amp -4 \amp 5 \amp -7 \amp -4\\
+0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\
+0 \amp 0 \amp 1 \amp -4 \amp 6 \amp 3\\
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">And lastly zero out the rest of the 3rd column.</div>
+<div class="displaymath process-math" id="md-153">
+\begin{align*}
+\begin{array}{r}
+-3 R_3 + R_2 \rightarrow R_2 \\
+4 R_3 + R_1 \rightarrow R_1
+\end{array} \amp \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 0 \amp 0 \amp -11 \amp 17 \amp 8\\
+0 \amp 1 \amp 0 \amp 10 \amp -15 \amp -7\\
+0 \amp 0 \amp 1 \amp -4 \amp 6 \amp 3\\
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">Since we have found the 3 by 3 identity on the left, the inverse is on the right or</div>
+<div class="displaymath process-math" id="md-154">
+\begin{align*}
+\end{align*}
+</div>
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-370">As we saw with some 2 by 2 matrices (as in <a href="" class="xref" data-knowl="./knowl/ex-2by2-noinverse.html" title="Example 1.5.4">Example 1.5.4</a>), their inverse does not exist. We see how using the Gauss-Jordon method results in this situation for a 3 by 3 example.</div>
+<article class="example example-like" id="example-45"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-45"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-45"><article class="example example-like"><div class="para logical" id="p-371">
+<div class="para">Show that the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp -5 \amp 3 \\
+-2 \amp 3 \amp 7 \\
+-1 \amp -2 \amp 10
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">does not have an inverse.</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like"><div class="para logical" id="p-372">
+<div class="para">First, write <span class="process-math">\([\;A\;|\;I\;]\)</span> and then use the Gauss-Jordan Method to alter the matrix.</div>
+<div class="displaymath process-math" id="md-155">
+\begin{align*}
+\amp \qquad \left[\begin{array}{rrr|rrr}
+1 \amp -5 \amp 3 \amp 1 \amp 0 \amp 0 \\
+-2 \amp 3 \amp 7 \amp 0 \amp 1 \amp 0 \\
+-1 \amp -2 \amp 10 \amp 0 \amp 0 \amp 1  \\
+\end{array}\right] \\
+\begin{array}{r}
+2 R_1 + R_2 \rightarrow R_2 \\
+R_1 + R_3 \rightarrow R_3
+\end{array} \amp \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp -5 \amp 3 \amp 1 \amp 0 \amp 0 \\
+0 \amp -7 \amp 13 \amp 2 \amp 1 \amp 0 \\
+0 \amp -7 \amp 13 \amp 1 \amp 0 \amp  1 \\
+\end{array}\right] \\
+-R_2 + R_3 \rightarrow R_3 \amp \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp -5 \amp 3 \amp 1 \amp 0 \amp 0 \\
+0 \amp -7 \amp 13 \amp 2 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp -1 \amp 0 \amp  1 \\
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">And we stop since the row of zeros on the bottom of the left half of the matrix indicates that  we cannot get an identity matrix on the left half of the matrix.  This shows that the matrix is not invertible.</div>
+</div></div></div>
+</div></article></div>
+<article class="example example-like" id="example-46"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-46"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-46"><article class="example example-like"><div class="para logical" id="p-373">
+<div class="para">Consider the linear system</div>
+<div class="displaymath process-math" id="md-156">
+\begin{align*}
+x+2y \amp = 3, \\
+y-z \amp = 0, \\
+x+ y \amp = 5.
+\end{align*}
+</div>
+<div class="para">Write this system as <span class="process-math">\(A\vec{u}=\vec{b}\)</span> and then solve it use the inverse matrix.</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like"><div class="para logical" id="p-374">
+<div class="para">First, let</div>
+<div class="displaymath process-math" id="md-157">
+\begin{align*}
+A \amp =
+\begin{bmatrix}
+1 \amp 2 \amp 0 \\
+0 \amp 1 \amp -1 \\
+1 \amp 1 \amp 0
+\end{bmatrix}
+\amp \vec{u} \amp = \begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix}
+\amp \vec{b} \amp = \begin{bmatrix}
+3 \\ 0 \\ 5
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">We need to find <span class="process-math">\(A^{-1}\)</span> and will use Gauss-Jordan:</div>
+<div class="displaymath process-math" id="md-158">
+\begin{align*}
+\amp \qquad \left[\begin{array}{rrr|rrr}
+1 \amp 2 \amp 0  \amp 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp -1 \amp 0  \amp 1 \amp 0 \\
+1 \amp 1 \amp 0  \amp 0 \amp 0 \amp  1 \\
+\end{array}\right] \\
+-R_1 + R_3 \rightarrow R_3
+\amp \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 2 \amp 0  \amp 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp -1 \amp 0  \amp 1 \amp 0 \\
+0 \amp -1 \amp 0  \amp -1 \amp 0 \amp  1 \\
+\end{array}\right]\\
+\begin{array}{r}
+-2R_2 +R_1 \rightarrow R_1 \\
+R_2 +R_3 \rightarrow R_3
+\end{array} \amp  \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 0 \amp 2  \amp 1 \amp -2 \amp 0 \\
+0 \amp 1 \amp -1 \amp 0  \amp 1 \amp 0 \\
+0 \amp 0 \amp -1  \amp -1 \amp 1 \amp  1 \\
+\end{array}\right]\\
+-R_3 \rightarrow R_3 \amp  \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 0 \amp 2  \amp 1 \amp -2 \amp 0 \\
+0 \amp 1 \amp -1 \amp 0  \amp 1 \amp 0 \\
+0 \amp 0 \amp 1  \amp 1 \amp -1 \amp  -1 \\
+\end{array}\right] \\
+\begin{array}{r}
+R_3+R_2\rightarrow R_2 \\
+-2R_3 + R_1 \rightarrow R_1
+\end{array} \amp  \qquad
+\left[\begin{array}{rrr|rrr}
+1 \amp 0 \amp 0  \amp -1 \amp 0 \amp 2 \\
+0 \amp 1 \amp 0 \amp 1  \amp 0 \amp -1 \\
+0 \amp 0 \amp 1  \amp 1 \amp -1 \amp  -1 \\
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">Thus the inverse is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1}=
+\begin{bmatrix}
+-1 \amp 0 \amp 2\\
+1 \amp 0 \amp -1 \\
+1 \amp -1 \amp -1
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Next, we solve the linear system by writing</div>
+<div class="displaymath process-math" id="md-159">
+\begin{align*}
+\vec{u} \amp = A^{-1}\vec{b} \\
+\amp = \begin{bmatrix}
+-1 \amp 0 \amp 2\\
+1 \amp 0 \amp -1 \\
+1 \amp -1 \amp -1
+\end{bmatrix}
+\begin{bmatrix}
+3\\ 0 \\ 5
+\end{bmatrix} \\
+\amp =
+\begin{bmatrix}
+7 \\ -2 \\ -2
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">and therefore the solution to the linear system is <span class="process-math">\(x=7, y=-2\text{,}\)</span> and <span class="process-math">\(z=-2\text{.}\)</span>
+</div>
+</div></div></div>
+</div></article></div>
+<article class="example example-like" id="example-47"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-47"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.12</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-47"><article class="example example-like"><div class="para logical" id="p-375">
+<div class="para">Use Matrix Inversion to solve:</div>
+<div class="displaymath process-math" id="md-160">
+\begin{align*}
+2 x + y \amp = 5, \\
+x + 2y + z \amp = 0, \\
+y + 2 z + w \amp = 5, \\
+z + 2 w \amp = 0.
+\end{align*}
+</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><div class="para logical" id="p-376">
+<div class="para">First, we need to find the inverse.  Use the Gauss-Jordan method:</div>
+<div class="displaymath process-math" id="md-161">
+\begin{align*}
+\amp \quad
+\left[\begin{array}{rrrr|rrrr}
+2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \amp 0 \\
+1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1
+\end{array}\right]\\
+\begin{array}{r}
+R_1 \leftrightarrow R_2, \\R_2 \leftrightarrow R_3, \\R_3 \leftrightarrow R_4,
+\end{array}
+\amp \quad
+\left[\begin{array}{rrrr|rrrr}
+1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1 \\
+2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \amp 0
+\end{array}\right]\\
+-2 R_1 + R_4 \rightarrow R_4,  \amp \quad
+\left[\begin{array}{rrrr|rrrr}
+1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1 \\
+0 \amp -3 \amp -2 \amp 0 \amp 1 \amp -2 \amp 0 \amp 0
+\end{array}\right]\\
+\begin{array}{r}
+3 R_2 + R_4 \rightarrow R_4 \\
+-2R_2 + R_1 \rightarrow R_1
+\end{array} \amp \quad
+\left[\begin{array}{rrrr|rrrr}
+1 \amp 0 \amp -3 \amp -2 \amp 0 \amp 1 \amp -2 \amp 0\\
+0 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0\\
+0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1\\
+0 \amp 0 \amp 4 \amp 3 \amp 1 \amp -2 \amp 3 \amp 0\\
+\end{array}\right]\\
+\begin{array}{r}
+-4 R_3 + R_4 \rightarrow R_4 \\
+-2R_3+R_2 \rightarrow R_2 \\
+3R_3 + R_1 \rightarrow R_1
+\end{array}
+\amp \quad
+\left[\begin{array}{rrrr|rrrr}
+1 \amp 0 \amp 0 \amp 4 \amp 0 \amp 1 \amp -2 \amp 3\\
+0 \amp 1 \amp 0 \amp -3 \amp 0 \amp 0 \amp 1 \amp -2\\
+0 \amp 0 \amp 1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1\\
+0 \amp 0 \amp 0 \amp -5 \amp 1 \amp -2 \amp 3 \amp -4\\
+\end{array}\right]\\
+\begin{array}{r}
+2 R_4 + 5R_3 \rightarrow R_3, \\
+-3R_4 + 5R_2 \rightarrow R_2,\\
+4R_4 + 5R_1 \rightarrow R_1,
+\end{array}
+\amp \quad
+\left[\begin{array}{rrrr|rrrr}
+5 \amp 0 \amp 0 \amp 0 \amp 4 \amp -3 \amp 2 \amp -1\\
+0 \amp 5 \amp 0 \amp 0 \amp -3 \amp 6 \amp -4 \amp 2\\
+0 \amp 0 \amp 5 \amp 0 \amp 2 \amp -4 \amp 6 \amp -3\\
+0 \amp 0 \amp 0 \amp -5 \amp 1 \amp -2 \amp 3 \amp -4\\
+\end{array}\right]\\
+\begin{array}{r}
+\frac{1}{5} R_1 \rightarrow R_1, \\
+\frac{1}{5} R_2 \rightarrow R_2, \\
+\frac{1}{5} R_3 \rightarrow R_3, \\
+-\frac{1}{5} R_4 \rightarrow R_4, \\
+\end{array} \amp \quad
+\left[\begin{array}{rrrr|rrrr}
+1 \amp 0 \amp 0 \amp 0 \amp 4/5 \amp -3/5 \amp 2/5 \amp -1/5\\
+0 \amp 1 \amp 0 \amp 0 \amp -3/5 \amp 6/5 \amp -4/5 \amp 2/5\\
+0 \amp 0 \amp 1 \amp 0 \amp 2/5 \amp -4/5 \amp 6/5 \amp -3/5\\
+0 \amp 0 \amp 0 \amp 1 \amp -1/5 \amp 2/5 \amp -3/5 \amp 4/5\\
+\end{array}\right]
+\end{align*}
+</div>
+<div class="para">Therefore:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1}  =
+\left[\begin{array}{rrrr}
+4/5  \amp -3/5 \amp 2/5 \amp - 1/5  \\
+-3/5 \amp 6/5 \amp -4/5 \amp 2/5 \\
+2/5 \amp -4/5 \amp 6/5 \amp -3/5 \\
+-1/5 \amp 2/5 \amp -3/5 \amp 4/5 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">and then the solution to <span class="process-math">\(AX=B\text{,}\)</span> where <span class="process-math">\(B=[5\;0\;5\;0]^{\intercal}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X  =
+\begin{bmatrix}
+4/5  \amp -3/5 \amp 2/5 \amp - 1/5  \\
+-3/5 \amp 6/5 \amp -4/5 \amp 2/5 \\
+2/5 \amp -4/5 \amp 6/5 \amp -3/5 \\
+-1/5 \amp 2/5 \amp -3/5 \amp 4/5 \\
+\end{bmatrix}
+\begin{bmatrix}
+5 \\ 0 \\ 5 \\ 0
+\end{bmatrix}
+= \begin{bmatrix}
+6 \\ -7 \\ 8 \\ -4
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Note that since the matrix <span class="process-math">\(A\)</span> is symmetric (in many ways), the matrix <span class="process-math">\(A^{-1}\)</span> is also symmetric.</div>
+</div></div></div>
+</div></article></div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-matrix-operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

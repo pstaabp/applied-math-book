@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.2</span><span class="period">.</span>
+</h3>
+<div class="para">Find the eigenvalue and eigenfunctions of the Sturm-Liouville problem:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+y''+\lambda y \amp = 0 \amp y(0) \amp = y(L)  = 0
+\end{align*}
+</div></div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">First note that <span class="process-math">\(r(x)=q(x) \equiv 1\)</span> and also <span class="process-math">\(a_1=b_1=1\)</span> and <span class="process-math">\(a_2=b_2=0\text{,}\)</span> which satisfies the conditions on the boundaries. The characteristic equation for this problem is:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+r^2+\lambda = 0
+\end{equation*}
+</div></div> <div class="para">which has the solutions <span class="process-math">\(r = \pm \sqrt{-\lambda}\text{.}\)</span> The form of the equation depends on <span class="process-math">\(\lambda\text{.}\)</span> If <span class="process-math">\(\lambda=0\text{,}\)</span> we get:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation}
+y = A + B x\tag{7.4.1}
+\end{equation}
+</div></div> <div class="para">if <span class="process-math">\(\lambda &lt; 0\text{,}\)</span> then the solution is</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation}
+y = c_1 e^{\sqrt{-\lambda} x} + c_2 e^{-\sqrt{-\lambda} x}\tag{7.4.2}
+\end{equation}
+</div></div> <div class="para">and if <span class="process-math">\(\lambda &gt; 0\text{,}\)</span> then we get</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation}
+y = C_1 \cos \sqrt{\lambda} x + C_2 \sin \sqrt{\lambda} x\tag{7.4.3}
+\end{equation}
+</div></div> <div class="para">Next, we apply the boundary conditions on all three solutions. Recall that <span class="process-math">\(y(0)=y(L)=0\text{.}\)</span> If <span class="process-math">\(\lambda = 0\text{,}\)</span> substituting the boundary conditions into <a href="" class="xref" data-knowl="./knowl/xref/eq-sturm-liouville-ex-eq1.html" title="Equation 7.4.1">(7.4.1)</a>,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+A+ B(0)\amp = 0 \amp\amp \text{so $A=0$}\\
+A+B(L) \amp = 0 \amp\amp \text{so $B=0$} 
+\end{align*}
+</div></div> <div class="para">so the only solution to (<a href="" class="xref" data-knowl="./knowl/xref/eq-sturm-liouville-ex-eq1.html" title="Equation 7.4.1">(7.4.1)</a>) is the trivial solution <span class="process-math">\(y\equiv 0\text{.}\)</span> If <span class="process-math">\(\lambda &gt; 0\text{,}\)</span> then substituting the boundary conditions into <a href="" class="xref" data-knowl="./knowl/xref/eq-sturm-liouville-ex-eq2.html" title="Equation 7.4.2">(7.4.2)</a> results in</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+c_1 (1) + c_2(1) \amp = 0 \\
+c_1(e^{\sqrt{-\lambda} L} + c_2 e^{-\sqrt{-\lambda} L}) \amp = 0 
+\end{align*}
+</div></div> <div class="para">From the first equation, <span class="process-math">\(c_1=-c_2\)</span> and substituting this into the 2nd equation</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+c_1 e^{\sqrt{-\lambda} L} - c_1 e^{-\sqrt{-\lambda} L} \amp = 0 \\
+c_1 e^{\sqrt{-\lambda}L} \bigl( 1- e^{-2\sqrt{-\lambda} L}) \amp = 0 
+\end{align*}
+</div></div> <div class="para">
+<span class="process-math">\(c_1=0\)</span> is a solution, the second term is never zero and the third term is only zero if <span class="process-math">\(L=0\text{,}\)</span> which is not true or <span class="process-math">\(\lambda=0\text{,}\)</span> which is also not true, since this case is <span class="process-math">\(\lambda &gt; 0\text{.}\)</span> Therefore again, the only solution to <a href="" class="xref" data-knowl="./knowl/xref/eq-sturm-liouville-ex-eq2.html" title="Equation 7.4.2">(7.4.2)</a> is the trivial solution. If <span class="process-math">\(\lambda &lt; 0\)</span> then substituting the boundary conditions into <a href="" class="xref" data-knowl="./knowl/xref/eq-sturm-liouville-ex-eq3.html" title="Equation 7.4.3">(7.4.3)</a> results in</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+C_1 (1) + C_2 (0) \amp = 0 \amp\amp \text{so $C_1=0$} \\
+(0) \cos \sqrt{\lambda} L + C_2 \sin \sqrt{\lambda} L = 0 
+\end{align*}
+</div></div> <div class="para">the second states that either <span class="process-math">\(C_2=0\text{,}\)</span> again the trivial solution or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\sin \sqrt{\lambda} L = 0
+\end{equation*}
+</div></div> <div class="para">which occurs if <span class="process-math">\(\sqrt{\lambda} L = n \pi\)</span> for <span class="process-math">\(n=0,\pm 1, \pm 2, \pm 3, \ldots\text{.}\)</span> Or</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation}
+\lambda = \frac{n^2 \pi^2}{L^2}\tag{7.4.4}
+\end{equation}
+</div></div> <div class="para">We now check which values of <span class="process-math">\(n\)</span> result in valid values of <span class="process-math">\(\lambda\text{.}\)</span> When <span class="process-math">\(n=0\text{,}\)</span> we get <span class="process-math">\(\lambda=0\)</span> again, which violates <span class="process-math">\(\lambda \lt; 0\)</span> and for <span class="process-math">\(n\)</span> both plus and minus the same number, we get the same eigenvalue, so we will discard the negative values of <span class="process-math">\(n\)</span> and just include <span class="process-math">\(n=1,2,3, \ldots.\)</span> The eigenvalues of this problem are those in <a href="" class="xref" data-knowl="./knowl/xref/eq-sturm-liouville-ex-eigs.html" title="Equation 7.4.4">(7.4.4)</a> for <span class="process-math">\(n=1,2,3,\ldots\)</span>and the eigenfunctions of this problem are:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\phi_n(x) = \sin \frac{n\pi x}{L}
+\end{equation*}
+</div></div>
+</div></details></div></article><span class="incontext"><a class="internal" href="ch-pde-6.html#ex-sturm-liouville">in-context</a></span>
+</body>
+</html>

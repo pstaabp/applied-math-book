@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h4>Show that <span class="process-math">\(\mathbb{R}^2\)</span> together with the standard notion of vector addition and scalar multiplication is a vector space.</article><details class="hiddenproof"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof">Let<div class="displaymath process-math">
+\begin{align*}
+\vec{x} \amp =
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix}, \amp
+\vec{y} \amp =
+\begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix} \amp
+\vec{z} \amp = \begin{bmatrix}
+z_1 \\ z_2
+\end{bmatrix}
+\end{align*}
+</div>and <span class="process-math">\(c,k \in \mathbb{R}\)</span> as well as vector addition and scalar multiplication as<div class="displaymath process-math">
+\begin{align*}
+\vec{x} + \vec{y} \amp =
+\begin{bmatrix}
+x_1 + y_1 \\ x_2 + y_2
+\end{bmatrix} \amp
+c \cdot \vec{x} \amp =
+\begin{bmatrix}
+c x_1 \\ c x_2
+\end{bmatrix}
+\end{align*}
+</div>We now show that all 10 properties of a vector space hold: <ol class="decimal">
+<li><div class="para logical">
+<div class="para">
+<em class="emphasis">Additive Closure:</em> Since</div>
+<div class="displaymath process-math">
+\begin{align*}
+\vec{x} + \vec{y} \amp = \begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} + \begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix} = \begin{bmatrix}
+x_1 + y_1 \\ x_2 + y_2
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">are elements of <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> the closure by addition holds.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">
+<em class="emphasis">Additive Commutativity:</em> For all <span class="process-math">\(\vec{x}, \vec{y}, \vec{z} \in V\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\vec{x} + \vec{y} \amp = \begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} + \begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix} =
+\begin{bmatrix}
+x_1 + y_1 \\ x_2 + y_2
+\end{bmatrix}\\
+\amp =
+\begin{bmatrix}
+y_1 + x_1 \\
+y_2 + x_2
+\end{bmatrix} = \begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix} + \begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} = \vec{y} + \vec{x}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para"><em class="emphasis">Additive Associativity:</em></div>
+<div class="displaymath process-math">
+\begin{align*}
+(\vec{x} + \vec{y}) + \vec{z} \amp =
+\biggl( \begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} + \begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix} \biggr) + \begin{bmatrix}
+z_1 \\ z_2
+\end{bmatrix}\\
+\amp =
+\begin{bmatrix}
+x_1 + y_1 \\
+x_2 + y_2
+\end{bmatrix} + \begin{bmatrix}
+z_1 \\ z_2
+\end{bmatrix}\\
+\amp =
+\begin{bmatrix}
+(x_1 + y_1) + z_1 \\
+(x_2 + y_2) + z_2
+\end{bmatrix}\\
+\amp =
+\begin{bmatrix}
+x_1 + (y_1 + z_1) \\
+x_2 + (y_2 + z_2)
+\end{bmatrix}
+= \begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix}+
+\begin{bmatrix}
+y_1 + z_1 \\
+y_2 + z_2
+\end{bmatrix}\\
+\amp  = \begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} + \biggl( \begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix} + \begin{bmatrix}
+z_1 \\ z_2
+\end{bmatrix} \biggr) = \vec{x} + (\vec{y} + \vec{z})
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">
+<em class="emphasis">Additive Identity Element:</em>  The zero element <span class="process-math">\(\vec{0}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{0}  =
+\begin{bmatrix}
+0 \\ 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">and it satisfies,</div>
+<div class="displaymath process-math">
+\begin{align*}
+\vec{0} + \vec{x} \amp =
+\begin{bmatrix}
+0 \\ 0
+\end{bmatrix} +
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} =
+\begin{bmatrix}
+0 + x_1 \\ 0 + x_2
+\end{bmatrix} =
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} = \vec{x}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">
+<em class="emphasis">Additive Inverse Element:</em> The inverse element <span class="process-math">\(-\vec{x}\)</span> is given as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-\vec{x} = \begin{bmatrix}
+-x_1 \\ -x_2
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">and the following satisfies:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\vec{x} + (-\vec{x}) \amp =
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} +
+\begin{bmatrix}
+-x_1 \\ -x_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+x_1 + (-x_1) \\ x_2 + (-x_2)
+\end{bmatrix} =
+\begin{bmatrix}
+0 \\ 0
+\end{bmatrix} = \vec{0}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">
+<em class="emphasis">Multiplicative Closure:</em> For <span class="process-math">\(c \in \mathbb{R}\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+c \cdot \vec{x} \amp = c \cdot  \begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} = \begin{bmatrix}
+cx_1 \\ cx_2
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">which is in <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> so scalar multiplication is closed.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">
+<em class="emphasis">Distributivity over vectors:</em> Let <span class="process-math">\(c \in \mathbb{R}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{align*}
+c \cdot (\vec{x} + \vec{y}) \amp =
+c \cdot \biggl(
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} +
+\begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix} \biggr)
+= c\cdot
+\begin{bmatrix}
+x_1 + y_1 \\
+x_2 + y_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+c (x_1 +y_1) \\ c (x_2 + y_2)
+\end{bmatrix} \\
+\amp =
+\begin{bmatrix}
+c x_1 + c y_1 \\
+c x_2 + c y_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+c x_1 \\ c x_2
+\end{bmatrix} +
+\begin{bmatrix}
+c y_1 \\ c y_2
+\end{bmatrix}
+= c \cdot
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix}
++ c \cdot
+\begin{bmatrix}
+y_1 \\ y_2
+\end{bmatrix} \\
+\amp = c\cdot  \vec{x} + c\cdot  \vec{y} 
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">
+<em class="emphasis">Distributivity over scalars:</em>  Let <span class="process-math">\(c\)</span> and <span class="process-math">\(k\)</span> be elements of <span class="process-math">\(\mathbb{R}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+(c + k)\cdot  \vec{x} \amp = (c+k) \cdot
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} =
+\begin{bmatrix}
+(c+k) x_1 \\ (c+k) x_2
+\end{bmatrix} =
+\begin{bmatrix}
+c x_1 + k x_1 \\
+c x_2 + k x_2
+\end{bmatrix} \\
+\amp =
+\begin{bmatrix}
+c  x_1 \\ c x_2
+\end{bmatrix} +
+\begin{bmatrix}
+k x_1 \\ k x_2
+\end{bmatrix} = c \cdot
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} + k \cdot
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} = c \cdot \vec{x} + k \cdot \vec{x}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">
+<em class="emphasis">Scalar Multiplicative Associativity:</em> Let <span class="process-math">\(c\)</span> and <span class="process-math">\(k\)</span> be elements of <span class="process-math">\(\mathbb{R}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+c\cdot (k\cdot \vec{x})  \amp = c \cdot \biggl( k \cdot
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} \biggr) = c \cdot
+\begin{bmatrix}
+k x_1 \\ k x_2
+\end{bmatrix} =
+\begin{bmatrix}
+c (k x_1) \\ c (kx_2)
+\end{bmatrix} =
+\begin{bmatrix}
+(c k) x_1 \\ (ck) x_2
+\end{bmatrix} \\
+\amp = (ck) \cdot
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} = (ck) \cdot \vec{x}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para"><em class="emphasis">Multiplicative Identity element:</em></div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 \cdot \vec{x} = 1\cdot  \begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} = \begin{bmatrix}
+1 \cdot x_1 \\ 1 \cdot x_2
+\end{bmatrix} = \begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix} = \vec{x}
+\end{equation*}
+</div>
+</div></li>
+</ol></article></details><span class="incontext"><a class="internal" href="sect-vector-spaces.html#lemma-12">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.3.8.1</span><span class="period">.</span>
+</h4>
+<div class="para">For this, we need to find <span class="process-math">\(b_n\)</span> from (<a href="" class="xref" data-knowl="./knowl/eq-FS-sine-bn.html" title="Equation 6.3.2">(6.3.2)</a>),</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+b_n \amp = \frac{2}{2} \int_0^2 x^2 \sin \biggl( \frac{n \pi x}{2} \biggr) \, dx\\
+\amp\qquad \text{and again, this can be done using tabular integration,}\\
+\amp = -\frac{2 \, x^{2}}{n \pi} \cos \biggl( \frac{n \pi x}{2} \biggr) +
+\frac{8 \, x}{n^2\pi^2} \sin \biggl( \frac{n \pi x}{2} \biggr) +
+\frac{16}{n^3\pi^3} \cos \biggl( \frac{n \pi x}{2} \biggr)
+\biggr \vert_0^2 \\
+\amp = -\frac{8}{n \pi} \cos (n \pi) + \frac{16}{n^3\pi^3} \cos (n \pi) =
+\frac{16-8n^2\pi^2}{n^3 \pi^3} (-1)^n
+\end{align*}
+</div></div> <div class="para">and then use this in (<a href="" class="xref" data-knowl="./knowl/eq-FS-sine.html" title="Equation 6.3.1">(6.3.1)</a>)</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+f(x) = \sum_{n=1}^{\infty}\frac{16-8n^2\pi^2}{n^3 \pi^3} (-1)^n \sin \biggl(\frac{n \pi
+x}{2} \biggr)
+\end{equation*}
+</div></div>
+</div>
+<span class="incontext"><a class="internal" href="section-28.html#solution-117">in-context</a></span>
+</body>
+</html>

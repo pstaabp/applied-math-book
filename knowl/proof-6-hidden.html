@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">To prove this, we will first show that any solution <span class="process-math">\(\vec{s}\)</span> of the non-homogeneous linear system,</div>
+<div class="displaymath process-math">
+\begin{equation}
+a_{i,1} x_1 + a_{i,2} x_2 + \cdots + a_{i,n} x_n = b_i \qquad \text{for}\;
+i=1,2,\ldots,m\tag{1.5.1}
+\end{equation}
+</div>
+<div class="para">then <span class="process-math">\(\vec{s}-\vec{p}\)</span> satisfies the associated homogeneous system,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{i,1} x_1 + a_{i,2} x_2 + \cdots + a_{i,n} x_n = 0 \qquad \text{for}\;
+i=1,2,\ldots,m
+\end{equation*}
+</div>
+<div class="para">then show that if <span class="process-math">\(\vec{h}\)</span> is a solution to the associated homogeneous system, then <span class="process-math">\(\vec{h}+\vec{p}\)</span> satisfies the non-homogeneous system.</div>
+</div> <div class="para logical"><ol class="decimal">
+<li>
+<div class="para">Assume that <span class="process-math">\(\vec{s}=(s_1,s_2, \ldots,s_n)\)</span> satisfies (<a href="" class="xref" data-knowl="./knowl/eq-nhs.html" title="Equation 1.5.1">(1.5.1)</a>), that is</div>
+<div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+a_{i,1} s_1 + a_{i,2} s_2 + \cdots + a_{i,n} s_n = b_i \qquad \text{for}\;
+i=1,2,\ldots,m,
+\end{equation*}
+</div></div>
+<div class="para">then <span class="process-math">\(\vec{s}-\vec{p}\)</span> satisfies</div>
+<div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+a_{i,1} (s_1-p_1)\amp + a_{i,2}(s_2-p_2) + \cdots + a_{i,n}(s_n-p_n)\\
+\qquad \amp =
+a_{i,1} s_1 - a_{i,1} p_1 + a_{i,2} s_2 - a_{i,2} p_2 + \cdots + a_{i,n} s_n -
+a_{i,n} p_n \\
+\amp = (a_{i,1} s_1 + a_{i,2} s_2 + \cdots + a_{i,n} s_n) - \\
+\amp \qquad (a_{i,1} p_1 + a_{i,2} p_2 + \cdots + a_{i,n} p_n) \\
+\amp = b_i - b_i = 0
+\end{align*}
+</div></div>
+<div class="para">the associated homogeneous system.</div>
+</li>
+<li>
+<div class="para">Next assume that <span class="process-math">\(\vec{h}\)</span> satisfies (<a href="" class="xref" data-knowl="./knowl/eq-nhs.html" title="Equation 1.5.1">(1.5.1)</a>). Then we show that <span class="process-math">\(\vec{h}+\vec{p}\)</span> satisfies:</div>
+<div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+a_{i,1} (h_1+p_1)\amp + a_{i,2} (h_2+p_2) + \cdots + a_{i,n} (h_n+p_n)\\
+\amp = a_{i,1} h_1 + a_{i,2} h_2 + \cdots + a_{i,n} h_n + \\
+\amp \qquad a_{i,1} p_1 + a_{i,2} p_2 + \cdots + a_{i,n} p_n \\
+\amp = 0 + b_i = b_i
+\end{align*}
+</div></div>
+<div class="para">satisfies (<a href="" class="xref" data-knowl="./knowl/eq-nhs.html" title="Equation 1.5.1">(1.5.1)</a>).</div>
+</li>
+</ol></div></article></body>
+</html>
