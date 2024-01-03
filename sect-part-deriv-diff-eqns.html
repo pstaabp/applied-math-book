@@ -391,7 +391,6 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Differential Equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-6" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -399,6 +398,7 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Heat Equation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Wave Equation: Modeling a Taut String</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-5" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -518,7 +518,15 @@ f_{xxx} \amp = \frac{\partial^3 f}{\partial x^3} \amp f_{yyx} \amp = \frac{\part
 <article class="definition definition-like" id="sect-part-deriv-diff-eqns-5-2"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-1">A differential equation is an equation that contains derivatives. If the differential equation has partial derivatives, then the equation is called a <dfn class="terminology">partial differential equation</dfn>, if not it is called an <dfn class="terminology">ordinary differential equation.</dfn>  The <dfn class="terminology">order</dfn> of the PDE is the highest degree of any derivative. If the equation is linear in <span class="process-math">\(u\text{,}\)</span> the dependent variable and its derivatives, then the equation is <dfn class="terminology">linear</dfn>, if not, it is <dfn class="terminology">nonlinear</dfn>. Lastly, a linear differential equation is called <dfn class="terminology">homogeneous</dfn> if the only nonzero terms in the equation contain the dependent variable. If a differential equation is not homogeneous, then it is called <dfn class="terminology">nonhomogeneous</dfn>.</div></article><details id="sect-part-deriv-diff-eqns-5-3" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-1">The following are related definitions.</div> <div class="para logical" id="sect-part-deriv-diff-eqns-5-2-1-2"><ul class="disc">
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-1"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-1-1">A <dfn class="terminology">differential equation</dfn> is an equation that contains derivatives.</div></li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-2"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-2-1">If the differential equation has partial derivatives, then the equation is called a <dfn class="terminology">partial differential equation</dfn>.</div></li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-3"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-3-1">If the differential equation has standard or ordinary derivatives, then the equation is called a <dfn class="terminology">ordinary differential equation.</dfn>
+</div></li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-4"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-4-1">The <dfn class="terminology">order</dfn> of the differential equation is the highest degree of any derivative.</div></li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-5"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-5-1">If the equation is linear in <span class="process-math">\(u\text{,}\)</span> the dependent variable and its derivatives, then the equation is <dfn class="terminology">linear</dfn>, if not, it is <dfn class="terminology">nonlinear</dfn>.</div></li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-6"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-6-1">Lastly, a linear differential equation is called <dfn class="terminology">homogeneous</dfn> if the only nonzero terms in the equation contain the dependent variable. If a differential equation is not homogeneous, then it is called <dfn class="terminology">nonhomogeneous</dfn>.</div></li>
+</ul></div></article><details id="sect-part-deriv-diff-eqns-5-3" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-1">The following are ordinary differential equations.</div> <div class="para logical" id="sect-part-deriv-diff-eqns-5-3-1-2"><ol class="decimal">
 <li id="sect-part-deriv-diff-eqns-5-3-1-2-1-1"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-2-1-1-1"><span class="process-math">\(\displaystyle \displaystyle y' = x\)</span></div></li>
@@ -530,18 +538,7 @@ f_{xxx} \amp = \frac{\partial^3 f}{\partial x^3} \amp f_{yyx} \amp = \frac{\part
 <li id="sect-part-deriv-diff-eqns-5-3-1-4-1-2"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-2-1"><span class="process-math">\(\displaystyle u_{t} -u  u_x = 0\text{.}\)</span></div></li>
 <li id="sect-part-deriv-diff-eqns-5-3-1-4-1-3"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-3-1"><span class="process-math">\(\displaystyle \displaystyle \frac{\partial u}{\partial x} + \biggl(\frac{\partial^2 u}{\partial {t}^2}    \biggr)^2  = 0 \)</span></div></li>
 <li id="sect-part-deriv-diff-eqns-5-3-1-4-1-4"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-4-1"><span class="process-math">\(\displaystyle u_{t} +u_y - u_{xxx} = 0\text{.}\)</span></div></li>
-</ul></div> <div class="para" id="sect-part-deriv-diff-eqns-5-3-1-5">And the first and fourth equations are linear with the other two being nonlinear. The first and second equations above are first order, the 3rd equation is 2nd order and the fourth is a third-order PDE.</div></article></details></section><section class="subsection" id="sect-part-deriv-diff-eqns-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="space"> </span><span class="title">Important Second-Order PDEs</span>
-</h3>
-<div class="para logical" id="sect-part-deriv-diff-eqns-6-2"><div class="displaymath process-math" id="sect-part-deriv-diff-eqns-6-2-1">
-\begin{align*}
-\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D wave equation} \\
-\frac{\partial u}{\partial t}\amp = c^2  \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D heat equation} \\
-\frac{\partial^2 u}{\partial {x}^2} + \frac{\partial^2 u}{\partial {y}^2} \amp = 0 \amp\amp \text{2D Laplace's equation} \\
-\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D wave equation} \\
-\frac{\partial u}{\partial t}\amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D heat equation} 
-\end{align*}
-</div></div></section></section></div>
+</ul></div> <div class="para" id="sect-part-deriv-diff-eqns-5-3-1-5">And the first and fourth equations are linear with the other two being nonlinear. The first and second equations above are first order, the 3rd equation is 2nd order and the fourth is a third-order PDE.</div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-pde.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-modeling-pdes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

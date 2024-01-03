@@ -391,7 +391,6 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Differential Equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-6" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section active">
@@ -399,6 +398,7 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Heat Equation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Wave Equation: Modeling a Taut String</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-5" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -440,9 +440,9 @@ window.MathJax = {
 <div class="para" id="sect-modeling-pdes-3-2">In this section, we will derive the transport of heat in a solid bar. In short, heat moves in a substance from a warmer region to a cooler region and if we know the direction of motion and the rate then we can understand heat flow.</div>
 <div class="para" id="sect-modeling-pdes-3-3">We will consider a bar of length <span class="process-math">\(L\)</span> with fixed density <span class="process-math">\(\rho\text{,}\)</span> constant cross sectional area <span class="process-math">\(A\)</span> and insulated sides. This derivation will result in flow only in the direction of the length of the bar. The shape of the cross section and material in the bar does not matter but we will show a cylindrical bar.</div>
 <figure class="figure figure-like" id="fig-heat-eqn"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-heat-eqn.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.1<span class="period">.</span></span><span class="space"> </span>A bar</figcaption></figure><div class="para" id="sect-modeling-pdes-3-5">The small segment of rod has heat flux <span class="process-math">\(Q(x,t)\)</span> entering in the left side and has heat flux <span class="process-math">\(Q(x+\Delta x,t)\)</span> exiting the right side. The temperature is <span class="process-math">\(T(x,t)\)</span> on the left and <span class="process-math">\(T(x+\Delta x,t)\)</span> on the right.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.1<span class="period">.</span></span><span class="space"> </span>A cylindrical bar which conducts heat.</figcaption></figure><div class="para" id="sect-modeling-pdes-3-5">The small segment of rod has heat flux <span class="process-math">\(Q(x,t)\)</span> entering in the left side and has heat flux <span class="process-math">\(Q(x+\Delta x,t)\)</span> exiting the right side. The temperature is <span class="process-math">\(T(x,t)\)</span> on the left and <span class="process-math">\(T(x+\Delta x,t)\)</span> on the right.</div>
 <figure class="figure figure-like" id="fig-heat-eqn2"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-heat-eqn2.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.2<span class="period">.</span></span><span class="space"> </span>A bar</figcaption></figure><div class="para" id="sect-modeling-pdes-3-7">Next, we consider the amount of heat in the segment. The heat is proportional to the mass of the segment (<span class="process-math">\(\rho \Delta x\)</span>) and the temperature. The proportionality constant, <span class="process-math">\(c\)</span> is called the specific heat. The amount of heat in this small segment is:</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.2<span class="period">.</span></span><span class="space"> </span>The heat flux through a slice of thickness <span class="process-math">\(\Delta x\)</span> of the bar.</figcaption></figure><div class="para" id="sect-modeling-pdes-3-7">Next, we consider the amount of heat in the segment. The heat is proportional to the mass of the segment (<span class="process-math">\(\rho \Delta x\)</span>) and the temperature. The proportionality constant, <span class="process-math">\(c\)</span> is called the specific heat. The amount of heat in this small segment is:</div>
 <div class="para logical" id="sect-modeling-pdes-3-8"><div class="displaymath process-math">
 \begin{equation*}
 c \rho T \Delta x
@@ -465,7 +465,7 @@ c \rho \frac{\partial T}{\partial t} \Delta x   = Q(x,t) - Q(x+\Delta x,t)
 </div>
 <div class="para logical" id="sect-modeling-pdes-3-14"><div class="displaymath process-math" id="eq-heat-eqn-deriv">
 \begin{equation}
-c \rho \frac{\partial T}{\partial t}    = \lim_{\Delta x \rightarrow 0} Q(x,t) - Q(x+\Delta x,t)
+c \rho \frac{\partial T}{\partial t}    = \lim_{\Delta x \rightarrow 0} \frac{Q(x,t) - Q(x+\Delta x,t)}{\Delta x}
 =   -\frac{\partial Q}{\partial x}\tag{7.2.1}
 \end{equation}
 </div></div>
@@ -475,7 +475,7 @@ c \rho \frac{\partial T}{\partial t}    = \lim_{\Delta x \rightarrow 0} Q(x,t) -
 Q = -k \frac{\partial T}{\partial x}
 \end{equation*}
 </div></div>
-<div class="para" id="sect-modeling-pdes-3-17">where <span class="process-math">\(k\)</span> is the proportionality constant called the thermal conductivity and the negative sign is due to the fact that heat flows from hot to cold (in a negative direction). Substituting Fourier’s Law into (\ref{eq:heat:eqn:deriv}) results in</div>
+<div class="para" id="sect-modeling-pdes-3-17">where <span class="process-math">\(k\)</span> is the proportionality constant called the thermal conductivity and the negative sign is due to the fact that heat flows from hot to cold (in a negative direction). Substituting Fourier’s Law into <a href="" class="xref" data-knowl="./knowl/xref/eq-heat-eqn-deriv.html" title="Equation 7.2.1">(7.2.1)</a> results in</div>
 <div class="para logical" id="sect-modeling-pdes-3-18"><div class="displaymath process-math">
 \begin{equation*}
 c \rho \frac{\partial T}{\partial t} = -\frac{\partial }{\partial x} \biggl(  -k \frac{\partial T}{\partial x} \biggr)
@@ -501,14 +501,14 @@ c \rho \frac{\partial T}{\partial t} = k \frac{\partial^2 T}{\partial {x}^2}
 \begin{equation*}
 \frac{\partial T}{\partial t} = \kappa \frac{\partial^2 T}{\partial {x}^2}
 \end{equation*}
-</div></div> <div class="para" id="sect-modeling-pdes-3-24-3">and is typically solved for a given initial condition <span class="process-math">\(T(x,0)=f(x)\)</span> and often with boundary conditions.</div></article></section><section class="subsection" id="sect-modeling-pdes-4"><h3 class="heading hide-type">
+</div></div> <div class="para" id="sect-modeling-pdes-3-24-3">and is typically solved for a given initial condition <span class="process-math">\(T(x,0)=f(x)\)</span> and with boundary conditions. We will see some examples of this in <a href="sect-1d-heat-eqn.html" class="internal" title="Section 7.5: Solution to the 1D Heat Equation">Section 7.5</a>.</div></article></section><section class="subsection" id="sect-modeling-pdes-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="space"> </span><span class="title">Wave Equation: Modeling a Taut String</span>
 </h3>
 <div class="para" id="sect-modeling-pdes-4-2">Next, we turn to modeling the motion of a taut string fixed on both ends. A common example of this is a guitar string. We look at a small part of the string that has been displaced vertically from rest:</div>
 <figure class="figure figure-like" id="fig-wave-eqn"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-wave-eqn.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.4<span class="period">.</span></span><span class="space"> </span>A bar</figcaption></figure><div class="para" id="sect-modeling-pdes-4-4">where <span class="process-math">\(u(x,t)\)</span> be the vertical position of the string at position <span class="process-math">\(x\)</span> and time <span class="process-math">\(t\)</span> and the tension at <span class="process-math">\(x\)</span> and <span class="process-math">\(x+\Delta x\)</span> are the force vectors <span class="process-math">\(\vec{T}\)</span> and <span class="process-math">\(\vec{T}'\text{.}\)</span> To determine an equation that describes the motion of the string, we need to balance the horizontal a vertical forces. We can write the two force vectors <span class="process-math">\(\mathbf{T}\)</span> and <span class="process-math">\(\mathbf{T}'\)</span> in terms of the horizontal and vertical components where the subscripts in this case are the components as shown in the figure below.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.4<span class="period">.</span></span><span class="space"> </span>A small section of a taut string. The vectors <span class="process-math">\(\vec{T}\)</span> and <span class="process-math">\(\vec{T}'\)</span> are the force vectors on the string, the variable <span class="process-math">\(u\)</span> is the vertical displacement of the string from rest position.</figcaption></figure><div class="para" id="sect-modeling-pdes-4-4">where <span class="process-math">\(u(x,t)\)</span> be the vertical position of the string at position <span class="process-math">\(x\)</span> and time <span class="process-math">\(t\)</span> and the tension at <span class="process-math">\(x\)</span> and <span class="process-math">\(x+\Delta x\)</span> are the force vectors <span class="process-math">\(\vec{T}\)</span> and <span class="process-math">\(\vec{T}'\text{.}\)</span> To determine an equation that describes the motion of the string, we need to balance the horizontal a vertical forces. We can write the two force vectors <span class="process-math">\(\vec{T}\)</span> and <span class="process-math">\(\vec{T}'\)</span> in terms of the horizontal and vertical components where the subscripts in this case are the components as shown in the figure below.</div>
 <figure class="figure figure-like" id="sect-modeling-pdes-4-5"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-some-plot1.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.5<span class="period">.</span></span><span class="space"> </span>The even extension of <span class="process-math">\(f(x)=1-x\)</span></figcaption></figure><div class="para" id="sect-modeling-pdes-4-6">And recall that using Newton’s 2nd law of motion the sum of the forces on a object is equal to the mass of the object times its acceleration in that direction or <span class="process-math">\(\sum F = ma\text{.}\)</span> There is no horizontal motion of the string, so the horizontal acceleration is zero and therefore:</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.5<span class="period">.</span></span><span class="space"> </span>The force vectors from <a href="" class="xref" data-knowl="./knowl/xref/fig-wave-eqn.html" title="Figure 7.2.4">Figure 7.2.4</a> are written in terms of the component vectors.</figcaption></figure><div class="para" id="sect-modeling-pdes-4-6">And recall that using Newton’s 2nd law of motion the sum of the forces on a object is equal to the mass of the object times its acceleration in that direction or <span class="process-math">\(\sum F = ma\text{.}\)</span> There is no horizontal motion of the string, so the horizontal acceleration is zero and therefore:</div>
 <div class="para logical" id="sect-modeling-pdes-4-7"><div class="displaymath process-math" id="sect-modeling-pdes-4-7-1">
 \begin{align*}
 -\vec{T}_x +\vec{T}'_x \amp = 0 \\
@@ -573,7 +573,20 @@ c \rho \frac{\partial T}{\partial t} = k \frac{\partial^2 T}{\partial {x}^2}
 \end{equation}
 </div>
 </div>
-<div class="para" id="sect-modeling-pdes-4-23">Typically, (\ref{wave:eqn}) is called the <dfn class="terminology">wave equation</dfn> or since there is once one spatial variable, the <dfn class="terminology">one-dimensional wave equation</dfn>. The remainder of this chapter discusses solutions of the wave equation and related equations.</div></section></section></div>
+<div class="para" id="sect-modeling-pdes-4-23">Typically, <a href="" class="xref" data-knowl="./knowl/xref/wave-eqn.html" title="Equation 7.2.3">(7.2.3)</a>  is called the <dfn class="terminology">wave equation</dfn> or since there is once one spatial variable, the <dfn class="terminology">one-dimensional wave equation</dfn>.</div></section><section class="subsection" id="sect-modeling-pdes-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="space"> </span><span class="title">Important Second-Order PDEs</span>
+</h3>
+<div class="para" id="sect-modeling-pdes-5-2">The following is a list of other important second-order partial differential equations. Some of these are two-dimensions versions of the wave and heat equations derived above.</div>
+<div class="para logical" id="sect-modeling-pdes-5-3"><div class="displaymath process-math" id="sect-modeling-pdes-5-3-1">
+\begin{align*}
+\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D wave equation} \\
+\frac{\partial u}{\partial t}\amp = c^2  \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D heat equation} \\
+\frac{\partial^2 u}{\partial {x}^2} + \frac{\partial^2 u}{\partial {y}^2} \amp = 0 \amp\amp \text{2D Laplace's equation} \\
+\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D wave equation} \\
+\frac{\partial u}{\partial t}\amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D heat equation} 
+\end{align*}
+</div></div>
+<div class="para" id="sect-modeling-pdes-5-4">The remainder of this chapter covers solution techniques of these and other partial differential equations.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sect-part-deriv-diff-eqns.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-linear-ode.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
