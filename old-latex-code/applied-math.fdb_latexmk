@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex applied-math.idx"] 1704118680 "applied-math.idx" "applied-math.ind" "applied-math" 1704118692 0
-  "applied-math.idx" 1704118691 3640 8e1bf74ae958bb4b373cb2ba61da422f "pdflatex"
+["makeindex applied-math.idx"] 1704208313 "applied-math.idx" "applied-math.ind" "applied-math" 1704208325 0
+  "applied-math.idx" 1704208324 3640 8e1bf74ae958bb4b373cb2ba61da422f "pdflatex"
   (generated)
   "applied-math.ilg"
   "applied-math.ind"
   (rewritten before read)
-["pdflatex"] 1704118686 "/Users/pstaab/code/applied-math-book/old-latex-code/applied-math.tex" "applied-math.pdf" "applied-math" 1704118692 2
+["pdflatex"] 1704208319 "/Users/pstaab/code/applied-math-book/old-latex-code/applied-math.tex" "applied-math.pdf" "applied-math" 1704208325 2
   "/Users/pstaab/Library/texmf/tex/latex/mathnotes/mathbook.cls" 1611254028 4582 7a85a49fb720de746862b3952de60d5f ""
   "/Users/pstaab/code/applied-math-book/old-latex-code/applied-math.tex" 1695834935 1352 61e01ea041fd94f7ae92793ff6715d59 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -246,24 +246,24 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1682347395 4643545 53f31c3af0ba3b947cdc80fb4da1ecab ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1682347482 7886892 fcd55017517992e65cebcaf87dbbb3bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "applied-math.aux" 1704118691 682 8ad7dcc7c9d3f6195c5755a9c8a45b04 "pdflatex"
+  "applied-math.aux" 1704208324 682 8ad7dcc7c9d3f6195c5755a9c8a45b04 "pdflatex"
   "applied-math.ind" 0 -1 0 "makeindex applied-math.idx"
-  "applied-math.out" 1704118691 9832 3441e7912710eebd8ed3fe0967d3306c "pdflatex"
+  "applied-math.out" 1704208324 9832 3441e7912710eebd8ed3fe0967d3306c "pdflatex"
   "applied-math.tex" 1695834935 1352 61e01ea041fd94f7ae92793ff6715d59 ""
-  "applied-math.toc" 1704118691 15495 17180bfa6623aa7ca4cbcf81ce5992cd "pdflatex"
-  "ch01.aux" 1704118688 14912 2eb3f0f9ed65516a824968b1ee9bb65b "pdflatex"
+  "applied-math.toc" 1704208324 15495 17180bfa6623aa7ca4cbcf81ce5992cd "pdflatex"
+  "ch01.aux" 1704208321 14912 2eb3f0f9ed65516a824968b1ee9bb65b "pdflatex"
   "ch01.tex" 1696066752 183459 bcf3568350f79efc53ba5d6c31b583bc ""
-  "ch02.aux" 1704118689 5613 1bfe813e8cf22dcab873558d31e78862 "pdflatex"
+  "ch02.aux" 1704208322 5613 1bfe813e8cf22dcab873558d31e78862 "pdflatex"
   "ch02.tex" 1695834935 104348 ac6a607628e63e00b36c688a35303aed ""
-  "ch03.aux" 1704118690 2699 b8bac23b3ca7e49bd3ee687046bdc1ed "pdflatex"
+  "ch03.aux" 1704208322 2699 b8bac23b3ca7e49bd3ee687046bdc1ed "pdflatex"
   "ch03.tex" 1695834935 41862 161705345849f28fcef29379998b7259 ""
-  "ch04.aux" 1704118690 5081 3a7bb2f5295a8823574bb63b338bcee0 "pdflatex"
+  "ch04.aux" 1704208322 5081 3a7bb2f5295a8823574bb63b338bcee0 "pdflatex"
   "ch04.tex" 1695834935 49453 01cb0e74136403328a3bc5af71f60e4b ""
-  "ch05.aux" 1704118691 4986 eae47e319caf72be2d76eb812085020b "pdflatex"
+  "ch05.aux" 1704208323 4986 eae47e319caf72be2d76eb812085020b "pdflatex"
   "ch05.tex" 1695834935 56842 05787a10dd08aa5e5c299fec60e44a69 ""
-  "ch06.aux" 1704118691 10613 5cf07505118988493535e1d83ec74ec7 "pdflatex"
+  "ch06.aux" 1704208324 10613 5cf07505118988493535e1d83ec74ec7 "pdflatex"
   "ch06.tex" 1704118680 86434 794cbca1c1954374814aa4597db6fcff ""
-  "ch07.aux" 1704118691 1616 af22255e279758853afdd7de3be424fc "pdflatex"
+  "ch07.aux" 1704208324 1616 af22255e279758853afdd7de3be424fc "pdflatex"
   "ch07.tex" 1695834935 7842 c36695210f6b6ba5dec4f6e9b50b2e93 ""
   "heat-eqn-radially-sym-plot.pdf" 1695834935 23883 985e969dcff96c5a35efa887c4e77c4f ""
   (generated)

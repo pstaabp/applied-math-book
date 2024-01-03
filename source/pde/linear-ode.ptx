@@ -3,8 +3,12 @@
 	<title>Linear ordinary differential equations</title>
 	<introduction>
 		<p>
-			As discussed in section <xref ref="sect-part-deriv-diff-eqns" />, a differential equation
-			is linear if it is linear in its dependent variable and derivatives of the dependent variable.
+			As discussed in section <xref ref="sect-part-deriv-diff-eqns" />, a differential equation is ordinary if
+			the derivatives are ordinary.
+			Additionally, it is linear if it is linear in its dependent
+			variable and derivatives of the dependent variable.
+			We investigate the solution of some classes of
+			linear ordinary differential equations in this section.
 			Let's assume that <m>y</m> is the dependent variable and <m>x</m> is the independent variable.
 			The most general <m>n</m>th order ordinary linear differential equation as the form:
 		</p>
@@ -192,118 +196,10 @@
 			</solution>
 		</example>
 
-		<example>
-			<statement>
-				<p>
-					Find the general solution to  <m>y'' + 9y=0</m>.
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					The characteristic equation is
-				</p>
-
-				<p>
-					<md>
-						<mrow>r^2+9 \amp = 0 </mrow>
-						<mrow>r \amp = \pm 3i</mrow>
-					</md>
-				</p>
-
-				<p>
-					Thus the general solution is
-				</p>
-
-				<p>
-					<me>
-						y = c_1 e^{3i x} + c_2 e^{-3ix}
-					</me>
-				</p>
-
-				<p>
-					However, we will use Euler's Formula:
-				</p>
-
-				<p>
-					<me>
-						e^{ki\theta} = \cos k\theta + i \sin k\theta
-					</me>
-				</p>
-
-				<p>
-					to write the equation as a real function:
-				</p>
-
-				<p>
-					<md>
-						<mrow>y \amp = c_1 (\cos 3x + i \sin 3x) + c_2 (\cos 3x - i \sin 3x) </mrow>
-						<mrow>\amp = (c_1+c_2) \cos 3x + (ic_1 - ic_2) \sin 3x </mrow>
-					</md>
-				</p>
-
-				<p>
-					letting <m>C_1 = c_1 + c_2</m>, <m>C_2 = ic_1-ic_2</m>
-				</p>
-
-				<p>
-					<md>
-						<mrow>y \amp = C_1 \cos 3x + C_2 \sin 3x</mrow>
-					</md>
-				</p>
-			</solution>
-		</example>
-
 		<p>
-			The characteristic equation for this next example has complex roots.
+			There are many general types of solutions to second-order constant coefficient differential equations.
+			The following lemma shows the possible solutions.
 		</p>
-
-		<example>
-			<statement>
-				<p>
-					Find the solution to <m>y'' + 4y' +5y=0</m>.
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					The characteristic equation for this differential equation is
-				</p>
-
-				<p>
-					<me>
-						r^2 + 4r + 5  = 0
-					</me>
-				</p>
-
-				<p>
-					and since this can't be factored, we'll use the quadratic equation to solve this:
-				</p>
-
-				<p>
-					<me>
-						r = \frac{-4 \pm \sqrt{16-20}}{2} = -2 \pm i
-					</me>
-				</p>
-
-				<p>
-					and  using <m>y=e^{rx}</m> the general solution to this would be written
-				</p>
-
-				<p>
-					<md>
-						<mrow>y \amp = c_1 e^{(-2 + i)x} + c_2 e^{(-2-i)x}</mrow>
-						<mrow>\amp = e^{-2x} (c_1 e^{ix} + c_2 e^{-ix}) </mrow>
-						<mrow>\amp = e^{-2x} \bigl( c_1 (\cos x + i \sin x) + c_2 (\cos x - i \sin x) \bigr) </mrow>
-						<mrow>\amp = e^{-2x} \bigl( C_1 \cos x + C_2 \sin x \bigr)</mrow>
-					</md>
-				</p>
-
-				<p>
-					where <m>C_1 = c_1+c_2</m> and <m>C_2 = i (c1-c_2)</m>.
-				</p>
-			</solution>
-		</example>
 
 		<lemma xml:id="lem-soln-2nd-order-DE-homo">
 			<statement>
@@ -318,7 +214,9 @@
 				</p>
 
 				<p>
-					and let <m>r_1</m> and <m>r_2</m> be the roots of the characteristic equation.
+					where <m>a, b</m> and <m>c</m> are real constants.
+					Let <m>r_1</m>
+					and <m>r_2</m> be the roots of the characteristic equation.
 				</p>
 
 				<p>
@@ -367,12 +265,12 @@
 							<p>
 								and if the roots of the characteristic equation are complex conjugates,
 								that is <m>r_1=\alpha + \beta i </m> and <m>r_1=\alpha - \beta i </m>, then
-								the solution to (<xref ref="eq-general-2nd-order-DE-homo" />) is
+								the solution to <xref ref="eq-general-2nd-order-DE-homo" /> is
 							</p>
 
 							<p>
 								<men xml:id="eq-soln-2nd-order-DE-homo-eq4">
-									y = e^{ax} \bigl( c_1 \sin \beta x + c_2 \cos \beta x)
+									y = e^{\alpha x} \bigl( c_1 \sin \beta x + c_2 \cos \beta x)
 								</men>
 							</p>
 						</li>
@@ -383,7 +281,7 @@
 
 			<proof>
 				<p>
-					First, recall that the characteristic equation of (<xref ref="eq-general-2nd-order-DE-homo" />) is
+					First, recall that the characteristic equation of <xref ref="eq-general-2nd-order-DE-homo" /> is
 				</p>
 
 				<p>
@@ -400,7 +298,7 @@
 					<ol>
 						<li>
 							<p>
-								The derivatives of (<xref ref="eq-soln-2nd-order-DE-homo-eq1" />) are
+								The derivatives of <xref ref="eq-soln-2nd-order-DE-homo-eq1" /> are
 							</p>
 
 							<p>
@@ -411,7 +309,7 @@
 							</p>
 
 							<p>
-								and substituting these into (<xref ref="eq-general-2nd-order-DE-homo" />),
+								and substituting these into <xref ref="eq-general-2nd-order-DE-homo" />,
 							</p>
 
 							<p>
@@ -476,10 +374,15 @@
 								where the term with factor <m>c_1</m>  and the term with factor <m>c_2 x</m> are each 0,
 								because <m>r_1</m> is a root of the characteristic equation.
 								Lastly, the term with factor <m>c_2</m> is 0 because as stated about <m>r_1=-b/(2a)</m>.
-								\item Note that since the roots are pure imaginary, then then <m>b=0</m> in
-								(<xref ref="eq-general-2nd-order-DE-homo" />) and therefore <m>r_1</m> and <m>r_2</m>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Note that since the roots are pure imaginary, then then <m>b=0</m> in
+								<xref ref="eq-general-2nd-order-DE-homo" /> and therefore <m>r_1</m> and <m>r_2</m>
 								satisfy <m>r^2=-c/a</m> and since <m>r_1=\beta i</m>, then <m>\beta^2=c/a</m>.
-								The derivatives of (<xref ref="eq-soln-2nd-order-DE-homo-eq3" />) are
+								The derivatives of <xref ref="eq-soln-2nd-order-DE-homo-eq3" /> are
 							</p>
 
 							<p>
@@ -490,7 +393,7 @@
 							</p>
 
 							<p>
-								and then substituting into (<xref ref="eq-general-2nd-order-DE-homo" />) with <m>b=0</m>,
+								and then substituting into <xref ref="eq-general-2nd-order-DE-homo" /> with <m>b=0</m>,
 							</p>
 
 							<p>
@@ -551,14 +454,91 @@
 							</p>
 
 							<p>
-								And using <m>b=-2a\alpha</m> and <m>c=a(\alpha^2+\beta^2)</m>, the right hand side of (<xref ref="eq-soln-2nd-order-DE-homo-eq4-proof" />) is 0, therefore
-								(<xref ref="eq-soln-2nd-order-DE-homo-eq4" />) is a solution.
+								And using <m>b=-2a\alpha</m> and <m>c=a(\alpha^2+\beta^2)</m>, the right hand side of
+								<xref ref="eq-soln-2nd-order-DE-homo-eq4-proof" /> is 0, therefore
+								<xref ref="eq-soln-2nd-order-DE-homo-eq4" /> is a solution.
 							</p>
 						</li>
 					</ol>
 				</p>
 			</proof>
 		</lemma>
+
+		<example>
+			<statement>
+				<p>
+					Find the general solution to  <m>y'' + 9y=0</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					The characteristic equation is
+				</p>
+
+				<p>
+					<md>
+						<mrow>r^2+9 \amp = 0 </mrow>
+						<mrow>r \amp = \pm 3i</mrow>
+					</md>
+				</p>
+
+				<p>
+					Since the roots are pure imaginary, the general solution is
+				</p>
+
+				<p>
+					<md>
+						<mrow>y \amp = C_1 \cos 3x + C_2 \sin 3x</mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The characteristic equation for this next example has complex roots.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					Find the solution to <m>y'' + 4y' +5y=0</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					The characteristic equation for this differential equation is
+				</p>
+
+				<p>
+					<me>
+						r^2 + 4r + 5  = 0
+					</me>
+				</p>
+
+				<p>
+					and since this can't be factored, we'll use the quadratic equation to solve this:
+				</p>
+
+				<p>
+					<me>
+						r = \frac{-4 \pm \sqrt{16-20}}{2} = -2 \pm i
+					</me>
+				</p>
+
+				<p>
+					Using <xref ref="lem-soln-2nd-order-DE-homo" />, the general solution is
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp = e^{-2x} \bigl( C_1 \cos x + C_2 \sin x \bigr)</mrow>
+					</md>
+				</p>
+
+			</solution>
+		</example>
 	</subsection>
 
 	<subsection>
@@ -584,4 +564,3 @@
 		</p>
 	</subsection>
 </section>
-

@@ -18,23 +18,7 @@
 			In short, heat moves in a substance from a warmer region to a cooler region and
 			if we know the direction of motion and the rate then we can understand heat flow.
 		</p>
-		<!-- %Considering a small surface patch, <m>S</m> in the substance and let <m>P(x_0,y_0,z_0)</m> be a point on that patch and <m>\vec{n}</m> be a vector normal to the patch at <m>P</m>.
-		%
-		%%\begin{center}
-		%%\begin{tikzpicture}
-		%%\begin{axis}[axis lines=none,view={60}{40}]
-		%%%\addplot3[mesh,domain=-1:1,samples=3] {1-0.02*x*x-0.02*y*y};
-		%%\addplot3[domain=-1:1](1,{x},{1-0.1*x*x});
-		%%\addplot3[domain=-1:1](-1,{x},{1-0.1*x*x});
-		%%\addplot3[domain=-1:1]({x},1,{1-0.1*x*x});
-		%%\addplot3[domain=-1:1]({x},-1,{1-0.1*x*x});
-		%%\addplot3[domain=-1:1]({x},-0.5,{1-0.1*x*x});
-		%%\addplot3 coordinates {(0,0,1) (0,0,1.2)};
-		%%\end{axis}
-		%%\end{tikzpicture}
-		%%\end{center}
-		%
-		% -->
+
 		<p>
 			We will consider a bar of length <m>L</m> with fixed density <m>\rho</m>, constant
 			cross sectional area <m>A</m> and insulated sides.
@@ -45,7 +29,8 @@
 		</p>
 
 		<figure xml:id="fig-heat-eqn">
-			<caption> A bar </caption>
+			<caption> A cylindrical bar which conducts heat.
+			</caption>
 			<image width="50%" xml:id="plot-heat-eqn">
 				<latex-image>
 				<![CDATA[
@@ -70,7 +55,8 @@
 		</p>
 
 		<figure xml:id="fig-heat-eqn2">
-			<caption> A bar </caption>
+			<caption> The heat flux through a slice of thickness <m>\Delta x</m> of the bar.
+			</caption>
 			<image width="50%" xml:id="plot-heat-eqn2">
 				<latex-image>
 				<![CDATA[
@@ -130,7 +116,7 @@
 
 		<p>
 			<men xml:id="eq-heat-eqn-deriv">
-				c \rho \frac{\partial T}{\partial t}    = \lim_{\Delta x \rightarrow 0} Q(x,t) - Q(x+\Delta x,t)
+				c \rho \frac{\partial T}{\partial t}    = \lim_{\Delta x \rightarrow 0} \frac{Q(x,t) - Q(x+\Delta x,t)}{\Delta x}
 				=   -\frac{\partial Q}{\partial x}
 			</men>
 		</p>
@@ -150,7 +136,7 @@
 		<p>
 			where <m>k</m> is the proportionality constant called the thermal conductivity and the
 			negative sign is due to the fact that heat flows from hot to cold (in a negative direction).
-			Substituting Fourier's Law into (\ref{eq:heat:eqn:deriv}) results in
+			Substituting Fourier's Law into <xref ref="eq-heat-eqn-deriv" /> results in
 		</p>
 
 		<p>
@@ -195,7 +181,8 @@
 			</p>
 
 			<p>
-				and is typically solved for a given initial condition <m>T(x,0)=f(x)</m> and often with boundary conditions.
+				and is typically solved for a given initial condition <m>T(x,0)=f(x)</m> and with boundary conditions.
+				We will see some examples of this in <xref ref="sect-1d-heat-eqn"/>.
 			</p>
 		</remark>
 	</subsection>
@@ -209,7 +196,9 @@
 		</p>
 
 		<figure xml:id="fig-wave-eqn">
-			<caption> A bar </caption>
+			<caption> A small section of a taut string. The vectors <m>\vec{T}</m> and <m>\vec{T}'</m> are the force vectors
+			on the string, the variable <m>u</m> is the vertical displacement of the string from
+		rest position. </caption>
 			<image width="50%" xml:id="plot-wave-eqn">
 				<latex-image>
 				<![CDATA[
@@ -231,12 +220,13 @@
 			<m>\vec{T}</m> and <m>\vec{T}'</m>.
 			To determine an equation that describes the motion of the string, we need to balance
 			the horizontal a vertical forces.
-			We can write the two force vectors <m>\mathbf{T}</m> and <m>\mathbf{T}'</m> in terms of
+			We can write the two force vectors <m>\vec{T}</m> and <m>\vec{T}'</m> in terms of
 			the horizontal and vertical components where the subscripts in this case are the components as shown in the figure below.
 		</p>
 
 		<figure>
-			<caption> The even extension of <m>f(x)=1-x</m>
+			<caption>The force vectors from <xref ref="fig-wave-eqn" /> are written in terms of
+				the component vectors.
 			</caption>
 
 			<image width="50%" xml:id="plot-some-plot1">
@@ -364,8 +354,28 @@
 		</p>
 
 		<p>
-			Typically, (\ref{wave:eqn}) is called the <term>wave equation</term> or since there is once one spatial variable, the <term>one-dimensional wave equation</term>.
-			The remainder of this chapter discusses solutions of the wave equation and related equations.
+			Typically, <xref ref="wave-eqn" />  is called the <term>wave equation</term> or since
+			there is once one spatial variable, the <term>one-dimensional wave equation</term>.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Important Second-Order PDEs</title>
+		<p>
+			The following is a list of other important second-order partial differential equations.
+			Some of these are two-dimensions versions of the wave and heat equations derived above.
+		</p>
+		<p>
+			<md>
+				<mrow>\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D wave equation} </mrow>
+				<mrow>\frac{\partial u}{\partial t}\amp = c^2  \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D heat equation} </mrow>
+				<mrow>\frac{\partial^2 u}{\partial {x}^2} + \frac{\partial^2 u}{\partial {y}^2} \amp = 0 \amp\amp \text{2D Laplace's equation} </mrow>
+				<mrow>\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D wave equation} </mrow>
+				<mrow>\frac{\partial u}{\partial t}\amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D heat equation} </mrow>
+			</md>
+		</p>
+		<p>
+			The remainder of this chapter covers solution techniques of these and other partial differential equations.
 		</p>
 	</subsection>
 </section>

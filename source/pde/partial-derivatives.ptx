@@ -174,17 +174,53 @@
 		<definition>
 			<statement>
 				<p>
-					A differential equation is an equation that contains derivatives.
-					If the differential equation has partial derivatives, then the equation is called a
-					<term>partial differential equation</term>,
-					if not it is called an <term>ordinary differential equation.</term>  The <term>order</term> of
-					the PDE is the highest degree of any derivative.
-					If the equation is linear in <m>u</m>, the
-					dependent variable and its derivatives, then the equation is <term>linear</term>, if not,
-					it is <term>nonlinear</term>.
-					Lastly, a linear differential equation is called <term>homogeneous</term>
-					if the only nonzero terms in the equation contain the dependent variable.
-					If a differential equation is not homogeneous, then it is called <term>nonhomogeneous</term>.
+					The following are related definitions.
+				</p>
+
+				<p>
+					<ul>
+						<li>
+							<p>
+								A <term>differential equation</term> is an equation that contains derivatives.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								If the differential equation has partial derivatives, then the equation is called a
+								<term>partial differential equation</term>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								If the differential equation has standard or ordinary derivatives, then the equation is
+								called a <term>ordinary differential equation.</term>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								The <term>order</term> of the differential equation is the highest degree of any derivative.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								If the equation is linear in <m>u</m>, the
+								dependent variable and its derivatives, then the equation is <term>linear</term>, if not,
+								it is <term>nonlinear</term>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Lastly, a linear differential equation is called <term>homogeneous</term>
+								if the only nonzero terms in the equation contain the dependent variable.
+								If a differential equation is not homogeneous, then it is called <term>nonhomogeneous</term>.
+							</p>
+						</li>
+					</ul>
 				</p>
 			</statement>
 		</definition>
@@ -267,18 +303,4 @@
 			</statement>
 		</example>
 	</subsection>
-
-	<subsection>
-		<title>Important Second-Order PDEs</title>
-		<p>
-			<md>
-				<mrow>\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D wave equation} </mrow>
-				<mrow>\frac{\partial u}{\partial t}\amp = c^2  \frac{\partial^2 u}{\partial {x}^2} \amp \amp \text{1D heat equation} </mrow>
-				<mrow>\frac{\partial^2 u}{\partial {x}^2} + \frac{\partial^2 u}{\partial {y}^2} \amp = 0 \amp\amp \text{2D Laplace's equation} </mrow>
-				<mrow>\frac{\partial^2 u}{\partial {t}^2} \amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D wave equation} </mrow>
-				<mrow>\frac{\partial u}{\partial t}\amp = c^2 \biggl( \frac{\partial^2 u}{\partial {x}^2}+ \frac{\partial^2 u}{\partial {y}^2}\biggr) \amp \amp \text{2D heat equation} </mrow>
-			</md>
-		</p>
-	</subsection>
 </section>
-

@@ -116,7 +116,7 @@
 			</p>
 
 			<p>
-				so the only solution to (<xref ref="eq-sturm-liouville-ex-eq1" />) is the trivial solution
+				so the only solution to <xref ref="eq-sturm-liouville-ex-eq1" /> is the trivial solution
 				<m>y\equiv 0</m>.
 				If <m>\lambda &gt; 0</m>, then substituting the boundary conditions into
 				<xref ref="eq-sturm-liouville-ex-eq2" /> results in
