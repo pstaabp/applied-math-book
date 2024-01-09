@@ -5,8 +5,7 @@
 		<p>
 			In <xref ref="sect-gaussian-elimination" />, we saw solutions of linear systems that either
 			had or did not have a free variable.
-			In both of these cases, we can write the solutions in
-			another form using vectors.
+			In both of these cases, we can write the solutions in another form using vectors.
 			In this section,
 		</p>
 
@@ -40,9 +39,8 @@
 			numbers.
 			Recall that if the matrix has only a single column, we called it <term>column vector</term>.
 			As we will see in the first few chapters of this text, vectors are very important so we
-			explore these a bit more here and then later in <xref ref="ch-linear-systems"/>.
-			A column vector <m>\vec{s}</m>
-			can be written
+			explore these a bit more here and then later in <xref ref="ch-matrices"/>.
+			A column vector <m>\vec{s}</m> can be written
 		</p>
 
 		<p>
@@ -60,7 +58,7 @@
 		<definition xml:id="def-vector-as-solution">
 			<statement>
 				<p>
-					The vector in (xref ref="eq-column-vector" /> is a <term>solution to a linear equation</term>
+					The vector in <xref ref="eq-column-vector" /> is a <term>solution to a linear equation</term>
 				</p>
 
 				<p>
@@ -82,7 +80,7 @@
 				<p>
 					A vector is a <term>solution to a linear system</term> if the points satisfy each
 					equation in the solution.
-					We consider the vector in <xref ref="eq-column-vector" /> similar to
+					We consider the vector in <xref ref="eq-column-vector" /> equivalent to
 					the tuple <m>(s_1, s_2, \ldots, s_n)</m>.
 				</p>
 			</statement>

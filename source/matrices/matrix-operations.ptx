@@ -1,923 +1,1764 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-matrix-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Matrix Operations</title>
+	<objectives>
+		<ul>
+			<li>
+				<p>
+					Learn the basic matrix operations of addition, subtraction and scalar mulitplication.
+				</p>
+			</li>
 
-<section xml:id="sec-matrix-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Matrix Operations</title>
+			<li>
+				<p>
+					Rewrite a linear system in a vector form to motivate a matrix-vector product.
+				</p>
+			</li>
+			<li>
+				<p>
+					Extend a matrix-vector product to a matrix-matrix product and understand
+					the require size restrictions on products.
+				</p>
+			</li>
+			<li>
+				<p>
+					Learn the matrix transpose and reexamine the dot product.
+				</p>
+			</li>
+		</ul>
+	</objectives>
 
-  <introduction>
-<p> As we have seen, a matrix is a group of numbers arranged in a rectangular
-  block.  An <m>m</m> by <m>n</m> matrix has <m>m</m> rows and <m>n</m> columns. </p>
+	<subsection>
+		<title>Addition and Subtraction of Matrices</title>
+		<p>
+			In this section, we learn how to perform some basic operations between matrices.
+			First, we will look at adding and subtracting two matrices and later we will
+			look at multiplying a matrix by a scalar (a number).
+		</p>
 
-<p>For example,
+		<definition>
+			<statement>
+				<p>
+					In this case, let <m>A</m> and <m>B</m> be <m>m \times n</m> matrices.
+					Then
+				</p>
 
-<men xml:id="eq-example-matrix">
-\begin{bmatrix}
-1 \amp 2 \amp 11 \amp -1 \\ 3 \amp -2 \amp 3 \amp 4
-\end{bmatrix}
-</men>
-is a 2 by 4 matrix. </p>
+				<p>
+					<ol>
+						<li>
+							<p>
+								<m>A+B</m> is the matrix formed by
+							</p>
 
-<p> The <term>size</term> of a matrix is the number of rows and columns
-  in the matrix.  The number of rows is listed first.  The size of the
-  example above is 2 by 4. </p>
+							<p>
+								<me>
+									[a_{ij}]+[b_{ij}] = [a_{ij}+b_{ij}]
+								</me>
+							</p>
 
-<p>The numbers in a matrix are called the <term>entries</term> or
-<term>elements</term> of the matrix.  For example, for the matrix in
-(<xref ref="eq-example-matrix" />), the entry on the first row and third
-column is 11.  Often we will use the notation <m>a_{1,3} = 11</m>,
-where the subscript 1 is the row number and <m>3</m> is the column number. </p>
+							<p>
+								That is to add matrices, we add element by element.
+							</p>
+						</li>
 
-</introduction>
+						<li>
+							<p>
+								<m>A-B</m> is the matrix formed by
+							</p>
 
-<subsection><title>Matrix, Vector and Scalar Notation</title>
+							<p>
+								<me>
+									[a_{ij}]-[b_{ij}] = [a_{ij}-b_{ij}]
+								</me>
+							</p>
 
-<p>A <term>scalar</term> is a fancy term for a number.  Mathematicians use
-this term to distinguish them from matrices and vectors, which are not
-scalars.  Whenever variables are used for scalars, then lower case
-letters will be used.  For example, <m>a, n</m> and <m>x</m> are scalar
-variables. </p>
+							<p>
+								That is to add matrices, we subtract element by element.
+							</p>
+						</li>
+					</ol>
+				</p>
 
-<p>When we use variable names for matrices, we will use capital letters.
-  For example, <m>A, B</m> and <m>X</m> are matrix (or vector) variables. </p>
+				<p>
+					If <m>A</m> and <m>B</m> are not the same size then <m>A+B</m> and <m>A-B</m> does not exist.
+				</p>
+			</statement>
+		</definition>
 
-</subsection>
+		<p>
+			Note: an alternative definition of matrix subtraction, <m>A-B=A+(-B)</m>,
+			which is consistent with subtraction of real numbers.
+			We will define <m>-B</m> later in this chapter.
+		</p>
 
-<subsection><title>Addition and Subtraction of Matrices</title>
+		<example>
+			<p>
+				Let
+				<md>
+					<mrow>A \amp = \begin{bmatrix}
+					1 \amp -1 \amp 3 \\
+					2 \amp 7 \amp 3
+					\end{bmatrix} \amp
+					B \amp = \begin{bmatrix}
+					3 \amp 2 \amp -7 \\ 11 \amp 2 \amp 0
+					\end{bmatrix}</mrow>
+				</md>
+				Then the sum <m>A+B</m> is found by adding the individual elements.
+				<md>
+					<mrow>A+B \amp = \begin{bmatrix}
+					1+3 \amp -2+2 \amp 3-7\\ 2+11 \amp 7+2 \amp 3+0
+					\end{bmatrix}= \begin{bmatrix}
+					4 \amp 1 \amp -4 \\ 13 \amp 9 \amp 3
+					\end{bmatrix} </mrow>
+				</md>
+				similarly we can subtract in the same way
+				<md>
+					<mrow>A-B \amp =
+					\begin{bmatrix}
+					1-3 \amp -1-2 \amp 3-(-7)\\
+					2-11 \amp 7-2 \amp 3-0
+					\end{bmatrix}=
+					\begin{bmatrix}
+					-2 \amp -3 \amp 10 \\
+					-9 \amp 5 \amp 3
+					\end{bmatrix}
+					</mrow>
+				</md>
+			</p>
+		</example>
 
-<p> In this section, we learn how to perform some basic operations between matrices.
-First, we will look at adding and subtracting two matrices and later we will
-look at multiplying a matrix by a scalar (a number). </p>
+		<example>
+			<statement>
+				<p>
+					Find the following result or state that it does not exist.
+					<me>
+						\begin{bmatrix}
+						1 \amp 0 \\ 3 \amp -2
+						\end{bmatrix} +
+						\begin{bmatrix}
+						3 \amp -2 \\
+						5 \amp 0 \\
+						-3 \amp 4
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
 
-<definition>
-  <statement>
-<p> In this case, let <m>k \in \mathbb{R}</m> and <m>A</m> and <m>B</m>
-are <m>m \times n</m> matrices.  Then </p>
+			<solution>
+				<p>
+					Since the matrices are not the same size, this operation is not valid.
+				</p>
+			</solution>
+		</example>
 
-<ol>
-<li><p> <m>kA</m> is the matrix formed by each entry is <m>ka_{i,j}</m>.
-That is multiply each entry by <m>k</m>. </p></li>
-<li><p> <m>A+B</m> is the matrix form by each entry is <m>a_{i,j}+b_{i,j}</m>.
-That is to add matrices, we add element by element. </p></li>
-<li><p> <m>A-B</m> is the matrix form by each entry is <m>a_{i,j}-b_{i,j}</m>.
-That is to add matrices, we subtract element by element. </p></li>
-</ol>
-If <m>A</m> and <m>B</m> are not the same size then <m>A+B</m> and <m>A-B</m> does not exist.
-</statement>
-</definition>
+		<p>
+			There are many properties of matrix operations and they will look familiar in relation to real numbers.
+		</p>
 
-<p>Note: an alternative definition of matrix subtraction, <m>A-B=A+(-B)</m>,
-  which is consistent with subtraction of real numbers. </p>
+		<lemma xml:id="lem-">
+			<statement>
+				<p>
+					Let <m>A, B</m> and <m>C</m> be matrices of the same size.
+					The following hold.
+				</p>
 
-<example>
-<p> Let
+				<p>
+					<dl>
+					<li>
+						<title>Commutative Law of Addition</title>
+						<p>
+							<m>A+B=B+A</m>
+						</p>
+					</li>
 
-<md>
-  <mrow>A \amp = \begin{bmatrix}
-1 \amp -1 \amp 3 \\
-2 \amp 7 \amp 3
-\end{bmatrix} \amp
-B \amp = \begin{bmatrix}
-3 \amp 2 \amp -7 \\ 11 \amp 2 \amp 0
-\end{bmatrix}</mrow>
-</md>
+					<li>
+						<title>Associative Law of Addition</title>
+						<p>
+							<m>A+(B+C) = (A+B)+C</m>
+						</p>
+					</li>
 
-Then the sum <m>A+B</m> is found by adding the individual elements.
+					<li>
+						<title>Existence of an Additive Identity</title>
+						<p>
+							There exists a matrix <m>0</m> such that for any matrix <m>A</m>
+						</p>
 
-<md>
-  <mrow>A+B \amp = \begin{bmatrix}
-1+3 \amp -2+2 \amp 3-7\\ 2+11 \amp 7+2 \amp 3+0
-\end{bmatrix}= \begin{bmatrix}
-4 \amp 1 \amp -4 \\ 13 \amp 9 \amp 3
-\end{bmatrix} </mrow>
-</md>
-similarly we can subtract in the same way
-<md>
-  <mrow>A-B \amp =
-\begin{bmatrix}
-1-3 \amp -1-2 \amp 3-(-7)\\
-2-11 \amp 7-2 \amp 3-0
-\end{bmatrix}=
-\begin{bmatrix}
--2 \amp -3 \amp 10 \\
--9 \amp 5 \amp 3
-\end{bmatrix}
-</mrow>
-</md>
-</p>
-</example>
+						<p>
+							<me>
+								A+0 = A
+							</me>
+						</p>
+					</li>
+
+					<li>
+						<title>Existence of an Additive Inverse</title>
+						<p>
+							For every matrix <m>A</m>, there exists a matrix denoted <m>-A</m> such that
+						</p>
+
+						<p>
+							<me>
+								A + (-A) = 0
+							</me>
+						</p>
+
+						<p>
+							where <m>0</m> is the additive identity matrix above.
+						</p>
+					</li>
+					</dl>
+				</p>
+			</statement>
 
 
-<example>
-<statement>
-  <p>Find the following result or state that it does not exist.
+			<proof>
+				<p>
+					We will prove the first property: Commutative Law: <m>A+B=B+A</m>.
+					Start with the left hand side and get to the right hand side.
+				</p>
 
-<me>
-\begin{bmatrix}
- 1 \amp 0 \\ 3 \amp -2
-\end{bmatrix} +
-\begin{bmatrix}
- 3 \amp -2 \\
- 5 \amp 0 \\
- -3 \amp 4
-\end{bmatrix}
-</me>
-</p>
-</statement>
+				<p>
+					<md>
+						<mrow> A + B \amp =[a_{ij}] + [b_{ij}]  \amp\amp\text{definition of the matrix}</mrow>
+						<mrow>\amp = [a_{ij}+b_{ij}] \amp\amp \text{sum of matrices} </mrow>
+						<mrow>\amp = [b_{ij}+a_{ij}] \amp\amp\text{use commutative law of numbers} </mrow>
+						<mrow>\amp = [b_{ij}] + [a_{ij}] \amp\amp \text{sum of matrices} </mrow>
+						<mrow>\amp = B + A \amp\amp\text{definition of matrix} </mrow>
+					</md>
+				</p>
+			</proof>
+		</lemma>
 
-<solution>
+		<p>
+			Note that we have used the notation that <m>A=[a_{ij}]</m> through this proof.
+			This shorthand notation makes it easier to write matrices and provide proofs.
+		</p>
+	</subsection>
 
-<p> Since the matrices are not the same size, this operation is not valid. </p>
-</solution>
-</example>
+	<subsection>
+		<title>Scalar Multiplication of Vectors and Matrices</title>
+		<p>
+			Scalar multiplication of vectors and matrices is a simple operation
+			where the result is the scalar times each element of the vector or matrix.
+		</p>
 
+		<definition xml:id="def-scalar-mult-matrix">
+			<statement>
+				<p>
+					Let
+					<me>
+						A=[a_{ij}]
+					</me>,
+					then
+					<me>
+						kA=[ka_{ij}]
+					</me>
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					Evaluate:
+				</p>
+
+				<p>
+					<ol>
+						<li>
+							<p>
+								<me>
+									3
+									\begin{bmatrix}
+									5 \amp 5 \\
+									-4 \amp 2
+									\end{bmatrix}.
+								</me>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<me>
+									-7 \begin{bmatrix}
+									3 \amp -2 \amp 0 \amp 5
+									\end{bmatrix}
+								</me>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					<ol>
+						<li>
+							<p>
+								<me>
+									\begin{bmatrix}
+									15 \amp 15 \\ -12 \amp 6
+									\end{bmatrix}
+								</me>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<me>
+									\begin{bmatrix}
+									-21 \amp 14 \amp 0 \amp -35
+									\end{bmatrix}
+								</me>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The following are properties of scalar multiplication
+		</p>
+
+		<lemma xml:id="lem-scalar-mult-matrix">
+			<statement>
+				<p>
+					Let <m>A</m> and <m>B</m> be matrices of the same size and <m>p</m> and <m>q</m> be scalars, then
+				</p>
+
+				<p>
+					<dl>
+					<li>
+						<title>Distributive Law over Matrix Addition</title>
+						<p>
+							<m>p(A+B) = pA + pB</m>
+						</p>
+					</li>
+
+					<li>
+						<title>Distributive Law over scalar Addition</title>
+						<p>
+							<m>(p+q)A = pA + qA</m>
+						</p>
+					</li>
+
+					<li>
+						<title>Associative Law for Scalar Multiplication</title>
+						<p>
+							<m>p(qA) = (pq) A </m>
+						</p>
+					</li>
+
+					<li>
+						<title>Scalar Multiplication by 1</title>
+						<p>
+							<m>1 A = A</m>
+						</p>
+					</li>
+					</dl>
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					This is a proof of the first property (Distributive Law over Matrix Addition)
+				</p>
+
+				<p>
+					<md>
+						<mrow>p(A+B) \amp = p ([a_{ij}] + [b_{ij}]) \amp\amp \text{definition of the matrix} </mrow>
+						<mrow>\amp = p [a_{ij}+b_{ij}]\amp\amp\text{definition of the sum} </mrow>
+						<mrow>\amp = [p(a_{ij}+b_{ij})] \amp\amp \text{definition of scalar multiplication} </mrow>
+						<mrow>\amp = [pa_{ij} + pb_{ij}] \amp\amp\text{distributive property of numbers}</mrow>
+						<mrow>\amp = [pa_{ij}] +[pb_{ij}] \amp\amp \text{sum of matrices} </mrow>
+						<mrow>\amp = p [a_{ij}] + p[b_{ij}] \amp\amp \text{definition of scalar multiplication} </mrow>
+						<mrow>\amp = pA + pB \amp\amp \text{definition of the matrix} \amp </mrow>
+					</md>
+				</p>
+			</proof>
+		</lemma>
+	</subsection>
+
+	<subsection xml:id="section-reexamining-linear-systems">
+		<title>Reexamining Linear Systems</title>
+		<p>
+			The next matrix operation is that of multiplication.
+			We will take a look back at linear systems to
+			motivate why multiplication works the way it does.
+			Consider the following linear system.
+		</p>
+
+		<p>
+			<md>
+				<mrow>3 x + 2y - z \amp = 10, </mrow>
+				<mrow>x - 2y + z \amp = 11, </mrow>
+				<mrow>2x - 2y + 4z \amp = 5.</mrow>
+			</md>
+		</p>
+
+		<p>
+			We can write this system as the vector equation
+		</p>
+
+		<p>
+			<me>
+				\begin{bmatrix} 3x+2y-z \\ x-2y+z \\ 2x-2y+4z \end{bmatrix} =
+				\begin{bmatrix} 10 \\ 11 \\ 5 \end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			and then separate the left hand side as the sum of three vectors:
+		</p>
+
+		<p>
+			<me>
+				\begin{bmatrix} 3x \\ x \\ 2x \end{bmatrix} +
+				\begin{bmatrix} 2y \\ -2y \\ -2y \end{bmatrix} +
+				\begin{bmatrix} -z \\ z \\ 4z \end{bmatrix} =
+				\begin{bmatrix} 10 \\ 11 \\ 5 \end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			And then using scalar multiplication, we get the following
+		</p>
+
+		<p>
+			<me>
+				x\begin{bmatrix} 3 \\ 1 \\ 2 \end{bmatrix} +
+				y\begin{bmatrix} 2 \\ -2 \\ -2 \end{bmatrix} +
+				z\begin{bmatrix} -1 \\ 1 \\ 4 \end{bmatrix} =
+				\begin{bmatrix} 10 \\ 11 \\ 5 \end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			If we let
+		</p>
+
+		<p>
+			<me>
+				A  =
+				\begin{bmatrix}
+				3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
+				\end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			be the <term>coefficient matrix</term> of the linear system then it seems natural if
+		</p>
+
+		<p>
+			<me>
+				\vec{u} =\begin{bmatrix}
+				x \\ y \\ z
+				\end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			Then if we define the matrix multiplication
+		</p>
+
+		<p>
+			<me>
+				A \vec{u} = \begin{bmatrix}
+				3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
+				\end{bmatrix}\begin{bmatrix}
+				x \\ y \\ z
+				\end{bmatrix} = \begin{bmatrix} 3x+2y-z \\ x-2y+z \\ 2x-2y+4z \end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			<me>
+				A\vec{u}=\vec{b}
+			</me>
+			In the next section we will learn a way to solve a linear system in this
+			way using an alternative method to Gauss' method.
+		</p>
+	</subsection>
+
+	<subsection xml:id="sect-matrix-vector-product">
+		<title>Matrix-Vector Product</title>
+		<p>
+			Using the motivation of the previous section, we now define a general matrix-vector product
+		</p>
+
+		<definition>
+			<title>Matrix-Vector Product</title>
+			<statement>
+				<p>
+					Let <m>A=[a_{ij}]</m> be an <m>m \times n</m> matrix and <m>\vec{x}</m> be a column vector of length <m>n</m> with entries <m>[x_j]</m>.
+					Let <m>\vec{a}_j</m> be the column vectors of <m>A</m> or
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp = \begin{bmatrix}
+						\vec{a}_1 \amp \vec{a}_2 \amp \cdots \amp \vec{a}_n
+						\end{bmatrix} \amp
+						\vec{x} \amp = \begin{bmatrix}
+						x_1 \\ x_2 \\ \cdots \\ x_n
+						\end{bmatrix}
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					The product <m>A \vec{x}</m> is the column vector of length <m>m</m>:
+				</p>
+
+				<p>
+					<me>
+						A \vec{x} = x_1 \vec{a}_1 + x_2 \vec{a}_2 + \cdots + x_n \vec{a}_n = \sum_{j=1}^n x_j \vec{a}_j
+					</me>
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					Let
+				</p>
+
+				<p>
+					<md>
+						<mrow>A \amp = \begin{bmatrix}
+						8 \amp 2 \amp -2 \amp 3 \\
+						1 \amp 0 \amp 3 \amp 0 \\
+						0 \amp 4 \amp -1 \amp -3
+						\end{bmatrix}  \amp\text{and} \amp\amp
+						\vec{x} \amp = \begin{bmatrix}
+						3 \\ 0 \\ -2 \\ -4
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+
+				<p>
+					Find <m>A\vec{x}</m>.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					<md>
+						<mrow>A \vec{x} \amp = 3
+						\begin{bmatrix}
+						8 \\ 1 \\ 0
+						\end{bmatrix}+ 0 \begin{bmatrix}
+						2 \\ 0 \\ 4
+						\end{bmatrix} + (-2) \begin{bmatrix}
+						-2 \\ 3 \\-1
+						\end{bmatrix} + (-4) \begin{bmatrix}
+						3 \\ 0 \\ -3
+						\end{bmatrix} </mrow>
+						<mrow>		\amp = \begin{bmatrix}
+						3(8) + 0 (2) + (-2)(-2) + (-4)(3) \\
+						3(1) + 0(0) + (-2)(3) + (-4)(0) \\
+						3(0) + 0(4) + (-2)(-1) + (-4)(-3)
+						\end{bmatrix} = \begin{bmatrix}
+						16 \\
+						-3 \\
+						14
+						\end{bmatrix}</mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+
+		<definition>
+			<title>Matrix Form of a Linear System</title>
+			<statement>
+				<p>
+					Consider the linear system:
+				</p>
+
+				<p>
+					<md>
+						<mrow>a_{1,1} x_1 + a_{1,2} x_2 + \cdots + a_{1,n} x_n \amp = b_1 , </mrow>
+						<mrow>a_{2,1} x_1 + a_{2,2} x_2 + \cdots + a_{2,n} x_n \amp = b_2, </mrow>
+						<mrow>\vdots \amp = \vdots </mrow>
+						<mrow>a_{m,1} x_1 + a_{m,2} x_2 + \cdots + a_{m,n} x_n \amp = b_m, </mrow>
+					</md>
+				</p>
+
+				<p>
+					The <term>matrix form of the linear system</term> is given by
+				</p>
+
+				<p>
+					<me>
+						\begin{bmatrix}
+						a_{11} \amp a_{12} \amp \cdots \amp a_{1n} \\
+						a_{21} \amp a_{22} \amp \cdots \amp a_{2n} \\
+						\cdots \amp \cdots \amp \ddots \amp \vdots \\
+						a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn} \\
+						\end{bmatrix}
+						\begin{bmatrix}
+						x_1 \\ x_2 \\ \vdots \\ x_n
+						\end{bmatrix}  =
+						\begin{bmatrix}
+						b_1 \\ b_2 \\ \vdots \\ b_n
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					or
+				</p>
+
+				<p>
+					<me>
+						A \vec{x} = \vec{b}
+					</me>
+				</p>
+			</statement>
+		</definition>
+	</subsection>
+
+	<subsection xml:id="sect-matrix-matrix-product">
+		<title>Matrix-Matrix Product</title>
+		<introduction>
+			<p>
+				This now leads naturally to the following definition of a matrix multiplication <m>AB</m> is naturally the matrix formed by multiplying <m>A</m> be each of the columns of <m>b</m>.
+			</p>
+
+			<definition xml:id="def-matrix-matrix-product">
+				<statement>
+					<p>
+						Let <m>A</m> be a <m>m \times n</m> matrix and <m>B</m> be a <m>n \times p</m> matrix of the form:
+					</p>
+
+					<p>
+						<me>
+							B = \begin{bmatrix}
+							\vec{b}_1 \amp \vec{b}_2 \amp \cdots \amp \vec{b}_p
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						where <m>\vec{b}_1, \vec{b}_2, \cdots, \vec{b}_p</m> are the columns of <m>B</m>.
+						The matrix product <m>AB</m> is the <m>n \times p</m> matrix defined as
+					</p>
+
+					<p>
+						<me>
+							AB = A \begin{bmatrix}
+							\vec{b}_1 \amp \vec{b}_2 \amp \cdots \amp \vec{b}_p
+							\end{bmatrix} =\begin{bmatrix}
+							A\vec{b}_1 \amp A\vec{b}_2 \amp \cdots \amp A\vec{b}_p
+							\end{bmatrix}
+						</me>
+					</p>
+
+					<p>
+						Note: if the number of columns of <m>A</m> does not equal the number of rows of <m>B</m>, then the product is <em>undefined</em>.
+					</p>
+				</statement>
+			</definition>
+		</introduction>
+
+		<subsubsection>
+			<title>Size Restrictions on Matrices</title>
+			<p>
+				Note that for each element in the resulting matrix, there is a vector-vector
+				product, coming from each row of the first matrix and each column of
+				the second matrix:
+			</p>
+
+			<remark>
+				<p>
+					The number of columns of the first matrix must equal the number of
+					rows of the second matrix.
+				</p>
+			</remark>
+
+			<p>
+				The size of the resulting matrix can also be found by the sizes of the
+				input matrices.
+			</p>
+
+			<remark>
+				<p>
+					If the matrices <m>A</m> and <m>B</m> are multiplied then this diagram
+					helps with a valid product as well as the size of the result.
+				</p>
+
+				<figure xml:id="fig-matrix-product">
+					<caption>Diagram of valid dimensions for matrix product.</caption>
+					<image width="50%" xml:id="plot-matrix-product">
+						<latex-image>
+						<![CDATA[
+						\begin{tikzpicture}[scale=1.25]
+						\draw (-2,-0.25) node[above] {$A$};
+						\draw (2,-0.25) node [above] {$B$};
+						\draw (-2,-0.75) node {$m \times n$};
+						\draw (2,-0.75) node {$n \times p$};
+						\draw[<->] (-1.6,-0.5) -- (-1.6,0) -- (1.6,0) -- (1.6,-0.5);
+						\draw[<->] (-2.4,-1) -- (-2.4,-1.5) -- (2.4,-1.5) -- (2.4,-1);
+						\draw (0,-1.5) node [below] {This is the resultant size};
+						\draw (0,0.1) node [above] {These must be equal};
+						\end{tikzpicture}
+						]]>
+						</latex-image>
+					</image>
+				</figure>
+
+				<p>
+					That is if <m>A</m> is <m>m</m> by <m>n</m> and <m>B</m> is <m>n</m> by
+					<m>p</m>, then <m>C=AB</m> has size <m>m</m> by <m>p</m>.
+				</p>
+			</remark>
+
+			<example>
+				<statement>
+					<p>
+						Let <m>A</m> be a matrix that is 2 by 3, <m>B</m> be a matrix that is
+						3 by 3 and <m>C</m> be a matrix that is 2 by 2.
+						Determine which of
+						the following products are valid and if the product is valid, list its size.
+					</p>
+
+					<p>
+						<ol>
+							<li>
+								<p>
+									<m>AB</m>
+								</p>
+							</li>
+
+							<li>
+								<p>
+									<m>AC</m>
+								</p>
+							</li>
+
+							<li>
+								<p>
+									<m>BC</m>
+								</p>
+							</li>
+
+							<li>
+								<p>
+									<m>BA</m>
+								</p>
+							</li>
+
+							<li>
+								<p>
+									<m>CA</m>
+								</p>
+							</li>
+
+							<li>
+								<p>
+									<m>CAB</m>
+								</p>
+							</li>
+						</ol>
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						<ol>
+							<li>
+								<p>
+									Since <m>A</m> is 2 by 3 and <m>B</m> is 3 by 3, the inner numbers
+									are equal and thus multiplication is valid and the result is 2 by 3.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									Since <m>A</m> is 2 by 3 and <m>C</m> is 2 by 2, the inner numbers
+									are not equal, so multiplication is not valid.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									Since <m>B</m> is 3 by 3 and <m>C</m> is 2 by 2, the inner numbers
+									are not equal, so multiplication is not valid.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									Since <m>B</m> is 3 by 3 and <m>A</m> is 2 by 3, the inner
+									numbers are not equal, so multiplication is not valid.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									Since <m>C</m> is 2 by 2 and <m>A</m> is 2 by 3, the inner
+									numbers are equal so multiplication is valid and the result are
+									the outer numbers or 2 by 3.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									In this case, from (e), the size of <m>CA</m> is 2 by 3
+									and <m>B</m> is 3 by 3, so the inner numbers are equal so multiplication
+									is valid and the result is 2 by 3.
+								</p>
+							</li>
+						</ol>
+					</p>
+				</solution>
+			</example>
+
+			<example>
+				<statement>
+					<p>
+						Let
+					</p>
+
+					<p>
+						<md>
+							<mrow>A \amp =
+							\begin{bmatrix}
+							2 \amp 0 \\ 3 \amp -1 \\ -3 \amp 5
+							\end{bmatrix}
+							\amp B\amp =
+							\begin{bmatrix}
+							3 \amp -1 \\ 2 \amp 2
+							\end{bmatrix}
+							</mrow>
+						</md>
+					</p>
+
+					<p>
+						find <m>AB</m> if this is a valid operation.
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						The size of <m>A</m> is 3 by 2 and the size of <m>B</m> is 2 by 2, so the
+						inner numbers are equal and thus this operations is valid.
+						The size of
+						the result is 3 by 2.
+					</p>
+
+					<p>
+						<md>
+							<mrow>AB \amp =
+							\begin{bmatrix}
+							\begin{bmatrix}
+							2 \amp 0
+							\end{bmatrix}
+							\begin{bmatrix}
+							3 \\ 2
+							\end{bmatrix} \amp
+							\begin{bmatrix}
+							2 \amp 0
+							\end{bmatrix}
+							\begin{bmatrix}
+							-1 \\ 2
+							\end{bmatrix} \\[8pt]
+							\begin{bmatrix}
+							3 \amp -1
+							\end{bmatrix}
+							\begin{bmatrix}
+							3 \\ 2
+							\end{bmatrix} \amp
+							\begin{bmatrix}
+							3 \amp -1
+							\end{bmatrix}
+							\begin{bmatrix}
+							-1 \\ 2
+							\end{bmatrix} \\[8pt]
+							\begin{bmatrix}
+							-3 \amp 5
+							\end{bmatrix}
+							\begin{bmatrix}
+							3 \\ 2
+							\end{bmatrix} \amp
+							\begin{bmatrix}
+							-3 \amp 5
+							\end{bmatrix}
+							\begin{bmatrix}
+							-1 \\ 2
+							\end{bmatrix}
+							\end{bmatrix} </mrow>
+							<mrow>\amp =
+							\begin{bmatrix}
+							(2)(3) + (0)(2) \amp (2)(-1)+(0)(2) \\
+							(3)(3) + (-1)(2) \amp (3)(-1) +(-1)(2) \\
+							(-3)(3) + (5)(2) \amp (-3)(-1) +(5)(2)
+							\end{bmatrix} =
+							\begin{bmatrix}
+							6 \amp -2 \\
+							7 \amp -5 \\
+							1 \amp 13
+							\end{bmatrix}</mrow>
+						</md>
+					</p>
+				</solution>
+			</example>
+
+			<example>
+				<statement>
+					<p>
+						Find <m>C=AB</m> if
+					</p>
+
+					<p>
+						<md>
+							<mrow>A \amp = \begin{bmatrix}
+							2 \amp -1 \amp 3 \\ 1 \amp 1 \amp 2
+							\end{bmatrix}
+							\amp
+							B \amp = \begin{bmatrix}
+							2 \amp 1 \\ 3 \amp -2 \\ 7 \amp 5
+							\end{bmatrix} </mrow>
+						</md>
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						First, since the number of rows of <m>A</m> is 2 and the number of columns of
+						<m>B</m> is 2, the size of <m>C</m> is 2.
+					</p>
+
+					<p>
+						<ol>
+							<li>
+								<p>
+									The 1st row and 1st column of <m>C</m> is the 1st row of <m>A</m> times
+									the 1st column of <m>B</m>.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									The 1st row and 2nd column of <m>C</m> is the 1st row of <m>A</m> times
+									the 2nd column of <m>B</m>.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									The 2nd row and 1st column of <m>C</m> is the 2nd row of <m>A</m> times
+									the 1st column of <m>B</m>.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									The 2nd row and 2nd column of <m>C</m> is the 2nd row of <m>A</m> times
+									the 2nd column of <m>B</m>.
+								</p>
+							</li>
+						</ol>
+					</p>
+
+					<p>
+						We now explicitly show the dot products.
+					</p>
+
+					<p>
+						<md>
+							<mrow>C \amp =
+							\begin{bmatrix}
+							\begin{bmatrix}
+							2  \amp -1 \amp 3
+							\end{bmatrix}
+							\begin{bmatrix}
+							2 \\ 3 \\ 7
+							\end{bmatrix}
+							\amp
+							\begin{bmatrix}
+							2 \amp -1 \amp 3
+							\end{bmatrix}
+							\begin{bmatrix}
+							1 \\ -2 \\ 5
+							\end{bmatrix} \\
+							\begin{bmatrix}
+							1 \amp 1 \amp 2
+							\end{bmatrix}
+							\begin{bmatrix}
+							2 \\ 3 \\ 7
+							\end{bmatrix}
+							\amp
+							\begin{bmatrix}
+							1 \amp 1 \amp 2
+							\end{bmatrix}
+							\begin{bmatrix}
+							1 \\ -2 \\ 5
+							\end{bmatrix}
+							\end{bmatrix}
+							</mrow>
+							<mrow>\amp =
+							\begin{bmatrix}
+							2(2) + (-1)(3) + 3(7) \amp (2)(1) + (-1)(-2) + (3)(5) \\
+							(1)(2) + (1)(3) +(2)(7) \amp (1)(1) + (1)(-2) + (2)(5)
+							\end{bmatrix} \\
+							\amp = \begin{bmatrix}
+							22 \amp 19 \\ 19 \amp 9
+							\end{bmatrix}
+							</mrow>
+						</md>
+					</p>
+				</solution>
+			</example>
+		</subsubsection>
+
+		<subsubsection xml:id="sect-matrix-matrix-product-alt">
+			<title>Alternative Form of the Matrix-Matrix Product</title>
+			<p>
+				An alternative form of the matrix-matrix product <m>AB</m> is
+			</p>
+
+			<p>
+				<me>
+					(AB)_{ij} = \text{$i$th row of $A$} \cdot \text{$j$th column of $B$}.
+				</me>
+			</p>
+
+			<p>
+				or
+			</p>
+
+			<p>
+				<me>
+					[(ab)_{ij}] = \bigl[\sum_k a_{ik}b_{kj}\bigr]
+				</me>
+			</p>
+
+			<p>
+				This form is both helpful for proofs as we will see below as well as an
+				alternative way to compute the matrix product.
+			</p>
+
+			<example>
+				<statement>
+					<p>
+						Find, if possible, <m>AB</m> if
+					</p>
+
+					<p>
+						<md>
+							<mrow>
+							A \amp \begin{bmatrix}
+							-3 \amp 0 \amp 2 \\
+							1 \amp 4 \amp -2 \\
+							0 \amp 3 \amp 1
+							\end{bmatrix} \amp B \amp = \begin{bmatrix}
+							3 \amp 2 \\
+							-2 \amp0 \\
+							1 \amp 3
+							\end{bmatrix}
+							</mrow>
+						</md>
+					</p>
+				</statement>
+
+				<solution>
+					<p>
+						First, from the sizes of <m>A</m> and <m>B</m>, we know that the
+						size of the product must be <m> 3 \times 2</m>.
+						For each element
+						of the product matrix, we take the product of the <m>i</m>th row of <m>A</m> and
+						<m>j</m>th column of <m>B</m>.
+					</p>
+
+					<p>
+						<md>
+							<mrow>\begin{bmatrix}
+							\begin{bmatrix} -3 \amp 0 \amp 2\end{bmatrix}
+							\begin{bmatrix}
+							3 \\ -2 \\ 1
+							\end{bmatrix}
+							\amp
+							\begin{bmatrix} -3 \amp 0 \amp 2\end{bmatrix}
+							\begin{bmatrix}
+							2 \\ 0 \\ 3
+							\end{bmatrix}
+							\\
+							\begin{bmatrix} 1 \amp 4 \amp -2\end{bmatrix}
+							\begin{bmatrix}
+							3 \\ -2 \\ 1
+							\end{bmatrix}
+							\amp
+							\begin{bmatrix} 1 \amp 4 \amp -2\end{bmatrix}
+							\begin{bmatrix}
+							2 \\ 0 \\ 3
+							\end{bmatrix}
+							\\
+							\begin{bmatrix} 0 \amp 3 \amp 1\end{bmatrix}
+							\begin{bmatrix}
+							3 \\ -2 \\ 1
+							\end{bmatrix}
+							\amp
+							\begin{bmatrix} 0 \amp 3 \amp 1\end{bmatrix}
+							\begin{bmatrix}
+							2 \\ 0 \\ 3
+							\end{bmatrix}
+							\end{bmatrix} \amp =
+							\begin{bmatrix}
+							(-9)+0+2 \amp -6 + 0 + 6 \\
+							3-8-2 \amp 2 + 0 -6 \\
+							0 -6 +1 \amp 0 + 0 + 3
+							\end{bmatrix} </mrow>
+							<mrow> \amp = \begin{bmatrix}
+							-7 \amp 0 \\
+							-7 \amp -4 \\
+							-5 \amp 3
+							\end{bmatrix}
+							</mrow>
+						</md>
+					</p>
+				</solution>
+			</example>
+		</subsubsection>
+
+		<subsubsection xml:id="sect-matrix-matrix-product-props">
+			<title>Properties of Matrix-Matrix Products</title>
+			<p>
+				Let
+			</p>
+
+			<p>
+				<md>
+					<mrow>A \amp = \begin{bmatrix}
+					2 \amp 0 \\
+					3 \amp 1
+					\end{bmatrix}\amp
+					B \amp = \begin{bmatrix}
+					-3 \amp 1 \\
+					0 \amp 4
+					\end{bmatrix} </mrow>
+				</md>
+			</p>
+
+			<p>
+				Note that
+			</p>
+
+			<p>
+				<md>
+					<mrow>AB \amp = \begin{bmatrix}
+					-6 \amp 2 \\ -9 \amp 7
+					\end{bmatrix}\amp
+					BA \amp = \begin{bmatrix}
+					-3 \amp 1 \\ 12 \amp 4
+					\end{bmatrix} </mrow>
+				</md>
+			</p>
+
+			<p>
+				which shows that the commutative property does not hold.
+			</p>
+
+			<lemma xml:id="lem-matrix-product-props">
+				<title>Properties of Matrix Multiplication</title>
+				<statement>
+					<p>
+						The following hold for matrices <m>A,B</m> and <m>C</m> and scalars <m>r</m> and <m>s</m>
+					</p>
+
+					<p>
+						<dl>
+						<li>
+							<title>distributive property 1</title>
+							<p>
+								<m>A(rB+sC) = r(AB) + s(AC)</m>
+							</p>
+						</li>
+
+						<li>
+							<title>distributive property 2</title>
+							<p>
+								<m>(B+C)A = BA + CA</m>
+							</p>
+						</li>
+
+						<li>
+							<title>associative property</title>
+							<p>
+								<m>A(BC) = (AB)C</m>
+							</p>
+						</li>
+						</dl>
+					</p>
+				</statement>
+
+
+				<proof>
+					<p>
+						The proof of the first uses Definition ...
+						of matrix multiply.
+					</p>
+
+					<p>
+						<md>
+							<mrow>A(r B + s C) \amp = [(A(rB+sC))_{ij}] </mrow>
+							<mrow>\amp = [\sum_k a_{ik} (rB+sC)_{kj}] </mrow>
+							<mrow>\amp = [\sum_k a_{ik} (r b_{kj} + s c_{kj}) ]</mrow>
+							<mrow>\amp = [r \sum_k a_{ik} b_{kj} + s \sum_k a_{i,k} c_{kj}] </mrow>
+							<mrow>\amp = r [(AB)_{ij}] + s [(AC)_{ij}] </mrow>
+							<mrow>\amp = r AB + s AC</mrow>
+						</md>
+					</p>
+				</proof>
+			</lemma>
+		</subsubsection>
+	</subsection>
+
+	<subsection xml:id="sect-transpose"><title>Transpose</title>
+		<p>
+			The last basic matrix operation that we will cover here in the
+			transpose of a matrix.
+			As an example, if
+		</p>
+
+		<p>
+			<me>
+				A  =
+				\begin{bmatrix}
+				3 \amp -1 \amp 0 \\ 2 \amp 7 \amp 5
+				\end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			then the transpose is the matrix, <m>A^{\intercal}</m> given by
+		</p>
+
+		<p>
+			<me>
+				A^{\intercal}  =
+				\begin{bmatrix}
+				3 \amp 2 \\ -1 \amp 7 \\ 0 \amp 5
+				\end{bmatrix}
+			</me>
+		</p>
+
+		<p>
+			where the row and column of each element is flipped.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					The <term>transpose</term> of an <m>m \times n</m> matrix <m>A</m>,
+					denoted <m>A^{\intercal}</m> is <m>A</m> flipped over the diagonal.
+					In particular, the element in the <m>i</m>th row and <m>j</m>th
+					column of <m>A^{\intercal}</m> is given by the <m>j</m>th row and
+					<m>i</m> column of <m>A</m>.
+				</p>
+
+				<p>
+					Using the shorthand notation,
+				</p>
+
+				<p>
+					<me>
+						[a_{ij}]^{\intercal} = [a_{ji}]
+					</me>
+				</p>
+
+				<p>
+					which is useful for proofs.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			We will see that transposes play a big role in linear algebra.
+		</p>
+
+		<lemma>
+			<title>Properties of Transposes</title>
+			<statement>
+				<p>
+					<ol>
+						<li>
+							<p>
+								<m>(A+B)^{\intercal} = A^{\intercal} + B^{\intercal}</m>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>(cA)^{\intercal} = c A^{\intercal}</m>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>(A^{\intercal})^{\intercal} = A</m>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<m>(AB)^{\intercal} = B^{\intercal} A^{\intercal}</m>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					Proof of the 2nd property:
+				</p>
+
+				<p>
+					<md>
+						<mrow>(AB)^T \amp = [(AB)_{ij}]^T \qquad\text{definition of matrix}</mrow>
+						<mrow> \amp = [(AB)_{ji}] \qquad\text{definition of transpose}</mrow>
+						<mrow> \amp = \left[\sum_k a_{jk} b_{ki}\right] \qquad \text{product of matrices} </mrow>
+						<mrow> \amp = \left[\sum_k b_{ki} a_{jk}\right] \qquad \text{commuting numbers}</mrow>
+						<mrow> \amp = \left[(B^T A^T)_{ij} \right] \qquad\text{definition of matrix product} </mrow>
+						<mrow> \amp =  B^T A^T \qquad\text{definition of matrix}</mrow>
+					</md>
+				</p>
+			</proof>
+		</lemma>
+	</subsection>
+
+	<subsection>
+		<title>Reexamination of the Dot Product</title>
+		<p>
+			Recall that the dot product of two vectors <m>\vec{u}</m> and
+			<m>\vec{v}</m> of the same length discussed in
+			<xref ref="sect-angles-of-vectors" /> is the sum of the products
+			of the individual elements.
+		</p>
+
+		<p>
+			We can see that the dot product can also be defined as
+			<me>
+				\vec{u} \cdot \vec{v} = \vec{u}^{\intercal} \vec{v} = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n
+			</me>
+			or alternatively using summation notation
+			<me>
+				\vec{u}^{\intercal} \vec{v}  = \sum_{i=1}^n u_i v_i
+			</me>
+		</p>
+	</subsection>
+	<!--
+	%
 </subsection>
 
 <subsection>
-  <title>Scalar Multiplication of Vectors and Matrices</title>
-
-<p> Scalar multiplication of vectors and matrices is a simple operation
-  where the result is the scalar times each element of the vector or matrix. </p>
-
-<example>
-  <statement>
-    <p>Evaluate:</p>
-
-<ol>
-<li>
-<me> 3
-\begin{bmatrix}
-	5 \amp 5 \\
--4 \amp 2
-\end{bmatrix}.
-</me> </li>
-
-<li><me>
--7 \begin{bmatrix}
- 3 \amp -2 \amp 0 \amp 5
-\end{bmatrix}
-</me></li>
-</ol>
-</statement>
-
-<solution>
-
-<ol>
-<li><p>
-<me>
-\begin{bmatrix}
-	15 \amp 15 \\ -12 \amp 6
-\end{bmatrix}
-</me>
-</p></li>
-
-<li><p>
-<me>
-\begin{bmatrix}
- -21 \amp 14 \amp 0 \amp -35
-\end{bmatrix}
-</me>
-</p></li>
-</ol>
-</solution>
-</example>
-
-</subsection>
-
-<subsection xml:id="sect-transpose"><title>Transpose</title>
-
-  <introduction>
-<p>The last basic matrix operation that we will cover here in the
-transpose of a matrix.  As an example, if
-
-<me>
-	A  =
-\begin{bmatrix}
-	3 \amp -1 \amp 0 \\ 2 \amp 7 \amp 5
-\end{bmatrix}
-</me>
-then the transpose is the matrix, <m>A^{\intercal}</m> given by
-
-<me>
-	A^{\intercal}  =
-\begin{bmatrix}
-	3 \amp 2 \\ -1 \amp 7 \\ 0 \amp 5
-\end{bmatrix}
-</me>
-where the row and column of each element is flipped. </p>
-
-<definition>
-The <term>transpose</term> of an <m>m \times n</m> matrix <m>A</m>,
-denoted <m>A^{\intercal}</m> is <m>A</m> flipped over the diagonal.
-In particular, the element in the <m>i</m>th row and <m>j</m>th
-column of <m>A^{\intercal}</m> is given by the <m>j</m>th row and
-<m>i</m> column of <m>A</m>.
-</definition>
-</introduction>
-
-<p>We will see that transposes play a big role in linear algebra.</p>
-
-<lemma>
-  <title>Properties of Transposes</title>
-<ol>
-<li><p> <m>(A+B)^{\intercal} = A^{\intercal} + B^{\intercal}</m> </p></li>
-<li><p> <m>(cA)^{\intercal} = c A^{\intercal}</m></p></li>
-<li><p> <m>(A^{\intercal})^{\intercal} = A</m>.</p></li>
-<li><p> <m>(AB)^{\intercal} = B^{\intercal} A^{\intercal}</m></p></li>
-</ol>
-</lemma>
-
-</subsection>
-
-
-<subsection xml:id="sect-mult-matrix">
-  <title>Multiplication of Vectors and Matrices</title>
-
-
-<p> In an perhaps backwards way of thinking, we will start with the
-  product of two matrices.  We will then see that the product of
-  matrices and vectors and then vectors and vectors can be seen in the
-  same manner. </p>
-
-<definition>
-<p> Let <m>A</m> and <m>B</m> be matrices.  The <term>product of <m>A</m>
-  and <m>B</m></term>, or <m>C=AB</m> can be found in the following manner.
-  Element <m>c_{ij}</m> is the dot product of the <m>i</m>th row of
-  <m>A</m> and the <m>j</m>th column of <m>B</m>. </p>
-
-<p> Note:  In order for the dot product to be defined, the number
-columns of <m>A</m> must equal the number of rows of <m>B</m>.
- If not the product is not defined. </p>
-</definition>
-
-<p>Also if the product <m>AB</m> is defined, the result, <m>C</m>
-  has the same number of rows of <m>A</m> and the same number of
-  columns as <m>B</m>. </p>
-
-<example>
-  <statement>
-Find <m>C=AB</m> if
-
-<md>
-  <mrow>A \amp = \begin{bmatrix}
-2 \amp -1 \amp 3 \\ 1 \amp 1 \amp 2
-\end{bmatrix}
-\amp
-B \amp = \begin{bmatrix}
-2 \amp 1 \\ 3 \amp -2 \\ 7 \amp 5
-\end{bmatrix} </mrow>
-</md>
-
-</statement>
-
-<solution>
-
-<p>First, since the number of rows of <m>A</m> is 2 and the number of columns of
-<m>B</m> is 2, the size of <m>C</m> is 2. </p>
-
-<ol>
-<li><p> The 1st row and 1st column of <m>C</m> is the 1st row of <m>A</m> times
-  the 1st column of <m>B</m>. </p></li>
-<li><p> The 1st row and 2nd column of <m>C</m> is the 1st row of <m>A</m> times
-  the 2nd column of <m>B</m>.</p></li>
-<li><p> The 2nd row and 1st column of <m>C</m> is the 2nd row of <m>A</m> times
-   the 1st column of <m>B</m>.</p></li>
-<li><p> The 2nd row and 2nd column of <m>C</m> is the 2nd row of <m>A</m> times
-  the 2nd column of <m>B</m>.</p></li>
-
-</ol>
-
-We now explicitly show the dot products.
-
-<md>
-  <mrow>C \amp =
-\begin{bmatrix}
-\begin{bmatrix}
- 2  \amp -1 \amp 3
-\end{bmatrix}
-\begin{bmatrix}
-2 \\ 3 \\ 7
-\end{bmatrix}
-\amp
-\begin{bmatrix}
-2 \amp -1 \amp 3
-\end{bmatrix}
-\begin{bmatrix}
-1 \\ -2 \\ 5
-\end{bmatrix} \\
-\begin{bmatrix}
-1 \amp 1 \amp 2
-\end{bmatrix}
-\begin{bmatrix}
-2 \\ 3 \\ 7
-\end{bmatrix}
-\amp
-\begin{bmatrix}
-1 \amp 1 \amp 2
-\end{bmatrix}
-\begin{bmatrix}
-1 \\ -2 \\ 5
-\end{bmatrix}
-\end{bmatrix}
-</mrow>
-<mrow>\amp =
-\begin{bmatrix}
-2(2) + (-1)(3) + 3(7) \amp (2)(1) + (-1)(-2) + (3)(5) \\
-(1)(2) + (1)(3) +(2)(7) \amp (1)(1) + (1)(-2) + (2)(5)
-\end{bmatrix} \\
-\amp = \begin{bmatrix}
-22 \amp 19 \\ 19 \amp 9
-\end{bmatrix}
-</mrow>
-</md>
-</solution>
-</example>
-</subsection>
-
-<subsection>
-  <title>Size Restrictions on Matrices</title>
-
-<p> Note that for each element in the resulting matrix, there is a vector-vector
-  product, coming from each row of the first matrix and each column of
-  the second matrix: </p>
-
-<remark>
-The number of columns of the first matrix must equal the number of
-rows of the second matrix.
-</remark>
-
-<p>The size of the resulting matrix can also be found by the sizes of the
-  input matrices. </p>
-
-<remark>
-If the matrices <m>A</m> and <m>B</m> are multiplied then this diagram
-helps with a valid product as well as the size of the result.
-
-
-<figure xml:id="fig-matrix-product">
-  <caption>Diagram of valid dimensions for matrix product.</caption>
-  <image width="50%" xml:id="plot-matrix-product">
-
-<latex-image>
-<![CDATA[
-\begin{tikzpicture}
-\draw (-2,-0.25) node[above] {$A$};
-\draw (2,-0.25) node [above] {$B$};
-
-\draw (-2,-0.75) node {$m \times n$};
-\draw (2,-0.75) node {$n \times p$};
-
-\draw[<->] (-1.6,-0.5) -- (-1.6,0) -- (1.6,0) -- (1.6,-0.5);
-\draw[<->] (-2.4,-1) -- (-2.4,-1.5) -- (2.4,-1.5) -- (2.4,-1);
-
-\draw (0,-1.5) node [below] {This is the resultant size};
-\end{tikzpicture}
-]]>]
-</latex-image>
-</image>
-</figure>
-
-<p>That is if <m>A</m> is <m>m</m> by <m>n</m> and <m>B</m> is <m>n</m> by
-<m>p</m>, then <m>C=AB</m> has size <m>m</m> by <m>p</m>. </p>
-
-</remark>
-
-<example>
-  <statement>
-Let <m>A</m> be a matrix that is 2 by 3, <m>B</m> be a matrix that is
-3 by 3 and <m>C</m> be a matrix that is 2 by 2.  Determine which of
-the following products are valid and if the product is valid, list its size.
-
-
-<ol>
-<li><p> <m>AB</m></p></li>
-<li><p> <m>AC</m></p></li>
-<li><p><m>BC</m></p></li>
-<li><p> <m>BA</m></p></li>
-<li><p> <m>CA</m></p></li>
-<li><p><m>CAB</m></p></li>
-</ol>
-
-</statement>
-
-<solution>
-
-<ol>
-<li><p> Since <m>A</m> is 2 by 3 and <m>B</m> is 3 by 3, the inner numbers
-  are equal and thus multiplication is valid and the result is 2 by 3.</p></li>
-
-<li><p> Since <m>A</m> is 2 by 3 and <m>C</m> is 2 by 2, the inner numbers
-  are not equal, so multiplication is not valid.</p></li>
-
-<li><p> Since <m>B</m> is 3 by 3 and <m>C</m> is 2 by 2, the inner numbers
-  are not equal, so multiplication is not valid.</p></li>
-
-<li><p> Since <m>B</m> is 3 by 3 and <m>A</m> is 2 by 3, the inner
-  numbers are not equal, so multiplication is not valid.</p></li>
-
-<li><p> Since <m>C</m> is 2 by 2 and <m>A</m> is 2 by 3, the inner
-   numbers are equal so multiplication is valid and the result are
-   the outer numbers or 2 by 3.</p></li>
-
-<li><p> In this case, from (e), the size of <m>CA</m> is 2 by 3
-  and <m>B</m> is 3 by 3, so the inner numbers are equal so multiplication
-   is valid and the result is 2 by 3.</p></li>
-
-</ol>
-
-</solution>
-</example>
-
-<example>
-	<statement>
-    <p>Let
-<md>
-	<mrow>A \amp =
-\begin{bmatrix}
-	2 \amp 0 \\ 3 \amp -1 \\ -3 \amp 5
-\end{bmatrix}
-\amp B\amp =
-\begin{bmatrix}
-	3 \amp -1 \\ 2 \amp 2
-\end{bmatrix}
-</mrow>
-</md>
-find <m>AB</m> if this is a valid operation.
-</p>
-</statement>
-
-<solution>
-<p>
-The size of <m>A</m> is 3 by 2 and the size of <m>B</m> is 2 by 2, so the
-inner numbers are equal and thus this operations is valid.  The size of
-the result is 3 by 2.
-
-<md>
-	<mrow>AB \amp =
-	\begin{bmatrix}
-\begin{bmatrix}
- 2 \amp 0
-\end{bmatrix}
-\begin{bmatrix}
- 3 \\ 2
-\end{bmatrix} \amp
-\begin{bmatrix}
- 2 \amp 0
-\end{bmatrix}
-\begin{bmatrix}
- -1 \\ 2
-\end{bmatrix} \\[8pt]
-\begin{bmatrix}
-3 \amp -1
-\end{bmatrix}
-\begin{bmatrix}
- 3 \\ 2
-\end{bmatrix} \amp
-\begin{bmatrix}
-3 \amp -1
-\end{bmatrix}
-\begin{bmatrix}
- -1 \\ 2
-\end{bmatrix} \\[8pt]
-\begin{bmatrix}
--3 \amp 5
-\end{bmatrix}
-\begin{bmatrix}
- 3 \\ 2
-\end{bmatrix} \amp
-\begin{bmatrix}
- -3 \amp 5
-\end{bmatrix}
-\begin{bmatrix}
- -1 \\ 2
-\end{bmatrix}
-	\end{bmatrix} </mrow>
-	<mrow>\amp =
-\begin{bmatrix}
-	(2)(3) + (0)(2) \amp (2)(-1)+(0)(2) \\
-	(3)(3) + (-1)(2) \amp (3)(-1) +(-1)(2) \\
-	(-3)(3) + (5)(2) \amp (-3)(-1) +(5)(2)
-\end{bmatrix} =
-\begin{bmatrix}
-	6 \amp -2 \\
-	7 \amp -5 \\
-	1 \amp 13
-\end{bmatrix}</mrow>
-</md>
-</p>
-</solution>
-</example>
-
-</subsection>
-
-<subsection><title>Matrix-Vector Multiplication</title>
-
-<p>Since a vector can be thought of as a matrix, the matrix-vector product
-  (and vector-matrix products) exist if they are compatible.
-  If <m>A</m> is a <m>m \times n</m> matrix and <m>\vec{u}</m> is a
-  column vector of size <m>n</m>, then the result is valid. </p>
-
-
-<example>
-<statement>
-  <p>Let
-<md>
-  <mrow>A \amp = \begin{bmatrix}
-3 \amp -2 \amp 7 \\
-0 \amp 3 \amp 5 \\
-2 \amp -1 \amp 3
-\end{bmatrix} \amp \vec{u} \amp = \begin{bmatrix}
-2 \\ 4 \\ 9
-\end{bmatrix}</mrow>
-</md>
-Find <m>A\vec{u}</m>.</p></statement>
-
-<solution>
-
-<p>This product is found by taking the dot product of rows of <m>A</m>
-  and <m>\vec{u}</m>.
-
-<md>
-  <mrow>A \vec{u} \amp = \begin{bmatrix}
-3 \amp -2 \amp 7 \\
-0 \amp 3 \amp 5 \\
-2 \amp -1 \amp 3
-\end{bmatrix}\begin{bmatrix}
-2 \\ 4 \\ 9
-\end{bmatrix}
- \amp = \begin{bmatrix}
-3 (2) + (-2)(4) + 7 (9) \\
-0 (2) + (3)(4) + 5 (9) \\
-2 (2) + (-1)(4) + 3 (9) \\
-\end{bmatrix} = \begin{bmatrix}
-61 \\
-57 \\
-27
-\end{bmatrix}</mrow>
-</md>
-</p>
-</solution>
-</example>
-</subsection>
-
-<subsection><title>Reexamination of the Dot Product</title>
-
-<p>Recall that the dot product of two vectors <m>\vec{u}</m> and
-  <m>\vec{v}</m> of the same length discussed in
-   <xref ref="sect-length-angles" /> is the sum of the products
-   of the individual elements. </p>
-
- <p>We can see that the dot product can also be defined as
-<me>
-\vec{u} \cdot \vec{v} = \vec{u}^{\intercal} \vec{v} = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n
-</me>
-or alternatively using summation notation
-<me>
-\vec{u}^{\intercal} \vec{v}  = \sum_{i=1}^n u_i v_i
-</me>
-</p>
-
-</subsection>
-
-<subsection xml:id="section-matrix-multiplication-linear-systems">
-  <title>Matrix Multiplication and Linear Systems</title>
-
-<p>In this section, we will learn an alternative way to look at a
-  linear system and in the next section, we will solve it.
-  Consider the following linear system.
-
-<md>
-  <mrow>3 x + 2y - z \amp = 10, </mrow>
-    <mrow>x - 2y + z \amp = 11, </mrow>
-      <mrow>2x - 2y + 4z \amp = 5.</mrow>
-</md>
-
-This can be written as:
-
-<me>
-\begin{bmatrix}
-3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
-\end{bmatrix} \begin{bmatrix}
-x \\ y \\ z
-\end{bmatrix} = \begin{bmatrix}
-10 \\ 11 \\ 5
-\end{bmatrix}.
-</me>
-
-The first matrix is simply the coefficient matrix without the last column.
-The column vector on the right hand side is that last column in the
-coefficient matrix. </p>
-
-<p>To show that this matrix equation is identical to the linear system above,
-  we use matrix multiplication to get:
-<me>
-\begin{bmatrix}
-	3x +2y -z \\ x-2y+z \\ 2x-2y + 4z
-\end{bmatrix} =
-\begin{bmatrix}
-	10 \\ 11 \\ 5
-\end{bmatrix}
-</me>
-and since two vectors are equal if each of the corresponding elements
-are equal, this is the same as the linear system above. </p>
-
-<p>If we let
-<md>
-	<mrow>A  =
-\begin{bmatrix}
-3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
-\end{bmatrix} \amp \vec{u} \amp =\begin{bmatrix}
-x \\ y \\ z
-\end{bmatrix} \amp \vec{b} \amp = \begin{bmatrix}
-10 \\ 11 \\ 5
-\end{bmatrix}</mrow>
-</md>
-then the linear system can be written as
-<me>
-	A\vec{u}=\vec{b}
-</me>
-
-In the next section we will learn a way to solve a linear system in this
-way using an alternative method to Gauss' method. </p>
-
-</subsection>
-
-<!--
-%</subsection><subsection><title>Problems</title>
-%
-%For problems 1- -4, list the size of each matrix.  If the matrix is also a vector, determine if it is a row or column vector and list the length.
-%
-%\begin{multicols}{2}
-%
-%<ol>
-%	<li><p> $\displaystyle
-%\begin{bmatrix}
-%	3 \amp 2 \amp -1 \\ 11 \amp 4 \amp 0
-%\end{bmatrix}$
-%<li><p> $\displaystyle
-%\begin{bmatrix}
-%	3 \amp -1/2 \amp 4
-%\end{bmatrix}$
-%</ol>
-%\end{multicols}
-%
-%\begin{multicols}{2}
-%<ol>[start=3]
-%<li><p> $\displaystyle
-%\begin{bmatrix}
-%	4 \amp 0 \amp -1 \amp 4/3 \\ 3 \amp 0 \amp 2 \amp -1 \\ 4 \amp 3 \amp 6 \amp 5/4
-%\end{bmatrix}$
-%<li><p> $\displaystyle
-%\begin{bmatrix}
-%	3 \\ 3 \\ -6 \\ 2
-%\end{bmatrix}$
-%</ol>
-%\end{multicols}
-
-
-
-
-%For problems 5- -10, evaluate the operation or say that the result does not exist.
-%
-%\begin{multicols}{2}
-%<ol>[start=5]
-%<li><p> $\displaystyle
-%\begin{bmatrix}
-%	-2 \amp 3 \\ 0 \amp 5
-%\end{bmatrix} +
-%\begin{bmatrix}
-%	3 \amp -4 \\ 2 \amp 7
-%\end{bmatrix}$
-%<li><p> \;~$\displaystyle 3
-%\begin{bmatrix}
-%	4 \amp 0 \amp -1 \\
-%	2 \amp 2 \amp 5
-%\end{bmatrix}$
-%</ol>
-%\end{multicols}
-%
-%\begin{multicols}{2}
-%<ol>[start=7]
-%
-%<li><p> $ \displaystyle
-%\begin{bmatrix}
-%	3 \\ 4 \\ -1
-%\end{bmatrix}-
-%\begin{bmatrix}
-%	4 \\ 3/2 \\ 2/3
-%\end{bmatrix}$
-%<li><p> $\displaystyle
-%\begin{bmatrix}
-%	2 \amp 0 \\ -1 \amp 7
-%\end{bmatrix} +
-%\begin{bmatrix}
-%	2 \\ 4
-%\end{bmatrix}$
-%</ol>
-%\end{multicols}
-%
-%\begin{multicols}{2}
-%<ol>[start=9]
-%
-%<li><p> $\displaystyle
-%\begin{bmatrix}
-%	11 \amp 4 \amp 5 \\
-%	3 \amp -3 \amp 1
-%\end{bmatrix} -
-%\begin{bmatrix}
-%	3 \amp 2 \\ -1 \amp -5 \\ 1/2 \amp 3
-%\end{bmatrix}$
-%
-%<li><p> ~~ $\displaystyle 4
-%\begin{bmatrix}
-%	3 \\ -2 \\ 0
-%\end{bmatrix}$
-%</ol>
-%
-%\end{multicols}
-%
-%For problems 11 and 12, find the transpose of the given matrix.
-%
-%\begin{multicols}{2}
-%<ol>[start=11]
-%	<li><p> ~~$\displaystyle \begin{bmatrix}
-%	3 \amp 2 \\ -1 \amp -5 \\ 1/2 \amp 3
-%\end{bmatrix}$
-%
-%<li><p> ~~ $\displaystyle
-%\begin{bmatrix}
-% 11 \amp -1 \amp 2 \\
-% 3 \amp 0 \amp 12 \\
-% 1 \amp 2 \amp -4
-%\end{bmatrix}$
-%
-%</ol>
-%
-%{For the products in problems 13-22, determine if they are valid or not.  If they are valid, compute the result.
-%
-%
-%
-%\begin{multicols}{2}[\raggedcolumns]
-%<ol>[start=13]
-%<li><p> <md>
-%\begin{bmatrix}
-%	-2 \amp 3 \amp 1
-%\end{bmatrix} \cdot
-%\begin{bmatrix}
-%4 \amp 2 \amp -2
-%\end{bmatrix}
-%</md>
-%
-%
-%<li><p>
-%<md>
-%\begin{bmatrix}
-%	2 \amp 2 \amp 5
-%\end{bmatrix} \cdot
-%\begin{bmatrix}
-%	-2 \\ 1 \\ 3
-%\end{bmatrix}
-%</md>
-%</ol>
-%\end{multicols}}
-%
-%~
-%
-%\begin{multicols}{2}[\raggedcolumns]
-%<ol>[start=15]
-%
-%<li><p>
-%<md>
-%\begin{bmatrix}
-%   1/2 \amp 2 \amp 4 \amp 5
-%\end{bmatrix}\cdot \begin{bmatrix}
-%	3 \\ 4 \\ -1
-%\end{bmatrix}
-%</md>
-%
-%<li><p>
-%<md>
-%\begin{bmatrix}
-%12 \amp -1 \amp 2 \amp 4
-%\end{bmatrix} \cdot
-%\begin{bmatrix}
-%	1/3 \\ 2 \\ 1/2 \\ -1
-%\end{bmatrix}
-%</md>
-%</ol>
-%\end{multicols}
-%
-%~
-%
-%\begin{multicols}{2}[\raggedcolumns]
-%<ol>[start=17]
-%<li><p> <md>
-%\begin{bmatrix}
-%	3 \amp -1 \\ 2 \amp 4
-%\end{bmatrix}
-%\begin{bmatrix}
-%	3 \amp 2 \amp 6 \\ -2 \amp 7 \amp 0
-%\end{bmatrix}
-%</md>
-%
-%<li><p> <md>
-%\begin{bmatrix}
-%	1 \amp -3 \amp 0 \\ 2 \amp 4 \amp 7
-%\end{bmatrix}
-%\begin{bmatrix}
-%	2 \\ 5 \\ -2
-%\end{bmatrix}
-%</md>
-%
-%</ol>
-%
-%\end{multicols}
-%
-%~
-%
-%\begin{multicols}{2}
-%<ol>[start=19]
-%<li><p> 	<md>
-%\begin{bmatrix}
-%	2 \amp -3 \\ 4 \amp 1
-%\end{bmatrix}
-%\begin{bmatrix}
-%	5 \amp 3 \\ 2 \amp -1 \\ 7 \amp 3
-%\end{bmatrix}
-%</md>
-%
-%<li><p> <md>
-%\begin{bmatrix}
-%	3 \\ 2 \\ 6
-%\end{bmatrix}
-%\begin{bmatrix}
-%	-2 \amp 3 \amp 0
-%\end{bmatrix}
-%</md>
-%</ol>
-%
-%\end{multicols}
-%
-%~
-%
-%\begin{multicols}{2}[\raggedcolumns]
-%<ol>[start=21]
-%<li><p> <md>
-%\begin{bmatrix}
-%	3 \amp 0 \amp 1 \amp -2 \\
-%	2 \amp -5 \amp 3 \amp 2
-%\end{bmatrix}
-%\begin{bmatrix}
-%	2 \amp -3 \\ 4 \amp 6 \\ 3 \amp 1 \\ 0 \amp 7
-%\end{bmatrix}
-%</md>
-%<li><p> <md>
-%\begin{bmatrix}
-%	2 \amp 0 \\
-%	0 \amp 2
-%\end{bmatrix}
-%\begin{bmatrix}
-%	0 \amp 3 \\
-%	1 \amp 1
-%\end{bmatrix}
-%</md>
-%</ol>
-%
-%\end{multicols}
-%
-%\vfill
-%
-%\pagebreak
-%
-%<ol>[start=23]
-%<li><p> If <m>A</m> is a 4 by 3 matrix, <m>B</m> is a 3 by 4 matrix and <m>C</m> is a 3 by 3 matrix, for each of the following operations, determine if each is valid.  If it is valid, write the size of the resulting matrix.
-%
-%\begin{multicols}{3}
-%\begin{enumerate}
-%<li><p> <m>AB</m>, \item <m>AC</m>, \item <m>AD</m>
-%</ol>
-%\end{multicols}
-%\begin{multicols}{3}
-%<ol>[start=4]
-%<li><p> <m>BA</m>, \item <m>CB</m>, \item <m>CBA</m>
-%</ol>
-%\end{multicols}
-%
-%
-%(Hint for part (f):  First multiply <m>CB</m> and the multiply that result times <m>A</m>.)
-%
-%	\item Write matrices <m>A</m>, <m>X</m> and <m>B</m> such that the following linear system can be written in the form <m>AX=B</m>.
-%
-%<md>
-%\begin{cases}
-%\begin{split}
-%	x + 3y -2w \amp = 11, \\
-%	2y + 5w \amp = 4, \\
-%	3x + 2y - z \amp = 6, \\
-%	y - w \amp = 10.
-%	\end{split}
-%	\end{cases}
-%</md>
-%
-%\end{enumerate}
--->
-
-</section>
+	<title>Problems</title>
+	%
+	%For problems 1- -4, list the size of each matrix.
+	If the matrix is also a vector, determine if it is a row or column vector and list the length.
+	%
+	%\begin{multicols}{2}
+	%
+	%
+	<ol>
+		%
+		<li>
+			<p>
+				$\displaystyle
+				%\begin{bmatrix}
+				%	3 \amp 2 \amp -1 \\ 11 \amp 4 \amp 0
+				%\end{bmatrix}$
+				%
+				<li>
+					<p>
+						$\displaystyle
+						%\begin{bmatrix}
+						%	3 \amp -1/2 \amp 4
+						%\end{bmatrix}$
+						%
+					</ol>
+					%\end{multicols}
+					%
+					%\begin{multicols}{2}
+					%
+					<ol>
+						[start=3]
+						%
+						<li>
+							<p>
+								$\displaystyle
+								%\begin{bmatrix}
+								%	4 \amp 0 \amp -1 \amp 4/3 \\ 3 \amp 0 \amp 2 \amp -1 \\ 4 \amp 3 \amp 6 \amp 5/4
+								%\end{bmatrix}$
+								%
+								<li>
+									<p>
+										$\displaystyle
+										%\begin{bmatrix}
+										%	3 \\ 3 \\ -6 \\ 2
+										%\end{bmatrix}$
+										%
+									</ol>
+									%\end{multicols}
+									%For problems 5- -10, evaluate the operation or say that the result does not exist.
+									%
+									%\begin{multicols}{2}
+									%
+									<ol>
+										[start=5]
+										%
+										<li>
+											<p>
+												$\displaystyle
+												%\begin{bmatrix}
+												%	-2 \amp 3 \\ 0 \amp 5
+												%\end{bmatrix} +
+												%\begin{bmatrix}
+												%	3 \amp -4 \\ 2 \amp 7
+												%\end{bmatrix}$
+												%
+												<li>
+													<p>
+														\;~$\displaystyle 3
+														%\begin{bmatrix}
+														%	4 \amp 0 \amp -1 \\
+														%	2 \amp 2 \amp 5
+														%\end{bmatrix}$
+														%
+													</ol>
+													%\end{multicols}
+													%
+													%\begin{multicols}{2}
+													%
+													<ol>
+														[start=7]
+														%
+														%
+														<li>
+															<p>
+																$ \displaystyle
+																%\begin{bmatrix}
+																%	3 \\ 4 \\ -1
+																%\end{bmatrix}-
+																%\begin{bmatrix}
+																%	4 \\ 3/2 \\ 2/3
+																%\end{bmatrix}$
+																%
+																<li>
+																	<p>
+																		$\displaystyle
+																		%\begin{bmatrix}
+																		%	2 \amp 0 \\ -1 \amp 7
+																		%\end{bmatrix} +
+																		%\begin{bmatrix}
+																		%	2 \\ 4
+																		%\end{bmatrix}$
+																		%
+																	</ol>
+																	%\end{multicols}
+																	%
+																	%\begin{multicols}{2}
+																	%
+																	<ol>
+																		[start=9]
+																		%
+																		%
+																		<li>
+																			<p>
+																				$\displaystyle
+																				%\begin{bmatrix}
+																				%	11 \amp 4 \amp 5 \\
+																				%	3 \amp -3 \amp 1
+																				%\end{bmatrix} -
+																				%\begin{bmatrix}
+																				%	3 \amp 2 \\ -1 \amp -5 \\ 1/2 \amp 3
+																				%\end{bmatrix}$
+																				%
+																				%
+																				<li>
+																					<p>
+																						~~ $\displaystyle 4
+																						%\begin{bmatrix}
+																						%	3 \\ -2 \\ 0
+																						%\end{bmatrix}$
+																						%
+																					</ol>
+																					%
+																					%\end{multicols}
+																					%
+																					%For problems 11 and 12, find the transpose of the given matrix.
+																					%
+																					%\begin{multicols}{2}
+																					%
+																					<ol>
+																						[start=11]
+																						%
+																						<li>
+																							<p>
+																								~~$\displaystyle \begin{bmatrix}
+																								%	3 \amp 2 \\ -1 \amp -5 \\ 1/2 \amp 3
+																								%\end{bmatrix}$
+																								%
+																								%
+																								<li>
+																									<p>
+																										~~ $\displaystyle
+																										%\begin{bmatrix}
+																										% 11 \amp -1 \amp 2 \\
+																										% 3 \amp 0 \amp 12 \\
+																										% 1 \amp 2 \amp -4
+																										%\end{bmatrix}$
+																										%
+																										%
+																									</ol>
+																									%
+																									%{For the products in problems 13-22, determine if they are valid or not.
+																									If they are valid, compute the result.
+																									%
+																									%
+																									%
+																									%\begin{multicols}{2}[\raggedcolumns]
+																									%
+																									<ol>
+																										[start=13]
+																										%
+																										<li>
+																											<p>
+																												<md>
+																													%\begin{bmatrix}
+																													%	-2 \amp 3 \amp 1
+																													%\end{bmatrix} \cdot
+																													%\begin{bmatrix}
+																													%4 \amp 2 \amp -2
+																													%\end{bmatrix}
+																													%
+																												</md>
+																												%
+																												%
+																												%
+																												<li>
+																													<p>
+																														%
+																														<md>
+																															%\begin{bmatrix}
+																															%	2 \amp 2 \amp 5
+																															%\end{bmatrix} \cdot
+																															%\begin{bmatrix}
+																															%	-2 \\ 1 \\ 3
+																															%\end{bmatrix}
+																															%
+																														</md>
+																														%
+																													</ol>
+																													%\end{multicols}}
+																													%
+																													%~
+																													%
+																													%\begin{multicols}{2}[\raggedcolumns]
+																													%
+																													<ol>
+																														[start=15]
+																														%
+																														%
+																														<li>
+																															<p>
+																																%
+																																<md>
+																																	%\begin{bmatrix}
+																																	%   1/2 \amp 2 \amp 4 \amp 5
+																																	%\end{bmatrix}\cdot \begin{bmatrix}
+																																	%	3 \\ 4 \\ -1
+																																	%\end{bmatrix}
+																																	%
+																																</md>
+																																%
+																																%
+																																<li>
+																																	<p>
+																																		%
+																																		<md>
+																																			%\begin{bmatrix}
+																																			%12 \amp -1 \amp 2 \amp 4
+																																			%\end{bmatrix} \cdot
+																																			%\begin{bmatrix}
+																																			%	1/3 \\ 2 \\ 1/2 \\ -1
+																																			%\end{bmatrix}
+																																			%
+																																		</md>
+																																		%
+																																	</ol>
+																																	%\end{multicols}
+																																	%
+																																	%~
+																																	%
+																																	%\begin{multicols}{2}[\raggedcolumns]
+																																	%
+																																	<ol>
+																																		[start=17]
+																																		%
+																																		<li>
+																																			<p>
+																																				<md>
+																																					%\begin{bmatrix}
+																																					%	3 \amp -1 \\ 2 \amp 4
+																																					%\end{bmatrix}
+																																					%\begin{bmatrix}
+																																					%	3 \amp 2 \amp 6 \\ -2 \amp 7 \amp 0
+																																					%\end{bmatrix}
+																																					%
+																																				</md>
+																																				%
+																																				%
+																																				<li>
+																																					<p>
+																																						<md>
+																																							%\begin{bmatrix}
+																																							%	1 \amp -3 \amp 0 \\ 2 \amp 4 \amp 7
+																																							%\end{bmatrix}
+																																							%\begin{bmatrix}
+																																							%	2 \\ 5 \\ -2
+																																							%\end{bmatrix}
+																																							%
+																																						</md>
+																																						%
+																																						%
+																																					</ol>
+																																					%
+																																					%\end{multicols}
+																																					%
+																																					%~
+																																					%
+																																					%\begin{multicols}{2}
+																																					%
+																																					<ol>
+																																						[start=19]
+																																						%
+																																						<li>
+																																							<p>
+																																								<md>
+																																									%\begin{bmatrix}
+																																									%	2 \amp -3 \\ 4 \amp 1
+																																									%\end{bmatrix}
+																																									%\begin{bmatrix}
+																																									%	5 \amp 3 \\ 2 \amp -1 \\ 7 \amp 3
+																																									%\end{bmatrix}
+																																									%
+																																								</md>
+																																								%
+																																								%
+																																								<li>
+																																									<p>
+																																										<md>
+																																											%\begin{bmatrix}
+																																											%	3 \\ 2 \\ 6
+																																											%\end{bmatrix}
+																																											%\begin{bmatrix}
+																																											%	-2 \amp 3 \amp 0
+																																											%\end{bmatrix}
+																																											%
+																																										</md>
+																																										%
+																																									</ol>
+																																									%
+																																									%\end{multicols}
+																																									%
+																																									%~
+																																									%
+																																									%\begin{multicols}{2}[\raggedcolumns]
+																																									%
+																																									<ol>
+																																										[start=21]
+																																										%
+																																										<li>
+																																											<p>
+																																												<md>
+																																													%\begin{bmatrix}
+																																													%	3 \amp 0 \amp 1 \amp -2 \\
+																																													%	2 \amp -5 \amp 3 \amp 2
+																																													%\end{bmatrix}
+																																													%\begin{bmatrix}
+																																													%	2 \amp -3 \\ 4 \amp 6 \\ 3 \amp 1 \\ 0 \amp 7
+																																													%\end{bmatrix}
+																																													%
+																																												</md>
+																																												%
+																																												<li>
+																																													<p>
+																																														<md>
+																																															%\begin{bmatrix}
+																																															%	2 \amp 0 \\
+																																															%	0 \amp 2
+																																															%\end{bmatrix}
+																																															%\begin{bmatrix}
+																																															%	0 \amp 3 \\
+																																															%	1 \amp 1
+																																															%\end{bmatrix}
+																																															%
+																																														</md>
+																																														%
+																																													</ol>
+																																													%
+																																													%\end{multicols}
+																																													%
+																																													%\vfill
+																																													%
+																																													%\pagebreak
+																																													%
+																																													%
+																																													<ol>
+																																														[start=23]
+																																														%
+																																														<li>
+																																															<p>
+																																																If <m>A</m> is a 4 by 3 matrix, <m>B</m> is a 3 by 4 matrix and <m>C</m> is a 3 by 3 matrix, for each of the following operations, determine if each is valid.
+																																																If it is valid, write the size of the resulting matrix.
+																																																%
+																																																%\begin{multicols}{3}
+																																																%\begin{enumerate}
+																																																%
+																																																<li>
+																																																	<p>
+																																																		<m>AB</m>, \item <m>AC</m>, \item <m>AD</m>
+																																																		%
+																																																	</ol>
+																																																	%\end{multicols}
+																																																	%\begin{multicols}{3}
+																																																	%
+																																																	<ol>
+																																																		[start=4]
+																																																		%
+																																																		<li>
+																																																			<p>
+																																																				<m>BA</m>, \item <m>CB</m>, \item <m>CBA</m>
+																																																				%
+																																																			</ol>
+																																																			%\end{multicols}
+																																																			%
+																																																			%
+																																																			%(Hint for part (f):  First multiply <m>CB</m> and the multiply that result times <m>A</m>.)
+																																																			%
+																																																			%	\item Write matrices <m>A</m>, <m>X</m> and <m>B</m> such that the following linear system can be written in the form <m>AX=B</m>.
+																																																			%
+																																																			%
+																																																			<md>
+																																																				%\begin{cases}
+																																																				%\begin{split}
+																																																				%	x + 3y -2w \amp = 11, \\
+																																																				%	2y + 5w \amp = 4, \\
+																																																				%	3x + 2y - z \amp = 6, \\
+																																																				%	y - w \amp = 10.
+																																																				%	\end{split}
+																																																				%	\end{cases}
+																																																				%
+																																																			</md>
+																																																			%
+																																																			%\end{enumerate}
+																																																			-->
+																																																		</section>

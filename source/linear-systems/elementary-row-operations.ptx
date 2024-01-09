@@ -173,10 +173,9 @@
 		</p>
 
 		<p>
-			At this point we can solve for <m>z</m> in the third equation of (<xref ref="eq-gauss-method" />)
+			At this point we can solve for <m>z</m> in the third equation of <xref ref="eq-gauss-method" />
 			to get <m>z=3</m>.
-			From this, plug in <m>z=3</m> into the second equation of (<xref
-			ref="eq-gauss-method" />) to get
+			From this, plug in <m>z=3</m> into the second equation of <xref ref="eq-gauss-method" /> to get
 		</p>
 
 		<p>
@@ -188,8 +187,8 @@
 		</p>
 
 		<p>
-			and finally we can use <m>z=3</m> and <m>y=2</m> to substitute into the first equation of (<xref
-			ref="eq-gauss-method" />) to get
+			and finally we can use <m>z=3</m> and <m>y=2</m> to substitute into the first equation of <xref
+			ref="eq-gauss-method" /> to get
 		</p>
 
 		<p>
@@ -381,7 +380,7 @@
 		</definition>
 
 		<p>
-			The 3rd matrix in Example <xref ref="ex-matrices" /> above is a column vector of size 5.
+			The 3rd matrix in <xref ref="ex-matrices" /> above is a column vector of size 5.
 			The
 			4th matrix is a row vector of size 3.
 			Vectors are very important and will see them throughout
@@ -744,7 +743,7 @@
 					</p>
 
 					<figure xml:id="fig-plot-lines-2">
-						<caption>Plot of two intersecting lines</caption>
+						<caption>Plot of two parallel lines</caption>
 						<image width="75%" xml:id="plot-intersect-lines2">
 							<latex-image><![CDATA[
 							\begin{tikzpicture}[scale=0.8]
@@ -815,20 +814,18 @@
 		</p>
 
 		<p>
-			You can see if you have two lines, each with two variables, the example in (<xref
-			ref="eq-linear-system-geom1" />) is what happens if the two slopes are different.
+			You can see if you have two lines, each with two variables, the example in <xref
+			ref="eq-linear-system-geom1" /> is what happens if the two slopes are different.
 			In this
 			case, there is one (or a <term>unique</term>) solution.
 		</p>
 
 		<p>
-			In the other two cases as in equations (<xref ref="eq-linear-system-geom2" />) and (<xref
-			ref="eq-linear-system-geom3" />), both sets of lines have the same slope.
-			In the case of (<xref
-			ref="eq-linear-system-geom2" />) the lines have different <m>y</m>-intercepts, and therefore
+			In the other two cases as in equations <xref ref="eq-linear-system-geom2" /> and
+			<xref ref="eq-linear-system-geom3" />, both sets of lines have the same slope.
+			In the case of <xref ref="eq-linear-system-geom2" /> the lines have different <m>y</m>-intercepts, and therefore
 			the lines are parallel and thus there is <term>no solution</term> to the linear system.
-			In the
-			case of (<xref ref="eq-linear-system-geom3" />), both the slope and <m>y</m>-intercepts are
+			In the case of <xref ref="eq-linear-system-geom3" />, both the slope and <m>y</m>-intercepts are
 			equal, so the lines are equal and thus any point on the line is a solution, and this system
 			has an <term>infinite number of solutions</term>.
 		</p>

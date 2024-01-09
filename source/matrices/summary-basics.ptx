@@ -9,7 +9,7 @@
 
   <theorem xml:id="thm-nonsing-matrices">
     <statement>
-      <p> Let <m>A</m> be an <m>n</m> by <m>n</m> matrix of real numbers. The following statements
+      <p> Let <m>A</m> be an <m>n \times n</m> matrix of real numbers. The following statements
         are equivalent: </p>
 
       <p>

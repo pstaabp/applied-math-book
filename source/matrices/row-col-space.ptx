@@ -1,453 +1,667 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <section xml:id="sect-row-col-space-rank" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Row Space, Column Space and Rank of a Matrix</title>
-
-
-<introduction>
-  If we examine a matrix, we can think about the number of linearly
-independent row or columns in a matrix or also the span of the set of
-rows and columns in a matrix.  We will see how these concepts are connected
-to other concepts from this chapter.
-</introduction>
-
-<subsection><title>Row Space of a Matrix</title>
-
-<definition>
-The <term>row space</term> of a matrix is the span of the set of its rows.
-The <term>row rank</term> is the number of linearly independent rows of the matrix.
-</definition>
-
-
-<example>
-<statement>
-  The row space of
-
-<me>
-\begin{bmatrix}
-2 \amp 1 \\
-1 \amp 0
-\end{bmatrix}
-</me>
-is the set of all <m>2</m>-component row vectors with the form:
-
-<me>
-\left\{ c_1 \cdot \begin{bmatrix}
-2 \amp 1
-\end{bmatrix} + c_2 \begin{bmatrix}
-1 \amp 0
-\end{bmatrix}, \; | \, c_1, c_2 \in \mathbb{R} \right\}
-</me>
-and this is the set of all <m>2</m>-component row vectors.   The row rank
-of this matrix is 2 because these row vectors are linearly independent.
-</statement>
-</example>
-
-
-
-<example>
-<statement>
-  The row space of
-
-<me>
-\begin{bmatrix}
-2 \amp 1 \\
-4 \amp 2
-\end{bmatrix}
-</me>
-can be written as
-
-<me>
-\{ c_1 \cdot \begin{bmatrix}
-2 \amp 1
-\end{bmatrix} + c_2 \begin{bmatrix}
-4 \amp 2
-\end{bmatrix} \; | \; c_1, c_2 \in \mathbb{R} \}
-</me>
-However, since the two vectors are not linearly independent, the row space can be written as
-
-<me>
-\{ c_1 \cdot \begin{bmatrix}
-2 \amp 1
-\end{bmatrix}\; | \; c_1 \in \mathbb{R} \}
-</me>
-Therefore the row rank is 1.
-</statement>
-</example>
-
-
-<lemma>
-  <statement>
-If the matrices <m>A</m> and <m>B</m> are related by transformation by an
-elementary row operation, then their row spaces are equivalent.
-  </statement>
-
-
-<proof>
-By <xref ref="cor-rows-linear-comb" />, each row of <m>B</m> is
-a linear combination of each row of <m>A</m>, therefore it is in the row space
-of <m>A</m> or <m>\text{rowspace}(B) \subset \text{rowspace}(A)</m>.
-
-Similarly, each row of <m>A</m> is a linear combination of <m>B</m>, so using
-the same argument, \\ <m>\text{rowspace}(A) \subset \text{rowspace}(B</m>),
-therefore <m>\text{rowspace}(A)=\text{rowspace}(B)</m>.
-</proof>
-</lemma>
-
-<lemma>
-  <statement>
-The nonzero rows of an echelon matrix make up a linearly independent set of rows.
-  </statement>
-
-<proof>
-<xref ref="lem-ech-ind" /> states that in an echelon matrix, no nonzero
-row is a linear combination of the other rows.
-</proof>
-</lemma>
-
-<p>Although this proof is almost trivial, the main point of this is to reframe
-what we saw in the first chapter in terms of this newer framework. </p>
-
-
-<remark>
-Gaussian Reduction to echelon form eliminates linear dependence between
-the rows, leaves the row space unchanged, and results in a set of linearly
-independent rows whose span is the row space.
-</remark>
-
-
-<example>
-  <statement>
-Consider the linear system (written as a matrix) from Example
-<xref ref="ex-solve-linear-syst" />:
-
-<me>
-\begin{bmatrix}
-4 \amp 0 \amp -1 \amp 0 \\
-1 \amp 3 \amp 2 \amp 3 \\
-0 \amp 3 \amp 5 \amp 14
-\end{bmatrix}
-</me>
-Perform row operations to put it in echelon form and find the row rank.
-</statement>
-<solution>
-
-The row operations are
-<me>
-\begin{array}{r}
--R_1+4R_2 \rightarrow R_2, \\
--R_2 +4R_3 \rightarrow R_3
-\end{array}  \qquad
-\begin{bmatrix}
-4 \amp 0 \amp -1 \amp 0\\
-0 \amp 12 \amp 9 \amp 12\\
-0 \amp 0 \amp 11 \amp 44\\
-\end{bmatrix}
-</me>
-Since this is in echelon form now, there are three linearly independent rows, so the row rank is 3.
-</solution>
-</example>
-</subsection>
-
-<subsection>
-  <title>Column Space of a Matrix</title>
-
-<definition>
-The <term>column space</term> of a matrix is the span of the set of its columns.
-The <term>column rank</term> is the number of linearly independent columns of the matrix.
-</definition>
-
-<example>
-  <statement>
-Find the column space and column rank of
-
-<me> A  =
-\begin{bmatrix}
-1 \amp 3\\
--5 \amp 4\\
-1 \amp 3 \\
-\end{bmatrix}
-</me>
-</statement>
-
-<solution>
-In this case, since the columns of the matrix are linearly independent (because
-one can see that they are not multiples of one another), the column space is
-<me>
-  \left\{ c_1 \begin{bmatrix} 1 \\ -5 \\ 1\end{bmatrix}
-  + c_2 \begin{bmatrix}3 \\ 4 \\ 3 \end{bmatrix} \; | \; c_1, c_2 \in \mathbb{R}\right\}
-</me>
-which is the span of the columns. And since there are two linearly independent
-vectors, the column rank is 2.
-</solution>
-</example>
-
-<p> Instead of trying to eliminate any linear dependence as written,
-  note that if we treat the columns as rows.  Recall that this operation
-  is called the transpose of the matrix. </p>
-
-<remark>
-To find the column space of a matrix <m>A</m>, find the row space
-of <m>A^{\intercal}</m> and transpose the resulting row space.
-</remark>
-
-<example>
-  <statement>
-Find the column space and column rank of
-<me> A  =
-\begin{bmatrix}
-1 \amp 3 \amp 1\\
-2 \amp 0 \amp  -4\\
-0 \amp 1 \amp 1 \\
-3 \amp 4 \amp -2
-\end{bmatrix}
-</me>
-</statement>
-
-<solution>
-<ol>
-  <li><p> First take the transpose
-
-<me>
-A^{\intercal} = \begin{bmatrix}
-1 \amp 2 \amp 0 \amp 3 \\
-3 \amp 0 \amp 1 \amp 4 \\
-1 \amp -4 \amp 1 \amp -2
-\end{bmatrix}
-</me> </p></li>
-<li><p> Now row reduce the matrix:
-
-<md>
-<mrow>\begin{array}{r}
--3R_1 + R_2 \rightarrow R_2, \\
--R_1 + R_3 \rightarrow R_3,
-\end{array} \qquad
-\begin{bmatrix}
-1\amp 2 \amp 0 \amp 3 \\
-0 \amp -6 \amp1 \amp -5 \\
-0 \amp -6 \amp 1 \amp -5
-\end{bmatrix} </mrow>
-<mrow>-R_2 + R_3 \rightarrow R_3 \qquad
-\begin{bmatrix}
-1\amp 2 \amp 0 \amp 3 \\
-0 \amp -6 \amp1 \amp -5 \\
-0 \amp 0 \amp 0 \amp 0 \\
-\end{bmatrix}</mrow>
-</md>
-which is now in echelon form, so we know that the non-zero rows
-are linearly independent. </p></li>
-
-<li><p> Take the transpose of the first two rows.  The span of this is the column space:
-
-<me>
-\text{colspace}(A)  = \text{span}\left(\left\{ \begin{bmatrix}
-1 \\ 2 \\ 0 \\ 3
-\end{bmatrix}, \begin{bmatrix}
-0 \\ -6 \\ 1 \\ -5
-\end{bmatrix} \right\} \right)
-</me>
-</p></li>
-</ol>
-
-<p>And since there are two linearly independent columns, the column rank is 2.</p>
-</solution>
-</example>
-
-<p>The following theorem explains the relationship between the row rank and column rank. </p>
-
-<theorem>
-The row rank of a matrix equals its column rank.
-</theorem>
-
-<p>And because of this fact (which we won't prove here),
-  the rank of a matrix is typically the interesting property. </p>
-
-<definition>
-The <term>rank</term> of its matrix equals the row or column rank of the matrix.
-</definition>
-
-</subsection>
-
-<subsection><title>Null Space of a Matrix</title>
-
-<definition>
-Let <m>\vec{x}</m> be any vector that satisfies <m>A \vec{x}=\vec{0}</m>.
-The <term>null space</term> of the matrix <m>A</m> is the span of all vectors
-<m>\vec{x}</m>.  The number of independent vectors in the null space is called
-the <term>nullity</term> of <m>A</m>.
-</definition>
-
-<example xml:id="ex-nullity1">
-  <statement>
-Find the null space of the matrix
-
-<me>
-A  = \begin{bmatrix}
-1 \amp 2 \amp 3\\
-2 \amp 3 \amp -1
-\end{bmatrix}
-</me>
-</statement>
-<solution>
-
-We can solve this by solving the homogeneous matrix equation.
-
-<md>
-  <mrow>\amp \qquad \left[\begin{array}{rrr|r}
-1 \amp 2 \amp 3\amp 0 \\
-2 \amp 3 \amp -1 \amp 0
-\end{array}\right] </mrow>
-  </md>
- and performing the row operation <m>-2R_1+R_2 \rightarrow R_2</m>
- <md>
-<mrow>\amp \qquad \left[\begin{array}{rrr|r}
-1 \amp 2 \amp 3 \amp 0 \\
-0 \amp -1 \amp -7 \amp 0
-\end{array}\right]
-</mrow>
-<mrow>2R_2 + R_1 \rightarrow R_1 \amp \qquad
-\left[\begin{array}{rrr|r}
-1 \amp 0 \amp -11 \amp 0 \\
-0 \amp -1 \amp -7 \amp 0
-\end{array}\right] </mrow>
-<mrow>-R_2 \rightarrow R_2 \amp \qquad
-\left[\begin{array}{rrr|r}
-1 \amp 0 \amp -11 \amp 0 \\
-0 \amp 1 \amp 7 \amp 0
-\end{array}\right]</mrow>
-</md>
-results in the reduced row-echelon form.  The resulting equations are
-
-<md>
-  <mrow>x_1 -11 x_3 \amp = 0 </mrow>
-    <mrow>x_2 +7x_3 \amp = 0</mrow>
-</md>
-and the solution set can be written as in vector form:
-
-<me>
-\{ \begin{bmatrix}
--11 \\ 7 \\ 1
-\end{bmatrix} x_3 \; | \; x_3 \in \mathbb{R} \}
-</me>
-and this set is the null space of the matrix.  The null space is
-
-<me>
-\text{span} \left(\left\{\begin{bmatrix}
--11 \\ 7 \\ 1
-\end{bmatrix}\right\}\right)
-</me>
-
-and therefore the dimension of the null space is <m>1</m>, and thus the nullity of <m>A</m> is <m>1</m>.
-</solution>
-</example>
-
-<remark>
-<p>To find the null space of a matrix <m>A</m>, find the row reduced form the
-matrix, and find the homogeneous solution.  The solution set is the null space. </p>
-
-
-
-<p>The basis of the homogeneous solution set is the basis of the null space.</p>
-</remark>
-
-
-<p>The following example shows a larger example. </p>
-
-<example xml:id="ex-nullity2">
-<statement>
-  Find the null space of
-
-<me>
-A = \begin{bmatrix}
-1 \amp 0 \amp 2 \amp 0 \\
-0 \amp 1 \amp 1 \amp 2 \\
-2 \amp 1 \amp 5 \amp 2 \\
-0 \amp -2 \amp -2 \amp -4
-\end{bmatrix}
-</me>
-
-</statement>
-
-<solution>
-
-Again, we solve the homogeneous linear system <m>A \vec{x} = \vec{0}</m>
-by finding the reduced row echelon form of <m>A</m>
-
-<md>
-  <mrow>-2R_1 + R_2 \rightarrow R_2 \amp \qquad
-\begin{bmatrix}
-1 \amp 0 \amp 2 \amp 0 \\
-0 \amp 1 \amp 1 \amp 2 \\
-0 \amp 1 \amp 1 \amp 2 \\
-0 \amp -2 \amp -2 \amp -4
-\end{bmatrix} </mrow>
-<mrow>\begin{array}{r}
--R_2 + R_3 \rightarrow R_3, \\
-2R_2 + R_4 \rightarrow R_4,
-\end{array} \amp \qquad
-\begin{bmatrix}
-1 \amp 0 \amp 2 \amp 0 \\
-0 \amp 1 \amp 1 \amp 2 \\
-0 \amp 0 \amp 0 \amp 0 \\
-0 \amp 0 \amp 0 \amp 0 \\
-\end{bmatrix} </mrow>
-</md>
-and the corresponding equations are:
-
-<md>
-  <mrow>x_1 + 2 x_3 \amp = 0 </mrow>
-    <mrow>x_2 + x_3 + 2x_4 \amp = 0</mrow>
-</md>
-which has the solution set:
-
-<me>
- \{ \begin{bmatrix}
- -2 \\ -1 \\ 1 \\ 0
- \end{bmatrix} x_3 + \begin{bmatrix}
- 0 \\ -2 \\ 0 \\ 1
- \end{bmatrix} x_4  \; | \; x_3, x_4 \in \mathbb{R} \}
-</me>
-<p>and this is the null space of the matrix <m>A</m>.  Since there are
-  two linearly independent vectors that span the space, the dimension of
-  the null space of the matrix is 2.  Thus the nullity of <m>A</m> is 2. </p>
-</solution>
-</example>
-
-</subsection>
-
-<subsection><title>Relationship between the Rank and Nullity</title>
-
-<p>The relationship between the rank and the nullity of a <m>m \times n</m>
-  matrix <m>A</m> is summed up in the following theorem. </p>
-
-  <theorem xml:id="thm-rank-nullity">
-    <title>Rank-Nullity Theorem</title>
-<statement>Let <m>A</m> be an <m>m \times n</m> matirx.  The sum of the rank
-of <m>A</m> and the nullity of <m>A</m> is <m>n</m>. </statement>
-  </theorem>
-
-<example>
-<statement>
-  Show that the Rank-Nullity Theorem holds for Examples <xref ref="ex-nullity1" />
-   and <xref ref="ex-nullity2" />. </statement>
-
-<solution>
-
-<p> In Example <xref ref="ex-nullity1" />, the <m>2 \times 3</m> matrix is
-  reduced to reduced row echelon form and it shows that there are 2 non-zero
-  rows, hence the rank of the matrix is 2.  Also in Example
-  <xref ref="ex-nullity1" />, the nullity was shown to be 1 and the
-  sum is 3, the number of columns of <m>A</m>. </p>
-
-<p> In Example <xref ref="ex-nullity2" />, the <m>4 \times 4</m>
-  matrix is reduced to reduced row echelon form and it shows that
-  there are 2 non-zero rows, and again the rank of the matrix is 2.
-  The example also shows that the nullity is 2 and the sum is 4, the
-  number of columns of <m>A</m>. </p>
-</solution>
-</example>
-
-</subsection>
-
+	<title>Row Space, Column Space and Rank of a Matrix</title>
+	<objectives>
+		<ul>
+			<li>
+				<p>
+					Apply concepts of linear independence and span to the columns and row of a matrix.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					Define explicitly, row space, column space and null space.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					Define the column rank, row rank and nullity and show the relationship between these.
+				</p>
+			</li>
+		</ul>
+	</objectives>
+
+	<introduction>
+		<p>
+			If we examine a matrix, we can think about the number of linearly
+			independent row or columns in a matrix or also the span of the set of
+			rows and columns in a matrix.
+			We will see how these concepts are connected
+			to other concepts from this chapter.
+		</p>
+	</introduction>
+
+	<subsection>
+		<title>Row Space of a Matrix</title>
+		<definition>
+			<statement>
+				<p>
+					The <term>row space</term> of a matrix is the span of the set of its rows.
+					The <term>row rank</term> is the number of linearly independent rows of the matrix.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			The following example finds the row space and row rank of a <m>2 \times 2</m> matrix.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					The row space of
+				</p>
+
+				<p>
+					<me>
+						\begin{bmatrix}
+						2 \amp 1 \\
+						1 \amp 0
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					is the set of all <m>2</m>-component row vectors with the form:
+				</p>
+
+				<p>
+					<me>
+						\left\{ c_1 \cdot \begin{bmatrix}
+						2 \amp 1
+						\end{bmatrix} + c_2 \begin{bmatrix}
+						1 \amp 0
+						\end{bmatrix}, \; | \, c_1, c_2 \in \mathbb{R} \right\}
+					</me>
+				</p>
+
+				<p>
+					and this is the set of all <m>2</m>-component row vectors.
+					The row rank
+					of this matrix is 2 because these row vectors are linearly independent.
+				</p>
+			</statement>
+		</example>
+
+		<p>
+			We can calculate the row space and row rank of non-square matrices as is shown in the following
+			example.
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					The row space of
+				</p>
+
+				<p>
+					<me>
+						\begin{bmatrix}
+						2 \amp 1 \amp -4 \\
+						4 \amp 2 \amp -8
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					can be written as
+				</p>
+
+				<p>
+					<me>
+						\{ c_1 \cdot \begin{bmatrix}
+						2 \amp 1 \amp -4
+						\end{bmatrix} + c_2 \begin{bmatrix}
+						4 \amp 2 \amp -8
+						\end{bmatrix} \; | \; c_1, c_2 \in \mathbb{R} \}
+					</me>
+				</p>
+
+				<p>
+					However, since the two vectors are not linearly independent, the row space can be written as
+				</p>
+
+				<p>
+					<me>
+						\{ c_1 \cdot \begin{bmatrix}
+						2 \amp 1 \amp -4
+						\end{bmatrix}\; | \; c_1 \in \mathbb{R} \}
+					</me>
+				</p>
+
+				<p>
+					Therefore the row rank is 1.
+				</p>
+			</statement>
+		</example>
+
+		<lemma>
+			<statement>
+				<p>
+					If the matrices <m>A</m> and <m>B</m> are related by transformation by an
+					elementary row operation, then their row spaces are equivalent.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					By <xref ref="cor-rows-linear-comb" />, each row of <m>B</m> is
+					a linear combination of each row of <m>A</m>, therefore it is in the row space
+					of <m>A</m> or <m>\text{rowspace}(B) \subset \text{rowspace}(A)</m>.
+				</p>
+
+				<p>
+					Similarly, each row of <m>A</m> is a linear combination of <m>B</m>, so using
+					the same argument, <m>\text{rowspace}(A) \subset \text{rowspace}(B</m>),
+					therefore <m>\text{rowspace}(A)=\text{rowspace}(B)</m>.
+				</p>
+			</proof>
+		</lemma>
+
+		<lemma>
+			<statement>
+				<p>
+					The nonzero rows of an echelon matrix make up a linearly independent set of rows.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					<xref ref="lem-ech-ind" /> states that in an echelon matrix, no nonzero
+					row is a linear combination of the other rows.
+				</p>
+			</proof>
+		</lemma>
+
+		<p>
+			Although this proof is almost trivial, the main point of this is to reframe
+			what we saw in the first chapter in terms of this newer framework.
+		</p>
+
+		<remark>
+			<p>
+				Gaussian Reduction to echelon form eliminates linear dependence between
+				the rows, leaves the row space unchanged, and results in a set of linearly
+				independent rows whose span is the row space.
+			</p>
+		</remark>
+
+		<example>
+			<statement>
+				<p>
+					Consider the linear system (written as a matrix) from Example
+					<xref ref="ex-solve-linear-syst" />:
+				</p>
+
+				<p>
+					<me>
+						\begin{bmatrix}
+						4 \amp 0 \amp -1 \amp 0 \\
+						1 \amp 3 \amp 2 \amp 3 \\
+						0 \amp 3 \amp 5 \amp 14
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Perform row operations to put it in echelon form and find the row rank.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					The row operations are
+				</p>
+
+				<p>
+					<me>
+						\begin{array}{r}
+						-R_1+4R_2 \rightarrow R_2, \\
+						-R_2 +4R_3 \rightarrow R_3
+						\end{array}  \qquad
+						\begin{bmatrix}
+						4 \amp 0 \amp -1 \amp 0\\
+						0 \amp 12 \amp 9 \amp 12\\
+						0 \amp 0 \amp 11 \amp 44\\
+						\end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Since this is in echelon form now, there are three linearly independent rows, so the row rank is 3.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Column Space of a Matrix</title>
+		<definition>
+			<statement>
+				<p>
+					The <term>column space</term> of a matrix is the span of the set of its columns.
+					The <term>column rank</term> is the number of linearly independent columns of the matrix.
+				</p>
+			</statement>
+		</definition>
+
+		<example>
+			<statement>
+				<p>
+					Find the column space and column rank of
+				</p>
+
+				<p>
+					<me>
+						A  =
+						\begin{bmatrix}
+						1 \amp 3\\
+						-5 \amp 4\\
+						1 \amp 3 \\
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					In this case, since the columns of the matrix are linearly independent (because
+					one can see that they are not multiples of one another), the column space is
+				</p>
+
+				<p>
+					<me>
+						\left\{ c_1 \begin{bmatrix} 1 \\ -5 \\ 1\end{bmatrix}
+						+ c_2 \begin{bmatrix}3 \\ 4 \\ 3 \end{bmatrix} \; | \; c_1, c_2 \in \mathbb{R}\right\}
+					</me>
+				</p>
+
+				<p>
+					which is the span of the columns.
+					And since there are two linearly independent
+					vectors, the column rank is 2.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			Instead of trying to eliminate any linear dependence as written,
+			note that if we treat the columns as rows.
+			Recall that this operation
+			is called the transpose of the matrix.
+		</p>
+
+		<remark>
+			<p>
+				To find the column space of a matrix <m>A</m>, find the row space
+				of <m>A^{\intercal}</m> and transpose the resulting row space.
+			</p>
+		</remark>
+
+		<example>
+			<statement>
+				<p>
+					Find the column space and column rank of
+				</p>
+
+				<p>
+					<me>
+						A  =
+						\begin{bmatrix}
+						1 \amp 3 \amp 1\\
+						2 \amp 0 \amp  -4\\
+						0 \amp 1 \amp 1 \\
+						3 \amp 4 \amp -2
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					<ol>
+						<li>
+							<p>
+								First take the transpose
+								<me>
+									A^{\intercal} = \begin{bmatrix}
+									1 \amp 2 \amp 0 \amp 3 \\
+									3 \amp 0 \amp 1 \amp 4 \\
+									1 \amp -4 \amp 1 \amp -2
+									\end{bmatrix}
+								</me>
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Now row reduce the matrix:
+								<md>
+									<mrow>\begin{array}{r}
+									-3R_1 + R_2 \rightarrow R_2, \\
+									-R_1 + R_3 \rightarrow R_3,
+									\end{array} \qquad
+									\begin{bmatrix}
+									1\amp 2 \amp 0 \amp 3 \\
+									0 \amp -6 \amp1 \amp -5 \\
+									0 \amp -6 \amp 1 \amp -5
+									\end{bmatrix} </mrow>
+									<mrow>-R_2 + R_3 \rightarrow R_3 \qquad
+									\begin{bmatrix}
+									1\amp 2 \amp 0 \amp 3 \\
+									0 \amp -6 \amp1 \amp -5 \\
+									0 \amp 0 \amp 0 \amp 0 \\
+									\end{bmatrix}</mrow>
+								</md>
+								which is now in echelon form, so we know that the non-zero rows
+								are linearly independent.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Take the transpose of the first two rows.
+								The span of this is the column space:
+								<me>
+									\text{colspace}(A)  = \text{span}\left(\left\{ \begin{bmatrix}
+									1 \\ 2 \\ 0 \\ 3
+									\end{bmatrix}, \begin{bmatrix}
+									0 \\ -6 \\ 1 \\ -5
+									\end{bmatrix} \right\} \right)
+								</me>
+							</p>
+						</li>
+					</ol>
+				</p>
+
+				<p>
+					And since there are two linearly independent columns, the column rank is 2.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			The following theorem explains the relationship between the row rank and column rank.
+		</p>
+
+		<theorem>
+			<statement>
+				<p>
+					The row rank of a matrix equals its column rank.
+				</p>
+			</statement>
+		</theorem>
+
+		<p>
+			And because of this fact (which we won't prove here),
+			the rank of a matrix is typically the interesting property.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					The <term>rank</term> of its matrix equals the row or column rank of the matrix.
+				</p>
+			</statement>
+		</definition>
+	</subsection>
+
+	<subsection>
+		<title>Null Space of a Matrix</title>
+		<definition>
+			<statement>
+				<p>
+					Let <m>\vec{x}</m> be any vector that satisfies <m>A \vec{x}=\vec{0}</m>.
+					The <term>null space</term> of the matrix <m>A</m> is the span of all vectors
+					<m>\vec{x}</m>.
+					The number of independent vectors in the null space is called
+					the <term>nullity</term> of <m>A</m>.
+				</p>
+			</statement>
+		</definition>
+
+		<example xml:id="ex-nullity1">
+			<statement>
+				<p>
+					Find the null space of the matrix
+				</p>
+
+				<p>
+					<me>
+						A  = \begin{bmatrix}
+						1 \amp 2 \amp 3\\
+						2 \amp 3 \amp -1
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					We can solve this by solving the homogeneous matrix equation.
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp \qquad \left[\begin{array}{rrr|r}
+						1 \amp 2 \amp 3\amp 0 \\
+						2 \amp 3 \amp -1 \amp 0
+						\end{array}\right] </mrow>
+					</md>
+				</p>
+
+				<p>
+					and performing the row operation <m>-2R_1+R_2 \rightarrow R_2</m>
+				</p>
+
+				<p>
+					<md>
+						<mrow>\amp \qquad \left[\begin{array}{rrr|r}
+						1 \amp 2 \amp 3 \amp 0 \\
+						0 \amp -1 \amp -7 \amp 0
+						\end{array}\right]
+						</mrow>
+						<mrow>2R_2 + R_1 \rightarrow R_1 \amp \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp 0 \amp -11 \amp 0 \\
+						0 \amp -1 \amp -7 \amp 0
+						\end{array}\right] </mrow>
+						<mrow>-R_2 \rightarrow R_2 \amp \qquad
+						\left[\begin{array}{rrr|r}
+						1 \amp 0 \amp -11 \amp 0 \\
+						0 \amp 1 \amp 7 \amp 0
+						\end{array}\right]</mrow>
+					</md>
+				</p>
+
+				<p>
+					results in the reduced row-echelon form.
+					The resulting equations are
+				</p>
+
+				<p>
+					<md>
+						<mrow>x_1 -11 x_3 \amp = 0 </mrow>
+						<mrow>x_2 +7x_3 \amp = 0</mrow>
+					</md>
+				</p>
+
+				<p>
+					and the solution set can be written as in vector form:
+				</p>
+
+				<p>
+					<me>
+						\left\{ \begin{bmatrix}
+						-11 \\ 7 \\ 1
+						\end{bmatrix} x_3 \; | \; x_3 \in \mathbb{R} \right\}
+					</me>
+				</p>
+
+				<p>
+					and this set is the null space of the matrix.
+					The null space is
+				</p>
+
+				<p>
+					<me>
+						\text{span} \left(\left\{\begin{bmatrix}
+						-11 \\ 7 \\ 1
+						\end{bmatrix}\right\}\right)
+					</me>
+				</p>
+
+				<p>
+					and therefore the dimension of the null space is <m>1</m>, and thus the nullity of <m>A</m> is <m>1</m>.
+				</p>
+			</solution>
+		</example>
+
+		<remark>
+			<p>
+				To find the null space of a matrix <m>A</m>, find the row reduced form the
+				matrix, and find the homogeneous solution.
+				The solution set is the null space.
+			</p>
+
+			<p>
+				The basis of the homogeneous solution set is the basis of the null space.
+			</p>
+		</remark>
+
+		<p>
+			The following example shows a larger example.
+		</p>
+
+		<example xml:id="ex-nullity2">
+			<statement>
+				<p>
+					Find the null space of
+				</p>
+
+				<p>
+					<me>
+						A = \begin{bmatrix}
+						1 \amp 0 \amp 2 \amp 0 \\
+						0 \amp 1 \amp 1 \amp 2 \\
+						2 \amp 1 \amp 5 \amp 2 \\
+						0 \amp -2 \amp -2 \amp -4
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					Again, we solve the homogeneous linear system <m>A \vec{x} = \vec{0}</m>
+					by finding the reduced row echelon form of <m>A</m>
+				</p>
+
+				<p>
+					<md>
+						<mrow>-2R_1 + R_2 \rightarrow R_2 \amp \qquad
+						\begin{bmatrix}
+						1 \amp 0 \amp 2 \amp 0 \\
+						0 \amp 1 \amp 1 \amp 2 \\
+						0 \amp 1 \amp 1 \amp 2 \\
+						0 \amp -2 \amp -2 \amp -4
+						\end{bmatrix} </mrow>
+						<mrow>\begin{array}{r}
+						-R_2 + R_3 \rightarrow R_3, \\
+						2R_2 + R_4 \rightarrow R_4,
+						\end{array} \amp \qquad
+						\begin{bmatrix}
+						1 \amp 0 \amp 2 \amp 0 \\
+						0 \amp 1 \amp 1 \amp 2 \\
+						0 \amp 0 \amp 0 \amp 0 \\
+						0 \amp 0 \amp 0 \amp 0 \\
+						\end{bmatrix} </mrow>
+					</md>
+				</p>
+
+				<p>
+					and the corresponding equations are:
+				</p>
+
+				<p>
+					<md>
+						<mrow>x_1 + 2 x_3 \amp = 0 </mrow>
+						<mrow>x_2 + x_3 + 2x_4 \amp = 0</mrow>
+					</md>
+				</p>
+
+				<p>
+					which has the solution set:
+				</p>
+
+				<p>
+					<me>
+						\{ \begin{bmatrix}
+						-2 \\ -1 \\ 1 \\ 0
+						\end{bmatrix} t + \begin{bmatrix}
+						0 \\ -2 \\ 0 \\ 1
+						\end{bmatrix} s  \; | \; t, s \in \mathbb{R} \}
+					</me>
+				</p>
+
+				<p>
+					and this is the null space of the matrix <m>A</m>.
+					Since there are
+					two linearly independent vectors that span the space, the dimension of
+					the null space of the matrix is 2.
+					Thus the nullity of <m>A</m> is 2.
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection>
+		<title>Relationship between the Rank and Nullity</title>
+		<p>
+			The relationship between the rank and the nullity of a <m>m \times n</m>
+			matrix <m>A</m> is summed up in the following theorem.
+		</p>
+
+		<theorem xml:id="thm-rank-nullity">
+			<title>Rank-Nullity Theorem</title>
+			<statement>
+				<p>
+					Let <m>A</m> be an <m>m \times n</m> matirx.
+					The sum of the rank
+					of <m>A</m> and the nullity of <m>A</m> is <m>n</m>.
+				</p>
+			</statement>
+		</theorem>
+
+		<example>
+			<statement>
+				<p>
+					Show that the Rank-Nullity Theorem holds for Examples <xref ref="ex-nullity1" />
+					and <xref ref="ex-nullity2" />.
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					In <xref ref="ex-nullity1" />, the <m>2 \times 3</m> matrix is
+					reduced to reduced row echelon form and it shows that there are 2 non-zero
+					rows, hence the rank of the matrix is 2.
+					Also in <xref ref="ex-nullity1" />, the nullity was shown to be 1 and the
+					sum is 3, the number of columns of <m>A</m>.
+				</p>
+
+				<p>
+					In <xref ref="ex-nullity2" />, the <m>4 \times 4</m>
+					matrix is reduced to reduced row echelon form and it shows that
+					there are 2 non-zero rows, and again the rank of the matrix is 2.
+					The example also shows that the nullity is 2 and the sum is 4, the
+					number of columns of <m>A</m>.
+				</p>
+			</solution>
+		</example>
+	</subsection>
 </section>
-

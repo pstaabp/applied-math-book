@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sect-elem-matrices">
 	<title>Elementary Matrices</title>
+	<objectives>
+		<ul>
+			<li>
+				<p>
+					Define a elementary matrix.
+				</p>
+			</li>
+			<li>
+				<p>
+					Show that the row operations from the previous chapter can be written as matrix products
+					with elementary matrices.
+				</p>
+			</li>
+			<li>
+				<p>
+					Reexamination a reduced row-echelon form of a matrix with elementary matrices.
+				</p>
+			</li>
+		</ul>
+	</objectives>
+
 	<p>
 		In <xref ref="ch-linear-systems" />, linear systems and solutions were introduced.
 		The standard

@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sect-matrix-inverse" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>The Inverse of a Matrix</title>
-	<introduction>
-		<p>
-			At the end of the previous section, we learned how to write a linear system in the form <m>
-			A\vec{u}=\vec{b}</m>.
-			In this section, we will learn how to find an inverse and then use it to
-			solve the matrix equation <m>A\vec{u}=\vec{b}</m>.
-		</p>
-	</introduction>
+	<objectives>
+		<ul>
+			<li>
+				<p>
+					Learn what an identity matrix is and why it is useful.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					Define the matrix inverse.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					Find an inverse matrix of a <m>2 \times 2</m> matrix.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					Find the inverse of a matrix using the Gauss-Jordon method.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					Solve a linear system <m>A\vec{u}=\vec{b}</m> using the matrix inverse.
+				</p>
+			</li>
+		</ul>
+	</objectives>
 
 	<subsection>
 		<title>The Identity Matrix</title>
@@ -43,7 +68,9 @@
 		</p>
 
 		<p>
-			The identity matrix is a matrix such that <m>IA = AI = A</m>.
+			The identity matrix is a matrix such that <m>IA = AI = A</m> and note that the size
+			of the identity matrix can be anything so generally is chosen for a defined matrix
+			product.
 		</p>
 	</subsection>
 
@@ -55,7 +82,7 @@
 			<me>
 				A \vec{u} = \vec{b},
 			</me>
-			where <m>A</m> is the coefficient matrix of the unknowns, <m>
+			where <m>A</m> is the coefficient matrix of the linear equations, <m>
 			\vec{u}</m> is a column vector of unknowns, and <m>\vec{b}</m> is the right hand sides of each
 			equation.
 		</p>
@@ -65,9 +92,9 @@
 			<me>
 				\vec{u} = \frac{\vec{b}}{A},
 			</me>
-			but how do we divide through by <m>A</m>? We can't
-			because there is no matrix division.
-			However, we will see that there is a matrix which will
+			but how do we divide through by <m>A</m>? Maybe we just haven't learned about matrix division,
+			however (spoiler alert) there is no matrix divsion.
+			Instead, we will see that there is a matrix which will
 			let us multiply through to give the answer.
 		</p>
 	</subsection>
@@ -93,27 +120,36 @@
 			And the important part of this is that the solution <m>
 			x=a^{-1}b</m> uses only multiplication for the solution.
 		</p>
-
-		<p>
-			We wish to do the same for matrices, which means that we'd like to find a matrix <m>A^{-1}</m>
-			(called <m>A</m> inverse) such that
-		</p>
-
-		<p>
-			<me>
-				A^{-1} A = A A^{-1} = I
-			</me>
-		</p>
-
-		<p>
-			And later we will see how to solve <m>A\vec{u}=\vec{b}</m>.
-			First, let's determine how to
-			find an inverse matrix and we'll start with the inverse of a 2 by 2 matrix.
-		</p>
 	</subsection>
 
 	<subsection>
-		<title>The Inverse of a 2 by 2 matrix</title>
+		<title>The Matrix Inverse</title>
+		<definition xml:id="def-matrix-inverse">
+			<statement>
+				<p>
+					For a square matrix <m>A</m>, if there exists a matrix <m>B</m>, such that
+					<me>
+						A B = B A = I
+					</me>
+				</p>
+
+				<p>
+					then <m>B</m> is called the <term>inverse matrix</term> of <m>A</m> and
+					is denoted <m>A^{-1}</m>.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			It is noted that not every matrix <m>A</m> has an inverse matrix.
+			We will see examples
+			of this later in this section.
+		</p>
+
+		<p>
+			First, let's determine how to find the inverse of a 2 by 2 matrix.
+		</p>
+
 		<lemma>
 			<statement>
 				<p>
@@ -154,7 +190,7 @@
 				</p>
 
 				<p>
-					Although we haven't shown this, the scalar <m>1/ad-bc</m> can be written out front.
+					From properties in <xref ref="sect-matrix-operations" />, the scalar <m>1/(ad-bc)</m> can be written out front.
 				</p>
 
 				<p>
@@ -199,18 +235,18 @@
 				</p>
 
 				<p>
-					And since we have shown that <m>AA^{-1}=I</m>, this proves the formula for the inverse
-					in (<xref ref="eq-def-2by2-inverse" />).
+					Similarly, we can show that <m>A^{-1}A = I</m>, and these two properties proves the formula for the inverse
+					in <xref ref="eq-def-2by2-inverse" />.
 				</p>
 			</proof>
 		</lemma>
 
 		<p>
-			The following example uses the formula in (<xref ref="eq-def-2by2-inverse" />) to find the
+			The following example uses the formula in <xref ref="eq-def-2by2-inverse" /> to find the
 			inverse matrix of a 2 by 2 matrix.
 		</p>
 
-		<example>
+		<example xml:id="ex-inv-2-by-2">
 			<statement>
 				<p>
 					Find the inverse of
@@ -227,8 +263,8 @@
 
 			<solution>
 				<p>
-					Since (<xref ref="eq-def-2by2-inverse" />) has the determinant of <m>A</m> as part of it,
-					first, we will find <m>ad-bc = 3(1)-(2)(2) = -1</m>.
+					The term out front of <xref ref="eq-def-2by2-inverse" />
+					is <m>ad-bc = 3(1)-(2)(2) = -1</m>.
 					Then apply the formula,
 				</p>
 
@@ -273,7 +309,7 @@
 
 			<solution>
 				<p>
-					Again we use (<xref ref="eq-def-2by2-inverse" />), but because <m>ad-bc = 2(2)-4(1) = 0</m>,
+					Again we use <xref ref="eq-def-2by2-inverse" />, but because <m>ad-bc = 2(2)-4(1) = 0</m>,
 					the matrix does not have an inverse.
 				</p>
 			</solution>
@@ -283,7 +319,7 @@
 	<subsection>
 		<title>Solving <m>A\vec{u}=\vec{b}</m></title>
 		<p>
-			At the end of <xref ref="section-matrix-multiplication-linear-systems" />, we learned how to
+			At the end of <xref ref="sect-matrix-matrix-product" />, we learned how to
 			take a linear system and write it as the matrix equation <m>A\vec{u}=\vec{b}</m>.
 			In this
 			section we will learn how to solve a system written in this form.
@@ -345,7 +381,7 @@
 				<p>
 					First, write down <m>A</m>, <m>\vec{u}</m> and <m>\vec{b}</m>.
 					(We learned how to do
-					this in <xref ref="section-matrix-multiplication-linear-systems" />.)
+					this in <xref ref="sect-matrix-matrix-product" />.)
 				</p>
 
 				<p>
@@ -364,8 +400,8 @@
 				</p>
 
 				<p>
-					Then find the inverse of <m>A</m>, which is a 2 by 2 matrix, so we will use (<xref
-					ref="eq-def-2by2-inverse" />).
+					Then find the inverse of <m>A</m>, which is a 2 by 2 matrix, so we will use <xref
+					ref="eq-def-2by2-inverse" />.
 					Since <m>ad-bc = -3 -8 =
 					-11</m>.
 				</p>
@@ -509,44 +545,216 @@
 	<subsection>
 		<title>the Gauss-Jordan Method for Calculating Inverses</title>
 		<p>
-			As we have seen, often
-			matrices are larger than 2 by 2 and thus
+			As we have seen, often matrices are larger than 2 by 2 and thus
 			far we have no method to find an inverse of a matrix of this size.
 			In this section, we will see that the Gauss-Jordon method can help us
 			do this.
 		</p>
 
 		<p>
-			If we write a matrix <m>A</m> of the form
+			Recall that finding an inverse is the same as solving <m>AB=I</m> for <m>B</m>.
+			If we write <m>B</m> and <m>I</m> in terms of its column vectors, then
 		</p>
 
 		<p>
-			<me>
-				\begin{bmatrix}
-				A \amp | \amp I
-				\end{bmatrix}
-			</me>
+			<md>
+				<mrow> B  \amp = \begin{bmatrix} \vec{b}_1 \amp \vec{b}_2 \amp \cdots \amp \vec{b}_n \end{bmatrix}
+				\amp
+				I \amp = \begin{bmatrix} \vec{e}_1 \amp \vec{e}_2 \amp \cdots \amp \vec{e}_n \end{bmatrix} </mrow>
+			</md>
 		</p>
 
 		<p>
-			where
-			the matrix <m>
-			A</m> is on the left and the identity matrix is on the right and apply Gauss-Jordon to get
-			the identity matrix on the left, then the matrix will look like,
+			Then if we solve <m>A \vec{b}_k = \vec{e}_k</m>, for all <m>k</m>, then we have all columns
+			of <m>B</m>.
 		</p>
 
 		<p>
-			<me>
-				\begin{bmatrix}
-				I \amp | \amp A^{-1}
-				\end{bmatrix}
-			</me>
+			We will use this method to find the inverse of the same <m>2 \times 2</m> matrix as
+			in <xref ref="ex-inv-2-by-2"></xref>
 		</p>
 
+		<example>
+			<statement>
+				<p>
+					Use the method explained above to find the inverse of
+				</p>
+
+				<p>
+					<me>
+						A = \begin{bmatrix}
+						3 \amp 2 \\ 2 \amp 1
+						\end{bmatrix}
+					</me>
+				</p>
+			</statement>
+
+			<solution>
+				<p>
+					First, we will solve <m>A\vec{b}_1 = \vec{e}_1</m> where
+				</p>
+
+				<p>
+					<me>
+						\vec{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					We will use Gauss-Jordon to solve this.
+				</p>
+
+				<p>
+					<md>
+						<mrow> \amp \left[\begin{array}{rr|r}
+						3 \amp 2 \amp 1 \\ 2 \amp 1 \amp 0
+						\end{array}\right] </mrow>
+						<mrow> -R_2 + R_1 \to R_1 \qquad \amp
+						\left[\begin{array}{rr|r}
+						1 \amp 1 \amp 1 \\ 2 \amp 1 \amp 0
+						\end{array}\right]
+						</mrow>
+						<mrow>-2R_1 + R_2 \to R_2 \qquad \amp
+						\left[\begin{array}{rr|r}
+						1 \amp 1 \amp 1 \\ 0 \amp -1 \amp -2
+						\end{array}\right]
+						</mrow>
+						<mrow>
+						-R_2 \to R_2 \qquad \amp
+						\left[\begin{array}{rr|r}
+						1 \amp 1 \amp 1 \\ 0 \amp 1 \amp 2
+						\end{array}\right]
+						</mrow>
+						<mrow>
+						-R_2 + R_1 \to R_1 \qquad \amp
+						\left[\begin{array}{rr|r}
+						1 \amp 0 \amp -1 \\ 0 \amp 1 \amp 2
+						\end{array}\right]
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					and this shows that
+				</p>
+
+				<p>
+					<me>
+						\vec{b}_1 = \begin{bmatrix} -1 \\ 2 \end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					Now, we will solve <m>A\vec{b}_2 = \vec{e}_2</m> where
+				</p>
+
+				<p>
+					<me>
+						\vec{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					and use Gauss-Jordon to solve this.
+				</p>
+
+				<p>
+					<md>
+						<mrow> \amp \left[\begin{array}{rr|r}
+						3 \amp 2 \amp 1 \\ 2 \amp 0 \amp 1
+						\end{array}\right] </mrow>
+						<mrow> -R_2 + R_1 \to R_1 \qquad \amp
+						\left[\begin{array}{rr|r}
+						1 \amp 1 \amp -1 \\ 2 \amp 1 \amp 1
+						\end{array}\right]
+						</mrow>
+						<mrow>-2R_1 + R_2 \to R_2 \qquad \amp
+						\left[\begin{array}{rr|r}
+						1 \amp 1 \amp -1 \\ 0 \amp -1 \amp 3
+						\end{array}\right]
+						</mrow>
+						<mrow>
+						-R_2 \to R_2 \qquad \amp
+						\left[\begin{array}{rr|r}
+						1 \amp 1 \amp -1 \\ 0 \amp 1 \amp -3
+						\end{array}\right]
+						</mrow>
+						<mrow>
+						-R_2 + R_1 \to R_1 \qquad \amp
+						\left[\begin{array}{rr|r}
+						1 \amp 0 \amp 2 \\ 0 \amp 1 \amp -3
+						\end{array}\right]
+						</mrow>
+					</md>
+				</p>
+
+				<p>
+					and this shows that
+				</p>
+
+				<p>
+					<me>
+						\vec{b}_2 = \begin{bmatrix} 2 \\ -3 \end{bmatrix}
+					</me>
+				</p>
+
+				<p>
+					This shows that the inverse is
+				</p>
+
+				<p>
+					<me>
+						B = \begin{bmatrix} \vec{b}_1 \amp \vec{b}_2 \end{bmatrix} =
+						\begin{bmatrix} -1 \amp 2 \\ 2 \amp -3 \end{bmatrix}
+					</me>
+				</p>
+			</solution>
+		</example>
+
 		<p>
-			and
-			the matrix on the right half is the inverse matrix, <m>A^{-1}</m>.
+			You should notice that the steps to solve each of the linear systems above
+			were exactly the same.
+			We can take advantage of this to solve for both
+			systems simultaneously.
+			The result is the following method of finding inverses.
 		</p>
+
+		<remark>
+			<title>Using Gauss-Jordon to find Matrix Inverses</title>
+			<p>
+				If we write a matrix <m>A</m> of the form
+			</p>
+
+			<p>
+				<me>
+					\begin{bmatrix}
+					A \amp | \amp I
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				where the matrix <m>A</m> is on the left and the identity matrix is on the right and apply Gauss-Jordon to get
+				the identity matrix on the left, then the matrix will look like,
+			</p>
+
+			<p>
+				<me>
+					\begin{bmatrix}
+					I \amp | \amp A^{-1}
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				and the matrix on the right half is the inverse matrix, <m>A^{-1}</m>.
+			</p>
+
+			<p>
+				If the row-reduced form of the matrix <m>[A\;|\;I]</m> does not have the
+				identity matrix on left side <em>the inverse does not exist.</em>
+			</p>
+		</remark>
 
 		<example>
 			<statement>
@@ -657,9 +865,9 @@
 		<p>
 			This example showed how to find the inverse of a 2 by 2 matrix using the Gauss-Jordan method.
 			We
-			saw the formula in (<xref ref="eq-def-2by2-inverse" />), and generally it is easier to compute
+			saw the formula in <xref ref="eq-def-2by2-inverse" />, and generally it is easier to compute
 			the inverse using that formula.
-			However, the formula in (<xref ref="eq-def-2by2-inverse" />)
+			However, the formula in <xref ref="eq-def-2by2-inverse" />
 			only works for 2 by 2 matrices.
 			The next example shows how to use the Gauss-Jordan method to
 			find the inverse of a 3 by 3 matrix.
@@ -866,14 +1074,18 @@
 				</p>
 
 				<p>
-					And we stop since the row of zeros on the
-					bottom of the left half of the matrix indicates that we cannot get an
-					identity matrix on the left half of the matrix.
-					This shows that the matrix is not
-					invertible.
+					And we stop since the row of zeros on the bottom of the left half of the matrix indicates
+					that we cannot get an identity matrix on the left half of the matrix.
+					This shows that the matrix is not invertible.
 				</p>
 			</solution>
 		</example>
+
+		<p>
+			This next example, shows how to solve a linear system of 3 variables and 3 equations,
+			find 1) written in in the form <m>A\vec{u}=\vec{b}</m>,
+			2) Find the inverse matrix <m>A^{-1}</m> and 3) finding <m>\vec{u} = A^{-1} \vec{b}</m>.
+		</p>
 
 		<example>
 			<statement>
@@ -1158,11 +1370,14 @@
 	<subsection>
 		<title>Properties of the Inverse Matrix</title>
 		<p>
-			Fill this section out a bit more
+			An inverse matrix is just a matrix, so in many cases has the same properties as
+			general matrices.
+			However, one important is the inverse of the product of
+			matrices.
 		</p>
 
 		<theorem xml:id="thm-matrix-inverse">
-      <title>Product of Matrix Inverses</title>
+			<title>Product of Matrix Inverses</title>
 			<statement>
 				<p>
 					Let <m>A</m> and <m>B</m> be invertible matrices.
@@ -1181,12 +1396,12 @@
 				<p>
 					<md>
 						<mrow>(AB)^{-1} (AB) \amp = I </mrow>
-            <mrow>(AB)^{-1} (AB) B^{-1} \amp = I B^{-1} = B^{-1} </mrow>
-            <mrow>(AB)^{-1} A I  \amp = I B^{-1} = B^{-1} </mrow>
-            <mrow>(AB)^{-1} A \amp =  B^{-1} </mrow>
-            <mrow>(AB)^{-1} A A^{-1} \amp =  B^{-1} A^{-1} </mrow>
-            <mrow>(AB)^{-1}I  \amp =  B^{-1} A^{-1} </mrow>
-            <mrow>(AB)^{-1} \amp =  B^{-1} A^{-1} </mrow>
+						<mrow>(AB)^{-1} (AB) B^{-1} \amp = I B^{-1} = B^{-1} </mrow>
+						<mrow>(AB)^{-1} A I  \amp = I B^{-1} = B^{-1} </mrow>
+						<mrow>(AB)^{-1} A \amp =  B^{-1} </mrow>
+						<mrow>(AB)^{-1} A A^{-1} \amp =  B^{-1} A^{-1} </mrow>
+						<mrow>(AB)^{-1}I  \amp =  B^{-1} A^{-1} </mrow>
+						<mrow>(AB)^{-1} \amp =  B^{-1} A^{-1} </mrow>
 					</md>
 				</p>
 			</proof>
@@ -1217,7 +1432,7 @@
 	%
 	%For problems 2- -4, a 2 by 2 matrix is given.
 	Determine if each matrix has an inverse and if it
-	does find it using the formula in (<xref ref="eq-def-2by2-inverse" />).
+	does find it using the formula in <xref ref="eq-def-2by2-inverse" />.
 	%
 	%\begin{multicols}{3}
 	%

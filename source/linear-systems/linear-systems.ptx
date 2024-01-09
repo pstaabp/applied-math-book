@@ -4,8 +4,8 @@
 	<p>
 		We start this section with three examples of linear systems.
 		One is about
-		a biathlon with running and biking legs, a traffic flow model and finally
-		an example from Chemistry.
+		a biathlon with running and biking legs, the second is a traffic model and the last one is
+		an example from chemistry.
 		Examples of linear systems are found from every
 		mathematical subfield and every science.
 	</p>
@@ -14,9 +14,13 @@
 		<title>Biathlon Example</title>
 		<statement>
 			<p>
-				Travis runs 6 mph and bikes 18 mph in a race with two events.
+				Set up the following problem as a set of linear equations.
+			</p>
+
+			<p>
+				<em>Travis runs 6 mph and bikes 18 mph in a race with two events.
 				If the course is 29 miles long and it takes him 2 hours and 10 minutes
-				to complete the race, how long is each segment?
+				to complete the race, how long is each segment?</em>
 			</p>
 		</statement>
 
@@ -61,14 +65,14 @@
 
 			<p>
 				<me>
-					\text{time} =\frac{\text{distance}}{\text{rate}}
+					\text{time} =\frac{\text{distance}}{\text{speed}}
 				</me>
 			</p>
 
 			<p>
 				For example, the time it takes Travis to finish the running leg is <m>x_1/6</m>.
 				The total
-				time it takes Travis to finish the race is
+				time in hours it takes Travis to finish the race is
 			</p>
 
 			<p>
@@ -91,111 +95,124 @@
 	</example>
 
 	<p>
-		The next example examines the traffic flow in a very limited part of a city (Boston in this
-		case).
+		The next example examines the traffic flow in a very limited part of Boston.
 	</p>
 
 	<example xml:id="ex-streets">
 		<title>Traffic Flow</title>
-		<p>
-			A simple model of traffic flow can be represented by the following graph:
-		</p>
+		<statement>
+			<p>
+				A simple model of traffic flow can be represented by the following graph:
+			</p>
 
-		<figure xml:id="fig-streets">
-			<caption>A map of a few streets in Boston where the arrows denote the direction of traffic flow (all of these streets are one-way) and
-			the numbers represent the numbers of cars driving down the street in a given time period.
-			The
-			letters <m>A</m> through <m>D</m> will be the names of the intersections.</caption>
-			<image width="75%" xml:id="streets">
-				<latex-image><![CDATA[
-				\begin{tikzpicture}[scale=1.5]
-				\draw[{Latex[length=2mm]}-] (0,1) -- (2,1) node [at start,below left] {Newbury St.};
-				\draw[-{Latex[length=2mm]}] (0,0) -- (3,0) node [at end,above right] {Bolyston St.} ;
-				\draw[{Latex[length=2mm]}-] (1,2) -- (1,-1) node [at start,above left=5pt+3pt] {Berkeley St.};
-				\draw[{Latex[length=2mm]}-] (2,-1) -- (2,2) node [at end,above right=5pt+3pt] {Arlington St.} ;
-				\draw[{Latex[length=2mm]}-] (2,1.5) -- (2,1.6);
-				\draw[{Latex[length=2mm]}-] (2,0.5) -- (2,0.6);
-				\draw[-{Latex[length=2mm]}] (1,-0.5) -- (1,-0.4);
-				\draw[-{Latex[length=2mm]}] (1,0.5) -- (1,0.6);
-				\draw[{Latex[length=2mm]}-] (0.5,0) -- (0.4,0);
-				\draw[{Latex[length=2mm]}-] (1.5,0) -- (1.4,0);
-				\draw[{Latex[length=2mm]}-] (1.5,1) -- (1.6,1);
-				\draw (3,0) node [below right] {400};
-				\draw (2,-1) node [below right] {200};
-				\draw (0,0) node [above left] {500};
-				\draw (1,-1) node [below left] {200};
-				\draw (0,1) node [above left] {$ x_1$};
-				\draw (1,2) node [above] {250};
-				\draw (2,2) node [above] {350};
-				\draw (1.5,0) node [below] {$ x_2$};
-				\draw (2,0.5) node [right] {$ x_3$};
-				\draw (1.5,1) node [above] {$ x_4$};
-				\draw (1,0.5) node [left] {$ x_5$};
-				\fill (1,1) circle[radius=1.5pt] node [above left] {$ A$};
-				\fill (2,1) circle[radius=1.5pt] node [above right] {$ B$};
-				\fill (1,0) circle[radius=1.5pt] node [above right] {$ C$};
-				\fill (2,0) circle[radius=1.5pt] node [below right] {$ D$};
-				\end{tikzpicture}
-				]]>
-				</latex-image>
-			</image>
-		</figure>
+			<figure xml:id="fig-streets">
+				<caption>A map of a few streets in Boston where the arrows denote the direction of traffic flow (all of these streets are one-way) and
+				the numbers represent the numbers of cars driving down the street in a given time period.
+				The
+				letters <m>A</m> through <m>D</m> will be the names of the intersections.</caption>
+				<image width="75%" xml:id="streets">
+					<latex-image><![CDATA[
+					\begin{tikzpicture}[scale=1.5]
+					\draw[{Latex[length=2mm]}-] (0,1) -- (2,1) node [at start,below left] {Newbury St.};
+					\draw[-{Latex[length=2mm]}] (0,0) -- (3,0) node [at end,above right] {Bolyston St.} ;
+					\draw[{Latex[length=2mm]}-] (1,2) -- (1,-1) node [at start,above left=5pt+3pt] {Berkeley St.};
+					\draw[{Latex[length=2mm]}-] (2,-1) -- (2,2) node [at end,above right=5pt+3pt] {Arlington St.} ;
+					\draw[{Latex[length=2mm]}-] (2,1.5) -- (2,1.6);
+					\draw[{Latex[length=2mm]}-] (2,0.5) -- (2,0.6);
+					\draw[-{Latex[length=2mm]}] (1,-0.5) -- (1,-0.4);
+					\draw[-{Latex[length=2mm]}] (1,0.5) -- (1,0.6);
+					\draw[{Latex[length=2mm]}-] (0.5,0) -- (0.4,0);
+					\draw[{Latex[length=2mm]}-] (1.5,0) -- (1.4,0);
+					\draw[{Latex[length=2mm]}-] (1.5,1) -- (1.6,1);
+					\draw (3,0) node [below right] {400};
+					\draw (2,-1) node [below right] {200};
+					\draw (0,0) node [above left] {500};
+					\draw (1,-1) node [below left] {200};
+					\draw (0,1) node [above left] {$ x_1$};
+					\draw (1,2) node [above] {250};
+					\draw (2,2) node [above] {350};
+					\draw (1.5,0) node [below] {$ x_2$};
+					\draw (2,0.5) node [right] {$ x_3$};
+					\draw (1.5,1) node [above] {$ x_4$};
+					\draw (1,0.5) node [left] {$ x_5$};
+					\fill (1,1) circle[radius=1.5pt] node [above left] {$ A$};
+					\fill (2,1) circle[radius=1.5pt] node [above right] {$ B$};
+					\fill (1,0) circle[radius=1.5pt] node [above right] {$ C$};
+					\fill (2,0) circle[radius=1.5pt] node [below right] {$ D$};
+					\end{tikzpicture}
+					]]>
+					</latex-image>
+				</image>
+			</figure>
 
-		<p>
-			And a mathematical model can be written down by making sure that the total
-			number of cars that go into an intersection balances with the number of
-			cars exiting.
-			In this case, we have:
-		</p>
+			<p>
+				Write down the equations that balance each of the numbers of cars entering and leaving
+				each of the intersections <m>A, B, C</m> and <m>D</m>.
+			</p>
+		</statement>
 
-		<p>
-			<md>
-				<mrow>x_4 + x_5 \amp = x_1 + 250</mrow>
-				<mrow>350 \amp = x_3 + x_4 </mrow>
-				<mrow>700 \amp = x_2 + x_5 </mrow>
-				<mrow>x_3 + x_2 \amp = 600 </mrow>
-			</md>
-		</p>
+		<solution>
+			<p>
+				In this case, we have:
+			</p>
 
-		<p>
-			for intersections <m>A</m>, <m>B</m>, <m>C</m> and <m>D</m> respectively.
-		</p>
+			<p>
+				<md>
+					<mrow>x_4 + x_5 \amp = x_1 + 250</mrow>
+					<mrow>350 \amp = x_3 + x_4 </mrow>
+					<mrow>700 \amp = x_2 + x_5 </mrow>
+					<mrow>x_3 + x_2 \amp = 600 </mrow>
+				</md>
+			</p>
+
+			<p>
+				for intersections <m>A</m>, <m>B</m>, <m>C</m> and <m>D</m> respectively.
+			</p>
+		</solution>
 	</example>
 
 	<p>
 		Linear equations exist in many different fields, especially the sciences.
-		The following comes from Chemistry in which a chemical equation is found
+		The following comes from chemistry in which a chemical equation is found
 		by balancing the number of atoms in the equation on both sides.
 	</p>
 
 	<example xml:id="ex-hydrazine">
 		<title>Chemical Reactions</title>
-		<p>
-			Hydrazine (<m>N_2H_4</m>) is an important nitrogen-based compound.
-			A chemical reaction to
-			produce it from ammonia and hydrogen peroxide is given by
-		</p>
+		<statement>
+			<p>
+				Hydrazine (<m>N_2H_4</m>) is an important nitrogen-based compound.
+				A chemical reaction to
+				produce it from ammonia and hydrogen peroxide is given by
+			</p>
 
-		<p>
-			<me>
-				k_1 NH_3 + k_2 H_2O_2 \rightarrow k_3 N_2 H_4 + k_4 H_2 O
-			</me>
-		</p>
+			<p>
+				<me>
+					k_1 NH_3 + k_2 H_2O_2 \rightarrow k_3 N_2 H_4 + k_4 H_2 O
+				</me>
+			</p>
 
-		<p>
-			The values of <m>k_1, k_2, k_3</m> and <m>k_4</m> can be found by solving the following
-			linear system which balances the number of nitrogen (N), hydrogen (H) and oxygen (O) atoms respectively in
-			the reaction or
-		</p>
+			<p>
+				Find the equations that balanced the numbers of nitrogen (N), hydrogen (H) and oxygen (O) atoms respectively in
+				the reaction
+			</p>
+		</statement>
 
-		<p>
-			<md>
-				<mrow>k_1 \amp = 2k_3, </mrow>
-				<mrow>3k_1 + 2k_2 \amp = 4k_3 + 2k_4, </mrow>
-				<mrow>2k_2 \amp = k_4.
-				</mrow>
-			</md>
-		</p>
+		<solution>
+			<p>
+				The values of <m>k_1, k_2, k_3</m> and <m>k_4</m> can be found by solving the following
+				linear system which balances the number of nitrogen (N), hydrogen (H) and oxygen (O) atoms respectively or
+			</p>
+
+			<p>
+				<md>
+					<mrow>k_1 \amp = 2k_3, </mrow>
+					<mrow>3k_1 + 2k_2 \amp = 4k_3 + 2k_4, </mrow>
+					<mrow>2k_2 \amp = k_4.
+					</mrow>
+				</md>
+			</p>
+		</solution>
 	</example>
 
 	<p>
@@ -235,15 +252,15 @@
 						</p>
 
 						<p>
-							where <m>b \in \mathbb{R}</m> is a constant.
+							where <m>b \in \mathbb{R}</m> is a constant and <m>a_1, a_2, \ldots, a_n \in \mathbb{R}</m>.
 						</p>
 					</li>
 
 					<li>
 						<p>
 							The <m>n</m>-tuple <m>(s_1,s_2,\ldots,s_n)</m> <term>satisfies</term> or is a <term>
-							solution</term> of (<xref ref="eq-def-lin-eq" />) if this point satisfies (<xref
-							ref="eq-def-lin-eq" />) or
+							solution</term> of  <xref ref="eq-def-lin-eq" /> if this point satisfies <xref
+							ref="eq-def-lin-eq" /> or
 						</p>
 
 						<p>
@@ -277,8 +294,8 @@
 					<li>
 						<p>
 							The <m>n</m>-tuple <m>(s_1,s_2,\ldots,s_n)</m> <term>satisfies</term> or is a <term>
-							solution</term> of (<xref ref="eq-def-lin-sys" />) if this point satisfies <em>every</em>
-							equation of (<xref ref="eq-def-lin-sys" />).
+							solution</term> of <xref ref="eq-def-lin-sys" /> if this point satisfies <em>every</em>
+							equation of <xref ref="eq-def-lin-sys" />.
 						</p>
 					</li>
 				</ul>
@@ -300,8 +317,8 @@
 		</p>
 
 		<p>
-			where summation notation has been used in the last one and note that other variables names
-			can be used. The following equations are not linear:
+			where summation notation has been used in the last one and note the variable names can vary.
+			The following equations are not linear:
 		</p>
 
 		<p>

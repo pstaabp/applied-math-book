@@ -5,8 +5,7 @@
 		<p>
 			From the previous section, we saw that row operations were used to change the matrix in
 			a way that allows a solution to be found easier.
-			We formalize these steps in this
-			section.
+			We formalize these steps in this section.
 		</p>
 	</introduction>
 	<!--
@@ -36,199 +35,201 @@
 	</p>
 </solution>
 -->
-<p>
-	The next example determines if the system is in echelon form.
-</p>
-
-<example xml:id="ex-echelon-form-3by5">
-	<title>Echelon Form, Another Example</title>
-	<statement>
-		<p>
-			Determine if the following are in echelon form?
-		</p>
-
-		<p>
-			<ol>
-				<li>
-					<p>
-						<md>
-							<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
-							<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
-							<mrow>3x_5 \amp = 27,</mrow>
-						</md>
-					</p>
-				</li>
-
-				<li>
-					<p>
-						<md>
-							<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
-							<mrow>2x_1 -x_2 \amp = -10, </mrow>
-							<mrow>2x_2 \amp = 14 </mrow>
-						</md>
-					</p>
-				</li>
-			</ol>
-		</p>
-	</statement>
-
-	<solution>
-		<p>
-			<ol>
-				<li>
-					<p>
-						Yes, the leading variable in equation 1 is <m>x_1</m>, the leading variable in
-						equation 2 is <m>x_3</m> which is to the right of <m>x_1</m> and the leading
-						variable in equation 3 is <m>x_5</m>, which is to the right of <m>x_3</m>.
-					</p>
-				</li>
-
-				<li>
-					<p>
-						the leading variables in both equation 1 and 2 are <m>x_1</m>.
-					</p>
-				</li>
-			</ol>
-		</p>
-	</solution>
-</example>
-
-<p>
-	Let's look more carefully at the last example.
-	It is not in echelon form,
-	but let's put it in echelon form and write down a solution.
-</p>
-
-<p>
-	<md>
-		<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
-		<mrow>2x_1 -x_2 \amp = -10, </mrow>
-		<mrow>2x_2 \amp = 8.
-		</mrow>
-	</md>
-</p>
-
-<p>
-	Eliminate <m>x_1</m> in the 2nd equation by doing the following:
-</p>
-
-<p>
-	<md>
-		<mrow>-2R_1+3R_2 \to R_2, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
-		<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
-		<mrow>\amp \amp 2x_2 \amp = 8.</mrow>
-	</md>
-</p>
-
-<p>
-	then eliminate <m>x_2</m> in the third equation
-</p>
-
-<p>
-	<md>
-		<mrow> 2R_2 +11 R_3 \to R_3 \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
-		<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
-		<mrow>\amp \amp 0x_2 \amp = 0.
-		</mrow>
-	</md>
-</p>
-
-<p>
-	Note that the last equation in the last linear system contains no information.
-	zero equals
-	zero.
-	We all knew that before.
-	We ignore that equation.
-	The 2nd equation can be solved to
-	yield <m>x_2=4</m> and substituting into the first equation,
-</p>
-
-<p>
-	<md>
-		<mrow>3x_1 + 4(4) \amp = 7, \amp \amp \text{or} </mrow>
-		<mrow>3x_1 \amp = -9, \amp \amp \text{or} </mrow>
-		<mrow>x_1 \amp = -3.</mrow>
-	</md>
-</p>
-
-<p>
-	so the solution is <m>(-3,4)</m>.
-</p>
-
-<p>
-	In comparison to the last example, consider the following very similar example:
-</p>
-
-<p>
-	<md>
-		<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
-		<mrow>2x_1 -x_2 \amp = -10, </mrow>
-		<mrow>3x_2 \amp = 6,</mrow>
-	</md>
-</p>
-
-<p>
-	eliminate the <m>x_1</m> term in the 2nd equation
-</p>
-
-<p>
-	<md>
-		<mrow>-2R_1+3R_2 \rightarrow R_2, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
-		<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
-		<mrow>\amp \amp 3x_2 \amp = 6,</mrow>
-	</md>
-</p>
-
-<p>
-	eliminate the <m>x_2</m> term in the 3rd equation
-</p>
-
-<p>
-	<md>
-		<mrow>3R_2+11R_3 \rightarrow R_3, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
-		<mrow>\amp\amp -11x_2 \amp = -44, </mrow>
-		<mrow>\amp\amp 0x_2 \amp = -66,</mrow>
-	</md>
-</p>
-
-<p>
-	And note in this case, that the last equation says <m>0=-66</m>, which is not true.
-	Therefore, this means that there is no solution.
-	This is in contrast to the the previous
-	example, which did have a solution.
-</p>
-
-<remark>
-	<title>Can solutions to linear system only be none or a unique solution?</title>
+<subsection xml:id="sect-echelon-form">
+	<title>Echelon Forms of Matrices</title>
 	<p>
-		In the last example of this section, we will see that we can have many
-		solutions to a linear system.
-		If we have the following linear system
-		already in echelon form:
+		The next example determines if the system is in echelon form.
+	</p>
+
+	<example xml:id="ex-echelon-form-3by5">
+		<title>Echelon Form, Another Example</title>
+		<statement>
+			<p>
+				Determine if the following are in echelon form?
+			</p>
+
+			<p>
+				<ol>
+					<li>
+						<p>
+							<md>
+								<mrow>x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, </mrow>
+								<mrow>2x_3 \phantom{-9x_4} +\phantom{1} 4x_5 \amp = 10, </mrow>
+								<mrow>3x_5 \amp = 27,</mrow>
+							</md>
+						</p>
+					</li>
+
+					<li>
+						<p>
+							<md>
+								<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
+								<mrow>2x_1 -x_2 \amp = -10, </mrow>
+								<mrow>2x_2 \amp = 14 </mrow>
+							</md>
+						</p>
+					</li>
+				</ol>
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				<ol>
+					<li>
+						<p>
+							Yes, the leading variable in equation 1 is <m>x_1</m>, the leading variable in
+							equation 2 is <m>x_3</m> which is to the right of <m>x_1</m> and the leading
+							variable in equation 3 is <m>x_5</m>, which is to the right of <m>x_3</m>.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							the leading variables in both equation 1 and 2 are <m>x_1</m>.
+						</p>
+					</li>
+				</ol>
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		Let's look more carefully at the last example.
+		It is not in echelon form,
+		but let's put it in echelon form and write down a solution.
 	</p>
 
 	<p>
 		<md>
-			<mrow> x_1\phantom{+2x2} -2x_3\phantom{+x_4} \amp = 0, </mrow>
-			<mrow>2x_2 +2x_3 -2x_4 \amp = 0, </mrow>
-			<mrow>-2x_3 + x_4 \amp = 0,</mrow>
+			<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
+			<mrow>2x_1 -x_2 \amp = -10, </mrow>
+			<mrow>2x_2 \amp = 8.
+			</mrow>
 		</md>
 	</p>
 
 	<p>
-		Notice that since there are 4 variables and 3 equations, that there is no way to get a
-		solution for <m>x_4</m> by itself (or any of the other 3 variables).
-		This has many
-		(actually infinitely many) solutions.
-		For example <m>(0,0,0,0)</m> is one as well as <m>
-		(2,1,1,2)</m> and <m>(-5,-5/2,-5/2,-5)</m>.
-		We will explore this is much more detail
-		later.
+		Eliminate <m>x_1</m> in the 2nd equation by doing the following:
 	</p>
-</remark>
-</subsubsection>
 
-<subsubsection xml:id="subsect-describe-solutions">
+	<p>
+		<md>
+			<mrow>-2R_1+3R_2 \to R_2, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+			<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
+			<mrow>\amp \amp 2x_2 \amp = 8.</mrow>
+		</md>
+	</p>
+
+	<p>
+		then eliminate <m>x_2</m> in the third equation
+	</p>
+
+	<p>
+		<md>
+			<mrow> 2R_2 +11 R_3 \to R_3 \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+			<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
+			<mrow>\amp \amp 0x_2 \amp = 0.
+			</mrow>
+		</md>
+	</p>
+
+	<p>
+		Note that the last equation in the last linear system contains no information.
+		zero equals
+		zero.
+		We all knew that before.
+		We ignore that equation.
+		The 2nd equation can be solved to
+		yield <m>x_2=4</m> and substituting into the first equation,
+	</p>
+
+	<p>
+		<md>
+			<mrow>3x_1 + 4(4) \amp = 7, \amp \amp \text{or} </mrow>
+			<mrow>3x_1 \amp = -9, \amp \amp \text{or} </mrow>
+			<mrow>x_1 \amp = -3.</mrow>
+		</md>
+	</p>
+
+	<p>
+		so the solution is <m>(-3,4)</m>.
+	</p>
+
+	<p>
+		In comparison to the last example, consider the following very similar example:
+	</p>
+
+	<p>
+		<md>
+			<mrow>3x_1 + 4 x_2 \amp = 7, </mrow>
+			<mrow>2x_1 -x_2 \amp = -10, </mrow>
+			<mrow>3x_2 \amp = 6,</mrow>
+		</md>
+	</p>
+
+	<p>
+		eliminate the <m>x_1</m> term in the 2nd equation
+	</p>
+
+	<p>
+		<md>
+			<mrow>-2R_1+3R_2 \rightarrow R_2, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+			<mrow>\amp \amp -11x_2 \amp = -44, </mrow>
+			<mrow>\amp \amp 3x_2 \amp = 6,</mrow>
+		</md>
+	</p>
+
+	<p>
+		eliminate the <m>x_2</m> term in the 3rd equation
+	</p>
+
+	<p>
+		<md>
+			<mrow>3R_2+11R_3 \rightarrow R_3, \qquad \amp \amp 3x_1 + 4 x_2 \amp = 7, </mrow>
+			<mrow>\amp\amp -11x_2 \amp = -44, </mrow>
+			<mrow>\amp\amp 0x_2 \amp = -66,</mrow>
+		</md>
+	</p>
+
+	<p>
+		And note in this case, that the last equation says <m>0=-66</m>, which is not true.
+		Therefore, this means that there is no solution.
+		This is in contrast to the the previous
+		example, which did have a solution.
+	</p>
+
+	<remark>
+		<title>Can solutions to linear system only be none or a unique solution?</title>
+		<p>
+			In the last example of this section, we will see that we can have many
+			solutions to a linear system.
+			If we have the following linear system
+			already in echelon form:
+		</p>
+
+		<p>
+			<md>
+				<mrow> x_1\phantom{+2x2} -2x_3\phantom{+x_4} \amp = 0, </mrow>
+				<mrow>2x_2 +2x_3 -2x_4 \amp = 0, </mrow>
+				<mrow>-2x_3 + x_4 \amp = 0,</mrow>
+			</md>
+		</p>
+
+		<p>
+			Notice that since there are 4 variables and 3 equations, that there is no way to get a
+			solution for <m>x_4</m> by itself (or any of the other 3 variables).
+			This has many
+			(actually infinitely many) solutions.
+			For example <m>(0,0,0,0)</m> is one as well as <m>
+			(2,1,1,2)</m> and <m>(-5,-5/2,-5/2,-5)</m>.
+			We will explore this is much more detail
+			later.
+		</p>
+	</remark>
+</subsection>
+
+<subsection xml:id="subsect-describe-solutions">
 	<title>Describing the Solution Set</title>
 	<p>
 		So far we have seen linear system with solution sets with different number of elements.
@@ -535,7 +536,6 @@
 			2 NH_3 + H_2O_2 \rightarrow N_2 H_4 + 2 H_2 O
 		</me>
 	</p>
-</subsubsection>
 </subsection>
 
 <subsection xml:id="sect-reduced-row-echelon-form">
@@ -1441,7 +1441,7 @@
 			</p>
 
 			<p>
-				If <m>i>k</m>, then <m>\alpha_{i,\ell_k}=0</m>, and this implied that <m>c_k=0</m>.
+				If <m>i&gt;k</m>, then <m>\alpha_{i,\ell_k}=0</m>, and this implied that <m>c_k=0</m>.
 				If <m>i
 				\lt k</m>, then
 			</p>
@@ -1460,6 +1460,10 @@
 		</lemma>
 	</subsubsection>
 </subsection>
+
+<subsection xml:id="subsec-huh">
+	<title>huh</title>
+
 
 <p>
 	The main advantage of matrices is to simplify the solving of linear systems.
@@ -1554,10 +1558,10 @@
 		</p>
 
 		<p>
-			The matrix in (<xref ref="eq-ex-echelon-form" />) is in echelon form, so we use back
+			The matrix in <xref ref="eq-ex-echelon-form" /> is in echelon form, so we use back
 			substitution to solve for <m>x_1</m> and <m>x_2</m> in terms of <m>x_3</m>, the free
 			variable.
-			The 2nd row of (<xref ref="eq-ex-echelon-form" />) can be written:
+			The 2nd row of <xref ref="eq-ex-echelon-form" /> can be written:
 		</p>
 
 		<p>
@@ -1577,7 +1581,7 @@
 		</p>
 
 		<p>
-			and using this in the first equation of (<xref ref="eq-ex-echelon-form" />)
+			and using this in the first equation of <xref ref="eq-ex-echelon-form" />
 		</p>
 
 		<p>
@@ -1597,4 +1601,5 @@
 		</p>
 	</solution>
 </example>
+</subsection>
 </section>

@@ -315,7 +315,7 @@
 
 			<p>
 				And then if we are looking for a matrix in echelon form, zero out the 3rd row, 2nd column.
-				We use the same general row operation in (<xref ref="eq-eliminate-step" />) however using
+				We use the same general row operation in <xref ref="eq-eliminate-step" /> however using
 				the 2nd row instead or
 			</p>
 
@@ -408,7 +408,7 @@
 				<p>
 					Then try to get a 1 in the second row, second column.
 					You should only use the bottom two
-					rows to do this becaues using the top row would mess up the structure of the first column.
+					rows to do this because using the top row would mess up the structure of the first column.
 					We'll just divide the second row by <m>-12</m>.
 				</p>
 
@@ -510,6 +510,7 @@
 
 		<p>
 			leading to <m>x = 1</m>.
+			The solution to this system is the triple <m>(3,-2,4)</m>.
 		</p>
 
 		<example xml:id="ex-biathlon-solution">
@@ -626,7 +627,7 @@
 				<p>
 					Solving a linear system by reducing its corresponding augmented matrix
 					to a reduced row-echelon form matrix, then interpreting its solution is called
-					Gauss-Jordon reduction.
+					<term>Gauss-Jordon reduction</term>.
 				</p>
 			</statement>
 		</definition>
@@ -748,6 +749,7 @@
 				</p>
 
 				<p>
+					or the triple <m>(1,-2,4)</m>.
 					And notice that the solution in this case is simply the right hand side
 					of the matrix above.
 				</p>
@@ -872,12 +874,20 @@
 				</p>
 
 				<p>
-					It may seem odd that there are multiple solutions to this problem, but if you look
-					at this on a more global scale for the map shown above there are <m>350+500+200=1050</m>
-					cars entering the area and <m>250+400+200+x_1</m> leaving.
-					If we also include another
-					equation that would balance these (and that makes sense), there is an free variable
-					as we found.
+					It may seem odd that there are multiple solutions to this problem, at first glance, one should
+					know how many travels are travelling around the city.
+					However, notice that the original problem
+					has 5 variables and only 4 equations.
+					Although there are unique solutions to such systems, generally
+					if there are more variables than equations, there are either no solutions or multiple solutions.
+				</p>
+
+				<p>
+					Additionally, on a more global scale for the map shown above there are <m>350+500+200=1050</m>
+					cars entering the area and <m>250+400+200+x_1=850+x_1</m> leaving and we don't know how
+					many cars are leaving the area.
+					If we also include another equation that would balance these (and that makes sense), then
+					there would now be 5 equations and probably would give a unique solution.
 				</p>
 			</solution>
 		</example>
@@ -1020,14 +1030,14 @@
 		<definition>
 			<statement>
 				<p>
-					The non-leading variables in a linear system in echelon form are called the <term>free
-					variables</term> or <term>parameters</term>.
+					Any non-leading variable in a linear system in echelon form is called a <term>free
+					variable</term> or <term>parameter</term>.
 				</p>
 			</statement>
 		</definition>
 
 		<p>
-			The next example shows that a linear system can have more than one free variables.
+			The next example shows that a linear system can have more than one free variable.
 		</p>
 
 		<example xml:id="ex-echelon-form-3by5">
@@ -1162,7 +1172,7 @@
 
 			<solution>
 				<p>
-					We will first put this into an augmented matrix, then use Gauss's methodl
+					We will first put this into an augmented matrix, then use Gauss's method,
 				</p>
 
 				<p>
@@ -1250,7 +1260,7 @@
 				</p>
 
 				<p>
-					Since the above example comes from Chemical equations, it is desirable to find a solution of
+					Since the above example comes from chemical equations, it is desirable to find a solution of
 					all positive integers, since the number represent the number of atoms in the reaction.
 					In
 					addition, typically the solution with smallest integers is desired.
@@ -1276,6 +1286,7 @@
 				<p>
 					If matrix <m>A</m> can be converted to matrix <m>B</m> by elementary row operations,
 					then we say that <m>A</m> and <m>B</m> are <term>row equivalent</term> or just <term>equivalent</term>.
+					We use the notation <m> A \sim B</m> for equivalence of matrices.
 				</p>
 			</statement>
 		</definition>
@@ -1750,21 +1761,21 @@
 				\lt k</m>, then
 			</p>
 		</proof>
-
-		<lemma>
-			<statement>
-				<p>
-					If two echelon form matrices are row equivalent then the leading
-					entries in their first rows lie in the same column.
-					The same is
-					true of all the nonzero rows---the leading entries in their second
-					rows lie in the same column, etc.
-				</p>
-			</statement>
-		</lemma>
 	</subsection>
 </section>
 <!--
+<lemma>
+	<statement>
+		<p>
+			If two echelon form matrices are row equivalent then the leading
+			entries in their first rows lie in the same column.
+			The same is
+			true of all the nonzero rows-the leading entries in their second
+			rows lie in the same column, etc.
+		</p>
+	</statement>
+</lemma>
+
 <subsection>
 	<title>???</title>
 	<p>

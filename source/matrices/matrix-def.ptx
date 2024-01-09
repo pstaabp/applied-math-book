@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sect-matrix-definition">
+	<title>Matrix and Vector Definition</title>
+	<objectives>
+		<ul>
+			<li>
+				<p>
+					Definitions of matrices and vectors.
+				</p>
+			</li>
+			<li>
+				<p>
+					Learning some notation around matrices and vectors.
+				</p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sect-">
+		<title>Matrices</title>
+		<definition xml:id="def-matrix">
+			<statement>
+				<p>
+					A <term>matrix</term> is a rectangular grid of numbers.
+					An <m>m</m> by <m>n</m> matrix has <m>m</m> rows and <m>n</m> columns.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			For example,
+			<men xml:id="eq-example-matrix">
+				\begin{bmatrix}
+				1 \amp 2 \amp 11 \amp -1 \\ 3 \amp -2 \amp 3 \amp 4
+				\end{bmatrix}
+			</men>
+		</p>
+
+		<p>
+			The <term>size</term> of a matrix is the number of rows and columns in the matrix.
+			The number of rows is listed first.
+			The size of the example above is 2 by 4.
+		</p>
+
+		<p>
+			The numbers in a matrix are called the <term>entries</term> or <term>elements</term> of the matrix.
+			For example, for the matrix in
+			<xref ref="eq-example-matrix" />, the entry on the first row and third
+			column is 11.
+			Often we will use the notation <m>a_{1,3} = 11</m>,
+			where the subscript 1 is the row number and <m>3</m> is the column number.
+		</p>
+	</subsection>
+
+	<subsection xml:id="sect-vectors">
+		<title>Vectors</title>
+		<p>
+			We saw vectors in <xref ref="ch-linear-systems"/> however we repeat some of these to put them in a
+			broader context.
+		</p>
+
+		<definition>
+			<statement>
+				<p>
+					A <term>vector</term> is a matrix with one of its dimensions is 1.
+					If a matrix only has
+					one column it is called a <term>column vector</term>.
+					If the matrix has only one row it is called a
+					a <term>row vector</term>.
+					The number of elements (numbers) in the vector is called the <term>length</term>.
+				</p>
+			</statement>
+		</definition>
+
+		<p>
+			As we investigate matrices, since vectors are in fact matrices, the properties will hold
+			for vectors as well.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Matrix, Vector and Scalar Notation</title>
+		<p>
+			A <term>scalar</term> is a fancy term for a number.
+			Mathematicians use
+			this term to distinguish them from matrices and vectors, which are not
+			scalars.
+			Whenever variables are used for scalars, then lower case
+			letters will be used.
+			For example, <m>a, n</m> and <m>x</m> are scalar
+			variables.
+		</p>
+
+		<p>
+			When we use variable names for matrices, we will use capital letters.
+			For example, <m>A, B</m> and <m>X</m> are matrix (or vector) variables.
+		</p>
+
+		<p>
+			Often, vectors will be lower case with an arrow on top.
+			For example, here are vectors:
+			<m>\vec{u}, \vec{v}, \vec{x}</m>.
+		</p>
+
+		<remark>
+			<p>
+				In general, a matrix <m>A</m> can be written <m>[a_{ij}]</m>.
+				These will be used in proofs later on in
+				this chapter and for defintions of operations.
+				A vector <m>\vec{v}</m> can be written <m>[v_i]</m> and
+				although this notation can be used for both column and row vectors, unless denoted as such vectors will
+				be consider as column vectors.
+				We will see later in this chapter that we can simply write a row vector
+				as a transformation of a column vector.
+			</p>
+		</remark>
+	</subsection>
+</section>
