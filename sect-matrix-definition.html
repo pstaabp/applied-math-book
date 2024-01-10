@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Solving Linear Systems</title>
+<title>Matrix and Vector Definition</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="frontmatter-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="applied-mathematics-staab.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-linear-systems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-matrices.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrices.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-matrix-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -116,7 +116,7 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Linear Systems</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Linear Systems</span></a></div></li>
@@ -174,10 +174,10 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-matrices.html" class="internal"><span class="codenumber">2</span> <span class="title">Matrices and Matrix Operations</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sect-matrix-definition.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Matrix and Vector Definition</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Matrices</span></a></div></li>
@@ -443,19 +443,50 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-linear-systems"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">Solving Linear Systems</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-matrix-definition"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Matrix and Vector Definition</span>
 </h2>
-<section class="introduction" id="ch-linear-systems-2"><div class="para" id="ch-linear-systems-2-1">This introductory chapter defines linear systems, which are sets of linear equations. There are some well-defined ways to solve these systems and the types of solutions are explained.</div></section><nav class="summary-links"><ul>
-<li><a href="sect-linear-systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Linear Systems</span></a></li>
-<li><a href="sect-elementary-row-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Row Operations</span></a></li>
-<li><a href="sect-gaussian-elimination.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms and Gaussian Elimination</span></a></li>
-<li><a href="sect-vectors-as-solutions.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vectors as Solutions of Linear Solutions</span></a></li>
-<li><a href="sec-homo-non-homo.html" class="internal"><span class="codenumber">1.5</span> <span class="title">General <span class="process-math">\(=\)</span> Homogeneous <span class="process-math">\(+\)</span> Nonhomogeneous</span></a></li>
-<li><a href="sect-linear-geometry.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Geometry of <span class="process-math">\(n\)</span>-space</span></a></li>
-</ul></nav></section></div>
+<article class="objectives goal-like" id="sect-matrix-definition-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ul class="disc">
+<li id="sect-matrix-definition-2-1-1"><div class="para" id="sect-matrix-definition-2-1-1-1">Definitions of matrices and vectors.</div></li>
+<li id="sect-matrix-definition-2-1-2"><div class="para" id="sect-matrix-definition-2-1-2-1">Learning some notation around matrices and vectors.</div></li>
+</ul></article><section class="subsection" id="sect-"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Matrices</span>
+</h3>
+<article class="definition definition-like" id="def-matrix"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-matrix-1-1">A <dfn class="terminology">matrix</dfn> is a rectangular grid of numbers. An <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrix has <span class="process-math">\(m\)</span> rows and <span class="process-math">\(n\)</span> columns.</div></article><div class="para logical" id="sect--3">
+<div class="para">For example,</div>
+<div class="displaymath process-math" id="eq-example-matrix">
+\begin{equation}
+\begin{bmatrix}
+1 \amp 2 \amp 11 \amp -1 \\ 3 \amp -2 \amp 3 \amp 4
+\end{bmatrix}\tag{2.1.1}
+\end{equation}
+</div>
+</div>
+<div class="para" id="sect--4">The <dfn class="terminology">size</dfn> of a matrix is the number of rows and columns in the matrix. The number of rows is listed first. The size of the example above is 2 by 4.</div>
+<div class="para" id="sect--5">The numbers in a matrix are called the <dfn class="terminology">entries</dfn> or <dfn class="terminology">elements</dfn> of the matrix. For example, for the matrix in <a href="" class="xref" data-knowl="./knowl/xref/eq-example-matrix.html" title="Equation 2.1.1">(2.1.1)</a>, the entry on the first row and third column is 11. Often we will use the notation <span class="process-math">\(a_{1,3} = 11\text{,}\)</span> where the subscript 1 is the row number and <span class="process-math">\(3\)</span> is the column number.</div></section><section class="subsection" id="sect-vectors"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="space"> </span><span class="title">Vectors</span>
+</h3>
+<div class="para" id="sect-vectors-2">We saw vectors in <a href="ch-linear-systems.html" class="internal" title="Chapter 1: Solving Linear Systems">Chapter 1</a> however we repeat some of these to put them in a broader context.</div>
+<article class="definition definition-like" id="sect-vectors-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="sect-vectors-3-1-1">A <dfn class="terminology">vector</dfn> is a matrix with one of its dimensions is 1. If a matrix only has one column it is called a <dfn class="terminology">column vector</dfn>. If the matrix has only one row it is called a a <dfn class="terminology">row vector</dfn>. The number of elements (numbers) in the vector is called the <dfn class="terminology">length</dfn>.</div></article><div class="para" id="sect-vectors-4">As we investigate matrices, since vectors are in fact matrices, the properties will hold for vectors as well.</div></section><section class="subsection" id="sect-matrix-definition-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="space"> </span><span class="title">Matrix, Vector and Scalar Notation</span>
+</h3>
+<div class="para" id="sect-matrix-definition-5-2">A <dfn class="terminology">scalar</dfn> is a fancy term for a number. Mathematicians use this term to distinguish them from matrices and vectors, which are not scalars. Whenever variables are used for scalars, then lower case letters will be used. For example, <span class="process-math">\(a, n\)</span> and <span class="process-math">\(x\)</span> are scalar variables.</div>
+<div class="para" id="sect-matrix-definition-5-3">When we use variable names for matrices, we will use capital letters. For example, <span class="process-math">\(A, B\)</span> and <span class="process-math">\(X\)</span> are matrix (or vector) variables.</div>
+<div class="para" id="sect-matrix-definition-5-4">Often, vectors will be lower case with an arrow on top. For example, here are vectors: <span class="process-math">\(\vec{u}, \vec{v}, \vec{x}\text{.}\)</span>
+</div>
+<article class="remark remark-like" id="sect-matrix-definition-5-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="sect-matrix-definition-5-5-1">In general, a matrix <span class="process-math">\(A\)</span> can be written <span class="process-math">\([a_{ij}]\text{.}\)</span> These will be used in proofs later on in this chapter and for defintions of operations. A vector <span class="process-math">\(\vec{v}\)</span> can be written <span class="process-math">\([v_i]\)</span> and although this notation can be used for both column and row vectors, unless denoted as such vectors will be consider as column vectors. We will see later in this chapter that we can simply write a row vector as a transformation of a column vector.</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="frontmatter-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-linear-systems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-matrices.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-matrix-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

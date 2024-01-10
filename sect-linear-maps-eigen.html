@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Eigenvalues and Linear Maps</title>
+<title>Eigenvalues and Eigenvectors of Linear Transformations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -160,75 +160,88 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-linear-geometry.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Geometry of <span class="process-math">\(n\)</span>-space</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-2" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Summaries of Linear Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-3" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Scalar Multiplication of Vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-4" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Vector Addition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-5" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Geometry of Addition and Scalar Multiplication in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-6" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Lines in Vector form in <span class="process-math">\(\mathbb{R}^2\)</span> and <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-planes-r3" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Planes in <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-8" class="internal"><span class="codenumber">1.6.7</span> <span class="title">Geometry of Linear Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-length-angles" class="internal"><span class="codenumber">1.6.8</span> <span class="title">Length and Angle Measures</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-10" class="internal"><span class="codenumber">1.6.9</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^2\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-angles-vectors" class="internal"><span class="codenumber">1.6.10</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-dot-prod-props" class="internal"><span class="codenumber">1.6.11</span> <span class="title">Properties of The Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-2" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Scalar Multiplication of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-3" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Vector Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-4" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Geometry of Addition and Scalar Multiplication in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-5" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Lines in Vector form in <span class="process-math">\(\mathbb{R}^2\)</span> and <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-planes-r3" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Planes in <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-7" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Geometry of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-length-angles" class="internal"><span class="codenumber">1.6.7</span> <span class="title">Length and Angle Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-angles-of-vectors" class="internal"><span class="codenumber">1.6.8</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-angles-vectors" class="internal"><span class="codenumber">1.6.9</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-dot-prod-props" class="internal"><span class="codenumber">1.6.10</span> <span class="title">Properties of The Dot Product</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-matrices.html" class="internal"><span class="codenumber">2</span> <span class="title">Linear Algebra Basics</span></a></div>
+<div class="toc-title-box"><a href="ch-matrices.html" class="internal"><span class="codenumber">2</span> <span class="title">Matrices and Matrix Operations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-matrix-operations.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Matrix Operations</span></a></div>
+<div class="toc-title-box"><a href="sect-matrix-definition.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Matrix and Vector Definition</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Matrix, Vector and Scalar Notation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-4" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Addition and Subtraction of Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-5" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Scalar Multiplication of Vectors and Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-transpose" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Transpose</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-mult-matrix" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Multiplication of Vectors and Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-8" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Size Restrictions on Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-9" class="internal"><span class="codenumber">2.1.7</span> <span class="title">Matrix-Vector Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-10" class="internal"><span class="codenumber">2.1.8</span> <span class="title">Reexamination of the Dot Product</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#section-matrix-multiplication-linear-systems" class="internal"><span class="codenumber">2.1.9</span> <span class="title">Matrix Multiplication and Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-vectors" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-matrix-definition-5" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Matrix, Vector and Scalar Notation</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-matrix-inverse.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<div class="toc-title-box"><a href="sect-matrix-operations.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Matrix Operations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-3" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Identity Matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.2.2</span> <span class="title">The Inverse</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.2.4</span> <span class="title">The Inverse of a 2 by 2 matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.2.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.2.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Elementary Matrices</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Independence</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-row-col-space-rank.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Row Space, Column Space and Rank of a Matrix</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-3" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Row Space of a Matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-4" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Column Space of a Matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-5" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Null Space of a Matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-6" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Relationship between the Rank and Nullity</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Determinants of Square Matrices</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-3" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-4" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-operations-3" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Addition and Subtraction of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-operations-4" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Scalar Multiplication of Vectors and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#section-reexamining-linear-systems" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Reexamining Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-vector-product" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Matrix-Vector Product</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-6" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-6-3" class="internal"><span class="codenumber">2.7.4.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
-</li>
+<div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-matrix-product" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Matrix-Matrix Product</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-matrix-product-3" class="internal"><span class="codenumber">2.2.5.1</span> <span class="title">Size Restrictions on Matrices</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-matrix-product-alt" class="internal"><span class="codenumber">2.2.5.2</span> <span class="title">Alternative Form of the Matrix-Matrix Product</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-matrix-product-props" class="internal"><span class="codenumber">2.2.5.3</span> <span class="title">Properties of Matrix-Matrix Products</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-transpose" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Transpose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-operations-9" class="internal"><span class="codenumber">2.2.7</span> <span class="title">Reexamination of the Dot Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-matrix-inverse.html" class="internal"><span class="codenumber">2.3</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-3" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Identity Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.3.4</span> <span class="title">The Matrix Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.3.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear Independence</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-row-col-space-rank.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Row Space, Column Space and Rank of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-4" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Row Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-5" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Column Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-6" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Null Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-7" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Relationship between the Rank and Nullity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Determinants of Square Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-4" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Calculating Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-6" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7-3" class="internal"><span class="codenumber">2.8.4.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Properties of Determinants</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -237,8 +250,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-vector-spaces.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-3" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Examples of Vector Spaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-4" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Is every set a vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-4" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Examples of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-5" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Is every set a vector space?</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -282,11 +295,10 @@ window.MathJax = {
 <div class="toc-title-box"><a href="sect-eigenvalues.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Finding Eigenvalues and Eigenvectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-2by2" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Possible Eigenvalue/Eigenvector combinations of a <span class="process-math">\(2\times 2\)</span> matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Eigenvalues and Linear Maps</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Symmetric and Orthogonal Matrices and Quadratic Forms</span></a></div>
 <ul class="structural toc-item-list">
@@ -432,59 +444,64 @@ window.MathJax = {
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-linear-maps-eigen"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">Eigenvalues and Linear Maps</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span>
 </h2>
-<div class="para" id="sect-linear-maps-eigen-2">Recall that in section <a href="sect-eigenvalues.html" class="internal" title="Section 4.1: Eigenvalues and Eigenvectors">Section 4.1</a> that the eigenvalues and eigenvectors of a square matrix was found. We will examine how we can find eigenvalues and eigenvectors of a linear map. The definition of these are extensions of what we saw for matrices.</div>
-<article class="definition definition-like" id="sect-linear-maps-eigen-3"><h3 class="heading">
+<article class="objectives goal-like" id="sect-linear-maps-eigen-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ul class="disc">
+<li id="sect-linear-maps-eigen-2-1-1"><div class="para" id="sect-linear-maps-eigen-2-1-1-1">The definition of the eigenvalues and eigenvector of a linear transformation.</div></li>
+<li id="sect-linear-maps-eigen-2-1-2"><div class="para" id="sect-linear-maps-eigen-2-1-2-1">Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.</div></li>
+<li id="sect-linear-maps-eigen-2-1-3"><div class="para" id="sect-linear-maps-eigen-2-1-3-1">Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the transformation.</div></li>
+</ul></article><div class="para" id="sect-linear-maps-eigen-3">Recall that in section <a href="sect-eigenvalues.html" class="internal" title="Section 4.1: Eigenvalues and Eigenvectors">Section 4.1</a> that the eigenvalues and eigenvectors of a square matrix was found. We will examine how we can find eigenvalues and eigenvectors of a linear map. The definition of these are extensions of what we saw for matrices.</div>
+<article class="definition definition-like" id="sect-linear-maps-eigen-4"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="sect-linear-maps-eigen-3-1-1">Let <span class="process-math">\(T:V \rightarrow V\)</span> be a linear map and <span class="process-math">\(V\)</span> be a finite dimensional vector space. The nonzero vector <span class="process-math">\(\vec{x}\)</span> is an <dfn class="terminology">eigenvector</dfn> with associated <dfn class="terminology">eigenvalue</dfn> if</div> <div class="para logical" id="sect-linear-maps-eigen-3-1-2"><div class="displaymath process-math">
+<div class="para" id="sect-linear-maps-eigen-4-1-1">Let <span class="process-math">\(T:V \rightarrow V\)</span> be a linear map and <span class="process-math">\(V\)</span> be a finite dimensional vector space. The nonzero vector <span class="process-math">\(\vec{x}\)</span> is an <dfn class="terminology">eigenvector</dfn> with associated <dfn class="terminology">eigenvalue</dfn> if</div> <div class="para logical" id="sect-linear-maps-eigen-4-1-2"><div class="displaymath process-math">
 \begin{equation*}
 T(\vec{x}) = \lambda \vec{x}.
 \end{equation*}
-</div></div></article><div class="para" id="sect-linear-maps-eigen-4">There are a few ways to find <span class="process-math">\(\vec{x}\)</span> and <span class="process-math">\(\lambda\text{.}\)</span> In this section, we’ll only see some examples that are relatively simple to see as well as finding the matrix representation of the map. In addition, this section only shows examples from finite dimensional vector spaces, however, in general, there is no restriction.</div>
-<div class="para" id="sect-linear-maps-eigen-5">For the remainder of this chapter we will see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and derivative maps. We first see an example of scaling a vector in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span>
+</div></div></article><div class="para" id="sect-linear-maps-eigen-5">There are a few ways to find <span class="process-math">\(\vec{x}\)</span> and <span class="process-math">\(\lambda\text{.}\)</span> In this section, we’ll only see some examples that are relatively simple to see as well as finding the matrix representation of the map. In addition, this section only shows examples from finite dimensional vector spaces, however, in general, there is no restriction.</div>
+<div class="para" id="sect-linear-maps-eigen-6">For the remainder of this chapter we will see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and derivative maps. We first see an example of scaling a vector in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span>
 </div>
-<details id="sect-linear-maps-eigen-6" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<details id="sect-linear-maps-eigen-7" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-6-1-1">Find the eigenvalues and eigenvectors of the scale map <span class="process-math">\(S\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/ex-scale-map.html" title="Example 3.4.6: Linear Scale Map">Example 3.4.6</a>.</div>
-<div class="solutions"><details id="sect-linear-maps-eigen-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-linear-maps-eigen-6-2-1">Recall that the scale map <span class="process-math">\(S: \mathbb{R}^2 \rightarrow \mathbb{R}^2\)</span> is given by</div> <div class="para logical" id="sect-linear-maps-eigen-6-2-2"><div class="displaymath process-math">
+</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-7-1-1">Find the eigenvalues and eigenvectors of the scale map <span class="process-math">\(S\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/ex-scale-map.html" title="Example 3.4.6: Linear Scale Map">Example 3.4.6</a>.</div>
+<div class="solutions"><details id="sect-linear-maps-eigen-7-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sect-linear-maps-eigen-7-2-1">Recall that the scale map <span class="process-math">\(S: \mathbb{R}^2 \rightarrow \mathbb{R}^2\)</span> is given by</div> <div class="para logical" id="sect-linear-maps-eigen-7-2-2"><div class="displaymath process-math">
 \begin{equation*}
 S(\vec{x}) = k \vec{x}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-6-2-3">To find the eigenvalues and eigenvectors of <span class="process-math">\(S\text{,}\)</span> we seek an <span class="process-math">\(\vec{x}\)</span> and a <span class="process-math">\(\lambda\)</span> such that</div> <div class="para logical" id="sect-linear-maps-eigen-6-2-4"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-7-2-3">To find the eigenvalues and eigenvectors of <span class="process-math">\(S\text{,}\)</span> we seek an <span class="process-math">\(\vec{x}\)</span> and a <span class="process-math">\(\lambda\)</span> such that</div> <div class="para logical" id="sect-linear-maps-eigen-7-2-4"><div class="displaymath process-math">
 \begin{equation*}
 S(\vec{x})=\lambda \vec{x}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-6-2-5">but since <span class="process-math">\(S(\vec{x})=k \vec{x}\text{,}\)</span> then <span class="process-math">\(\lambda =k\)</span> and any <span class="process-math">\(\vec{x}\)</span> is an eigenvector.</div> <div class="para" id="sect-linear-maps-eigen-6-2-6">Alternatively, we can write down the matrix <span class="process-math">\(A_S\)</span> associated with the map. This was done in <a href="" class="xref" data-knowl="./knowl/xref/ex-scale-map-matrix-rep.html" title="Example 3.4.12">Example 3.4.12</a> and is</div> <div class="para logical" id="sect-linear-maps-eigen-6-2-7"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-7-2-5">but since <span class="process-math">\(S(\vec{x})=k \vec{x}\text{,}\)</span> then <span class="process-math">\(\lambda =k\)</span> and any <span class="process-math">\(\vec{x}\)</span> is an eigenvector.</div> <div class="para" id="sect-linear-maps-eigen-7-2-6">Alternatively, we can write down the matrix <span class="process-math">\(A_S\)</span> associated with the map. This was done in <a href="" class="xref" data-knowl="./knowl/xref/ex-scale-map-matrix-rep.html" title="Example 3.4.12">Example 3.4.12</a> and is</div> <div class="para logical" id="sect-linear-maps-eigen-7-2-7"><div class="displaymath process-math">
 \begin{equation*}
 A_S = \begin{bmatrix}
 k \amp 0 \\ 0 \amp k
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-6-2-8">The eigenvalues and eigenvectors of this was found in <a href="" class="xref" data-knowl="./knowl/xref/ex-eigs-scale2.html" title="Example 4.1.8">Example 4.1.8</a> for a particular <span class="process-math">\(k\text{,}\)</span> but generalizing that, one can see that <span class="process-math">\(\lambda=k\)</span> will be the only eigenvector of <span class="process-math">\(A_S\)</span> with eigenvectors <span class="process-math">\([1\;\;0]^{\intercal}\)</span> and <span class="process-math">\([0\;\;1]^{\intercal}\text{.}\)</span>
-</div> <div class="para" id="sect-linear-maps-eigen-6-2-9">In this case, since there are two eigenvectors associated with <span class="process-math">\(\lambda=k\text{,}\)</span> any linear combination of the two eigenvectors is also an eigenvector, and since <span class="process-math">\([1\;\;0]^{\intercal}\)</span> and <span class="process-math">\([0\;\;1]^{\intercal}\)</span> span <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is an eigenvector.</div>
-</div></details></div></article></details><div class="para" id="sect-linear-maps-eigen-7">The next example shows the eigenvalues of the linear map associated with a derivative.</div>
-<details id="sect-linear-maps-eigen-8" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+</div></div> <div class="para" id="sect-linear-maps-eigen-7-2-8">The eigenvalues and eigenvectors of this was found in <a href="" class="xref" data-knowl="./knowl/xref/ex-eigs-scale2.html" title="Example 4.1.6">Example 4.1.6</a> for a particular <span class="process-math">\(k\text{,}\)</span> but generalizing that, one can see that <span class="process-math">\(\lambda=k\)</span> will be the only eigenvector of <span class="process-math">\(A_S\)</span> with eigenvectors <span class="process-math">\([1\;\;0]^{\intercal}\)</span> and <span class="process-math">\([0\;\;1]^{\intercal}\text{.}\)</span>
+</div> <div class="para" id="sect-linear-maps-eigen-7-2-9">In this case, since there are two eigenvectors associated with <span class="process-math">\(\lambda=k\text{,}\)</span> any linear combination of the two eigenvectors is also an eigenvector, and since <span class="process-math">\([1\;\;0]^{\intercal}\)</span> and <span class="process-math">\([0\;\;1]^{\intercal}\)</span> span <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is an eigenvector.</div>
+</div></details></div></article></details><div class="para" id="sect-linear-maps-eigen-8">The next example shows the eigenvalues of the linear map associated with a derivative.</div>
+<details id="sect-linear-maps-eigen-9" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-8-1-1">The set</div> <div class="para logical" id="sect-linear-maps-eigen-8-1-2"><div class="displaymath process-math">
+</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-9-1-1">The set</div> <div class="para logical" id="sect-linear-maps-eigen-9-1-2"><div class="displaymath process-math">
 \begin{equation*}
 V = \{ ae^{x} + b e^{-x} \; | \; a,b \in \mathbb{R} \}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-8-1-3">is a subspace of all functions on <span class="process-math">\(\mathbb{R}\text{.}\)</span> A basis for this subspace is <span class="process-math">\((e^x,e^{-x})\text{.}\)</span> In addition, the differential operation <span class="process-math">\(D:V \rightarrow V\)</span> is a linear transformation. What are the eigenvalues and eigenvectors of <span class="process-math">\(D\text{?}\)</span>
+</div></div> <div class="para" id="sect-linear-maps-eigen-9-1-3">is a subspace of all functions on <span class="process-math">\(\mathbb{R}\text{.}\)</span> A basis for this subspace is <span class="process-math">\((e^x,e^{-x})\text{.}\)</span> In addition, the differential operation <span class="process-math">\(D:V \rightarrow V\)</span> is a linear transformation. What are the eigenvalues and eigenvectors of <span class="process-math">\(D\text{?}\)</span>
 </div>
-<div class="solutions"><details id="sect-linear-maps-eigen-8-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-linear-maps-eigen-8-2-1">There are two ways of looking at this. Since <span class="process-math">\(e^{x} \mapsto e^x\text{,}\)</span> this means that <span class="process-math">\(e^x\)</span> is an eigenvector with corresponding eigenvalue 1. Similarly, since <span class="process-math">\(e^{-x} \mapsto
+<div class="solutions"><details id="sect-linear-maps-eigen-9-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sect-linear-maps-eigen-9-2-1">There are two ways of looking at this. Since <span class="process-math">\(e^{x} \mapsto e^x\text{,}\)</span> this means that <span class="process-math">\(e^x\)</span> is an eigenvector with corresponding eigenvalue 1. Similarly, since <span class="process-math">\(e^{-x} \mapsto
 -e^{-x}\text{,}\)</span> this also means that <span class="process-math">\(e^{-x}\)</span> is an eigenvector with eigenvalue <span class="process-math">\(-1\text{.}\)</span>
-</div> <div class="para" id="sect-linear-maps-eigen-8-2-2">Alternatively, this can be done by first finding the matrix representation of the differential operator or</div> <div class="para logical" id="sect-linear-maps-eigen-8-2-3"><div class="displaymath process-math">
+</div> <div class="para" id="sect-linear-maps-eigen-9-2-2">Alternatively, this can be done by first finding the matrix representation of the differential operator or</div> <div class="para logical" id="sect-linear-maps-eigen-9-2-3"><div class="displaymath process-math">
 \begin{equation*}
 A_D = \begin{bmatrix}
 1 \amp 0 \\
 0 \amp -1
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-8-2-4">Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2=-1\text{.}\)</span> One can also find that the corresponding eigenvectors are</div> <div class="para logical" id="sect-linear-maps-eigen-8-2-5"><div class="displaymath process-math" id="sect-linear-maps-eigen-8-2-5-1">
+</div></div> <div class="para" id="sect-linear-maps-eigen-9-2-4">Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2=-1\text{.}\)</span> One can also find that the corresponding eigenvectors are</div> <div class="para logical" id="sect-linear-maps-eigen-9-2-5"><div class="displaymath process-math" id="sect-linear-maps-eigen-9-2-5-1">
 \begin{align*}
 \vec{v}_1 \amp = \begin{bmatrix}
 1 \\ 0
@@ -492,10 +509,10 @@ A_D = \begin{bmatrix}
 0 \\ 1
 \end{bmatrix}
 \end{align*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-8-2-6">These two vectors can be translated back to the functional forms <span class="process-math">\(e^{x}\)</span> and <span class="process-math">\(e^{-x} \text{,}\)</span> the same as we found above. These two functions which are in <span class="process-math">\(V\)</span> are functions that stay the same in the subspace <span class="process-math">\(V\)</span> up to a scalar constant.</div>
-</div></details></div></article></details><details id="sect-linear-maps-eigen-9" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+</div></div> <div class="para" id="sect-linear-maps-eigen-9-2-6">These two vectors can be translated back to the functional forms <span class="process-math">\(e^{x}\)</span> and <span class="process-math">\(e^{-x} \text{,}\)</span> the same as we found above. These two functions which are in <span class="process-math">\(V\)</span> are functions that stay the same in the subspace <span class="process-math">\(V\)</span> up to a scalar constant.</div>
+</div></details></div></article></details><details id="sect-linear-maps-eigen-10" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-9-1-1">Consider the differential map <span class="process-math">\(D: \mathcal{P}_3 \rightarrow \mathcal{P}_3\)</span> which maps cubic polynomials to other cubic polynomials.</div> <div class="para logical" id="sect-linear-maps-eigen-9-1-2"><div class="displaymath process-math">
+</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-10-1-1">Consider the differential map <span class="process-math">\(D: \mathcal{P}_3 \rightarrow \mathcal{P}_3\)</span> which maps cubic polynomials to other cubic polynomials.</div> <div class="para logical" id="sect-linear-maps-eigen-10-1-2"><div class="displaymath process-math">
 \begin{equation*}
 A = \begin{bmatrix}
 0 \amp 1 \amp 0 \amp 0 \\
@@ -504,9 +521,9 @@ A = \begin{bmatrix}
 0 \amp 0 \amp 0 \amp 0
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-9-1-3">Find the eigenvalues of this matrix and interpret.</div>
-<div class="solutions"><details id="sect-linear-maps-eigen-9-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-linear-maps-eigen-9-2-1">First, we find</div> <div class="para logical" id="sect-linear-maps-eigen-9-2-2"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-10-1-3">Find the eigenvalues of this matrix and interpret.</div>
+<div class="solutions"><details id="sect-linear-maps-eigen-10-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sect-linear-maps-eigen-10-2-1">First, we find</div> <div class="para logical" id="sect-linear-maps-eigen-10-2-2"><div class="displaymath process-math">
 \begin{equation*}
 |A-\lambda I| = \begin{vmatrix}
 -\lambda \amp 1 \amp 0 \amp 0 \\
@@ -515,7 +532,7 @@ A = \begin{bmatrix}
 0 \amp 0 \amp 0 \amp -\lambda
 \end{vmatrix} = (-\lambda)^4
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-9-2-3">and setting it to zero, thus <span class="process-math">\(\lambda=0\)</span> is the only eigenvalue. To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:</div> <div class="para logical" id="sect-linear-maps-eigen-9-2-4"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-10-2-3">and setting it to zero, thus <span class="process-math">\(\lambda=0\)</span> is the only eigenvalue. To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:</div> <div class="para logical" id="sect-linear-maps-eigen-10-2-4"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 0 \amp 1 \amp 0 \amp 0 \\
@@ -524,15 +541,17 @@ A = \begin{bmatrix}
 0 \amp 0 \amp 0 \amp 0
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-9-2-5">and the solution to the null space is</div> <div class="para logical" id="sect-linear-maps-eigen-9-2-6"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-10-2-5">and the solution to the null space is</div> <div class="para logical" id="sect-linear-maps-eigen-10-2-6"><div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 1 \\ 0 \\ 0 \\ 0
 \end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-9-2-7">This vector is the representation of the cubic polynomial <span class="process-math">\(p(x)=c\text{,}\)</span> a constant. Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.</div>
-</div></details></div></article></details><div class="para" id="sect-linear-maps-eigen-10">For the last example in this section, consider the map that rotates a 2 by 2 matrix 90<span class="process-math">\(^{\circ}\)</span> clockwise. That is <span class="process-math">\(R: \mathcal{M}_{2 \times 2} \rightarrow \mathcal{M}_{2\times 2}\)</span> such that</div>
-<div class="para logical" id="sect-linear-maps-eigen-11"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-10-2-7">This vector is the representation of the cubic polynomial <span class="process-math">\(p(x)=c\text{,}\)</span> a constant. Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.</div>
+</div></details></div></article></details><div class="para" id="sect-linear-maps-eigen-11">This last example of this involves matrices and the rotation of a matrix.</div>
+<details id="sect-linear-maps-eigen-12" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-12-1-1">Find the eigenvalues and eigenvectors of the linear map  that rotates a 2 by 2 matrix 90<span class="process-math">\(^{\circ}\)</span> clockwise. That is <span class="process-math">\(R: \mathcal{M}_{2 \times 2} \rightarrow \mathcal{M}_{2\times 2}\)</span> such that</div> <div class="para logical" id="sect-linear-maps-eigen-12-1-2"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 a \amp b \\
@@ -542,8 +561,8 @@ c \amp a \\ d\amp b
 \end{bmatrix}
 \end{equation*}
 </div></div>
-<div class="para" id="sect-linear-maps-eigen-12">One can show that if we consider the vector representation in the basis:</div>
-<div class="para logical" id="sect-linear-maps-eigen-13"><div class="displaymath process-math">
+<div class="solutions"><details id="sect-linear-maps-eigen-12-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sect-linear-maps-eigen-12-2-1">One can show that if we consider the vector representation in the basis:</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-2"><div class="displaymath process-math">
 \begin{equation*}
 B  = \biggl( \begin{bmatrix}
 1 \amp0 \\ 0 \amp 0
@@ -555,9 +574,7 @@ B  = \biggl( \begin{bmatrix}
 0 \amp0 \\ 0 \amp 1
 \end{bmatrix} \biggr)
 \end{equation*}
-</div></div>
-<div class="para" id="sect-linear-maps-eigen-14">that</div>
-<div class="para logical" id="sect-linear-maps-eigen-15"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-3">that</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-4"><div class="displaymath process-math">
 \begin{equation*}
 \text{Rep}_B \biggl( \begin{bmatrix}
 a \amp b \\ c \amp d
@@ -565,9 +582,7 @@ a \amp b \\ c \amp d
 a \\ b \\ c \\ d
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-linear-maps-eigen-16">and the map <span class="process-math">\(R\)</span> can be represented by the matrix as</div>
-<div class="para logical" id="sect-linear-maps-eigen-17"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-5">and the map <span class="process-math">\(R\)</span> can be represented by the matrix as</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-6"><div class="displaymath process-math">
 \begin{equation*}
 A_R = \begin{bmatrix}
 0 \amp 1 \amp 0 \amp 0 \\
@@ -576,9 +591,7 @@ A_R = \begin{bmatrix}
 0 \amp 0 \amp 1 \amp 0
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-linear-maps-eigen-18">We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are</div>
-<div class="para logical" id="sect-linear-maps-eigen-19"><div class="displaymath process-math" id="sect-linear-maps-eigen-19-1">
+</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-7">We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-8"><div class="displaymath process-math" id="sect-linear-maps-eigen-12-2-8-1">
 \begin{align*}
 \lambda_1 \amp = 1 \amp \vec{v}_1 \amp = \begin{bmatrix}
 1 \\ 1 \\ 1 \\1
@@ -593,33 +606,25 @@ A_R = \begin{bmatrix}
 1 \\ i \\ -i \\ -1
 \end{bmatrix}
 \end{align*}
-</div></div>
-<div class="para" id="sect-linear-maps-eigen-20">To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, <span class="process-math">\(\vec{v}_1\)</span> is the matrix</div>
-<div class="para logical" id="sect-linear-maps-eigen-21"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-9">To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, <span class="process-math">\(\vec{v}_1\)</span> is the matrix</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-10"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 1 \amp 1 \\ 1 \amp 1
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-linear-maps-eigen-22">and if that matrix is rotated, you get it back and the eigenvector is 1. The second eigenvector can be written as the matrix</div>
-<div class="para logical" id="sect-linear-maps-eigen-23"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-11">and if that matrix is rotated, you get it back and the eigenvector is 1. The second eigenvector can be written as the matrix</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-12"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 1 \amp -1 \\ -1 \amp 1
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-linear-maps-eigen-24">and if you rotate this matrix, you get the matrix</div>
-<div class="para logical" id="sect-linear-maps-eigen-25"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-13">and if you rotate this matrix, you get the matrix</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-14"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 -1\amp 1 \\ 1 \amp -1
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-linear-maps-eigen-26">which is the above matrix multiplied by the eigenvalue <span class="process-math">\(\lambda_2=-1\text{.}\)</span> In other words:</div>
-<div class="para logical" id="sect-linear-maps-eigen-27"><div class="displaymath process-math">
+</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-15">which is the above matrix multiplied by the eigenvalue <span class="process-math">\(\lambda_2=-1\text{.}\)</span> In other words:</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-16"><div class="displaymath process-math">
 \begin{equation*}
 R\left(
 \begin{bmatrix}
@@ -628,8 +633,8 @@ R\left(
 1 \amp -1 \\ -1 \amp 1
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-linear-maps-eigen-28">The other two work in a similar manner, however complex numbers are needed.</div></section></div>
+</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-17">The other two work in a similar manner, however complex numbers are needed.</div>
+</div></details></div></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sect-eigenvalues.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-sym-matrix-quad-form.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

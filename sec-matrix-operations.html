@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-matrices.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrices.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-matrix-inverse.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sect-matrix-definition.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrices.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-matrix-inverse.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -160,75 +160,87 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-linear-geometry.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Geometry of <span class="process-math">\(n\)</span>-space</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-2" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Summaries of Linear Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-3" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Scalar Multiplication of Vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-4" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Vector Addition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-5" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Geometry of Addition and Scalar Multiplication in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-6" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Lines in Vector form in <span class="process-math">\(\mathbb{R}^2\)</span> and <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-planes-r3" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Planes in <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-8" class="internal"><span class="codenumber">1.6.7</span> <span class="title">Geometry of Linear Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-length-angles" class="internal"><span class="codenumber">1.6.8</span> <span class="title">Length and Angle Measures</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-10" class="internal"><span class="codenumber">1.6.9</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^2\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-angles-vectors" class="internal"><span class="codenumber">1.6.10</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-dot-prod-props" class="internal"><span class="codenumber">1.6.11</span> <span class="title">Properties of The Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-2" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Scalar Multiplication of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-3" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Vector Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-4" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Geometry of Addition and Scalar Multiplication in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-5" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Lines in Vector form in <span class="process-math">\(\mathbb{R}^2\)</span> and <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-planes-r3" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Planes in <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-7" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Geometry of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-length-angles" class="internal"><span class="codenumber">1.6.7</span> <span class="title">Length and Angle Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-angles-of-vectors" class="internal"><span class="codenumber">1.6.8</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-angles-vectors" class="internal"><span class="codenumber">1.6.9</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-dot-prod-props" class="internal"><span class="codenumber">1.6.10</span> <span class="title">Properties of The Dot Product</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-matrices.html" class="internal"><span class="codenumber">2</span> <span class="title">Linear Algebra Basics</span></a></div>
+<div class="toc-title-box"><a href="ch-matrices.html" class="internal"><span class="codenumber">2</span> <span class="title">Matrices and Matrix Operations</span></a></div>
 <ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-matrix-definition.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Matrix and Vector Definition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-vectors" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-matrix-definition-5" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Matrix, Vector and Scalar Notation</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="sec-matrix-operations.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Matrix Operations</span></a></div>
+<div class="toc-title-box"><a href="sec-matrix-operations.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Matrix Operations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Matrix, Vector and Scalar Notation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-4" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Addition and Subtraction of Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-5" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Scalar Multiplication of Vectors and Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-transpose" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Transpose</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-mult-matrix" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Multiplication of Vectors and Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-8" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Size Restrictions on Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-9" class="internal"><span class="codenumber">2.1.7</span> <span class="title">Matrix-Vector Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-10" class="internal"><span class="codenumber">2.1.8</span> <span class="title">Reexamination of the Dot Product</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#section-matrix-multiplication-linear-systems" class="internal"><span class="codenumber">2.1.9</span> <span class="title">Matrix Multiplication and Linear Systems</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-matrix-inverse.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Inverse of a Matrix</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-3" class="internal"><span class="codenumber">2.2.1</span> <span class="title">The Identity Matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.2.2</span> <span class="title">The Inverse</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.2.4</span> <span class="title">The Inverse of a 2 by 2 matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.2.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.2.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Elementary Matrices</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Independence</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-row-col-space-rank.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Row Space, Column Space and Rank of a Matrix</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-3" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Row Space of a Matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-4" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Column Space of a Matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-5" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Null Space of a Matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-6" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Relationship between the Rank and Nullity</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Determinants of Square Matrices</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-3" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-4" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-3" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Addition and Subtraction of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-4" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Scalar Multiplication of Vectors and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#section-reexamining-linear-systems" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Reexamining Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-matrix-vector-product" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Matrix-Vector Product</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-6" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-6-3" class="internal"><span class="codenumber">2.7.4.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-matrix-operations.html#sect-matrix-matrix-product" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Matrix-Matrix Product</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-matrix-matrix-product-3" class="internal"><span class="codenumber">2.2.5.1</span> <span class="title">Size Restrictions on Matrices</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-matrix-matrix-product-alt" class="internal"><span class="codenumber">2.2.5.2</span> <span class="title">Alternative Form of the Matrix-Matrix Product</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-matrix-matrix-product-props" class="internal"><span class="codenumber">2.2.5.3</span> <span class="title">Properties of Matrix-Matrix Products</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sect-transpose" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Transpose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#sec-matrix-operations-9" class="internal"><span class="codenumber">2.2.7</span> <span class="title">Reexamination of the Dot Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-matrix-inverse.html" class="internal"><span class="codenumber">2.3</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-3" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Identity Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.3.4</span> <span class="title">The Matrix Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.3.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear Independence</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-row-col-space-rank.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Row Space, Column Space and Rank of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-3" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Row Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-4" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Column Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-5" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Null Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-6" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Relationship between the Rank and Nullity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Determinants of Square Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-3" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-4" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Calculating Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sect-det.html#sect-det-6" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-6-3" class="internal"><span class="codenumber">2.8.4.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
 </li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -432,43 +444,48 @@ window.MathJax = {
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-matrix-operations"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Matrix Operations</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Matrix Operations</span>
 </h2>
-<section class="introduction" id="sec-matrix-operations-2"><div class="para" id="sec-matrix-operations-2-1">As we have seen, a matrix is a group of numbers arranged in a rectangular block.  An <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrix has <span class="process-math">\(m\)</span> rows and <span class="process-math">\(n\)</span> columns.</div> <div class="para logical" id="sec-matrix-operations-2-2">
-<div class="para">For example,</div>
-<div class="displaymath process-math" id="eq-example-matrix">
-\begin{equation}
-\begin{bmatrix}
-1 \amp 2 \amp 11 \amp -1 \\ 3 \amp -2 \amp 3 \amp 4
-\end{bmatrix}\tag{2.1.1}
-\end{equation}
-</div>
-<div class="para">is a 2 by 4 matrix.</div>
-</div> <div class="para" id="sec-matrix-operations-2-3">The <dfn class="terminology">size</dfn> of a matrix is the number of rows and columns in the matrix.  The number of rows is listed first.  The size of the example above is 2 by 4.</div> <div class="para" id="sec-matrix-operations-2-4">The numbers in a matrix are called the <dfn class="terminology">entries</dfn> or <dfn class="terminology">elements</dfn> of the matrix.  For example, for the matrix in (<a href="" class="xref" data-knowl="./knowl/xref/eq-example-matrix.html" title="Equation 2.1.1">(2.1.1)</a>), the entry on the first row and third column is 11.  Often we will use the notation <span class="process-math">\(a_{1,3} = 11\text{,}\)</span> where the subscript 1 is the row number and <span class="process-math">\(3\)</span> is the column number.</div></section><section class="subsection" id="sec-matrix-operations-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Matrix, Vector and Scalar Notation</span>
+<article class="objectives goal-like" id="sec-matrix-operations-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ul class="disc">
+<li id="sec-matrix-operations-2-1-1"><div class="para" id="sec-matrix-operations-2-1-1-1">Learn the basic matrix operations of addition, subtraction and scalar mulitplication.</div></li>
+<li id="sec-matrix-operations-2-1-2"><div class="para" id="sec-matrix-operations-2-1-2-1">Rewrite a linear system in a vector form to motivate a matrix-vector product.</div></li>
+<li id="sec-matrix-operations-2-1-3"><div class="para" id="sec-matrix-operations-2-1-3-1">Extend a matrix-vector product to a matrix-matrix product and understand the require size restrictions on products.</div></li>
+<li id="sec-matrix-operations-2-1-4"><div class="para" id="sec-matrix-operations-2-1-4-1">Learn the matrix transpose and reexamine the dot product.</div></li>
+</ul></article><section class="subsection" id="sec-matrix-operations-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="space"> </span><span class="title">Addition and Subtraction of Matrices</span>
 </h3>
-<div class="para" id="sec-matrix-operations-3-2">A <dfn class="terminology">scalar</dfn> is a fancy term for a number.  Mathematicians use this term to distinguish them from matrices and vectors, which are not scalars.  Whenever variables are used for scalars, then lower case letters will be used.  For example, <span class="process-math">\(a, n\)</span> and <span class="process-math">\(x\)</span> are scalar variables.</div>
-<div class="para" id="sec-matrix-operations-3-3">When we use variable names for matrices, we will use capital letters. For example, <span class="process-math">\(A, B\)</span> and <span class="process-math">\(X\)</span> are matrix (or vector) variables.</div></section><section class="subsection" id="sec-matrix-operations-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="space"> </span><span class="title">Addition and Subtraction of Matrices</span>
-</h3>
-<div class="para" id="sec-matrix-operations-4-2">In this section, we learn how to perform some basic operations between matrices. First, we will look at adding and subtracting two matrices and later we will look at multiplying a matrix by a scalar (a number).</div>
-<article class="definition definition-like" id="sec-matrix-operations-4-3"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+<div class="para" id="sec-matrix-operations-3-2">In this section, we learn how to perform some basic operations between matrices. First, we will look at adding and subtracting two matrices and later we will look at multiplying a matrix by a scalar (a number).</div>
+<article class="definition definition-like" id="sec-matrix-operations-3-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-matrix-operations-4-3-1-1">In this case, let <span class="process-math">\(k \in \mathbb{R}\)</span> and <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <span class="process-math">\(m \times n\)</span> matrices.  Then</div> <ol class="decimal">
-<li id="sec-matrix-operations-4-3-1-2-1"><div class="para" id="sec-matrix-operations-4-3-1-2-1-1">
-<span class="process-math">\(kA\)</span> is the matrix formed by each entry is <span class="process-math">\(ka_{i,j}\text{.}\)</span> That is multiply each entry by <span class="process-math">\(k\text{.}\)</span>
-</div></li>
-<li id="sec-matrix-operations-4-3-1-2-2"><div class="para" id="sec-matrix-operations-4-3-1-2-2-1">
-<span class="process-math">\(A+B\)</span> is the matrix form by each entry is <span class="process-math">\(a_{i,j}+b_{i,j}\text{.}\)</span> That is to add matrices, we add element by element.</div></li>
-<li id="sec-matrix-operations-4-3-1-2-3"><div class="para" id="sec-matrix-operations-4-3-1-2-3-1">
-<span class="process-math">\(A-B\)</span> is the matrix form by each entry is <span class="process-math">\(a_{i,j}-b_{i,j}\text{.}\)</span> That is to add matrices, we subtract element by element.</div></li>
-</ol> If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not the same size then <span class="process-math">\(A+B\)</span> and <span class="process-math">\(A-B\)</span> does not exist.</article><div class="para" id="sec-matrix-operations-4-4">Note: an alternative definition of matrix subtraction, <span class="process-math">\(A-B=A+(-B)\text{,}\)</span> which is consistent with subtraction of real numbers.</div>
-<details id="sec-matrix-operations-4-5" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="sec-matrix-operations-4-5-1">
+<div class="para" id="sec-matrix-operations-3-3-1-1">In this case, let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be <span class="process-math">\(m \times n\)</span> matrices. Then</div> <div class="para logical" id="sec-matrix-operations-3-3-1-2"><ol class="decimal">
+<li id="sec-matrix-operations-3-3-1-2-1-1">
+<div class="para" id="sec-matrix-operations-3-3-1-2-1-1-1">
+<span class="process-math">\(A+B\)</span> is the matrix formed by</div>
+<div class="para logical" id="sec-matrix-operations-3-3-1-2-1-1-2"><div class="displaymath process-math">
+\begin{equation*}
+[a_{ij}]+[b_{ij}] = [a_{ij}+b_{ij}]
+\end{equation*}
+</div></div>
+<div class="para" id="sec-matrix-operations-3-3-1-2-1-1-3">That is to add matrices, we add element by element.</div>
+</li>
+<li id="sec-matrix-operations-3-3-1-2-1-2">
+<div class="para" id="sec-matrix-operations-3-3-1-2-1-2-1">
+<span class="process-math">\(A-B\)</span> is the matrix formed by</div>
+<div class="para logical" id="sec-matrix-operations-3-3-1-2-1-2-2"><div class="displaymath process-math">
+\begin{equation*}
+[a_{ij}]-[b_{ij}] = [a_{ij}-b_{ij}]
+\end{equation*}
+</div></div>
+<div class="para" id="sec-matrix-operations-3-3-1-2-1-2-3">That is to add matrices, we subtract element by element.</div>
+</li>
+</ol></div> <div class="para" id="sec-matrix-operations-3-3-1-3">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not the same size then <span class="process-math">\(A+B\)</span> and <span class="process-math">\(A-B\)</span> does not exist.</div></article><div class="para" id="sec-matrix-operations-3-4">Note: an alternative definition of matrix subtraction, <span class="process-math">\(A-B=A+(-B)\text{,}\)</span> which is consistent with subtraction of real numbers. We will define <span class="process-math">\(-B\)</span> later in this chapter.</div>
+<details id="sec-matrix-operations-3-5" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="sec-matrix-operations-3-5-1">
 <div class="para">Let</div>
-<div class="displaymath process-math" id="sec-matrix-operations-4-5-1-1">
+<div class="displaymath process-math" id="sec-matrix-operations-3-5-1-1">
 \begin{align*}
 A \amp = \begin{bmatrix}
 1 \amp -1 \amp 3 \\
@@ -480,7 +497,7 @@ B \amp = \begin{bmatrix}
 \end{align*}
 </div>
 <div class="para">Then the sum <span class="process-math">\(A+B\)</span> is found by adding the individual elements.</div>
-<div class="displaymath process-math" id="sec-matrix-operations-4-5-1-3">
+<div class="displaymath process-math" id="sec-matrix-operations-3-5-1-3">
 \begin{align*}
 A+B \amp = \begin{bmatrix}
 1+3 \amp -2+2 \amp 3-7\\ 2+11 \amp 7+2 \amp 3+0
@@ -490,7 +507,7 @@ A+B \amp = \begin{bmatrix}
 \end{align*}
 </div>
 <div class="para">similarly we can subtract in the same way</div>
-<div class="displaymath process-math" id="sec-matrix-operations-4-5-1-4">
+<div class="displaymath process-math" id="sec-matrix-operations-3-5-1-4">
 \begin{align*}
 A-B \amp =
 \begin{bmatrix}
@@ -503,9 +520,9 @@ A-B \amp =
 \end{bmatrix}
 \end{align*}
 </div>
-</div></article></details><details id="sec-matrix-operations-4-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="sec-matrix-operations-4-6-1-1">
+</div></article></details><details id="sec-matrix-operations-3-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="sec-matrix-operations-3-6-1-1">
 <div class="para">Find the following result or state that it does not exist.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -520,14 +537,67 @@ A-B \amp =
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="sec-matrix-operations-4-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="sec-matrix-operations-4-6-2-1">Since the matrices are not the same size, this operation is not valid.</div></div></details></div></article></details></section><section class="subsection" id="sec-matrix-operations-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="space"> </span><span class="title">Scalar Multiplication of Vectors and Matrices</span>
+<div class="solutions"><details id="sec-matrix-operations-3-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="sec-matrix-operations-3-6-2-1">Since the matrices are not the same size, this operation is not valid.</div></div></details></div></article></details><div class="para" id="sec-matrix-operations-3-7">There are many properties of matrix operations and they will look familiar in relation to real numbers.</div>
+<article class="lemma theorem-like" id="lem-"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="lem--1-1">Let <span class="process-math">\(A, B\)</span> and <span class="process-math">\(C\)</span> be matrices of the same size. The following hold.</div> <div class="para logical" id="lem--1-2"><dl class="description-list">
+<dt id="lem--1-2-1-1">Commutative Law of Addition</dt>
+<dd><div class="para" id="lem--1-2-1-1-2"><span class="process-math">\(\displaystyle A+B=B+A\)</span></div></dd>
+<dt id="lem--1-2-1-2">Associative Law of Addition</dt>
+<dd><div class="para" id="lem--1-2-1-2-2"><span class="process-math">\(\displaystyle A+(B+C) = (A+B)+C\)</span></div></dd>
+<dt id="lem--1-2-1-3">Existence of an Additive Identity</dt>
+<dd>
+<div class="para" id="lem--1-2-1-3-2">There exists a matrix <span class="process-math">\(0\)</span> such that for any matrix <span class="process-math">\(A\)</span>
+</div>
+<div class="para logical" id="lem--1-2-1-3-3"><div class="displaymath process-math">
+\begin{equation*}
+A+0 = A
+\end{equation*}
+</div></div>
+</dd>
+<dt id="lem--1-2-1-4">Existence of an Additive Inverse</dt>
+<dd>
+<div class="para" id="lem--1-2-1-4-2">For every matrix <span class="process-math">\(A\text{,}\)</span> there exists a matrix denoted <span class="process-math">\(-A\)</span> such that</div>
+<div class="para logical" id="lem--1-2-1-4-3"><div class="displaymath process-math">
+\begin{equation*}
+A + (-A) = 0
+\end{equation*}
+</div></div>
+<div class="para" id="lem--1-2-1-4-4">where <span class="process-math">\(0\)</span> is the additive identity matrix above.</div>
+</dd>
+</dl></div></article><details id="lem--2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem--2-1">We will prove the first property: Commutative Law: <span class="process-math">\(A+B=B+A\text{.}\)</span> Start with the left hand side and get to the right hand side.</div> <div class="para logical" id="lem--2-2"><div class="displaymath process-math" id="lem--2-2-1">
+\begin{align*}
+A + B \amp =[a_{ij}] + [b_{ij}]  \amp\amp\text{definition of the matrix}\\
+\amp = [a_{ij}+b_{ij}] \amp\amp \text{sum of matrices} \\
+\amp = [b_{ij}+a_{ij}] \amp\amp\text{use commutative law of numbers} \\
+\amp = [b_{ij}] + [a_{ij}] \amp\amp \text{sum of matrices} \\
+\amp = B + A \amp\amp\text{definition of matrix} 
+\end{align*}
+</div></div></article></details><div class="para" id="sec-matrix-operations-3-9">Note that we have used the notation that <span class="process-math">\(A=[a_{ij}]\)</span> through this proof. This shorthand notation makes it easier to write matrices and provide proofs.</div></section><section class="subsection" id="sec-matrix-operations-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="space"> </span><span class="title">Scalar Multiplication of Vectors and Matrices</span>
 </h3>
-<div class="para" id="sec-matrix-operations-5-2">Scalar multiplication of vectors and matrices is a simple operation where the result is the scalar times each element of the vector or matrix.</div>
-<details id="sec-matrix-operations-5-3" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="sec-matrix-operations-5-3-1-1">Evaluate:</div> <ol class="decimal">
-<li id="sec-matrix-operations-5-3-1-2-1"><div class="para" id="p-derived-sec-matrix-operations-5-3-1-2-1"><div class="displaymath process-math">
+<div class="para" id="sec-matrix-operations-4-2">Scalar multiplication of vectors and matrices is a simple operation where the result is the scalar times each element of the vector or matrix.</div>
+<article class="definition definition-like" id="def-scalar-mult-matrix"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-scalar-mult-matrix-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=[a_{ij}]\text{,}
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+kA=[ka_{ij}]
+\end{equation*}
+</div>
+</div></article><details id="sec-matrix-operations-4-4" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="sec-matrix-operations-4-4-1-1">Evaluate:</div> <div class="para logical" id="sec-matrix-operations-4-4-1-2"><ol class="decimal">
+<li id="sec-matrix-operations-4-4-1-2-1-1"><div class="para logical" id="sec-matrix-operations-4-4-1-2-1-1-1"><div class="displaymath process-math">
 \begin{equation*}
 3
 \begin{bmatrix}
@@ -536,170 +606,261 @@ A-B \amp =
 \end{bmatrix}.
 \end{equation*}
 </div></div></li>
-<li id="sec-matrix-operations-5-3-1-2-2"><div class="para" id="p-derived-sec-matrix-operations-5-3-1-2-2"><div class="displaymath process-math">
+<li id="sec-matrix-operations-4-4-1-2-1-2"><div class="para logical" id="sec-matrix-operations-4-4-1-2-1-2-1"><div class="displaymath process-math">
 \begin{equation*}
 -7 \begin{bmatrix}
 3 \amp -2 \amp 0 \amp 5
 \end{bmatrix}
 \end{equation*}
 </div></div></li>
-</ol>
-<div class="solutions"><details id="sec-matrix-operations-5-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><ol class="decimal">
-<li id="sec-matrix-operations-5-3-2-1-1"><div class="para logical" id="sec-matrix-operations-5-3-2-1-1-1"><div class="displaymath process-math">
+</ol></div>
+<div class="solutions"><details id="sec-matrix-operations-4-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-matrix-operations-4-4-2-1"><ol class="decimal">
+<li id="sec-matrix-operations-4-4-2-1-1-1"><div class="para logical" id="sec-matrix-operations-4-4-2-1-1-1-1"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 15 \amp 15 \\ -12 \amp 6
 \end{bmatrix}
 \end{equation*}
 </div></div></li>
-<li id="sec-matrix-operations-5-3-2-1-2"><div class="para logical" id="sec-matrix-operations-5-3-2-1-2-1"><div class="displaymath process-math">
+<li id="sec-matrix-operations-4-4-2-1-1-2"><div class="para logical" id="sec-matrix-operations-4-4-2-1-1-2-1"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 -21 \amp 14 \amp 0 \amp -35
 \end{bmatrix}
 \end{equation*}
 </div></div></li>
-</ol></div></details></div></article></details></section><section class="subsection" id="sect-transpose"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="space"> </span><span class="title">Transpose</span>
+</ol></div></div></details></div></article></details><div class="para" id="sec-matrix-operations-4-5">The following are properties of scalar multiplication</div>
+<article class="lemma theorem-like" id="lem-scalar-mult-matrix"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="lem-scalar-mult-matrix-1-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be matrices of the same size and <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> be scalars, then</div> <div class="para logical" id="lem-scalar-mult-matrix-1-2"><dl class="description-list">
+<dt id="lem-scalar-mult-matrix-1-2-1-1">Distributive Law over Matrix Addition</dt>
+<dd><div class="para" id="lem-scalar-mult-matrix-1-2-1-1-2"><span class="process-math">\(\displaystyle p(A+B) = pA + pB\)</span></div></dd>
+<dt id="lem-scalar-mult-matrix-1-2-1-2">Distributive Law over scalar Addition</dt>
+<dd><div class="para" id="lem-scalar-mult-matrix-1-2-1-2-2"><span class="process-math">\(\displaystyle (p+q)A = pA + qA\)</span></div></dd>
+<dt id="lem-scalar-mult-matrix-1-2-1-3">Associative Law for Scalar Multiplication</dt>
+<dd><div class="para" id="lem-scalar-mult-matrix-1-2-1-3-2"><span class="process-math">\(\displaystyle p(qA) = (pq) A \)</span></div></dd>
+<dt id="lem-scalar-mult-matrix-1-2-1-4">Scalar Multiplication by 1</dt>
+<dd><div class="para" id="lem-scalar-mult-matrix-1-2-1-4-2"><span class="process-math">\(\displaystyle 1 A = A\)</span></div></dd>
+</dl></div></article><details id="lem-scalar-mult-matrix-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-scalar-mult-matrix-2-1">This is a proof of the first property (Distributive Law over Matrix Addition)</div> <div class="para logical" id="lem-scalar-mult-matrix-2-2"><div class="displaymath process-math" id="lem-scalar-mult-matrix-2-2-1">
+\begin{align*}
+p(A+B) \amp = p ([a_{ij}] + [b_{ij}]) \amp\amp \text{definition of the matrix} \\
+\amp = p [a_{ij}+b_{ij}]\amp\amp\text{definition of the sum} \\
+\amp = [p(a_{ij}+b_{ij})] \amp\amp \text{definition of scalar multiplication} \\
+\amp = [pa_{ij} + pb_{ij}] \amp\amp\text{distributive property of numbers}\\
+\amp = [pa_{ij}] +[pb_{ij}] \amp\amp \text{sum of matrices} \\
+\amp = p [a_{ij}] + p[b_{ij}] \amp\amp \text{definition of scalar multiplication} \\
+\amp = pA + pB \amp\amp \text{definition of the matrix} \amp 
+\end{align*}
+</div></div></article></details></section><section class="subsection" id="section-reexamining-linear-systems"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="space"> </span><span class="title">Reexamining Linear Systems</span>
 </h3>
-<section class="introduction" id="sect-transpose-2"><div class="para logical" id="sect-transpose-2-1">
-<div class="para">The last basic matrix operation that we will cover here in the transpose of a matrix.  As an example, if</div>
-<div class="displaymath process-math">
+<div class="para" id="section-reexamining-linear-systems-2">The next matrix operation is that of multiplication. We will take a look back at linear systems to motivate why multiplication works the way it does. Consider the following linear system.</div>
+<div class="para logical" id="section-reexamining-linear-systems-3"><div class="displaymath process-math" id="section-reexamining-linear-systems-3-1">
+\begin{align*}
+3 x + 2y - z \amp = 10, \\
+x - 2y + z \amp = 11, \\
+2x - 2y + 4z \amp = 5.
+\end{align*}
+</div></div>
+<div class="para" id="section-reexamining-linear-systems-4">We can write this system as the vector equation</div>
+<div class="para logical" id="section-reexamining-linear-systems-5"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 3x+2y-z \\ x-2y+z \\ 2x-2y+4z \end{bmatrix} =
+\begin{bmatrix} 10 \\ 11 \\ 5 \end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="para" id="section-reexamining-linear-systems-6">and then separate the left hand side as the sum of three vectors:</div>
+<div class="para logical" id="section-reexamining-linear-systems-7"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 3x \\ x \\ 2x \end{bmatrix} +
+\begin{bmatrix} 2y \\ -2y \\ -2y \end{bmatrix} +
+\begin{bmatrix} -z \\ z \\ 4z \end{bmatrix} =
+\begin{bmatrix} 10 \\ 11 \\ 5 \end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="para" id="section-reexamining-linear-systems-8">And then using scalar multiplication, we get the following</div>
+<div class="para logical" id="section-reexamining-linear-systems-9"><div class="displaymath process-math">
+\begin{equation*}
+x\begin{bmatrix} 3 \\ 1 \\ 2 \end{bmatrix} +
+y\begin{bmatrix} 2 \\ -2 \\ -2 \end{bmatrix} +
+z\begin{bmatrix} -1 \\ 1 \\ 4 \end{bmatrix} =
+\begin{bmatrix} 10 \\ 11 \\ 5 \end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="para" id="section-reexamining-linear-systems-10">If we let</div>
+<div class="para logical" id="section-reexamining-linear-systems-11"><div class="displaymath process-math">
 \begin{equation*}
 A  =
 \begin{bmatrix}
-3 \amp -1 \amp 0 \\ 2 \amp 7 \amp 5
+3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
 \end{bmatrix}
 \end{equation*}
-</div>
-<div class="para">then the transpose is the matrix, <span class="process-math">\(A^{\intercal}\)</span> given by</div>
+</div></div>
+<div class="para" id="section-reexamining-linear-systems-12">be the <dfn class="terminology">coefficient matrix</dfn> of the linear system then it seems natural if</div>
+<div class="para logical" id="section-reexamining-linear-systems-13"><div class="displaymath process-math">
+\begin{equation*}
+\vec{u} =\begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="para" id="section-reexamining-linear-systems-14">Then if we define the matrix multiplication</div>
+<div class="para logical" id="section-reexamining-linear-systems-15"><div class="displaymath process-math">
+\begin{equation*}
+A \vec{u} = \begin{bmatrix}
+3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
+\end{bmatrix}\begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix} 3x+2y-z \\ x-2y+z \\ 2x-2y+4z \end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="para logical" id="section-reexamining-linear-systems-16">
 <div class="displaymath process-math">
 \begin{equation*}
-A^{\intercal}  =
-\begin{bmatrix}
-3 \amp 2 \\ -1 \amp 7 \\ 0 \amp 5
-\end{bmatrix}
+A\vec{u}=\vec{b}
 \end{equation*}
 </div>
-<div class="para">where the row and column of each element is flipped.</div>
-</div> <article class="definition definition-like" id="sect-transpose-2-2"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
-</h4>The <dfn class="terminology">transpose</dfn> of an <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(A^{\intercal}\)</span> is <span class="process-math">\(A\)</span> flipped over the diagonal. In particular, the element in the <span class="process-math">\(i\)</span>th row and <span class="process-math">\(j\)</span>th column of <span class="process-math">\(A^{\intercal}\)</span> is given by the <span class="process-math">\(j\)</span>th row and <span class="process-math">\(i\)</span> column of <span class="process-math">\(A\text{.}\)</span></article></section><div class="para" id="sect-transpose-3">We will see that transposes play a big role in linear algebra.</div>
-<article class="lemma theorem-like" id="sect-transpose-4"><h4 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Transposes.</span>
-</h4>
-<ol class="decimal">
-<li id="sect-transpose-4-2-1"><div class="para" id="sect-transpose-4-2-1-1"><span class="process-math">\(\displaystyle (A+B)^{\intercal} = A^{\intercal} + B^{\intercal}\)</span></div></li>
-<li id="sect-transpose-4-2-2"><div class="para" id="sect-transpose-4-2-2-1"><span class="process-math">\(\displaystyle (cA)^{\intercal} = c A^{\intercal}\)</span></div></li>
-<li id="sect-transpose-4-2-3"><div class="para" id="sect-transpose-4-2-3-1"><span class="process-math">\((A^{\intercal})^{\intercal} = A\text{.}\)</span></div></li>
-<li id="sect-transpose-4-2-4"><div class="para" id="sect-transpose-4-2-4-1"><span class="process-math">\(\displaystyle (AB)^{\intercal} = B^{\intercal} A^{\intercal}\)</span></div></li>
-</ol></article></section><section class="subsection" id="sect-mult-matrix"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="space"> </span><span class="title">Multiplication of Vectors and Matrices</span>
+<div class="para">In the next section we will learn a way to solve a linear system in this way using an alternative method to Gauss’ method.</div>
+</div></section><section class="subsection" id="sect-matrix-vector-product"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="space"> </span><span class="title">Matrix-Vector Product</span>
 </h3>
-<div class="para" id="sect-mult-matrix-2">In an perhaps backwards way of thinking, we will start with the product of two matrices.  We will then see that the product of matrices and vectors and then vectors and vectors can be seen in the same manner.</div>
-<article class="definition definition-like" id="sect-mult-matrix-3"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
-</h4>
-<div class="para" id="sect-mult-matrix-3-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be matrices.  The <dfn class="terminology">product of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span></dfn>, or <span class="process-math">\(C=AB\)</span> can be found in the following manner. Element <span class="process-math">\(c_{ij}\)</span> is the dot product of the <span class="process-math">\(i\)</span>th row of <span class="process-math">\(A\)</span> and the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(B\text{.}\)</span>
-</div> <div class="para" id="sect-mult-matrix-3-2">Note:  In order for the dot product to be defined, the number columns of <span class="process-math">\(A\)</span> must equal the number of rows of <span class="process-math">\(B\text{.}\)</span> If not the product is not defined.</div></article><div class="para" id="sect-mult-matrix-4">Also if the product <span class="process-math">\(AB\)</span> is defined, the result, <span class="process-math">\(C\)</span> has the same number of rows of <span class="process-math">\(A\)</span> and the same number of columns as <span class="process-math">\(B\text{.}\)</span>
-</div>
-<details id="sect-mult-matrix-5" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
-</h4></summary><article class="example example-like">Find <span class="process-math">\(C=AB\)</span> if<div class="displaymath process-math" id="sect-mult-matrix-5-1-2">
+<div class="para" id="sect-matrix-vector-product-2">Using the motivation of the previous section, we now define a general matrix-vector product</div>
+<article class="definition definition-like" id="sect-matrix-vector-product-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix-Vector Product.</span>
+</h4> <div class="para" id="sect-matrix-vector-product-3-2-1">Let <span class="process-math">\(A=[a_{ij}]\)</span> be an <span class="process-math">\(m \times n\)</span> matrix and <span class="process-math">\(\vec{x}\)</span> be a column vector of length <span class="process-math">\(n\)</span> with entries <span class="process-math">\([x_j]\text{.}\)</span> Let <span class="process-math">\(\vec{a}_j\)</span> be the column vectors of <span class="process-math">\(A\)</span> or</div> <div class="para logical" id="sect-matrix-vector-product-3-2-2"><div class="displaymath process-math" id="sect-matrix-vector-product-3-2-2-1">
 \begin{align*}
 A \amp = \begin{bmatrix}
-2 \amp -1 \amp 3 \\ 1 \amp 1 \amp 2
+\vec{a}_1 \amp \vec{a}_2 \amp \cdots \amp \vec{a}_n
+\end{bmatrix} \amp
+\vec{x} \amp = \begin{bmatrix}
+x_1 \\ x_2 \\ \cdots \\ x_n
 \end{bmatrix}
-\amp
-B \amp = \begin{bmatrix}
-2 \amp 1 \\ 3 \amp -2 \\ 7 \amp 5
-\end{bmatrix} 
 \end{align*}
-</div>
-<div class="solutions"><details id="sect-mult-matrix-5-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-mult-matrix-5-2-1">First, since the number of rows of <span class="process-math">\(A\)</span> is 2 and the number of columns of <span class="process-math">\(B\)</span> is 2, the size of <span class="process-math">\(C\)</span> is 2.</div> <ol class="decimal">
-<li id="sect-mult-matrix-5-2-2-1"><div class="para" id="sect-mult-matrix-5-2-2-1-1">The 1st row and 1st column of <span class="process-math">\(C\)</span> is the 1st row of <span class="process-math">\(A\)</span> times the 1st column of <span class="process-math">\(B\text{.}\)</span>
-</div></li>
-<li id="sect-mult-matrix-5-2-2-2"><div class="para" id="sect-mult-matrix-5-2-2-2-1">The 1st row and 2nd column of <span class="process-math">\(C\)</span> is the 1st row of <span class="process-math">\(A\)</span> times the 2nd column of <span class="process-math">\(B\text{.}\)</span>
-</div></li>
-<li id="sect-mult-matrix-5-2-2-3"><div class="para" id="sect-mult-matrix-5-2-2-3-1">The 2nd row and 1st column of <span class="process-math">\(C\)</span> is the 2nd row of <span class="process-math">\(A\)</span> times the 1st column of <span class="process-math">\(B\text{.}\)</span>
-</div></li>
-<li id="sect-mult-matrix-5-2-2-4"><div class="para" id="sect-mult-matrix-5-2-2-4-1">The 2nd row and 2nd column of <span class="process-math">\(C\)</span> is the 2nd row of <span class="process-math">\(A\)</span> times the 2nd column of <span class="process-math">\(B\text{.}\)</span>
-</div></li>
-</ol> We now explicitly show the dot products.<div class="displaymath process-math" id="sect-mult-matrix-5-2-3">
+</div></div> <div class="para" id="sect-matrix-vector-product-3-2-3">The product <span class="process-math">\(A \vec{x}\)</span> is the column vector of length <span class="process-math">\(m\text{:}\)</span>
+</div> <div class="para logical" id="sect-matrix-vector-product-3-2-4"><div class="displaymath process-math">
+\begin{equation*}
+A \vec{x} = x_1 \vec{a}_1 + x_2 \vec{a}_2 + \cdots + x_n \vec{a}_n = \sum_{j=1}^n x_j \vec{a}_j
+\end{equation*}
+</div></div></article><details id="sect-matrix-vector-product-4" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="sect-matrix-vector-product-4-1-1">Let</div> <div class="para logical" id="sect-matrix-vector-product-4-1-2"><div class="displaymath process-math" id="sect-matrix-vector-product-4-1-2-1">
 \begin{align*}
-C \amp =
-\begin{bmatrix}
-\begin{bmatrix}
-2  \amp -1 \amp 3
+A \amp = \begin{bmatrix}
+8 \amp 2 \amp -2 \amp 3 \\
+1 \amp 0 \amp 3 \amp 0 \\
+0 \amp 4 \amp -1 \amp -3
+\end{bmatrix}  \amp\text{and} \amp\amp
+\vec{x} \amp = \begin{bmatrix}
+3 \\ 0 \\ -2 \\ -4
 \end{bmatrix}
+\end{align*}
+</div></div> <div class="para" id="sect-matrix-vector-product-4-1-3">Find <span class="process-math">\(A\vec{x}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sect-matrix-vector-product-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sect-matrix-vector-product-4-2-1"><div class="displaymath process-math" id="sect-matrix-vector-product-4-2-1-1">
+\begin{align*}
+A \vec{x} \amp = 3
 \begin{bmatrix}
-2 \\ 3 \\ 7
-\end{bmatrix}
-\amp
-\begin{bmatrix}
-2 \amp -1 \amp 3
-\end{bmatrix}
-\begin{bmatrix}
-1 \\ -2 \\ 5
-\end{bmatrix} \\
-\begin{bmatrix}
-1 \amp 1 \amp 2
-\end{bmatrix}
-\begin{bmatrix}
-2 \\ 3 \\ 7
-\end{bmatrix}
-\amp
-\begin{bmatrix}
-1 \amp 1 \amp 2
-\end{bmatrix}
-\begin{bmatrix}
-1 \\ -2 \\ 5
-\end{bmatrix}
-\end{bmatrix}\\
-\amp =
-\begin{bmatrix}
-2(2) + (-1)(3) + 3(7) \amp (2)(1) + (-1)(-2) + (3)(5) \\
-(1)(2) + (1)(3) +(2)(7) \amp (1)(1) + (1)(-2) + (2)(5)
+8 \\ 1 \\ 0
+\end{bmatrix}+ 0 \begin{bmatrix}
+2 \\ 0 \\ 4
+\end{bmatrix} + (-2) \begin{bmatrix}
+-2 \\ 3 \\-1
+\end{bmatrix} + (-4) \begin{bmatrix}
+3 \\ 0 \\ -3
 \end{bmatrix} \\
 \amp = \begin{bmatrix}
-22 \amp 19 \\ 19 \amp 9
+3(8) + 0 (2) + (-2)(-2) + (-4)(3) \\
+3(1) + 0(0) + (-2)(3) + (-4)(0) \\
+3(0) + 0(4) + (-2)(-1) + (-4)(-3)
+\end{bmatrix} = \begin{bmatrix}
+16 \\
+-3 \\
+14
 \end{bmatrix}
 \end{align*}
-</div>
-</div></details></div></article></details></section><section class="subsection" id="sec-matrix-operations-8"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="space"> </span><span class="title">Size Restrictions on Matrices</span>
+</div></div></div></details></div></article></details><article class="definition definition-like" id="sect-matrix-vector-product-5"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Form of a Linear System.</span>
+</h4> <div class="para" id="sect-matrix-vector-product-5-2-1">Consider the linear system:</div> <div class="para logical" id="sect-matrix-vector-product-5-2-2"><div class="displaymath process-math" id="sect-matrix-vector-product-5-2-2-1">
+\begin{align*}
+a_{1,1} x_1 + a_{1,2} x_2 + \cdots + a_{1,n} x_n \amp = b_1 , \\
+a_{2,1} x_1 + a_{2,2} x_2 + \cdots + a_{2,n} x_n \amp = b_2, \\
+\vdots \amp = \vdots \\
+a_{m,1} x_1 + a_{m,2} x_2 + \cdots + a_{m,n} x_n \amp = b_m, 
+\end{align*}
+</div></div> <div class="para" id="sect-matrix-vector-product-5-2-3">The <dfn class="terminology">matrix form of the linear system</dfn> is given by</div> <div class="para logical" id="sect-matrix-vector-product-5-2-4"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+a_{11} \amp a_{12} \amp \cdots \amp a_{1n} \\
+a_{21} \amp a_{22} \amp \cdots \amp a_{2n} \\
+\cdots \amp \cdots \amp \ddots \amp \vdots \\
+a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix}  =
+\begin{bmatrix}
+b_1 \\ b_2 \\ \vdots \\ b_n
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para" id="sect-matrix-vector-product-5-2-5">or</div> <div class="para logical" id="sect-matrix-vector-product-5-2-6"><div class="displaymath process-math">
+\begin{equation*}
+A \vec{x} = \vec{b}
+\end{equation*}
+</div></div></article></section><section class="subsection" id="sect-matrix-matrix-product"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="space"> </span><span class="title">Matrix-Matrix Product</span>
 </h3>
-<div class="para" id="sec-matrix-operations-8-2">Note that for each element in the resulting matrix, there is a vector-vector product, coming from each row of the first matrix and each column of the second matrix:</div>
-<article class="remark remark-like" id="sec-matrix-operations-8-3"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
-</h4>The number of columns of the first matrix must equal the number of rows of the second matrix.</article><div class="para" id="sec-matrix-operations-8-4">The size of the resulting matrix can also be found by the sizes of the input matrices.</div>
-<article class="remark remark-like" id="sec-matrix-operations-8-5"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span>
-</h4>If the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are multiplied then this diagram helps with a valid product as well as the size of the result. <figure class="figure figure-like" id="fig-matrix-product"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-matrix-product.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.11<span class="period">.</span></span><span class="space"> </span>Diagram of valid dimensions for matrix product.</figcaption></figure> <div class="para" id="sec-matrix-operations-8-5-4">That is if <span class="process-math">\(A\)</span> is <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> and <span class="process-math">\(B\)</span> is <span class="process-math">\(n\)</span> by <span class="process-math">\(p\text{,}\)</span> then <span class="process-math">\(C=AB\)</span> has size <span class="process-math">\(m\)</span> by <span class="process-math">\(p\text{.}\)</span>
-</div></article><details id="sec-matrix-operations-8-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span>
-</h4></summary><article class="example example-like">Let <span class="process-math">\(A\)</span> be a matrix that is 2 by 3, <span class="process-math">\(B\)</span> be a matrix that is 3 by 3 and <span class="process-math">\(C\)</span> be a matrix that is 2 by 2.  Determine which of the following products are valid and if the product is valid, list its size. <ol class="decimal">
-<li id="sec-matrix-operations-8-6-1-4-1"><div class="para" id="sec-matrix-operations-8-6-1-4-1-1"><span class="process-math">\(\displaystyle AB\)</span></div></li>
-<li id="sec-matrix-operations-8-6-1-4-2"><div class="para" id="sec-matrix-operations-8-6-1-4-2-1"><span class="process-math">\(\displaystyle AC\)</span></div></li>
-<li id="sec-matrix-operations-8-6-1-4-3"><div class="para" id="sec-matrix-operations-8-6-1-4-3-1"><span class="process-math">\(\displaystyle BC\)</span></div></li>
-<li id="sec-matrix-operations-8-6-1-4-4"><div class="para" id="sec-matrix-operations-8-6-1-4-4-1"><span class="process-math">\(\displaystyle BA\)</span></div></li>
-<li id="sec-matrix-operations-8-6-1-4-5"><div class="para" id="sec-matrix-operations-8-6-1-4-5-1"><span class="process-math">\(\displaystyle CA\)</span></div></li>
-<li id="sec-matrix-operations-8-6-1-4-6"><div class="para" id="sec-matrix-operations-8-6-1-4-6-1"><span class="process-math">\(\displaystyle CAB\)</span></div></li>
-</ol>
-<div class="solutions"><details id="sec-matrix-operations-8-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><ol class="decimal">
-<li id="sec-matrix-operations-8-6-2-1-1"><div class="para" id="sec-matrix-operations-8-6-2-1-1-1">Since <span class="process-math">\(A\)</span> is 2 by 3 and <span class="process-math">\(B\)</span> is 3 by 3, the inner numbers are equal and thus multiplication is valid and the result is 2 by 3.</div></li>
-<li id="sec-matrix-operations-8-6-2-1-2"><div class="para" id="sec-matrix-operations-8-6-2-1-2-1">Since <span class="process-math">\(A\)</span> is 2 by 3 and <span class="process-math">\(C\)</span> is 2 by 2, the inner numbers are not equal, so multiplication is not valid.</div></li>
-<li id="sec-matrix-operations-8-6-2-1-3"><div class="para" id="sec-matrix-operations-8-6-2-1-3-1">Since <span class="process-math">\(B\)</span> is 3 by 3 and <span class="process-math">\(C\)</span> is 2 by 2, the inner numbers are not equal, so multiplication is not valid.</div></li>
-<li id="sec-matrix-operations-8-6-2-1-4"><div class="para" id="sec-matrix-operations-8-6-2-1-4-1">Since <span class="process-math">\(B\)</span> is 3 by 3 and <span class="process-math">\(A\)</span> is 2 by 3, the inner numbers are not equal, so multiplication is not valid.</div></li>
-<li id="sec-matrix-operations-8-6-2-1-5"><div class="para" id="sec-matrix-operations-8-6-2-1-5-1">Since <span class="process-math">\(C\)</span> is 2 by 2 and <span class="process-math">\(A\)</span> is 2 by 3, the inner numbers are equal so multiplication is valid and the result are the outer numbers or 2 by 3.</div></li>
-<li id="sec-matrix-operations-8-6-2-1-6"><div class="para" id="sec-matrix-operations-8-6-2-1-6-1">In this case, from (e), the size of <span class="process-math">\(CA\)</span> is 2 by 3 and <span class="process-math">\(B\)</span> is 3 by 3, so the inner numbers are equal so multiplication is valid and the result is 2 by 3.</div></li>
-</ol></div></details></div></article></details><details id="sec-matrix-operations-8-7" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.13</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="sec-matrix-operations-8-7-1-1">
-<div class="para">Let</div>
-<div class="displaymath process-math" id="sec-matrix-operations-8-7-1-1-1">
+<section class="introduction" id="sect-matrix-matrix-product-2"><div class="para" id="sect-matrix-matrix-product-2-1">This now leads naturally to the following definition of a matrix multiplication <span class="process-math">\(AB\)</span> is naturally the matrix formed by multiplying <span class="process-math">\(A\)</span> be each of the columns of <span class="process-math">\(b\text{.}\)</span>
+</div> <article class="definition definition-like" id="def-matrix-matrix-product"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-matrix-matrix-product-1-1">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(m \times n\)</span> matrix and <span class="process-math">\(B\)</span> be a <span class="process-math">\(n \times p\)</span> matrix of the form:</div> <div class="para logical" id="def-matrix-matrix-product-1-2"><div class="displaymath process-math">
+\begin{equation*}
+B = \begin{bmatrix}
+\vec{b}_1 \amp \vec{b}_2 \amp \cdots \amp \vec{b}_p
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para" id="def-matrix-matrix-product-1-3">where <span class="process-math">\(\vec{b}_1, \vec{b}_2, \cdots, \vec{b}_p\)</span> are the columns of <span class="process-math">\(B\text{.}\)</span> The matrix product <span class="process-math">\(AB\)</span> is the <span class="process-math">\(n \times p\)</span> matrix defined as</div> <div class="para logical" id="def-matrix-matrix-product-1-4"><div class="displaymath process-math">
+\begin{equation*}
+AB = A \begin{bmatrix}
+\vec{b}_1 \amp \vec{b}_2 \amp \cdots \amp \vec{b}_p
+\end{bmatrix} =\begin{bmatrix}
+A\vec{b}_1 \amp A\vec{b}_2 \amp \cdots \amp A\vec{b}_p
+\end{bmatrix}
+\end{equation*}
+</div></div> <div class="para" id="def-matrix-matrix-product-1-5">Note: if the number of columns of <span class="process-math">\(A\)</span> does not equal the number of rows of <span class="process-math">\(B\text{,}\)</span> then the product is <em class="emphasis">undefined</em>.</div></article></section><section class="subsubsection" id="sect-matrix-matrix-product-3"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.2.5.1</span><span class="space"> </span><span class="title">Size Restrictions on Matrices</span>
+</h4>
+<div class="para" id="sect-matrix-matrix-product-3-2">Note that for each element in the resulting matrix, there is a vector-vector product, coming from each row of the first matrix and each column of the second matrix:</div>
+<article class="remark remark-like" id="sect-matrix-matrix-product-3-3"><h5 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span>
+</h5>
+<div class="para" id="sect-matrix-matrix-product-3-3-1">The number of columns of the first matrix must equal the number of rows of the second matrix.</div></article><div class="para" id="sect-matrix-matrix-product-3-4">The size of the resulting matrix can also be found by the sizes of the input matrices.</div>
+<article class="remark remark-like" id="sect-matrix-matrix-product-3-5"><h5 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.13</span><span class="period">.</span>
+</h5>
+<div class="para" id="sect-matrix-matrix-product-3-5-1">If the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are multiplied then this diagram helps with a valid product as well as the size of the result.</div> <figure class="figure figure-like" id="fig-matrix-product"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-matrix-product.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.14<span class="period">.</span></span><span class="space"> </span>Diagram of valid dimensions for matrix product.</figcaption></figure> <div class="para" id="sect-matrix-matrix-product-3-5-3">That is if <span class="process-math">\(A\)</span> is <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> and <span class="process-math">\(B\)</span> is <span class="process-math">\(n\)</span> by <span class="process-math">\(p\text{,}\)</span> then <span class="process-math">\(C=AB\)</span> has size <span class="process-math">\(m\)</span> by <span class="process-math">\(p\text{.}\)</span>
+</div></article><details id="sect-matrix-matrix-product-3-6" class="example example-like born-hidden-knowl"><summary><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.15</span><span class="period">.</span>
+</h5></summary><article class="example example-like"><div class="para" id="sect-matrix-matrix-product-3-6-1-1">Let <span class="process-math">\(A\)</span> be a matrix that is 2 by 3, <span class="process-math">\(B\)</span> be a matrix that is 3 by 3 and <span class="process-math">\(C\)</span> be a matrix that is 2 by 2. Determine which of the following products are valid and if the product is valid, list its size.</div> <div class="para logical" id="sect-matrix-matrix-product-3-6-1-2"><ol class="decimal">
+<li id="sect-matrix-matrix-product-3-6-1-2-1-1"><div class="para" id="sect-matrix-matrix-product-3-6-1-2-1-1-1"><span class="process-math">\(\displaystyle AB\)</span></div></li>
+<li id="sect-matrix-matrix-product-3-6-1-2-1-2"><div class="para" id="sect-matrix-matrix-product-3-6-1-2-1-2-1"><span class="process-math">\(\displaystyle AC\)</span></div></li>
+<li id="sect-matrix-matrix-product-3-6-1-2-1-3"><div class="para" id="sect-matrix-matrix-product-3-6-1-2-1-3-1"><span class="process-math">\(\displaystyle BC\)</span></div></li>
+<li id="sect-matrix-matrix-product-3-6-1-2-1-4"><div class="para" id="sect-matrix-matrix-product-3-6-1-2-1-4-1"><span class="process-math">\(\displaystyle BA\)</span></div></li>
+<li id="sect-matrix-matrix-product-3-6-1-2-1-5"><div class="para" id="sect-matrix-matrix-product-3-6-1-2-1-5-1"><span class="process-math">\(\displaystyle CA\)</span></div></li>
+<li id="sect-matrix-matrix-product-3-6-1-2-1-6"><div class="para" id="sect-matrix-matrix-product-3-6-1-2-1-6-1"><span class="process-math">\(\displaystyle CAB\)</span></div></li>
+</ol></div>
+<div class="solutions"><details id="sect-matrix-matrix-product-3-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sect-matrix-matrix-product-3-6-2-1"><ol class="decimal">
+<li id="sect-matrix-matrix-product-3-6-2-1-1-1"><div class="para" id="sect-matrix-matrix-product-3-6-2-1-1-1-1">Since <span class="process-math">\(A\)</span> is 2 by 3 and <span class="process-math">\(B\)</span> is 3 by 3, the inner numbers are equal and thus multiplication is valid and the result is 2 by 3.</div></li>
+<li id="sect-matrix-matrix-product-3-6-2-1-1-2"><div class="para" id="sect-matrix-matrix-product-3-6-2-1-1-2-1">Since <span class="process-math">\(A\)</span> is 2 by 3 and <span class="process-math">\(C\)</span> is 2 by 2, the inner numbers are not equal, so multiplication is not valid.</div></li>
+<li id="sect-matrix-matrix-product-3-6-2-1-1-3"><div class="para" id="sect-matrix-matrix-product-3-6-2-1-1-3-1">Since <span class="process-math">\(B\)</span> is 3 by 3 and <span class="process-math">\(C\)</span> is 2 by 2, the inner numbers are not equal, so multiplication is not valid.</div></li>
+<li id="sect-matrix-matrix-product-3-6-2-1-1-4"><div class="para" id="sect-matrix-matrix-product-3-6-2-1-1-4-1">Since <span class="process-math">\(B\)</span> is 3 by 3 and <span class="process-math">\(A\)</span> is 2 by 3, the inner numbers are not equal, so multiplication is not valid.</div></li>
+<li id="sect-matrix-matrix-product-3-6-2-1-1-5"><div class="para" id="sect-matrix-matrix-product-3-6-2-1-1-5-1">Since <span class="process-math">\(C\)</span> is 2 by 2 and <span class="process-math">\(A\)</span> is 2 by 3, the inner numbers are equal so multiplication is valid and the result are the outer numbers or 2 by 3.</div></li>
+<li id="sect-matrix-matrix-product-3-6-2-1-1-6"><div class="para" id="sect-matrix-matrix-product-3-6-2-1-1-6-1">In this case, from (e), the size of <span class="process-math">\(CA\)</span> is 2 by 3 and <span class="process-math">\(B\)</span> is 3 by 3, so the inner numbers are equal so multiplication is valid and the result is 2 by 3.</div></li>
+</ol></div></div></details></div></article></details><details id="sect-matrix-matrix-product-3-7" class="example example-like born-hidden-knowl"><summary><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.16</span><span class="period">.</span>
+</h5></summary><article class="example example-like"><div class="para" id="sect-matrix-matrix-product-3-7-1-1">Let</div> <div class="para logical" id="sect-matrix-matrix-product-3-7-1-2"><div class="displaymath process-math" id="sect-matrix-matrix-product-3-7-1-2-1">
 \begin{align*}
 A \amp =
 \begin{bmatrix}
@@ -710,12 +871,9 @@ A \amp =
 3 \amp -1 \\ 2 \amp 2
 \end{bmatrix}
 \end{align*}
-</div>
-<div class="para">find <span class="process-math">\(AB\)</span> if this is a valid operation.</div>
-</div>
-<div class="solutions"><details id="sec-matrix-operations-8-7-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-matrix-operations-8-7-2-1">
-<div class="para">The size of <span class="process-math">\(A\)</span> is 3 by 2 and the size of <span class="process-math">\(B\)</span> is 2 by 2, so the inner numbers are equal and thus this operations is valid.  The size of the result is 3 by 2.</div>
-<div class="displaymath process-math" id="sec-matrix-operations-8-7-2-1-3">
+</div></div> <div class="para" id="sect-matrix-matrix-product-3-7-1-3">find <span class="process-math">\(AB\)</span> if this is a valid operation.</div>
+<div class="solutions"><details id="sect-matrix-matrix-product-3-7-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sect-matrix-matrix-product-3-7-2-1">The size of <span class="process-math">\(A\)</span> is 3 by 2 and the size of <span class="process-math">\(B\)</span> is 2 by 2, so the inner numbers are equal and thus this operations is valid. The size of the result is 3 by 2.</div> <div class="para logical" id="sect-matrix-matrix-product-3-7-2-2"><div class="displaymath process-math" id="sect-matrix-matrix-product-3-7-2-2-1">
 \begin{align*}
 AB \amp =
 \begin{bmatrix}
@@ -768,57 +926,250 @@ AB \amp =
 1 \amp 13
 \end{bmatrix}
 \end{align*}
-</div>
-</div></div></details></div></article></details></section><section class="subsection" id="sec-matrix-operations-9"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="space"> </span><span class="title">Matrix-Vector Multiplication</span>
-</h3>
-<div class="para" id="sec-matrix-operations-9-2">Since a vector can be thought of as a matrix, the matrix-vector product (and vector-matrix products) exist if they are compatible. If <span class="process-math">\(A\)</span> is a <span class="process-math">\(m \times n\)</span> matrix and <span class="process-math">\(\vec{u}\)</span> is a column vector of size <span class="process-math">\(n\text{,}\)</span> then the result is valid.</div>
-<details id="sec-matrix-operations-9-3" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.14</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para logical" id="sec-matrix-operations-9-3-1-1">
-<div class="para">Let</div>
-<div class="displaymath process-math" id="sec-matrix-operations-9-3-1-1-1">
+</div></div>
+</div></details></div></article></details><details id="sect-matrix-matrix-product-3-8" class="example example-like born-hidden-knowl"><summary><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.17</span><span class="period">.</span>
+</h5></summary><article class="example example-like"><div class="para" id="sect-matrix-matrix-product-3-8-1-1">Find <span class="process-math">\(C=AB\)</span> if</div> <div class="para logical" id="sect-matrix-matrix-product-3-8-1-2"><div class="displaymath process-math" id="sect-matrix-matrix-product-3-8-1-2-1">
 \begin{align*}
 A \amp = \begin{bmatrix}
-3 \amp -2 \amp 7 \\
-0 \amp 3 \amp 5 \\
-2 \amp -1 \amp 3
-\end{bmatrix} \amp \vec{u} \amp = \begin{bmatrix}
-2 \\ 4 \\ 9
+2 \amp -1 \amp 3 \\ 1 \amp 1 \amp 2
 \end{bmatrix}
+\amp
+B \amp = \begin{bmatrix}
+2 \amp 1 \\ 3 \amp -2 \\ 7 \amp 5
+\end{bmatrix} 
 \end{align*}
-</div>
-<div class="para">Find <span class="process-math">\(A\vec{u}\text{.}\)</span>
-</div>
-</div>
-<div class="solutions"><details id="sec-matrix-operations-9-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-matrix-operations-9-3-2-1">
-<div class="para">This product is found by taking the dot product of rows of <span class="process-math">\(A\)</span> and <span class="process-math">\(\vec{u}\text{.}\)</span>
-</div>
-<div class="displaymath process-math" id="sec-matrix-operations-9-3-2-1-3">
+</div></div>
+<div class="solutions"><details id="sect-matrix-matrix-product-3-8-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sect-matrix-matrix-product-3-8-2-1">First, since the number of rows of <span class="process-math">\(A\)</span> is 2 and the number of columns of <span class="process-math">\(B\)</span> is 2, the size of <span class="process-math">\(C\)</span> is 2.</div> <div class="para logical" id="sect-matrix-matrix-product-3-8-2-2"><ol class="decimal">
+<li id="sect-matrix-matrix-product-3-8-2-2-1-1"><div class="para" id="sect-matrix-matrix-product-3-8-2-2-1-1-1">The 1st row and 1st column of <span class="process-math">\(C\)</span> is the 1st row of <span class="process-math">\(A\)</span> times the 1st column of <span class="process-math">\(B\text{.}\)</span>
+</div></li>
+<li id="sect-matrix-matrix-product-3-8-2-2-1-2"><div class="para" id="sect-matrix-matrix-product-3-8-2-2-1-2-1">The 1st row and 2nd column of <span class="process-math">\(C\)</span> is the 1st row of <span class="process-math">\(A\)</span> times the 2nd column of <span class="process-math">\(B\text{.}\)</span>
+</div></li>
+<li id="sect-matrix-matrix-product-3-8-2-2-1-3"><div class="para" id="sect-matrix-matrix-product-3-8-2-2-1-3-1">The 2nd row and 1st column of <span class="process-math">\(C\)</span> is the 2nd row of <span class="process-math">\(A\)</span> times the 1st column of <span class="process-math">\(B\text{.}\)</span>
+</div></li>
+<li id="sect-matrix-matrix-product-3-8-2-2-1-4"><div class="para" id="sect-matrix-matrix-product-3-8-2-2-1-4-1">The 2nd row and 2nd column of <span class="process-math">\(C\)</span> is the 2nd row of <span class="process-math">\(A\)</span> times the 2nd column of <span class="process-math">\(B\text{.}\)</span>
+</div></li>
+</ol></div> <div class="para" id="sect-matrix-matrix-product-3-8-2-3">We now explicitly show the dot products.</div> <div class="para logical" id="sect-matrix-matrix-product-3-8-2-4"><div class="displaymath process-math" id="sect-matrix-matrix-product-3-8-2-4-1">
 \begin{align*}
-A \vec{u} \amp = \begin{bmatrix}
-3 \amp -2 \amp 7 \\
-0 \amp 3 \amp 5 \\
-2 \amp -1 \amp 3
-\end{bmatrix}\begin{bmatrix}
-2 \\ 4 \\ 9
+C \amp =
+\begin{bmatrix}
+\begin{bmatrix}
+2  \amp -1 \amp 3
 \end{bmatrix}
+\begin{bmatrix}
+2 \\ 3 \\ 7
+\end{bmatrix}
+\amp
+\begin{bmatrix}
+2 \amp -1 \amp 3
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ -2 \\ 5
+\end{bmatrix} \\
+\begin{bmatrix}
+1 \amp 1 \amp 2
+\end{bmatrix}
+\begin{bmatrix}
+2 \\ 3 \\ 7
+\end{bmatrix}
+\amp
+\begin{bmatrix}
+1 \amp 1 \amp 2
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ -2 \\ 5
+\end{bmatrix}
+\end{bmatrix}\\
+\amp =
+\begin{bmatrix}
+2(2) + (-1)(3) + 3(7) \amp (2)(1) + (-1)(-2) + (3)(5) \\
+(1)(2) + (1)(3) +(2)(7) \amp (1)(1) + (1)(-2) + (2)(5)
+\end{bmatrix} \\
 \amp = \begin{bmatrix}
-3 (2) + (-2)(4) + 7 (9) \\
-0 (2) + (3)(4) + 5 (9) \\
-2 (2) + (-1)(4) + 3 (9) \\
-\end{bmatrix} = \begin{bmatrix}
-61 \\
-57 \\
-27
+22 \amp 19 \\ 19 \amp 9
 \end{bmatrix}
 \end{align*}
-</div>
-</div></div></details></div></article></details></section><section class="subsection" id="sec-matrix-operations-10"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="space"> </span><span class="title">Reexamination of the Dot Product</span>
+</div></div>
+</div></details></div></article></details></section><section class="subsubsection" id="sect-matrix-matrix-product-alt"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.2.5.2</span><span class="space"> </span><span class="title">Alternative Form of the Matrix-Matrix Product</span>
+</h4>
+<div class="para" id="sect-matrix-matrix-product-alt-2">An alternative form of the matrix-matrix product <span class="process-math">\(AB\)</span> is</div>
+<div class="para logical" id="sect-matrix-matrix-product-alt-3"><div class="displaymath process-math">
+\begin{equation*}
+(AB)_{ij} = \text{$i$th row of $A$} \cdot \text{$j$th column of $B$}.
+\end{equation*}
+</div></div>
+<div class="para" id="sect-matrix-matrix-product-alt-4">or</div>
+<div class="para logical" id="sect-matrix-matrix-product-alt-5"><div class="displaymath process-math">
+\begin{equation*}
+[(ab)_{ij}] = \bigl[\sum_k a_{ik}b_{kj}\bigr]
+\end{equation*}
+</div></div>
+<div class="para" id="sect-matrix-matrix-product-alt-6">This form is both helpful for proofs as we will see below as well as an alternative way to compute the matrix product.</div>
+<details id="sect-matrix-matrix-product-alt-7" class="example example-like born-hidden-knowl"><summary><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.18</span><span class="period">.</span>
+</h5></summary><article class="example example-like"><div class="para" id="sect-matrix-matrix-product-alt-7-1-1">Find, if possible, <span class="process-math">\(AB\)</span> if</div> <div class="para logical" id="sect-matrix-matrix-product-alt-7-1-2"><div class="displaymath process-math" id="sect-matrix-matrix-product-alt-7-1-2-1">
+\begin{align*}
+A \amp \begin{bmatrix}
+-3 \amp 0 \amp 2 \\
+1 \amp 4 \amp -2 \\
+0 \amp 3 \amp 1
+\end{bmatrix} \amp B \amp = \begin{bmatrix}
+3 \amp 2 \\
+-2 \amp0 \\
+1 \amp 3
+\end{bmatrix}
+\end{align*}
+</div></div>
+<div class="solutions"><details id="sect-matrix-matrix-product-alt-7-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sect-matrix-matrix-product-alt-7-2-1">First, from the sizes of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> we know that the size of the product must be <span class="process-math">\(3 \times 2\text{.}\)</span> For each element of the product matrix, we take the product of the <span class="process-math">\(i\)</span>th row of <span class="process-math">\(A\)</span> and <span class="process-math">\(j\)</span>th column of <span class="process-math">\(B\text{.}\)</span>
+</div> <div class="para logical" id="sect-matrix-matrix-product-alt-7-2-2"><div class="displaymath process-math" id="sect-matrix-matrix-product-alt-7-2-2-1">
+\begin{align*}
+\begin{bmatrix}
+\begin{bmatrix} -3 \amp 0 \amp 2\end{bmatrix}
+\begin{bmatrix}
+3 \\ -2 \\ 1
+\end{bmatrix}
+\amp
+\begin{bmatrix} -3 \amp 0 \amp 2\end{bmatrix}
+\begin{bmatrix}
+2 \\ 0 \\ 3
+\end{bmatrix}
+\\
+\begin{bmatrix} 1 \amp 4 \amp -2\end{bmatrix}
+\begin{bmatrix}
+3 \\ -2 \\ 1
+\end{bmatrix}
+\amp
+\begin{bmatrix} 1 \amp 4 \amp -2\end{bmatrix}
+\begin{bmatrix}
+2 \\ 0 \\ 3
+\end{bmatrix}
+\\
+\begin{bmatrix} 0 \amp 3 \amp 1\end{bmatrix}
+\begin{bmatrix}
+3 \\ -2 \\ 1
+\end{bmatrix}
+\amp
+\begin{bmatrix} 0 \amp 3 \amp 1\end{bmatrix}
+\begin{bmatrix}
+2 \\ 0 \\ 3
+\end{bmatrix}
+\end{bmatrix} \amp =
+\begin{bmatrix}
+(-9)+0+2 \amp -6 + 0 + 6 \\
+3-8-2 \amp 2 + 0 -6 \\
+0 -6 +1 \amp 0 + 0 + 3
+\end{bmatrix} \\
+\amp = \begin{bmatrix}
+-7 \amp 0 \\
+-7 \amp -4 \\
+-5 \amp 3
+\end{bmatrix}
+\end{align*}
+</div></div>
+</div></details></div></article></details></section><section class="subsubsection" id="sect-matrix-matrix-product-props"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.2.5.3</span><span class="space"> </span><span class="title">Properties of Matrix-Matrix Products</span>
+</h4>
+<div class="para" id="sect-matrix-matrix-product-props-2">Let</div>
+<div class="para logical" id="sect-matrix-matrix-product-props-3"><div class="displaymath process-math" id="sect-matrix-matrix-product-props-3-1">
+\begin{align*}
+A \amp = \begin{bmatrix}
+2 \amp 0 \\
+3 \amp 1
+\end{bmatrix}\amp
+B \amp = \begin{bmatrix}
+-3 \amp 1 \\
+0 \amp 4
+\end{bmatrix} 
+\end{align*}
+</div></div>
+<div class="para" id="sect-matrix-matrix-product-props-4">Note that</div>
+<div class="para logical" id="sect-matrix-matrix-product-props-5"><div class="displaymath process-math" id="sect-matrix-matrix-product-props-5-1">
+\begin{align*}
+AB \amp = \begin{bmatrix}
+-6 \amp 2 \\ -9 \amp 7
+\end{bmatrix}\amp
+BA \amp = \begin{bmatrix}
+-3 \amp 1 \\ 12 \amp 4
+\end{bmatrix} 
+\end{align*}
+</div></div>
+<div class="para" id="sect-matrix-matrix-product-props-6">which shows that the commutative property does not hold.</div>
+<article class="lemma theorem-like" id="lem-matrix-product-props"><h5 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.2.19</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Matrix Multiplication.</span>
+</h5>
+<div class="para" id="lem-matrix-product-props-2-1">The following hold for matrices <span class="process-math">\(A,B\)</span> and <span class="process-math">\(C\)</span> and scalars <span class="process-math">\(r\)</span> and <span class="process-math">\(s\)</span>
+</div> <div class="para logical" id="lem-matrix-product-props-2-2"><dl class="description-list">
+<dt id="lem-matrix-product-props-2-2-1-1">distributive property 1</dt>
+<dd><div class="para" id="lem-matrix-product-props-2-2-1-1-2"><span class="process-math">\(\displaystyle A(rB+sC) = r(AB) + s(AC)\)</span></div></dd>
+<dt id="lem-matrix-product-props-2-2-1-2">distributive property 2</dt>
+<dd><div class="para" id="lem-matrix-product-props-2-2-1-2-2"><span class="process-math">\(\displaystyle (B+C)A = BA + CA\)</span></div></dd>
+<dt id="lem-matrix-product-props-2-2-1-3">associative property</dt>
+<dd><div class="para" id="lem-matrix-product-props-2-2-1-3-2"><span class="process-math">\(\displaystyle A(BC) = (AB)C\)</span></div></dd>
+</dl></div></article><details id="lem-matrix-product-props-3" class="hiddenproof born-hidden-knowl"><summary><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5></summary><article class="hiddenproof"><div class="para" id="lem-matrix-product-props-3-1">The proof of the first uses Definition ... of matrix multiply.</div> <div class="para logical" id="lem-matrix-product-props-3-2"><div class="displaymath process-math" id="lem-matrix-product-props-3-2-1">
+\begin{align*}
+A(r B + s C) \amp = [(A(rB+sC))_{ij}] \\
+\amp = [\sum_k a_{ik} (rB+sC)_{kj}] \\
+\amp = [\sum_k a_{ik} (r b_{kj} + s c_{kj}) ]\\
+\amp = [r \sum_k a_{ik} b_{kj} + s \sum_k a_{i,k} c_{kj}] \\
+\amp = r [(AB)_{ij}] + s [(AC)_{ij}] \\
+\amp = r AB + s AC
+\end{align*}
+</div></div></article></details></section></section><section class="subsection" id="sect-transpose"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="space"> </span><span class="title">Transpose</span>
 </h3>
-<div class="para" id="sec-matrix-operations-10-2">Recall that the dot product of two vectors <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> of the same length discussed in <a href="sect-linear-geometry.html#sect-length-angles" class="internal" title="Subsection 1.6.8: Length and Angle Measures">Subsection 1.6.8</a> is the sum of the products of the individual elements.</div>
-<div class="para logical" id="sec-matrix-operations-10-3">
+<div class="para" id="sect-transpose-2">The last basic matrix operation that we will cover here in the transpose of a matrix. As an example, if</div>
+<div class="para logical" id="sect-transpose-3"><div class="displaymath process-math">
+\begin{equation*}
+A  =
+\begin{bmatrix}
+3 \amp -1 \amp 0 \\ 2 \amp 7 \amp 5
+\end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="para" id="sect-transpose-4">then the transpose is the matrix, <span class="process-math">\(A^{\intercal}\)</span> given by</div>
+<div class="para logical" id="sect-transpose-5"><div class="displaymath process-math">
+\begin{equation*}
+A^{\intercal}  =
+\begin{bmatrix}
+3 \amp 2 \\ -1 \amp 7 \\ 0 \amp 5
+\end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="para" id="sect-transpose-6">where the row and column of each element is flipped.</div>
+<article class="definition definition-like" id="sect-transpose-7"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.20</span><span class="period">.</span>
+</h4>
+<div class="para" id="sect-transpose-7-1-1">The <dfn class="terminology">transpose</dfn> of an <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(A^{\intercal}\)</span> is <span class="process-math">\(A\)</span> flipped over the diagonal. In particular, the element in the <span class="process-math">\(i\)</span>th row and <span class="process-math">\(j\)</span>th column of <span class="process-math">\(A^{\intercal}\)</span> is given by the <span class="process-math">\(j\)</span>th row and <span class="process-math">\(i\)</span> column of <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para" id="sect-transpose-7-1-2">Using the shorthand notation,</div> <div class="para logical" id="sect-transpose-7-1-3"><div class="displaymath process-math">
+\begin{equation*}
+[a_{ij}]^{\intercal} = [a_{ji}]
+\end{equation*}
+</div></div> <div class="para" id="sect-transpose-7-1-4">which is useful for proofs.</div></article><div class="para" id="sect-transpose-8">We will see that transposes play a big role in linear algebra.</div>
+<article class="lemma theorem-like" id="sect-transpose-9"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.2.21</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Transposes.</span>
+</h4>
+<div class="para logical" id="sect-transpose-9-2-1"><ol class="decimal">
+<li id="sect-transpose-9-2-1-1-1"><div class="para" id="sect-transpose-9-2-1-1-1-1"><span class="process-math">\(\displaystyle (A+B)^{\intercal} = A^{\intercal} + B^{\intercal}\)</span></div></li>
+<li id="sect-transpose-9-2-1-1-2"><div class="para" id="sect-transpose-9-2-1-1-2-1"><span class="process-math">\(\displaystyle (cA)^{\intercal} = c A^{\intercal}\)</span></div></li>
+<li id="sect-transpose-9-2-1-1-3"><div class="para" id="sect-transpose-9-2-1-1-3-1"><span class="process-math">\((A^{\intercal})^{\intercal} = A\text{.}\)</span></div></li>
+<li id="sect-transpose-9-2-1-1-4"><div class="para" id="sect-transpose-9-2-1-1-4-1"><span class="process-math">\(\displaystyle (AB)^{\intercal} = B^{\intercal} A^{\intercal}\)</span></div></li>
+</ol></div></article><details id="sect-transpose-9-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="sect-transpose-9-3-1">Proof of the 2nd property:</div> <div class="para logical" id="sect-transpose-9-3-2"><div class="displaymath process-math" id="sect-transpose-9-3-2-1">
+\begin{align*}
+(AB)^T \amp = [(AB)_{ij}]^T \qquad\text{definition of matrix}\\
+\amp = [(AB)_{ji}] \qquad\text{definition of transpose}\\
+\amp = \left[\sum_k a_{jk} b_{ki}\right] \qquad \text{product of matrices} \\
+\amp = \left[\sum_k b_{ki} a_{jk}\right] \qquad \text{commuting numbers}\\
+\amp = \left[(B^T A^T)_{ij} \right] \qquad\text{definition of matrix product} \\
+\amp =  B^T A^T \qquad\text{definition of matrix}
+\end{align*}
+</div></div></article></details></section><section class="subsection" id="sec-matrix-operations-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="space"> </span><span class="title">Reexamination of the Dot Product</span>
+</h3>
+<div class="para" id="sec-matrix-operations-9-2">Recall that the dot product of two vectors <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> of the same length discussed in <a href="sect-linear-geometry.html#sect-angles-of-vectors" class="internal" title="Subsection 1.6.8: Angles of vectors in \mathbb{R}^2">Subsection 1.6.8</a> is the sum of the products of the individual elements.</div>
+<div class="para logical" id="sec-matrix-operations-9-3">
 <div class="para">We can see that the dot product can also be defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -831,70 +1182,9 @@ A \vec{u} \amp = \begin{bmatrix}
 \vec{u}^{\intercal} \vec{v}  = \sum_{i=1}^n u_i v_i
 \end{equation*}
 </div>
-</div></section><section class="subsection" id="section-matrix-multiplication-linear-systems"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="space"> </span><span class="title">Matrix Multiplication and Linear Systems</span>
-</h3>
-<div class="para logical" id="section-matrix-multiplication-linear-systems-2">
-<div class="para">In this section, we will learn an alternative way to look at a linear system and in the next section, we will solve it. Consider the following linear system.</div>
-<div class="displaymath process-math" id="section-matrix-multiplication-linear-systems-2-1">
-\begin{align*}
-3 x + 2y - z \amp = 10, \\
-x - 2y + z \amp = 11, \\
-2x - 2y + 4z \amp = 5.
-\end{align*}
-</div>
-<div class="para">This can be written as:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{bmatrix}
-3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
-\end{bmatrix} \begin{bmatrix}
-x \\ y \\ z
-\end{bmatrix} = \begin{bmatrix}
-10 \\ 11 \\ 5
-\end{bmatrix}.
-\end{equation*}
-</div>
-<div class="para">The first matrix is simply the coefficient matrix without the last column. The column vector on the right hand side is that last column in the coefficient matrix.</div>
-</div>
-<div class="para logical" id="section-matrix-multiplication-linear-systems-3">
-<div class="para">To show that this matrix equation is identical to the linear system above, we use matrix multiplication to get:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{bmatrix}
-3x +2y -z \\ x-2y+z \\ 2x-2y + 4z
-\end{bmatrix} =
-\begin{bmatrix}
-10 \\ 11 \\ 5
-\end{bmatrix}
-\end{equation*}
-</div>
-<div class="para">and since two vectors are equal if each of the corresponding elements are equal, this is the same as the linear system above.</div>
-</div>
-<div class="para logical" id="section-matrix-multiplication-linear-systems-4">
-<div class="para">If we let</div>
-<div class="displaymath process-math" id="section-matrix-multiplication-linear-systems-4-1">
-\begin{align*}
-A  =
-\begin{bmatrix}
-3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
-\end{bmatrix} \amp \vec{u} \amp =\begin{bmatrix}
-x \\ y \\ z
-\end{bmatrix} \amp \vec{b} \amp = \begin{bmatrix}
-10 \\ 11 \\ 5
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="para">then the linear system can be written as</div>
-<div class="displaymath process-math">
-\begin{equation*}
-A\vec{u}=\vec{b}
-\end{equation*}
-</div>
-<div class="para">In the next section we will learn a way to solve a linear system in this way using an alternative method to Gauss’ method.</div>
 </div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-matrices.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-matrix-inverse.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sect-matrix-definition.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-matrix-inverse.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
