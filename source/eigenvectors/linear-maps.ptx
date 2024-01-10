@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sect-linear-maps-eigen">
-	<title>Eigenvalues and Linear Maps</title>
+	<title>Eigenvalues and Eigenvectors of Linear Transformations</title>
+	<objectives>
+		<ul>
+			<li>
+				<p>
+					The definition of the eigenvalues and eigenvector of a linear transformation.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.
+				</p>
+			</li>
+
+			<li>
+				<p>
+					Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the
+					transformation.
+				</p>
+			</li>
+		</ul>
+	</objectives>
+
 	<p>
 		Recall that in section <xref ref="sect-eigenvalues" />
 		that the eigenvalues and eigenvectors of a square matrix was found.
@@ -265,155 +288,165 @@
 	</example>
 
 	<p>
-		For the last example in this section, consider the map that
-		rotates a 2 by 2 matrix 90<m>^{\circ}</m> clockwise.
-		That is
-		<m>R: \mathcal{M}_{2 \times 2} \rightarrow \mathcal{M}_{2\times 2}</m> such that
+		This last example of this involves matrices and the rotation of a matrix.
 	</p>
 
-	<p>
-		<me>
-			\begin{bmatrix}
-			a \amp b \\
-			c \amp d
-			\end{bmatrix} \mapsto \begin{bmatrix}
-			c \amp a \\ d\amp b
-			\end{bmatrix}
-		</me>
-	</p>
+	<example>
+		<statement>
+			<p>
+				Find the eigenvalues and eigenvectors of the linear map  that
+				rotates a 2 by 2 matrix 90<m>^{\circ}</m> clockwise.
+				That is
+				<m>R: \mathcal{M}_{2 \times 2} \rightarrow \mathcal{M}_{2\times 2}</m> such that
+			</p>
 
-	<p>
-		One can show that if we consider the vector representation in the basis:
-	</p>
+			<p>
+				<me>
+					\begin{bmatrix}
+					a \amp b \\
+					c \amp d
+					\end{bmatrix} \mapsto \begin{bmatrix}
+					c \amp a \\ d\amp b
+					\end{bmatrix}
+				</me>
+			</p>
+		</statement>
 
-	<p>
-		<me>
-			B  = \biggl( \begin{bmatrix}
-			1 \amp0 \\ 0 \amp 0
-			\end{bmatrix}, \begin{bmatrix}
-			0 \amp1 \\ 0 \amp 0
-			\end{bmatrix}, \begin{bmatrix}
-			0 \amp0 \\ 1 \amp 0
-			\end{bmatrix}, \begin{bmatrix}
-			0 \amp0 \\ 0 \amp 1
-			\end{bmatrix} \biggr)
-		</me>
-	</p>
+		<solution>
+			<p>
+				One can show that if we consider the vector representation in the basis:
+			</p>
 
-	<p>
-		that
-	</p>
+			<p>
+				<me>
+					B  = \biggl( \begin{bmatrix}
+					1 \amp0 \\ 0 \amp 0
+					\end{bmatrix}, \begin{bmatrix}
+					0 \amp1 \\ 0 \amp 0
+					\end{bmatrix}, \begin{bmatrix}
+					0 \amp0 \\ 1 \amp 0
+					\end{bmatrix}, \begin{bmatrix}
+					0 \amp0 \\ 0 \amp 1
+					\end{bmatrix} \biggr)
+				</me>
+			</p>
 
-	<p>
-		<me>
-			\text{Rep}_B \biggl( \begin{bmatrix}
-			a \amp b \\ c \amp d
-			\end{bmatrix} \biggr) = \begin{bmatrix}
-			a \\ b \\ c \\ d
-			\end{bmatrix}
-		</me>
-	</p>
+			<p>
+				that
+			</p>
 
-	<p>
-		and the map <m>R</m> can be represented by the matrix as
-	</p>
+			<p>
+				<me>
+					\text{Rep}_B \biggl( \begin{bmatrix}
+					a \amp b \\ c \amp d
+					\end{bmatrix} \biggr) = \begin{bmatrix}
+					a \\ b \\ c \\ d
+					\end{bmatrix}
+				</me>
+			</p>
 
-	<p>
-		<me>
-			A_R = \begin{bmatrix}
-			0 \amp 1 \amp 0 \amp 0 \\
-			0 \amp 0 \amp 0 \amp 1 \\
-			1 \amp 0 \amp 0 \amp 0 \\
-			0 \amp 0 \amp 1 \amp 0
-			\end{bmatrix}
-		</me>
-	</p>
+			<p>
+				and the map <m>R</m> can be represented by the matrix as
+			</p>
 
-	<p>
-		We now find the eigenvalues and eigenvectors of this.
-		The
-		eigenvalue-eigenvector pairs are
-	</p>
+			<p>
+				<me>
+					A_R = \begin{bmatrix}
+					0 \amp 1 \amp 0 \amp 0 \\
+					0 \amp 0 \amp 0 \amp 1 \\
+					1 \amp 0 \amp 0 \amp 0 \\
+					0 \amp 0 \amp 1 \amp 0
+					\end{bmatrix}
+				</me>
+			</p>
 
-	<p>
-		<md>
-			<mrow>
-			\lambda_1 \amp = 1 \amp \vec{v}_1 \amp = \begin{bmatrix}
-			1 \\ 1 \\ 1 \\1
-			\end{bmatrix} \amp
-			\lambda_2 \amp = -1 \amp \vec{v}_2 \amp = \begin{bmatrix}
-			1 \\ -1 \\ -1 \\ 1
-			\end{bmatrix}, </mrow>
-			<mrow>
-			\lambda_3 \amp = i \amp \vec{v}_3 \amp = \begin{bmatrix}
-			1 \\ -i \\ i \\ -1
-			\end{bmatrix} \amp
-			\lambda_4 \amp = -i \amp \vec{v}_4 \amp = \begin{bmatrix}
-			1 \\ i \\ -i \\ -1
-			\end{bmatrix}</mrow>
-		</md>
-	</p>
+			<p>
+				We now find the eigenvalues and eigenvectors of this.
+				The
+				eigenvalue-eigenvector pairs are
+			</p>
 
-	<p>
-		To translate this back to the map that rotates the matrix, we translate
-		each of the eigenvectors
-		to the matrix that it represents.
-		For example, <m>\vec{v}_1</m> is the matrix
-	</p>
+			<p>
+				<md>
+					<mrow>
+					\lambda_1 \amp = 1 \amp \vec{v}_1 \amp = \begin{bmatrix}
+					1 \\ 1 \\ 1 \\1
+					\end{bmatrix} \amp
+					\lambda_2 \amp = -1 \amp \vec{v}_2 \amp = \begin{bmatrix}
+					1 \\ -1 \\ -1 \\ 1
+					\end{bmatrix}, </mrow>
+					<mrow>
+					\lambda_3 \amp = i \amp \vec{v}_3 \amp = \begin{bmatrix}
+					1 \\ -i \\ i \\ -1
+					\end{bmatrix} \amp
+					\lambda_4 \amp = -i \amp \vec{v}_4 \amp = \begin{bmatrix}
+					1 \\ i \\ -i \\ -1
+					\end{bmatrix}</mrow>
+				</md>
+			</p>
 
-	<p>
-		<me>
-			\begin{bmatrix}
-			1 \amp 1 \\ 1 \amp 1
-			\end{bmatrix}
-		</me>
-	</p>
+			<p>
+				To translate this back to the map that rotates the matrix, we translate
+				each of the eigenvectors
+				to the matrix that it represents.
+				For example, <m>\vec{v}_1</m> is the matrix
+			</p>
 
-	<p>
-		and if that matrix is
-		rotated, you get it back and the eigenvector is 1.
-		The second eigenvector can be written as the
-		matrix
-	</p>
+			<p>
+				<me>
+					\begin{bmatrix}
+					1 \amp 1 \\ 1 \amp 1
+					\end{bmatrix}
+				</me>
+			</p>
 
-	<p>
-		<me>
-			\begin{bmatrix}
-			1 \amp -1 \\ -1 \amp 1
-			\end{bmatrix}
-		</me>
-	</p>
+			<p>
+				and if that matrix is
+				rotated, you get it back and the eigenvalue is 1.
+				The second eigenvector can be written as the
+				matrix
+			</p>
 
-	<p>
-		and if you rotate this
-		matrix, you get the matrix
-	</p>
+			<p>
+				<me>
+					\begin{bmatrix}
+					1 \amp -1 \\ -1 \amp 1
+					\end{bmatrix}
+				</me>
+			</p>
 
-	<p>
-		<me>
-			\begin{bmatrix}
-			-1\amp 1 \\ 1 \amp -1
-			\end{bmatrix}
-		</me>
-	</p>
+			<p>
+				and if you rotate this
+				matrix, you get the matrix
+			</p>
 
-	<p>
-		which is the above matrix multiplied by the eigenvalue <m>\lambda_2=-1</m>.
-		In other words:
-	</p>
+			<p>
+				<me>
+					\begin{bmatrix}
+					-1\amp 1 \\ 1 \amp -1
+					\end{bmatrix}
+				</me>
+			</p>
 
-	<p>
-		<me>
-			R\left(
-			\begin{bmatrix}
-			1 \amp -1 \\ -1 \amp 1
-			\end{bmatrix} \right)  = - \begin{bmatrix}
-			1 \amp -1 \\ -1 \amp 1
-			\end{bmatrix}
-		</me>
-	</p>
+			<p>
+				which is the above matrix multiplied by the eigenvalue <m>\lambda_2=-1</m>.
+				In other words:
+			</p>
 
-	<p>
-		The other two work in a similar manner, however complex numbers are needed.
-	</p>
+			<p>
+				<me>
+					R\left(
+					\begin{bmatrix}
+					1 \amp -1 \\ -1 \amp 1
+					\end{bmatrix} \right)  = - \begin{bmatrix}
+					1 \amp -1 \\ -1 \amp 1
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				The other two work in a similar manner, however complex numbers are needed.
+			</p>
+		</solution>
+	</example>
 </section>

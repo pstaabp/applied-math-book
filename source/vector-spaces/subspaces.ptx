@@ -193,15 +193,16 @@
 
 				<p>
 					<me>
-						V =\{ \begin{bmatrix}
+						V =\left\{ \begin{bmatrix}
 						a \amp 0 \\
 						0 \amp b
-						\end{bmatrix} \; | \; a,b \in \mathbb{R} \}
+						\end{bmatrix} \; | \; a,b \in \mathbb{R} \right\}
 					</me>
 				</p>
 
 				<p>
-					the set of all diagonal matrices is a subspace of <m>{\cal M}_{2 \times 2}</m>.
+					the set of all diagonal matrices is a subspace of <m>{\cal M}_{2 \times 2}</m>, the vector space of
+					all <m>2 \times 2</m> matrices.
 				</p>
 			</statement>
 
@@ -259,7 +260,7 @@
 
 			<proof>
 				<p>
-					We will use lemma <xref ref="lemma-subspace" /> to solve this.
+					We will use <xref ref="lemma-subspace" /> to solve this.
 					Let both
 					<m>\vec{x}</m> and <m>\vec{y}</m> be in the null space of <m>A</m>.
 					This means that <m>A\vec{x}=\vec{0}</m> and <m>A\vec{y}=\vec{0}</m>.
@@ -357,7 +358,8 @@
 
 				<p>
 					This has a solution <m>c_3=a_2, c_1 = a_1-a_2</m> and
-					<m>c_2 = a_0 - 2(a_1-a_2)</m>, so the given set spans <m>\mathcal{P}_2</m>.
+					<m>c_2 = a_0 - 2(a_1-a_2)</m>, which means that a linear combination of the three <q>vectors</q> can form
+					any quadratic function, thus the given set spans <m>\mathcal{P}_2</m>.
 				</p>
 			</solution>
 		</example>
@@ -684,8 +686,8 @@
 			</remark>
 
 			<p>
-				We saw bases of vector spaces (or subspaces) at the beginning of this course.
-				In <xref ref="ex-large-linear-solution" />, we solved a linear system.
+				We saw bases of vector spaces (or subspaces) at the beginning of this course without knowing that
+				they were vector spaces.  For example, in <xref ref="ex-large-linear-solution" />, we solved a linear system.
 				It's associated homogeneous system is
 				<md>
 					<mrow>x_2 + 3x_3 -9 x_4 + 11 x_5 \amp = 0, </mrow>
@@ -696,9 +698,9 @@
 				<me>
 					\left\{\begin{bmatrix}
 					1 \\ 0 \\ 0 \\ 0 \\ 0
-					\end{bmatrix} x_1 + \begin{bmatrix}
+					\end{bmatrix} t + \begin{bmatrix}
 					0 \\ 9 \\ 0 \\ 1 \\ 0
-					\end{bmatrix} x_4 \; | \; x_1, x_4 \in \mathbb{R}, \right\}
+					\end{bmatrix} s \; | \; t, s \in \mathbb{R}, \right\}
 				</me>
 				The two vectors in the solution are a basis of the solution space.
 				Since there are only two vectors and they are not constant multiples of each
@@ -1057,7 +1059,7 @@
 
 						<li>
 							<p>
-								The dimension of the vector space of all 2 by 2 matrices is 4.
+								The dimension of <m>{\cal M}_{2 \times 2}</m>, the vector space of all 2 by 2 matrices is 4.
 								A natural basis for this is:
 								<me>
 									\biggl( \begin{bmatrix}
@@ -1071,6 +1073,11 @@
 									\end{bmatrix} \biggr)
 								</me>
 								and since there are 4 elements, the dimension is 4.
+							</p>
+						</li>
+						<li>
+							<p>
+								The dimension of <m>{\cal M}_{m \times n} = mn</m>.
 							</p>
 						</li>
 					</ul>
@@ -1095,7 +1102,7 @@
 		<p>
 			This means that any vector in a finite-dimensional vector space can
 			be represented as a vector and as we will see this will be helpful in
-			that we can use many of the nice techniques from chapter 1 to help.
+			that we can use many of the nice techniques from <xref ref="ch-linear-systems"/> to help.
 			We will start to see that since we can write any polynomial as a vector,
 			that many operations that we do to polynomials (such as  multiplication,
 			differentiation, and integration) can be done using matrices and vectors.
