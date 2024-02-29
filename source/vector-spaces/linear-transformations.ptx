@@ -552,10 +552,13 @@
 	<example xml:id="ex-scale-map-matrix-rep">
 		<statement>
 			<p>
-				Find the matrix representation of the scale map in Example <xref ref="ex-scale-map" />.
-				\solution We need to map the basis vectors <m>
-				[1\;\;0]^{\intercal}</m> and <m>[0\;\;1]^{\intercal}</m> to determine the columns of the
-				matrix representation.
+				Find the matrix representation of the scale map in <xref ref="ex-scale-map" />.
+			</p>
+		</statement>
+		<solution>
+			<p>
+			We need to map the basis vectors <m>[1\;\;0]^{\intercal}</m> and
+			<m>[0\;\;1]^{\intercal}</m> to determine the columns of the matrix representation.
 			</p>
 
 			<p>
@@ -585,7 +588,7 @@
 					\end{bmatrix}
 				</me>
 			</p>
-		</statement>
+		</solution>
 	</example>
 
 	<p>
@@ -722,7 +725,7 @@
 	</example>
 
 	<p>
-		To verify the above results, recall that from Example <xref ref="ex-vect-rep-matrix" /> that the
+		To verify the above results, recall that from <xref ref="ex-vect-rep-matrix" /> that the
 		representation of a matrix is the unfolded matrix or in the <m>2 \times 2</m> case, that
 		<me>
 			\text{Rep}_B \biggl( \begin{bmatrix}

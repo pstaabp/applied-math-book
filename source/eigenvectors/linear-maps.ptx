@@ -25,21 +25,18 @@
 	</objectives>
 
 	<p>
-		Recall that in section <xref ref="sect-eigenvalues" />
-		that the eigenvalues and eigenvectors of a square matrix was found.
-		We will examine how we can
-		find eigenvalues and eigenvectors of a linear map.
-		The definition of these are extensions of what
-		we saw for matrices.
+		Recall that in section <xref ref="sect-eigenvalues" /> that the eigenvalues and
+		eigenvectors of a square matrix was found.
+		We will examine how we can find eigenvalues and eigenvectors of a linear map.
+		The definition of these are extensions of what we saw for matrices.
 	</p>
 
 	<definition>
 		<statement>
 			<p>
-				Let <m>T:V \rightarrow V</m> be a linear map and <m>V</m> be a finite dimensional vector
-				space.
-				The nonzero vector <m>\vec{x}</m> is an <term>eigenvector</term> with associated <term>
-				eigenvalue</term> if
+				Let <m>T:V \rightarrow V</m> be a linear map and <m>V</m> be a finite dimensional vector space.
+				The nonzero vector <m>\vec{x}</m> is an <term>eigenvector</term> with associated
+				<term>eigenvalue</term> if
 			</p>
 
 			<p>

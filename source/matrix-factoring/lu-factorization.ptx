@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="sect-lu-factorization">
 	<title>LU Factorization</title>
+	<objectives>
+
+			<ul>
+				<li>
+					<p>
+					Find the <m>LU</m>-factorization of a matrix
+					</p>
+					<p>
+						Determine when an <m>LU</m>-factorization does not exist.
+					</p>
+					<p>Use a <m>LU</m> factorization to solve a linear system.</p>
+					<p>Use a <m>LU</m> factorization to find an inverse matrix.
+					</p>
+				</li>
+			</ul>
+
+	</objectives>
 	<introduction>
 		<p>
 			Let <m>A</m> be a square matrix.
@@ -31,16 +48,14 @@
 
 				<p>
 					<md>
-						<mrow>L \amp = \begin{bmatrix}
-						3 \amp 0 \amp 0 \\
-						2 \amp -1 \amp 0 \\
-						0 \amp 5 \amp 2
-						\end{bmatrix} \amp
-						U \amp = \begin{bmatrix}
-						1 \amp -7 \amp -5 \\
-						0 \amp 3 \amp 2 \\
-						0 \amp 0 \amp -3
-						\end{bmatrix} \amp
+						<mrow>L \amp= \begin{bmatrix}
+							1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1
+							\end{bmatrix}
+							\amp U \amp = \begin{bmatrix}
+							3 \amp -2 \amp 1 \\
+							0 \amp 4 \amp 2 \\
+							0 \amp 0 \amp 1
+							\end{bmatrix} \amp
 						A \amp= \begin{bmatrix}
 						3 \amp -2 \amp 1 \\
 						6 \amp 0 \amp 4 \\
@@ -50,24 +65,13 @@
 				</p>
 
 				<p>
-					Show that <m>A=LU</m> if
+					Show that <m>A=LU</m>
 				</p>
+			</statement>
+			<solution>
 
 				<p>
-					<md>
-						<mrow>L \amp= \begin{bmatrix}
-						1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1
-						\end{bmatrix}
-						\amp U \amp = \begin{bmatrix}
-						3 \amp -2 \amp 1 \\
-						0 \amp 4 \amp 2 \\
-						0 \amp 0 \amp 1
-						\end{bmatrix}</mrow>
-					</md>
-				</p>
-
-				<p>
-					and using standard matrix multiplication:
+					Using standard matrix multiplication:
 				</p>
 
 				<p>
@@ -82,7 +86,7 @@
 						\end{bmatrix}</mrow>
 					</md>
 				</p>
-			</statement>
+			</solution>
 		</example>
 
 		<p>

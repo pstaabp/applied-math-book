@@ -121,7 +121,7 @@
 			</title>
 
 			<p>
-				<m>E_{cR_i + R_j}</m> is the identity matrix with the element in row <m>i</m>, column <m>j</m>
+				<m>E_{cR_i + R_j}</m> is the identity matrix with the element in row <m>j</m>, column <m>i</m>
 				has the number <m>c</m>.
 			</p>
 		</li>
