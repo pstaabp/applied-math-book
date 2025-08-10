@@ -6,14 +6,19 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Eigenvalues and Eigenvectors</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Applied Mathematics">
-<meta property="book:author" content="Peter Staab">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -57,7 +62,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
+      "pretext": "_static/pretext/js/lib"
     }
   },
   "startup": {
@@ -69,33 +74,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Applied Mathematics">
+<meta property="book:author" content="Peter Staab">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.6';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
-<body id="applied-math-staab" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="applied-mathematics-staab.html"><span class="title">Applied Mathematics</span></a></h1>
 <p class="byline">Peter Staab</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -106,7 +129,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-eigenvalues-eigenvectors.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-eigenvalues-eigenvectors.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-linear-maps-eigen.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-eigenvalues-eigenvectors.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-eigenvalues-eigenvectors.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-linear-maps-eigen.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -114,7 +138,7 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Linear Systems</span></a></div>
@@ -291,9 +315,9 @@ window.MathJax = {
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-eigenvalues-eigenvectors.html" class="internal"><span class="codenumber">4</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sect-eigenvalues.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Finding Eigenvalues and Eigenvectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
 </ul>
@@ -342,9 +366,9 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">5.2.2</span> <span class="title">LU fatorization and elementary matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-5" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -370,27 +394,30 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Properties of Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-3" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Odd and Even Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-fourier-series-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-fourier-series-5.html#ch-fourier-series-5-3" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-fourier-series-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-fourier-series-6.html#ch-fourier-series-6-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -424,10 +451,10 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-pde-9.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-9.html#ch-pde-9-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-9.html#ch-pde-9-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -444,33 +471,65 @@ window.MathJax = {
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-eigenvalues"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.1</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Eigenvalues and Eigenvectors</span>
 </h2>
 <article class="objectives goal-like" id="sect-eigenvalues-2"><h3 class="heading"><span class="type">Objectives</span></h3>
-<ul class="disc">
-<li id="sect-eigenvalues-2-1-1"><div class="para" id="sect-eigenvalues-2-1-1-1">Define an eigenvalue and eigenvector of a square matrix.</div></li>
-<li id="sect-eigenvalues-2-1-2"><div class="para" id="sect-eigenvalues-2-1-2-1">Find the characteristics equation for a square matrix and find it’s roots.</div></li>
-<li id="sect-eigenvalues-2-1-3"><div class="para" id="sect-eigenvalues-2-1-3-1">Find the eigenvectors of a matrix from its corresponding eigenvalue.</div></li>
-<li id="sect-eigenvalues-2-1-4"><div class="para" id="sect-eigenvalues-2-1-4-1">Know the possible sets of eigenvalue-eigenvector pairs for a real <span class="process-math">\(2 \times 2\)</span> matrix.</div></li>
-</ul></article><section class="introduction" id="sect-eigenvalues-3"><article class="definition definition-like" id="sect-eigenvalues-3-1"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
+<ul class="disc" id="sect-eigenvalues-2-1">
+<li id="sect-eigenvalues-2-1-1">
+<div class="para" id="sect-eigenvalues-2-1-1-1">Define an eigenvalue and eigenvector of a square matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-eigenvalues-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sect-eigenvalues-2-1-2">
+<div class="para" id="sect-eigenvalues-2-1-2-1">Find the characteristics equation for a square matrix and find it’s roots.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-eigenvalues-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sect-eigenvalues-2-1-3">
+<div class="para" id="sect-eigenvalues-2-1-3-1">Find the eigenvectors of a matrix from its corresponding eigenvalue.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-eigenvalues-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sect-eigenvalues-2-1-4">
+<div class="para" id="sect-eigenvalues-2-1-4-1">Know the possible sets of eigenvalue-eigenvector pairs for a real <span class="process-math">\(2 \times 2\)</span> matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-eigenvalues-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Objectives 4.1"><a href="#sect-eigenvalues-2" title="Copy heading and permalink for Objectives 4.1" aria-label="Copy heading and permalink for Objectives 4.1">🔗</a></div></article><section class="introduction" id="sect-eigenvalues-3"><article class="definition definition-like" id="sect-eigenvalues-3-1"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sect-eigenvalues-3-1-1-1">For a square matrix <span class="process-math">\(A\text{,}\)</span> an <dfn class="terminology">eigenvalue</dfn> <span class="process-math">\(\lambda\)</span> with related <dfn class="terminology">eigenvector</dfn> <span class="process-math">\(\vec{v}\)</span> satisfy</div> <div class="para logical" id="sect-eigenvalues-3-1-1-2"><div class="displaymath process-math">
+<div class="para" id="sect-eigenvalues-3-1-1-1">For a square matrix <span class="process-math">\(A\text{,}\)</span> an <dfn class="terminology">eigenvalue</dfn> <span class="process-math">\(\lambda\)</span> with related <dfn class="terminology">eigenvector</dfn> <span class="process-math">\(\vec{v}\)</span> satisfy<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-eigenvalues-3-1-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 A \vec{v} = \lambda \vec{v}
 \end{equation*}
-</div></div> <div class="para" id="sect-eigenvalues-3-1-1-3">as long as <span class="process-math">\(\vec{v}\)</span> is not the zero vector.</div></article> <div class="para" id="sect-eigenvalues-3-2">Recall that the matrix operation <span class="process-math">\(A \vec{v}\)</span> is a linear transformation on <span class="process-math">\(\vec{v}\text{,}\)</span> that is, it take a vector <span class="process-math">\(\vec{v}\)</span> to another vector. Thus the eigenvector of a matrix is a vector such that <span class="process-math">\(A\vec{v}\)</span> results in a vector in the same direction as <span class="process-math">\(\vec{v}\text{.}\)</span> The eigenvalue is the scalar transformation associated with this.</div> <details id="sect-eigenvalues-3-3" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-eigenvalues-3-3-1-1">Show that <span class="process-math">\(\vec{v}=[1\;\;1]^{\intercal}\)</span> is a eigenvector of</div> <div class="para logical" id="sect-eigenvalues-3-3-1-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-3-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sect-eigenvalues-3-1-1-3">as long as <span class="process-math">\(\vec{v}\)</span> is not the zero vector.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-3-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.1"><a href="#sect-eigenvalues-3-1" title="Copy heading and permalink for Definition 4.1.1" aria-label="Copy heading and permalink for Definition 4.1.1">🔗</a></div></article><div class="para" id="sect-eigenvalues-3-2">Recall that the matrix operation <span class="process-math">\(A \vec{v}\)</span> is a linear transformation on <span class="process-math">\(\vec{v}\text{,}\)</span> that is, it take a vector <span class="process-math">\(\vec{v}\)</span> to another vector. Thus the eigenvector of a matrix is a vector such that <span class="process-math">\(A\vec{v}\)</span> results in a vector in the same direction as <span class="process-math">\(\vec{v}\text{.}\)</span> The eigenvalue is the scalar transformation associated with this.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sect-eigenvalues-3-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-eigenvalues-3-3-1-1">Show that <span class="process-math">\(\vec{v}=[1\;\;1]^{\intercal}\)</span> is a eigenvector of<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-eigenvalues-3-3-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 A =\begin{bmatrix}
 3 \amp 4 \\
 2 \amp 5
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="sect-eigenvalues-3-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-eigenvalues-3-3-2-1">We need to show that this satisfies <span class="process-math">\(A \vec{v} = \lambda \vec{v}\)</span> for some scalar <span class="process-math">\(\lambda\text{.}\)</span> Since</div> <div class="para logical" id="sect-eigenvalues-3-3-2-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-3-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-eigenvalues-3-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-eigenvalues-3-3-2-1">We need to show that this satisfies <span class="process-math">\(A \vec{v} = \lambda \vec{v}\)</span> for some scalar <span class="process-math">\(\lambda\text{.}\)</span> Since<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-3-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigenvalues-3-3-2-2">
+<div class="displaymath process-math">
 \begin{equation*}
 A \vec{v} =
 \begin{bmatrix}
@@ -484,12 +543,20 @@ A \vec{v} =
 7 \\ 7
 \end{bmatrix} = 7 \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-eigenvalues-3-3-2-3">and since this matrix is 7 times the vector <span class="process-math">\(\vec{v}\text{,}\)</span> this proves that <span class="process-math">\(\vec{v}\)</span> is an eigenvector. The scale number 7 is the eigenvalue.</div>
-</div></details></div></article></details></section><section class="subsection" id="sect-finding-eigenvalues-eigenvectors"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="space"> </span><span class="title">Finding Eigenvalues and Eigenvectors</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-3-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-eigenvalues-3-3-2-3">and since this matrix is 7 times the vector <span class="process-math">\(\vec{v}\text{,}\)</span> this proves that <span class="process-math">\(\vec{v}\)</span> is an eigenvector. The scale number 7 is the eigenvalue.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigenvalues-3-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.2.1"><a href="#sect-eigenvalues-3-3-2" title="Copy heading and permalink for Solution 4.1.2.1" aria-label="Copy heading and permalink for Solution 4.1.2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.1.2"><a href="#sect-eigenvalues-3-3" title="Copy heading and permalink for Example 4.1.2" aria-label="Copy heading and permalink for Example 4.1.2">🔗</a></div></article></details></section><section class="subsection" id="sect-finding-eigenvalues-eigenvectors"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding Eigenvalues and Eigenvectors</span>
 </h3>
-<div class="para" id="sect-finding-eigenvalues-eigenvectors-2">We will first find the eigenvalues of a given matrix. Start with the eigenvector equation:</div>
-<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-3"><div class="displaymath process-math" id="sect-finding-eigenvalues-eigenvectors-3-1">
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-2">We will first find the eigenvalues of a given matrix. Start with the eigenvector equation:<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-3">
+<div class="displaymath process-math" id="sect-finding-eigenvalues-eigenvectors-3-1">
 \begin{align*}
 A \vec{v} \amp = \lambda \vec{v} \amp \amp \text{subtract $\lambda \vec{v}$}\\
 A \vec{v} - \lambda \vec{v} \amp = \vec{0}, \amp \amp \text{introduce an identity
@@ -498,36 +565,55 @@ A \vec{v} - \lambda I \vec{v} \amp = \vec{0}, \amp \amp
 \text{factor out the $\vec{v}$}\\
 (A - \lambda I) \vec{v} \amp = \vec{0}
 \end{align*}
-</div></div>
-<div class="para" id="sect-finding-eigenvalues-eigenvectors-4">and we have transformed this into a homogeneous matrix equation. As stated in the definition of the eigenvector, it cannot be the zero vector, and by <a href="" class="xref" data-knowl="./knowl/xref/thm-sing-matrices.html" title="Theorem 2.9.3">Theorem 2.9.3</a>, the only solution where <span class="process-math">\(\vec{v}\)</span> is nonzero is when</div>
-<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-5"><div class="displaymath process-math" id="eq-char-equation">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-4">and we have transformed this into a homogeneous matrix equation. As stated in the definition of the eigenvector, it cannot be the zero vector, and by <a href="sect-linear-algebra-summary.html#thm-sing-matrices" class="xref" data-knowl="./knowl/xref/thm-sing-matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.9.3">Theorem 2.9.3</a>, the only solution where <span class="process-math">\(\vec{v}\)</span> is nonzero is when<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-5">
+<div class="displaymath process-math" id="eq-char-equation">
 \begin{equation}
 \det(A-\lambda I) = 0\tag{4.1.1}
 \end{equation}
-</div></div>
-<div class="para" id="sect-finding-eigenvalues-eigenvectors-6">This equation is called the <dfn class="terminology">characteristic equation</dfn>. This equation is a polynomial of degree <span class="process-math">\(n\text{,}\)</span> the size of the matrix.</div>
-<div class="para" id="sect-finding-eigenvalues-eigenvectors-7">To find an eigenvector associated with the eigenvalue, solve</div>
-<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-8"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-6">This equation is called the <dfn class="terminology">characteristic equation</dfn>. This equation is a polynomial of degree <span class="process-math">\(n\text{,}\)</span> the size of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-7">To find an eigenvector associated with the eigenvalue, solve<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-8">
+<div class="displaymath process-math">
 \begin{equation*}
 (A - \lambda I) \vec{v} = \vec{0}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-finding-eigenvalues-eigenvectors-9">for <span class="process-math">\(\vec{v}\text{,}\)</span> that is find the basis of the null space of the matrix <span class="process-math">\(A - \lambda I\)</span> .</div>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-9">for <span class="process-math">\(\vec{v}\text{,}\)</span> that is find the basis of the null space of the matrix <span class="process-math">\(A - \lambda I\)</span> .<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sect-finding-eigenvalues-eigenvectors-10">Note: as we will see in all of the examples in this section that the null space of <span class="process-math">\(A-\lambda
-I\)</span> has at least dimension 1 and that the reduced echelon form of <span class="process-math">\(A-\lambda I\)</span> has at least one row of zeros, indicating that the rank of <span class="process-math">\(A-\lambda I\)</span> is less than <span class="process-math">\(n\text{.}\)</span> The reason for this is because of <a href="" class="xref" data-knowl="./knowl/xref/thm-sing-matrices.html" title="Theorem 2.9.3">Theorem 2.9.3</a>. This is helpful for detecting errors in finding eigenvalues/eigenvectors.</div>
-<details id="ex-eigs-real1" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-eigs-real1-1-1">Find all eigenvalues and eigenvectors of</div> <div class="para logical" id="ex-eigs-real1-1-2"><div class="displaymath process-math">
+I\)</span> has at least dimension 1 and that the reduced echelon form of <span class="process-math">\(A-\lambda I\)</span> has at least one row of zeros, indicating that the rank of <span class="process-math">\(A-\lambda I\)</span> is less than <span class="process-math">\(n\text{.}\)</span> The reason for this is because of <a href="sect-linear-algebra-summary.html#thm-sing-matrices" class="xref" data-knowl="./knowl/xref/thm-sing-matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.9.3">Theorem 2.9.3</a>. This is helpful for detecting errors in finding eigenvalues/eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-eigs-real1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-eigs-real1-1-1">Find all eigenvalues and eigenvectors of<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-eigs-real1-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 3 \amp 4 \\
 2 \amp 5
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="ex-eigs-real1-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="ex-eigs-real1-2-1">First, solve <span class="process-math">\(|A-\lambda I| = 0\text{,}\)</span>
-</div> <div class="para logical" id="ex-eigs-real1-2-2"><div class="displaymath process-math" id="ex-eigs-real1-2-2-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-eigs-real1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-eigs-real1-2-1">First, solve <span class="process-math">\(|A-\lambda I| = 0\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-2">
+<div class="displaymath process-math" id="ex-eigs-real1-2-2-1">
 \begin{align*}
 |A - \lambda I| \amp =
 \begin{vmatrix}
@@ -537,9 +623,15 @@ I\)</span> has at least dimension 1 and that the reduced echelon form of <span c
 (3-\lambda)(5-\lambda) - 8 \\
 \amp = \lambda^2 -8\lambda +7 = (\lambda-1)(\lambda-7) =0
 \end{align*}
-</div></div> <div class="para" id="ex-eigs-real1-2-3">so <span class="process-math">\(\lambda = 1,7\text{.}\)</span>
-</div> <div class="para" id="ex-eigs-real1-2-4">Next, we need to find an eigenvector for each eigenvalue. When <span class="process-math">\(\lambda=1\text{,}\)</span>
-</div> <div class="para logical" id="ex-eigs-real1-2-5"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-3">so <span class="process-math">\(\lambda = 1,7\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-4">Next, we need to find an eigenvector for each eigenvalue. When <span class="process-math">\(\lambda=1\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-5">
+<div class="displaymath process-math">
 \begin{equation*}
 (A-1 I)\vec{v} =
 \begin{bmatrix}
@@ -547,7 +639,13 @@ I\)</span> has at least dimension 1 and that the reduced echelon form of <span c
 2 \amp 4
 \end{bmatrix} \vec{v} = 0
 \end{equation*}
-</div></div> <div class="para" id="ex-eigs-real1-2-6">To solve this matrix equation, we’ll use gaussian elimination on the augmented matrix:</div> <div class="para logical" id="ex-eigs-real1-2-7"><div class="displaymath process-math" id="ex-eigs-real1-2-7-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-6">To solve this matrix equation, we’ll use gaussian elimination on the augmented matrix:<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-7">
+<div class="displaymath process-math" id="ex-eigs-real1-2-7-1">
 \begin{align*}
 \amp \qquad \left[\begin{array}{rr|r}
 2 \amp 4 \\
@@ -564,21 +662,39 @@ I\)</span> has at least dimension 1 and that the reduced echelon form of <span c
 0 \amp 0
 \end{array}\right] 
 \end{align*}
-</div></div> <div class="para" id="ex-eigs-real1-2-8">The first row of the matrix corresponds to <span class="process-math">\(x_1+2x_2=0\)</span> so the null space of <span class="process-math">\(A-\lambda I\)</span> is</div> <div class="para logical" id="ex-eigs-real1-2-9"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-8">The first row of the matrix corresponds to <span class="process-math">\(x_1+2x_2=0\)</span> so the null space of <span class="process-math">\(A-\lambda I\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-9">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{
 \begin{bmatrix}
 -2 \\ 1
 \end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
 \end{equation*}
-</div></div> <div class="para" id="ex-eigs-real1-2-10">The eigenvector(s) associated with <span class="process-math">\(\lambda=1\)</span> is the basis of this space or</div> <div class="para logical" id="ex-eigs-real1-2-11"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-10">The eigenvector(s) associated with <span class="process-math">\(\lambda=1\)</span> is the basis of this space or<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-11">
+<div class="displaymath process-math">
 \begin{equation*}
 \vec{v} =
 \begin{bmatrix}
 -2 \\ 1
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="ex-eigs-real1-2-12">And to find the eigenvector associated with <span class="process-math">\(\lambda = 7\text{,}\)</span> solve</div> <div class="para logical" id="ex-eigs-real1-2-13"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-12">And to find the eigenvector associated with <span class="process-math">\(\lambda = 7\text{,}\)</span> solve<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-13">
+<div class="displaymath process-math">
 \begin{equation*}
 (A - 7 I) \vec{v} =
 \begin{bmatrix}
@@ -586,7 +702,13 @@ I\)</span> has at least dimension 1 and that the reduced echelon form of <span c
 2 \amp -2
 \end{bmatrix} \vec{v} = \vec{0}
 \end{equation*}
-</div></div> <div class="para" id="ex-eigs-real1-2-14">and use Gaussian Elimination to reduce</div> <div class="para logical" id="ex-eigs-real1-2-15"><div class="displaymath process-math" id="ex-eigs-real1-2-15-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-14">and use Gaussian Elimination to reduce<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-15">
+<div class="displaymath process-math" id="ex-eigs-real1-2-15-1">
 \begin{align*}
 \amp \qquad \left[\begin{array}{rr|r}
 -4 \amp 4 \amp 0 \\
@@ -601,21 +723,39 @@ I\)</span> has at least dimension 1 and that the reduced echelon form of <span c
 0 \amp 0 \amp 0
 \end{array}\right]
 \end{align*}
-</div></div> <div class="para" id="ex-eigs-real1-2-16">The null space of <span class="process-math">\(A-7I\)</span> is</div> <div class="para logical" id="ex-eigs-real1-2-17"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-16">The null space of <span class="process-math">\(A-7I\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-17">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{
 \begin{bmatrix}
 1 \\ 1
 \end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
 \end{equation*}
-</div></div> <div class="para" id="ex-eigs-real1-2-18">so the eigenvector associated with <span class="process-math">\(\lambda=7\)</span> is the basis of this space or</div> <div class="para logical" id="ex-eigs-real1-2-19"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-18">so the eigenvector associated with <span class="process-math">\(\lambda=7\)</span> is the basis of this space or<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-19">
+<div class="displaymath process-math">
 \begin{equation*}
 \vec{v} =
 \begin{bmatrix}
 1 \\ 1
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="ex-eigs-real1-2-20">Overall, there are two eigenvalues and two related eigenvectors they are</div> <div class="para logical" id="ex-eigs-real1-2-21"><div class="displaymath process-math" id="ex-eigs-real1-2-21-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-real1-2-20">Overall, there are two eigenvalues and two related eigenvectors they are<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-real1-2-21">
+<div class="displaymath process-math" id="ex-eigs-real1-2-21-1">
 \begin{align*}
 \lambda_1 \amp = 1, \quad \vec{v}_1 = \begin{bmatrix}
 -2 \\1
@@ -624,9 +764,15 @@ I\)</span> has at least dimension 1 and that the reduced echelon form of <span c
 1 \\1
 \end{bmatrix}
 \end{align*}
-</div></div>
-</div></details></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-12">This example showed that this <span class="process-math">\(2 \times 2\)</span> matrix has two real eigenvalues and two corresponding eigenvectors. Also, although it seemed that these eigenvectors may be unique, we’ll show that <span class="process-math">\([-3\;\;-3]^{\intercal}\)</span> is also a eigenvector of the matrix in <a href="" class="xref" data-knowl="./knowl/xref/ex-eigs-real1.html" title="Example 4.1.3">Example 4.1.3</a> .</div>
-<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-13"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-real1-2-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.3.1"><a href="#ex-eigs-real1-2" title="Copy heading and permalink for Solution 4.1.3.1" aria-label="Copy heading and permalink for Solution 4.1.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.1.3"><a href="#ex-eigs-real1" title="Copy heading and permalink for Example 4.1.3" aria-label="Copy heading and permalink for Example 4.1.3">🔗</a></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-12">This example showed that this <span class="process-math">\(2 \times 2\)</span> matrix has two real eigenvalues and two corresponding eigenvectors. Also, although it seemed that these eigenvectors may be unique, we’ll show that <span class="process-math">\([-3\;\;-3]^{\intercal}\)</span> is also a eigenvector of the matrix in <a href="sect-eigenvalues.html#ex-eigs-real1" class="xref" data-knowl="./knowl/xref/ex-eigs-real1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.3">Example 4.1.3</a> .<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-13">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 3 \amp 4 \\ 2 \amp 5
@@ -638,37 +784,62 @@ I\)</span> has at least dimension 1 and that the reduced echelon form of <span c
 -3 \\ -3
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-finding-eigenvalues-eigenvectors-14">which shows directly that <span class="process-math">\([-3\;\;-3]^{\intercal}\)</span> is an eigenvector with corresponding eigenvalue 7. Does this mean that there are other eigenvectors? Yes. The following lemma shows this.</div>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-14">which shows directly that <span class="process-math">\([-3\;\;-3]^{\intercal}\)</span> is an eigenvector with corresponding eigenvalue 7. Does this mean that there are other eigenvectors? Yes. The following lemma shows this.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="lemma theorem-like" id="lem-eigenvector-scale"><h4 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="lem-eigenvector-scale-1-1">If <span class="process-math">\(\vec{v}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with corresponding eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> then <span class="process-math">\(k\vec{v}\)</span> is also an eigenvector of <span class="process-math">\(A\)</span> with corresponding eigenvalue <span class="process-math">\(\lambda\)</span> if <span class="process-math">\(k \neq 0\text{.}\)</span>
-</div></article><details id="lem-eigenvector-scale-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-eigenvector-scale-2-1">Since <span class="process-math">\(\vec{v}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with corresponding eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> then <span class="process-math">\(A \vec{v} = \lambda \vec{v}\text{.}\)</span> Multiplying this by <span class="process-math">\(k\)</span> results in</div> <div class="para logical" id="lem-eigenvector-scale-2-2"><div class="displaymath process-math" id="lem-eigenvector-scale-2-2-1">
+<div class="para" id="lem-eigenvector-scale-1-1">If <span class="process-math">\(\vec{v}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with corresponding eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> then <span class="process-math">\(k\vec{v}\)</span> is also an eigenvector of <span class="process-math">\(A\)</span> with corresponding eigenvalue <span class="process-math">\(\lambda\)</span> if <span class="process-math">\(k \neq 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-eigenvector-scale-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 4.1.4"><a href="#lem-eigenvector-scale" title="Copy heading and permalink for Lemma 4.1.4" aria-label="Copy heading and permalink for Lemma 4.1.4">🔗</a></div></article><details id="lem-eigenvector-scale-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-eigenvector-scale-2-1">Since <span class="process-math">\(\vec{v}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with corresponding eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> then <span class="process-math">\(A \vec{v} = \lambda \vec{v}\text{.}\)</span> Multiplying this by <span class="process-math">\(k\)</span> results in<div class="autopermalink" data-description="Paragraph"><a href="#lem-eigenvector-scale-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-eigenvector-scale-2-2">
+<div class="displaymath process-math" id="lem-eigenvector-scale-2-2-1">
 \begin{align*}
 k(A \vec{v}) \amp = k (\lambda \vec{v}) \\
 A (k \vec{v}) \amp = \lambda (k \vec{v})
 \end{align*}
-</div></div> <div class="para" id="lem-eigenvector-scale-2-3">which shows the result. Also note, that <span class="process-math">\(k\)</span> cannot be zero, because <span class="process-math">\(0\vec{v}\)</span> is the zero vector, which is not an eigenvector.</div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-16">This next example shows another possible solution set for eigenvalues-eigenvectors.</div>
-<details id="sect-finding-eigenvalues-eigenvectors-17" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="sect-finding-eigenvalues-eigenvectors-17-1-1">Find the eigenvalues and eigenvectors of</div> <div class="para logical" id="sect-finding-eigenvalues-eigenvectors-17-1-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-eigenvector-scale-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lem-eigenvector-scale-2-3">which shows the result. Also note, that <span class="process-math">\(k\)</span> cannot be zero, because <span class="process-math">\(0\vec{v}\)</span> is the zero vector, which is not an eigenvector.<div class="autopermalink" data-description="Paragraph"><a href="#lem-eigenvector-scale-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.4.1"><a href="#lem-eigenvector-scale-2" title="Copy heading and permalink for Proof 4.1.4.1" aria-label="Copy heading and permalink for Proof 4.1.4.1">🔗</a></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-16">This next example shows another possible solution set for eigenvalues-eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sect-finding-eigenvalues-eigenvectors-17" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-finding-eigenvalues-eigenvectors-17-1-1">Find the eigenvalues and eigenvectors of<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-finding-eigenvalues-eigenvectors-17-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 2 \amp -1 \\ 1 \amp 4
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="sect-finding-eigenvalues-eigenvectors-17-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-finding-eigenvalues-eigenvectors-17-2-1">The eigenvalues are found by solving the characteristic equation</div> <div class="para logical" id="sect-finding-eigenvalues-eigenvectors-17-2-2"><div class="displaymath process-math" id="sect-finding-eigenvalues-eigenvectors-17-2-2-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-17-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-finding-eigenvalues-eigenvectors-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-17-2-1">The eigenvalues are found by solving the characteristic equation<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-17-2-2">
+<div class="displaymath process-math" id="sect-finding-eigenvalues-eigenvectors-17-2-2-1">
 \begin{align*}
 |A-\lambda I| \amp = \begin{vmatrix}
 2-\lambda \amp -1 \\ 1 \amp 4-\lambda
 \end{vmatrix} = (2-\lambda)(4-\lambda)+1 \\
 \amp = \lambda^2-6\lambda + 9
 \end{align*}
-</div></div> <div class="para" id="sect-finding-eigenvalues-eigenvectors-17-2-3">And solving <span class="process-math">\(|A-\lambda I|=0\)</span> has the single root <span class="process-math">\(\lambda = 3\text{.}\)</span> To find the associated eigenvector, we solve for the null space of <span class="process-math">\(A-3I\)</span>
-</div> <div class="para logical" id="sect-finding-eigenvalues-eigenvectors-17-2-4"><div class="displaymath process-math" id="sect-finding-eigenvalues-eigenvectors-17-2-4-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-17-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-17-2-3">And solving <span class="process-math">\(|A-\lambda I|=0\)</span> has the single root <span class="process-math">\(\lambda = 3\text{.}\)</span> To find the associated eigenvector, we solve for the null space of <span class="process-math">\(A-3I\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-17-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-17-2-4">
+<div class="displaymath process-math" id="sect-finding-eigenvalues-eigenvectors-17-2-4-1">
 \begin{align*}
 A-3I = \amp \begin{bmatrix}
 -1 \amp -1 \\
@@ -679,34 +850,59 @@ R_1 + R_2 \rightarrow R_2 \qquad \amp \begin{bmatrix}
 0 \amp 0
 \end{bmatrix}
 \end{align*}
-</div></div> <div class="para" id="sect-finding-eigenvalues-eigenvectors-17-2-5">which has the only equation <span class="process-math">\(-x_1 = x_2\)</span> or <span class="process-math">\(x_1
-=-x_2\)</span> which shows that the null space is</div> <div class="para logical" id="sect-finding-eigenvalues-eigenvectors-17-2-6"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-17-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-17-2-5">which has the only equation <span class="process-math">\(-x_1 = x_2\)</span> or <span class="process-math">\(x_1
+=-x_2\)</span> which shows that the null space is<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-17-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-17-2-6">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 -1 \\ 1
 \end{bmatrix} x_2 \; | \; x_2 \in \mathbb{R} \right\}
 \end{equation*}
-</div></div> <div class="para" id="sect-finding-eigenvalues-eigenvectors-17-2-7">and the eigenvector is <span class="process-math">\(\vec{v} = [-1\;\; 1]^{\intercal}\text{.}\)</span>
 </div>
-</div></details></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-18">And this next example has only one eigenvalue however has two linearly independent eigenvectors.</div>
-<details id="ex-eigs-scale2" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-eigs-scale2-1-1">Find the eigenvalues and eigenvectors of</div> <div class="para logical" id="ex-eigs-scale2-1-2"><div class="displaymath process-math">
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-17-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-17-2-7">and the eigenvector is <span class="process-math">\(\vec{v} = [-1\;\; 1]^{\intercal}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-17-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.5.1"><a href="#sect-finding-eigenvalues-eigenvectors-17-2" title="Copy heading and permalink for Solution 4.1.5.1" aria-label="Copy heading and permalink for Solution 4.1.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.1.5"><a href="#sect-finding-eigenvalues-eigenvectors-17" title="Copy heading and permalink for Example 4.1.5" aria-label="Copy heading and permalink for Example 4.1.5">🔗</a></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-18">And this next example has only one eigenvalue however has two linearly independent eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-eigs-scale2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-eigs-scale2-1-1">Find the eigenvalues and eigenvectors of<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-scale2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-eigs-scale2-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 2 \amp 0 \\ 0 \amp 2
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="ex-eigs-scale2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-scale2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-eigs-scale2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="ex-eigs-scale2-2-1">This has the characteristic equation <span class="process-math">\((\lambda-2)^2
-= 0\)</span> or the single root <span class="process-math">\(\lambda = 2\text{.}\)</span> To find the eigenvectors we find the null space of <span class="process-math">\(A-2I\)</span> or</div> <div class="para logical" id="ex-eigs-scale2-2-2"><div class="displaymath process-math">
+= 0\)</span> or the single root <span class="process-math">\(\lambda = 2\text{.}\)</span> To find the eigenvectors we find the null space of <span class="process-math">\(A-2I\)</span> or<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-scale2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-scale2-2-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 0 \amp 0 \\ 0 \amp 0
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="ex-eigs-scale2-2-3">and any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is in the null space. We can write down the space using the standard basis vectors</div> <div class="para logical" id="ex-eigs-scale2-2-4"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-scale2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-scale2-2-3">and any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is in the null space. We can write down the space using the standard basis vectors<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-scale2-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-scale2-2-4">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 1 \\ 0
@@ -714,28 +910,51 @@ R_1 + R_2 \rightarrow R_2 \qquad \amp \begin{bmatrix}
 0 \\ 1
 \end{bmatrix} x_2 \;|\; x_1, x_2 \in \mathbb{R} \right\}
 \end{equation*}
-</div></div> <div class="para" id="ex-eigs-scale2-2-5">so <span class="process-math">\(\vec{v}_1 = [1\;\;0]^{\intercal}\)</span> and <span class="process-math">\(\vec{v}_2=[0\; \;1]^{\intercal}\)</span> are both eigenvectors associated with <span class="process-math">\(\lambda=2\text{.}\)</span> In fact, since any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is in the span of these two eigenvectors, then any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is an eigenvector.</div>
-</div></details></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-20">There are other possibilities of eigenvalues and eigenvectors of <span class="process-math">\(2 \times 2\)</span> matrices. The following has complex eigenvalues.</div>
-<details id="ex-eigs-complex" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-eigs-complex-1-1">Find the eigenvalues and eigenvectors of</div> <div class="para logical" id="ex-eigs-complex-1-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-scale2-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-scale2-2-5">so <span class="process-math">\(\vec{v}_1 = [1\;\;0]^{\intercal}\)</span> and <span class="process-math">\(\vec{v}_2=[0\; \;1]^{\intercal}\)</span> are both eigenvectors associated with <span class="process-math">\(\lambda=2\text{.}\)</span> In fact, since any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is in the span of these two eigenvectors, then any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is an eigenvector.<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-scale2-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.6.1"><a href="#ex-eigs-scale2-2" title="Copy heading and permalink for Solution 4.1.6.1" aria-label="Copy heading and permalink for Solution 4.1.6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.1.6"><a href="#ex-eigs-scale2" title="Copy heading and permalink for Example 4.1.6" aria-label="Copy heading and permalink for Example 4.1.6">🔗</a></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-20">There are other possibilities of eigenvalues and eigenvectors of <span class="process-math">\(2 \times 2\)</span> matrices. The following has complex eigenvalues.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-eigs-complex" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-eigs-complex-1-1">Find the eigenvalues and eigenvectors of<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-eigs-complex-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 0 \amp 2 \\ -2 \amp 0
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="ex-eigs-complex-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="ex-eigs-complex-2-1">To find the eigenvalues, we find</div> <div class="para logical" id="ex-eigs-complex-2-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-eigs-complex-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-eigs-complex-2-1">To find the eigenvalues, we find<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-complex-2-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{vmatrix}
 -\lambda \amp 2 \\ -2 \amp -\lambda
 \end{vmatrix} = 0
 \end{equation*}
-</div></div> <div class="para" id="ex-eigs-complex-2-3">or <span class="process-math">\(\lambda^2+ 4 =0\text{,}\)</span> which has the solutions <span class="process-math">\(\lambda = \pm 2i\text{.}\)</span>
-</div> <div class="para" id="ex-eigs-complex-2-4">To find the eigenvectors, we find the null space associated with each of the two eigenvalues.</div> <div class="para logical" id="ex-eigs-complex-2-5"><ul class="disc">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-complex-2-3">or <span class="process-math">\(\lambda^2+ 4 =0\text{,}\)</span> which has the solutions <span class="process-math">\(\lambda = \pm 2i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-complex-2-4">To find the eigenvectors, we find the null space associated with each of the two eigenvalues.<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-complex-2-5">
+<ul class="disc" id="ex-eigs-complex-2-5-1">
 <li id="ex-eigs-complex-2-5-1-1">
-<div class="para" id="ex-eigs-complex-2-5-1-1-1"><span class="process-math">\(\lambda = 2i\)</span></div>
+<div class="para" id="ex-eigs-complex-2-5-1-1-1">
+<span class="process-math">\(\lambda = 2i\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="ex-eigs-complex-2-5-1-1-2">
 <div class="para">Find the null space of <span class="process-math">\(A-2iI\text{:}\)</span>
 </div>
@@ -750,32 +969,45 @@ R_1 + R_2 \rightarrow R_2 \qquad \amp \begin{bmatrix}
 \end{bmatrix}
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-eigs-complex-2-5-1-1-3">where <span class="process-math">\(\frac{-2}{2i}=\frac{-1}{i} =\frac{-i}{i^2}=\frac{-i}{-1}=i\)</span> is used</div>
-<div class="para logical" id="ex-eigs-complex-2-5-1-1-4"><div class="displaymath process-math" id="ex-eigs-complex-2-5-1-1-4-1">
+<div class="para" id="ex-eigs-complex-2-5-1-1-3">where <span class="process-math">\(\frac{-2}{2i}=\frac{-1}{i} =\frac{-i}{i^2}=\frac{-i}{-1}=i\)</span> is used<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-complex-2-5-1-1-4">
+<div class="displaymath process-math" id="ex-eigs-complex-2-5-1-1-4-1">
 \begin{align*}
 2R_1 + R_2 \rightarrow R_2, \amp \qquad
 \begin{bmatrix}
 1 \amp i \\ 0 \amp 0
 \end{bmatrix}
 \end{align*}
-</div></div>
-<div class="para" id="ex-eigs-complex-2-5-1-1-5">and the top equation says <span class="process-math">\(x_1 = - ix_2\text{,}\)</span> so the null space is</div>
-<div class="para logical" id="ex-eigs-complex-2-5-1-1-6"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-complex-2-5-1-1-5">and the top equation says <span class="process-math">\(x_1 = - ix_2\text{,}\)</span> so the null space is<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-complex-2-5-1-1-6">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 -i \\ 1
 \end{bmatrix}x_2 \; | \; x_2 \in \mathbb{R} \right\}
 \end{equation*}
-</div></div>
-<div class="para" id="ex-eigs-complex-2-5-1-1-7">so the eigenvector is <span class="process-math">\([-i \; \; 1]^{\intercal}\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-complex-2-5-1-1-7">so the eigenvector is <span class="process-math">\([-i \; \; 1]^{\intercal}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-eigs-complex-2-5-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ex-eigs-complex-2-5-1-2">
-<div class="para" id="ex-eigs-complex-2-5-1-2-1"><span class="process-math">\(\lambda = -2i\)</span></div>
-<div class="para" id="ex-eigs-complex-2-5-1-2-2">Find the null space of <span class="process-math">\(A-2iI\text{:}\)</span>
+<div class="para" id="ex-eigs-complex-2-5-1-2-1">
+<span class="process-math">\(\lambda = -2i\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ex-eigs-complex-2-5-1-2-3"><div class="displaymath process-math" id="ex-eigs-complex-2-5-1-2-3-1">
+<div class="para" id="ex-eigs-complex-2-5-1-2-2">Find the null space of <span class="process-math">\(A-2iI\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-complex-2-5-1-2-3">
+<div class="displaymath process-math" id="ex-eigs-complex-2-5-1-2-3-1">
 \begin{align*}
 \amp \qquad \begin{bmatrix}
 2i \amp 2 \\ -2 \amp 2i
@@ -789,49 +1021,102 @@ R_1 + R_2 \rightarrow R_2 \qquad \amp \begin{bmatrix}
 1 \amp -i \\ 0 \amp 0
 \end{bmatrix}
 \end{align*}
-</div></div>
-<div class="para" id="ex-eigs-complex-2-5-1-2-4">and the top equation says <span class="process-math">\(x_1 = ix_2\text{,}\)</span> so the null space is</div>
-<div class="para logical" id="ex-eigs-complex-2-5-1-2-5"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-complex-2-5-1-2-4">and the top equation says <span class="process-math">\(x_1 = ix_2\text{,}\)</span> so the null space is<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-complex-2-5-1-2-5">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 i \\ 1
 \end{bmatrix}x_2 \; | \; x_2 \in \mathbb{R} \right\}
 \end{equation*}
-</div></div>
-<div class="para" id="ex-eigs-complex-2-5-1-2-6">so the eigenvector is <span class="process-math">\([i \; \; 1]^{\intercal}\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-complex-2-5-1-2-6">so the eigenvector is <span class="process-math">\([i \; \; 1]^{\intercal}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5-1-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-eigs-complex-2-5-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-</ul></div>
-</div></details></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-22">Notice in the last example that there where complex conjugate pairs of eigenvalues and associated eigenvectors. This always occurs with a real matrix <span class="process-math">\(A\text{.}\)</span> The following theorem summarizes this.</div>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-complex-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.7.1"><a href="#ex-eigs-complex-2" title="Copy heading and permalink for Solution 4.1.7.1" aria-label="Copy heading and permalink for Solution 4.1.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.1.7"><a href="#ex-eigs-complex" title="Copy heading and permalink for Example 4.1.7" aria-label="Copy heading and permalink for Example 4.1.7">🔗</a></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-22">Notice in the last example that there where complex conjugate pairs of eigenvalues and associated eigenvectors. This always occurs with a real matrix <span class="process-math">\(A\text{.}\)</span> The following theorem summarizes this.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="theorem theorem-like" id="sect-finding-eigenvalues-eigenvectors-23"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-finding-eigenvalues-eigenvectors-23-1-1">Let <span class="process-math">\(A\)</span> be a real matrix. If <span class="process-math">\(\lambda\)</span> is an complex eigenvalue with corresponding eigenvector, <span class="process-math">\(\vec{v}\text{,}\)</span> then the complex conjugate of <span class="process-math">\(\lambda,\)</span> denoted <span class="process-math">\(\overline{\lambda}\)</span> is also an eigenvalue with corresponding complex conjuate eigenvector <span class="process-math">\(\overline{\vec{v}}\text{.}\)</span>
-</div></article><details id="sect-finding-eigenvalues-eigenvectors-23-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="sect-finding-eigenvalues-eigenvectors-23-2-1">If <span class="process-math">\(\lambda\text{,}\)</span> <span class="process-math">\(\vec{v}\)</span> is an eigenvalue-eigenvector pair of <span class="process-math">\(A\text{,}\)</span> then</div> <div class="para logical" id="sect-finding-eigenvalues-eigenvectors-23-2-2"><div class="displaymath process-math">
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-23-1-1">Let <span class="process-math">\(A\)</span> be a real matrix. If <span class="process-math">\(\lambda\)</span> is an complex eigenvalue with corresponding eigenvector, <span class="process-math">\(\vec{v}\text{,}\)</span> then the complex conjugate of <span class="process-math">\(\lambda,\)</span> denoted <span class="process-math">\(\overline{\lambda}\)</span> is also an eigenvalue with corresponding complex conjuate eigenvector <span class="process-math">\(\overline{\vec{v}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.1.8"><a href="#sect-finding-eigenvalues-eigenvectors-23" title="Copy heading and permalink for Theorem 4.1.8" aria-label="Copy heading and permalink for Theorem 4.1.8">🔗</a></div></article><details id="sect-finding-eigenvalues-eigenvectors-23-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-finding-eigenvalues-eigenvectors-23-2-1">If <span class="process-math">\(\lambda\text{,}\)</span> <span class="process-math">\(\vec{v}\)</span> is an eigenvalue-eigenvector pair of <span class="process-math">\(A\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-23-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-23-2-2">
+<div class="displaymath process-math">
 \begin{equation*}
 A\vec{v} = \lambda \vec{v}
 \end{equation*}
-</div></div> <div class="para" id="sect-finding-eigenvalues-eigenvectors-23-2-3">And taking the complex conjugate of this equation.</div> <div class="para logical" id="sect-finding-eigenvalues-eigenvectors-23-2-4"><div class="displaymath process-math" id="sect-finding-eigenvalues-eigenvectors-23-2-4-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-23-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-23-2-3">And taking the complex conjugate of this equation.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-23-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-23-2-4">
+<div class="displaymath process-math" id="sect-finding-eigenvalues-eigenvectors-23-2-4-1">
 \begin{align*}
 \overline{A\vec{v}} \amp = \overline{\lambda \vec{v}} \\
 A \overline{\vec{v}} \amp = \overline{\lambda} \, \overline{\vec{v}}
 \end{align*}
-</div></div> <div class="para" id="sect-finding-eigenvalues-eigenvectors-23-2-5">where <span class="process-math">\(\overline{A}=A\)</span> because <span class="process-math">\(A\)</span> is a real matrix. This shows that <span class="process-math">\(\overline{\lambda}\text{,}\)</span> <span class="process-math">\(\overline{\vec{v}}\)</span> is an eigenvalue-eigenvector pair of <span class="process-math">\(A\text{.}\)</span>
-</div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-24">The result of this theorem will save work if you have a real matrix and find a complex eigenvalue. <a href="" class="xref" data-knowl="./knowl/xref/ex-eigs-complex.html" title="Example 4.1.7">Example 4.1.7</a> shows that the eigenvalue-eigenvector pairs are <span class="process-math">\(\lambda_1=2i\)</span> and <span class="process-math">\(\vec{v}_1=[-i \; \; 1]^{\intercal}\text{.}\)</span> The above theorem shows that <span class="process-math">\(\lambda_2=\overline{\lambda_1}= -2i\)</span> and <span class="process-math">\(\vec{v}_2=\overline{\vec{v}_1} = [i \; \; 1]^{\intercal}\)</span> is another eigenvalue-eigenvector pair. The next example has real eigenvalue and eigenvector, but has a different feature than <a href="" class="xref" data-knowl="./knowl/xref/ex-eigs-real1.html" title="Example 4.1.3">Example 4.1.3</a>.</div>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-23-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-23-2-5">where <span class="process-math">\(\overline{A}=A\)</span> because <span class="process-math">\(A\)</span> is a real matrix. This shows that <span class="process-math">\(\overline{\lambda}\text{,}\)</span> <span class="process-math">\(\overline{\vec{v}}\)</span> is an eigenvalue-eigenvector pair of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-23-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.8.1"><a href="#sect-finding-eigenvalues-eigenvectors-23-2" title="Copy heading and permalink for Proof 4.1.8.1" aria-label="Copy heading and permalink for Proof 4.1.8.1">🔗</a></div></article></details><div class="para" id="sect-finding-eigenvalues-eigenvectors-24">The result of this theorem will save work if you have a real matrix and find a complex eigenvalue. <a href="sect-eigenvalues.html#ex-eigs-complex" class="xref" data-knowl="./knowl/xref/ex-eigs-complex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.7">Example 4.1.7</a> shows that the eigenvalue-eigenvector pairs are <span class="process-math">\(\lambda_1=2i\)</span> and <span class="process-math">\(\vec{v}_1=[-i \; \; 1]^{\intercal}\text{.}\)</span> The above theorem shows that <span class="process-math">\(\lambda_2=\overline{\lambda_1}= -2i\)</span> and <span class="process-math">\(\vec{v}_2=\overline{\vec{v}_1} = [i \; \; 1]^{\intercal}\)</span> is another eigenvalue-eigenvector pair. The next example has real eigenvalue and eigenvector, but has a different feature than <a href="sect-eigenvalues.html#ex-eigs-real1" class="xref" data-knowl="./knowl/xref/ex-eigs-real1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.3">Example 4.1.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="note remark-like" id="sect-finding-eigenvalues-eigenvectors-25"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalue/Eigenvectors of a <span class="process-math">\(2\times 2\)</span> real matrix.</span>
-</h4> <div class="para" id="sect-finding-eigenvalues-eigenvectors-25-2">The follow is a list of possible eigenvalue-eigenvectors for a real <span class="process-math">\(2 \times 2\)</span> real matrix.</div> <div class="para logical" id="sect-finding-eigenvalues-eigenvectors-25-3"><ul class="disc">
-<li id="sect-finding-eigenvalues-eigenvectors-25-3-1-1"><div class="para" id="sect-finding-eigenvalues-eigenvectors-25-3-1-1-1">2 real eigenvalues, 2 linearly independent eigenvectors</div></li>
-<li id="sect-finding-eigenvalues-eigenvectors-25-3-1-2"><div class="para" id="sect-finding-eigenvalues-eigenvectors-25-3-1-2-1">1 real eigenvalue, 2 linearly independent eigenvectors</div></li>
-<li id="sect-finding-eigenvalues-eigenvectors-25-3-1-3"><div class="para" id="sect-finding-eigenvalues-eigenvectors-25-3-1-3-1">1 real eigenvalue, 1 eigenvector.</div></li>
-<li id="sect-finding-eigenvalues-eigenvectors-25-3-1-4"><div class="para" id="sect-finding-eigenvalues-eigenvectors-25-3-1-4-1">2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).</div></li>
-</ul></div></article></section><section class="subsection" id="sect-eigen-3by3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span>
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Eigenvalue/Eigenvectors of a <span class="process-math">\(2\times 2\)</span> real matrix.</span>
+</h4>
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-25-2">The follow is a list of possible eigenvalue-eigenvectors for a real <span class="process-math">\(2 \times 2\)</span> real matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-25-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-finding-eigenvalues-eigenvectors-25-3">
+<ul class="disc" id="sect-finding-eigenvalues-eigenvectors-25-3-1">
+<li id="sect-finding-eigenvalues-eigenvectors-25-3-1-1">
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-25-3-1-1-1">2 real eigenvalues, 2 linearly independent eigenvectors<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-25-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-finding-eigenvalues-eigenvectors-25-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-finding-eigenvalues-eigenvectors-25-3-1-2">
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-25-3-1-2-1">1 real eigenvalue, 2 linearly independent eigenvectors<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-25-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-finding-eigenvalues-eigenvectors-25-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-finding-eigenvalues-eigenvectors-25-3-1-3">
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-25-3-1-3-1">1 real eigenvalue, 1 eigenvector.<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-25-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-finding-eigenvalues-eigenvectors-25-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-finding-eigenvalues-eigenvectors-25-3-1-4">
+<div class="para" id="sect-finding-eigenvalues-eigenvectors-25-3-1-4-1">2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-25-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-finding-eigenvalues-eigenvectors-25-3-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-finding-eigenvalues-eigenvectors-25-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 4.1.9: Eigenvalue/Eigenvectors of a 2\times 2 real matrix"><a href="#sect-finding-eigenvalues-eigenvectors-25" title="Copy heading and permalink for Note 4.1.9: Eigenvalue/Eigenvectors of a 2\times 2 real matrix" aria-label="Copy heading and permalink for Note 4.1.9: Eigenvalue/Eigenvectors of a 2\times 2 real matrix">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.1.1: Finding Eigenvalues and Eigenvectors"><a href="#sect-finding-eigenvalues-eigenvectors" title="Copy heading and permalink for Subsection 4.1.1: Finding Eigenvalues and Eigenvectors" aria-label="Copy heading and permalink for Subsection 4.1.1: Finding Eigenvalues and Eigenvectors">🔗</a></div></section><section class="subsection" id="sect-eigen-3by3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span>
 </h3>
-<div class="para" id="sect-eigen-3by3-2">Finding the eigenvalues and eigenvectors for matrices larger than <span class="process-math">\(2 \times 2\)</span> goes through the same steps. It is just a bit more complicated and we will show two examples of these.</div>
-<details id="ex-eigs-3by3" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.10</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="ex-eigs-3by3-1-1">Find the eigenvalues and eigenvectors of the 3 by 3 matrix</div> <div class="para logical" id="ex-eigs-3by3-1-2"><div class="displaymath process-math">
+<div class="para" id="sect-eigen-3by3-2">Finding the eigenvalues and eigenvectors for matrices larger than <span class="process-math">\(2 \times 2\)</span> goes through the same steps. It is just a bit more complicated and we will show two examples of these.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-eigs-3by3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-eigs-3by3-1-1">Find the eigenvalues and eigenvectors of the 3 by 3 matrix<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-eigs-3by3-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 1 \amp 0 \amp 0 \\
@@ -839,9 +1124,14 @@ A \overline{\vec{v}} \amp = \overline{\lambda} \, \overline{\vec{v}}
 2 \amp 1 \amp 3
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="ex-eigs-3by3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="ex-eigs-3by3-2-1">To find the eigenvalues, we solve the characteristic equation <span class="process-math">\(|A-\lambda I|=0\)</span> or expanding across the first row to find the determinant and we solve</div> <div class="para logical" id="ex-eigs-3by3-2-2"><div class="displaymath process-math" id="ex-eigs-3by3-2-2-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-eigs-3by3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-eigs-3by3-2-1">To find the eigenvalues, we solve the characteristic equation <span class="process-math">\(|A-\lambda I|=0\)</span> or expanding across the first row to find the determinant and we solve<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-3by3-2-2">
+<div class="displaymath process-math" id="ex-eigs-3by3-2-2-1">
 \begin{align*}
 |A-\lambda I| \amp= \begin{vmatrix}
 1-\lambda \amp 0 \amp 0 \\
@@ -852,11 +1142,19 @@ A \overline{\vec{v}} \amp = \overline{\lambda} \, \overline{\vec{v}}
 \end{vmatrix} \\
 \amp=(1-\lambda)( (-2-\lambda)(3-\lambda) -6) =0
 \end{align*}
-</div></div> <div class="para" id="ex-eigs-3by3-2-3">which has roots <span class="process-math">\(\lambda=1,4,-3\text{.}\)</span> To find the corresponding eigenvectors, we solve for the null space of <span class="process-math">\(A-\lambda I\)</span> for each <span class="process-math">\(\lambda\)</span>
-</div> <div class="para logical" id="ex-eigs-3by3-2-4"><ul class="disc">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-3by3-2-3">which has roots <span class="process-math">\(\lambda=1,4,-3\text{.}\)</span> To find the corresponding eigenvectors, we solve for the null space of <span class="process-math">\(A-\lambda I\)</span> for each <span class="process-math">\(\lambda\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-3by3-2-4">
+<ul class="disc" id="ex-eigs-3by3-2-4-1">
 <li id="ex-eigs-3by3-2-4-1-1">
-<div class="para" id="ex-eigs-3by3-2-4-1-1-1"><span class="process-math">\(\lambda=1\)</span></div>
-<div class="para logical" id="ex-eigs-3by3-2-4-1-1-2"><div class="displaymath process-math" id="ex-eigs-3by3-2-4-1-1-2-1">
+<div class="para" id="ex-eigs-3by3-2-4-1-1-1">
+<span class="process-math">\(\lambda=1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-3by3-2-4-1-1-2">
+<div class="displaymath process-math" id="ex-eigs-3by3-2-4-1-1-2-1">
 \begin{align*}
 A-I = \amp \begin{bmatrix}
 0 \amp 0 \amp 0 \\
@@ -892,28 +1190,41 @@ R_2 + 3R_1 \rightarrow R_1 \qquad \amp
 0 \amp 0 \amp 0 \\
 \end{bmatrix}
 \end{align*}
-</div></div>
-<div class="para" id="ex-eigs-3by3-2-4-1-1-3">and other that a factor of 3, this is in reduced row echelon form. The top two equations are</div>
-<div class="para logical" id="ex-eigs-3by3-2-4-1-1-4"><div class="displaymath process-math" id="ex-eigs-3by3-2-4-1-1-4-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-3by3-2-4-1-1-3">and other that a factor of 3, this is in reduced row echelon form. The top two equations are<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-3by3-2-4-1-1-4">
+<div class="displaymath process-math" id="ex-eigs-3by3-2-4-1-1-4-1">
 \begin{align*}
 x_1 \amp = -\frac{4}{3} x_3 \\
 x_2 \amp = \frac{2}{3} x_3
 \end{align*}
-</div></div>
-<div class="para" id="ex-eigs-3by3-2-4-1-1-5">and the null space is</div>
-<div class="para logical" id="ex-eigs-3by3-2-4-1-1-6"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-3by3-2-4-1-1-5">and the null space is<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-3by3-2-4-1-1-6">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{\begin{bmatrix}
 -4/3 \\ 2/3 \\ 1
 \end{bmatrix} x_3 \; | \; x_3 \right\}
 \end{equation*}
-</div></div>
-<div class="para" id="ex-eigs-3by3-2-4-1-1-7">And we could take <span class="process-math">\([-4/3\;\;2/3\;\;
-1]^{\intercal}\)</span> as an eigenvector, however, from <a href="" class="xref" data-knowl="./knowl/xref/lem-eigenvector-scale.html" title="Lemma 4.1.4">Lemma 4.1.4</a>, a scalar multiple of an eigenvector is also an eigenvector, so multiplying by 3 results in <span class="process-math">\(\vec{v}_1=[-4\;\;2\;\;3]^{\intercal}\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-3by3-2-4-1-1-7">And we could take <span class="process-math">\([-4/3\;\;2/3\;\;
+1]^{\intercal}\)</span> as an eigenvector, however, from <a href="sect-eigenvalues.html#lem-eigenvector-scale" class="xref" data-knowl="./knowl/xref/lem-eigenvector-scale.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.1.4">Lemma 4.1.4</a>, a scalar multiple of an eigenvector is also an eigenvector, so multiplying by 3 results in <span class="process-math">\(\vec{v}_1=[-4\;\;2\;\;3]^{\intercal}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-eigs-3by3-2-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ex-eigs-3by3-2-4-1-2">
-<div class="para" id="ex-eigs-3by3-2-4-1-2-1"><span class="process-math">\(\lambda=4\)</span></div>
+<div class="para" id="ex-eigs-3by3-2-4-1-2-1">
+<span class="process-math">\(\lambda=4\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="ex-eigs-3by3-2-4-1-2-2">
 <div class="displaymath process-math" id="ex-eigs-3by3-2-4-1-2-2-1">
 \begin{align*}
@@ -959,13 +1270,18 @@ A-4I = \amp \begin{bmatrix}
 \end{bmatrix} x_3 \; |\; x_3 \in \mathbb{R} \right\}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-eigs-3by3-2-4-1-2-3">so the eigenvectors is <span class="process-math">\([0\;\;1\;\;1]^{\intercal}\text{.}\)</span>
+<div class="para" id="ex-eigs-3by3-2-4-1-2-3">so the eigenvectors is <span class="process-math">\([0\;\;1\;\;1]^{\intercal}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="autopermalink" data-description="Item"><a href="#ex-eigs-3by3-2-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ex-eigs-3by3-2-4-1-3">
-<div class="para" id="ex-eigs-3by3-2-4-1-3-1"><span class="process-math">\(\lambda=-3\)</span></div>
-<div class="para logical" id="ex-eigs-3by3-2-4-1-3-2"><div class="displaymath process-math" id="ex-eigs-3by3-2-4-1-3-2-1">
+<div class="para" id="ex-eigs-3by3-2-4-1-3-1">
+<span class="process-math">\(\lambda=-3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-3by3-2-4-1-3-2">
+<div class="displaymath process-math" id="ex-eigs-3by3-2-4-1-3-2-1">
 \begin{align*}
 A+3I = \amp\begin{bmatrix}
 4 \amp 0 \amp 0 \\
@@ -994,28 +1310,47 @@ A+3I = \amp\begin{bmatrix}
 0 \amp 0 \amp 0
 \end{bmatrix}
 \end{align*}
-</div></div>
-<div class="para" id="ex-eigs-3by3-2-4-1-3-3">and the top two equations are <span class="process-math">\(x_1=0\)</span> , <span class="process-math">\(x_2=-6x_3\)</span> so the null space is</div>
-<div class="para logical" id="ex-eigs-3by3-2-4-1-3-4"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-3by3-2-4-1-3-3">and the top two equations are <span class="process-math">\(x_1=0\)</span> , <span class="process-math">\(x_2=-6x_3\)</span> so the null space is<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-3by3-2-4-1-3-4">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 0 \\ -6 \\ 1
 \end{bmatrix} x_3 \; | \; x_3 \in \mathbb{R} \right\}
 \end{equation*}
-</div></div>
-<div class="para" id="ex-eigs-3by3-2-4-1-3-5">Therefore the eigenvector is <span class="process-math">\(\vec{v}_3=[0\;\;-6\;\;1]^{\intercal}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-3by3-2-4-1-3-5">Therefore the eigenvector is <span class="process-math">\(\vec{v}_3=[0\;\;-6\;\;1]^{\intercal}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-eigs-3by3-2-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-</ul></div> <div class="para" id="ex-eigs-3by3-2-5">In summary, for this matrix, there are three real eigenvalues and each has a corresponding eigenvector. These are</div> <div class="para logical" id="ex-eigs-3by3-2-6"><div class="displaymath process-math" id="ex-eigs-3by3-2-6-1">
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-eigs-3by3-2-5">In summary, for this matrix, there are three real eigenvalues and each has a corresponding eigenvector. These are<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-eigs-3by3-2-6">
+<div class="displaymath process-math" id="ex-eigs-3by3-2-6-1">
 \begin{align*}
 \lambda_1 \amp = 1 \amp \vec{v}_1 \amp = \begin{bmatrix} -4 \\ 2 \\ 3 \end{bmatrix} \\
 \lambda_2 \amp =4 \amp \vec{v}_2 \amp = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} \\
 \lambda_3 \amp =-3 \amp \vec{v}_3 \amp = \begin{bmatrix} 0 \\ -6 \\ 1 \end{bmatrix} 
 \end{align*}
-</div></div>
-</div></details></div></article></details><details id="sect-eigen-3by3-4" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.11</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="sect-eigen-3by3-4-1-1">Find the eigenvalues and eigenvectors of</div> <div class="para logical" id="sect-eigen-3by3-4-1-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.10.1"><a href="#ex-eigs-3by3-2" title="Copy heading and permalink for Solution 4.1.10.1" aria-label="Copy heading and permalink for Solution 4.1.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.1.10"><a href="#ex-eigs-3by3" title="Copy heading and permalink for Example 4.1.10" aria-label="Copy heading and permalink for Example 4.1.10">🔗</a></div></article></details><details id="sect-eigen-3by3-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-eigen-3by3-4-1-1">Find the eigenvalues and eigenvectors of<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-eigen-3by3-4-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 A = \begin{bmatrix}
 1 \amp 0 \amp 2 \\
@@ -1023,10 +1358,14 @@ A = \begin{bmatrix}
 -1 \amp 0 \amp -2
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="sect-eigen-3by3-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-eigen-3by3-4-2-1">First, we solve for the eigenvectors by solving <span class="process-math">\(|A-\lambda I|=0\text{,}\)</span>
-</div> <div class="para logical" id="sect-eigen-3by3-4-2-2"><div class="displaymath process-math" id="sect-eigen-3by3-4-2-2-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-eigen-3by3-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-eigen-3by3-4-2-1">First, we solve for the eigenvectors by solving <span class="process-math">\(|A-\lambda I|=0\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-4-2-2">
+<div class="displaymath process-math" id="sect-eigen-3by3-4-2-2-1">
 \begin{align*}
 |A-\lambda I| \amp = \begin{vmatrix}
 1-\lambda \amp 0 \amp 2 \\
@@ -1039,8 +1378,13 @@ A = \begin{bmatrix}
 \end{vmatrix} = -\lambda \bigl( (1-\lambda)(-2-\lambda)+2 \bigr) \\
 \amp = -\lambda (\lambda^2 - \lambda -2 + 2) = -\lambda^3 - \lambda^2
 \end{align*}
-</div></div> <div class="para" id="sect-eigen-3by3-4-2-3">and this is 0, when <span class="process-math">\(\lambda=0\)</span> and <span class="process-math">\(\lambda = -1\text{.}\)</span> Next, find the eigenvectors. The eigenvectors with <span class="process-math">\(\lambda=0\)</span> are found by finding the null space of <span class="process-math">\(A-0I\text{:}\)</span>
-</div> <div class="para logical" id="sect-eigen-3by3-4-2-4"><div class="displaymath process-math" id="sect-eigen-3by3-4-2-4-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-eigen-3by3-4-2-3">and this is 0, when <span class="process-math">\(\lambda=0\)</span> and <span class="process-math">\(\lambda = -1\text{.}\)</span> Next, find the eigenvectors. The eigenvectors with <span class="process-math">\(\lambda=0\)</span> are found by finding the null space of <span class="process-math">\(A-0I\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-4-2-4">
+<div class="displaymath process-math" id="sect-eigen-3by3-4-2-4-1">
 \begin{align*}
 \amp \qquad \begin{bmatrix}
 1 \amp 0 \amp 2 \\
@@ -1058,7 +1402,13 @@ R_1+R_3 \rightarrow R_3
 0 \amp 0 \amp 0
 \end{bmatrix}
 \end{align*}
-</div></div> <div class="para" id="sect-eigen-3by3-4-2-5">and since the only equation is <span class="process-math">\(x_1 +2x_3=0\text{,}\)</span> both <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_3\)</span> are free variables and the solution space (therefore the null space) can be written:</div> <div class="para logical" id="sect-eigen-3by3-4-2-6"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-eigen-3by3-4-2-5">and since the only equation is <span class="process-math">\(x_1 +2x_3=0\text{,}\)</span> both <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_3\)</span> are free variables and the solution space (therefore the null space) can be written:<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-4-2-6">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 0 \\ 1 \\ 0
@@ -1066,7 +1416,13 @@ R_1+R_3 \rightarrow R_3
 -2 \\ 0 \\ 1
 \end{bmatrix} x_3 \; | \; x_2, x_3 \in \mathbb{R} \right\}
 \end{equation*}
-</div></div> <div class="para" id="sect-eigen-3by3-4-2-7">This shows that the vectors</div> <div class="para logical" id="sect-eigen-3by3-4-2-8"><div class="displaymath process-math" id="sect-eigen-3by3-4-2-8-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-eigen-3by3-4-2-7">This shows that the vectors<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-4-2-8">
+<div class="displaymath process-math" id="sect-eigen-3by3-4-2-8-1">
 \begin{align*}
 \vec{v}_1 \amp = \begin{bmatrix}
 0 \\ 1\\ 0
@@ -1074,9 +1430,14 @@ R_1+R_3 \rightarrow R_3
 -2 \\ 0 \\ 1
 \end{bmatrix}
 \end{align*}
-</div></div> <div class="para" id="sect-eigen-3by3-4-2-9">are both eigenvectors associated with <span class="process-math">\(\lambda=0\text{.}\)</span> The eigenvectors associated with <span class="process-math">\(\lambda
-= -1\)</span> is found by seeking the null space of <span class="process-math">\(A-I\text{:}\)</span>
-</div> <div class="para logical" id="sect-eigen-3by3-4-2-10"><div class="displaymath process-math" id="sect-eigen-3by3-4-2-10-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-eigen-3by3-4-2-9">are both eigenvectors associated with <span class="process-math">\(\lambda=0\text{.}\)</span> The eigenvectors associated with <span class="process-math">\(\lambda
+= -1\)</span> is found by seeking the null space of <span class="process-math">\(A-I\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-4-2-10">
+<div class="displaymath process-math" id="sect-eigen-3by3-4-2-10-1">
 \begin{align*}
 \amp \qquad \begin{bmatrix}
 2 \amp 0 \amp 2 \\
@@ -1099,43 +1460,94 @@ R_1 + R_3 \rightarrow R_3,
 0 \amp 0 \amp 0
 \end{bmatrix}
 \end{align*}
-</div></div> <div class="para" id="sect-eigen-3by3-4-2-11">These equations are</div> <div class="para logical" id="sect-eigen-3by3-4-2-12"><div class="displaymath process-math" id="sect-eigen-3by3-4-2-12-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-eigen-3by3-4-2-11">These equations are<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-4-2-12">
+<div class="displaymath process-math" id="sect-eigen-3by3-4-2-12-1">
 \begin{align*}
 x_1 \amp = -x_3 \\
 x_2 \amp = -2x_3
 \end{align*}
-</div></div> <div class="para" id="sect-eigen-3by3-4-2-13">so the solution set (and the null space) is</div> <div class="para logical" id="sect-eigen-3by3-4-2-14"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-eigen-3by3-4-2-13">so the solution set (and the null space) is<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-4-2-14">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 -1 \\ -2 \\ 1
 \end{bmatrix} x_3 \; \ \; x_3 \in \mathbb{R} \right\}
 \end{equation*}
-</div></div> <div class="para" id="sect-eigen-3by3-4-2-15">so the eigenvector associated with <span class="process-math">\(\lambda_3 =-1\)</span> is</div> <div class="para logical" id="sect-eigen-3by3-4-2-16"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-eigen-3by3-4-2-15">so the eigenvector associated with <span class="process-math">\(\lambda_3 =-1\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-4-2-16">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 -1 \\ -2 \\ 1
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-eigen-3by3-4-2-17">In summary, for this matrix, there are two real eigenvalues. The first has two corresponding eigenvectors and the second has a single corresponding eigenvector. These are</div> <div class="para logical" id="sect-eigen-3by3-4-2-18"><div class="displaymath process-math" id="sect-eigen-3by3-4-2-18-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-eigen-3by3-4-2-17">In summary, for this matrix, there are two real eigenvalues. The first has two corresponding eigenvectors and the second has a single corresponding eigenvector. These are<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-4-2-18">
+<div class="displaymath process-math" id="sect-eigen-3by3-4-2-18-1">
 \begin{align*}
 \lambda_1 \amp = 0 \amp \vec{v}_1 \amp = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \amp \vec{v}_2 \amp = \begin{bmatrix} -2 \\ 0 \\ 1 \end{bmatrix}\\
 \lambda_3 \amp = -1 \amp \vec{v}_3 \amp = \begin{bmatrix} -1  \\ -2 \\ 1 \end{bmatrix} 
 \end{align*}
-</div></div>
-</div></details></div></article></details><article class="note remark-like" id="sect-eigen-3by3-5"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalue/Eigenvectors of a <span class="process-math">\(3\times 3\)</span> real matrix.</span>
-</h4> <div class="para" id="sect-eigen-3by3-5-2">The follow is a list of possible eigenvalue-eigenvectors for a real <span class="process-math">\(3 \times 3\)</span> real matrix.</div> <div class="para logical" id="sect-eigen-3by3-5-3"><ul class="disc">
-<li id="sect-eigen-3by3-5-3-1-1"><div class="para" id="sect-eigen-3by3-5-3-1-1-1">3 real eigenvalues, 3 linearly independent eigenvectors</div></li>
-<li id="sect-eigen-3by3-5-3-1-2"><div class="para" id="sect-eigen-3by3-5-3-1-2-1">2 real eigenvalues, one with one correspoding eigenvector, the other with two corresponding eigenvectors.</div></li>
-<li id="sect-eigen-3by3-5-3-1-3"><div class="para" id="sect-eigen-3by3-5-3-1-3-1">1 real eigenvalue, 3 linearly indpendent eigenvectors.</div></li>
-<li id="sect-eigen-3by3-5-3-1-4"><div class="para" id="sect-eigen-3by3-5-3-1-4-1">1 real eigenvalue with corresponding real eigenvector and 2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).</div></li>
-</ul></div></article></section></section></div>
-<div class="ptx-content-footer">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-4-2-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.11.1"><a href="#sect-eigen-3by3-4-2" title="Copy heading and permalink for Solution 4.1.11.1" aria-label="Copy heading and permalink for Solution 4.1.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.1.11"><a href="#sect-eigen-3by3-4" title="Copy heading and permalink for Example 4.1.11" aria-label="Copy heading and permalink for Example 4.1.11">🔗</a></div></article></details><article class="note remark-like" id="sect-eigen-3by3-5"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Eigenvalue/Eigenvectors of a <span class="process-math">\(3\times 3\)</span> real matrix.</span>
+</h4>
+<div class="para" id="sect-eigen-3by3-5-2">The follow is a list of possible eigenvalue-eigenvectors for a real <span class="process-math">\(3 \times 3\)</span> real matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-eigen-3by3-5-3">
+<ul class="disc" id="sect-eigen-3by3-5-3-1">
+<li id="sect-eigen-3by3-5-3-1-1">
+<div class="para" id="sect-eigen-3by3-5-3-1-1-1">3 real eigenvalues, 3 linearly independent eigenvectors<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-5-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-eigen-3by3-5-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-eigen-3by3-5-3-1-2">
+<div class="para" id="sect-eigen-3by3-5-3-1-2-1">2 real eigenvalues, one with one correspoding eigenvector, the other with two corresponding eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-5-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-eigen-3by3-5-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-eigen-3by3-5-3-1-3">
+<div class="para" id="sect-eigen-3by3-5-3-1-3-1">1 real eigenvalue, 3 linearly indpendent eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-5-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-eigen-3by3-5-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-eigen-3by3-5-3-1-4">
+<div class="para" id="sect-eigen-3by3-5-3-1-4-1">1 real eigenvalue with corresponding real eigenvector and 2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-5-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-eigen-3by3-5-3-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-eigen-3by3-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 4.1.12: Eigenvalue/Eigenvectors of a 3\times 3 real matrix"><a href="#sect-eigen-3by3-5" title="Copy heading and permalink for Note 4.1.12: Eigenvalue/Eigenvectors of a 3\times 3 real matrix" aria-label="Copy heading and permalink for Note 4.1.12: Eigenvalue/Eigenvectors of a 3\times 3 real matrix">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.1.2: Eigenvalues and Eigenvectors of 3 \times 3 matrices"><a href="#sect-eigen-3by3" title="Copy heading and permalink for Subsection 4.1.2: Eigenvalues and Eigenvectors of 3 \times 3 matrices" aria-label="Copy heading and permalink for Subsection 4.1.2: Eigenvalues and Eigenvectors of 3 \times 3 matrices">🔗</a></div></section><div class="autopermalink" data-description="Section 4.1: Eigenvalues and Eigenvectors"><a href="#sect-eigenvalues" title="Copy heading and permalink for Section 4.1: Eigenvalues and Eigenvectors" aria-label="Copy heading and permalink for Section 4.1: Eigenvalues and Eigenvectors">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-eigenvalues-eigenvectors.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-linear-maps-eigen.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

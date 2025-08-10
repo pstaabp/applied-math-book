@@ -6,14 +6,19 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Solution to the 1D Heat Equation</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Applied Mathematics">
-<meta property="book:author" content="Peter Staab">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -57,7 +62,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
+      "pretext": "_static/pretext/js/lib"
     }
   },
   "startup": {
@@ -69,33 +74,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Applied Mathematics">
+<meta property="book:author" content="Peter Staab">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.6';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
-<body id="applied-math-staab" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="applied-mathematics-staab.html"><span class="title">Applied Mathematics</span></a></h1>
 <p class="byline">Peter Staab</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -106,7 +129,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-pde-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-pde.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-2d-heat-eqn.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-pde-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-pde.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-2d-heat-eqn.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -114,7 +138,7 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Linear Systems</span></a></div>
@@ -342,9 +366,9 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">5.2.2</span> <span class="title">LU fatorization and elementary matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-5" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -370,27 +394,30 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Properties of Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-3" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Odd and Even Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-fourier-series-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-fourier-series-5.html#ch-fourier-series-5-3" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-fourier-series-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-fourier-series-6.html#ch-fourier-series-6-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -424,10 +451,10 @@ window.MathJax = {
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-pde-9.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-9.html#ch-pde-9-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-9.html#ch-pde-9-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -444,40 +471,61 @@ window.MathJax = {
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-1d-heat-eqn"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.5</span><span class="space"> </span><span class="title">Solution to the 1D Heat Equation</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solution to the 1D Heat Equation</span>
 </h2>
-<div class="para" id="sect-1d-heat-eqn-2">In this section we will investigate solving the 1D heat equation</div>
-<div class="para logical" id="sect-1d-heat-eqn-3"><div class="displaymath process-math">
+<div class="para" id="sect-1d-heat-eqn-2">In this section we will investigate solving the 1D heat equation<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-3">
+<div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{\kappa} \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial {x}^2}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-4">with boundary conditions:</div>
-<div class="para logical" id="sect-1d-heat-eqn-5"><div class="displaymath process-math" id="sect-1d-heat-eqn-5-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-4">with boundary conditions:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-5">
+<div class="displaymath process-math" id="sect-1d-heat-eqn-5-1">
 \begin{align*}
 \frac{\partial u}{\partial x} \biggr\vert_{x=0} \amp = 0 \amp  \frac{\partial u}{\partial x} \biggr\vert_{x=L} \amp = 0 
 \end{align*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-6">indicating that the end are insulated and the initial condition is:</div>
-<div class="para logical" id="sect-1d-heat-eqn-7"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-6">indicating that the end are insulated and the initial condition is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-7">
+<div class="displaymath process-math">
 \begin{equation*}
 u(x,0) = f(x),\quad  \text{if $0 &lt; x &lt; L$ }
 \end{equation*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-8">As with the wave equation, we use the technique of separation of variables. That is let <span class="process-math">\(u=X(x)T(t)\)</span> to get:</div>
-<div class="para logical" id="sect-1d-heat-eqn-9"><div class="displaymath process-math" id="sect-1d-heat-eqn-9-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-8">As with the wave equation, we use the technique of separation of variables. That is let <span class="process-math">\(u=X(x)T(t)\)</span> to get:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-9">
+<div class="displaymath process-math" id="sect-1d-heat-eqn-9-1">
 \begin{align*}
 \frac{1}{\kappa} T' X \amp = T X'' \amp\amp \text{divide through by $XT$} \\
 \frac{1}{\kappa} \frac{T'}{T} \amp = \frac{X''}{X} 
 \end{align*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-10">since the left side only depends on <span class="process-math">\(t\)</span> and the right side only depends on <span class="process-math">\(X\text{,}\)</span> it must be that these must both equal only a constant, (call it <span class="process-math">\(-\lambda\)</span>) therefore we get the two equations:</div>
-<div class="para logical" id="sect-1d-heat-eqn-11"><div class="displaymath process-math" id="sect-1d-heat-eqn-11-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-10">since the left side only depends on <span class="process-math">\(t\)</span> and the right side only depends on <span class="process-math">\(X\text{,}\)</span> it must be that these must both equal only a constant, (call it <span class="process-math">\(-\lambda\)</span>) therefore we get the two equations:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-11">
+<div class="displaymath process-math" id="sect-1d-heat-eqn-11-1">
 \begin{align*}
 \frac{1}{\kappa} \frac{T'}{T} \amp = -\lambda \amp \frac{X''}{X} = -\lambda 
 \end{align*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-12">or</div>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-12">or<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sect-1d-heat-eqn-13">
 <div class="displaymath process-math" id="sect-1d-heat-eqn-13-1">
 \begin{align*}
@@ -485,73 +533,115 @@ T' + \kappa \lambda T \amp = 0 \amp X'' + \lambda X \amp = 0
 \end{align*}
 </div>
 <div class="para">The boundary conditions for the second equation becomes:</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-1d-heat-eqn-14"><div class="displaymath process-math">
+<div class="para logical" id="sect-1d-heat-eqn-14">
+<div class="displaymath process-math">
 \begin{equation*}
 X'(0)=X'(L)=0
 \end{equation*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-15">This is a Sturm-Liouville problem that we saw in  <a href="" class="xref" data-knowl="./knowl/xref/ex-sturm-liouville-2.html" title="Example 7.4.5">Example 7.4.5</a> which has the solution:</div>
-<div class="para logical" id="sect-1d-heat-eqn-16"><div class="displaymath process-math" id="sect-1d-heat-eqn-16-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-15">This is a Sturm-Liouville problem that we saw in  <a href="ch-pde-6.html#ex-sturm-liouville-2" class="xref" data-knowl="./knowl/xref/ex-sturm-liouville-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.4.5">Example 7.4.5</a> which has the solution:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-16">
+<div class="displaymath process-math" id="sect-1d-heat-eqn-16-1">
 \begin{align*}
 \lambda_n \amp = \frac{n^2 \pi^2}{L^2} \quad \text{$n=0,1,2,\ldots$}  \\
 X_n (x) \amp = \cos \frac{n \pi x}{L}
 \end{align*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-17">if <span class="process-math">\(n &gt; 1\)</span> and <span class="process-math">\(\lambda_n=0\)</span> and <span class="process-math">\(X_n = 1\)</span> is also a solution. The solution to <span class="process-math">\(T'+\kappa \lambda T = 0\)</span> can be found by letting <span class="process-math">\(T= e^{at}\)</span> and substituting in</div>
-<div class="para logical" id="sect-1d-heat-eqn-18"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-17">if <span class="process-math">\(n &gt; 1\)</span> and <span class="process-math">\(\lambda_n=0\)</span> and <span class="process-math">\(X_n = 1\)</span> is also a solution. The solution to <span class="process-math">\(T'+\kappa \lambda T = 0\)</span> can be found by letting <span class="process-math">\(T= e^{at}\)</span> and substituting in<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-18">
+<div class="displaymath process-math">
 \begin{equation*}
 a e^{at} + \kappa \lambda e^{at} = e^{at}(a + \kappa \lambda) = 0
 \end{equation*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-19">or</div>
-<div class="para logical" id="sect-1d-heat-eqn-20"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-19">or<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-20">
+<div class="displaymath process-math">
 \begin{equation*}
 a = - \kappa \lambda
 \end{equation*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-21">therefore the solution is</div>
-<div class="para logical" id="sect-1d-heat-eqn-22"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-21">therefore the solution is<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-22">
+<div class="displaymath process-math">
 \begin{equation*}
 T_n = e^{-\kappa \lambda t} = e^{-(\kappa/L^2) n^2 \pi^2 t}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-23">A solution <span class="process-math">\(u_n(x,t)\)</span> to the equation is</div>
-<div class="para logical" id="sect-1d-heat-eqn-24"><div class="displaymath process-math" id="sect-1d-heat-eqn-24-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-23">A solution <span class="process-math">\(u_n(x,t)\)</span> to the equation is<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-24">
+<div class="displaymath process-math" id="sect-1d-heat-eqn-24-1">
 \begin{align*}
 u_n(x,t) \amp = X_n(x,t) T_n(x,t) \\
 \amp = e^{-(\kappa/L^2) n^2 \pi^2 t} \cos \frac{n \pi x}{L}
 \end{align*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-25">and using the principle of superposition the general solution to the PDE with given boundary conditions is:</div>
-<div class="para logical" id="sect-1d-heat-eqn-26"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-25">and using the principle of superposition the general solution to the PDE with given boundary conditions is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-26">
+<div class="displaymath process-math">
 \begin{equation*}
 u  = \sum_{n=0}^{\infty} C_n e^{-(\kappa/L^2) n^2 \pi^2 t} \cos \frac{n \pi x}{L}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-27">Next, the initial condition is:</div>
-<div class="para logical" id="sect-1d-heat-eqn-28"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-27">Next, the initial condition is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-28">
+<div class="displaymath process-math">
 \begin{equation*}
 u(x,0) = f(x) = \sum_{n=0}^{\infty} C_n \cos \frac{n \pi x}{L}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-1d-heat-eqn-29">and the coefficients can be found by the Sturm-Liouville theorem to get:</div>
-<div class="para logical" id="sect-1d-heat-eqn-30"><div class="displaymath process-math" id="sect-1d-heat-eqn-30-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-29">and the coefficients can be found by the Sturm-Liouville theorem to get:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-30">
+<div class="displaymath process-math" id="sect-1d-heat-eqn-30-1">
 \begin{align*}
 C_0 \amp = \frac{1}{L} \int_0^L f(x) \, dx \\
 C_n \amp = \frac{2}{L} \int_0^L f(x) \cos \frac{ n \pi x}{L} \, dx 
 \end{align*}
-</div></div>
-<details id="sect-1d-heat-eqn-31" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.5.1</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-1d-heat-eqn-31-1-1">Find the solution to the heat equation given above if the initial condition is:</div> <div class="para logical" id="sect-1d-heat-eqn-31-1-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sect-1d-heat-eqn-31" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-1d-heat-eqn-31-1-1">Find the solution to the heat equation given above if the initial condition is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-31-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-1d-heat-eqn-31-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 f(x) = 1+\cos \frac{2\pi x}{L}
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="sect-1d-heat-eqn-31-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-1d-heat-eqn-31-2-1">In this case, we need to find <span class="process-math">\(C_0\)</span> and <span class="process-math">\(C_n\text{:}\)</span>
-</div> <div class="para logical" id="sect-1d-heat-eqn-31-2-2"><div class="displaymath process-math" id="sect-1d-heat-eqn-31-2-2-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-31-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-1d-heat-eqn-31-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-1d-heat-eqn-31-2-1">In this case, we need to find <span class="process-math">\(C_0\)</span> and <span class="process-math">\(C_n\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-31-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-31-2-2">
+<div class="displaymath process-math" id="sect-1d-heat-eqn-31-2-2-1">
 \begin{align*}
 C_0 \amp = \frac{1}{L} \int_0^L (1+ \cos \frac{2\pi x}{L}) \, dx  = 1 \\
 C_n\amp = \frac{2}{L} \int_0^L \cos \frac{2\pi x}{L} \cos \frac{n \pi x}{L} \, dx \\
@@ -560,20 +650,33 @@ C_n\amp = \frac{2}{L} \int_0^L \cos \frac{2\pi x}{L} \cos \frac{n \pi x}{L} \, d
 0 \amp \text{otherwise}
 \end{cases} 
 \end{align*}
-</div></div> <div class="para" id="sect-1d-heat-eqn-31-2-3">So the solution to the PDE is:</div> <div class="para logical" id="sect-1d-heat-eqn-31-2-4"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-31-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-31-2-3">So the solution to the PDE is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-31-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-1d-heat-eqn-31-2-4">
+<div class="displaymath process-math">
 \begin{equation*}
 u(x,t) = 1 + e^{-(\kappa/L^2) 4 \pi^2 t } \cos \frac{2\pi x}{L}
 \end{equation*}
-</div></div> <div class="para" id="sect-1d-heat-eqn-31-2-5">To get a feeling for the solution, the following is a plot when <span class="process-math">\(\kappa=0.001\text{,}\)</span> <span class="process-math">\(L=1\)</span> for <span class="process-math">\(t=0,5,10,15\text{.}\)</span>
-</div> <figure class="figure figure-like" id="fig-heat-eqn-soln"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/plot-heat-eqn-soln.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.5.2<span class="period">.</span></span><span class="space"> </span>A bar</figcaption></figure> <div class="para" id="sect-1d-heat-eqn-31-2-7">The plot shows the temperature distribution for the initial case <span class="process-math">\(t=0\)</span> and subsequent times. The temperature evens out as time increases and in the limit the temperature would be 1 throughout, which is the average initial temperature.</div>
-</div></details></div></article></details></section></div>
-<div class="ptx-content-footer">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-31-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-1d-heat-eqn-31-2-5">To get a feeling for the solution, the following is a plot when <span class="process-math">\(\kappa=0.001\text{,}\)</span> <span class="process-math">\(L=1\)</span> for <span class="process-math">\(t=0,5,10,15\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-31-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-heat-eqn-soln"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/plot-heat-eqn-soln.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A bar<div class="autopermalink" data-description="Figure 7.5.2"><a href="#fig-heat-eqn-soln" title="Copy heading and permalink for Figure 7.5.2" aria-label="Copy heading and permalink for Figure 7.5.2">🔗</a></div></figcaption></figure><div class="para" id="sect-1d-heat-eqn-31-2-7">The plot shows the temperature distribution for the initial case <span class="process-math">\(t=0\)</span> and subsequent times. The temperature evens out as time increases and in the limit the temperature would be 1 throughout, which is the average initial temperature.<div class="autopermalink" data-description="Paragraph"><a href="#sect-1d-heat-eqn-31-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 7.5.1.1"><a href="#sect-1d-heat-eqn-31-2" title="Copy heading and permalink for Solution 7.5.1.1" aria-label="Copy heading and permalink for Solution 7.5.1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 7.5.1"><a href="#sect-1d-heat-eqn-31" title="Copy heading and permalink for Example 7.5.1" aria-label="Copy heading and permalink for Example 7.5.1">🔗</a></div></article></details><div class="autopermalink" data-description="Section 7.5: Solution to the 1D Heat Equation"><a href="#sect-1d-heat-eqn" title="Copy heading and permalink for Section 7.5: Solution to the 1D Heat Equation" aria-label="Copy heading and permalink for Section 7.5: Solution to the 1D Heat Equation">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-pde-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-2d-heat-eqn.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

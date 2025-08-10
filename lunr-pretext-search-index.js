@@ -1,15 +1,6 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "frontmatter-2",
-  "level": "1",
-  "url": "frontmatter-2.html",
-  "type": "Colophon",
-  "number": "",
-  "title": "Colophon",
-  "body": "  My Website   copyright  "
-},
-{
   "id": "sect-linear-systems",
   "level": "1",
   "url": "sect-linear-systems.html",
@@ -511,7 +502,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "General <span class=\"process-math\">\\(=\\)<\/span> Homogeneous <span class=\"process-math\">\\(+\\)<\/span> Nonhomogeneous",
-  "body": " General Homogeneous Nonhomogeneous   If we return to the solution set in in the previous section: where the third vector is a particular solution and the other two vectors are multiplied by free variables (parameters). This form will give us a lot of information about the solution set.   The solution to a linear system can be described as where is any particular solution and the number of vectors equals the number of free variables that the system has after Gaussian reduction (and in echelon form).     A linear equation is homogeneous if the constant term (on the right hand side) is 0. A linear system is homogeneous if all constant terms are 0.    The next two examples show the possible results of a homogeneous system.    Find the solution to the linear system:     Using the row operation, , we get and from back substitution, we get the solution and note that this is a unique solution.      Find the solution to the homogeneous linear system from .       In , we wrote down the solution In vector form the solution is In this case, the solution set has an infinite number of points.      For any homogeneous linear system there exist vectors such that the solution set of the system is     First, use Gauss' method to reduce the linear system to echelon form.  Let row be the bottom-most row that is not in the form , it will have the form: and since is a leading variable . (Note: means leading, so means the column (variable \\#) of the leading variable in the th row.) Solving for :   This equation shows how to write in terms of the free variables to the right of column . There may or may not be free variables. If there are not then it says that .  Next, in the induction proof, assume that some row , can be written , then row of the linear system in echelon form is: with and thus solve for by subtracting all other terms and dividing through by . Thus is written as a linear combination of all variables to the right. For each leading variable on the right, replace it with its solution from back-substitution. Thus can be written as Inductively, each leading variable can be written in this form. The in the statement of the lemma are the free variables and the vectors are coefficients of the free variable corresponding to in each .      Non-homogeneous Systems   Homogeneous and Nonhomogeneous Systems   If a system is not homogeneous, it is called non-homogeneous . For a non-homogeneous system, there is an associated homogeneous system found by replacing the right hand side with zeros.     Solving a nonhomogeneous systems   Solve and it's associated homogenous system.    First, we write the augmented coefficient matrix   and then we put this matrix in row-reduced echelon form.     Let since it is a free variable and thus the solution can be written:     so the solution can be written in vector form as     and recall that is a particular solution.  The associated homogeneous system is     and the solution can be found by first writing the augmented coefficient matrix     and then we put this matrix in row-reduced echelon form.     which has the solution, using      which can be written in vector form as       The above example indicates that a solution to non-homogeneous system consists of a particular solution and the solution to the associated homogeneous system.    For any linear system with a particular solution , the solution set is     To prove this, we will first show that any solution of the non-homogeneous linear system, then satisfies the associated homogeneous system, then show that if is a solution to the associated homogeneous system, then satisfies the non-homogeneous system.     Assume that satisfies , that is     then satisfies     the associated homogeneous system.    Next assume that satisfies . Then we show that satisfies:     satisfies .       As a summary of this section, the title     and if we can find any particular solution and add it to the homogeneous solution, then we have the full solution.   Summary of Solutions      number of solutions of the      associated homogeneous system    particular   one  infinitely many    solution  yes  unique solution  infinitely many solutions    exists?  no  no solutions  no solutions       Solving homogeneous Linear Systems  A homogeneous linear system can be solved in a reasonably efficient manner. Consider the system:     and if we write down the augmented coefficient matrix we get:     If we perform row operations on this matrix, then the 4th column (right hand side of the linear system), will remain zero, so instead of including this vector, we'll perform row operations only on the first three columns:     which is now in echelon form. To find the solution, we will write down the top two equations, recalling that the right hand side is 0.     solving the second equation for results in     and then substitute this into the first equation:     and writing the solution in vector form is       Singular and Nonsingular Matrices  In , we will formally define a square matrix, but in short a matrix is square if the number of rows equals the number of columns.    A square matrix is nonsingular if it is a matrix of coefficients of a homogeneous linear system with the unique solution . Otherwise it is singular , that is the associated homogeneous system has a solution set with an infinite number of points.      The associated linear system in Example has an infinite number of solutions, therefore the matrix     is singular.  The linear system     was shown above to have a unique solution, thus the associated homogeneous system also has a unique solution which implies that the matrix     is nonsingular.      Is the matrix     singular or nonsingular?    We can consider the elements of the matrix to be the coefficients of a homogeneous linear system and find its solution. Thus we reduce     which is now in echelon form. Note that there is a free variable, so this system would have an infinite number of solutions. Therefore, the original matrix is singular .     "
+  "body": " General Homogeneous Nonhomogeneous   If we return to the solution set in in the previous section: where the third vector is a particular solution and the other two vectors are multiplied by free variables (parameters). This form will give us a lot of information about the solution set.   The solution to a linear system can be described as where is any particular solution and the number of vectors equals the number of free variables that the system has after Gaussian reduction (and in echelon form).     A linear equation is homogeneous if the constant term (on the right hand side) is 0. A linear system is homogeneous if all constant terms are 0.    The next two examples show the possible results of a homogeneous system.    Find the solution to the linear system:     Using the row operation, , we get and from back substitution, we get the solution and note that this is a unique solution.      Find the solution to the homogeneous linear system from .       In , we wrote down the solution In vector form the solution is In this case, the solution set has an infinite number of points.      For any homogeneous linear system there exist vectors such that the solution set of the system is     First, use Gauss' method to reduce the linear system to echelon form.  Let row be the bottom-most row that is not in the form , it will have the form: and since is a leading variable . (Note: means leading, so means the column (variable \\#) of the leading variable in the th row.) Solving for :   This equation shows how to write in terms of the free variables to the right of column . There may or may not be free variables. If there are not then it says that .  Next, in the induction proof, assume that some row , can be written , then row of the linear system in echelon form is: with and thus solve for by subtracting all other terms and dividing through by . Thus is written as a linear combination of all variables to the right. For each leading variable on the right, replace it with its solution from back-substitution. Thus can be written as Inductively, each leading variable can be written in this form. The in the statement of the lemma are the free variables and the vectors are coefficients of the free variable corresponding to in each .      Non-homogeneous Systems   Homogeneous and Nonhomogeneous Systems   If a system is not homogeneous, it is called non-homogeneous . For a non-homogeneous system, there is an associated homogeneous system found by replacing the right hand side with zeros.     Solving a nonhomogeneous systems   Solve and it's associated homogenous system.    First, we write the augmented coefficient matrix   and then we put this matrix in row-reduced echelon form.     Let since it is a free variable and thus the solution can be written:     so the solution can be written in vector form as     and recall that is a particular solution.  The associated homogeneous system is     and the solution can be found by first writing the augmented coefficient matrix     and then we put this matrix in row-reduced echelon form.     which has the solution, using      which can be written in vector form as       The above example indicates that a solution to non-homogeneous system consists of a particular solution and the solution to the associated homogeneous system.    For any linear system with a particular solution , the solution set is     To prove this, we will first show that any solution of the non-homogeneous linear system, then satisfies the associated homogeneous system, then show that if is a solution to the associated homogeneous system, then satisfies the non-homogeneous system.     Assume that satisfies , that is     then satisfies     the associated homogeneous system.    Next assume that satisfies . Then we show that satisfies:     satisfies .       As a summary of this section, the title     and if we can find any particular solution and add it to the homogeneous solution, then we have the full solution.   Summary of Solutions      number of solutions of the      associated homogeneous system    particular   one  infinitely many    solution  yes  unique solution  infinitely many solutions    exists?  no  no solutions  no solutions       Solving homogeneous Linear Systems  A homogeneous linear system can be solved in a reasonably efficient manner. Consider the system:     and if we write down the augmented coefficient matrix we get:     If we perform row operations on this matrix, then the 4th column (right hand side of the linear system), will remain zero, so instead of including this vector, we'll perform row operations only on the first three columns:     which is now in echelon form. To find the solution, we will write down the top two equations, recalling that the right hand side is 0.     solving the second equation for results in     and then substitute this into the first equation:     and writing the solution in vector form is       Singular and Nonsingular Matrices  In , we will formally define a square matrix, but in short a matrix is square if the number of rows equals the number of columns.    A square matrix is nonsingular if it is a matrix of coefficients of a homogeneous linear system with the unique solution . Otherwise it is singular , that is the associated homogeneous system has a solution set with an infinite number of points.      The associated linear system in has an infinite number of solutions, therefore the matrix     is singular.  The linear system     was shown above to have a unique solution, thus the associated homogeneous system also has a unique solution which implies that the matrix     is nonsingular.      Is the matrix     singular or nonsingular?    We can consider the elements of the matrix to be the coefficients of a homogeneous linear system and find its solution. Thus we reduce     which is now in echelon form. Note that there is a free variable, so this system would have an infinite number of solutions. Therefore, the original matrix is singular .     "
 },
 {
   "id": "sec-homo-non-homo-2-2",
@@ -619,7 +610,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.5.11",
   "title": "",
-  "body": "  The associated linear system in Example has an infinite number of solutions, therefore the matrix     is singular.  The linear system     was shown above to have a unique solution, thus the associated homogeneous system also has a unique solution which implies that the matrix     is nonsingular.   "
+  "body": "  The associated linear system in has an infinite number of solutions, therefore the matrix     is singular.  The linear system     was shown above to have a unique solution, thus the associated homogeneous system also has a unique solution which implies that the matrix     is nonsingular.   "
 },
 {
   "id": "sec-homo-non-homo-5-5",
@@ -1879,7 +1870,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Vector Spaces",
-  "body": " Vector Spaces     The definition of a vector space. This has 10 properties, most of them are familiar.    Examples of sets of \"vectors\" some of which are vectors and some of which are not.      A vector space as we will see is a set of vectors with a certain collection of properties. This notion arose from vectors of , however, we will see that they generalize.   Vector Space   Let be a nonempty set of elements with and . The set is called a real vector space and the elements of are called vectors if in there are defined two algebraic operations called vector addition and denoted and scalar multiplication and denoted that satisfy the following:     Vector Addition:  The operation satisfies:     (Closure): .    (Commutativity:)     (Associativity:)     (Identity Element:) There exist an element that satisfies: .    (Inverse Elements:) For every , there exists an element denoted such that .       Scalar Multiplication:  The real numbers and are called scalars . The operations and also satisfy:     (Closure:) .    (Distributivity:)     (Distributivity:)     (Associativity:)     (Identity): For every , .          We will show that the familiar sets and are vectors spaces. However, it is interesting that there are many other common sets of mathematical objects that are also vectors spaces.    Examples of Vector Spaces  Let's begin with the set of all vectors of length 2, which we typically write as .    Show that together with the standard notions of vector addition and scalar multiplication is a vector space.    Let     where and as well as vector addition and scalar multiplication as     We now show that all 10 properties of a vector space hold:      Additive Closure: Since are elements of , the closure by addition holds.     Additive Commutativity: For all ,      Additive Associativity:       Additive Identity Element: The zero element is and it satisfies,      Additive Inverse Element: The inverse element is given as and the following satisfies:      Multiplicative Closure: For , which is in , so scalar multiplication is closed.     Distributivity over vectors: Let and      Distributivity over scalars: Let and be elements of .      Scalar Multiplicative Associativity: Let and be elements of .      Multiplicative Identity element:         The next example shows that quadratic functions also satisfy these properties, hence the set of all polynomials of degree 2 form a vector space.    Show than the set, , is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     with   Vector addition is simply polynomial addition for example:     and scalar addition is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The following are also vector spaces. There are not proofs associated with these.      , the set of polynomials of degree .    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of all matrices, with standard definition of matrix addition and scalar multiplication.     In the next example, we will also show some other interesting sets are vector spaces. To save a bunch of time and effort, in some cases, we don't need to show all 10 properties. We can skip most of properties, if the set is a subset of a known vector space. The reason for this is that properties 2-5 and 7-10 will automatically hold because the vectors are already in a vector space. We will do this formally in the next section.    Show that all lines that pass through the origin, or the set     is a vector space.    First, let's rewrite the vector space as     because this is the same set of points, but it is written in terms of a vector, which makes things easier to show. As stated above, since is a subset of , we don't need to prove properties 2--5, 7--10, which hold because we already showed that these properties show. Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in .     Let . Therefore the two equations and are satisfied. Now check the sum,     and need to show that this is in . Since     then .    We need to show that , so that the vector satisfies the property that the line passes through the origin.     and since , then     therefore .     So this is a vector space.    The next example shows that polynomials (specifically quadratics) are vector spaces. Since we haven't shown anything about polynomials yet, we need to show all 10 properties of hold.    Show than the set, , the set of all polynomials of degree is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     Vector addition is simply polynomial addition for example:     and scalar addition is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The above example shows that there are examples of vectors and vector spaces that don't seem like vectors in . The following are also vector spaces:     The set .    The set of functions of a single variable.    The set of functions that satisfy .    Solutions of homogeneous differential equations, which is a generalization of functions that satisfy .     Note that above there are sets of functions that are vector spaces. Similar to the 2nd degree polynomials, the vector addition is given by and the scalar multiplication is .    Is every set a vector space?  In short, no. For example, consider the following: which is the first quadrant of the plane. To check if this is a vector space, we don't need to check all 10 properties. This is because since is a subset of , most of the properties (commutative, associative, distributive, for examples) will work just as they did in . The only two that we do need to check are the closure properties.     If , then and since are all nonnegative, then this vector is in .    Let , then but if then , so is not a vector space.       Is the set     a vector space? If not what properties does it violate?    This set is a circle of radius one centered at the origin. Again, like above, is a subset of and thus the properties to check are the closure properties.     If we let both be in , then Is this in . To check sum the squares of the individual elements. which is only 1 in special circumstances and not in general, so this is not a vector space.    The additive identity requires that the zero vector is an element of the vector space. However, since is not in , then this property is also not satisfied.    This property is also not satisfied for the same reason as #1. Geometrically if is in then is on a circle of radius , so won't be in in general.        We have an alternative way of looking at the circle that will be a vector space. We can still define the vectors to be on the unit circle, however, this time addition will be defined as the vector whose angle is the sum of the angles, where angle is defined from the positive -axis. Scalar multiplication will be the scalar multiplication of the angle. There are some other details that are needed to formalize this as a vector space.    "
+  "body": " Vector Spaces     The definition of a vector space. This has 10 properties, most of them are familiar.    Examples of sets of \"vectors\" some of which are vectors and some of which are not.      A vector space as we will see is a set of vectors with a certain collection of properties. This notion arose from vectors of , however, we will see that they generalize.   Vector Space   Let be a nonempty set of elements with and . The set is called a real vector space and the elements of are called vectors if in there are defined two algebraic operations called vector addition and denoted and scalar multiplication and denoted that satisfy the following:     Vector Addition:  The operation satisfies:     (Closure): .    (Commutativity:)     (Associativity:)     (Identity Element:) There exist an element that satisfies: .    (Inverse Elements:) For every , there exists an element denoted such that .       Scalar Multiplication:  The real numbers and are called scalars . The operations and also satisfy:     (Closure:) .    (Distributivity:)     (Distributivity:)     (Associativity:)     (Identity): For every , .          We will show that the familiar sets and are vectors spaces. However, it is interesting that there are many other common sets of mathematical objects that are also vectors spaces.    Examples of Vector Spaces  Let's begin with the set of all vectors of length 2, which we typically write as .    Show that together with the standard notions of vector addition and scalar multiplication is a vector space.    Let     where and as well as vector addition and scalar multiplication as     We now show that all 10 properties of a vector space hold:      Additive Closure: Since are elements of , the closure by addition holds.     Additive Commutativity: For all ,      Additive Associativity:       Additive Identity Element: The zero element is and it satisfies,      Additive Inverse Element: The inverse element is given as and the following satisfies:      Multiplicative Closure: For , which is in , so scalar multiplication is closed.     Distributivity over vectors: Let and      Distributivity over scalars: Let and be elements of .      Scalar Multiplicative Associativity: Let and be elements of .      Multiplicative Identity element:         The next example shows that quadratic functions also satisfy these properties, hence the set of all polynomials of degree 2 form a vector space.    Show than the set, , is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     with   Vector addition is simply polynomial addition for example:     and scalar multiplication is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The following are also vector spaces. There are not proofs associated with these.      , the set of polynomials of degree .    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of all matrices, with standard definition of matrix addition and scalar multiplication.     In the next example, we will also show some other interesting sets are vector spaces. To save a bunch of time and effort, in some cases, we don't need to show all 10 properties. We can skip most of properties, if the set is a subset of a known vector space. The reason for this is that properties 2-5 and 7-10 will automatically hold because the vectors are already in a vector space. We will do this formally in the next section.    Show that all lines that pass through the origin, or the set     is a vector space.    First, let's rewrite the vector space as     because this is the same set of points, but it is written in terms of a vector, which makes things easier to show. As stated above, since is a subset of , we don't need to prove properties 2--5, 7--10, which hold because we already showed that these properties show. Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in .     Let . Therefore the two equations and are satisfied. Now check the sum,     and need to show that this is in . Since     then .    We need to show that , so that the vector satisfies the property that the line passes through the origin.     and since , then     therefore .     So this is a vector space.    The next example shows that polynomials (specifically quadratics) are vector spaces. Since we haven't shown anything about polynomials yet, we need to show all 10 properties of hold.    Show than the set, , the set of all polynomials of degree is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     Vector addition is simply polynomial addition for example:     and scalar addition is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The above example shows that there are examples of vectors and vector spaces that don't seem like vectors in . The following are also vector spaces:     The set .    The set of functions of a single variable.    The set of functions that satisfy .    Solutions of homogeneous differential equations, which is a generalization of functions that satisfy .     Note that above there are sets of functions that are vector spaces. Similar to the 2nd degree polynomials, the vector addition is given by and the scalar multiplication is .    Is every set a vector space?  In short, no. For example, consider the following: which is the first quadrant of the plane. To check if this is a vector space, we don't need to check all 10 properties. This is because since is a subset of , most of the properties (commutative, associative, distributive, for examples) will work just as they did in . The only two that we do need to check are the closure properties.     If , then and since are all nonnegative, then this vector is in .    Let , then but if then , so is not a vector space.       Is the set     a vector space? If not what properties does it violate?    This set is a circle of radius one centered at the origin. Again, like above, is a subset of and thus the properties to check are the closure properties.     If we let both be in , then Is this in . To check sum the squares of the individual elements. which is only 1 in special circumstances and not in general, so this is not a vector space.    The additive identity requires that the zero vector is an element of the vector space. However, since is not in , then this property is also not satisfied.    This property is also not satisfied for the same reason as #1. Geometrically if is in then is on a circle of radius , so won't be in in general.        We have an alternative way of looking at the circle that will be a vector space. We can still define the vectors to be on the unit circle, however, this time addition will be defined as the vector whose angle is the sum of the angles, where angle is defined from the positive -axis. Scalar multiplication will be the scalar multiplication of the angle. There are some other details that are needed to formalize this as a vector space.    "
 },
 {
   "id": "sect-vector-spaces-2",
@@ -1915,7 +1906,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.1.3",
   "title": "",
-  "body": "  Show than the set, , is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     with   Vector addition is simply polynomial addition for example:     and scalar addition is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:        "
+  "body": "  Show than the set, , is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     with   Vector addition is simply polynomial addition for example:     and scalar multiplication is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:        "
 },
 {
   "id": "ex-lines-through-origin-vector-space",
@@ -2374,7 +2365,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "Linear Transformations",
-  "body": " Linear Transformations   This section discusses linear transformations. In short, such a transformation will map vectors to vectors in a linear way. The definition of a linear transformation (or linear map) is the following:   Linear Transformation   Let and be vector spaces. A linear transformation or linear map  from to is a function that assigns to each vector a unique vector and that satisfies for each and in and each scalar ,     These are also called homomorphisms and the notation explaining that a map goes from to is .   Reflection Map   The reflection of any vector in across the horizontal axis is a linear map. Specifically this is given as     and geometrically you can see this as:   Mapping a vector over the -axis      Show that this is a linear transformation.    Specifically, we need to show that defined above satisfies and . Let     and   , then     so is satisfied. Next,     so is satisfied.    A very important linear map in is the rotational map that takes any vector in the plane and rotates it a given angle. The next example, derives this map.   Rotational Map in   Let be a vector in . Let the function take the vector and rotate it by radians in the counterclockwise direction. Call the new vector    Diagram of the rotational map      Derive the formula for the rotational map.    Let and since is the rotated version of it has the same length, therefore . The values can be written in terms of , the angle that the vector makes with the positive horizontal axis, and the angle between the vectors as follows.     and note that these can be written:     This is a linear transformation (as we will explain later) and is called a rotational transformation .     Linear Scale Map   Consider the map that scales any vector in the plane by a factor of given by     which can be visualized in the following diagram where :   Scaling Map      where every vector under the map results in a new vector that is twice as long as the original. In general, the scale will scale the vector by a factor of and recall that if , then the direction changes. Show that this is a linear map.    Again, we show that and are satisfied. Let and be elements of .     so is satisfied and     so is satisfied so is a linear map.      If a transformation map is written as a matrix or , then is a linear transformation.    This is a consequence of matrix operations.     Note that the rotational transformation that was defined in is easily shown to be a linear transformation because from , any transformation shown as a matrix, is a linear transformation. The next theorem shows the counter direction to , that is that any linear transformation can be written as a matrix.    Let be a linear transformation. Then there exists a unique by matrix such that     We won't prove this here, but instead will motivate this below. In short, if is a linear transformation, then the matrix corresponding to the linear transformation is called the transformation matrix .    Finding the Matrix Form of a Linear Transformation  The theorem above shows that any linear transformation, can be written in matrix form. This section explains how to find it. Let be a basis of and be a basis of . Any vector in can be written or in other words . Applying the map to is and since it is a linear map Next, we write the transformation in terms of the basis vectors of or Substituting into results in and letting be the matrix with entries then or in other words, the matrix performs the map on the coefficients. Equation also shows how the matrix can be created from the linear map. That equation can also be thought of as a representation of the basis vectors or where is the th column of . The following summarizes how to find the matrix.   If is the matrix representation of the map , then the th column of is the vector , the map applied to the th basis vector of written in terms of the basis of .   We now show many examples on how to apply this.    The matrix representation of the reflection map from given by     where the representation will be in terms of the standard basis vectors.    In this case, we need to determine how the standard basis vectors map under the reflection. Thus     and     Because we are using the standard basis vectors, the representations of these vectors are themselves therefore,     and just to verify,       This next example shows how to contruct the transformation matrix for the scale map.    Find the matrix representation of the scale map in Example . \\solution We need to map the basis vectors and to determine the columns of the matrix representation.     so the matrix representation is       And the next example shows that a common matrix operation, the trace is a linear map.    Let      which is the trace of a 2 by 2 matrix. Show that the trace is a linear map and find the matrix representation of the trace.    First, to prove that the trace is a linear map, we need to show that it satisfies and . Let     Then     Similarly,     Next, we want to find the matrix representation of the trace. To do this, we need to determine how the map affects the basis of the vector space , which is     and since   The matrix representation is Note that it may be surprising that the matrix representation is just a row vector, however, recall that the trace maps from a matrix that can be represented as a column vector of length 4 to the reals, so the matrix representation should be a matrix.    To verify the above results, recall that from Example that the representation of a matrix is the unfolded matrix or in the case, that where is the natural basis of . So the matrix trace can be written as    "
+  "body": " Linear Transformations   This section discusses linear transformations. In short, such a transformation will map vectors to vectors in a linear way. The definition of a linear transformation (or linear map) is the following:   Linear Transformation   Let and be vector spaces. A linear transformation or linear map  from to is a function that assigns to each vector a unique vector and that satisfies for each and in and each scalar ,     These are also called homomorphisms and the notation explaining that a map goes from to is .   Reflection Map   The reflection of any vector in across the horizontal axis is a linear map. Specifically this is given as     and geometrically you can see this as:   Mapping a vector over the -axis      Show that this is a linear transformation.    Specifically, we need to show that defined above satisfies and . Let     and   , then     so is satisfied. Next,     so is satisfied.    A very important linear map in is the rotational map that takes any vector in the plane and rotates it a given angle. The next example, derives this map.   Rotational Map in   Let be a vector in . Let the function take the vector and rotate it by radians in the counterclockwise direction. Call the new vector    Diagram of the rotational map      Derive the formula for the rotational map.    Let and since is the rotated version of it has the same length, therefore . The values can be written in terms of , the angle that the vector makes with the positive horizontal axis, and the angle between the vectors as follows.     and note that these can be written:     This is a linear transformation (as we will explain later) and is called a rotational transformation .     Linear Scale Map   Consider the map that scales any vector in the plane by a factor of given by     which can be visualized in the following diagram where :   Scaling Map      where every vector under the map results in a new vector that is twice as long as the original. In general, the scale will scale the vector by a factor of and recall that if , then the direction changes. Show that this is a linear map.    Again, we show that and are satisfied. Let and be elements of .     so is satisfied and     so is satisfied so is a linear map.      If a transformation map is written as a matrix or , then is a linear transformation.    This is a consequence of matrix operations.     Note that the rotational transformation that was defined in is easily shown to be a linear transformation because from , any transformation shown as a matrix, is a linear transformation. The next theorem shows the counter direction to , that is that any linear transformation can be written as a matrix.    Let be a linear transformation. Then there exists a unique by matrix such that     We won't prove this here, but instead will motivate this below. In short, if is a linear transformation, then the matrix corresponding to the linear transformation is called the transformation matrix .    Finding the Matrix Form of a Linear Transformation  The theorem above shows that any linear transformation, can be written in matrix form. This section explains how to find it. Let be a basis of and be a basis of . Any vector in can be written or in other words . Applying the map to is and since it is a linear map Next, we write the transformation in terms of the basis vectors of or Substituting into results in and letting be the matrix with entries then or in other words, the matrix performs the map on the coefficients. Equation also shows how the matrix can be created from the linear map. That equation can also be thought of as a representation of the basis vectors or where is the th column of . The following summarizes how to find the matrix.   If is the matrix representation of the map , then the th column of is the vector , the map applied to the th basis vector of written in terms of the basis of .   We now show many examples on how to apply this.    The matrix representation of the reflection map from given by     where the representation will be in terms of the standard basis vectors.    In this case, we need to determine how the standard basis vectors map under the reflection. Thus     and     Because we are using the standard basis vectors, the representations of these vectors are themselves therefore,     and just to verify,       This next example shows how to contruct the transformation matrix for the scale map.    Find the matrix representation of the scale map in .    We need to map the basis vectors and to determine the columns of the matrix representation.     so the matrix representation is       And the next example shows that a common matrix operation, the trace is a linear map.    Let      which is the trace of a 2 by 2 matrix. Show that the trace is a linear map and find the matrix representation of the trace.    First, to prove that the trace is a linear map, we need to show that it satisfies and . Let     Then     Similarly,     Next, we want to find the matrix representation of the trace. To do this, we need to determine how the map affects the basis of the vector space , which is     and since   The matrix representation is Note that it may be surprising that the matrix representation is just a row vector, however, recall that the trace maps from a matrix that can be represented as a column vector of length 4 to the reals, so the matrix representation should be a matrix.    To verify the above results, recall that from that the representation of a matrix is the unfolded matrix or in the case, that where is the natural basis of . So the matrix trace can be written as    "
 },
 {
   "id": "def-linear-trans",
@@ -2473,7 +2464,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.4.12",
   "title": "",
-  "body": "  Find the matrix representation of the scale map in Example . \\solution We need to map the basis vectors and to determine the columns of the matrix representation.     so the matrix representation is      "
+  "body": "  Find the matrix representation of the scale map in .    We need to map the basis vectors and to determine the columns of the matrix representation.     so the matrix representation is      "
 },
 {
   "id": "sect-linear-transformations-3-9",
@@ -2725,7 +2716,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "Eigenvalues and Eigenvectors of Linear Transformations",
-  "body": " Eigenvalues and Eigenvectors of Linear Transformations     The definition of the eigenvalues and eigenvector of a linear transformation.    Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.    Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the transformation.     Recall that in section that the eigenvalues and eigenvectors of a square matrix was found. We will examine how we can find eigenvalues and eigenvectors of a linear map. The definition of these are extensions of what we saw for matrices.    Let be a linear map and be a finite dimensional vector space. The nonzero vector is an eigenvector with associated eigenvalue if       There are a few ways to find and . In this section, we'll only see some examples that are relatively simple to see as well as finding the matrix representation of the map. In addition, this section only shows examples from finite dimensional vector spaces, however, in general, there is no restriction.  For the remainder of this chapter we will see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and derivative maps. We first see an example of scaling a vector in .    Find the eigenvalues and eigenvectors of the scale map from .    Recall that the scale map is given by     To find the eigenvalues and eigenvectors of , we seek an and a such that     but since , then and any is an eigenvector.  Alternatively, we can write down the matrix associated with the map. This was done in and is     The eigenvalues and eigenvectors of this was found in for a particular , but generalizing that, one can see that will be the only eigenvector of with eigenvectors and .  In this case, since there are two eigenvectors associated with , any linear combination of the two eigenvectors is also an eigenvector, and since and span , any vector in is an eigenvector.    The next example shows the eigenvalues of the linear map associated with a derivative.    The set     is a subspace of all functions on . A basis for this subspace is . In addition, the differential operation is a linear transformation. What are the eigenvalues and eigenvectors of ?    There are two ways of looking at this. Since , this means that is an eigenvector with corresponding eigenvalue 1. Similarly, since , this also means that is an eigenvector with eigenvalue .  Alternatively, this can be done by first finding the matrix representation of the differential operator or     Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or and . One can also find that the corresponding eigenvectors are     These two vectors can be translated back to the functional forms and , the same as we found above. These two functions which are in are functions that stay the same in the subspace up to a scalar constant.      Consider the differential map which maps cubic polynomials to other cubic polynomials.     Find the eigenvalues of this matrix and interpret.    First, we find     and setting it to zero, thus is the only eigenvalue. To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:     and the solution to the null space is     This vector is the representation of the cubic polynomial , a constant. Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.    This last example of this involves matrices and the rotation of a matrix.    Find the eigenvalues and eigenvectors of the linear map that rotates a 2 by 2 matrix 90 clockwise. That is such that       One can show that if we consider the vector representation in the basis:     that     and the map can be represented by the matrix as     We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are     To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, is the matrix     and if that matrix is rotated, you get it back and the eigenvector is 1. The second eigenvector can be written as the matrix     and if you rotate this matrix, you get the matrix     which is the above matrix multiplied by the eigenvalue . In other words:     The other two work in a similar manner, however complex numbers are needed.    "
+  "body": " Eigenvalues and Eigenvectors of Linear Transformations     The definition of the eigenvalues and eigenvector of a linear transformation.    Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.    Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the transformation.     Recall that in section that the eigenvalues and eigenvectors of a square matrix was found. We will examine how we can find eigenvalues and eigenvectors of a linear map. The definition of these are extensions of what we saw for matrices.    Let be a linear map and be a finite dimensional vector space. The nonzero vector is an eigenvector with associated eigenvalue if       There are a few ways to find and . In this section, we'll only see some examples that are relatively simple to see as well as finding the matrix representation of the map. In addition, this section only shows examples from finite dimensional vector spaces, however, in general, there is no restriction.  For the remainder of this chapter we will see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and derivative maps. We first see an example of scaling a vector in .    Find the eigenvalues and eigenvectors of the scale map from .    Recall that the scale map is given by     To find the eigenvalues and eigenvectors of , we seek an and a such that     but since , then and any is an eigenvector.  Alternatively, we can write down the matrix associated with the map. This was done in and is     The eigenvalues and eigenvectors of this was found in for a particular , but generalizing that, one can see that will be the only eigenvector of with eigenvectors and .  In this case, since there are two eigenvectors associated with , any linear combination of the two eigenvectors is also an eigenvector, and since and span , any vector in is an eigenvector.    The next example shows the eigenvalues of the linear map associated with a derivative.    The set     is a subspace of all functions on . A basis for this subspace is . In addition, the differential operation is a linear transformation. What are the eigenvalues and eigenvectors of ?    There are two ways of looking at this. Since , this means that is an eigenvector with corresponding eigenvalue 1. Similarly, since , this also means that is an eigenvector with eigenvalue .  Alternatively, this can be done by first finding the matrix representation of the differential operator or     Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or and . One can also find that the corresponding eigenvectors are     These two vectors can be translated back to the functional forms and , the same as we found above. These two functions which are in are functions that stay the same in the subspace up to a scalar constant.      Consider the differential map which maps cubic polynomials to other cubic polynomials.     Find the eigenvalues of this matrix and interpret.    First, we find     and setting it to zero, thus is the only eigenvalue. To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:     and the solution to the null space is     This vector is the representation of the cubic polynomial , a constant. Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.    This last example of this involves matrices and the rotation of a matrix.    Find the eigenvalues and eigenvectors of the linear map that rotates a 2 by 2 matrix 90 clockwise. That is such that       One can show that if we consider the vector representation in the basis:     that     and the map can be represented by the matrix as     We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are     To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, is the matrix     and if that matrix is rotated, you get it back and the eigenvalue is 1. The second eigenvector can be written as the matrix     and if you rotate this matrix, you get the matrix     which is the above matrix multiplied by the eigenvalue . In other words:     The other two work in a similar manner, however complex numbers are needed.    "
 },
 {
   "id": "sect-linear-maps-eigen-2",
@@ -2779,7 +2770,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.5",
   "title": "",
-  "body": "  Find the eigenvalues and eigenvectors of the linear map that rotates a 2 by 2 matrix 90 clockwise. That is such that       One can show that if we consider the vector representation in the basis:     that     and the map can be represented by the matrix as     We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are     To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, is the matrix     and if that matrix is rotated, you get it back and the eigenvector is 1. The second eigenvector can be written as the matrix     and if you rotate this matrix, you get the matrix     which is the above matrix multiplied by the eigenvalue . In other words:     The other two work in a similar manner, however complex numbers are needed.   "
+  "body": "  Find the eigenvalues and eigenvectors of the linear map that rotates a 2 by 2 matrix 90 clockwise. That is such that       One can show that if we consider the vector representation in the basis:     that     and the map can be represented by the matrix as     We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are     To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, is the matrix     and if that matrix is rotated, you get it back and the eigenvalue is 1. The second eigenvector can be written as the matrix     and if you rotate this matrix, you get the matrix     which is the above matrix multiplied by the eigenvalue . In other words:     The other two work in a similar manner, however complex numbers are needed.   "
 },
 {
   "id": "sect-sym-matrix-quad-form",
@@ -3094,25 +3085,34 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.2",
   "title": "LU Factorization",
-  "body": " LU Factorization   Let be a square matrix. We seek to write , where is a lower triangular matrix and is an upper triangular matrix. The reason for doing such a factorization is often to solve for multiple right hand sides.  Recall that an upper triangle matrix is a matrix (not-necessarily square) such that all elements below the diagonal are 0. A lower triangular matrix is a matrix such that all elements above the diagonal are 0. More precisely,  The following example shows that there is a lower-triangular matrix and an upper triangular matrix whose product is the original matrix . Later we will show where this arises.    Let     Show that if     and using standard matrix multiplication:       This is nice, but the goal of LU factorization is to take any matrix and find matrices and . We first, show how to do this for a 3 by 3 matrix and then extend it.    Do All Matrices have an -factorization?  We first ask the question whether or not all matrices have a factorization and we will see that not all do not. We can try to factor     by writing down two matrices as follows.     and then multiplying the two matrices on the right to get     Notice that the upper right and lower left corners are and . However, the upper left leads to , so either or , which results in a contradiction.    If a matrix can be row-reduced without any row swaps, then there exists matrices and such that .      LU fatorization and elementary matrices  We will see that knowing the elementary matrices related to reducing a matrix will lead naturally to its factorization. Consider the following example:     We will row-reduce using elementary row operations. Since the first step would be , then     Next, we elimnate the in the lower left corner with     And the next step is to perform , so     and since this is an upper triangular matrix, then note that we have the situation that and mutliplying through by would result in . Since is the product of lower triangular elementary matrices, then the inverse is the product of these matrices, itself a lower triangular matrix.  More specifically, since     then     where the property from is used. This results in     which is the matrix . Therefore, we can write      Finding the LU factorization  Consider a matrix which we desire to write as for lower triangular matrix and upper triangular matrix . If can be row reduced to an upper matrix , with the series of elementary matrices then      Also the example given above was a square matrix, this does not have to be the case. Consider the next example.    Find the -decomposition of       We will perform row operations on to get to row-reduced form     And this shows that the product of the elementary matrices would reduce the matrix to row-reduced form. Thus the lower triangular matrix is       Note that since elementary matrices are square, and is the product of the elementary matrices that is also square. For a general matrix, is a matrix and is a matrix.    Generalization of LU Decomposition  As we saw above in not all matrices have an LU decomposition. However, if we generalize this a bit, then we can.  Additionally, an square matrix can be written as , where is a lower-diagonal, is upper-diagonal and is a permutation matrix.    Find the factorization for       If we perform row operations on as follows     And since the first step was a permutation matrix, then     and then can be used to find as     The matrix is given above, then is the matrix in and is given in . The matrix factorization thus is         Solving linear systems using LU Decomposition  The main application of LU decomposition is that of solving linear systems. Consider the matrix equation and assume that (that is the needed permutation matrix is ).     Solve for .    Then solve for .     First, this works, because if , then       Solve the system using -decomposition for       Recall that in the -factorizations of the matrix was found and is     To use this to solve , first we solve via forward substitution.     So the solution to is . Next, we solve by back substitution,     So the solution is       You can see from the example above that once the matrix factored that it is relatively simple to find the solutions to and and there are relatively few computations to perform.  In fact, this is true in general. In that if one actually finds the factorization of and then solves this in the manner show that about 1\/2 of the operations are done then solving directly, say by reducing the matrix to reduced row echelon form.    Inverting a Matrix  The same idea can be use to find inverse of by repeated solving by repeating this for the columns of the identity matrix. The example below shows this without all of the details of finding the factorization:    Find the inverse of the matrix in ,     using the LU-decomposition.    Following the steps above, the LU decomposition is     and we will solve , where is the th column of the 3 by 3 identity matrix.  Solving by solving or     then solve for or     Repeating this for , first solving or     then solve for or     and lastly, solve or     and solving results in     The inverse matrix is then the matrix with as the columns or        "
+  "body": " LU Factorization     Find the -factorization of a matrix  Determine when an -factorization does not exist.  Use a factorization to solve a linear system.  Use a factorization to find an inverse matrix.      Let be a square matrix. We seek to write , where is a lower triangular matrix and is an upper triangular matrix. The reason for doing such a factorization is often to solve for multiple right hand sides.  Recall that an upper triangle matrix is a matrix (not-necessarily square) such that all elements below the diagonal are 0. A lower triangular matrix is a matrix such that all elements above the diagonal are 0. More precisely,  The following example shows that there is a lower-triangular matrix and an upper triangular matrix whose product is the original matrix . Later we will show where this arises.    Let     Show that     Using standard matrix multiplication:       This is nice, but the goal of LU factorization is to take any matrix and find matrices and . We first, show how to do this for a 3 by 3 matrix and then extend it.    Do All Matrices have an -factorization?  We first ask the question whether or not all matrices have a factorization and we will see that not all do not. We can try to factor     by writing down two matrices as follows.     and then multiplying the two matrices on the right to get     Notice that the upper right and lower left corners are and . However, the upper left leads to , so either or , which results in a contradiction.    If a matrix can be row-reduced without any row swaps, then there exists matrices and such that .      LU fatorization and elementary matrices  We will see that knowing the elementary matrices related to reducing a matrix will lead naturally to its factorization. Consider the following example:     We will row-reduce using elementary row operations. Since the first step would be , then     Next, we elimnate the in the lower left corner with     And the next step is to perform , so     and since this is an upper triangular matrix, then note that we have the situation that and mutliplying through by would result in . Since is the product of lower triangular elementary matrices, then the inverse is the product of these matrices, itself a lower triangular matrix.  More specifically, since     then     where the property from is used. This results in     which is the matrix . Therefore, we can write      Finding the LU factorization  Consider a matrix which we desire to write as for lower triangular matrix and upper triangular matrix . If can be row reduced to an upper matrix , with the series of elementary matrices then      Also the example given above was a square matrix, this does not have to be the case. Consider the next example.    Find the -decomposition of       We will perform row operations on to get to row-reduced form     And this shows that the product of the elementary matrices would reduce the matrix to row-reduced form. Thus the lower triangular matrix is       Note that since elementary matrices are square, and is the product of the elementary matrices that is also square. For a general matrix, is a matrix and is a matrix.    Generalization of LU Decomposition  As we saw above in not all matrices have an LU decomposition. However, if we generalize this a bit, then we can.  Additionally, an square matrix can be written as , where is a lower-diagonal, is upper-diagonal and is a permutation matrix.    Find the factorization for       If we perform row operations on as follows     And since the first step was a permutation matrix, then     and then can be used to find as     The matrix is given above, then is the matrix in and is given in . The matrix factorization thus is         Solving linear systems using LU Decomposition  The main application of LU decomposition is that of solving linear systems. Consider the matrix equation and assume that (that is the needed permutation matrix is ).     Solve for .    Then solve for .     First, this works, because if , then       Solve the system using -decomposition for       Recall that in the -factorizations of the matrix was found and is     To use this to solve , first we solve via forward substitution.     So the solution to is . Next, we solve by back substitution,     So the solution is       You can see from the example above that once the matrix factored that it is relatively simple to find the solutions to and and there are relatively few computations to perform.  In fact, this is true in general. In that if one actually finds the factorization of and then solves this in the manner show that about 1\/2 of the operations are done then solving directly, say by reducing the matrix to reduced row echelon form.    Inverting a Matrix  The same idea can be use to find inverse of by repeated solving by repeating this for the columns of the identity matrix. The example below shows this without all of the details of finding the factorization:    Find the inverse of the matrix in ,     using the LU-decomposition.    Following the steps above, the LU decomposition is     and we will solve , where is the th column of the 3 by 3 identity matrix.  Solving by solving or     then solve for or     Repeating this for , first solving or     then solve for or     and lastly, solve or     and solving results in     The inverse matrix is then the matrix with as the columns or        "
 },
 {
-  "id": "sect-lu-factorization-2-2",
+  "id": "sect-lu-factorization-2",
   "level": "2",
-  "url": "sect-lu-factorization.html#sect-lu-factorization-2-2",
+  "url": "sect-lu-factorization.html#sect-lu-factorization-2",
+  "type": "Objectives",
+  "number": "5.2",
+  "title": "",
+  "body": "   Find the -factorization of a matrix  Determine when an -factorization does not exist.  Use a factorization to solve a linear system.  Use a factorization to find an inverse matrix.    "
+},
+{
+  "id": "sect-lu-factorization-3-2",
+  "level": "2",
+  "url": "sect-lu-factorization.html#sect-lu-factorization-3-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "upper triangle matrix lower triangular matrix "
 },
 {
-  "id": "sect-lu-factorization-2-4",
+  "id": "sect-lu-factorization-3-4",
   "level": "2",
-  "url": "sect-lu-factorization.html#sect-lu-factorization-2-4",
+  "url": "sect-lu-factorization.html#sect-lu-factorization-3-4",
   "type": "Example",
   "number": "5.2.1",
   "title": "",
-  "body": "  Let     Show that if     and using standard matrix multiplication:      "
+  "body": "  Let     Show that     Using standard matrix multiplication:      "
 },
 {
   "id": "sect-not-lu-9",
@@ -3142,27 +3142,27 @@ var ptx_lunr_docs = [
   "body": "  Find the -decomposition of       We will perform row operations on to get to row-reduced form     And this shows that the product of the elementary matrices would reduce the matrix to row-reduced form. Thus the lower triangular matrix is      "
 },
 {
-  "id": "sect-lu-factorization-5-4",
+  "id": "sect-lu-factorization-6-4",
   "level": "2",
-  "url": "sect-lu-factorization.html#sect-lu-factorization-5-4",
+  "url": "sect-lu-factorization.html#sect-lu-factorization-6-4",
   "type": "Example",
   "number": "5.2.5",
   "title": "",
   "body": "  Find the factorization for       If we perform row operations on as follows     And since the first step was a permutation matrix, then     and then can be used to find as     The matrix is given above, then is the matrix in and is given in . The matrix factorization thus is      "
 },
 {
-  "id": "sect-lu-factorization-6-6",
+  "id": "sect-lu-factorization-7-6",
   "level": "2",
-  "url": "sect-lu-factorization.html#sect-lu-factorization-6-6",
+  "url": "sect-lu-factorization.html#sect-lu-factorization-7-6",
   "type": "Example",
   "number": "5.2.6",
   "title": "",
   "body": "  Solve the system using -decomposition for       Recall that in the -factorizations of the matrix was found and is     To use this to solve , first we solve via forward substitution.     So the solution to is . Next, we solve by back substitution,     So the solution is      "
 },
 {
-  "id": "sect-lu-factorization-7-3",
+  "id": "sect-lu-factorization-8-3",
   "level": "2",
-  "url": "sect-lu-factorization.html#sect-lu-factorization-7-3",
+  "url": "sect-lu-factorization.html#sect-lu-factorization-8-3",
   "type": "Example",
   "number": "5.2.7",
   "title": "",
@@ -3175,7 +3175,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.3",
   "title": "Diagonalization of Matrices",
-  "body": " Diagonalization of Matrices   Consider a matrix . There are many application where the power of the matrix, is helpful. One such cases is at the end of this this chapter. One way to approach this is that the th power is just the matrix product with itself times or     and this can be extended to any positive integer power. However, finding the 50th power may not be practical.  To make this an easier task, let's assume that we can write in the form:     where is a diagonal matrix and is invertible. If this is possible, then     and is easy to find because it is a diagonal matrix.  If it's possible to factor as in ( ), then we call a matrix diagonalizable. Here's a formal definition.    An by matrix is said to be diagonalizable if it can be written     where is a diagonal matrix and is invertible.    Before explaining how starting with a matrix , we can find matrices and , let's look at one that is factored in this way.    Let     Show that .    First, recall that     and     then     which shows in this particular example that .      An by matrix is diagonalizable if and only if it has linearly independent eigenvectors. The matrix is a matrix of the eigenvectors and the matrix is the diagonal matrix of eigenvalues.    Thus we want to show that     since is invertible. Let     where is the eigenvector associated with the eigenvalue .         Is the matrix     diagonalizable? If so, find and .    To check this, we need to find the eigenvalues and eigenvectors. First, find the eigenvalues by solving or or and The associated eigenvectors are     (The steps to find these aren't shown, but follow the steps in section ). Since there are 2 linearly independent eigenvectors, this vector is diagonalizable and         Is the matrix     diagonalizable? If so, find and .    From example , we found that has eigenvalues . It also has eigenvectors , and . Therefore the matrices:     satisfy       Powers of Diagonalizable Matrices  One main reason for writing a matrix in diagonalizable form is that powers of the matrix are easy to compute. Note that if , then     and by induction:     Note that raising the diagonal matrix to a power is a simple process .    Use the fact that is diagonalizable to find       From , can be written with     Then, can be written         Similar Matrices    Two by matrices and are said to be similar if there exists an invertible matrix such that         If and are similar by matrices, then the following are identical for the two matrices:     Rank    Determinant    Trace         If and are similar by matrices, then and have the same characteristic equation and therefore have the same eigenvalues.    Let satisfy the characteristic equation     Since and are similar, then ,     so the characteristic equation is identical, thus the eigenvalues are the same.    Note: The eigenvectors are in general not the same in and .    Show that     are similar matrices with       First, using the formula for the inverse of a matrix,     and         Similar and Diagonalizable Matrices  It appears that there is a connection to similar and diagonalizable matrices through at least their near identical formulas. Notice that and are similar if there exists an invertible matrix such that     and is diagonalizable if there exists a such that     for a diagonal matrix . Similarly is diagonalizable if there exists an invertible such that     for diagonal matrix . We know that the matrices and exist if there are linearly independent eigenvectors, but how do you find ? Solving for in ( ) and in ( ),     Also, since the eigenvalues of and are the same, we can rearrange the eigenvectors of and to the same order thus without loss of generality, and   thus let       Above we showed that the matrices     are similar. Use the above discussion to find such that .    Briefly, we need to diagonalize both and . In example , we found that the eigenvalues of are and with associated eigenvectors and . Using the techniques of section , the eigenvalues of are and with associated eigenvectors and . Letting and be the matrices associated with and and , those associated with , let     and     and using ,     And although this is not the same as , this matrix is the negative of the inverse of that matrix in .     "
+  "body": " Diagonalization of Matrices   Consider a matrix . There are many application where the power of the matrix, is helpful. One such cases is at the end of this this chapter. One way to approach this is that the th power is just the matrix product with itself times or     and this can be extended to any positive integer power. However, finding the 50th power may not be practical.  To make this an easier task, let's assume that we can write in the form:     where is a diagonal matrix and is invertible. If this is possible, then     and is easy to find because it is a diagonal matrix.  If it's possible to factor as in ( ), then we call a matrix diagonalizable. Here's a formal definition.    An by matrix is said to be diagonalizable if it can be written     where is a diagonal matrix and is invertible.    Before explaining how starting with a matrix , we can find matrices and , let's look at one that is factored in this way.    Let     Show that .    First, recall that     and     then     which shows in this particular example that .      An by matrix is diagonalizable if and only if it has linearly independent eigenvectors. The matrix is a matrix of the eigenvectors and the matrix is the diagonal matrix of eigenvalues.    Thus we want to show that     since is invertible. Let     where is the eigenvector associated with the eigenvalue .         Is the matrix     diagonalizable? If so, find and .    To check this, we need to find the eigenvalues and eigenvectors. First, find the eigenvalues by solving or or and The associated eigenvectors are     (The steps to find these aren't shown, but follow the steps in section ). Since there are 2 linearly independent eigenvectors, this vector is diagonalizable and         Is the matrix     diagonalizable? If so, find and .    From example , we found that has eigenvalues . It also has eigenvectors , and . Therefore the matrices:     satisfy       Powers of Diagonalizable Matrices  One main reason for writing a matrix in diagonalizable form is that powers of the matrix are easy to compute. Note that if , then     and by induction:     Note that raising the diagonal matrix to a power is a simple process .    Use the fact that is diagonalizable to find       From , can be written with     Then, can be written         Similar Matrices    Two by matrices and are said to be similar if there exists an invertible matrix such that         If and are similar by matrices, then the following are identical for the two matrices:     Rank    Determinant    Trace         If and are similar by matrices, then and have the same characteristic equation and therefore have the same eigenvalues.    Let satisfy the characteristic equation     Since and are similar, then ,     so the characteristic equation is identical, thus the eigenvalues are the same.    Note: The eigenvectors are in general not the same in and .    Show that     are similar matrices with       First, using the formula for the inverse of a matrix,     and         Similar and Diagonalizable Matrices  It appears that there is a connection to similar and diagonalizable matrices through at least their near identical formulas. Notice that and are similar if there exists an invertible matrix such that     and is diagonalizable if there exists a such that     for a diagonal matrix . Similarly is diagonalizable if there exists an invertible such that     for diagonal matrix . We know that the matrices and exist if there are linearly independent eigenvectors, but how do you find ? Solving for in and in ,     Also, since the eigenvalues of and are the same, we can rearrange the eigenvectors of and to the same order thus without loss of generality, and   thus let       Above we showed that the matrices     are similar. Use the above discussion to find such that .    Briefly, we need to diagonalize both and . In example , we found that the eigenvalues of are and with associated eigenvectors and . Using the techniques of section , the eigenvalues of are and with associated eigenvectors and . Letting and be the matrices associated with and and , those associated with , let     and     and using ,     And although this is not the same as , this matrix is the negative of the inverse of that matrix in .     "
 },
 {
   "id": "ch-matrix-factoring-5-2-10",
@@ -3346,39 +3346,48 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Properties of Functions",
-  "body": " Properties of Functions   In , we reviewed inner product spaces and saw orthonormal sets of vectors (both in as well as polynomials). In this section, we will examine another set of functions, sines and cosines that are orthogonal. First, let's see a short review of periodic functions.    Periodic Functions    A function is periodic with period if     for all in the domain of . The smallest value of that makes this true is called the period of the function.      Show that is periodic with period .           What is the period of the function .    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .    The standard period functions that we will be using in this text are the sine and cosine function. We review here a few convenient identities with these functions and the complex exponential. From Euler's formula,     we can then write sine and cosine in terms of      Euler's formula also leads to the following:   The Most Interesting Equation in Mathematics      and this is often called the most interesting equation in mathematics because it arguably contains the 5 most important mathematical constants: 0, 1, , , .    If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds, If ,     because from ( ), but this is raised to an even power so       One-Side Limits and Derivatives; Piecewise Continuous Functions  As we will see, the notion of a piecewise continuous function is a function that is continuous on subintervals. However, there are some technical details that we need before a formal definition.    A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.    If one is talking about either a left- or right-handed limit, these are typically called one-sided limits.    A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.    If one is talking about either a left- or right-handed derivative, these are typically called one-sided derivatives.    A function is piecewise continuous on an interval if is continuous on all except for a finite number of points . In addition for all , and exist.      The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise function      In addition, we need to show that all of the one-sided limits exist. piece-function     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.      Find both the left- and right-handed derivatives of the function defined in example at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is -1.      Show that is not a piecewise continuous function on .    The problem in this function on the interval is at . Also     and since the one-sided limits do not exist, is not piecewise continuous on .      Odd and Even Functions    A function is an odd function if for all in its domain.    Note: recall that an odd function is symmetric about the origin, meaning that if the graph of is rotated a half circle about the origin, that one gets the graph back.    A function is an even function if for all in its domain.    Recall that an even function is symmetric about the -axis. This means that if the graph is reflected over the -axis that one gets the same graph upon the reflection.    Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:    The following functions are even: .       The following theorem is helpful for finding whether or not products of functions are odd or even.      The product of two odd functions is even.    The product of two even functions is even.    The product of an even and an odd function is odd.        The derivative of an even function is odd. The derivative of an odd function is even.    Let be an even function, then for all .     by the chain rule. And the proof that the derivative of an odd function is similar.    And as a corollary, antiderivatives work in the same way.       Let be an odd function. Any antiderivative of is even.    Let be an even function and be its antiderivative. The antiderivative such that is odd.         Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.      Tabular Integration  A very handy formula for many integrations in this section is called tabular integration , which is just a recursive version of integration by parts that works well for integrals of a certain type. Before we show this, recall that the integration by parts formula is     and integration by parts is helpful for rewriting one integral (on the left) in terms of a second integral (on the right) and generally it is used to create a simpler integral. The next example shows a standard integration done with integration by parts.    Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get       This example shows that in order to integrate with the by parts formula, one must replace one integral with another. In more difficult examples, this may need to be done multiple times until the resulting integral is able to be done without by parts. This is the case when tabular integration is useful.   The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.   This is best seen with a couple of examples.       using tabular integration.    First, we will build the table:   tabular integration of       and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.    And the following is an example that is similar as we will see below:       using tabular integration.    First, we will build the table:   Find a point on a line that minimizes distance      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.         Inner Products of Functions  As we saw in section , the inner product of two functions can be defined using the integral. In this section, we consider functions that are piecewise continuous on and     In the standard way, the norm of is defined as       An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .    In the next couple of examples, we examine a couple of the most important orthogonal and orthonormal sets of functions.    Show that for form an orthogonal set on .    In this case, we will expand on the example and use the handy alternative definition of the sine function. Find the inner product if ,     Where is used on the second to last row above.      Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore . For simpler notation let   First, we will show that for all .     since each integral is zero from Lemma . Next, we will show that\\\\ for all such that .     because again each integral is zero from Lemma .  Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from Lemma .     and the integrals of the first and third terms are zero from Lemma .     This shows that the set of functions given above is an orthonormal set of functions.     "
+  "body": " Properties of Functions     The definition of a periodic function.    Defintions of one-sided limits and deriviatives as well as piecewise continuous functions.    Definition of even and odd functions and properties of even and odd functions.    The technique of tabular integration.    The defintiion of inner products of functions.      In , we reviewed inner product spaces and saw orthonormal sets of vectors (both in as well as polynomials). In this section, we will examine another set of functions, sines and cosines that are orthogonal. First, let's see a short review of periodic functions.    Periodic Functions    A function is periodic with period if     for all . The smallest value of for which this true is called the period of the function.      Show that is periodic with period .       where the sum of angles sine formula is used.      What is the period of the function ?    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .    The periodic functions that we will mostly be using in this text are the sine and cosine function. We review here a few convenient identities with these functions and the complex exponential. From Euler's formula,     we can then write sine and cosine in terms of      Euler's formula also leads to the following:   The Most Interesting Equation in Mathematics      and this is often called the most interesting equation in mathematics because it arguably contains the 5 most important mathematical constants: 0, 1, , , .    If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds. If ,     because from , but this is raised to an even power so       One-Side Limits and Derivatives; Piecewise Continuous Functions  As we will see, the notion of a piecewise continuous function is a function that is continuous on subintervals. However, there are some technical details that we need before a formal definition.    A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.    If one is talking about either a left- or right-handed limit, these are typically called one-sided limits. Also, an example of these will be shown below.    A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.    If one is talking about either a left- or right-handed derivative, these are typically called one-sided derivatives. An example of these will be shown below.    A function is piecewise continuous on an interval if is continuous on all except for a finite number of points . In addition for all , and exist.      The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise continuous function.      In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.      Find both the left- and right-handed derivatives of the function defined in at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is       Show that is not a piecewise continuous function on .    The function on is not continuous at . Also     and since the one-sided limits are not finite, then is not piecewise continuous on .      Odd and Even Functions    A function is an odd function if for all in its domain.    Note: recall that an odd function is symmetric about the origin, meaning that if the graph of is rotated a half circle about the origin, that one gets the graph back.    A function is an even function if for all in its domain.    Recall that an even function is symmetric about the -axis. This means that if the graph is reflected over the -axis that one gets the same graph upon the reflection.    Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:     The following functions are even: .       The following theorem is helpful for finding whether or not products of functions are odd or even.      The product of two odd functions is even.    The product of two even functions is even.    The product of an even and an odd function is odd.        The derivative of an even function is odd. The derivative of an odd function is even.    Let be an even function, then for all .     by the chain rule. And the proof that the derivative of an odd function is similar.    And as a corollary, antiderivatives work in the same way.       Let be an odd function. Any antiderivative of is even.    Let be an even function and be its antiderivative. The antiderivative such that is odd.         Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.      Tabular Integration  A very handy formula for many integrations in this section is called tabular integration , which is just a recursive version of integration by parts that works well for integrals of a certain type. Before we show this, recall that the integration by parts formula is     and integration by parts is helpful for rewriting one integral (on the left) in terms of a second integral (on the right) and generally it is used to create a simpler integral. The next example shows a standard integration done with integration by parts.    Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get       This example shows that in order to integrate with the by parts formula, one must replace one integral with another. In more difficult examples, this may need to be done multiple times until the resulting integral is able to be done without by parts. This is the case when tabular integration is useful.   The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.   This is best seen with a couple of examples.    Find     using tabular integration.    First, we will build the table:   Tabular integration of       Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.    And the following is an example that is similar as we will see below:    Find     using tabular integration.    First, we will build the table:   Tabular integration of .      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.         Inner Products of Functions  As we saw in , the inner product of two functions can be defined using the integral. In this section, we consider functions that are piecewise continuous on and     In the standard way, the norm of is defined as       An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .    In the next couple of examples, we examine a couple of the most important orthogonal and orthonormal sets of functions.    Show that for form an orthogonal set on .    In this case, we will expand on and use the handy alternative definition of the sine function. Find the inner product if ,     where is used on the last step above.      Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore also equals 0 for . For simpler notation let   First, we will show that for all .     since each integral is zero from . Next, we will show that for all such that .     because again each integral is zero from Lemma . Also,     Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from Lemma .     and the integrals of the first and third terms are zero from Lemma .     This shows that the set of functions given above is an orthonormal set of functions.     "
 },
 {
-  "id": "sect-funct-props-3-2",
+  "id": "sect-funct-props-2",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-3-2",
+  "url": "sect-funct-props.html#sect-funct-props-2",
+  "type": "Objectives",
+  "number": "6.1",
+  "title": "",
+  "body": "   The definition of a periodic function.    Defintions of one-sided limits and deriviatives as well as piecewise continuous functions.    Definition of even and odd functions and properties of even and odd functions.    The technique of tabular integration.    The defintiion of inner products of functions.    "
+},
+{
+  "id": "sect-funct-props-4-2",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-4-2",
   "type": "Definition",
   "number": "6.1.1",
   "title": "",
-  "body": "  A function is periodic with period if     for all in the domain of . The smallest value of that makes this true is called the period of the function.   "
+  "body": "  A function is periodic with period if     for all . The smallest value of for which this true is called the period of the function.   "
 },
 {
-  "id": "sect-funct-props-3-3",
+  "id": "sect-funct-props-4-3",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-3-3",
+  "url": "sect-funct-props.html#sect-funct-props-4-3",
   "type": "Example",
   "number": "6.1.2",
   "title": "",
-  "body": "  Show that is periodic with period .        "
+  "body": "  Show that is periodic with period .       where the sum of angles sine formula is used.   "
 },
 {
-  "id": "sect-funct-props-3-4",
+  "id": "sect-funct-props-4-4",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-3-4",
+  "url": "sect-funct-props.html#sect-funct-props-4-4",
   "type": "Example",
   "number": "6.1.3",
   "title": "",
-  "body": "  What is the period of the function .    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .   "
+  "body": "  What is the period of the function ?    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .   "
 },
 {
-  "id": "sect-funct-props-3-10",
+  "id": "sect-funct-props-4-10",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-3-10",
+  "url": "sect-funct-props.html#sect-funct-props-4-10",
   "type": "Remark",
   "number": "6.1.4",
   "title": "The Most Interesting Equation in Mathematics.",
@@ -3391,30 +3400,30 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "6.1.5",
   "title": "",
-  "body": "  If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds, If ,     because from ( ), but this is raised to an even power so    "
+  "body": "  If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds. If ,     because from , but this is raised to an even power so    "
 },
 {
-  "id": "sect-funct-props-4-3",
+  "id": "sect-funct-props-5-3",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-4-3",
+  "url": "sect-funct-props.html#sect-funct-props-5-3",
   "type": "Definition",
   "number": "6.1.6",
   "title": "",
   "body": "  A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.   "
 },
 {
-  "id": "sect-funct-props-4-5",
+  "id": "sect-funct-props-5-5",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-4-5",
+  "url": "sect-funct-props.html#sect-funct-props-5-5",
   "type": "Definition",
   "number": "6.1.7",
   "title": "",
   "body": "  A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.   "
 },
 {
-  "id": "sect-funct-props-4-7",
+  "id": "sect-funct-props-5-7",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-4-7",
+  "url": "sect-funct-props.html#sect-funct-props-5-7",
   "type": "Definition",
   "number": "6.1.8",
   "title": "",
@@ -3427,25 +3436,25 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.1.9",
   "title": "",
-  "body": "  The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise function      In addition, we need to show that all of the one-sided limits exist. piece-function     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.   "
+  "body": "  The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise continuous function.      In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.   "
 },
 {
-  "id": "sect-funct-props-4-9",
+  "id": "sect-funct-props-5-9",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-4-9",
+  "url": "sect-funct-props.html#sect-funct-props-5-9",
   "type": "Example",
   "number": "6.1.11",
   "title": "",
-  "body": "  Find both the left- and right-handed derivatives of the function defined in example at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is -1.   "
+  "body": "  Find both the left- and right-handed derivatives of the function defined in at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is    "
 },
 {
-  "id": "sect-funct-props-4-10",
+  "id": "sect-funct-props-5-10",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-4-10",
+  "url": "sect-funct-props.html#sect-funct-props-5-10",
   "type": "Example",
   "number": "6.1.12",
   "title": "",
-  "body": "  Show that is not a piecewise continuous function on .    The problem in this function on the interval is at . Also     and since the one-sided limits do not exist, is not piecewise continuous on .   "
+  "body": "  Show that is not a piecewise continuous function on .    The function on is not continuous at . Also     and since the one-sided limits are not finite, then is not piecewise continuous on .   "
 },
 {
   "id": "sect-even-odd-functions-2",
@@ -3472,7 +3481,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.1.15",
   "title": "",
-  "body": "  Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:    The following functions are even: .      "
+  "body": "  Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:     The following functions are even: .      "
 },
 {
   "id": "sect-even-odd-functions-8",
@@ -3511,67 +3520,67 @@ var ptx_lunr_docs = [
   "body": "  Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.   "
 },
 {
-  "id": "sect-funct-props-6-2",
+  "id": "sect-funct-props-7-2",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-2",
+  "url": "sect-funct-props.html#sect-funct-props-7-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "tabular integration "
 },
 {
-  "id": "sect-funct-props-6-5",
+  "id": "sect-funct-props-7-5",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-5",
+  "url": "sect-funct-props.html#sect-funct-props-7-5",
   "type": "Example",
   "number": "6.1.20",
   "title": "",
   "body": "  Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get      "
 },
 {
-  "id": "sect-funct-props-6-7",
+  "id": "sect-funct-props-7-7",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-7",
+  "url": "sect-funct-props.html#sect-funct-props-7-7",
   "type": "Remark",
   "number": "6.1.21",
   "title": "",
   "body": " The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.  "
 },
 {
-  "id": "sect-funct-props-6-9",
+  "id": "sect-funct-props-7-9",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-9",
+  "url": "sect-funct-props.html#sect-funct-props-7-9",
   "type": "Example",
   "number": "6.1.22",
   "title": "",
-  "body": "     using tabular integration.    First, we will build the table:   tabular integration of       and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.   "
+  "body": "  Find     using tabular integration.    First, we will build the table:   Tabular integration of       Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.   "
 },
 {
-  "id": "sect-funct-props-6-11",
+  "id": "sect-funct-props-7-11",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-11",
+  "url": "sect-funct-props.html#sect-funct-props-7-11",
   "type": "Example",
   "number": "6.1.24",
   "title": "",
-  "body": "     using tabular integration.    First, we will build the table:   Find a point on a line that minimizes distance      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.      "
+  "body": "  Find     using tabular integration.    First, we will build the table:   Tabular integration of .      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.      "
 },
 {
-  "id": "sect-funct-props-7-6",
+  "id": "sect-funct-props-8-6",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-7-6",
+  "url": "sect-funct-props.html#sect-funct-props-8-6",
   "type": "Definition",
   "number": "6.1.26",
   "title": "",
   "body": "  An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .   "
 },
 {
-  "id": "sect-funct-props-7-8",
+  "id": "sect-funct-props-8-8",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-7-8",
+  "url": "sect-funct-props.html#sect-funct-props-8-8",
   "type": "Example",
   "number": "6.1.27",
   "title": "",
-  "body": "  Show that for form an orthogonal set on .    In this case, we will expand on the example and use the handy alternative definition of the sine function. Find the inner product if ,     Where is used on the second to last row above.   "
+  "body": "  Show that for form an orthogonal set on .    In this case, we will expand on and use the handy alternative definition of the sine function. Find the inner product if ,     where is used on the last step above.   "
 },
 {
   "id": "ex-trig-ortho-set",
@@ -3580,7 +3589,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.1.28",
   "title": "",
-  "body": "  Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore . For simpler notation let   First, we will show that for all .     since each integral is zero from Lemma . Next, we will show that\\\\ for all such that .     because again each integral is zero from Lemma .  Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from Lemma .     and the integrals of the first and third terms are zero from Lemma .     This shows that the set of functions given above is an orthonormal set of functions.   "
+  "body": "  Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore also equals 0 for . For simpler notation let   First, we will show that for all .     since each integral is zero from . Next, we will show that for all such that .     because again each integral is zero from Lemma . Also,     Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from Lemma .     and the integrals of the first and third terms are zero from Lemma .     This shows that the set of functions given above is an orthonormal set of functions.   "
 },
 {
   "id": "sect-fourier-series",
@@ -3589,21 +3598,30 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.2",
   "title": "Fourier Series",
-  "body": " Fourier Series   An infinite series of the form:     is called the trigonometric series .  The trigonometric series is periodic with period at most . Consider the terms and , which each have period . All other functions have period , which are also periodic with period , but their fundamental period is .    Let be periodic of period and be piecewise continuous in . Suppose can be written as a trigonometric series. Then it is called a Fourier Series for . The constants and are called the Fourier Coefficients of and are given by the Euler formulas:       In this section, we're going to write period functions as Fourier Series. This is possible due to the following theorem.    Let be a continuous function that is periodic with period . Then can be written as a trigonometric series or       In this proof, we will take the inner product of with each element in the set from Example . We will start with the constant function and use ( ).     and solving for ,     Next, take the inner product of ( ) with .     All of the inner products on the right side are zero except when . Canceling a , the result is     or solving for ,     Lastly, take the inner product of ( ) with .     All of the inner products on the right side are zero except when . Canceling a , the result is     and solving for ,       Notice again that the statement in Theorem is the is periodic with period . This is a fairly strict requirement that we will relax over the rest of this section, however, one way to get a periodic function is to start with a function that is defined on and extend it periodically such that . We do this in the following example.    Find the Fourier coefficients and the Fourier series for the periodic extension square wave:     and define to be its periodic extension of period . That is if is outside of , then apply or until . This function looks like:   Graph of the Square Wave        To begin with, we find all of the coefficients:           So the Fourier Series can be written:       The above series also shows and interesting result that you should have seen in the series chapter of Calculus. If we let , then and from the definition of the square wave and substituting this into the Fourier series, we get:     or multiplying both sides by      which shows that some infinite sums have closed form values. This particular series is usually found using the Taylor Series of and evaluating it a 1.    Find the Fourier series of the period sawtooth wave:   Plot of the sawtooth wave        Let be the sawtooth wave defined in the picture above. We can write it as a piecewise function as     and extending it periodically.  Then using the formulas in ( )--( ) and we will take advantage of the fact that is an even function.        where is used and since is even and the product of even functions is even. Also this is a good example to use tabular integration.   tabular integration of .      and then using the table to find     Lastly,     but this is a product of a even and an odd function, which is odd and integrating an odd function over a symmetric interval is 0. Therefore the Fourier series is         Convergence of a Sum of a Fourier Series  Since Fourier series are infinite series, it is important to consider if it converges. As we will see, Fourier series will generally converge, to what value will depend on . Consider the Fourier series in Example . If we let     we would need to text the convergence of every value of . In this case, this can be done by using the direct comparison test to the series to which converges, so the series converges for all .  This doesn't work for all series and the other difficulty is that we don't know what it converges to. Fortunately, the following theorem gives a very nice result.    Let be periodic with period and piecewise continuous in the interval . Let be the Fourier series of and     In other words, the Fourier series converges to the average of the left- and right-hand limits of .      Show that the Fourier series of the square wave function above converges to 0 when .    Note that average of the left- and right-handed limits of the square wave function at is , so using the theorem above, the function converges to 0 when .  Alternatively, we can evaluate the Fourier series of the square wave function directly. Evaluating the Fourier series at is     which is consistent with that above.      Fourier Series of Functions of Period  We saw that the Fourier series above applied only to functions that were periodic with period . This section covers functions with arbitrary periodicity, which we will call period . If we let , and substitute this into ( ), then     and then it can be shown in a similar manner to that above that ( )--( ) can be written as     The series is called the Fourier series of period with the corresponding Fourier coefficients.    Find the Fourier Series of the periodic extension (of period 2) of for as shown in the graph below:   Another plot        To find the Fourier series, we first need to find the Fourier coefficients, by evaluating the integrals in ( )--( ),     The Fourier Series of the function is        "
+  "body": " Fourier Series     A Fourier Series is a infinite series of sines and cosines.    A periodic function of period can be written as a Fourier Series.    A Fourier Series converges everywhere to either the function or the midpoint of the left and right hand limits.    There is a form of the Fourier Series which is periodic of period for any positive value and any periodic function can be written in this form of the Fourier Series.      An infinite series of the form:     is called the trigonometric series .  The trigonometric series is periodic with period at most . Consider the terms and , which each have period . All other functions have period , which are also periodic with period , but their fundamental period is .    Let be periodic of period and be piecewise continuous in . Suppose can be written as a trigonometric series. Then it is called a Fourier Series for . The constants and are called the Fourier Coefficients of and are given by the Euler formulas:       In this section, we're going to write periodic functions as Fourier Series. This is possible due to the following theorem.    Let be a continuous function that is periodic with period . Then can be written as a trigonometric series or       Take the inner product of with each element in the set from . We will start with the constant function and use .     and solving for ,     Next, take the inner product of ( ) with .     All of the inner products on the right side are zero except when . Canceling a , the result is     or solving for ,     Lastly, take the inner product of with .     All of the inner products on the right side are zero except when . Canceling a , the result is     and solving for ,       Notice again that the statement in requires to be periodic with period . This is a fairly strict requirement that we will relax over the rest of this section, however, one way to get a periodic function is to start with a function that is defined on and extend it periodically such that . We do this in the following example.    Find the Fourier coefficients and the Fourier series for the periodic extension square wave:     and define to be its periodic extension of period . That is if is outside of , then apply or until . This function looks like:   Graph of the periodic square wave.        To begin with, we find all of the coefficients:           So the Fourier Series can be written:       The above series also shows an interesting result that you should have seen in the series chapter of Calculus. If we let , then and from the definition of the square wave and substituting this into the Fourier series, we get:     or multiplying both sides by      which shows that some infinite sums have closed form values. This particular series is usually found using the Taylor Series of and evaluating it a 1.    Find the Fourier series of the period sawtooth wave:   Plot of the sawtooth wave        Let be the sawtooth wave defined in the picture above. We can write it as a piecewise function as     and extending it periodically.  Then using the formulas in -- and we will take advantage of the fact that is an even function.        where is used and since is even and the product of even functions is even. Also this is a good example to use tabular integration.   tabular integration of .      and then using the table to find     Lastly,     but this is a product of a even and an odd function, which is odd and integrating an odd function over a symmetric interval is 0. Therefore the Fourier series is         Convergence of a Sum of a Fourier Series  Since Fourier series are infinite series, it is important to consider if it converges. As we will see, Fourier series will generally converge, to what value will depend on . Consider the Fourier series in . If we let     we would need to test the convergence of every value of . In this case, this can be done by using the direct comparison test to the series to which converges, so the series converges for all .  This doesn't work for all series and the other difficulty is that we don't know what it converges to. Fortunately, the following theorem gives a very nice result.    Let be periodic with period and piecewise continuous in the interval . Let be the Fourier series of and     In other words, the Fourier series converges to the average of the left- and right-hand limits of .      Show that the Fourier series of the square wave function above converges to 0 when .    Note that average of the left- and right-handed limits of the square wave function at is , so using the theorem above, the function converges to 0 when .  Alternatively, we can evaluate the Fourier series of the square wave function directly. Evaluating the Fourier series at is     which is consistent with that above.      Fourier Series of Functions of Period  We saw that the Fourier series above applied only to functions that were periodic with period . This section covers functions with arbitrary periodicity, which we will call period . If we let , and substitute this into , then     and then it can be shown in a similar manner to that above that -- can be written as     The series is called the Fourier series of period with the corresponding Fourier coefficients.    Find the Fourier Series of the periodic extension (of period 2) of for as shown in the graph below:   A plot of a periodic sawtooth wave on .        To find the Fourier series, we first need to find the Fourier coefficients, by evaluating the integrals in ( )--( ),     The Fourier Series of the function is        "
 },
 {
-  "id": "sect-fourier-series-2-3",
+  "id": "sect-fourier-series-2",
   "level": "2",
-  "url": "sect-fourier-series.html#sect-fourier-series-2-3",
+  "url": "sect-fourier-series.html#sect-fourier-series-2",
+  "type": "Objectives",
+  "number": "6.2",
+  "title": "",
+  "body": "   A Fourier Series is a infinite series of sines and cosines.    A periodic function of period can be written as a Fourier Series.    A Fourier Series converges everywhere to either the function or the midpoint of the left and right hand limits.    There is a form of the Fourier Series which is periodic of period for any positive value and any periodic function can be written in this form of the Fourier Series.    "
+},
+{
+  "id": "sect-fourier-series-3-3",
+  "level": "2",
+  "url": "sect-fourier-series.html#sect-fourier-series-3-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "trigonometric series "
 },
 {
-  "id": "sect-fourier-series-2-5",
+  "id": "sect-fourier-series-3-5",
   "level": "2",
-  "url": "sect-fourier-series.html#sect-fourier-series-2-5",
+  "url": "sect-fourier-series.html#sect-fourier-series-3-5",
   "type": "Definition",
   "number": "6.2.1",
   "title": "",
@@ -3616,7 +3634,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "6.2.2",
   "title": "",
-  "body": "  Let be a continuous function that is periodic with period . Then can be written as a trigonometric series or       In this proof, we will take the inner product of with each element in the set from Example . We will start with the constant function and use ( ).     and solving for ,     Next, take the inner product of ( ) with .     All of the inner products on the right side are zero except when . Canceling a , the result is     or solving for ,     Lastly, take the inner product of ( ) with .     All of the inner products on the right side are zero except when . Canceling a , the result is     and solving for ,      "
+  "body": "  Let be a continuous function that is periodic with period . Then can be written as a trigonometric series or       Take the inner product of with each element in the set from . We will start with the constant function and use .     and solving for ,     Next, take the inner product of ( ) with .     All of the inner products on the right side are zero except when . Canceling a , the result is     or solving for ,     Lastly, take the inner product of with .     All of the inner products on the right side are zero except when . Canceling a , the result is     and solving for ,      "
 },
 {
   "id": "ex-FS-square-wave",
@@ -3625,7 +3643,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.2.3",
   "title": "",
-  "body": "  Find the Fourier coefficients and the Fourier series for the periodic extension square wave:     and define to be its periodic extension of period . That is if is outside of , then apply or until . This function looks like:   Graph of the Square Wave        To begin with, we find all of the coefficients:           So the Fourier Series can be written:      "
+  "body": "  Find the Fourier coefficients and the Fourier series for the periodic extension square wave:     and define to be its periodic extension of period . That is if is outside of , then apply or until . This function looks like:   Graph of the periodic square wave.        To begin with, we find all of the coefficients:           So the Fourier Series can be written:      "
 },
 {
   "id": "ex-FS-sawtooth",
@@ -3634,21 +3652,21 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.2.5",
   "title": "",
-  "body": "  Find the Fourier series of the period sawtooth wave:   Plot of the sawtooth wave        Let be the sawtooth wave defined in the picture above. We can write it as a piecewise function as     and extending it periodically.  Then using the formulas in ( )--( ) and we will take advantage of the fact that is an even function.        where is used and since is even and the product of even functions is even. Also this is a good example to use tabular integration.   tabular integration of .      and then using the table to find     Lastly,     but this is a product of a even and an odd function, which is odd and integrating an odd function over a symmetric interval is 0. Therefore the Fourier series is      "
+  "body": "  Find the Fourier series of the period sawtooth wave:   Plot of the sawtooth wave        Let be the sawtooth wave defined in the picture above. We can write it as a piecewise function as     and extending it periodically.  Then using the formulas in -- and we will take advantage of the fact that is an even function.        where is used and since is even and the product of even functions is even. Also this is a good example to use tabular integration.   tabular integration of .      and then using the table to find     Lastly,     but this is a product of a even and an odd function, which is odd and integrating an odd function over a symmetric interval is 0. Therefore the Fourier series is      "
 },
 {
-  "id": "sect-fourier-series-3-6",
+  "id": "sect-fourier-series-4-6",
   "level": "2",
-  "url": "sect-fourier-series.html#sect-fourier-series-3-6",
+  "url": "sect-fourier-series.html#sect-fourier-series-4-6",
   "type": "Theorem",
   "number": "6.2.8",
   "title": "",
   "body": "  Let be periodic with period and piecewise continuous in the interval . Let be the Fourier series of and     In other words, the Fourier series converges to the average of the left- and right-hand limits of .   "
 },
 {
-  "id": "sect-fourier-series-3-7",
+  "id": "sect-fourier-series-4-7",
   "level": "2",
-  "url": "sect-fourier-series.html#sect-fourier-series-3-7",
+  "url": "sect-fourier-series.html#sect-fourier-series-4-7",
   "type": "Example",
   "number": "6.2.9",
   "title": "",
@@ -3661,102 +3679,120 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.2.10",
   "title": "",
-  "body": "  Find the Fourier Series of the periodic extension (of period 2) of for as shown in the graph below:   Another plot        To find the Fourier series, we first need to find the Fourier coefficients, by evaluating the integrals in ( )--( ),     The Fourier Series of the function is      "
+  "body": "  Find the Fourier Series of the periodic extension (of period 2) of for as shown in the graph below:   A plot of a periodic sawtooth wave on .        To find the Fourier series, we first need to find the Fourier coefficients, by evaluating the integrals in ( )--( ),     The Fourier Series of the function is      "
 },
 {
-  "id": "ch-fourier-series-5",
+  "id": "sect-even-odd",
   "level": "1",
-  "url": "ch-fourier-series-5.html",
+  "url": "sect-even-odd.html",
   "type": "Section",
   "number": "6.3",
   "title": "Even and Odd Functions; Half-Range Expansions",
-  "body": " Even and Odd Functions; Half-Range Expansions   We saw above that the periodic extension of on in Example resulted in a odd function and that only the sine terms of the Fourier Series was left. That is, all of the Fourier coefficients for the cosine terms were 0. In this section, we use this idea to produce only even and odd extensions which results in only sine expansions or cosine expansions.  To begin, let's clearly define an even- and odd-periodic extension.    Let be defined on for some .     The even periodic extension of is called and is defined:       The odd periodic extension of is called and is defined:            Graph the even- and odd-periodic extension of     defined on .    For the even extension, we first graph the function on , then make the even extension of it on . The original function is shown below as a solid line and the even extension is dashed.   The even extension of       and then we produce the period extension of period 2.   The even extension of       To find the odd extension, flip the original function on around the origin to get:   Odd extension of       Then extend the function on in a periodic way.   Periodic version of ...          The Fourier Sine and Cosine Series  We now address the Fourier series of the even- and odd-periodic extensions of on . As in Example , there are no cosine terms and the Fourier series of the odd periodic extension of can be written     and this is often called the Fourier sine series .  Similarly, the Fourier series of the even periodic extension of is     and is called the Fourier cosine series .    Find the Fourier Cosine Series of for .    For this, we need to find the coefficients in ( ) and ( ),     and use ( ) to find         Find the odd periodic extension of on . A graph of this is:   Graph of odd extension of on         For this, we need to find from ( ),     and then use this in ( )        "
+  "body": " Even and Odd Functions; Half-Range Expansions     Any function on a interval can be extended as either an odd or even periodic function of period .    The Fourier Series of an odd periodic extension (or any odd function) can be written as a Fourier Sine Series, consisting of only sine terms.    The Fourier Series of an even periodic extension (or any even function) can be written as a Fourier Cosine Series, consisting of only cosine terms.      We saw above that the periodic extension of on in resulted in a odd function and that only the sine terms of the Fourier Series was left. That is, all of the Fourier coefficients for the cosine terms were 0. In this section, we use this idea to produce only even and odd extensions which results in only sine expansions or cosine expansions.  To begin, let's clearly define an even- and odd-periodic extension.    Let be defined on for some .     The even periodic extension of is defined as       The odd periodic extension of is defined as            Graph the even- and odd-periodic extension of     defined on .    For the even extension, we first graph the function on , then make the even extension of it on . The original function is shown below as a solid line and the even extension is dashed.   The even extension of       and then we produce the period extension of period 2.   The even extension of       To find the odd extension, flip the original function on around the origin to get:   Odd extension of       Then extend the function on in a periodic way.   Periodic version of the odd extension of .          The Fourier Sine and Cosine Series  We now address the Fourier series of the even- and odd-periodic extensions of on . As in , there are no cosine terms and the Fourier series of the odd periodic extension of can be written     and this is often called the Fourier sine series .  Similarly, the Fourier series of the even periodic extension of is     and is called the Fourier cosine series .    Find the Fourier Cosine Series of for .    For this, we need to find the coefficients in ( ) and ( ),     and use ( ) to find         Find the odd periodic extension of on . A graph of this is:   Graph of odd extension of on         For this, we need to find from ( ),     and then use this in ( )        "
 },
 {
-  "id": "ch-fourier-series-5-2-3",
+  "id": "sect-even-odd-2",
   "level": "2",
-  "url": "ch-fourier-series-5.html#ch-fourier-series-5-2-3",
+  "url": "sect-even-odd.html#sect-even-odd-2",
+  "type": "Objectives",
+  "number": "6.3",
+  "title": "",
+  "body": "   Any function on a interval can be extended as either an odd or even periodic function of period .    The Fourier Series of an odd periodic extension (or any odd function) can be written as a Fourier Sine Series, consisting of only sine terms.    The Fourier Series of an even periodic extension (or any even function) can be written as a Fourier Cosine Series, consisting of only cosine terms.    "
+},
+{
+  "id": "sect-even-odd-3-3",
+  "level": "2",
+  "url": "sect-even-odd.html#sect-even-odd-3-3",
   "type": "Definition",
   "number": "6.3.1",
   "title": "",
-  "body": "  Let be defined on for some .     The even periodic extension of is called and is defined:       The odd periodic extension of is called and is defined:         "
+  "body": "  Let be defined on for some .     The even periodic extension of is defined as       The odd periodic extension of is defined as         "
 },
 {
-  "id": "ch-fourier-series-5-2-4",
+  "id": "sect-even-odd-3-4",
   "level": "2",
-  "url": "ch-fourier-series-5.html#ch-fourier-series-5-2-4",
+  "url": "sect-even-odd.html#sect-even-odd-3-4",
   "type": "Example",
   "number": "6.3.2",
   "title": "",
-  "body": "  Graph the even- and odd-periodic extension of     defined on .    For the even extension, we first graph the function on , then make the even extension of it on . The original function is shown below as a solid line and the even extension is dashed.   The even extension of       and then we produce the period extension of period 2.   The even extension of       To find the odd extension, flip the original function on around the origin to get:   Odd extension of       Then extend the function on in a periodic way.   Periodic version of ...       "
+  "body": "  Graph the even- and odd-periodic extension of     defined on .    For the even extension, we first graph the function on , then make the even extension of it on . The original function is shown below as a solid line and the even extension is dashed.   The even extension of       and then we produce the period extension of period 2.   The even extension of       To find the odd extension, flip the original function on around the origin to get:   Odd extension of       Then extend the function on in a periodic way.   Periodic version of the odd extension of .       "
 },
 {
-  "id": "ch-fourier-series-5-3-4",
+  "id": "sect-even-odd-4-4",
   "level": "2",
-  "url": "ch-fourier-series-5.html#ch-fourier-series-5-3-4",
+  "url": "sect-even-odd.html#sect-even-odd-4-4",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Fourier sine series "
 },
 {
-  "id": "ch-fourier-series-5-3-7",
+  "id": "sect-even-odd-4-7",
   "level": "2",
-  "url": "ch-fourier-series-5.html#ch-fourier-series-5-3-7",
+  "url": "sect-even-odd.html#sect-even-odd-4-7",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Fourier cosine series "
 },
 {
-  "id": "ch-fourier-series-5-3-8",
+  "id": "sect-even-odd-4-8",
   "level": "2",
-  "url": "ch-fourier-series-5.html#ch-fourier-series-5-3-8",
+  "url": "sect-even-odd.html#sect-even-odd-4-8",
   "type": "Example",
   "number": "6.3.7",
   "title": "",
   "body": "  Find the Fourier Cosine Series of for .    For this, we need to find the coefficients in ( ) and ( ),     and use ( ) to find      "
 },
 {
-  "id": "ch-fourier-series-5-3-9",
+  "id": "sect-even-odd-4-9",
   "level": "2",
-  "url": "ch-fourier-series-5.html#ch-fourier-series-5-3-9",
+  "url": "sect-even-odd.html#sect-even-odd-4-9",
   "type": "Example",
   "number": "6.3.8",
   "title": "",
   "body": "  Find the odd periodic extension of on . A graph of this is:   Graph of odd extension of on         For this, we need to find from ( ),     and then use this in ( )      "
 },
 {
-  "id": "ch-fourier-series-6",
+  "id": "sec-trig-poly",
   "level": "1",
-  "url": "ch-fourier-series-6.html",
+  "url": "sec-trig-poly.html",
   "type": "Section",
   "number": "6.4",
   "title": "Approximation by Trigonometric Polynomials",
-  "body": " Approximation by Trigonometric Polynomials   Consider a periodic function of period on the interval . The th partial sum of the Fourier Series of is denoted ,     where and are the Fourier Coefficients as before. The function is also called the Trigonometric Polynomial of degree . \\index{trigonometry polynomial}  Let's ask a question about approximation. Consider a function of the form:     What is the best approximate for a trigonometric polynomial to another function . That is, what coefficients can be chosen ?  To answer this question, we will need to know what error we are taking about. Typically the error will be some function of the two functions, called that outputs a number. We would like the error to have the following properties:  one such function that we know is the square of the function norm or     To find the minimum of this, we will take the derivatives of with respect to and :     or     Similarly take the derivative with respect to :     Note that unless and      And similarly it can be shown that      Let be a piecewise continuous function on , and     The values of and that minimize (or ) is     that is they are the Fourier Coefficients.     In Example , the Fourier series of the sawtooth function was found the Fourier Coefficients are:     Graph the sawtooth function and , the 9th degree trigonometric polynomial.     Plot of the sawtooth wave and it's 9th degree trigonometric approximation.      and the two plots are indistinguishable on this scale.      In , the Fourier series of the square wave function was found and the Fourier Coefficients are:     Graph the square wave function and , the th degree trigonometric polynomial.     Find a point on a line that minimizes distance      And in contrast to the previous example, the trigonometric polynomial and the original function are quite different.    We will explore this example in a bit more detail after seeing some important theorems.    Theorems Related to Fourier Series    The quantity on the interval is the minimum if and only if the coefficients of in (2) ar the Fourier coefficients of . This minimum value is        Bessel's Inequality   Let and be the fourier coefficients related to the function on . Then        Parseval's Theorem   Let and be the fourier coefficients related to the function on . Then       There are two important consequences of this theorem:     If the integral on the right side is finite, then the series on the left converges. Functions in which the right side is finite are piecewise continuous functions.    The error, in ( ) goes to zero. That is Fourier Series converge to (using the square error).       Calculate for the function:     and extended periodically and let .    The Fourier Series of this function is     or and                  5  0.00372    10  0.000832    25  0.0000482    50       100       250       500       1000          A consequence of Parseval's Theorem is that for piecewise continuous functions, the Fourier Series converges as . So in light of the plot in Example , that it would appear that the plot of would approach the square wave as . However the plots of and are shown below (with on top):   A square wave?????       A square wave?????      And despite the larger value of , does not appear to be approaching the square wave function. The difference is pronounced near the discontinuities in the function. This is called \\emph{Gibbs Phenomena} and it can be shown in this situation that the local max near in fact grows without bound as , despite the fact that .   "
+  "body": " Approximation by Trigonometric Polynomials     A Fourier series with only finite nubmer of terms is called a Trigonometric Polynomial.     The Trigonometric polynomial for a given is the best approximation to a periodic function in the sum of squares error sense. The Fourier Coefficients seen previous result in this trigonometric polynomila.    Bessel's Inequality give a bound on the sum of squares of the Fourier Coefficients.    Parseval's Theorem shows that the sum of squares of coefficients is proportional to the definite integral of the square of the function.      Consider a periodic function of period on the interval . The th partial sum of the Fourier Series of is denoted ,     where and are the Fourier Coefficients as before. The function is also called the Trigonometric Polynomial of degree .  Let's ask a question about approximation. Consider a function of the form:     What is the best approximate for a trigonometric polynomial to another function . That is, what coefficients can be chosen ?  To answer this question, we will need to know what error we are taking about. Typically the error will be some function of the two functions, called that outputs a number. We would like the error to have the following properties:   one such function that we know is the function norm or square of it:     To find the minimum of this, we will take the derivatives of with respect to and and solve for where the derivative is 0.     or     Similarly take the derivative with respect to :     Note that unless and      And similarly it can be shown that     Note that the coefficients and in , and are the Fourier Coefficients, seen in    Let be a piecewise continuous function on , and     The values of and that minimize (or ) is     that is they are the Fourier Coefficients.     In Example , the Fourier series of the sawtooth function was found the Fourier Coefficients are:     Graph the sawtooth function and , the 9th degree trigonometric polynomial.     Plot of the sawtooth wave and it's 9th degree trigonometric approximation.      and the two plots are indistinguishable on this scale.      In , the Fourier series of the square wave function was found and the Fourier Coefficients are:     Graph the square wave function and , the th degree trigonometric polynomial.     Graph of the square wave function and the th degree trigonometric polynomial.      And in contrast to the previous example, the trigonometric polynomial and the original function are quite different. This is mainly due to the discontinuities in the original function.    We will explore this example in a bit more detail after seeing some important theorems.    Theorems Related to Fourier Series    The quantity on the interval is the minimum if and only if the coefficients of in (2) ar the Fourier coefficients of . This minimum value is        Bessel's Inequality   Let and be the fourier coefficients related to the function on . Then        Parseval's Theorem   Let and be the fourier coefficients related to the function on . Then       There are two important consequences of this theorem:     If the integral on the right side is finite, then the series on the left converges. Functions in which the right side is finite are piecewise continuous functions.    The error, in ( ) goes to zero. That is Fourier Series converge to (using the square error).       Calculate for the function:     and extended periodically and let .    The Fourier Series of this function is     or and                  5  0.00372    10  0.000832    25  0.0000482    50       100       250       500       1000          A consequence of Parseval's Theorem is that for piecewise continuous functions, the Fourier Series converges as . So in light of the plot in Example , that it would appear that the plot of would approach the square wave as . However the plots of and are shown below (with on top):   A square wave?????       The Trigonmetric Polynomials of degree of the square wave function from above.      And despite the larger value of , does not appear to be approaching the square wave function. The difference is pronounced near the discontinuities in the function. This is called \\emph{Gibbs Phenomena} and it can be shown in this situation that the local max near in fact grows without bound as , despite the fact that .    Why is finite Fourier Series called a Polynomial?  You may be scratching your head about why the sum of sines and cosines is called a polynomial. You do recall correctly that polynomials are generally of the form     that is a linear combination of powers of .  However, you may also recall some trigonmetric identities. For example,     And a more complicated set of identities lead to     Note that in these examples, functions of the form and can be written in terms (for ) of products and powers of and . This continues for larger values of as well.  If you continue with similar identities, you can show that the trigonometric polynomial of the form     Can be written as the powers of and . This explains why this is called a polynomial.   "
 },
 {
-  "id": "ch-fourier-series-6-2-3",
+  "id": "sec-trig-poly-2",
   "level": "2",
-  "url": "ch-fourier-series-6.html#ch-fourier-series-6-2-3",
+  "url": "sec-trig-poly.html#sec-trig-poly-2",
+  "type": "Objectives",
+  "number": "6.4",
+  "title": "",
+  "body": "   A Fourier series with only finite nubmer of terms is called a Trigonometric Polynomial.     The Trigonometric polynomial for a given is the best approximation to a periodic function in the sum of squares error sense. The Fourier Coefficients seen previous result in this trigonometric polynomila.    Bessel's Inequality give a bound on the sum of squares of the Fourier Coefficients.    Parseval's Theorem shows that the sum of squares of coefficients is proportional to the definite integral of the square of the function.    "
+},
+{
+  "id": "sec-trig-poly-3-3",
+  "level": "2",
+  "url": "sec-trig-poly.html#sec-trig-poly-3-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Trigonometric Polynomial of degree "
 },
 {
-  "id": "ch-fourier-series-6-2-20",
+  "id": "sec-trig-poly-3-21",
   "level": "2",
-  "url": "ch-fourier-series-6.html#ch-fourier-series-6-2-20",
+  "url": "sec-trig-poly.html#sec-trig-poly-3-21",
   "type": "Remark",
   "number": "6.4.1",
   "title": "",
   "body": " Let be a piecewise continuous function on , and     The values of and that minimize (or ) is     that is they are the Fourier Coefficients.  "
 },
 {
-  "id": "ch-fourier-series-6-2-21",
+  "id": "sec-trig-poly-3-22",
   "level": "2",
-  "url": "ch-fourier-series-6.html#ch-fourier-series-6-2-21",
+  "url": "sec-trig-poly.html#sec-trig-poly-3-22",
   "type": "Example",
   "number": "6.4.2",
   "title": "",
@@ -3765,16 +3801,16 @@ var ptx_lunr_docs = [
 {
   "id": "ex-plot-square-wave",
   "level": "2",
-  "url": "ch-fourier-series-6.html#ex-plot-square-wave",
+  "url": "sec-trig-poly.html#ex-plot-square-wave",
   "type": "Example",
   "number": "6.4.4",
   "title": "",
-  "body": "  In , the Fourier series of the square wave function was found and the Fourier Coefficients are:     Graph the square wave function and , the th degree trigonometric polynomial.     Find a point on a line that minimizes distance      And in contrast to the previous example, the trigonometric polynomial and the original function are quite different.   "
+  "body": "  In , the Fourier series of the square wave function was found and the Fourier Coefficients are:     Graph the square wave function and , the th degree trigonometric polynomial.     Graph of the square wave function and the th degree trigonometric polynomial.      And in contrast to the previous example, the trigonometric polynomial and the original function are quite different. This is mainly due to the discontinuities in the original function.   "
 },
 {
-  "id": "ch-fourier-series-6-3-2",
+  "id": "sec-trig-poly-4-2",
   "level": "2",
-  "url": "ch-fourier-series-6.html#ch-fourier-series-6-3-2",
+  "url": "sec-trig-poly.html#sec-trig-poly-4-2",
   "type": "Theorem",
   "number": "6.4.6",
   "title": "",
@@ -3783,7 +3819,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-bessels-inequality",
   "level": "2",
-  "url": "ch-fourier-series-6.html#thm-bessels-inequality",
+  "url": "sec-trig-poly.html#thm-bessels-inequality",
   "type": "Theorem",
   "number": "6.4.7",
   "title": "Bessel’s Inequality.",
@@ -3792,38 +3828,38 @@ var ptx_lunr_docs = [
 {
   "id": "thm-parsevals-theorem",
   "level": "2",
-  "url": "ch-fourier-series-6.html#thm-parsevals-theorem",
+  "url": "sec-trig-poly.html#thm-parsevals-theorem",
   "type": "Theorem",
   "number": "6.4.8",
   "title": "Parseval’s Theorem.",
   "body": " Parseval's Theorem   Let and be the fourier coefficients related to the function on . Then      "
 },
 {
-  "id": "ch-fourier-series-6-3-7",
+  "id": "sec-trig-poly-4-7",
   "level": "2",
-  "url": "ch-fourier-series-6.html#ch-fourier-series-6-3-7",
+  "url": "sec-trig-poly.html#sec-trig-poly-4-7",
   "type": "Example",
   "number": "6.4.9",
   "title": "",
   "body": "  Calculate for the function:     and extended periodically and let .    The Fourier Series of this function is     or and                  5  0.00372    10  0.000832    25  0.0000482    50       100       250       500       1000         "
 },
 {
-  "id": "ch-fourier-series-6-3-9",
+  "id": "sec-trig-poly-4-9",
   "level": "2",
-  "url": "ch-fourier-series-6.html#ch-fourier-series-6-3-9",
+  "url": "sec-trig-poly.html#sec-trig-poly-4-9",
   "type": "Figure",
   "number": "6.4.11",
   "title": "",
   "body": " A square wave?????     "
 },
 {
-  "id": "ch-fourier-series-6-3-10",
+  "id": "sec-trig-poly-4-10",
   "level": "2",
-  "url": "ch-fourier-series-6.html#ch-fourier-series-6-3-10",
+  "url": "sec-trig-poly.html#sec-trig-poly-4-10",
   "type": "Figure",
   "number": "6.4.12",
   "title": "",
-  "body": " A square wave?????     "
+  "body": " The Trigonmetric Polynomials of degree of the square wave function from above.     "
 },
 {
   "id": "sect-part-deriv-diff-eqns",
@@ -4132,18 +4168,18 @@ var ptx_lunr_docs = [
   "body": "  Find the full solution if and       We only need to find      So the solution is     where and .   "
 },
 {
-  "id": "ch-pde-9",
+  "id": "sec-bessel-eqn",
   "level": "1",
-  "url": "ch-pde-9.html",
+  "url": "sec-bessel-eqn.html",
   "type": "Section",
   "number": "7.7",
   "title": "Bessel’s equation and Bessel Functions",
-  "body": " Bessel's equation and Bessel Functions   Bessel's equation is     A solution can be obtained by a power series solution and represented as     where is the gamma function, a generalized factorial. The function is called the Bessel Function of the first kind . We are often interested in solutions of in which is an integer. If this is the case, then and are two linearly independent solutions. The power series representation in this case is       Propeties of  The following is a plot of (solid line) and (dashed line) on . Each of the Bessel functions have osciallatory behavior with decay and an infinite number of roots for . Also note that the roots of are between the roots of .   A bar      Using , it can be shown that     In addition, using the power series representation, one can show that the other solution of ( ) can be written:     However for , has a term which means that it is undefined at , which is generally why it not relevant as we will show later. There are a number of identities that are useful for understanding Bessel functions. Two of these are shown in the follow lemma.    Consider , where is an integer. Then     for all .    First we will prove ( ). Using ( ), we can write     and differentiating,     The proof for ( ) is very similar and is not shown.    In addition, there are another two identities for Bessel functions that are often called recurrence relationships.    Let for an integer and , then       If we use the product rule to expand ( ) and ( ), we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .    These properties can now be used to find higher order Bessel functions, the derivatives of Bessel functions as well as the closed form of some integrals as shown in the next three examples.    Use the identities in lemmas and to find in terms of and .    Let in or     use ( ) again with or which can be written        The above technique can be used to find where is an integer in terms of and , showing the importance of the first two Bessel functions. The next example shows how to calculate the derivatives of the first two Bessel functions.    Use the identities in lemmas and to find and in terms of and .    First, differentiate ( ) with to get     using ( ) with and ,     Using ( ) with      and finally dividing through by          Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get         Roots of the Bessel functions  There is not an analytic way to find the roots of any of the bessel functions, so we will resort to numerical approximation. Many Computer Algebra Systems and scientific computing languages have bessel functions built in and roots can be found with techniques such as Newton's method or bisection.  In general, the th root of is between and , so the following Maple code will find the first 50.     The first ten values are: .   "
+  "body": " Bessel's equation and Bessel Functions   Bessel's equation is     A solution can be obtained by a power series solution and represented as     where is the gamma function, a generalized factorial. The function is called the Bessel Function of the first kind . We are often interested in solutions of in which is an integer. If this is the case, then and are two linearly independent solutions. The power series representation in this case is       Propeties of  The following is a plot of (solid line) and (dashed line) on . Each of the Bessel functions have osciallatory behavior with decay and an infinite number of roots for . Also note that the roots of are between the roots of .   A plot of the bessel functions and on .      Using , it can be shown that     In addition, using the power series representation, one can show that the other solution of can be written:     However for , has a term which means that it is undefined at , which is generally why it not relevant as we will show later. There are a number of identities that are useful for understanding Bessel functions. Two of these are shown in the follow lemma.    Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.    In addition, there are another two identities for Bessel functions that are often called recurrence relationships.    Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .    These properties can now be used to find higher order Bessel functions, the derivatives of Bessel functions as well as the closed form of some integrals as shown in the next three examples.    Use the identities in and to find in terms of and .    Let in or     use again with or which can be written        The above technique can be used to find where is an integer in terms of and , showing the importance of the first two Bessel functions. The next example shows how to calculate the derivatives of the first two Bessel functions.    Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by          Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get         Roots of the Bessel functions  There is not an analytic way to find the roots of any of the bessel functions, so we will resort to numerical approximation. Many Computer Algebra Systems and scientific computing languages have bessel functions built in and roots can be found with techniques such as Newton's method or bisection.  In general, the th root of is between and , so the following Maple code will find the first 50.     The first ten values are: .   "
 },
 {
-  "id": "ch-pde-9-2-5",
+  "id": "sec-bessel-eqn-2-5",
   "level": "2",
-  "url": "ch-pde-9.html#ch-pde-9-2-5",
+  "url": "sec-bessel-eqn.html#sec-bessel-eqn-2-5",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -4152,52 +4188,52 @@ var ptx_lunr_docs = [
 {
   "id": "fig-bessel",
   "level": "2",
-  "url": "ch-pde-9.html#fig-bessel",
+  "url": "sec-bessel-eqn.html#fig-bessel",
   "type": "Figure",
   "number": "7.7.1",
   "title": "",
-  "body": " A bar     "
+  "body": " A plot of the bessel functions and on .     "
 },
 {
   "id": "lem-bessel-identities",
   "level": "2",
-  "url": "ch-pde-9.html#lem-bessel-identities",
+  "url": "sec-bessel-eqn.html#lem-bessel-identities",
   "type": "Lemma",
   "number": "7.7.2",
   "title": "",
-  "body": "  Consider , where is an integer. Then     for all .    First we will prove ( ). Using ( ), we can write     and differentiating,     The proof for ( ) is very similar and is not shown.   "
+  "body": "  Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.   "
 },
 {
   "id": "lem-bessel-recurrence",
   "level": "2",
-  "url": "ch-pde-9.html#lem-bessel-recurrence",
+  "url": "sec-bessel-eqn.html#lem-bessel-recurrence",
   "type": "Lemma",
   "number": "7.7.3",
   "title": "",
-  "body": "  Let for an integer and , then       If we use the product rule to expand ( ) and ( ), we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .   "
+  "body": "  Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .   "
 },
 {
   "id": "ex-bessel-J3",
   "level": "2",
-  "url": "ch-pde-9.html#ex-bessel-J3",
+  "url": "sec-bessel-eqn.html#ex-bessel-J3",
   "type": "Example",
   "number": "7.7.4",
   "title": "",
-  "body": "  Use the identities in lemmas and to find in terms of and .    Let in or     use ( ) again with or which can be written       "
+  "body": "  Use the identities in and to find in terms of and .    Let in or     use again with or which can be written       "
 },
 {
-  "id": "ch-pde-9-3-15",
+  "id": "sec-bessel-eqn-3-15",
   "level": "2",
-  "url": "ch-pde-9.html#ch-pde-9-3-15",
+  "url": "sec-bessel-eqn.html#sec-bessel-eqn-3-15",
   "type": "Example",
   "number": "7.7.5",
   "title": "",
-  "body": "  Use the identities in lemmas and to find and in terms of and .    First, differentiate ( ) with to get     using ( ) with and ,     Using ( ) with      and finally dividing through by       "
+  "body": "  Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by       "
 },
 {
-  "id": "ch-pde-9-3-16",
+  "id": "sec-bessel-eqn-3-16",
   "level": "2",
-  "url": "ch-pde-9.html#ch-pde-9-3-16",
+  "url": "sec-bessel-eqn.html#sec-bessel-eqn-3-16",
   "type": "Example",
   "number": "7.7.6",
   "title": "",

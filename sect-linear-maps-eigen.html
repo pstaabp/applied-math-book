@@ -6,14 +6,19 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Eigenvalues and Eigenvectors of Linear Transformations</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Applied Mathematics">
-<meta property="book:author" content="Peter Staab">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -57,7 +62,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
+      "pretext": "_static/pretext/js/lib"
     }
   },
   "startup": {
@@ -69,33 +74,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Applied Mathematics">
+<meta property="book:author" content="Peter Staab">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.6';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
-<body id="applied-math-staab" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="applied-mathematics-staab.html"><span class="title">Applied Mathematics</span></a></h1>
 <p class="byline">Peter Staab</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -106,7 +129,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sect-eigenvalues.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-eigenvalues-eigenvectors.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-sym-matrix-quad-form.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-eigenvalues.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-eigenvalues-eigenvectors.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-sym-matrix-quad-form.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -114,7 +138,7 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Linear Systems</span></a></div>
@@ -342,9 +366,9 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">5.2.2</span> <span class="title">LU fatorization and elementary matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-5" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -370,27 +394,30 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Properties of Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-3" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Odd and Even Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-fourier-series-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-fourier-series-5.html#ch-fourier-series-5-3" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-fourier-series-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-fourier-series-6.html#ch-fourier-series-6-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -424,10 +451,10 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-pde-9.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-9.html#ch-pde-9-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-9.html#ch-pde-9-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -444,64 +471,124 @@ window.MathJax = {
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-linear-maps-eigen"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span>
 </h2>
 <article class="objectives goal-like" id="sect-linear-maps-eigen-2"><h3 class="heading"><span class="type">Objectives</span></h3>
-<ul class="disc">
-<li id="sect-linear-maps-eigen-2-1-1"><div class="para" id="sect-linear-maps-eigen-2-1-1-1">The definition of the eigenvalues and eigenvector of a linear transformation.</div></li>
-<li id="sect-linear-maps-eigen-2-1-2"><div class="para" id="sect-linear-maps-eigen-2-1-2-1">Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.</div></li>
-<li id="sect-linear-maps-eigen-2-1-3"><div class="para" id="sect-linear-maps-eigen-2-1-3-1">Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the transformation.</div></li>
-</ul></article><div class="para" id="sect-linear-maps-eigen-3">Recall that in section <a href="sect-eigenvalues.html" class="internal" title="Section 4.1: Eigenvalues and Eigenvectors">Section 4.1</a> that the eigenvalues and eigenvectors of a square matrix was found. We will examine how we can find eigenvalues and eigenvectors of a linear map. The definition of these are extensions of what we saw for matrices.</div>
+<ul class="disc" id="sect-linear-maps-eigen-2-1">
+<li id="sect-linear-maps-eigen-2-1-1">
+<div class="para" id="sect-linear-maps-eigen-2-1-1-1">The definition of the eigenvalues and eigenvector of a linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-linear-maps-eigen-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sect-linear-maps-eigen-2-1-2">
+<div class="para" id="sect-linear-maps-eigen-2-1-2-1">Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-linear-maps-eigen-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sect-linear-maps-eigen-2-1-3">
+<div class="para" id="sect-linear-maps-eigen-2-1-3-1">Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the transformation.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-linear-maps-eigen-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Objectives 4.2"><a href="#sect-linear-maps-eigen-2" title="Copy heading and permalink for Objectives 4.2" aria-label="Copy heading and permalink for Objectives 4.2">🔗</a></div></article><div class="para" id="sect-linear-maps-eigen-3">Recall that in section <a href="sect-eigenvalues.html" class="internal" title="Section 4.1: Eigenvalues and Eigenvectors">Section 4.1</a> that the eigenvalues and eigenvectors of a square matrix was found. We will examine how we can find eigenvalues and eigenvectors of a linear map. The definition of these are extensions of what we saw for matrices.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="sect-linear-maps-eigen-4"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sect-linear-maps-eigen-4-1-1">Let <span class="process-math">\(T:V \rightarrow V\)</span> be a linear map and <span class="process-math">\(V\)</span> be a finite dimensional vector space. The nonzero vector <span class="process-math">\(\vec{x}\)</span> is an <dfn class="terminology">eigenvector</dfn> with associated <dfn class="terminology">eigenvalue</dfn> if</div> <div class="para logical" id="sect-linear-maps-eigen-4-1-2"><div class="displaymath process-math">
+<div class="para" id="sect-linear-maps-eigen-4-1-1">Let <span class="process-math">\(T:V \rightarrow V\)</span> be a linear map and <span class="process-math">\(V\)</span> be a finite dimensional vector space. The nonzero vector <span class="process-math">\(\vec{x}\)</span> is an <dfn class="terminology">eigenvector</dfn> with associated <dfn class="terminology">eigenvalue</dfn> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-linear-maps-eigen-4-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 T(\vec{x}) = \lambda \vec{x}.
 \end{equation*}
-</div></div></article><div class="para" id="sect-linear-maps-eigen-5">There are a few ways to find <span class="process-math">\(\vec{x}\)</span> and <span class="process-math">\(\lambda\text{.}\)</span> In this section, we’ll only see some examples that are relatively simple to see as well as finding the matrix representation of the map. In addition, this section only shows examples from finite dimensional vector spaces, however, in general, there is no restriction.</div>
-<div class="para" id="sect-linear-maps-eigen-6">For the remainder of this chapter we will see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and derivative maps. We first see an example of scaling a vector in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span>
 </div>
-<details id="sect-linear-maps-eigen-7" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-7-1-1">Find the eigenvalues and eigenvectors of the scale map <span class="process-math">\(S\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/ex-scale-map.html" title="Example 3.4.6: Linear Scale Map">Example 3.4.6</a>.</div>
-<div class="solutions"><details id="sect-linear-maps-eigen-7-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-linear-maps-eigen-7-2-1">Recall that the scale map <span class="process-math">\(S: \mathbb{R}^2 \rightarrow \mathbb{R}^2\)</span> is given by</div> <div class="para logical" id="sect-linear-maps-eigen-7-2-2"><div class="displaymath process-math">
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.2.1"><a href="#sect-linear-maps-eigen-4" title="Copy heading and permalink for Definition 4.2.1" aria-label="Copy heading and permalink for Definition 4.2.1">🔗</a></div></article><div class="para" id="sect-linear-maps-eigen-5">There are a few ways to find <span class="process-math">\(\vec{x}\)</span> and <span class="process-math">\(\lambda\text{.}\)</span> In this section, we’ll only see some examples that are relatively simple to see as well as finding the matrix representation of the map. In addition, this section only shows examples from finite dimensional vector spaces, however, in general, there is no restriction.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-6">For the remainder of this chapter we will see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and derivative maps. We first see an example of scaling a vector in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sect-linear-maps-eigen-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-linear-maps-eigen-7-1-1">Find the eigenvalues and eigenvectors of the scale map <span class="process-math">\(S\)</span> from <a href="sect-linear-transformations.html#ex-scale-map" class="xref" data-knowl="./knowl/xref/ex-scale-map.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.4.6: Linear Scale Map">Example 3.4.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-linear-maps-eigen-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-linear-maps-eigen-7-2-1">Recall that the scale map <span class="process-math">\(S: \mathbb{R}^2 \rightarrow \mathbb{R}^2\)</span> is given by<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-7-2-2">
+<div class="displaymath process-math">
 \begin{equation*}
 S(\vec{x}) = k \vec{x}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-7-2-3">To find the eigenvalues and eigenvectors of <span class="process-math">\(S\text{,}\)</span> we seek an <span class="process-math">\(\vec{x}\)</span> and a <span class="process-math">\(\lambda\)</span> such that</div> <div class="para logical" id="sect-linear-maps-eigen-7-2-4"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-7-2-3">To find the eigenvalues and eigenvectors of <span class="process-math">\(S\text{,}\)</span> we seek an <span class="process-math">\(\vec{x}\)</span> and a <span class="process-math">\(\lambda\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-7-2-4">
+<div class="displaymath process-math">
 \begin{equation*}
 S(\vec{x})=\lambda \vec{x}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-7-2-5">but since <span class="process-math">\(S(\vec{x})=k \vec{x}\text{,}\)</span> then <span class="process-math">\(\lambda =k\)</span> and any <span class="process-math">\(\vec{x}\)</span> is an eigenvector.</div> <div class="para" id="sect-linear-maps-eigen-7-2-6">Alternatively, we can write down the matrix <span class="process-math">\(A_S\)</span> associated with the map. This was done in <a href="" class="xref" data-knowl="./knowl/xref/ex-scale-map-matrix-rep.html" title="Example 3.4.12">Example 3.4.12</a> and is</div> <div class="para logical" id="sect-linear-maps-eigen-7-2-7"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-7-2-5">but since <span class="process-math">\(S(\vec{x})=k \vec{x}\text{,}\)</span> then <span class="process-math">\(\lambda =k\)</span> and any <span class="process-math">\(\vec{x}\)</span> is an eigenvector.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-7-2-6">Alternatively, we can write down the matrix <span class="process-math">\(A_S\)</span> associated with the map. This was done in <a href="sect-linear-transformations.html#ex-scale-map-matrix-rep" class="xref" data-knowl="./knowl/xref/ex-scale-map-matrix-rep.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.4.12">Example 3.4.12</a> and is<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-7-2-7">
+<div class="displaymath process-math">
 \begin{equation*}
 A_S = \begin{bmatrix}
 k \amp 0 \\ 0 \amp k
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-7-2-8">The eigenvalues and eigenvectors of this was found in <a href="" class="xref" data-knowl="./knowl/xref/ex-eigs-scale2.html" title="Example 4.1.6">Example 4.1.6</a> for a particular <span class="process-math">\(k\text{,}\)</span> but generalizing that, one can see that <span class="process-math">\(\lambda=k\)</span> will be the only eigenvector of <span class="process-math">\(A_S\)</span> with eigenvectors <span class="process-math">\([1\;\;0]^{\intercal}\)</span> and <span class="process-math">\([0\;\;1]^{\intercal}\text{.}\)</span>
-</div> <div class="para" id="sect-linear-maps-eigen-7-2-9">In this case, since there are two eigenvectors associated with <span class="process-math">\(\lambda=k\text{,}\)</span> any linear combination of the two eigenvectors is also an eigenvector, and since <span class="process-math">\([1\;\;0]^{\intercal}\)</span> and <span class="process-math">\([0\;\;1]^{\intercal}\)</span> span <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is an eigenvector.</div>
-</div></details></div></article></details><div class="para" id="sect-linear-maps-eigen-8">The next example shows the eigenvalues of the linear map associated with a derivative.</div>
-<details id="sect-linear-maps-eigen-9" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-9-1-1">The set</div> <div class="para logical" id="sect-linear-maps-eigen-9-1-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-7-2-8">The eigenvalues and eigenvectors of this was found in <a href="sect-eigenvalues.html#ex-eigs-scale2" class="xref" data-knowl="./knowl/xref/ex-eigs-scale2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.6">Example 4.1.6</a> for a particular <span class="process-math">\(k\text{,}\)</span> but generalizing that, one can see that <span class="process-math">\(\lambda=k\)</span> will be the only eigenvector of <span class="process-math">\(A_S\)</span> with eigenvectors <span class="process-math">\([1\;\;0]^{\intercal}\)</span> and <span class="process-math">\([0\;\;1]^{\intercal}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-7-2-9">In this case, since there are two eigenvectors associated with <span class="process-math">\(\lambda=k\text{,}\)</span> any linear combination of the two eigenvectors is also an eigenvector, and since <span class="process-math">\([1\;\;0]^{\intercal}\)</span> and <span class="process-math">\([0\;\;1]^{\intercal}\)</span> span <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> any vector in <span class="process-math">\(\mathbb{R}^2\)</span> is an eigenvector.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-7-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.2.1"><a href="#sect-linear-maps-eigen-7-2" title="Copy heading and permalink for Solution 4.2.2.1" aria-label="Copy heading and permalink for Solution 4.2.2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.2.2"><a href="#sect-linear-maps-eigen-7" title="Copy heading and permalink for Example 4.2.2" aria-label="Copy heading and permalink for Example 4.2.2">🔗</a></div></article></details><div class="para" id="sect-linear-maps-eigen-8">The next example shows the eigenvalues of the linear map associated with a derivative.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sect-linear-maps-eigen-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-linear-maps-eigen-9-1-1">The set<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-linear-maps-eigen-9-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 V = \{ ae^{x} + b e^{-x} \; | \; a,b \in \mathbb{R} \}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-9-1-3">is a subspace of all functions on <span class="process-math">\(\mathbb{R}\text{.}\)</span> A basis for this subspace is <span class="process-math">\((e^x,e^{-x})\text{.}\)</span> In addition, the differential operation <span class="process-math">\(D:V \rightarrow V\)</span> is a linear transformation. What are the eigenvalues and eigenvectors of <span class="process-math">\(D\text{?}\)</span>
 </div>
-<div class="solutions"><details id="sect-linear-maps-eigen-9-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-9-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sect-linear-maps-eigen-9-1-3">is a subspace of all functions on <span class="process-math">\(\mathbb{R}\text{.}\)</span> A basis for this subspace is <span class="process-math">\((e^x,e^{-x})\text{.}\)</span> In addition, the differential operation <span class="process-math">\(D:V \rightarrow V\)</span> is a linear transformation. What are the eigenvalues and eigenvectors of <span class="process-math">\(D\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-linear-maps-eigen-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="sect-linear-maps-eigen-9-2-1">There are two ways of looking at this. Since <span class="process-math">\(e^{x} \mapsto e^x\text{,}\)</span> this means that <span class="process-math">\(e^x\)</span> is an eigenvector with corresponding eigenvalue 1. Similarly, since <span class="process-math">\(e^{-x} \mapsto
--e^{-x}\text{,}\)</span> this also means that <span class="process-math">\(e^{-x}\)</span> is an eigenvector with eigenvalue <span class="process-math">\(-1\text{.}\)</span>
-</div> <div class="para" id="sect-linear-maps-eigen-9-2-2">Alternatively, this can be done by first finding the matrix representation of the differential operator or</div> <div class="para logical" id="sect-linear-maps-eigen-9-2-3"><div class="displaymath process-math">
+-e^{-x}\text{,}\)</span> this also means that <span class="process-math">\(e^{-x}\)</span> is an eigenvector with eigenvalue <span class="process-math">\(-1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-9-2-2">Alternatively, this can be done by first finding the matrix representation of the differential operator or<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-9-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-9-2-3">
+<div class="displaymath process-math">
 \begin{equation*}
 A_D = \begin{bmatrix}
 1 \amp 0 \\
 0 \amp -1
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-9-2-4">Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2=-1\text{.}\)</span> One can also find that the corresponding eigenvectors are</div> <div class="para logical" id="sect-linear-maps-eigen-9-2-5"><div class="displaymath process-math" id="sect-linear-maps-eigen-9-2-5-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-9-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-9-2-4">Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2=-1\text{.}\)</span> One can also find that the corresponding eigenvectors are<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-9-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-9-2-5">
+<div class="displaymath process-math" id="sect-linear-maps-eigen-9-2-5-1">
 \begin{align*}
 \vec{v}_1 \amp = \begin{bmatrix}
 1 \\ 0
@@ -509,10 +596,18 @@ A_D = \begin{bmatrix}
 0 \\ 1
 \end{bmatrix}
 \end{align*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-9-2-6">These two vectors can be translated back to the functional forms <span class="process-math">\(e^{x}\)</span> and <span class="process-math">\(e^{-x} \text{,}\)</span> the same as we found above. These two functions which are in <span class="process-math">\(V\)</span> are functions that stay the same in the subspace <span class="process-math">\(V\)</span> up to a scalar constant.</div>
-</div></details></div></article></details><details id="sect-linear-maps-eigen-10" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-10-1-1">Consider the differential map <span class="process-math">\(D: \mathcal{P}_3 \rightarrow \mathcal{P}_3\)</span> which maps cubic polynomials to other cubic polynomials.</div> <div class="para logical" id="sect-linear-maps-eigen-10-1-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-9-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-9-2-6">These two vectors can be translated back to the functional forms <span class="process-math">\(e^{x}\)</span> and <span class="process-math">\(e^{-x} \text{,}\)</span> the same as we found above. These two functions which are in <span class="process-math">\(V\)</span> are functions that stay the same in the subspace <span class="process-math">\(V\)</span> up to a scalar constant.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-9-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.3.1"><a href="#sect-linear-maps-eigen-9-2" title="Copy heading and permalink for Solution 4.2.3.1" aria-label="Copy heading and permalink for Solution 4.2.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.2.3"><a href="#sect-linear-maps-eigen-9" title="Copy heading and permalink for Example 4.2.3" aria-label="Copy heading and permalink for Example 4.2.3">🔗</a></div></article></details><details id="sect-linear-maps-eigen-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-linear-maps-eigen-10-1-1">Consider the differential map <span class="process-math">\(D: \mathcal{P}_3 \rightarrow \mathcal{P}_3\)</span> which maps cubic polynomials to other cubic polynomials.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-linear-maps-eigen-10-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 A = \begin{bmatrix}
 0 \amp 1 \amp 0 \amp 0 \\
@@ -521,9 +616,15 @@ A = \begin{bmatrix}
 0 \amp 0 \amp 0 \amp 0
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-10-1-3">Find the eigenvalues of this matrix and interpret.</div>
-<div class="solutions"><details id="sect-linear-maps-eigen-10-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-linear-maps-eigen-10-2-1">First, we find</div> <div class="para logical" id="sect-linear-maps-eigen-10-2-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sect-linear-maps-eigen-10-1-3">Find the eigenvalues of this matrix and interpret.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-linear-maps-eigen-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-linear-maps-eigen-10-2-1">First, we find<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-10-2-2">
+<div class="displaymath process-math">
 \begin{equation*}
 |A-\lambda I| = \begin{vmatrix}
 -\lambda \amp 1 \amp 0 \amp 0 \\
@@ -532,7 +633,13 @@ A = \begin{bmatrix}
 0 \amp 0 \amp 0 \amp -\lambda
 \end{vmatrix} = (-\lambda)^4
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-10-2-3">and setting it to zero, thus <span class="process-math">\(\lambda=0\)</span> is the only eigenvalue. To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:</div> <div class="para logical" id="sect-linear-maps-eigen-10-2-4"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-10-2-3">and setting it to zero, thus <span class="process-math">\(\lambda=0\)</span> is the only eigenvalue. To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-10-2-4">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 0 \amp 1 \amp 0 \amp 0 \\
@@ -541,17 +648,32 @@ A = \begin{bmatrix}
 0 \amp 0 \amp 0 \amp 0
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-10-2-5">and the solution to the null space is</div> <div class="para logical" id="sect-linear-maps-eigen-10-2-6"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-10-2-5">and the solution to the null space is<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-10-2-6">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 1 \\ 0 \\ 0 \\ 0
 \end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-10-2-7">This vector is the representation of the cubic polynomial <span class="process-math">\(p(x)=c\text{,}\)</span> a constant. Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.</div>
-</div></details></div></article></details><div class="para" id="sect-linear-maps-eigen-11">This last example of this involves matrices and the rotation of a matrix.</div>
-<details id="sect-linear-maps-eigen-12" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-linear-maps-eigen-12-1-1">Find the eigenvalues and eigenvectors of the linear map  that rotates a 2 by 2 matrix 90<span class="process-math">\(^{\circ}\)</span> clockwise. That is <span class="process-math">\(R: \mathcal{M}_{2 \times 2} \rightarrow \mathcal{M}_{2\times 2}\)</span> such that</div> <div class="para logical" id="sect-linear-maps-eigen-12-1-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-10-2-7">This vector is the representation of the cubic polynomial <span class="process-math">\(p(x)=c\text{,}\)</span> a constant. Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-10-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.4.1"><a href="#sect-linear-maps-eigen-10-2" title="Copy heading and permalink for Solution 4.2.4.1" aria-label="Copy heading and permalink for Solution 4.2.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.2.4"><a href="#sect-linear-maps-eigen-10" title="Copy heading and permalink for Example 4.2.4" aria-label="Copy heading and permalink for Example 4.2.4">🔗</a></div></article></details><div class="para" id="sect-linear-maps-eigen-11">This last example of this involves matrices and the rotation of a matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sect-linear-maps-eigen-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-linear-maps-eigen-12-1-1">Find the eigenvalues and eigenvectors of the linear map  that rotates a 2 by 2 matrix 90<span class="process-math">\(^{\circ}\)</span> clockwise. That is <span class="process-math">\(R: \mathcal{M}_{2 \times 2} \rightarrow \mathcal{M}_{2\times 2}\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-linear-maps-eigen-12-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 a \amp b \\
@@ -560,9 +682,14 @@ c \amp d
 c \amp a \\ d\amp b
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="sect-linear-maps-eigen-12-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-linear-maps-eigen-12-2-1">One can show that if we consider the vector representation in the basis:</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-linear-maps-eigen-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-linear-maps-eigen-12-2-1">One can show that if we consider the vector representation in the basis:<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-12-2-2">
+<div class="displaymath process-math">
 \begin{equation*}
 B  = \biggl( \begin{bmatrix}
 1 \amp0 \\ 0 \amp 0
@@ -574,7 +701,13 @@ B  = \biggl( \begin{bmatrix}
 0 \amp0 \\ 0 \amp 1
 \end{bmatrix} \biggr)
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-3">that</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-4"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-12-2-3">that<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-12-2-4">
+<div class="displaymath process-math">
 \begin{equation*}
 \text{Rep}_B \biggl( \begin{bmatrix}
 a \amp b \\ c \amp d
@@ -582,7 +715,13 @@ a \amp b \\ c \amp d
 a \\ b \\ c \\ d
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-5">and the map <span class="process-math">\(R\)</span> can be represented by the matrix as</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-6"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-12-2-5">and the map <span class="process-math">\(R\)</span> can be represented by the matrix as<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-12-2-6">
+<div class="displaymath process-math">
 \begin{equation*}
 A_R = \begin{bmatrix}
 0 \amp 1 \amp 0 \amp 0 \\
@@ -591,7 +730,13 @@ A_R = \begin{bmatrix}
 0 \amp 0 \amp 1 \amp 0
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-7">We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-8"><div class="displaymath process-math" id="sect-linear-maps-eigen-12-2-8-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-12-2-7">We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-12-2-8">
+<div class="displaymath process-math" id="sect-linear-maps-eigen-12-2-8-1">
 \begin{align*}
 \lambda_1 \amp = 1 \amp \vec{v}_1 \amp = \begin{bmatrix}
 1 \\ 1 \\ 1 \\1
@@ -606,25 +751,49 @@ A_R = \begin{bmatrix}
 1 \\ i \\ -i \\ -1
 \end{bmatrix}
 \end{align*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-9">To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, <span class="process-math">\(\vec{v}_1\)</span> is the matrix</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-10"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-12-2-9">To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, <span class="process-math">\(\vec{v}_1\)</span> is the matrix<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-12-2-10">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 1 \amp 1 \\ 1 \amp 1
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-11">and if that matrix is rotated, you get it back and the eigenvector is 1. The second eigenvector can be written as the matrix</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-12"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-12-2-11">and if that matrix is rotated, you get it back and the eigenvalue is 1. The second eigenvector can be written as the matrix<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-12-2-12">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 1 \amp -1 \\ -1 \amp 1
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-13">and if you rotate this matrix, you get the matrix</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-14"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-12-2-13">and if you rotate this matrix, you get the matrix<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-12-2-14">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 -1\amp 1 \\ 1 \amp -1
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-15">which is the above matrix multiplied by the eigenvalue <span class="process-math">\(\lambda_2=-1\text{.}\)</span> In other words:</div> <div class="para logical" id="sect-linear-maps-eigen-12-2-16"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-12-2-15">which is the above matrix multiplied by the eigenvalue <span class="process-math">\(\lambda_2=-1\text{.}\)</span> In other words:<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-linear-maps-eigen-12-2-16">
+<div class="displaymath process-math">
 \begin{equation*}
 R\left(
 \begin{bmatrix}
@@ -633,14 +802,20 @@ R\left(
 1 \amp -1 \\ -1 \amp 1
 \end{bmatrix}
 \end{equation*}
-</div></div> <div class="para" id="sect-linear-maps-eigen-12-2-17">The other two work in a similar manner, however complex numbers are needed.</div>
-</div></details></div></article></details></section></div>
-<div class="ptx-content-footer">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-linear-maps-eigen-12-2-17">The other two work in a similar manner, however complex numbers are needed.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-maps-eigen-12-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.5.1"><a href="#sect-linear-maps-eigen-12-2" title="Copy heading and permalink for Solution 4.2.5.1" aria-label="Copy heading and permalink for Solution 4.2.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.2.5"><a href="#sect-linear-maps-eigen-12" title="Copy heading and permalink for Example 4.2.5" aria-label="Copy heading and permalink for Example 4.2.5">🔗</a></div></article></details><div class="autopermalink" data-description="Section 4.2: Eigenvalues and Eigenvectors of Linear Transformations"><a href="#sect-linear-maps-eigen" title="Copy heading and permalink for Section 4.2: Eigenvalues and Eigenvectors of Linear Transformations" aria-label="Copy heading and permalink for Section 4.2: Eigenvalues and Eigenvectors of Linear Transformations">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sect-eigenvalues.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-sym-matrix-quad-form.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

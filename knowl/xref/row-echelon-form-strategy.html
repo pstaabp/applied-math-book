@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +19,12 @@
 </head>
 <body class="ignore-math">
 <article class="remark remark-like"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Strategy for putting a matrix in Row-Echelon Form.</span>
-</h4> <div class="para">Consider a general <span class="process-math">\(3 \times 4\)</span> matrix representating a linear system with 3 equations and 3 variables. The <span class="process-math">\(\star\)</span> means the value of entry can be any number.</div> <div class="para logical"><div class="displaymath process-math">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Strategy for putting a matrix in Row-Echelon Form.</span>
+</h4>
+<div class="para">Consider a general <span class="process-math">\(3 \times 4\)</span> matrix representating a linear system with 3 equations and 3 variables. The <span class="process-math">\(\star\)</span> means the value of entry can be any number.<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrr|r}
 \star \amp \star \amp \star \amp \star \\
@@ -21,7 +32,13 @@
 \star \amp \star \amp \star \amp \star
 \end{array}\right]
 \end{equation*}
-</div></div> <div class="para">The first step is to get a 1 in the first column, first row or</div> <div class="para logical"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">The first step is to get a 1 in the first column, first row or<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrr|r}
 1 \amp \star \amp \star \amp \star \\
@@ -29,7 +46,15 @@
 \star \amp \star \amp \star \amp \star
 \end{array}\right]
 \end{equation*}
-</div></div> <div class="para">We next desire to zero out the rest of the first column, which we do with the elimination operation from <a href="" class="xref" data-knowl="./knowl/xref/def-eliminate-step.html" title="Definition 1.3.5">Definition 1.3.5</a>.</div> <div class="para">Next, we will use this to zero out the 2nd and 3rd rows in the first column to get:</div> <div class="para logical"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">We next desire to zero out the rest of the first column, which we do with the elimination operation from <a href="sect-gaussian-elimination.html#def-eliminate-step" class="xref" data-knowl="./knowl/xref/def-eliminate-step.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.5">Definition 1.3.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Next, we will use this to zero out the 2nd and 3rd rows in the first column to get:<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrr|r}
 1 \amp \star \amp \star \amp \star \\
@@ -37,7 +62,13 @@
 0 \amp \star \amp \star \amp \star
 \end{array}\right]
 \end{equation*}
-</div></div> <div class="para">Next, we seek a 1 in the 2nd row, 2nd column. or</div> <div class="para logical"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Next, we seek a 1 in the 2nd row, 2nd column. or<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrr|r}
 1 \amp \star \amp \star \amp \star \\
@@ -45,7 +76,13 @@
 0 \amp \star \amp \star \amp \star
 \end{array}\right]
 \end{equation*}
-</div></div> <div class="para">And then if we are looking for a matrix in echelon form, zero out the 3rd row, 2nd column. We use the same general row operation in <a href="" class="xref" data-knowl="./knowl/xref/eq-eliminate-step.html" title="Equation 1.3.1">(1.3.1)</a> however using the 2nd row instead or</div> <div class="para logical"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">And then if we are looking for a matrix in echelon form, zero out the 3rd row, 2nd column. We use the same general row operation in <a href="sect-gaussian-elimination.html#eq-eliminate-step" class="xref" data-knowl="./knowl/xref/eq-eliminate-step.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3.1">(1.3.1)</a> however using the 2nd row instead or<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrr|r}
 1 \amp \star \amp \star \amp \star \\
@@ -53,6 +90,11 @@
 0 \amp 0 \amp \star \amp \star
 \end{array}\right]
 \end{equation*}
-</div></div> <div class="para">This matrix is now in row-echelon form. If instead reduced-row-echelon form is desired, in the previous step, the 2nd column, first row can be eliminated and then another set of steps can be used to get the 3rd row in the correct form.</div></article><span class="incontext"><a class="internal" href="sect-gaussian-elimination.html#row-echelon-form-strategy">in-context</a></span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">This matrix is now in row-echelon form. If instead reduced-row-echelon form is desired, in the previous step, the 2nd column, first row can be eliminated and then another set of steps can be used to get the 3rd row in the correct form.<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form"><a href="#row-echelon-form-strategy" title="Copy heading and permalink for Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form" aria-label="Copy heading and permalink for Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form">🔗</a></div></article><span class="incontext"><a class="internal" href="sect-gaussian-elimination.html#row-echelon-form-strategy">in-context</a></span>
 </body>
 </html>

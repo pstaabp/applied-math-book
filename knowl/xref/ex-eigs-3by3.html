@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,9 +19,11 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.10</span><span class="period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para">Find the eigenvalues and eigenvectors of the 3 by 3 matrix</div> <div class="para logical"><div class="displaymath process-math">
+<div class="para">Find the eigenvalues and eigenvectors of the 3 by 3 matrix<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
 1 \amp 0 \amp 0 \\
@@ -22,9 +31,14 @@
 2 \amp 1 \amp 3
 \end{bmatrix}
 \end{equation*}
-</div></div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para">To find the eigenvalues, we solve the characteristic equation <span class="process-math">\(|A-\lambda I|=0\)</span> or expanding across the first row to find the determinant and we solve</div> <div class="para logical"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">To find the eigenvalues, we solve the characteristic equation <span class="process-math">\(|A-\lambda I|=0\)</span> or expanding across the first row to find the determinant and we solve<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{align*}
 |A-\lambda I| \amp= \begin{vmatrix}
 1-\lambda \amp 0 \amp 0 \\
@@ -35,11 +49,19 @@
 \end{vmatrix} \\
 \amp=(1-\lambda)( (-2-\lambda)(3-\lambda) -6) =0
 \end{align*}
-</div></div> <div class="para">which has roots <span class="process-math">\(\lambda=1,4,-3\text{.}\)</span> To find the corresponding eigenvectors, we solve for the null space of <span class="process-math">\(A-\lambda I\)</span> for each <span class="process-math">\(\lambda\)</span>
-</div> <div class="para logical"><ul class="disc">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">which has roots <span class="process-math">\(\lambda=1,4,-3\text{.}\)</span> To find the corresponding eigenvectors, we solve for the null space of <span class="process-math">\(A-\lambda I\)</span> for each <span class="process-math">\(\lambda\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<ul class="disc" id="ex-eigs-3by3-2-4-1">
 <li>
-<div class="para"><span class="process-math">\(\lambda=1\)</span></div>
-<div class="para logical"><div class="displaymath process-math">
+<div class="para">
+<span class="process-math">\(\lambda=1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{align*}
 A-I = \amp \begin{bmatrix}
 0 \amp 0 \amp 0 \\
@@ -75,28 +97,41 @@ R_2 + 3R_1 \rightarrow R_1 \qquad \amp
 0 \amp 0 \amp 0 \\
 \end{bmatrix}
 \end{align*}
-</div></div>
-<div class="para">and other that a factor of 3, this is in reduced row echelon form. The top two equations are</div>
-<div class="para logical"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">and other that a factor of 3, this is in reduced row echelon form. The top two equations are<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{align*}
 x_1 \amp = -\frac{4}{3} x_3 \\
 x_2 \amp = \frac{2}{3} x_3
 \end{align*}
-</div></div>
-<div class="para">and the null space is</div>
-<div class="para logical"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">and the null space is<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{\begin{bmatrix}
 -4/3 \\ 2/3 \\ 1
 \end{bmatrix} x_3 \; | \; x_3 \right\}
 \end{equation*}
-</div></div>
-<div class="para">And we could take <span class="process-math">\([-4/3\;\;2/3\;\;
-1]^{\intercal}\)</span> as an eigenvector, however, from <a href="" class="xref" data-knowl="./knowl/xref/lem-eigenvector-scale.html" title="Lemma 4.1.4">Lemma 4.1.4</a>, a scalar multiple of an eigenvector is also an eigenvector, so multiplying by 3 results in <span class="process-math">\(\vec{v}_1=[-4\;\;2\;\;3]^{\intercal}\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">And we could take <span class="process-math">\([-4/3\;\;2/3\;\;
+1]^{\intercal}\)</span> as an eigenvector, however, from <a href="sect-eigenvalues.html#lem-eigenvector-scale" class="xref" data-knowl="./knowl/xref/lem-eigenvector-scale.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.1.4">Lemma 4.1.4</a>, a scalar multiple of an eigenvector is also an eigenvector, so multiplying by 3 results in <span class="process-math">\(\vec{v}_1=[-4\;\;2\;\;3]^{\intercal}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-eigs-3by3-2-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li>
-<div class="para"><span class="process-math">\(\lambda=4\)</span></div>
+<div class="para">
+<span class="process-math">\(\lambda=4\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical">
 <div class="displaymath process-math">
 \begin{align*}
@@ -142,13 +177,18 @@ A-4I = \amp \begin{bmatrix}
 \end{bmatrix} x_3 \; |\; x_3 \in \mathbb{R} \right\}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">so the eigenvectors is <span class="process-math">\([0\;\;1\;\;1]^{\intercal}\text{.}\)</span>
+<div class="para">so the eigenvectors is <span class="process-math">\([0\;\;1\;\;1]^{\intercal}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="autopermalink" data-description="Item"><a href="#ex-eigs-3by3-2-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li>
-<div class="para"><span class="process-math">\(\lambda=-3\)</span></div>
-<div class="para logical"><div class="displaymath process-math">
+<div class="para">
+<span class="process-math">\(\lambda=-3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{align*}
 A+3I = \amp\begin{bmatrix}
 4 \amp 0 \amp 0 \\
@@ -177,25 +217,42 @@ A+3I = \amp\begin{bmatrix}
 0 \amp 0 \amp 0
 \end{bmatrix}
 \end{align*}
-</div></div>
-<div class="para">and the top two equations are <span class="process-math">\(x_1=0\)</span> , <span class="process-math">\(x_2=-6x_3\)</span> so the null space is</div>
-<div class="para logical"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">and the top two equations are <span class="process-math">\(x_1=0\)</span> , <span class="process-math">\(x_2=-6x_3\)</span> so the null space is<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 0 \\ -6 \\ 1
 \end{bmatrix} x_3 \; | \; x_3 \in \mathbb{R} \right\}
 \end{equation*}
-</div></div>
-<div class="para">Therefore the eigenvector is <span class="process-math">\(\vec{v}_3=[0\;\;-6\;\;1]^{\intercal}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Therefore the eigenvector is <span class="process-math">\(\vec{v}_3=[0\;\;-6\;\;1]^{\intercal}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4-1-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-eigs-3by3-2-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-</ul></div> <div class="para">In summary, for this matrix, there are three real eigenvalues and each has a corresponding eigenvector. These are</div> <div class="para logical"><div class="displaymath process-math">
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">In summary, for this matrix, there are three real eigenvalues and each has a corresponding eigenvector. These are<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
 \begin{align*}
 \lambda_1 \amp = 1 \amp \vec{v}_1 \amp = \begin{bmatrix} -4 \\ 2 \\ 3 \end{bmatrix} \\
 \lambda_2 \amp =4 \amp \vec{v}_2 \amp = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} \\
 \lambda_3 \amp =-3 \amp \vec{v}_3 \amp = \begin{bmatrix} 0 \\ -6 \\ 1 \end{bmatrix} 
 \end{align*}
-</div></div>
-</div></details></div></article><span class="incontext"><a class="internal" href="sect-eigenvalues.html#ex-eigs-3by3">in-context</a></span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-eigs-3by3-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.10.1"><a href="#ex-eigs-3by3-2" title="Copy heading and permalink for Solution 4.1.10.1" aria-label="Copy heading and permalink for Solution 4.1.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.1.10"><a href="#ex-eigs-3by3" title="Copy heading and permalink for Example 4.1.10" aria-label="Copy heading and permalink for Example 4.1.10">🔗</a></div></article><span class="incontext"><a class="internal" href="sect-eigenvalues.html#ex-eigs-3by3">in-context</a></span>
 </body>
 </html>

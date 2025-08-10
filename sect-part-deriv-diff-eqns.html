@@ -6,14 +6,19 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Partial Derivatives and Differential Equations</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Applied Mathematics">
-<meta property="book:author" content="Peter Staab">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -57,7 +62,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
+      "pretext": "_static/pretext/js/lib"
     }
   },
   "startup": {
@@ -69,33 +74,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Applied Mathematics">
+<meta property="book:author" content="Peter Staab">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.6';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
-<body id="applied-math-staab" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="applied-mathematics-staab.html"><span class="title">Applied Mathematics</span></a></h1>
 <p class="byline">Peter Staab</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -106,7 +129,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-pde.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-pde.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-modeling-pdes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-pde.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-pde.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-modeling-pdes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -114,7 +138,7 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Linear Systems</span></a></div>
@@ -342,9 +366,9 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">5.2.2</span> <span class="title">LU fatorization and elementary matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-5" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -370,36 +394,39 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Properties of Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-3" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Odd and Even Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-fourier-series-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-fourier-series-5.html#ch-fourier-series-5-3" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-fourier-series-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-fourier-series-6.html#ch-fourier-series-6-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">7</span> <span class="title">Partial Differential Equations</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Partial Derivatives and Differential Equations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Differential Equations</span></a></div></li>
@@ -424,10 +451,10 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-pde-9.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-9.html#ch-pde-9-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-9.html#ch-pde-9-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -444,119 +471,253 @@ window.MathJax = {
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-part-deriv-diff-eqns"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.1</span><span class="space"> </span><span class="title">Partial Derivatives and Differential Equations</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Partial Derivatives and Differential Equations</span>
 </h2>
 <section class="introduction" id="sect-part-deriv-diff-eqns-2"><article class="definition definition-like" id="sect-part-deriv-diff-eqns-2-1"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sect-part-deriv-diff-eqns-2-1-1-1">A <dfn class="terminology">partial derivative</dfn> of <span class="process-math">\(f(x,y,z)\)</span> with respect to <span class="process-math">\(x\)</span> is the derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span> keeping the other variables constant. Technically</div> <div class="para logical" id="sect-part-deriv-diff-eqns-2-1-1-2"><div class="displaymath process-math">
+<div class="para" id="sect-part-deriv-diff-eqns-2-1-1-1">A <dfn class="terminology">partial derivative</dfn> of <span class="process-math">\(f(x,y,z)\)</span> with respect to <span class="process-math">\(x\)</span> is the derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span> keeping the other variables constant. Technically<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-part-deriv-diff-eqns-2-1-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \frac{\partial f(x,y,z)}{\partial x} = \lim_{\Delta x \rightarrow 0} \frac{f(x+\Delta x,y,z)-f(x,y,z)}{\Delta x}
 \end{equation*}
-</div></div></article> <details id="sect-part-deriv-diff-eqns-2-2" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sect-part-deriv-diff-eqns-2-2-1-1">If <span class="process-math">\(f(x,y) = x^2 + xy + y \sin x\text{,}\)</span> Find <span class="process-math">\(\displaystyle \frac{\partial f}{\partial x}\)</span> and <span class="process-math">\(\displaystyle \frac{\partial f}{\partial y}\text{.}\)</span>
 </div>
-<div class="solutions"><details id="sect-part-deriv-diff-eqns-2-2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-part-deriv-diff-eqns-2-2-2-1">To find <span class="process-math">\(\frac{\partial f}{\partial x}\)</span> consider <span class="process-math">\(y\)</span> a constant, so</div> <div class="para logical" id="sect-part-deriv-diff-eqns-2-2-2-2"><div class="displaymath process-math">
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.1.1"><a href="#sect-part-deriv-diff-eqns-2-1" title="Copy heading and permalink for Definition 7.1.1" aria-label="Copy heading and permalink for Definition 7.1.1">🔗</a></div></article><details id="sect-part-deriv-diff-eqns-2-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-part-deriv-diff-eqns-2-2-1-1">If <span class="process-math">\(f(x,y) = x^2 + xy + y \sin x\text{,}\)</span> Find <span class="process-math">\(\displaystyle \frac{\partial f}{\partial x}\)</span> and <span class="process-math">\(\displaystyle \frac{\partial f}{\partial y}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-part-deriv-diff-eqns-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-part-deriv-diff-eqns-2-2-2-1">To find <span class="process-math">\(\frac{\partial f}{\partial x}\)</span> consider <span class="process-math">\(y\)</span> a constant, so<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-part-deriv-diff-eqns-2-2-2-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \frac{\partial f}{\partial x} = 2x + y + y \cos x
 \end{equation*}
-</div></div> <div class="para" id="sect-part-deriv-diff-eqns-2-2-2-3">similarly to find <span class="process-math">\(\frac{\partial f}{\partial y}\)</span> consider <span class="process-math">\(x\)</span> a constant,</div> <div class="para logical" id="sect-part-deriv-diff-eqns-2-2-2-4"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-2-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-part-deriv-diff-eqns-2-2-2-3">similarly to find <span class="process-math">\(\frac{\partial f}{\partial y}\)</span> consider <span class="process-math">\(x\)</span> a constant,<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-2-2-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-part-deriv-diff-eqns-2-2-2-4">
+<div class="displaymath process-math">
 \begin{equation*}
 \frac{\partial f}{\partial y} = x + \sin x
 \end{equation*}
-</div></div>
-</div></details></div></article></details></section><section class="subsection" id="sect-part-deriv-diff-eqns-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="space"> </span><span class="title">Higher-Order Partial Derivatives</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-2-2-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 7.1.2.1"><a href="#sect-part-deriv-diff-eqns-2-2-2" title="Copy heading and permalink for Solution 7.1.2.1" aria-label="Copy heading and permalink for Solution 7.1.2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 7.1.2"><a href="#sect-part-deriv-diff-eqns-2-2" title="Copy heading and permalink for Example 7.1.2" aria-label="Copy heading and permalink for Example 7.1.2">🔗</a></div></article></details></section><section class="subsection" id="sect-part-deriv-diff-eqns-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Higher-Order Partial Derivatives</span>
 </h3>
-<div class="para" id="sect-part-deriv-diff-eqns-3-2">As with ordinary derivatives, we can have higher-order partial derivatives. That is we define the 2nd order partial derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span> as</div>
-<div class="para logical" id="sect-part-deriv-diff-eqns-3-3"><div class="displaymath process-math">
+<div class="para" id="sect-part-deriv-diff-eqns-3-2">As with ordinary derivatives, we can have higher-order partial derivatives. That is we define the 2nd order partial derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span> as<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-part-deriv-diff-eqns-3-3">
+<div class="displaymath process-math">
 \begin{equation*}
 \frac{\partial^2 f}{\partial x^2} = \frac{\partial}{\partial x} \frac{\partial f}{\partial x}
 \end{equation*}
-</div></div>
-<div class="para" id="sect-part-deriv-diff-eqns-3-4">that is it is the partial derivative of the partial derivative. Since ordinary derivatives involve only functions of one variable, the mixed derivative is a new concept. If <span class="process-math">\(f\)</span> is a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> or <span class="process-math">\(f(x,y)\text{,}\)</span> then we can have the partial derivative of <span class="process-math">\(\frac{\partial f}{\partial x}\)</span> with respect to <span class="process-math">\(y\)</span> or <span class="process-math">\(\frac{\partial f}{\partial y}\)</span> with respect to <span class="process-math">\(x\text{.}\)</span> We write these as</div>
-<div class="para logical" id="sect-part-deriv-diff-eqns-3-5"><div class="displaymath process-math" id="sect-part-deriv-diff-eqns-3-5-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-part-deriv-diff-eqns-3-4">that is it is the partial derivative of the partial derivative. Since ordinary derivatives involve only functions of one variable, the mixed derivative is a new concept. If <span class="process-math">\(f\)</span> is a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> or <span class="process-math">\(f(x,y)\text{,}\)</span> then we can have the partial derivative of <span class="process-math">\(\frac{\partial f}{\partial x}\)</span> with respect to <span class="process-math">\(y\)</span> or <span class="process-math">\(\frac{\partial f}{\partial y}\)</span> with respect to <span class="process-math">\(x\text{.}\)</span> We write these as<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-part-deriv-diff-eqns-3-5">
+<div class="displaymath process-math" id="sect-part-deriv-diff-eqns-3-5-1">
 \begin{align*}
 \frac{\partial^2 f}{\partial y \partial x} \amp = \frac{\partial}{\partial y} \frac{\partial f}{\partial x} \\
 \frac{\partial^2 f}{\partial x \partial y} \amp = \frac{\partial}{\partial x} \frac{\partial f}{\partial y}
 \end{align*}
-</div></div>
-<details id="sect-part-deriv-diff-eqns-3-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="sect-part-deriv-diff-eqns-3-6-1-1">Find all second-order derivatives of</div> <div class="para logical" id="sect-part-deriv-diff-eqns-3-6-1-2"><div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sect-part-deriv-diff-eqns-3-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-part-deriv-diff-eqns-3-6-1-1">Find all second-order derivatives of<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-part-deriv-diff-eqns-3-6-1-2">
+<div class="displaymath process-math">
 \begin{equation*}
 f(x,y) = x^3 + x^2y + xe^y
 \end{equation*}
-</div></div>
-<div class="solutions"><details id="sect-part-deriv-diff-eqns-3-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="sect-part-deriv-diff-eqns-3-6-2-1">First, let’s find the two first derivatives:</div> <div class="para logical" id="sect-part-deriv-diff-eqns-3-6-2-2"><div class="displaymath process-math" id="sect-part-deriv-diff-eqns-3-6-2-2-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sect-part-deriv-diff-eqns-3-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-part-deriv-diff-eqns-3-6-2-1">First, let’s find the two first derivatives:<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-part-deriv-diff-eqns-3-6-2-2">
+<div class="displaymath process-math" id="sect-part-deriv-diff-eqns-3-6-2-2-1">
 \begin{align*}
 \frac{\partial f}{\partial x} \amp = 3x^2 + 2xy + e^y \\
 \frac{\partial f}{\partial y} \amp = x^2 + xe^y
 \end{align*}
-</div></div> <div class="para" id="sect-part-deriv-diff-eqns-3-6-2-3">And then there are four 2nd-order derivatives:</div> <div class="para logical" id="sect-part-deriv-diff-eqns-3-6-2-4"><div class="displaymath process-math" id="sect-part-deriv-diff-eqns-3-6-2-4-1">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-part-deriv-diff-eqns-3-6-2-3">And then there are four 2nd-order derivatives:<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-6-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-part-deriv-diff-eqns-3-6-2-4">
+<div class="displaymath process-math" id="sect-part-deriv-diff-eqns-3-6-2-4-1">
 \begin{align*}
 \frac{\partial^2 f}{\partial x^2} \amp = \frac{\partial}{\partial x} \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} (3x^2 + 2xy + e^y) = 6x + 2y \\
 \frac{\partial^2 f}{\partial y \partial x} \amp = \frac{\partial}{\partial y} \frac{\partial f}{\partial x} = \frac{\partial}{\partial y} (3x^2+2xy+e^y) = 2x + e^y \\
 \frac{\partial^2 f}{\partial x \partial y} \amp = \frac{\partial}{\partial x} \frac{\partial f}{\partial y} = \frac{\partial}{\partial x} (x^2+xe^y) = 2x + e^y \\
 \frac{\partial^2 f}{\partial y^2} \amp = \frac{\partial}{\partial y} \frac{\partial f}{\partial y} = \frac{\partial}{\partial y} (x^2+xe^y) = xe^y 
 \end{align*}
-</div></div>
-</div></details></div></article></details><div class="para" id="sect-part-deriv-diff-eqns-3-7">You probably noticed that the two derivatives involving both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> resulted in the same results. This is true for most functions as is shown in the next theorem:</div>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-6-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 7.1.3.1"><a href="#sect-part-deriv-diff-eqns-3-6-2" title="Copy heading and permalink for Solution 7.1.3.1" aria-label="Copy heading and permalink for Solution 7.1.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 7.1.3"><a href="#sect-part-deriv-diff-eqns-3-6" title="Copy heading and permalink for Example 7.1.3" aria-label="Copy heading and permalink for Example 7.1.3">🔗</a></div></article></details><div class="para" id="sect-part-deriv-diff-eqns-3-7">You probably noticed that the two derivatives involving both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> resulted in the same results. This is true for most functions as is shown in the next theorem:<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="theorem theorem-like" id="sect-part-deriv-diff-eqns-3-8"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Clairaut’s Theorem.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Clairaut’s Theorem.</span>
 </h4>
-<div class="para" id="sect-part-deriv-diff-eqns-3-8-2-1">If <span class="process-math">\(f(x_1, x_2, \ldots, x_n)\)</span> is a real valued function with continuous second derivatives at the point <span class="process-math">\((a_1, a_2, \ldots, a_n)\text{,}\)</span> then</div> <div class="para logical" id="sect-part-deriv-diff-eqns-3-8-2-2"><div class="displaymath process-math">
+<div class="para" id="sect-part-deriv-diff-eqns-3-8-2-1">If <span class="process-math">\(f(x_1, x_2, \ldots, x_n)\)</span> is a real valued function with continuous second derivatives at the point <span class="process-math">\((a_1, a_2, \ldots, a_n)\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-part-deriv-diff-eqns-3-8-2-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \frac{\partial^2 f}{\partial x_i \partial x_j}(a_1,a_2, \ldots, a_n)
 = \frac{\partial^2 f}{\partial x_j \partial x_i} (a_1,a_2,\ldots, a_n)
 \end{equation*}
-</div></div> <div class="para" id="sect-part-deriv-diff-eqns-3-8-2-3">In other words, partial derivatives commute.</div></article></section><section class="subsection" id="sect-part-deriv-diff-eqns-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="space"> </span><span class="title">Notation for Partial Derivatives</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sect-part-deriv-diff-eqns-3-8-2-3">In other words, partial derivatives commute.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-3-8-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 7.1.4: Clairaut’s Theorem"><a href="#sect-part-deriv-diff-eqns-3-8" title="Copy heading and permalink for Theorem 7.1.4: Clairaut’s Theorem" aria-label="Copy heading and permalink for Theorem 7.1.4: Clairaut’s Theorem">🔗</a></div></article><div class="autopermalink" data-description="Subsection 7.1.1: Higher-Order Partial Derivatives"><a href="#sect-part-deriv-diff-eqns-3" title="Copy heading and permalink for Subsection 7.1.1: Higher-Order Partial Derivatives" aria-label="Copy heading and permalink for Subsection 7.1.1: Higher-Order Partial Derivatives">🔗</a></div></section><section class="subsection" id="sect-part-deriv-diff-eqns-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Notation for Partial Derivatives</span>
 </h3>
-<div class="para" id="sect-part-deriv-diff-eqns-4-2">In terms of notation, it’s often common to use a subscript as a derivative. For example <span class="process-math">\(f_x\)</span> can be used instead of <span class="process-math">\(\frac{\partial f}{\partial x}\)</span> or <span class="process-math">\(f_y\)</span> instead of <span class="process-math">\(\frac{\partial f}{\partial y}\text{.}\)</span> This can also be extended to higher order derivatives as the following shows:</div>
-<div class="para logical" id="sect-part-deriv-diff-eqns-4-3"><div class="displaymath process-math" id="sect-part-deriv-diff-eqns-4-3-1">
+<div class="para" id="sect-part-deriv-diff-eqns-4-2">In terms of notation, it’s often common to use a subscript as a derivative. For example <span class="process-math">\(f_x\)</span> can be used instead of <span class="process-math">\(\frac{\partial f}{\partial x}\)</span> or <span class="process-math">\(f_y\)</span> instead of <span class="process-math">\(\frac{\partial f}{\partial y}\text{.}\)</span> This can also be extended to higher order derivatives as the following shows:<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-part-deriv-diff-eqns-4-3">
+<div class="displaymath process-math" id="sect-part-deriv-diff-eqns-4-3-1">
 \begin{align*}
 f_{xx} \amp = \frac{\partial^2 f}{\partial x^2} \amp f_{yy} \amp = \frac{\partial^2 f}{\partial y^2}  \\
 f_{yx} \amp = \frac{\partial^2 f}{\partial x \partial y} \amp f_{xy} \amp = \frac{\partial^2 f}{\partial y \partial x}  \\
 f_{xxx} \amp = \frac{\partial^3 f}{\partial x^3} \amp f_{yyx} \amp = \frac{\partial^2 f}{\partial x\partial y^2}  
 \end{align*}
-</div></div>
-<div class="para" id="sect-part-deriv-diff-eqns-4-4">and note that the order on the variables switch between the two notations. This generally isn’t a problem because of Clairaut’s Theorem says that the derivative is independent of the order taken on the derivatives.</div></section><section class="subsection" id="sect-part-deriv-diff-eqns-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="space"> </span><span class="title">Differential Equations</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-part-deriv-diff-eqns-4-4">and note that the order on the variables switch between the two notations. This generally isn’t a problem because of Clairaut’s Theorem says that the derivative is independent of the order taken on the derivatives.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 7.1.2: Notation for Partial Derivatives"><a href="#sect-part-deriv-diff-eqns-4" title="Copy heading and permalink for Subsection 7.1.2: Notation for Partial Derivatives" aria-label="Copy heading and permalink for Subsection 7.1.2: Notation for Partial Derivatives">🔗</a></div></section><section class="subsection" id="sect-part-deriv-diff-eqns-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differential Equations</span>
 </h3>
 <article class="definition definition-like" id="sect-part-deriv-diff-eqns-5-2"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-1">The following are related definitions.</div> <div class="para logical" id="sect-part-deriv-diff-eqns-5-2-1-2"><ul class="disc">
-<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-1"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-1-1">A <dfn class="terminology">differential equation</dfn> is an equation that contains derivatives.</div></li>
-<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-2"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-2-1">If the differential equation has partial derivatives, then the equation is called a <dfn class="terminology">partial differential equation</dfn>.</div></li>
-<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-3"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-3-1">If the differential equation has standard or ordinary derivatives, then the equation is called a <dfn class="terminology">ordinary differential equation.</dfn>
-</div></li>
-<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-4"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-4-1">The <dfn class="terminology">order</dfn> of the differential equation is the highest degree of any derivative.</div></li>
-<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-5"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-5-1">If the equation is linear in <span class="process-math">\(u\text{,}\)</span> the dependent variable and its derivatives, then the equation is <dfn class="terminology">linear</dfn>, if not, it is <dfn class="terminology">nonlinear</dfn>.</div></li>
-<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-6"><div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-6-1">Lastly, a linear differential equation is called <dfn class="terminology">homogeneous</dfn> if the only nonzero terms in the equation contain the dependent variable. If a differential equation is not homogeneous, then it is called <dfn class="terminology">nonhomogeneous</dfn>.</div></li>
-</ul></div></article><details id="sect-part-deriv-diff-eqns-5-3" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-1">The following are ordinary differential equations.</div> <div class="para logical" id="sect-part-deriv-diff-eqns-5-3-1-2"><ol class="decimal">
-<li id="sect-part-deriv-diff-eqns-5-3-1-2-1-1"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-2-1-1-1"><span class="process-math">\(\displaystyle \displaystyle y' = x\)</span></div></li>
-<li id="sect-part-deriv-diff-eqns-5-3-1-2-1-2"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-2-1-2-1"><span class="process-math">\(\displaystyle y' = \sin x\text{.}\)</span></div></li>
-<li id="sect-part-deriv-diff-eqns-5-3-1-2-1-3"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-2-1-3-1"><span class="process-math">\(\displaystyle \displaystyle \frac{dy}{dx}  = y^2\)</span></div></li>
-<li id="sect-part-deriv-diff-eqns-5-3-1-2-1-4"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-2-1-4-1"><span class="process-math">\(\displaystyle y'' + 3y' + y = 0 \text{.}\)</span></div></li>
-</ol></div> <div class="para" id="sect-part-deriv-diff-eqns-5-3-1-3">Equations 1,2, and 4 are linear and 3 is nonlinear. Note that even though <span class="process-math">\(\sin x\)</span> is not a linear function, in order for a differential equation to be linear, it needs only be linear in its dependent variables (in all of these examples, <span class="process-math">\(y\)</span> is dependent). Equations 1 and 2 are nonhomogeneous and equation 4 is homogeneous. Also, the first three are first-order equations and the 4th equation is 2nd order. The following are partial differential equations:</div> <div class="para logical" id="sect-part-deriv-diff-eqns-5-3-1-4"><ul class="disc">
-<li id="sect-part-deriv-diff-eqns-5-3-1-4-1-1"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-1-1"><span class="process-math">\(\displaystyle \displaystyle \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} = 0\)</span></div></li>
-<li id="sect-part-deriv-diff-eqns-5-3-1-4-1-2"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-2-1"><span class="process-math">\(\displaystyle u_{t} -u  u_x = 0\text{.}\)</span></div></li>
-<li id="sect-part-deriv-diff-eqns-5-3-1-4-1-3"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-3-1"><span class="process-math">\(\displaystyle \displaystyle \frac{\partial u}{\partial x} + \biggl(\frac{\partial^2 u}{\partial {t}^2}    \biggr)^2  = 0 \)</span></div></li>
-<li id="sect-part-deriv-diff-eqns-5-3-1-4-1-4"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-4-1"><span class="process-math">\(\displaystyle u_{t} +u_y - u_{xxx} = 0\text{.}\)</span></div></li>
-</ul></div> <div class="para" id="sect-part-deriv-diff-eqns-5-3-1-5">And the first and fourth equations are linear with the other two being nonlinear. The first and second equations above are first order, the 3rd equation is 2nd order and the fourth is a third-order PDE.</div></article></details></section></section></div>
-<div class="ptx-content-footer">
+<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-1">The following are related definitions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-part-deriv-diff-eqns-5-2-1-2">
+<ul class="disc" id="sect-part-deriv-diff-eqns-5-2-1-2-1">
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-1">
+<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-1-1">A <dfn class="terminology">differential equation</dfn> is an equation that contains derivatives.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-2">
+<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-2-1">If the differential equation has partial derivatives, then the equation is called a <dfn class="terminology">partial differential equation</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-3">
+<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-3-1">If the differential equation has standard or ordinary derivatives, then the equation is called a <dfn class="terminology">ordinary differential equation.</dfn><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-4">
+<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-4-1">The <dfn class="terminology">order</dfn> of the differential equation is the highest degree of any derivative.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-5">
+<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-5-1">If the equation is linear in <span class="process-math">\(u\text{,}\)</span> the dependent variable and its derivatives, then the equation is <dfn class="terminology">linear</dfn>, if not, it is <dfn class="terminology">nonlinear</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-2-1-2-1-6">
+<div class="para" id="sect-part-deriv-diff-eqns-5-2-1-2-1-6-1">Lastly, a linear differential equation is called <dfn class="terminology">homogeneous</dfn> if the only nonzero terms in the equation contain the dependent variable. If a differential equation is not homogeneous, then it is called <dfn class="terminology">nonhomogeneous</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-2-1-2-1-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.1.5"><a href="#sect-part-deriv-diff-eqns-5-2" title="Copy heading and permalink for Definition 7.1.5" aria-label="Copy heading and permalink for Definition 7.1.5">🔗</a></div></article><details id="sect-part-deriv-diff-eqns-5-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-part-deriv-diff-eqns-5-3-1-1">The following are ordinary differential equations.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-part-deriv-diff-eqns-5-3-1-2">
+<ol class="decimal" id="sect-part-deriv-diff-eqns-5-3-1-2-1">
+<li id="sect-part-deriv-diff-eqns-5-3-1-2-1-1">
+<div class="para" id="sect-part-deriv-diff-eqns-5-3-1-2-1-1-1">
+<span class="process-math">\(\displaystyle \displaystyle y' = x\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sect-part-deriv-diff-eqns-5-3-1-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-3-1-2-1-2">
+<div class="para" id="sect-part-deriv-diff-eqns-5-3-1-2-1-2-1">
+<span class="process-math">\(\displaystyle y' = \sin x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sect-part-deriv-diff-eqns-5-3-1-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-3-1-2-1-3">
+<div class="para" id="sect-part-deriv-diff-eqns-5-3-1-2-1-3-1">
+<span class="process-math">\(\displaystyle \displaystyle \frac{dy}{dx}  = y^2\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sect-part-deriv-diff-eqns-5-3-1-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-3-1-2-1-4">
+<div class="para" id="sect-part-deriv-diff-eqns-5-3-1-2-1-4-1">
+<span class="process-math">\(\displaystyle y'' + 3y' + y = 0 \text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sect-part-deriv-diff-eqns-5-3-1-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sect-part-deriv-diff-eqns-5-3-1-3">Equations 1,2, and 4 are linear and 3 is nonlinear. Note that even though <span class="process-math">\(\sin x\)</span> is not a linear function, in order for a differential equation to be linear, it needs only be linear in its dependent variables (in all of these examples, <span class="process-math">\(y\)</span> is dependent). Equations 1 and 2 are nonhomogeneous and equation 4 is homogeneous. Also, the first three are first-order equations and the 4th equation is 2nd order. The following are partial differential equations:<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-part-deriv-diff-eqns-5-3-1-4">
+<ul class="disc" id="sect-part-deriv-diff-eqns-5-3-1-4-1">
+<li id="sect-part-deriv-diff-eqns-5-3-1-4-1-1">
+<div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-1-1">
+<span class="process-math">\(\displaystyle \displaystyle \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-3-1-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-3-1-4-1-2">
+<div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-2-1">
+<span class="process-math">\(\displaystyle u_{t} -u  u_x = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-3-1-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-3-1-4-1-3">
+<div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-3-1">
+<span class="process-math">\(\displaystyle \displaystyle \frac{\partial u}{\partial x} + \biggl(\frac{\partial^2 u}{\partial {t}^2}    \biggr)^2  = 0 \)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-3-1-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sect-part-deriv-diff-eqns-5-3-1-4-1-4">
+<div class="para" id="sect-part-deriv-diff-eqns-5-3-1-4-1-4-1">
+<span class="process-math">\(\displaystyle u_{t} +u_y - u_{xxx} = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-4-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sect-part-deriv-diff-eqns-5-3-1-4-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sect-part-deriv-diff-eqns-5-3-1-5">And the first and fourth equations are linear with the other two being nonlinear. The first and second equations above are first order, the 3rd equation is 2nd order and the fourth is a third-order PDE.<div class="autopermalink" data-description="Paragraph"><a href="#sect-part-deriv-diff-eqns-5-3-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.1.6"><a href="#sect-part-deriv-diff-eqns-5-3" title="Copy heading and permalink for Example 7.1.6" aria-label="Copy heading and permalink for Example 7.1.6">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 7.1.3: Differential Equations"><a href="#sect-part-deriv-diff-eqns-5" title="Copy heading and permalink for Subsection 7.1.3: Differential Equations" aria-label="Copy heading and permalink for Subsection 7.1.3: Differential Equations">🔗</a></div></section><div class="autopermalink" data-description="Section 7.1: Partial Derivatives and Differential Equations"><a href="#sect-part-deriv-diff-eqns" title="Copy heading and permalink for Section 7.1: Partial Derivatives and Differential Equations" aria-label="Copy heading and permalink for Section 7.1: Partial Derivatives and Differential Equations">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-pde.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-modeling-pdes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>
