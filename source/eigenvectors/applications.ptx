@@ -1,610 +1,674 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <section xml:id="sect-applications-eigen">
-  <title>Applications of Eigenvalues and Eigenvectors</title>
-
-  <introduction>
-    <p> We will develop a simple model of population growth in this section and show an example
-      where eigenvalues and eigenvectors play an important role. </p>
-
-    <p> Consider a population of a single species, perhaps a bacteria, which varies over time. Let <m>
-      p_n</m> be the population at the <m>n</m>th time unit (day, month, year, \ldots). A simple
-      model will be that the population at the next time will be proportional to the current
-      population, thus <m>p_{n+1}
-        = r p_n</m>. </p>
-
-    <p> If the number of bacteria starting is 50, then <m>p_0=50</m> and the population doubles
-      every time unit, so <m>r=2</m>, then</p>
-
-    <p>
-      <md>
-        <mrow>p_1 \amp= 2 p_0 = 100 </mrow>
-        <mrow>p_2 \amp = 2p_1 = 200 </mrow>
-        <mrow>p_3 \amp = 2p_2 = 400</mrow>
-      </md>
-    </p>
-
-
-    <p> and so on. In general </p>
-
-    <p>
-      <md>
-        <mrow>p_1 \amp = r p_0 </mrow>
-        <mrow>p_2 \amp = r p_1 = r^2 p_0 </mrow>
-        <mrow>p_3 \amp = r p_2 = r^3 p_0 </mrow>
-        <mrow>\vdots \amp = \vdots </mrow>
-        <mrow>p_n \amp= r^n p_0</mrow>
-      </md>
-    </p>
-
-    <p> From this model, the population increases without bound if <m>r \gt 1</m>, drops to zero if <m>r
-      \lt 1</m> and if <m>r=1</m>, <m>p_n =p_0</m>.</p>
-
-  </introduction>
-
-  <subsection
-    xml:id="sect-leslie-models">
-    <title>Leslie Population Models</title>
-
-    <p> The previous model actually works well for species like single-celled organisms, however,
-      more advanced species will require a more complicated model. Consider a species, like some
-      type of bird, that has two stages of life: juvenile and adult. We will also assume that the
-      population of males and females are equal. The juvenile female cannot reproduce and the adult
-      female can. Let <m>
-        p_n</m> and <m>q_n</m> be the population of the juveniles and adults females at stage <m>n</m>.
-      A simple model for growth is </p>
-
-    <p>
-      <md>
-        <mrow>p_{n+1} \amp = k q_n </mrow>
-        <mrow>q_{n+1} \amp = \alpha p_n + \beta q_n</mrow>
-      </md>
-    </p>
-
-    <p>where at each stage the fraction <m>\alpha</m> of the juveniles survive to adulthood, and the
-      population of the adults will produce a factor <m>k</m> juveniles. Finally, the fraction <m>
-      \beta</m> of the adults survive one time unit. This linear system can be written as the matrix
-      equation</p>
-
-    <p>
-      <me>
-        \vec{p}_{n+1} = A \vec{p}_n
-</me>
-    </p>
-    <p>where </p>
-
-    <p>
-      <md>
-        <mrow>\vec{p} \amp=
-          \begin{bmatrix}
-          p \\ q
-          \end{bmatrix}
-          \amp A \amp =
-          \begin{bmatrix}
-          0 \amp k \\ \alpha \amp \beta
-          \end{bmatrix}</mrow>
-      </md>
-    </p>
-
-    <p>As a specific example, let's consider</p>
-
-    <p>
-      <me>
-        A =
-        \begin{bmatrix}
-        0 \amp 2 \\
-        0.3 \amp 0.5
-        \end{bmatrix}
-</me>
-    </p>
-
-    <p> The first line means that for every adult female, two juvenile females are produced. The
-      second line means that 0.3 (30 percent) of the juveniles survive to adulthood and at each
-      stage
-      0.5 (50 percent) of the adults survive to the next stage. </p>
-
-    <p> Let's see what happens to this population for some initial condition. Let's say that we have
-      10 female adults and 0 juvenile adults. Then </p>
-
-    <p>
-      <me>
-        \vec{p}_1 = A \vec{p}_0 =
-        \begin{bmatrix}
-        0 \amp 2 \\
-        0.3 \amp 0.5
-        \end{bmatrix}
-        \begin{bmatrix}
-        0\\ 10
-        \end{bmatrix} =
-        \begin{bmatrix}
-        20 \\ 5
-        \end{bmatrix}
-</me>
-    </p>
-
-
-    <p> In general, </p>
-
-    <p>
-      <me>
-        \vec{p}_n = A^n \vec{p}_0
-</me>
-    </p>
-
-    <table>
-      <title>
-        Table of population values</title>
-      <tabular>
-        <row>
-          <cell>year </cell>
-          <cell>
-            <m>p_n</m>
-          </cell>
-          <cell>
-            <m>q_n</m>
-          </cell>
-          <cell>
-            <m>T_n</m>
-          </cell>
-          <cell>
-            <m>p_n/q_n</m>
-          </cell>
-          <cell>
-            <m>T_{n+1}/T_n</m>
-          </cell>
-        </row>
-        <row>
-          <cell>0 </cell>
-          <cell> 0 </cell>
-          <cell> 10 </cell>
-          <cell> 10 </cell>
-          <cell> 0 </cell>
-          <cell> </cell>
-        </row>
-        <row>
-          <cell>1 </cell>
-          <cell> 20 </cell>
-          <cell> 5 </cell>
-          <cell> 25 </cell>
-          <cell> 4.00 </cell>
-          <cell> 2.50 </cell>
-        </row>
-        <row>
-          <cell>2 </cell>
-          <cell> 10 </cell>
-          <cell> 8 </cell>
-          <cell> 18 </cell>
-          <cell> 1.18 </cell>
-          <cell> 0.74 </cell>
-        </row>
-        <row>
-          <cell>3 </cell>
-          <cell> 17 </cell>
-          <cell> 7 </cell>
-          <cell> 24 </cell>
-          <cell> 2.34 </cell>
-          <cell> 1.31 </cell>
-        </row>
-        <row>
-          <cell>4 </cell>
-          <cell> 14 </cell>
-          <cell> 8 </cell>
-          <cell> 22 </cell>
-          <cell> 1.66 </cell>
-          <cell> 0.96 </cell>
-        </row>
-        <row>
-          <cell>5 </cell>
-          <cell> 17 </cell>
-          <cell> 8 </cell>
-          <cell> 25 </cell>
-          <cell> 2.00 </cell>
-          <cell> 1.13 </cell>
-        </row>
-        <row>
-          <cell>
-            <m>\vdots</m>
-          </cell>
-        </row>
-        <row>
-          <cell>10 </cell>
-          <cell> 22 </cell>
-          <cell> 12 </cell>
-          <cell> 34 </cell>
-          <cell> 1.87 </cell>
-          <cell> 1.06 </cell>
-        </row>
-        <row>
-          <cell>11 </cell>
-          <cell> 24 </cell>
-          <cell> 12 </cell>
-          <cell> 36 </cell>
-          <cell> 1.88 </cell>
-          <cell> 1.07 </cell>
-        </row>
-        <row>
-          <cell>12 </cell>
-          <cell> 25 </cell>
-          <cell> 13 </cell>
-          <cell> 38 </cell>
-          <cell> 1.88 </cell>
-          <cell> 1.06</cell>
-        </row>
-      </tabular>
-    </table>
-
-
-    <p>We'd like to explain what is going on here. As we will show, the eigenvalues are important.
-      The characteristic equation is </p>
-
-    <p>
-      <me>
-        \lambda^2 -0.5 \lambda -0.6 = 0
-</me>
-    </p>
-    <p>which has the solutions </p>
-
-    <p>
-      <me>
-        \lambda = \frac{0.5 \pm \sqrt{0.25 + 2.4}}{2} \approx 1.06, -0.56
-</me>
-    </p>
-
-    <p>The eigenvectors are </p>
-
-    <p>
-      <md>
-        <mrow>\vec{v}_1 \amp =
-          \begin{bmatrix}
-          1.88 \\ 1
-          \end{bmatrix} \amp \vec{v}_2 \amp =
-          \begin{bmatrix}
-          -3.54 \\1
-          \end{bmatrix}</mrow>
-      </md>
-    </p>
-
-    <p> Assume that <m>\lambda_1</m> and <m>\lambda_2</m> are the eigenvalues of <m>A</m> and <m>
-      \vec{v}_1</m> and <m>\vec{v}_2</m> are the eigenvectors. If <m>\vec{v}_1</m> and <m>\vec{v}_2</m>
-      are linearly independent, then we can write </p>
-
-    <p>
-      <me>
-        \vec{p}_0 = a_1 \vec{v}_1 + a_2 \vec{v}_2
-</me>
-    </p>
-
-    <p>for some real numbers <m>a_1</m> and <m>a_2</m>. Let's use the matrix equations above to find <m>
-      \vec{p}_1</m>,</p>
-
-    <p>
-      <md>
-        <mrow>\vec{p}_1 \amp = A \vec{p}_0 = A (a_1 \vec{v}_1 + a_2 \vec{v}_2) </mrow>
-        <mrow>\amp = a_1 A \vec{v}_1 + a_2 A \vec{v}_2 </mrow>
-        <mrow>\amp = a_1 \lambda_1 \vec{v}_1 + a_2 \lambda_2 \vec{v}_2</mrow>
-      </md>
-    </p>
-
-    <p>similarly, </p>
-
-    <p>
-      <md>
-        <mrow>\vec{p}_2 \amp = A \vec{p}_1 = A(a_1 \lambda_1 \vec{v}_1 + a_2 \lambda_2 \vec{v}_2)</mrow>
-        <mrow>\amp= a_1 \lambda_1 A \vec{v}_1 + a_2 \lambda_2 A \vec{v}_2 </mrow>
-        <mrow>\amp = a_1 \lambda_1^2 \vec{v}_1 + a_2 \lambda_2^2 \vec{v}_2</mrow>
-      </md>
-    </p>
-
-    <p> Now assume that <m>|\lambda_1|>|\lambda_2|</m> and factor <m>\lambda_1^n</m> out from the
-      equation above: </p>
-
-    <p>
-      <me>
-        \vec{p}_n = \lambda_1^n \biggl( a_1 \vec{v}_1 + a_2 \frac{\lambda_2^n}{\lambda_1^n}
-        \vec{v}_2 \biggr)
-</me>
-    </p>
-
-    <p>as <m>n</m> increases the ratio <m>(\lambda_2/\lambda_1)^n</m> goes to zero, so </p>
-
-    <p>
-      <me>
-        \vec{p}_n \approx a_1 \lambda_1^n \vec{v}_1
-</me>
-    </p>
-
-  </subsection>
-
-  <subsection xml:id="sect-second-order-de">
-    <title>Second-Order Differential Equations Systems</title>
-
-    <p> Consider a mass-spring system: </p>
-
-    <figure>
-      <caption>
-        Find a point on a line that minimizes distance
-      </caption>
-      <image width="50%">
-        <latex-image>
-          <![CDATA[
-      \begin{tikzpicture} \draw (0,2) -- (0,0) -- (7,0);
-      \draw[decorate,decoration={coil,segment length=4pt}] (0,0.5) -- (2.5,0.5)
-        node [midway,above] {$k_1$};
-      \draw (2.5,0) rectangle (3.5,1);
-      \draw (3,0.5) node {$x_1$};
-      \draw[decorate,decoration={coil,segment length=4pt}] (3.5,0.5) -- (5.5,0.5)
-        node [midway,above] {$k_2$};
-      \draw (5.5,0) rectangle (6.5,1);
-      \draw (6,0.5) node {$x_2$};
-      \end{tikzpicture}
-      ]]>
-    </latex-image>
-      </image>
-    </figure>
-
-    <p>where <m>x_1</m> and <m>x_2</m> are the positions of the masses <m>m_1</m> and <m>m_2</m>
-      relative to the unstretched spring positions and <m>k_1</m> and <m>k_2</m> are the spring
-      constants of the two springs. The mass spring system above can be modeled using the 2nd order
-      system of differential equations. </p>
-
-    <p>
-      <md>
-        <mrow>m_1 x_1 '' \amp = - k_1 x_1 + k_2 (x_2-x_1) </mrow>
-        <mrow>m_2 x_2 '' \amp = - k_2 (x_2-x_1) .</mrow>
-      </md>
-    </p>
-
-    <p>This can be written in matrix form as </p>
-
-    <p>
-      <me>
-        M \vec{x}'' = K\vec{x}
-</me>
-    </p>
-    <p>with</p>
-
-
-    <p>
-      <md>
-        <mrow>M \amp = \begin{bmatrix}
-          m_1 \amp 0 \\ 0 \amp m_2
-          \end{bmatrix}
-          \amp
-          K \amp =\begin{bmatrix}
-          -(k_1+k_2) \amp k_2 \\ -k_2 \amp k_1
-          \end{bmatrix}</mrow>
-      </md>
-    </p>
-
-    <p> where <m>M</m> is the mass matrix and <m>K</m> is called the stiffness matrix, which can
-      take other forms depending on the connectedness of the spring system. Since <m>M</m> is
-      nonsingular, we can find <m>M^{-1}</m> and write the system above as: </p>
-
-    <p>
-      <me>
-        \vec{x}'' = A \vec{x}
-</me>
-    </p>
-
-    <p> where <m>A = M^{-1} K</m>. </p>
-  </subsection>
-
-  <subsection xml:id="sect-solutions-of-second-order-de">
-    <title>Solutions of <m>\vec{x}''= A\vec{x}</m>
-    </title>
-
-    <p> Let <m>v</m> be an eigenvector of <m>A</m>, with eigenvalue <m>\lambda = \alpha^2</m>, then <m>\vec{x}
-      =\vec{v}(c_1e^{\alpha t} + c_2 e^{-\alpha t})</m> is a solution. </p>
-
-    <p>
-      <md>
-        <mrow>\vec{x}'' \amp = \alpha^2 \vec{v} (c_1 e^{\alpha t}+ c_2 e^{-\alpha t}) </mrow>
-        <mrow>\amp = A \vec{v}(c_1e^{\alpha t} + c_2 e^{-\alpha t})</mrow>
-      </md>
-    </p>
-
-    <p> if <m>\lambda \lt 0</m>, then the <m>\lambda = - \omega^2</m> and the solution is: </p>
-
-    <p>
-      <me>
-        \vec{x} = \vec{v} (a \cos \omega t + b \sin \omega t)
-</me>
-    </p>
-
-    <p>If <m>\lambda = 0</m> is an eigenvalue of <m>A</m> with corresponding eigenvector <m>
-      \vec{v}_0</m>, then the part of the solution associate with this is: </p>
-
-    <p>
-      <me>
-        \vec{x}(t) = (a_0 + b_0 t) \vec{v}_0
-</me>
-    </p>
-
-
-    <theorem>
-      <statement>
-        <p> If the <m>n \times n</m> matrix <m>A</m> has distinct negative eigenvalues <m>-\omega_1^2,
-          -\omega_2^2, \ldots, -\omega_n^2</m> with associated real eigenvectors, then a general
-          solution to </p>
-
-        <p>
-          <me>
-            \vec{x''} = A x
-          </me>
-        </p>
-
-        <p>is given by</p>
-
-        <p>
-          <me>
-            \vec{x} = \sum_{i=1}^n (a_i \cos \omega_i t + b_i \sin \omega_i t)\vec{v}_i
-          </me>
-        </p>
-        <p> where <m>a_i</m> and <m>b_i</m> arbitrary constants. If <m>\lambda = 0</m> is an
-          eigenvalue of <m>A</m> with corresponding eigenvector <m>\vec{v}_0</m>, then the part of
-          the solution associate with this is: </p>
-
-        <p>
-          <me>
-            \vec{x}(t) = (a_0 + b_0 t) \vec{v}_0
-</me>
-        </p>
-      </statement>
-
-    </theorem>
-
-    <example>
-      <statement>
-        <p> Consider the mass-spring system above with <m>m_1=1</m>, <m>m_2=2</m>, <m>k_1 = 1</m>,
-          and <m>k_2
-            = 2</m>, then the mass matrix and stiffness matrix are: </p>
-
-        <p>
-          <md>
-            <mrow>M \amp =
-              \begin{bmatrix}
-              1 \amp 0 \\ 0 \amp 2
-              \end{bmatrix} \amp
-              K \amp = \begin{bmatrix}
-              -3 \amp 2 \\ -2 \amp 4 \end{bmatrix}</mrow>
-          </md>
-        </p>
-
-        <p> resulting in the system: </p>
-
-        <p>
-          <me>
-            \vec{x}'' = \begin{bmatrix}
-            -3 \amp 2 \\ -1 \amp 2
-            \end{bmatrix} \vec{x}
-</me>
-        </p>
-
-        <p> The
-          eigenvalues and eigenvectors are: </p>
-
-        <p>
-          <md>
-            <mrow> \lambda_1 \amp = -4 \amp \vec{v}_1 \amp = (-2,1)^T </mrow>
-            <mrow>\lambda_2 \amp = -1 \amp \vec{v}_2 \amp = (1,1)^T</mrow>
-          </md>
-        </p>
-
-        <p>
-          Therefore the solution is:
-</p>
-
-        <p>
-          <men xml:id="eq-mass-spring-solution">
-            \vec{x} = (a_1 \cos 2t + b_1 \sin 2t) \begin{bmatrix}
-            -2 \\ 1
-            \end{bmatrix} + (a_2 \cos t + b_2 \sin t) \begin{bmatrix}
-            1 \\1
-            \end{bmatrix}
-          </men>
-        </p>
-
-        <p> Next, let's find the values of the <m>a</m>'s and <m>b</m>'s if <m>x_1=1</m> and <m>
-          x_2=2</m> when <m>
-            t=0</m> or </p>
-
-        <p>
-          <me>
-            \vec{x}(0) = \begin{bmatrix}
-            1 \\ 2
-            \end{bmatrix}
-</me>
-        </p>
-
-        <p>and <m>\vec{x}'(0)=\vec{0}</m>. First use the initial value <m>\vec{x}(0)</m> in (<xref
-            ref="eq-mass-spring-solution" />), </p>
-
-        <p>
-          <me>
-            \begin{bmatrix}
-            1 \\ 2
-            \end{bmatrix} = a_1 \begin{bmatrix}
-            -2 \\ 1
-            \end{bmatrix} + a_2 \begin{bmatrix}
-            1 \\ 1
-            \end{bmatrix}
-</me>
-        </p>
-
-        <p> and this is true when <m>a_1=1/3</m> and <m>a_2=5/3</m>. To find <m>b_1</m> and <m>b_2</m>,
-          differentiate (<xref ref="eq-mass-spring-solution" />), </p>
-
-
-        <p>
-          <md>
-            <mrow>\vec{x}'(t) \amp = (-2a_1 \sin 2t + 2b_1
-              \cos 2t ) \begin{bmatrix} -2 \\ 1 \end{bmatrix} + (-a_2 \sin t + b_2 \cos t)
-              \begin{bmatrix} 1
-              1 \end{bmatrix} </mrow>
-          </md>
-        </p>
-        <p>and evaluate it at <m>t=0</m>
-        </p>
-
-        <p>
-          <me>
-            \vec{x}'(0) = \begin{bmatrix} 0 \\ 0
-            \end{bmatrix} = 2b_1 \begin{bmatrix} -2 \\ 1 \end{bmatrix} + 2b_2 \begin{bmatrix} 1 \\ 1
-            \end{bmatrix}
-</me>
-        </p>
-
-        <p>or <m>b_1=0</m> and <m>b_2=0</m>. The solution with the given initial condition, </p>
-
-        <p>
-          <me>
-            \vec{x}(t) = \frac{1}{3} \cos 2t \begin{bmatrix}
-            -2 \\ 1
-            \end{bmatrix} + \frac{5}{3} \cos t \begin{bmatrix}
-            1 \\ 1
-            \end{bmatrix}
-</me>
-        </p>
-
-        <p> The value of <m>x_1</m> and <m>x_2</m>, the position of the two masses are the first and
-          second components. A plot of these two are: </p>
-
-
-        <figure>
-          <caption>
-            Solution of a second-order differential equation.
-          </caption>
-          <image width="90%" xml:id="plot-second-order-de-solution">
-            <latex-image>
-      <![CDATA[
-\begin{tikzpicture}[xscale=0.5,yscale=1.5]
-\draw[->] (-10,0) -- (10,0) node [above right] {$x$};
-\draw[->] (0,-2.25) -- (0,2.25) node [above right] {$y$};
-
-% this draws all the fractional multiples of pi
-
-%\foreach \x/\num/\den/\neg in
-% {0.5*pi/\pi/2/,1.5*pi/3\pi/2/,-0.5*pi/\pi/2/-,-1.5*pi/3\pi/2/-}
-%  \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\neg \frac{\num}{\den}$};
-
-% this draws all non fractional multiples of pi
-
-\foreach \x/\val in {pi/\pi,2*pi/2\pi,3*pi/3\pi,-pi/-\pi,-2*pi/-2\pi,-3*pi/-3\pi}
-    \draw (\x,0.1) -- (\x,-0.1) node [below] {$\val$};
-
-\foreach \y in {-2,-1,1,2} \draw (0.1,\y) -- (-0.1,\y) node [left] {$\y$};
-
-
-\draw plot[domain=-10:10,samples=100] (\x,{-2/3*cos(2*\x r)+5/3*cos(\x r)});
-\draw[dashed] plot[domain=-10:10,samples=100] (\x,{1/3*cos(2*\x r)+5/3*cos(\x r)});
-
-\end{tikzpicture}
-]]>
-</latex-image>
-          </image>
-        </figure>
-
-      </statement>
-    </example>
-  </subsection>
+	<title>Applications of Eigenvalues and Eigenvectors</title>
+	<introduction>
+		<p>
+			We will develop a simple model of population growth in this section and show an example
+			where eigenvalues and eigenvectors play an important role.
+		</p>
+
+		<p>
+			Consider a population of a single species, perhaps a bacteria, which varies over time. Let <m>
+			p_n</m> be the population at the <m>n</m>th time unit (day, month, year, \ldots). A simple
+			model will be that the population at the next time will be proportional to the current
+			population, thus <m>p_{n+1}
+			= r p_n</m>.
+		</p>
+
+		<p>
+			If the number of bacteria starting is 50, then <m>p_0=50</m> and the population doubles
+			every time unit, so <m>r=2</m>, then
+		</p>
+
+		<p>
+			<md>
+				<mrow>p_1 \amp= 2 p_0 = 100 </mrow>
+				<mrow>p_2 \amp = 2p_1 = 200 </mrow>
+				<mrow>p_3 \amp = 2p_2 = 400</mrow>
+			</md>
+		</p>
+
+		<p>
+			and so on. In general
+		</p>
+
+		<p>
+			<md>
+				<mrow>p_1 \amp = r p_0 </mrow>
+				<mrow>p_2 \amp = r p_1 = r^2 p_0 </mrow>
+				<mrow>p_3 \amp = r p_2 = r^3 p_0 </mrow>
+				<mrow>\vdots \amp = \vdots </mrow>
+				<mrow>p_n \amp= r^n p_0</mrow>
+			</md>
+		</p>
+
+		<p>
+			From this model, the population increases without bound if <m>r \gt 1</m>, drops to zero if <m>r
+			\lt 1</m> and if <m>r=1</m>, <m>p_n =p_0</m>.
+		</p>
+	</introduction>
+	<subsection
+	xml:id="sect-leslie-models">
+	<title>Leslie Population Models</title>
+	<p>
+		The previous model actually works well for species like single-celled organisms, however,
+		more advanced species will require a more complicated model. Consider a species, like some
+		type of bird, that has two stages of life: juvenile and adult. We will also assume that the
+		population of males and females are equal. The juvenile female cannot reproduce and the adult
+		female can. Let <m>
+		p_n</m> and <m>q_n</m> be the population of the juveniles and adults females at stage <m>n</m>.
+		A simple model for growth is
+	</p>
+
+	<p>
+		<md>
+			<mrow>p_{n+1} \amp = k q_n </mrow>
+			<mrow>q_{n+1} \amp = \alpha p_n + \beta q_n</mrow>
+		</md>
+	</p>
+
+	<p>
+		where at each stage the fraction <m>\alpha</m> of the juveniles survive to adulthood, and the
+		population of the adults will produce a factor <m>k</m> juveniles. Finally, the fraction <m>
+		\beta</m> of the adults survive one time unit. This linear system can be written as the matrix
+		equation
+	</p>
+
+	<p>
+		<me>
+			\vec{p}_{n+1} = A \vec{p}_n
+		</me>
+	</p>
+
+	<p>
+		where
+	</p>
+
+	<p>
+		<md>
+			<mrow>\vec{p} \amp=
+			\begin{bmatrix}
+			p \\ q
+			\end{bmatrix}
+			\amp A \amp =
+			\begin{bmatrix}
+			0 \amp k \\ \alpha \amp \beta
+			\end{bmatrix}</mrow>
+		</md>
+	</p>
+
+	<p>
+		As a specific example, let's consider
+	</p>
+
+	<p>
+		<me>
+			A =
+			\begin{bmatrix}
+			0 \amp 2 \\
+			0.3 \amp 0.5
+			\end{bmatrix}
+		</me>
+	</p>
+
+	<p>
+		The first line means that for every adult female, two juvenile females are produced. The
+		second line means that 0.3 (30 percent) of the juveniles survive to adulthood and at each
+		stage
+		0.5 (50 percent) of the adults survive to the next stage.
+	</p>
+
+	<p>
+		Let's see what happens to this population for some initial condition. Let's say that we have
+		10 female adults and 0 juvenile adults. Then
+	</p>
+
+	<p>
+		<me>
+			\vec{p}_1 = A \vec{p}_0 =
+			\begin{bmatrix}
+			0 \amp 2 \\
+			0.3 \amp 0.5
+			\end{bmatrix}
+			\begin{bmatrix}
+			0\\ 10
+			\end{bmatrix} =
+			\begin{bmatrix}
+			20 \\ 5
+			\end{bmatrix}
+		</me>
+	</p>
+
+	<p>
+		In general,
+	</p>
+
+	<p>
+		<me>
+			\vec{p}_n = A^n \vec{p}_0
+		</me>
+	</p>
+
+	<table>
+		<title>
+		Table of population values</title>
+		<tabular>
+			<row>
+			<cell>year </cell>
+			<cell>
+			<m>p_n</m>
+			</cell>
+			<cell>
+			<m>q_n</m>
+			</cell>
+			<cell>
+			<m>T_n</m>
+			</cell>
+			<cell>
+			<m>p_n/q_n</m>
+			</cell>
+			<cell>
+			<m>T_{n+1}/T_n</m>
+			</cell>
+			</row>
+			<row>
+			<cell>0 </cell>
+			<cell> 0 </cell>
+			<cell> 10 </cell>
+			<cell> 10 </cell>
+			<cell> 0 </cell>
+			<cell> </cell>
+			</row>
+			<row>
+			<cell>1 </cell>
+			<cell> 20 </cell>
+			<cell> 5 </cell>
+			<cell> 25 </cell>
+			<cell> 4.00 </cell>
+			<cell> 2.50 </cell>
+			</row>
+			<row>
+			<cell>2 </cell>
+			<cell> 10 </cell>
+			<cell> 8 </cell>
+			<cell> 18 </cell>
+			<cell> 1.18 </cell>
+			<cell> 0.74 </cell>
+			</row>
+			<row>
+			<cell>3 </cell>
+			<cell> 17 </cell>
+			<cell> 7 </cell>
+			<cell> 24 </cell>
+			<cell> 2.34 </cell>
+			<cell> 1.31 </cell>
+			</row>
+			<row>
+			<cell>4 </cell>
+			<cell> 14 </cell>
+			<cell> 8 </cell>
+			<cell> 22 </cell>
+			<cell> 1.66 </cell>
+			<cell> 0.96 </cell>
+			</row>
+			<row>
+			<cell>5 </cell>
+			<cell> 17 </cell>
+			<cell> 8 </cell>
+			<cell> 25 </cell>
+			<cell> 2.00 </cell>
+			<cell> 1.13 </cell>
+			</row>
+			<row>
+			<cell>
+			<m>\vdots</m>
+			</cell>
+			</row>
+			<row>
+			<cell>10 </cell>
+			<cell> 22 </cell>
+			<cell> 12 </cell>
+			<cell> 34 </cell>
+			<cell> 1.87 </cell>
+			<cell> 1.06 </cell>
+			</row>
+			<row>
+			<cell>11 </cell>
+			<cell> 24 </cell>
+			<cell> 12 </cell>
+			<cell> 36 </cell>
+			<cell> 1.88 </cell>
+			<cell> 1.07 </cell>
+			</row>
+			<row>
+			<cell>12 </cell>
+			<cell> 25 </cell>
+			<cell> 13 </cell>
+			<cell> 38 </cell>
+			<cell> 1.88 </cell>
+			<cell> 1.06</cell>
+			</row>
+		</tabular>
+	</table>
+
+	<p>
+		We'd like to explain what is going on here. As we will show, the eigenvalues are important.
+		The characteristic equation is
+	</p>
+
+	<p>
+		<me>
+			\lambda^2 -0.5 \lambda -0.6 = 0
+		</me>
+	</p>
+
+	<p>
+		which has the solutions
+	</p>
+
+	<p>
+		<me>
+			\lambda = \frac{0.5 \pm \sqrt{0.25 + 2.4}}{2} \approx 1.06, -0.56
+		</me>
+	</p>
+
+	<p>
+		The eigenvectors are
+	</p>
+
+	<p>
+		<md>
+			<mrow>\vec{v}_1 \amp =
+			\begin{bmatrix}
+			1.88 \\ 1
+			\end{bmatrix} \amp \vec{v}_2 \amp =
+			\begin{bmatrix}
+			-3.54 \\1
+			\end{bmatrix}</mrow>
+		</md>
+	</p>
+
+	<p>
+		Assume that <m>\lambda_1</m> and <m>\lambda_2</m> are the eigenvalues of <m>A</m> and <m>
+		\vec{v}_1</m> and <m>\vec{v}_2</m> are the eigenvectors. If <m>\vec{v}_1</m> and <m>\vec{v}_2</m>
+		are linearly independent, then we can write
+	</p>
+
+	<p>
+		<me>
+			\vec{p}_0 = a_1 \vec{v}_1 + a_2 \vec{v}_2
+		</me>
+	</p>
+
+	<p>
+		for some real numbers <m>a_1</m> and <m>a_2</m>. Let's use the matrix equations above to find <m>
+		\vec{p}_1</m>,
+	</p>
+
+	<p>
+		<md>
+			<mrow>\vec{p}_1 \amp = A \vec{p}_0 = A (a_1 \vec{v}_1 + a_2 \vec{v}_2) </mrow>
+			<mrow>\amp = a_1 A \vec{v}_1 + a_2 A \vec{v}_2 </mrow>
+			<mrow>\amp = a_1 \lambda_1 \vec{v}_1 + a_2 \lambda_2 \vec{v}_2</mrow>
+		</md>
+	</p>
+
+	<p>
+		similarly,
+	</p>
+
+	<p>
+		<md>
+			<mrow>\vec{p}_2 \amp = A \vec{p}_1 = A(a_1 \lambda_1 \vec{v}_1 + a_2 \lambda_2 \vec{v}_2)</mrow>
+			<mrow>\amp= a_1 \lambda_1 A \vec{v}_1 + a_2 \lambda_2 A \vec{v}_2 </mrow>
+			<mrow>\amp = a_1 \lambda_1^2 \vec{v}_1 + a_2 \lambda_2^2 \vec{v}_2</mrow>
+		</md>
+	</p>
+
+	<p>
+		Now assume that <m>|\lambda_1|>|\lambda_2|</m> and factor <m>\lambda_1^n</m> out from the
+		equation above:
+	</p>
+
+	<p>
+		<me>
+			\vec{p}_n = \lambda_1^n \biggl( a_1 \vec{v}_1 + a_2 \frac{\lambda_2^n}{\lambda_1^n}
+			\vec{v}_2 \biggr)
+		</me>
+	</p>
+
+	<p>
+		as <m>n</m> increases the ratio <m>(\lambda_2/\lambda_1)^n</m> goes to zero, so
+	</p>
+
+	<p>
+		<me>
+			\vec{p}_n \approx a_1 \lambda_1^n \vec{v}_1
+		</me>
+	</p>
+</subsection>
+
+<subsection xml:id="sect-second-order-de">
+	<title>Second-Order Differential Equations Systems</title>
+	<p>
+		Consider a mass-spring system:
+	</p>
+
+	<figure>
+		<caption>
+		Find a point on a line that minimizes distance
+		</caption>
+
+		<image width="50%">
+			<latex-image>
+			<![CDATA[
+			\begin{tikzpicture} \draw (0,2) -- (0,0) -- (7,0);
+			\draw[decorate,decoration={coil,segment length=4pt}] (0,0.5) -- (2.5,0.5)
+			node [midway,above] {$k_1$};
+			\draw (2.5,0) rectangle (3.5,1);
+			\draw (3,0.5) node {$x_1$};
+			\draw[decorate,decoration={coil,segment length=4pt}] (3.5,0.5) -- (5.5,0.5)
+			node [midway,above] {$k_2$};
+			\draw (5.5,0) rectangle (6.5,1);
+			\draw (6,0.5) node {$x_2$};
+			\end{tikzpicture}
+			]]>
+			</latex-image>
+		</image>
+	</figure>
+
+	<p>
+		where <m>x_1</m> and <m>x_2</m> are the positions of the masses <m>m_1</m> and <m>m_2</m>
+		relative to the unstretched spring positions and <m>k_1</m> and <m>k_2</m> are the spring
+		constants of the two springs. The mass spring system above can be modeled using the 2nd order
+		system of differential equations.
+	</p>
+
+	<p>
+		<md>
+			<mrow>m_1 x_1 '' \amp = - k_1 x_1 + k_2 (x_2-x_1) </mrow>
+			<mrow>m_2 x_2 '' \amp = - k_2 (x_2-x_1) .</mrow>
+		</md>
+	</p>
+
+	<p>
+		This can be written in matrix form as
+	</p>
+
+	<p>
+		<me>
+			M \vec{x}'' = K\vec{x}
+		</me>
+	</p>
+
+	<p>
+		with
+	</p>
+
+	<p>
+		<md>
+			<mrow>M \amp = \begin{bmatrix}
+			m_1 \amp 0 \\ 0 \amp m_2
+			\end{bmatrix}
+			\amp
+			K \amp =\begin{bmatrix}
+			-(k_1+k_2) \amp k_2 \\ -k_2 \amp k_1
+			\end{bmatrix}</mrow>
+		</md>
+	</p>
+
+	<p>
+		where <m>M</m> is the mass matrix and <m>K</m> is called the stiffness matrix, which can
+		take other forms depending on the connectedness of the spring system. Since <m>M</m> is
+		nonsingular, we can find <m>M^{-1}</m> and write the system above as:
+	</p>
+
+	<p>
+		<me>
+			\vec{x}'' = A \vec{x}
+		</me>
+	</p>
+
+	<p>
+		where <m>A = M^{-1} K</m>.
+	</p>
+</subsection>
+
+<subsection xml:id="sect-solutions-of-second-order-de">
+	<title>Solutions of <m>\vec{x}''= A\vec{x}</m>
+	</title>
+
+	<p>
+		Let <m>v</m> be an eigenvector of <m>A</m>, with eigenvalue <m>\lambda = \alpha^2</m>, then <m>\vec{x}
+		=\vec{v}(c_1e^{\alpha t} + c_2 e^{-\alpha t})</m> is a solution.
+	</p>
+
+	<p>
+		<md>
+			<mrow>\vec{x}'' \amp = \alpha^2 \vec{v} (c_1 e^{\alpha t}+ c_2 e^{-\alpha t}) </mrow>
+			<mrow>\amp = A \vec{v}(c_1e^{\alpha t} + c_2 e^{-\alpha t})</mrow>
+		</md>
+	</p>
+
+	<p>
+		if <m>\lambda \lt 0</m>, then the <m>\lambda = - \omega^2</m> and the solution is:
+	</p>
+
+	<p>
+		<me>
+			\vec{x} = \vec{v} (a \cos \omega t + b \sin \omega t)
+		</me>
+	</p>
+
+	<p>
+		If <m>\lambda = 0</m> is an eigenvalue of <m>A</m> with corresponding eigenvector <m>
+		\vec{v}_0</m>, then the part of the solution associate with this is:
+	</p>
+
+	<p>
+		<me>
+			\vec{x}(t) = (a_0 + b_0 t) \vec{v}_0
+		</me>
+	</p>
+
+	<theorem>
+		<statement>
+			<p>
+				If the <m>n \times n</m> matrix <m>A</m> has distinct negative eigenvalues <m>-\omega_1^2,
+				-\omega_2^2, \ldots, -\omega_n^2</m> with associated real eigenvectors, then a general
+				solution to
+			</p>
+
+			<p>
+				<me>
+					\vec{x''} = A x
+				</me>
+			</p>
+
+			<p>
+				is given by
+			</p>
+
+			<p>
+				<me>
+					\vec{x} = \sum_{i=1}^n (a_i \cos \omega_i t + b_i \sin \omega_i t)\vec{v}_i
+				</me>
+			</p>
+
+			<p>
+				where <m>a_i</m> and <m>b_i</m> arbitrary constants. If <m>\lambda = 0</m> is an
+				eigenvalue of <m>A</m> with corresponding eigenvector <m>\vec{v}_0</m>, then the part of
+				the solution associate with this is:
+			</p>
+
+			<p>
+				<me>
+					\vec{x}(t) = (a_0 + b_0 t) \vec{v}_0
+				</me>
+			</p>
+		</statement>
+	</theorem>
+
+	<example>
+		<statement>
+			<p>
+				Consider the mass-spring system above with <m>m_1=1</m>, <m>m_2=2</m>, <m>k_1 = 1</m>,
+				and <m>k_2
+				= 2</m>, then the mass matrix and stiffness matrix are:
+			</p>
+
+			<p>
+				<md>
+					<mrow>M \amp =
+					\begin{bmatrix}
+					1 \amp 0 \\ 0 \amp 2
+					\end{bmatrix} \amp
+					K \amp = \begin{bmatrix}
+					-3 \amp 2 \\ -2 \amp 4 \end{bmatrix}</mrow>
+				</md>
+			</p>
+
+			<p>
+				resulting in the system:
+			</p>
+
+			<p>
+				<me>
+					\vec{x}'' = \begin{bmatrix}
+					-3 \amp 2 \\ -1 \amp 2
+					\end{bmatrix} \vec{x}
+				</me>
+			</p>
+
+			<p>
+				The
+				eigenvalues and eigenvectors are:
+			</p>
+
+			<p>
+				<md>
+					<mrow> \lambda_1 \amp = -4 \amp \vec{v}_1 \amp = (-2,1)^T </mrow>
+					<mrow>\lambda_2 \amp = -1 \amp \vec{v}_2 \amp = (1,1)^T</mrow>
+				</md>
+			</p>
+
+			<p>
+				Therefore the solution is:
+			</p>
+
+			<p>
+				<men xml:id="eq-mass-spring-solution">
+					\vec{x} = (a_1 \cos 2t + b_1 \sin 2t) \begin{bmatrix}
+					-2 \\ 1
+					\end{bmatrix} + (a_2 \cos t + b_2 \sin t) \begin{bmatrix}
+					1 \\1
+					\end{bmatrix}
+				</men>
+			</p>
+
+			<p>
+				Next, let's find the values of the <m>a</m>'s and <m>b</m>'s if <m>x_1=1</m> and <m>
+				x_2=2</m> when <m>
+				t=0</m> or
+			</p>
+
+			<p>
+				<me>
+					\vec{x}(0) = \begin{bmatrix}
+					1 \\ 2
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				and <m>\vec{x}'(0)=\vec{0}</m>. First use the initial value <m>\vec{x}(0)</m> in (<xref
+				ref="eq-mass-spring-solution" />),
+			</p>
+
+			<p>
+				<me>
+					\begin{bmatrix}
+					1 \\ 2
+					\end{bmatrix} = a_1 \begin{bmatrix}
+					-2 \\ 1
+					\end{bmatrix} + a_2 \begin{bmatrix}
+					1 \\ 1
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				and this is true when <m>a_1=1/3</m> and <m>a_2=5/3</m>. To find <m>b_1</m> and <m>b_2</m>,
+				differentiate (<xref ref="eq-mass-spring-solution" />),
+			</p>
+
+			<p>
+				<md>
+					<mrow>\vec{x}'(t) \amp = (-2a_1 \sin 2t + 2b_1
+					\cos 2t ) \begin{bmatrix} -2 \\ 1 \end{bmatrix} + (-a_2 \sin t + b_2 \cos t)
+					\begin{bmatrix} 1
+					1 \end{bmatrix} </mrow>
+				</md>
+			</p>
+
+			<p>
+				and evaluate it at <m>t=0</m>
+			</p>
+
+			<p>
+				<me>
+					\vec{x}'(0) = \begin{bmatrix} 0 \\ 0
+					\end{bmatrix} = 2b_1 \begin{bmatrix} -2 \\ 1 \end{bmatrix} + 2b_2 \begin{bmatrix} 1 \\ 1
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				or <m>b_1=0</m> and <m>b_2=0</m>. The solution with the given initial condition,
+			</p>
+
+			<p>
+				<me>
+					\vec{x}(t) = \frac{1}{3} \cos 2t \begin{bmatrix}
+					-2 \\ 1
+					\end{bmatrix} + \frac{5}{3} \cos t \begin{bmatrix}
+					1 \\ 1
+					\end{bmatrix}
+				</me>
+			</p>
+
+			<p>
+				The value of <m>x_1</m> and <m>x_2</m>, the position of the two masses are the first and
+				second components. A plot of these two are:
+			</p>
+
+			<figure>
+				<caption>
+				Solution of a second-order differential equation.
+				</caption>
+
+				<image width="90%" xml:id="plot-second-order-de-solution">
+					<latex-image>
+					<![CDATA[
+					\begin{tikzpicture}[xscale=0.5,yscale=1.5]
+					\draw[->] (-10,0) -- (10,0) node [above right] {$x$};
+					\draw[->] (0,-2.25) -- (0,2.25) node [above right] {$y$};
+					% this draws all the fractional multiples of pi
+					%\foreach \x/\num/\den/\neg in
+					% {0.5*pi/\pi/2/,1.5*pi/3\pi/2/,-0.5*pi/\pi/2/-,-1.5*pi/3\pi/2/-}
+					%  \draw ({\x},0.1) -- ({\x},-0.1) node [below] {$\neg \frac{\num}{\den}$};
+					% this draws all non fractional multiples of pi
+					\foreach \x/\val in {pi/\pi,2*pi/2\pi,3*pi/3\pi,-pi/-\pi,-2*pi/-2\pi,-3*pi/-3\pi}
+					\draw (\x,0.1) -- (\x,-0.1) node [below] {$\val$};
+					\foreach \y in {-2,-1,1,2} \draw (0.1,\y) -- (-0.1,\y) node [left] {$\y$};
+					\draw plot[domain=-10:10,samples=100] (\x,{-2/3*cos(2*\x r)+5/3*cos(\x r)});
+					\draw[dashed] plot[domain=-10:10,samples=100] (\x,{1/3*cos(2*\x r)+5/3*cos(\x r)});
+					\end{tikzpicture}
+					]]>
+					</latex-image>
+				</image>
+			</figure>
+		</statement>
+	</example>
+</subsection>
 </section>

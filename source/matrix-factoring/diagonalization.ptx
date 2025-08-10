@@ -612,7 +612,7 @@
 			for diagonal matrix <m>D_2</m>.
 			We know that the matrices <m>P_1</m> and <m>P_2</m> exist if there are <m>n</m> linearly independent eigenvectors,
 			but how do you find <m>S</m>?
-			Solving for <m>D_1</m> in (<xref ref="eq-diag-A" />) and <m>D_2</m> in (<xref ref="eq-diag-B" />),
+			Solving for <m>D_1</m> in <xref ref="eq-diag-A" /> and <m>D_2</m> in <xref ref="eq-diag-B" />,
 		</p>
 
 		<p>

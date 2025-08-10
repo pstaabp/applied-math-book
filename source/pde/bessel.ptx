@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section>
+<section xml:id="sec-bessel-eqn">
 	<title>Bessel's equation and Bessel Functions</title>
 	<introduction>
 		<p>
@@ -48,7 +48,7 @@
 		</p>
 
 		<figure xml:id="fig-bessel">
-			<caption> A bar </caption>
+			<caption> A plot of the bessel functions <m>J_0</m> and <m>J_1</m> on <m>[0,10]</m>.</caption>
 			<image width="75%" xml:id="plot-bessel">
 				<latex-image>
 				<![CDATA[
@@ -82,7 +82,7 @@
 		</p>
 
 		<p>
-			In addition, using the power series representation, one can show that the other solution of (<xref ref="eq-bessel-eqn" />) can be written:
+			In addition, using the power series representation, one can show that the other solution of <xref ref="eq-bessel-eqn" /> can be written:
 		</p>
 
 		<p>
@@ -120,8 +120,8 @@
 
 			<proof>
 				<p>
-					First we will prove (<xref ref="eq-bessel-id1" />).
-					Using (<xref ref="eq-bessel-function-power-series" />), we can write
+					First we will prove <xref ref="eq-bessel-id1" />.
+					Using <xref ref="eq-bessel-function-power-series" />, we can write
 				</p>
 
 				<p>
@@ -145,7 +145,7 @@
 				</p>
 
 				<p>
-					The proof for (<xref ref="eq-bessel-id2" />) is very similar and is not shown.
+					The proof for <xref ref="eq-bessel-id2" /> is very similar and is not shown.
 				</p>
 			</proof>
 		</lemma>
@@ -171,7 +171,7 @@
 
 			<proof>
 				<p>
-					If we use the product rule to expand (<xref ref="eq-bessel-id1" />) and (<xref ref="eq-bessel-id2" />), we get
+					If we use the product rule to expand <xref ref="eq-bessel-id1" /> and <xref ref="eq-bessel-id2" />, we get
 				</p>
 
 				<p>
@@ -193,7 +193,7 @@
 				</p>
 
 				<p>
-					Adding the two above equations and dividing through by <m>x</m> results in <xref ref="eq-bessel-recur2" />
+					Adding the two above equations and dividing through by <m>x</m> results in <xref ref="eq-bessel-recur1" />
 					whereas subtracting the bottom equation from the top results in <xref ref="eq-bessel-recur2" />.
 				</p>
 			</proof>
@@ -207,7 +207,7 @@
 		<example xml:id="ex-bessel-J3">
 			<statement>
 				<p>
-					Use the identities in lemmas <xref ref="lem-bessel-identities" /> and <xref ref="lem-bessel-recurrence" />
+					Use the identities in <xref ref="lem-bessel-identities" /> and <xref ref="eq-bessel-recur1" />
 					to find <m>J_3</m> in terms of <m>J_0</m> and <m>J_1</m>.
 				</p>
 			</statement>
@@ -225,7 +225,7 @@
 				</p>
 
 				<p>
-					use (<xref ref="eq-bessel-recur1" />) again with <m>n=1</m>
+					use <xref ref="eq-bessel-recur1" /> again with <m>n=1</m>
 					or <m>x(J_0 + J_2) = 2J_1</m> which can be written <m>J_2 = (2/x)J_1 -J_0</m>
 				</p>
 
@@ -254,7 +254,7 @@
 
 			<solution>
 				<p>
-					First, differentiate (<xref ref="eq-bessel-recur1" />) with <m>n=1</m> to get
+					First, differentiate <xref ref="eq-bessel-recur1" /> with <m>n=1</m> to get
 				</p>
 
 				<p>
@@ -265,7 +265,7 @@
 				</p>
 
 				<p>
-					using (<xref ref="eq-bessel-recur2" />) with <m>n=1</m> and <m>n=2</m>,
+					using <xref ref="eq-bessel-recur2" /> with <m>n=1</m> and <m>n=2</m>,
 				</p>
 
 				<p>
@@ -276,7 +276,7 @@
 				</p>
 
 				<p>
-					Using (<xref ref="eq-bessel-recur1" />) with <m>n=1</m>
+					Using <xref ref="eq-bessel-recur1" /> with <m>n=1</m>
 				</p>
 
 				<p>

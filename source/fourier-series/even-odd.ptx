@@ -1,8 +1,30 @@
-<section>
+<section xml:id="sect-even-odd">
   <title>Even and Odd Functions; Half-Range Expansions</title>
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Any function on a <m>[0,L]</m> interval can be extended as either an odd or even
+          periodic function of period <m>2L</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The Fourier Series of an odd periodic extension (or any odd function) can be written
+          as a Fourier Sine Series, consisting of only sine terms.
+        </p>
+      </li>
+      <li>
+        <p>
+          The Fourier Series of an even periodic extension (or any even function) can be written
+          as a Fourier Cosine Series, consisting of only cosine terms.
+        </p>
+      </li>
+    </ul>
+  </objectives>
 
   <introduction>
-    <p>We saw above that the periodic extension of <m>f(x)=x</m> on <m>[-1,1]</m> in Example <xref
+    <p>We saw above that the periodic extension of <m>f(x)=x</m> on <m>[-1,1]</m> in <xref
         ref="ex-FS-x" /> resulted in a odd function and that only the sine terms of the Fourier
       Series was left. That is, all of the Fourier coefficients for the cosine terms were 0. In this
       section, we use this idea to produce only even and odd extensions which results in only sine
@@ -17,14 +39,14 @@
         <p>
           <ul>
             <li>
-              <p> The even periodic extension of <m>f</m> is called <m>F(x)</m> and is defined: </p>
+              <p> The even periodic extension of <m>f</m> is defined as </p>
               <p>
                 <me> F(x) = \begin{cases} f(x) \amp 0 \leq x \leq L \\ f(-x) \amp -L \leq x \lt 0 \\
                   f(x+2kL) \amp \text{otherwise for appropriate integer $k$} \end{cases} </me>
               </p>
             </li>
             <li>
-              <p> The odd periodic extension of <m>f</m> is called <m>F(x)</m> and is defined: </p>
+              <p> The odd periodic extension of <m>f</m> is defined as </p>
               <p>
                 <me> F(x) = \begin{cases}
                   f(x) \amp 0 \leq x \leq L \\ -f(-x) \amp -L \leq x \lt 0 \\
@@ -125,7 +147,7 @@
 
         <figure>
           <caption>
-            Periodic version of ...
+            Periodic version of the odd extension of <m>f(x) = 1-x</m>.
           </caption>
           <image width="50%" xml:id="plot-periodic">
             <latex-image>
@@ -151,13 +173,12 @@
     <title>The Fourier Sine and Cosine Series</title>
 
     <p> We now address the Fourier series of the even- and odd-periodic extensions of <m>f</m> on <m>
-      [0,L]</m>. As in Example <xref ref="ex-FS-x" />, there are no cosine terms and the Fourier
+      [0,L]</m>. As in <xref ref="ex-FS-x" />, there are no cosine terms and the Fourier
       series of the odd periodic extension of <m>f</m> can be written </p>
     <p>
       <md>
-        <mrow xml:id="eq-FS-sine" number="yes">(x) \amp = \sum_{n=1}^{\infty} b_n \sin
-          \biggl(\frac{n\pi x}{L} \biggr)</mrow>
-        <mrow>\amp \quad\text{where,}</mrow>
+        <mrow xml:id="eq-FS-sine" number="yes">f(x) \amp = \sum_{n=1}^{\infty} b_n \sin \biggl(\frac{n\pi x}{L}
+            \biggr)\quad\text{where,}</mrow>
         <mrow xml:id="eq-FS-sine-bn" number="yes">b_n \amp = \frac{2}{L} \int_{0}^L f(x) \sin
           \biggl(\frac{n\pi x}{L} \biggr) \,dx </mrow>
       </md>
@@ -167,8 +188,7 @@
     <p>
       <md>
         <mrow xml:id="eq-FS-cosine" number="yes">f(x) \amp= a_0 + \sum_{n=1}^{\infty} a_n \cos
-          \biggl( \frac{n \pi x}{L} \biggr)</mrow>
-        <mrow> \amp \qquad\text{where} </mrow>
+          \biggl( \frac{n \pi x}{L} \biggr)\quad\text{where,}</mrow>
         <mrow xml:id="eq-FS-cosine-a0" number="yes">a_0 \amp = \frac{1}{L} \int_{0}^L f(x) \, dx</mrow>
         <mrow xml:id="eq-FS-cosine-an" number="yes">a_n \amp = \frac{2}{L} \int_0^L f(x) \cos
           \biggl( \frac{n\pi x}{L} \biggr)\, dx</mrow>

@@ -626,7 +626,7 @@
 	<example>
 		<statement>
 			<p>
-				The associated linear system in Example <xref ref="ex-nh-and-homo" /> has an infinite
+				The associated linear system in <xref ref="ex-nh-and-homo" /> has an infinite
 				number of solutions, therefore the matrix
 			</p>
 
@@ -712,12 +712,12 @@
 					\end{array}\right] </mrow>
 					<mrow>R_1 \leftrightarrow R_2 \qquad
 					\left[\begin{array}{rr|r}
-					1 \amp 4 \amp 0
+					1 \amp 4 \amp 0 \\
 					3 \amp 12 \amp 0
 					\end{array}\right] </mrow>
 					<mrow>-3R_1 + R_2 \to R_2 \qquad
 						\left[\begin{array}{rr|r}
-					1 \amp 4 \amp 0
+					1 \amp 4 \amp 0 \\
 					0 \amp 0 \amp 0
 					\end{array}\right] </mrow>
 				</md>
