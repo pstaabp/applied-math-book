@@ -26,11 +26,11 @@
 			<p>
 				The solution to a linear system can be described as
 				<me>
-					\{ \vec{p} + t_1 \vec{\beta}_1 + t_2 \vec{\beta}_2 + \cdots + t_n \vec{\beta}_n, \; | \;
+					\{ \boldsymbol{p} + t_1 \boldsymbol{\beta}_1 + t_2 \boldsymbol{\beta}_2 + \cdots + t_n \boldsymbol{\beta}_n, \; | \;
 					t_1, t_2, \ldots, t_n \in \mathbb{R} \}
 				</me>
-				where <m>\vec{p}</m> is any particular solution and the number of vectors <m>\vec{\beta}_1,
-				\vec{\beta}_2, \ldots, \vec{\beta}_n</m> equals the number of free variables that the system
+				where <m>\boldsymbol{p}</m> is any particular solution and the number of vectors <m>\boldsymbol{\beta}_1,
+				\boldsymbol{\beta}_2, \ldots, \boldsymbol{\beta}_n</m> equals the number of free variables that the system
 				has after Gaussian reduction (and in echelon form).
 			</p>
 		</theorem>
@@ -108,10 +108,10 @@
 		<lemma>
 			<statement>
 				<p>
-					For any homogeneous linear system there exist vectors <m>\vec{\beta}_1, \vec{\beta}_2,
-					\ldots, \vec{\beta}_n</m> such that the solution set of the system is
+					For any homogeneous linear system there exist vectors <m>\boldsymbol{\beta}_1, \boldsymbol{\beta}_2,
+					\ldots, \boldsymbol{\beta}_n</m> such that the solution set of the system is
 					<me>
-						\{ c_1 \vec{\beta}_1+c_2 \vec{\beta}_2 + \cdots + c_n \vec{\beta}_n\; | \; c_1, c_2,
+						\{ c_1 \boldsymbol{\beta}_1+c_2 \boldsymbol{\beta}_2 + \cdots + c_n \boldsymbol{\beta}_n\; | \; c_1, c_2,
 						\ldots, c_n \in \mathbb{R} \}.
 					</me>
 				</p>
@@ -171,7 +171,7 @@
 					</me>
 					Inductively, each leading variable can be written in this form.
 					The <m>c_i</m> in the
-					statement of the lemma are the free variables and the vectors <m>\vec{\beta}_i</m> are
+					statement of the lemma are the free variables and the vectors <m>\boldsymbol{\beta}_i</m> are
 					coefficients of the free variable corresponding to <m>c_i</m> in each <m>x_{\ell_i}</m>.
 				</p>
 			</proof>
@@ -363,9 +363,9 @@
 		<lemma>
 			<statement>
 				<p>
-					For any linear system with a particular solution <m>\vec{p}</m>, the solution set is
+					For any linear system with a particular solution <m>\boldsymbol{p}</m>, the solution set is
 					<me>
-						\{ \vec{p} + \vec{h} \; | \; \vec{h}\; \text{satisfies the associated homogeneous system} \}
+						\{ \boldsymbol{p} + \boldsymbol{h} \; | \; \boldsymbol{h}\; \text{satisfies the associated homogeneous system} \}
 					</me>
 				</p>
 			</statement>
@@ -373,25 +373,25 @@
 
 			<proof>
 				<p>
-					To prove this, we will first show that any solution <m>\vec{s}</m> of the
+					To prove this, we will first show that any solution <m>\boldsymbol{s}</m> of the
 					non-homogeneous linear system, <men xml:id="eq-nhs">
 					a_{i,1} x_1 + a_{i,2} x_2 + \cdots + a_{i,n} x_n = b_i \qquad \text{for}\;
 					i=1,2,\ldots,m
 				</men>
-				then <m>\vec{s}-\vec{p}</m> satisfies the associated homogeneous system,
+				then <m>\boldsymbol{s}-\boldsymbol{p}</m> satisfies the associated homogeneous system,
 				<me>
 					a_{i,1} x_1 + a_{i,2} x_2 + \cdots + a_{i,n} x_n = 0 \qquad \text{for}\;
 					i=1,2,\ldots,m
 				</me>
-				then show that if <m>\vec{h}</m> is a solution to the associated homogeneous system, then <m>
-				\vec{h}+\vec{p}</m> satisfies the non-homogeneous system.
+				then show that if <m>\boldsymbol{h}</m> is a solution to the associated homogeneous system, then <m>
+				\boldsymbol{h}+\boldsymbol{p}</m> satisfies the non-homogeneous system.
 			</p>
 
 			<p>
 				<ol>
 					<li>
 						<p>
-							Assume that <m>\vec{s}=(s_1,s_2, \ldots,s_n)</m> satisfies <xref ref="eq-nhs" />,
+							Assume that <m>\boldsymbol{s}=(s_1,s_2, \ldots,s_n)</m> satisfies <xref ref="eq-nhs" />,
 							that is
 						</p>
 
@@ -403,7 +403,7 @@
 						</p>
 
 						<p>
-							then <m>\vec{s}-\vec{p}</m> satisfies
+							then <m>\boldsymbol{s}-\boldsymbol{p}</m> satisfies
 						</p>
 
 						<p>
@@ -425,9 +425,9 @@
 
 					<li>
 						<p>
-							Next assume that <m>\vec{h}</m> satisfies <xref ref="eq-nhs" />.
+							Next assume that <m>\boldsymbol{h}</m> satisfies <xref ref="eq-nhs" />.
 							Then we show
-							that <m>\vec{h}+\vec{p}</m> satisfies:
+							that <m>\boldsymbol{h}+\boldsymbol{p}</m> satisfies:
 						</p>
 
 						<p>
@@ -615,7 +615,7 @@
 		<statement>
 			<p>
 				A square matrix <m>A</m> is <term>nonsingular</term> if it is a matrix of coefficients of a
-				homogeneous linear system with the unique solution <m>\vec{0}</m>.
+				homogeneous linear system with the unique solution <m>\boldsymbol{0}</m>.
 				Otherwise it is <term>
 				singular</term>, that is the associated homogeneous system has a solution set with an
 				infinite number of points.

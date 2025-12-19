@@ -211,12 +211,12 @@
 
 			<p>
 				<md>
-					<mrow>\vec{v}_1 \amp = \begin{bmatrix}
+					<mrow>\boldsymbol{v}_1 \amp = \begin{bmatrix}
 					2 \\ 1 \\ 2
-					\end{bmatrix} \amp \vec{v}_2 \amp =
+					\end{bmatrix} \amp \boldsymbol{v}_2 \amp =
 					\begin{bmatrix}
 					-1 \\ 0 \\ 1
-					\end{bmatrix} \amp \vec{v}_3 \amp =
+					\end{bmatrix} \amp \boldsymbol{v}_3 \amp =
 					\begin{bmatrix}
 					-1 \\ 2 \\ 0
 					\end{bmatrix}</mrow>
@@ -243,50 +243,50 @@
 			<proof>
 				<p>
 					Let <m>\lambda</m> be an eigenvalue of <m>A</m> with corresponding eigenvector <m>
-					\vec{v}</m>, then
+					\boldsymbol{v}</m>, then
 				</p>
 
 				<p>
 					<md>
-						<mrow xml:id="eqn-proof-sys-matrix1" number="yes">A\vec{v} \amp = \lambda \vec{v}</mrow>
+						<mrow xml:id="eqn-proof-sys-matrix1" number="yes">A\boldsymbol{v} \amp = \lambda \boldsymbol{v}</mrow>
 						<mrow>\amp \quad \quad \text{take the complex conjugate of both sides}</mrow>
-						<mrow>\overline{A} \overline{\vec{v}} \amp = \overline{\lambda} \overline{\vec{v}}</mrow>
+						<mrow>\overline{A} \overline{\boldsymbol{v}} \amp = \overline{\lambda} \overline{\boldsymbol{v}}</mrow>
 						<mrow>\amp \quad \quad \text{and since $A$ is real}</mrow>
-						<mrow xml:id="eqn-proof-sys-matrix2" number="yes">A \overline{\vec{v}} \amp =
-						\overline{\lambda} \overline{\vec{v}}</mrow>
+						<mrow xml:id="eqn-proof-sys-matrix2" number="yes">A \overline{\boldsymbol{v}} \amp =
+						\overline{\lambda} \overline{\boldsymbol{v}}</mrow>
 					</md>
 				</p>
 
 				<p>
 					If we left-multiply (<xref ref="eqn-proof-sys-matrix1" />) by <m>
-					\overline{\vec{v}}^{\intercal}</m>,
+					\overline{\boldsymbol{v}}^{\intercal}</m>,
 				</p>
 
 				<p>
 					<md>
-						<mrow>\overline{\vec{v}}^{\intercal} A\vec{v} \amp = \overline{\vec{v}}^{\intercal}
-						(\lambda \vec{v})</mrow>
-						<mrow>\amp = \lambda \overline{\vec{v}}^{\intercal} \vec{v}</mrow>
+						<mrow>\overline{\boldsymbol{v}}^{\intercal} A\boldsymbol{v} \amp = \overline{\boldsymbol{v}}^{\intercal}
+						(\lambda \boldsymbol{v})</mrow>
+						<mrow>\amp = \lambda \overline{\boldsymbol{v}}^{\intercal} \boldsymbol{v}</mrow>
 						<mrow>\amp \quad\quad \text{and solving for $\lambda$,}</mrow>
-						<mrow xml:id="eq-sym-matrix-lambda" number="yes">\lambda \amp = \frac{\overline{\vec{v}}^{\intercal}
-						A \vec{v}}{\overline{\vec{v}}^{\intercal}\vec{v}}</mrow>
+						<mrow xml:id="eq-sym-matrix-lambda" number="yes">\lambda \amp = \frac{\overline{\boldsymbol{v}}^{\intercal}
+						A \boldsymbol{v}}{\overline{\boldsymbol{v}}^{\intercal}\boldsymbol{v}}</mrow>
 					</md>
 				</p>
 
 				<p>
-					and left-multiply (<xref ref="eqn-proof-sys-matrix2" />) by <m>\vec{v}^{\intercal}</m>
+					and left-multiply (<xref ref="eqn-proof-sys-matrix2" />) by <m>\boldsymbol{v}^{\intercal}</m>
 					to get:
 				</p>
 
 				<p>
 					<md>
-						<mrow> \vec{v}^{\intercal} \overline{A}\overline{\vec{v}} \amp = \vec{v}^{\intercal}
-						(\overline{\lambda} \overline{\vec{v}}) </mrow>
+						<mrow> \boldsymbol{v}^{\intercal} \overline{A}\overline{\boldsymbol{v}} \amp = \boldsymbol{v}^{\intercal}
+						(\overline{\lambda} \overline{\boldsymbol{v}}) </mrow>
 						<mrow>\amp \quad \quad\text{and if we take the transpose of both sides of this}</mrow>
-						<mrow>(\vec{v}^{\intercal} \overline{A}\overline{\vec{v}})^{\intercal} \amp =
-						(\vec{v}^{\intercal} \overline{\lambda} \overline{\vec{v}})^{\intercal} \notag </mrow>
-						<mrow>\overline{\vec{v}}^{\intercal} A^{\intercal} \vec{v} \amp = \overline{\lambda}
-						\overline{\vec{v}}^{\intercal} \vec{v}</mrow>
+						<mrow>(\boldsymbol{v}^{\intercal} \overline{A}\overline{\boldsymbol{v}})^{\intercal} \amp =
+						(\boldsymbol{v}^{\intercal} \overline{\lambda} \overline{\boldsymbol{v}})^{\intercal} \notag </mrow>
+						<mrow>\overline{\boldsymbol{v}}^{\intercal} A^{\intercal} \boldsymbol{v} \amp = \overline{\lambda}
+						\overline{\boldsymbol{v}}^{\intercal} \boldsymbol{v}</mrow>
 					</md>
 				</p>
 
@@ -297,8 +297,8 @@
 
 				<p>
 					<men xml:id="eq-sym-matrix-conj-lambda">
-						\overline{\lambda} = \frac{\overline{\vec{v}}^{\intercal} A
-						\vec{v}}{\overline{\vec{v}}^{\intercal} \vec{v} }
+						\overline{\lambda} = \frac{\overline{\boldsymbol{v}}^{\intercal} A
+						\boldsymbol{v}}{\overline{\boldsymbol{v}}^{\intercal} \boldsymbol{v} }
 					</men>
 				</p>
 
@@ -474,7 +474,7 @@
 				An advantage to having an upper- or lower-triangular matrix is that solving the matrix is
 				quite straightforward.
 				In the case of a upper-triangular matrix, <m>U</m> the steps that
-				solve <m>U\vec{x}=\vec{b}</m> is called <term>back substitution</term>.
+				solve <m>U\boldsymbol{x}=\boldsymbol{b}</m> is called <term>back substitution</term>.
 				We will show the
 				steps in an example.
 			</p>
@@ -491,14 +491,14 @@
 							1 \amp -7 \amp -5 \\
 							0 \amp 3 \amp 2 \\
 							0 \amp 0 \amp -3
-							\end{bmatrix} \amp \vec{b} \amp = \begin{bmatrix}
+							\end{bmatrix} \amp \boldsymbol{b} \amp = \begin{bmatrix}
 							2 \\ -5 \\ 6
 							\end{bmatrix},</mrow>
 						</md>
 					</p>
 
 					<p>
-						solve <m>U\vec{x}=\vec{b}</m>.
+						solve <m>U\boldsymbol{x}=\boldsymbol{b}</m>.
 					</p>
 				</statement>
 
@@ -542,13 +542,13 @@
 
 					<p>
 						and solving this leads to <m>x_1=13</m>.
-						Thus the solution to <m>U\vec{x}=\vec{b}</m>
+						Thus the solution to <m>U\boldsymbol{x}=\boldsymbol{b}</m>
 						is
 					</p>
 
 					<p>
 						<me>
-							\vec{x} = \begin{bmatrix}
+							\boldsymbol{x} = \begin{bmatrix}
 							13 \\ -3 \\ 2
 							\end{bmatrix}
 						</me>
@@ -562,7 +562,7 @@
 
 			<remark>
 				<p>
-					To solve the matrix equation <m>U\vec{x}=\vec{b}</m>, where <m>U</m> is an <m>n</m> by <m>
+					To solve the matrix equation <m>U\boldsymbol{x}=\boldsymbol{b}</m>, where <m>U</m> is an <m>n</m> by <m>
 					n</m>, non-singular, upper-triangular matrix, first
 				</p>
 
@@ -596,7 +596,7 @@
 			<title>Forward Substitution</title>
 			<p>
 				Similar to back substitution, if a matrix is in lower-diagonal form, then the matrix
-				equation <m>L\vec{y}=\vec{c}</m> can be solved in a straightforward manner.
+				equation <m>L\boldsymbol{y}=\boldsymbol{c}</m> can be solved in a straightforward manner.
 				We first look at
 				an example:
 			</p>
@@ -604,7 +604,7 @@
 			<example>
 				<statement>
 					<p>
-						Solve <m>L\vec{y}=\vec{c}</m> if
+						Solve <m>L\boldsymbol{y}=\boldsymbol{c}</m> if
 					</p>
 
 					<p>
@@ -613,7 +613,7 @@
 							3 \amp 0 \amp 0 \\
 							2 \amp -1 \amp 0 \\
 							0 \amp 5 \amp 2
-							\end{bmatrix} \amp \vec{c} \amp = \begin{bmatrix}
+							\end{bmatrix} \amp \boldsymbol{c} \amp = \begin{bmatrix}
 							9 \\ 8 \\2 \end{bmatrix}</mrow>
 						</md>
 					</p>
@@ -663,7 +663,7 @@
 
 					<p>
 						<me>
-							\vec{y} =\begin{bmatrix}
+							\boldsymbol{y} =\begin{bmatrix}
 							3 \\ -2 \\ 6
 							\end{bmatrix}
 						</me>
@@ -672,14 +672,14 @@
 			</example>
 
 			<p>
-				Notice in this example, we solved the unknown's in the <m>\vec{y}</m> vector in order.
+				Notice in this example, we solved the unknown's in the <m>\boldsymbol{y}</m> vector in order.
 				This is because of the structure of the lower-triangular matrix and hence why this technique
 				is called <term>forward substitution</term>.
 			</p>
 
 			<remark>
 				<p>
-					To solve the matrix equation <m>L\vec{y}=\vec{c}</m>, where <m>L</m> is an <m>n</m> by <m>
+					To solve the matrix equation <m>L\boldsymbol{y}=\boldsymbol{c}</m>, where <m>L</m> is an <m>n</m> by <m>
 					n</m>, nonsingular, lower-triangular matrix, first,
 				</p>
 

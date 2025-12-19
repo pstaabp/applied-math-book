@@ -21,17 +21,17 @@
 
       <proof>
         <p> Let <m>\lambda</m> be an eigenvalue of <m>A</m> with corresponding eigenvector <m>
-          \vec{v}</m> . </p>
+          \boldsymbol{v}</m> . </p>
         <p>
           <me>
-            A \vec{v} = \lambda \vec{v}
+            A \boldsymbol{v} = \lambda \boldsymbol{v}
           </me>
         </p>
-        <p> Right multiply by <m>\vec{v}^T</m></p>
+        <p> Right multiply by <m>\boldsymbol{v}^T</m></p>
 
         <p>
           <me>
-            \vec{v}^T A \vec{v} = \lambda \vec{v}^T \vec{v}
+            \boldsymbol{v}^T A \boldsymbol{v} = \lambda \boldsymbol{v}^T \boldsymbol{v}
           </me>
         </p>
 
@@ -39,21 +39,21 @@
 
         <p>
           <md>
-            <mrow>\overline{\vec{v}}^T A^T \amp = \overline{\lambda} \overline {\vec{v}}^T </mrow>
-            <mrow>\overline{\vec{v}}^T A \amp = \overline{\lambda} \overline {\vec{v}}^T</mrow>
+            <mrow>\overline{\boldsymbol{v}}^T A^T \amp = \overline{\lambda} \overline {\boldsymbol{v}}^T </mrow>
+            <mrow>\overline{\boldsymbol{v}}^T A \amp = \overline{\lambda} \overline {\boldsymbol{v}}^T</mrow>
           </md>
         </p>
-        <p>left mulitply by <m>\vec{v}</m></p>
+        <p>left mulitply by <m>\boldsymbol{v}</m></p>
         <p>
           <md>
-            <mrow>\overline{\vec{v}}^T A \vec{v} \amp = \overline{\lambda} \overline{\vec{v}}^T
-              \vec{v} </mrow>
-            <mrow>\overline{\vec{v}}^T \lambda \vec{v} \amp = \overline{\lambda}
-              \overline{\vec{v}}^T
-              \vec{v} </mrow>
-            <mrow>\lambda \overline{\vec{v}}^T \vec{v} \amp = \overline{\lambda}
-              \overline{\vec{v}}^T
-              \vec{v}</mrow>
+            <mrow>\overline{\boldsymbol{v}}^T A \boldsymbol{v} \amp = \overline{\lambda} \overline{\boldsymbol{v}}^T
+              \boldsymbol{v} </mrow>
+            <mrow>\overline{\boldsymbol{v}}^T \lambda \boldsymbol{v} \amp = \overline{\lambda}
+              \overline{\boldsymbol{v}}^T
+              \boldsymbol{v} </mrow>
+            <mrow>\lambda \overline{\boldsymbol{v}}^T \boldsymbol{v} \amp = \overline{\lambda}
+              \overline{\boldsymbol{v}}^T
+              \boldsymbol{v}</mrow>
           </md>
         </p>
         <p>so <m>\lambda = \overline{\lambda}</m>, hence it is real. </p>
@@ -72,16 +72,16 @@
 
     <definition>
       <statement>
-        <p> A square matrix <m>Q=[\vec{q}_1\;\; \vec{q}_2\;\;\vec{q}_3\;\; \cdots\;\;\vec{q}_n] </m>
+        <p> A square matrix <m>Q=[\boldsymbol{q}_1\;\; \boldsymbol{q}_2\;\;\boldsymbol{q}_3\;\; \cdots\;\;\boldsymbol{q}_n] </m>
           is said to be <term>orthogonal</term> if </p>
 
         <p>
           <me>
-            \vec{q}_i^T \vec{q}_j = 0
+            \boldsymbol{q}_i^T \boldsymbol{q}_j = 0
           </me>
         </p>
 
-        <p>for all <m>i \neq j</m>. If in addition that <m>\vec{q}_i^T\vec{q}_i = 1</m> for all <m>i</m>
+        <p>for all <m>i \neq j</m>. If in addition that <m>\boldsymbol{q}_i^T\boldsymbol{q}_i = 1</m> for all <m>i</m>
           then the matrix is also said to be <term>orthonormal</term>. </p>
       </statement>
     </definition>
@@ -134,7 +134,7 @@
 
         <p>
           <me>
-            q(\vec{x}) = a_1 x_1^2 + a_2 x_2^2 + \cdots a_n x_n^2 + b_{12} x_1 x_2 + b_{13} x_1
+            q(\boldsymbol{x}) = a_1 x_1^2 + a_2 x_2^2 + \cdots a_n x_n^2 + b_{12} x_1 x_2 + b_{13} x_1
             x_3
             +
             \cdots
@@ -185,11 +185,11 @@
 
     <p>
       <me>
-        q(\vec{x}) = \vec{x}^T A \vec{x}
+        q(\boldsymbol{x}) = \boldsymbol{x}^T A \boldsymbol{x}
 </me>
     </p>
 
-    <p>for some symmetric matrix <m>A</m> and <m>\vec{x}=[x_1\;\;x_2 \;\; \cdots \;\; x_n]^T</m>.</p>
+    <p>for some symmetric matrix <m>A</m> and <m>\boldsymbol{x}=[x_1\;\;x_2 \;\; \cdots \;\; x_n]^T</m>.</p>
 
     <example>
       <statement>
@@ -205,7 +205,7 @@
               \end{bmatrix}
             </mrow>
             <mrow>
-              \vec{x}^T A \vec{x} \amp = [x_1 \;\; x_2] \begin{bmatrix}
+              \boldsymbol{x}^T A \boldsymbol{x} \amp = [x_1 \;\; x_2] \begin{bmatrix}
               4 \amp2 \\
               2 \amp 7
               \end{bmatrix} \begin{bmatrix}
@@ -245,7 +245,7 @@
     <p>For the quadratic form:</p>
 
     <p><me>
-        q(\vec{x}) = \vec{x}^T A \vec{x}
+        q(\boldsymbol{x}) = \boldsymbol{x}^T A \boldsymbol{x}
 </me>
 </p>
 
@@ -253,7 +253,7 @@
 
 <p>
   <me>
-      q(\vec{x}) = \vec{x}^T P D P^{-1} \vec{x}
+      q(\boldsymbol{x}) = \boldsymbol{x}^T P D P^{-1} \boldsymbol{x}
   </me>
 </p>
       <p>and since <m>A</m> is symmetric then the eigenvectors form an
@@ -261,11 +261,11 @@
         </p>
     <p>
       <me>
-         q(\vec{x}) =\vec{y}^T D \vec{y}
+         q(\boldsymbol{x}) =\boldsymbol{y}^T D \boldsymbol{y}
         </me>
       </p>
 
       <p>
-        where <m>\vec{y}= P^T \vec{x}</m>. Example of ellipse/contour plot. </p>
+        where <m>\boldsymbol{y}= P^T \boldsymbol{x}</m>. Example of ellipse/contour plot. </p>
   </subsection>
 </section>

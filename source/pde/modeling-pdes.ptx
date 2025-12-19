@@ -196,16 +196,16 @@
 		</p>
 
 		<figure xml:id="fig-wave-eqn">
-			<caption> A small section of a taut string. The vectors <m>\vec{T}</m> and <m>\vec{T}'</m> are the force vectors
+			<caption> A small section of a taut string. The vectors <m>\boldsymbol{T}</m> and <m>\boldsymbol{T}'</m> are the force vectors
 			on the string, the variable <m>u</m> is the vertical displacement of the string from
 		rest position. </caption>
 			<image width="50%" xml:id="plot-wave-eqn">
 				<latex-image>
 				<![CDATA[
 				\begin{tikzpicture}[scale=1.5]
-				\draw[<->,thick] (-1,-1) node [below left] {$\vec{T}$} -- (0,0) node [below right] {$u(x,t)$} ..
+				\draw[<->,thick] (-1,-1) node [below left] {$\boldsymbol{T}$} -- (0,0) node [below right] {$u(x,t)$} ..
 				controls (0.5,0.5) and (1,0.75) ..
-				(1.5,1) node [below right] {$u(x+\Delta x,t)$} -- (2.5,1.5) node [right] {$\vec{T}'$} ;
+				(1.5,1) node [below right] {$u(x+\Delta x,t)$} -- (2.5,1.5) node [right] {$\boldsymbol{T}'$} ;
 				\fill (0,0) circle [radius=2pt];
 				\fill (1.5,1) circle [radius=2pt];
 				\end{tikzpicture}
@@ -217,10 +217,10 @@
 		<p>
 			where <m>u(x,t)</m> be the vertical position of the string at position <m>x</m> and
 			time <m>t</m> and the tension at <m>x</m> and <m>x+\Delta x</m> are the force vectors
-			<m>\vec{T}</m> and <m>\vec{T}'</m>.
+			<m>\boldsymbol{T}</m> and <m>\boldsymbol{T}'</m>.
 			To determine an equation that describes the motion of the string, we need to balance
 			the horizontal a vertical forces.
-			We can write the two force vectors <m>\vec{T}</m> and <m>\vec{T}'</m> in terms of
+			We can write the two force vectors <m>\boldsymbol{T}</m> and <m>\boldsymbol{T}'</m> in terms of
 			the horizontal and vertical components where the subscripts in this case are the components as shown in the figure below.
 		</p>
 
@@ -233,13 +233,13 @@
 				<latex-image>
 				<![CDATA[
 				\begin{tikzpicture}[scale=2]
-				\draw[<->,thick] (-1,0) node [left] {$\vec{T}_x$} -- (0,0) node [below right] {$u(x,t)$} ..
+				\draw[<->,thick] (-1,0) node [left] {$\boldsymbol{T}_x$} -- (0,0) node [below right] {$u(x,t)$} ..
 				controls (0.5,0.5) and (1,0.75) ..
-				(1.5,1) node [below right] {$u(x+\Delta x,t)$} -- (2.5,1) node [above right] {$\vec{T}'_x$} ;
+				(1.5,1) node [below right] {$u(x+\Delta x,t)$} -- (2.5,1) node [above right] {$\boldsymbol{T}'_x$} ;
 				\fill (0,0) circle [radius=1pt];
 				\fill (1.5,1) circle [radius=1pt];
-				\draw[->,thick] (1.5,1) --(1.5,1.5) node [above right] {$\vec{T}'_y$};
-				\draw[->,thick] (0,0) -- (0,-1) node [below left] {$\vec{T}_y$};
+				\draw[->,thick] (1.5,1) --(1.5,1.5) node [above right] {$\boldsymbol{T}'_y$};
+				\draw[->,thick] (0,0) -- (0,-1) node [below left] {$\boldsymbol{T}_y$};
 				\draw[->,dashed] (0,0) -- (-1,-1);
 				\draw (-0.2,0) arc [start angle = 180, end angle=225, radius=0.2] node [left] {$\alpha$};
 				\draw[->, dashed] (1.5,1) -- (2.5,1.5);
@@ -260,18 +260,18 @@
 
 		<p>
 			<md>
-				<mrow>-\vec{T}_x +\vec{T}'_x \amp = 0 </mrow>
-				<mrow>-||\vec{T}|| \cos \alpha + || \vec{T}'|| \cos \beta \amp = 0  </mrow>
+				<mrow>-\boldsymbol{T}_x +\boldsymbol{T}'_x \amp = 0 </mrow>
+				<mrow>-||\boldsymbol{T}|| \cos \alpha + || \boldsymbol{T}'|| \cos \beta \amp = 0  </mrow>
 			</md>
 		</p>
 
 		<p>
-			and solving for <m>||\vec{T}'||</m>
+			and solving for <m>||\boldsymbol{T}'||</m>
 		</p>
 
 		<p>
 			<men xml:id="eq-wave-eqn-derive">
-				||\vec{T}'|| = ||\vec{T}|| \frac{\cos \alpha}{\cos \beta}
+				||\boldsymbol{T}'|| = ||\boldsymbol{T}|| \frac{\cos \alpha}{\cos \beta}
 			</men>
 		</p>
 
@@ -284,8 +284,8 @@
 		<p>
 			<md>
 				<mrow>\sum F \amp = ma </mrow>
-				<mrow>-\vec{T}_y + \vec{T}_y' \amp = ma </mrow>
-				<mrow>-||\vec{T}||\sin \alpha + ||\vec{T}'|| \sin \beta \amp = \rho \Delta x \frac{\partial^2 u}{\partial {t}^2}</mrow>
+				<mrow>-\boldsymbol{T}_y + \boldsymbol{T}_y' \amp = ma </mrow>
+				<mrow>-||\boldsymbol{T}||\sin \alpha + ||\boldsymbol{T}'|| \sin \beta \amp = \rho \Delta x \frac{\partial^2 u}{\partial {t}^2}</mrow>
 			</md>
 		</p>
 
@@ -297,19 +297,19 @@
 
 		<p>
 			<me>
-				-||\vec{T}||\sin \alpha + ||\vec{T}|| \frac{\cos \alpha}{\cos \beta} \sin \beta
+				-||\boldsymbol{T}||\sin \alpha + ||\boldsymbol{T}|| \frac{\cos \alpha}{\cos \beta} \sin \beta
 				= \rho \Delta x \frac{\partial^2 u}{\partial {t}^2}
 			</me>
 		</p>
 
 		<p>
-			and dividing through by <m>||\vec{T}|| \cos \alpha</m>
+			and dividing through by <m>||\boldsymbol{T}|| \cos \alpha</m>
 		</p>
 
 		<p>
 			<md>
-				<mrow>-\frac{\sin \alpha}{\cos \alpha} + \frac{\sin \beta}{\cos \beta} \amp = \frac{\rho \Delta x}{||\vec{T}|| \cos \alpha} \frac{\partial^2 u}{\partial {t}^2} </mrow>
-				<mrow>-\tan \alpha + \tan \beta  \amp = \frac{\rho \Delta x}{||\vec{T}|| \cos \alpha} \frac{\partial^2 u}{\partial {t}^2} </mrow>
+				<mrow>-\frac{\sin \alpha}{\cos \alpha} + \frac{\sin \beta}{\cos \beta} \amp = \frac{\rho \Delta x}{||\boldsymbol{T}|| \cos \alpha} \frac{\partial^2 u}{\partial {t}^2} </mrow>
+				<mrow>-\tan \alpha + \tan \beta  \amp = \frac{\rho \Delta x}{||\boldsymbol{T}|| \cos \alpha} \frac{\partial^2 u}{\partial {t}^2} </mrow>
 			</md>
 		</p>
 
@@ -321,13 +321,13 @@
 
 		<p>
 			<md>
-				<mrow>\frac{\partial u}{\partial x} \biggr\vert_{x+\Delta x} - \frac{\partial u}{\partial x}  \biggr\vert_x \amp = \frac{\rho \Delta x}{||\vec{T}|| \cos \alpha} \frac{\partial^2 u}{\partial {t}^2}
+				<mrow>\frac{\partial u}{\partial x} \biggr\vert_{x+\Delta x} - \frac{\partial u}{\partial x}  \biggr\vert_x \amp = \frac{\rho \Delta x}{||\boldsymbol{T}|| \cos \alpha} \frac{\partial^2 u}{\partial {t}^2}
 				</mrow>
 			</md>
 		</p>
 
 		<p>
-			Divide by <m>\Delta x</m> and let <m>T=||\vec{T}|| \cos \alpha</m> be the horizontal tension in the string
+			Divide by <m>\Delta x</m> and let <m>T=||\boldsymbol{T}|| \cos \alpha</m> be the horizontal tension in the string
 		</p>
 
 		<p>

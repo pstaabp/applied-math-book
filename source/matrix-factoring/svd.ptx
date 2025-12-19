@@ -163,32 +163,32 @@
 
 				<p>
 					<me>
-						(AA^{\intercal}-2I)\vec{v}_1  = \begin{bmatrix}
+						(AA^{\intercal}-2I)\boldsymbol{v}_1  = \begin{bmatrix}
 						3 \amp 3 \\ 3 \amp 3
-						\end{bmatrix}\vec{v}_1 = \begin{bmatrix}
+						\end{bmatrix}\boldsymbol{v}_1 = \begin{bmatrix}
 						0 \\ 0
 						\end{bmatrix}
 					</me>
 				</p>
 
 				<p>
-					is <m>\vec{v}_1 = [1,-1]^{\intercal}</m>.
+					is <m>\boldsymbol{v}_1 = [1,-1]^{\intercal}</m>.
 					And if <m>\lambda = 8</m>, then the solution to
 				</p>
 
 				<p>
 					<me>
-						(AA^{\intercal}-8I) \vec{v}_2  = \begin{bmatrix}
+						(AA^{\intercal}-8I) \boldsymbol{v}_2  = \begin{bmatrix}
 						-3 \amp 3 \\
 						3 \amp -3
-						\end{bmatrix} \vec{v}_2  = \begin{bmatrix}
+						\end{bmatrix} \boldsymbol{v}_2  = \begin{bmatrix}
 						0 \\ 0
 						\end{bmatrix}
 					</me>
 				</p>
 
 				<p>
-					is <m>\vec{v}_2 = [1,1]^{\intercal}</m>.
+					is <m>\boldsymbol{v}_2 = [1,1]^{\intercal}</m>.
 					Thus the columns of <m>U</m> are the two eigenvectors scaled to be unit vectors,
 				</p>
 
@@ -352,11 +352,11 @@
 
 				<p>
 					<md>
-						<mrow>\vec{v}_1 \amp = \begin{bmatrix}
+						<mrow>\boldsymbol{v}_1 \amp = \begin{bmatrix}
 						1 \\ 0 \\ 0
-						\end{bmatrix}, \amp \vec{v}_2 \amp = \begin{bmatrix}
+						\end{bmatrix}, \amp \boldsymbol{v}_2 \amp = \begin{bmatrix}
 						0 \\ 1 \\1
-						\end{bmatrix} \amp \vec{v}_3 \amp = \begin{bmatrix}
+						\end{bmatrix} \amp \boldsymbol{v}_3 \amp = \begin{bmatrix}
 						0 \\ -1 \\ 1
 						\end{bmatrix}</mrow>
 					</md>

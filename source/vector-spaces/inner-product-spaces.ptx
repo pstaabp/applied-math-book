@@ -5,13 +5,13 @@
 		<p>
 			In <xref ref="sect-length-angles" />, we examined the dot product between two
 			vectors.
-			Recall that we can write the dot product between two vectors <m>\vec{u}</m> and <m>
-			\vec{v}</m> in <m>\mathbb{R}^n</m> is
+			Recall that we can write the dot product between two vectors <m>\boldsymbol{u}</m> and <m>
+			\boldsymbol{v}</m> in <m>\mathbb{R}^n</m> is
 		</p>
 
 		<p>
 			<me>
-				\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + \cdots +u_nv_n
+				\boldsymbol{u} \cdot \boldsymbol{v} = u_1v_1 + u_2v_2 + \cdots +u_nv_n
 			</me>
 		</p>
 
@@ -27,9 +27,9 @@
 			<statement>
 				<p>
 					The vector space <m>V</m> is called an <term>inner product space</term> if for every pair
-					of vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <m>V</m> there is a unique number <m>\langle
-					\vec{u}, \vec{v} \rangle</m>, called the <term>inner product</term> of <m>\vec{u}</m> and <m>
-					\vec{v}</m> such that for all <m>\vec{u}, \vec{v}</m> and <m>\vec{w}</m> in <m>V</m> and <m>a,
+					of vectors <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> in <m>V</m> there is a unique number <m>\langle
+					\boldsymbol{u}, \boldsymbol{v} \rangle</m>, called the <term>inner product</term> of <m>\boldsymbol{u}</m> and <m>
+					\boldsymbol{v}</m> such that for all <m>\boldsymbol{u}, \boldsymbol{v}</m> and <m>\boldsymbol{w}</m> in <m>V</m> and <m>a,
 					b \in \mathbb{R}</m> then the following properties are satisfied:
 				</p>
 
@@ -37,21 +37,21 @@
 					<ol>
 						<li>
 							<p>
-								<m>\langle \vec{u}, \vec{v} \rangle = \langle \vec{v}, \vec{u} \rangle</m>
+								<m>\langle \boldsymbol{u}, \boldsymbol{v} \rangle = \langle \boldsymbol{v}, \boldsymbol{u} \rangle</m>
 							</p>
 						</li>
 
 						<li>
 							<p>
-								<m>\langle a \vec{u} + b \vec{v}, \vec{w} \rangle = a \langle \vec{u},
-								\vec{w} \rangle + b \langle \vec{v}, \vec{w} \rangle</m>.
+								<m>\langle a \boldsymbol{u} + b \boldsymbol{v}, \boldsymbol{w} \rangle = a \langle \boldsymbol{u},
+								\boldsymbol{w} \rangle + b \langle \boldsymbol{v}, \boldsymbol{w} \rangle</m>.
 							</p>
 						</li>
 
 						<li>
 							<p>
-								<m>\langle \vec{u}, \vec{u} \rangle \geq 0</m> and equals 0 if and only if <m>\vec{u}
-								= \vec{0}</m>.
+								<m>\langle \boldsymbol{u}, \boldsymbol{u} \rangle \geq 0</m> and equals 0 if and only if <m>\boldsymbol{u}
+								= \boldsymbol{0}</m>.
 							</p>
 						</li>
 					</ol>
@@ -67,9 +67,9 @@
 
 				<p>
 					<md>
-						<mrow>\vec{u} \amp= \begin{bmatrix}
+						<mrow>\boldsymbol{u} \amp= \begin{bmatrix}
 						u_1 \\ u_2 \\ \vdots \\ u_n
-						\end{bmatrix} \amp \vec{v} \amp =
+						\end{bmatrix} \amp \boldsymbol{v} \amp =
 						\begin{bmatrix}
 						v_1 \\ v_2 \\ \vdots \\ v_n
 						\end{bmatrix}</mrow>
@@ -81,7 +81,7 @@
 				</p>
 
 				<p>
-					<m>\langle \vec{u}, \vec{v} \rangle = \vec{u}^T\vec{v}</m>.
+					<m>\langle \boldsymbol{u}, \boldsymbol{v} \rangle = \boldsymbol{u}^{\intercal}\boldsymbol{v}</m>.
 				</p>
 			</statement>
 
@@ -89,8 +89,8 @@
 				<p>
 					First, the set <m>\mathbb{R}^n</m> is a vector space.
 					Next, we need to show that the
-					three properties are satisfied for <m>\langle \vec{u}, \vec{v} \rangle = \vec{u}^T
-					\vec{v}</m>.
+					three properties are satisfied for <m>\langle \boldsymbol{u}, \boldsymbol{v} \rangle = \boldsymbol{u}^{\intercal}
+					\boldsymbol{v}</m>.
 				</p>
 
 				<p>
@@ -98,17 +98,17 @@
 						<li>
 							<p>
 								<md>
-									<mrow>\langle \vec{u}, \vec{v} \rangle \amp = \vec{u}^T \vec{v}</mrow>
+									<mrow>\langle \boldsymbol{u}, \boldsymbol{v} \rangle \amp = \boldsymbol{u}^{\intercal} \boldsymbol{v}</mrow>
 								</md>
 								since the transpose of a number is itself
 								<md>
-									<mrow>\amp = (\vec{u}^T \vec{v})^T </mrow>
+									<mrow>\amp = (\boldsymbol{u}^{\intercal} \boldsymbol{v})^{\intercal} </mrow>
 								</md>
 								using the
 								properties of transposes in <xref ref="sect-transpose" />.
 								<md>
-									<mrow>\amp = \vec{v}^T (\vec{u}^T)^T = \vec{v}^T \vec{u} = \langle \vec{v},
-									\vec{u}
+									<mrow>\amp = \boldsymbol{v}^{\intercal} (\boldsymbol{u}^{\intercal})^{\intercal} = \boldsymbol{v}^{\intercal} \boldsymbol{u} = \langle \boldsymbol{v},
+									\boldsymbol{u}
 									\rangle.</mrow>
 								</md>
 								so the first property is satisfied.
@@ -118,12 +118,12 @@
 						<li>
 							<p>
 								<md>
-									<mrow>\langle a \vec{u} + b \vec{v}, \vec{w} \rangle \amp = (a \vec{u} +
-									b\vec{v})^T
-									\vec{w} = (a \vec{u}^T + b \vec{v}^T) \vec{w} </mrow>
-									<mrow>\amp = a \vec{u}^T \vec{w} + b \vec{v}^T \vec{w} = a \langle \vec{u},
-									\vec{w}
-									\rangle + b \langle \vec{v}, \vec{w} \rangle.</mrow>
+									<mrow>\langle a \boldsymbol{u} + b \boldsymbol{v}, \boldsymbol{w} \rangle \amp = (a \boldsymbol{u} +
+									b\boldsymbol{v})^{\intercal}
+									\boldsymbol{w} = (a \boldsymbol{u}^{\intercal} + b \boldsymbol{v}^{\intercal}) \boldsymbol{w} </mrow>
+									<mrow>\amp = a \boldsymbol{u}^{\intercal} \boldsymbol{w} + b \boldsymbol{v}^{\intercal} \boldsymbol{w} = a \langle \boldsymbol{u},
+									\boldsymbol{w}
+									\rangle + b \langle \boldsymbol{v}, \boldsymbol{w} \rangle.</mrow>
 								</md>
 							</p>
 						</li>
@@ -131,7 +131,7 @@
 						<li>
 							<p>
 								<me>
-									\langle \vec{u}, \vec{u} \rangle = \vec{u}^T \vec{u} = u_1^2 + u_2^2 + u_3^2 +
+									\langle \boldsymbol{u}, \boldsymbol{u} \rangle = \boldsymbol{u}^{\intercal} \boldsymbol{u} = u_1^2 + u_2^2 + u_3^2 +
 									\cdots + u_n^2
 								</me>
 							</p>
@@ -139,7 +139,7 @@
 							<p>
 								which satisfies <m>\geq 0</m>.
 								The only time that this quantity equals 0, is when <m>u_1=u_2
-								= \cdots =u_n</m> or <m>\vec{u} = \vec{0}</m>.
+								= \cdots =u_n</m> or <m>\boldsymbol{u} = \boldsymbol{0}</m>.
 							</p>
 						</li>
 					</ol>
@@ -226,61 +226,61 @@
 		<definition>
 			<statement>
 				<p>
-					Let <m>\vec{u}</m> be an element of an inner product space.
+					Let <m>\boldsymbol{u}</m> be an element of an inner product space.
 					The norm of the vector <m>
-					\vec{u}</m> is given by
+					\boldsymbol{u}</m> is given by
 				</p>
 
 				<p>
 					<me>
-						|| \vec{u} || = \sqrt{\langle \vec{u},\vec{u} \rangle}
+						|| \boldsymbol{u} || = \sqrt{\langle \boldsymbol{u},\boldsymbol{u} \rangle}
 					</me>
 				</p>
 			</statement>
 		</definition>
 
 		<p>
-			Note: if <m>\vec{u} \in \mathbb{R}^n</m> then the vector norm is the length of the vector.
+			Note: if <m>\boldsymbol{u} \in \mathbb{R}^n</m> then the vector norm is the length of the vector.
 		</p>
 
 		<definition>
 			<statement>
 				<p>
-					The distance between vectors <m>\vec{u}</m> and <m>\vec{v}</m> denoted <m>
-					d(\vec{u},\vec{v})</m> and is defined as
+					The distance between vectors <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> denoted <m>
+					d(\boldsymbol{u},\boldsymbol{v})</m> and is defined as
 				</p>
 
 				<p>
 					<me>
-						d(\vec{u},\vec{v})=||\vec{u}-\vec{v}||.
+						d(\boldsymbol{u},\boldsymbol{v})=||\boldsymbol{u}-\boldsymbol{v}||.
 					</me>
 				</p>
 			</statement>
 		</definition>
 
 		<p>
-			Note: if <m>\vec{u}</m> and <m>\vec{v}</m> are in <m>\mathbb{R}^n</m>, then the distance
+			Note: if <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> are in <m>\mathbb{R}^n</m>, then the distance
 			function is the standard distance function where the vectors are considered to be points.
 		</p>
 
 		<lemma xml:id="lem-distance-zero">
 			<statement>
 				<p>
-					The distance <m>||\vec{u}-\vec{v}||=0</m> if and only if <m>\vec{u}=\vec{v}</m>.
+					The distance <m>||\boldsymbol{u}-\boldsymbol{v}||=0</m> if and only if <m>\boldsymbol{u}=\boldsymbol{v}</m>.
 				</p>
 			</statement>
 
 
 			<proof>
 				<p>
-					<m>\Longrightarrow</m> Let <m>||\vec{u}-\vec{v}||=0</m>, then <m>\langle
-					\vec{u}-\vec{v},\vec{u}-\vec{v} \rangle=0</m> By definition, this is only zero if <m>
-					\vec{u}-\vec{v}=\vec{0}</m>, therefore <m>\vec{u}=\vec{v}</m>.
+					<m>\Longrightarrow</m> Let <m>||\boldsymbol{u}-\boldsymbol{v}||=0</m>, then <m>\langle
+					\boldsymbol{u}-\boldsymbol{v},\boldsymbol{u}-\boldsymbol{v} \rangle=0</m> By definition, this is only zero if <m>
+					\boldsymbol{u}-\boldsymbol{v}=\boldsymbol{0}</m>, therefore <m>\boldsymbol{u}=\boldsymbol{v}</m>.
 				</p>
 
 				<p>
-					<m>\Longleftarrow</m> If <m>\vec{u}=\vec{v}</m>, then <m>||\vec{u}-\vec{v}|| =
-					||\vec{0}||=0</m>.
+					<m>\Longleftarrow</m> If <m>\boldsymbol{u}=\boldsymbol{v}</m>, then <m>||\boldsymbol{u}-\boldsymbol{v}|| =
+					||\boldsymbol{0}||=0</m>.
 				</p>
 			</proof>
 		</lemma>
@@ -305,13 +305,13 @@
 	<subsection>
 		<title>Angles between vectors</title>
 		<p>
-			If <m>\vec{u}</m> and <m>\vec{v}</m> are vectors in <m>\mathbb{R}^2</m> then we saw in <xref
+			If <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> are vectors in <m>\mathbb{R}^2</m> then we saw in <xref
 			ref="sect-length-angles" /> that
 		</p>
 
 		<p>
 			<me>
-				\cos \theta = \frac{\langle \vec{u},\vec{v} \rangle}{||\vec{u}||\, || \vec{v}||}
+				\cos \theta = \frac{\langle \boldsymbol{u},\boldsymbol{v} \rangle}{||\boldsymbol{u}||\, || \boldsymbol{v}||}
 			</me>
 			and thus the angle between the vectors can be found.
 		</p>
@@ -319,8 +319,8 @@
 		<p>
 			This notion generalizes to any vectors in an inner product space, <m>V</m>.
 			Most helpful,
-			two vectors meet at a right angle if <m>\langle \vec{u},\vec{v}\rangle=0</m> and it is said
-			that if this holds then <m>\vec{u}</m> and <m>\vec{v}</m> are orthogonal.
+			two vectors meet at a right angle if <m>\langle \boldsymbol{u},\boldsymbol{v}\rangle=0</m> and it is said
+			that if this holds then <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> are orthogonal.
 			The next section
 			talks about how an entire set of vectors can be orthogonal .
 		</p>
@@ -331,14 +331,14 @@
 		<definition>
 			<statement>
 				<p>
-					Let <m>\{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\}</m> each be elements of an inner
+					Let <m>\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\}</m> each be elements of an inner
 					product space, <m>V</m>.
 					The set is called an <term>orthonormal set</term> if
 				</p>
 
 				<p>
 					<me>
-						\langle \vec{v}_i, \vec{v}_j \rangle = 0 \qquad \text{if $i \neq j$}
+						\langle \boldsymbol{v}_i, \boldsymbol{v}_j \rangle = 0 \qquad \text{if $i \neq j$}
 					</me>
 				</p>
 
@@ -348,7 +348,7 @@
 
 				<p>
 					<me>
-						||\vec{v}_i|| = \sqrt{\langle \vec{v}_i, \vec{v}_i \rangle} = 1
+						||\boldsymbol{v}_i|| = \sqrt{\langle \boldsymbol{v}_i, \boldsymbol{v}_i \rangle} = 1
 					</me>
 				</p>
 
@@ -366,15 +366,15 @@
 
 				<p>
 					<md>
-						<mrow>\vec{v}_1 \amp=
+						<mrow>\boldsymbol{v}_1 \amp=
 						\begin{bmatrix}
 						1 \\ 0 \\ 0
 						\end{bmatrix}, \amp
-						\vec{v}_2 \amp =
+						\boldsymbol{v}_2 \amp =
 						\begin{bmatrix}
 						0 \\ 1/\sqrt{2} \\ 1/\sqrt{2}
 						\end{bmatrix}, \amp
-						\vec{v}_3 \amp =
+						\boldsymbol{v}_3 \amp =
 						\begin{bmatrix}
 						0 \\ 1/\sqrt{2} \\ -1/\sqrt{2}
 						\end{bmatrix}
@@ -394,11 +394,11 @@
 
 				<p>
 					<md>
-						<mrow>\langle \vec{v}_1, \vec{v}_2 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
+						<mrow>\langle \boldsymbol{v}_1, \boldsymbol{v}_2 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
 						(0)(1/\sqrt{2}) = 0 </mrow>
-						<mrow>\langle \vec{v}_1, \vec{v}_3 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
+						<mrow>\langle \boldsymbol{v}_1, \boldsymbol{v}_3 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
 						(0)(-1/\sqrt{2}) = 0 </mrow>
-						<mrow>\langle \vec{v}_2, \vec{v}_3 \rangle \amp = (0)(0) + (1/\sqrt{2})(1/\sqrt{2}) +
+						<mrow>\langle \boldsymbol{v}_2, \boldsymbol{v}_3 \rangle \amp = (0)(0) + (1/\sqrt{2})(1/\sqrt{2}) +
 						(1/\sqrt{2})(-1/\sqrt{2}) = \frac{1}{2} - \frac{1}{2} = 0 </mrow>
 					</md>
 				</p>
@@ -409,10 +409,10 @@
 
 				<p>
 					<md>
-						<mrow>||\vec{v}_1|| \amp = \sqrt{(1)^2 + (0)^2 + (0^2)} = 1 </mrow>
-						<mrow>||\vec{v}_2|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (1/\sqrt{2})^2} = \sqrt{0 +
+						<mrow>||\boldsymbol{v}_1|| \amp = \sqrt{(1)^2 + (0)^2 + (0^2)} = 1 </mrow>
+						<mrow>||\boldsymbol{v}_2|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (1/\sqrt{2})^2} = \sqrt{0 +
 						\frac{1}{2} + \frac{1}{2}} = 1 </mrow>
-						<mrow>||\vec{v}_3|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (-1/\sqrt{2})^2} = \sqrt{0 +
+						<mrow>||\boldsymbol{v}_3|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (-1/\sqrt{2})^2} = \sqrt{0 +
 						\frac{1}{2} + \frac{1}{2}} = 1</mrow>
 					</md>
 				</p>
@@ -515,12 +515,12 @@
 			<title>Cauchy-Swartz Inequality</title>
 			<statement>
 				<p>
-					If <m>\vec{u}</m> and <m>\vec{v}</m> are elements of an inner product space then
+					If <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> are elements of an inner product space then
 				</p>
 
 				<p>
 					<me>
-						| \langle \vec{u}, \vec{v} \rangle| \leq || \vec{u} ||\, ||\vec{v}||
+						| \langle \boldsymbol{u}, \boldsymbol{v} \rangle| \leq || \boldsymbol{u} ||\, ||\boldsymbol{v}||
 					</me>
 				</p>
 			</statement>
@@ -528,14 +528,14 @@
 
 			<proof>
 				<p>
-					If <m>\vec{v}=\vec{0}</m>, then the inequality is satisfied.
-					Assume <m>\vec{v} \neq
-					\vec{0}</m> and define
+					If <m>\boldsymbol{v}=\boldsymbol{0}</m>, then the inequality is satisfied.
+					Assume <m>\boldsymbol{v} \neq
+					\boldsymbol{0}</m> and define
 				</p>
 
 				<p>
 					<me>
-						\lambda = \langle \vec{v},\vec{v} \rangle^{-1} \langle \vec{u},\vec{v} \rangle.
+						\lambda = \langle \boldsymbol{v},\boldsymbol{v} \rangle^{-1} \langle \boldsymbol{u},\boldsymbol{v} \rangle.
 					</me>
 				</p>
 
@@ -545,7 +545,7 @@
 
 				<p>
 					<md>
-						<mrow>0 \leq\amp \langle \vec{u} - \lambda \vec{v}, \vec{u} -\lambda \vec{v} \rangle</mrow>
+						<mrow>0 \leq\amp \langle \boldsymbol{u} - \lambda \boldsymbol{v}, \boldsymbol{u} -\lambda \boldsymbol{v} \rangle</mrow>
 					</md>
 				</p>
 
@@ -555,26 +555,26 @@
 
 				<p>
 					<md>
-						<mrow>0 \leq \amp \langle \vec{u}, \vec{u} \rangle - 2 \lambda \langle \vec{u}, \vec{v}
-						\rangle + \lambda^2 \langle \vec{v},\vec{v} \rangle </mrow>
-						<mrow>= \amp \langle \vec{u},\vec{u} \rangle - 2 \langle \vec{v},\vec{v} \rangle^{-1}
-						\langle \vec{u},\vec{v} \rangle \langle \vec{u}, \vec{v} \rangle + \bigl(\langle
-						\vec{v},\vec{v} \rangle^{-1} \langle \vec{u},\vec{v} \rangle \bigr)^2 \langle
-						\vec{v},\vec{v} \rangle.
+						<mrow>0 \leq \amp \langle \boldsymbol{u}, \boldsymbol{u} \rangle - 2 \lambda \langle \boldsymbol{u}, \boldsymbol{v}
+						\rangle + \lambda^2 \langle \boldsymbol{v},\boldsymbol{v} \rangle </mrow>
+						<mrow>= \amp \langle \boldsymbol{u},\boldsymbol{u} \rangle - 2 \langle \boldsymbol{v},\boldsymbol{v} \rangle^{-1}
+						\langle \boldsymbol{u},\boldsymbol{v} \rangle \langle \boldsymbol{u}, \boldsymbol{v} \rangle + \bigl(\langle
+						\boldsymbol{v},\boldsymbol{v} \rangle^{-1} \langle \boldsymbol{u},\boldsymbol{v} \rangle \bigr)^2 \langle
+						\boldsymbol{v},\boldsymbol{v} \rangle.
 						</mrow>
-						<mrow>= \amp \langle \vec{u}, \vec{u} \rangle - \langle \vec{v},\vec{v} \rangle^{-1}
-						\langle \vec{u},\vec{v} \rangle ^2</mrow>
+						<mrow>= \amp \langle \boldsymbol{u}, \boldsymbol{u} \rangle - \langle \boldsymbol{v},\boldsymbol{v} \rangle^{-1}
+						\langle \boldsymbol{u},\boldsymbol{v} \rangle ^2</mrow>
 					</md>
 				</p>
 
 				<p>
-					Multiply through by <m>\langle\vec{v},\vec{v}\rangle</m>
+					Multiply through by <m>\langle\boldsymbol{v},\boldsymbol{v}\rangle</m>
 				</p>
 
 				<p>
 					<md>
-						<mrow>\amp \langle \vec{u},\vec{u} \rangle \langle \vec{v},\vec{v} \rangle - \langle
-						\vec{u},\vec{v} \rangle^2</mrow>
+						<mrow>\amp \langle \boldsymbol{u},\boldsymbol{u} \rangle \langle \boldsymbol{v},\boldsymbol{v} \rangle - \langle
+						\boldsymbol{u},\boldsymbol{v} \rangle^2</mrow>
 					</md>
 				</p>
 
@@ -584,8 +584,8 @@
 
 				<p>
 					<me>
-						\langle \vec{u},\vec{v} \rangle^2 \leq \langle \vec{u},\vec{u} \rangle \langle \vec{v},
-						\vec{v} \rangle
+						\langle \boldsymbol{u},\boldsymbol{v} \rangle^2 \leq \langle \boldsymbol{u},\boldsymbol{u} \rangle \langle \boldsymbol{v},
+						\boldsymbol{v} \rangle
 					</me>
 				</p>
 
@@ -609,7 +609,7 @@
 
 		<p>
 			<me>
-				\cos \theta = \frac{\langle \vec{u}, \vec{v} \rangle}{||\vec{u}||\, ||\vec{v}||}
+				\cos \theta = \frac{\langle \boldsymbol{u}, \boldsymbol{v} \rangle}{||\boldsymbol{u}||\, ||\boldsymbol{v}||}
 			</me>
 		</p>
 
@@ -619,7 +619,7 @@
 
 		<p>
 			<me>
-				\langle \vec{u}, \vec{v} \rangle = ||\vec{u}||\, ||\vec{v}|| \cos \theta
+				\langle \boldsymbol{u}, \boldsymbol{v} \rangle = ||\boldsymbol{u}||\, ||\boldsymbol{v}|| \cos \theta
 			</me>
 		</p>
 
@@ -629,9 +629,9 @@
 
 		<p>
 			<me>
-				|\langle \vec{u}, \vec{v} \rangle | = \bigl\vert ||\vec{u}||\, ||\vec{v}|| \cos \theta
+				|\langle \boldsymbol{u}, \boldsymbol{v} \rangle | = \bigl\vert ||\boldsymbol{u}||\, ||\boldsymbol{v}|| \cos \theta
 				\bigr\vert
-				\leq ||\vec{u}||\, ||\vec{v}||
+				\leq ||\boldsymbol{u}||\, ||\boldsymbol{v}||
 			</me>
 		</p>
 
@@ -670,14 +670,14 @@
 			<statement>
 				<p>
 					Find a orthonormal set of vectors that span the same set as <m>
-					\{\vec{u}_1,\vec{u}_2\}</m>, where
+					\{\boldsymbol{u}_1,\boldsymbol{u}_2\}</m>, where
 				</p>
 
 				<p>
 					<md>
-						<mrow>\vec{u}_1 \amp= \begin{bmatrix}
+						<mrow>\boldsymbol{u}_1 \amp= \begin{bmatrix}
 						2 \\ 0
-						\end{bmatrix}, \amp \vec{u}_2 \amp = \begin{bmatrix}
+						\end{bmatrix}, \amp \boldsymbol{u}_2 \amp = \begin{bmatrix}
 						1 \\ 1
 						\end{bmatrix}
 						</mrow>
@@ -689,14 +689,14 @@
 				<p>
 					There are many ways of doing this, but the following will always work.
 					First, let's
-					start by finding a unit vector in the same direction as <m>\vec{u}_1</m>.
+					start by finding a unit vector in the same direction as <m>\boldsymbol{u}_1</m>.
 					We denote this
-					as <m>\hat{v}_1</m> and this can be found by dividing <m>\vec{u}_1</m> by its length:
+					as <m>\hat{v}_1</m> and this can be found by dividing <m>\boldsymbol{u}_1</m> by its length:
 				</p>
 
 				<p>
 					<me>
-						\hat{v}_1 = \frac{1}{||\vec{u}_1||} \vec{u}_1 = \frac{1}{2} \begin{bmatrix}
+						\hat{v}_1 = \frac{1}{||\boldsymbol{u}_1||} \boldsymbol{u}_1 = \frac{1}{2} \begin{bmatrix}
 						2 \\ 0
 						\end{bmatrix} = \begin{bmatrix}
 						1 \\ 0
@@ -705,14 +705,14 @@
 				</p>
 
 				<p>
-					Next, we will form a new vector <m>\vec{v}_2</m> which is a linear combination of <m>
-					\hat{v}_1</m> and <m>\vec{u}_2</m> and has the property that it is orthogonal to <m>
-					\vec{v}_1</m>
+					Next, we will form a new vector <m>\boldsymbol{v}_2</m> which is a linear combination of <m>
+					\hat{v}_1</m> and <m>\boldsymbol{u}_2</m> and has the property that it is orthogonal to <m>
+					\boldsymbol{v}_1</m>
 				</p>
 
 				<p>
 					<me>
-						\vec{v}_2 = c_1 \hat{v}_1 + c_2 \vec{u}_2
+						\boldsymbol{v}_2 = c_1 \hat{v}_1 + c_2 \boldsymbol{u}_2
 					</me>
 				</p>
 
@@ -723,9 +723,9 @@
 
 				<p>
 					<md>
-						<mrow>0 \amp = \langle \vec{v}_2, \hat{v}_1 \rangle </mrow>
-						<mrow>\amp = \langle \hat{v}_1 + c_2 \vec{u}_2, \hat{v}_1 \rangle </mrow>
-						<mrow>\amp = \langle \hat{v}_1 \hat{v_1} \rangle + c_2 \langle \vec{u}_2, \hat{v}_1
+						<mrow>0 \amp = \langle \boldsymbol{v}_2, \hat{v}_1 \rangle </mrow>
+						<mrow>\amp = \langle \hat{v}_1 + c_2 \boldsymbol{u}_2, \hat{v}_1 \rangle </mrow>
+						<mrow>\amp = \langle \hat{v}_1 \hat{v_1} \rangle + c_2 \langle \boldsymbol{u}_2, \hat{v}_1
 						\rangle </mrow>
 					</md>
 				</p>
@@ -736,19 +736,19 @@
 
 				<p>
 					<md>
-						<mrow>c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
+						<mrow>c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 						{\langle \hat{v}_1 \hat{v_1} \rangle}
 						</mrow>
 					</md>
 				</p>
 
 				<p>
-					and since <m>\vec{v}_1</m> is a unit vector
+					and since <m>\boldsymbol{v}_1</m> is a unit vector
 				</p>
 
 				<p>
 					<me>
-						= -\langle \vec{u}_2, \hat{v}_1 \rangle = -1
+						= -\langle \boldsymbol{u}_2, \hat{v}_1 \rangle = -1
 					</me>
 				</p>
 
@@ -758,7 +758,7 @@
 
 				<p>
 					<md>
-						<mrow>\amp \vec{v}_2 \amp = \hat{v}_1 - \vec{u}_2 = \begin{bmatrix}
+						<mrow>\amp \boldsymbol{v}_2 \amp = \hat{v}_1 - \boldsymbol{u}_2 = \begin{bmatrix}
 						1 \\ 0
 						\end{bmatrix} - \begin{bmatrix}
 						1 \\ 1
@@ -769,7 +769,7 @@
 				</p>
 
 				<p>
-					Now since <m>\vec{v}_2</m> is already a unit vector, normalization is not needed.
+					Now since <m>\boldsymbol{v}_2</m> is already a unit vector, normalization is not needed.
 					If it
 					were, then dividing by its length would create a unit vector.
 					A orthonormal set that spans
@@ -799,7 +799,7 @@
 			<p>
 				The <term>Gram-Schmidt Orthogonalization</term> algorithm is the following.
 				Consider a set
-				of vectors <m>\{\vec{u}_1,\vec{u}_2, \ldots, \vec{u}_n\}</m> which is the basis for some
+				of vectors <m>\{\boldsymbol{u}_1,\boldsymbol{u}_2, \ldots, \boldsymbol{u}_n\}</m> which is the basis for some
 				vector space.
 			</p>
 
@@ -807,23 +807,23 @@
 				<ol>
 					<li>
 						<p>
-							Let <m>\vec{v}_1=\vec{u}_1</m>.
+							Let <m>\boldsymbol{v}_1=\boldsymbol{u}_1</m>.
 						</p>
 					</li>
 
 					<li>
 						<p>
-							Let <m>\vec{v}_2 = \vec{u}_2 - \dfrac{\langle \vec{v}_1,\vec{u}_2 \rangle}{\langle
-							\vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1</m>
+							Let <m>\boldsymbol{v}_2 = \boldsymbol{u}_2 - \dfrac{\langle \boldsymbol{v}_1,\boldsymbol{u}_2 \rangle}{\langle
+							\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1</m>
 						</p>
 					</li>
 
 					<li>
 						<p>
-							Let <m>\vec{v}_3 = \vec{u}_3 - \dfrac{\langle \vec{v}_2,\vec{u}_3 \rangle}{\langle
-							\vec{v}_2,\vec{v}_2 \rangle} \vec{v}_2-\dfrac{\langle \vec{v}_1,\vec{u}_3
+							Let <m>\boldsymbol{v}_3 = \boldsymbol{u}_3 - \dfrac{\langle \boldsymbol{v}_2,\boldsymbol{u}_3 \rangle}{\langle
+							\boldsymbol{v}_2,\boldsymbol{v}_2 \rangle} \boldsymbol{v}_2-\dfrac{\langle \boldsymbol{v}_1,\boldsymbol{u}_3
 							\rangle}{\langle
-							\vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1</m>.
+							\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1</m>.
 						</p>
 					</li>
 
@@ -831,16 +831,16 @@
 						<p>
 							And so on with
 							<md>
-								<mrow>\vec{v}_k \amp = \vec{u}_k - \frac{\langle \vec{v}_{k-1},\vec{u}_k
-								\rangle}{\langle \vec{v}_{k-1},\vec{v}_{k-1} \rangle} \vec{v}_{k-1}-\frac{\langle
-								\vec{v}_{k-2},\vec{u}_k \rangle}{\langle \vec{v}_{k-2},\vec{v}_{k-2} \rangle}
-								\vec{v}_{k-2} </mrow>
-								<mrow>\amp \qquad \qquad \cdots - \frac{\langle \vec{v}_2,\vec{u}_k \rangle}{\langle
-								\vec{v}_2,\vec{v}_2 \rangle} \vec{v}_2-\frac{\langle \vec{v}_1,\vec{u}_k
+								<mrow>\boldsymbol{v}_k \amp = \boldsymbol{u}_k - \frac{\langle \boldsymbol{v}_{k-1},\boldsymbol{u}_k
+								\rangle}{\langle \boldsymbol{v}_{k-1},\boldsymbol{v}_{k-1} \rangle} \boldsymbol{v}_{k-1}-\frac{\langle
+								\boldsymbol{v}_{k-2},\boldsymbol{u}_k \rangle}{\langle \boldsymbol{v}_{k-2},\boldsymbol{v}_{k-2} \rangle}
+								\boldsymbol{v}_{k-2} </mrow>
+								<mrow>\amp \qquad \qquad \cdots - \frac{\langle \boldsymbol{v}_2,\boldsymbol{u}_k \rangle}{\langle
+								\boldsymbol{v}_2,\boldsymbol{v}_2 \rangle} \boldsymbol{v}_2-\frac{\langle \boldsymbol{v}_1,\boldsymbol{u}_k
 								\rangle}{\langle
-								\vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1 </mrow>
-								<mrow>\amp = \vec{u}_k - \sum_{i=1}^{k-1} \dfrac{\langle \vec{v}_i, \vec{u}_k
-								\rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \vec{v}_i</mrow>
+								\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1 </mrow>
+								<mrow>\amp = \boldsymbol{u}_k - \sum_{i=1}^{k-1} \dfrac{\langle \boldsymbol{v}_i, \boldsymbol{u}_k
+								\rangle}{\langle \boldsymbol{v}_i,\boldsymbol{v}_i \rangle} \boldsymbol{v}_i</mrow>
 							</md>
 						</p>
 					</li>
@@ -848,9 +848,9 @@
 			</p>
 
 			<p>
-				The resulting set of vectors <m>\{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\}</m> are
+				The resulting set of vectors <m>\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\}</m> are
 				orthogonal.
-				If the set also needs to be orthonormal, for each vector <m>\vec{v}_k</m> divide
+				If the set also needs to be orthonormal, for each vector <m>\boldsymbol{v}_k</m> divide
 				through by its length.
 			</p>
 		</remark>
@@ -859,44 +859,44 @@
 		<proof>
 			<title>Proof of Gram-Schmidt Orthogonalization</title>
 			<p>
-				To prove Gram-Schmidt orthogonalization works, we will prove that <m>\vec{v}_k</m> is
-				orthogonal to <m>\vec{v}_i</m> for all <m>i \lt k</m>.
+				To prove Gram-Schmidt orthogonalization works, we will prove that <m>\boldsymbol{v}_k</m> is
+				orthogonal to <m>\boldsymbol{v}_i</m> for all <m>i \lt k</m>.
 				We will show this by induction.
 				First
-				show that <m>\vec{v}_2</m> is orthogonal to <m>\vec{v}_1</m> :
+				show that <m>\boldsymbol{v}_2</m> is orthogonal to <m>\boldsymbol{v}_1</m> :
 			</p>
 
 			<p>
 				<md>
-					<mrow>\langle \vec{v}_2 , \vec{v}_1 \rangle \amp = \biggl\langle \vec{u}_2 -
+					<mrow>\langle \boldsymbol{v}_2 , \boldsymbol{v}_1 \rangle \amp = \biggl\langle \boldsymbol{u}_2 -
 					\dfrac{\langle
-					\vec{v}_1,\vec{u}_2 \rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1, \vec{v}_1
+					\boldsymbol{v}_1,\boldsymbol{u}_2 \rangle}{\langle \boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1, \boldsymbol{v}_1
 					\biggr\rangle </mrow>
-					<mrow>\amp = \langle \vec{u}_2, \vec{v}_1 \rangle - \dfrac{\langle \vec{v}_1,\vec{u}_2
-					\rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \langle \vec{v}_1, \vec{v}_1 \rangle </mrow>
-					<mrow>\amp = \langle \vec{u}_2, \vec{v}_1\rangle - \langle \vec{v}_1, \vec{u}_2 \rangle =
+					<mrow>\amp = \langle \boldsymbol{u}_2, \boldsymbol{v}_1 \rangle - \dfrac{\langle \boldsymbol{v}_1,\boldsymbol{u}_2
+					\rangle}{\langle \boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \langle \boldsymbol{v}_1, \boldsymbol{v}_1 \rangle </mrow>
+					<mrow>\amp = \langle \boldsymbol{u}_2, \boldsymbol{v}_1\rangle - \langle \boldsymbol{v}_1, \boldsymbol{u}_2 \rangle =
 					0</mrow>
 				</md>
 			</p>
 
 			<p>
-				Now assume that <m>\vec{v}_k</m> is orthogonal to all other <m>
-				\vec{v}</m>'s or <m>\langle\vec{v}_k, \vec{v}_i \rangle =0</m> for <m>i=k-1,k-2,\ldots,
+				Now assume that <m>\boldsymbol{v}_k</m> is orthogonal to all other <m>
+				\boldsymbol{v}</m>'s or <m>\langle\boldsymbol{v}_k, \boldsymbol{v}_i \rangle =0</m> for <m>i=k-1,k-2,\ldots,
 				2,1</m>.
-				Now we will prove that <m>\vec{v}_{k+1}</m>, given by Gram-Schmidt is orthogonal
-				to all other <m>\vec{v}</m>'s.
+				Now we will prove that <m>\boldsymbol{v}_{k+1}</m>, given by Gram-Schmidt is orthogonal
+				to all other <m>\boldsymbol{v}</m>'s.
 				For all <m>j=1,2,\ldots,k</m>,
 			</p>
 
 			<p>
 				<md>
-					<mrow>\langle \vec{v}_{k+1}, \vec{v}_j \rangle \amp =
-					\biggl \langle \vec{u}_{k+1} - \sum_{i=1}^{k} \dfrac{\langle \vec{v}_i, \vec{u}_{k+1}
-					\rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \vec{v}_i , \vec{v}_j \biggl \rangle, </mrow>
-					<mrow>\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle - \sum_{i=1}^k \dfrac{\langle
-					\vec{v}_i, \vec{u}_{k+1} \rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \langle
-					\vec{v}_i,
-					\vec{v}_j \rangle</mrow>
+					<mrow>\langle \boldsymbol{v}_{k+1}, \boldsymbol{v}_j \rangle \amp =
+					\biggl \langle \boldsymbol{u}_{k+1} - \sum_{i=1}^{k} \dfrac{\langle \boldsymbol{v}_i, \boldsymbol{u}_{k+1}
+					\rangle}{\langle \boldsymbol{v}_i,\boldsymbol{v}_i \rangle} \boldsymbol{v}_i , \boldsymbol{v}_j \biggl \rangle, </mrow>
+					<mrow>\amp = \langle \boldsymbol{u}_{k+1}, \boldsymbol{v}_j \rangle - \sum_{i=1}^k \dfrac{\langle
+					\boldsymbol{v}_i, \boldsymbol{u}_{k+1} \rangle}{\langle \boldsymbol{v}_i,\boldsymbol{v}_i \rangle} \langle
+					\boldsymbol{v}_i,
+					\boldsymbol{v}_j \rangle</mrow>
 				</md>
 			</p>
 
@@ -906,17 +906,17 @@
 
 			<p>
 				<md>
-					<mrow>\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle - \dfrac{\langle \vec{v}_j,
-					\vec{u}_{k+1} \rangle}{\langle \vec{v}_j,\vec{v}_i \rangle} \langle \vec{v}_j, \vec{v}_j
+					<mrow>\amp = \langle \boldsymbol{u}_{k+1}, \boldsymbol{v}_j \rangle - \dfrac{\langle \boldsymbol{v}_j,
+					\boldsymbol{u}_{k+1} \rangle}{\langle \boldsymbol{v}_j,\boldsymbol{v}_i \rangle} \langle \boldsymbol{v}_j, \boldsymbol{v}_j
 					\rangle </mrow>
-					<mrow>\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle -\langle \vec{v}_j, \vec{u}_{k+1}
+					<mrow>\amp = \langle \boldsymbol{u}_{k+1}, \boldsymbol{v}_j \rangle -\langle \boldsymbol{v}_j, \boldsymbol{u}_{k+1}
 					\rangle = 0</mrow>
 				</md>
 			</p>
 
 			<p>
-				Therefore <m>\vec{v}_{k+1}</m> is orthogonal to all other <m>
-				\vec{v}</m>'s and thus the basis consisting of <m>\vec{v}</m> form an orthonormal set.
+				Therefore <m>\boldsymbol{v}_{k+1}</m> is orthogonal to all other <m>
+				\boldsymbol{v}</m>'s and thus the basis consisting of <m>\boldsymbol{v}</m> form an orthonormal set.
 			</p>
 		</proof>
 
@@ -938,7 +938,7 @@
 
 			<solution>
 				<p>
-					Let <m>\vec{u}_1, \vec{u}_2</m> and <m>\vec{u}_3</m> be these three vectors.
+					Let <m>\boldsymbol{u}_1, \boldsymbol{u}_2</m> and <m>\boldsymbol{u}_3</m> be these three vectors.
 					We now use
 					Gram-Schmidt orthogonalization to find an orthogonal set.
 				</p>
@@ -948,7 +948,7 @@
 						<li>
 							<p>
 								<me>
-									\vec{v}_1 = \vec{u}_1 = \begin{bmatrix}
+									\boldsymbol{v}_1 = \boldsymbol{u}_1 = \begin{bmatrix}
 									1 \\ 0 \\ 1
 									\end{bmatrix}
 								</me>
@@ -958,8 +958,8 @@
 						<li>
 							<p>
 								<me>
-									\vec{v}_2 = \vec{u}_2 - \frac{\langle \vec{u}_2, \vec{v}_1 \rangle}{\langle
-									\vec{v}_1, \vec{v}_1 \rangle} \vec{v}_1 = \begin{bmatrix}
+									\boldsymbol{v}_2 = \boldsymbol{u}_2 - \frac{\langle \boldsymbol{u}_2, \boldsymbol{v}_1 \rangle}{\langle
+									\boldsymbol{v}_1, \boldsymbol{v}_1 \rangle} \boldsymbol{v}_1 = \begin{bmatrix}
 									1 \\ 1\\ 0
 									\end{bmatrix} - \frac{1}{2} \begin{bmatrix}
 									1 \\ 0 \\ 1
@@ -973,10 +973,10 @@
 						<li>
 							<p>
 								<md>
-									<mrow>\vec{v}_3 \amp = \vec{u}_3 - \frac{\langle \vec{u}_3, \vec{v}_2
-									\rangle}{\langle \vec{v}_2, \vec{v}_2 \rangle}
-									\vec{v}_2- \frac{\langle \vec{u}_3, \vec{v}_1 \rangle}{\langle \vec{v}_1,
-									\vec{v}_1 \rangle} \vec{v}_1
+									<mrow>\boldsymbol{v}_3 \amp = \boldsymbol{u}_3 - \frac{\langle \boldsymbol{u}_3, \boldsymbol{v}_2
+									\rangle}{\langle \boldsymbol{v}_2, \boldsymbol{v}_2 \rangle}
+									\boldsymbol{v}_2- \frac{\langle \boldsymbol{u}_3, \boldsymbol{v}_1 \rangle}{\langle \boldsymbol{v}_1,
+									\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1
 									</mrow>
 									<mrow>\amp = \begin{bmatrix}
 									0 \\ 1 \\ 1
@@ -994,7 +994,7 @@
 				</p>
 
 				<p>
-					And the set <m>\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}</m> is now orthogonal (check it).
+					And the set <m>\{\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3\}</m> is now orthogonal (check it).
 				</p>
 
 				<p>

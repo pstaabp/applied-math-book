@@ -183,7 +183,7 @@
 					<md>
 						<mrow>
 						P  \amp = \begin{bmatrix}
-						\vec{v}_1 \amp \vec{v}_2 \amp  \cdots \amp \vec{v}_n
+						\boldsymbol{v}_1 \amp \boldsymbol{v}_2 \amp  \cdots \amp \boldsymbol{v}_n
 						\end{bmatrix}
 						\amp D \amp = \begin{bmatrix}
 						\lambda_1 \amp 0 \amp 0 \amp \cdots \amp 0 \\
@@ -197,19 +197,19 @@
 				</p>
 
 				<p>
-					where <m>\vec{v}_i</m> is the eigenvector associated with the eigenvalue <m>\lambda_i</m>.
+					where <m>\boldsymbol{v}_i</m> is the eigenvector associated with the eigenvalue <m>\lambda_i</m>.
 				</p>
 
 				<p>
 					<md>
 						<mrow>A P \amp = \begin{bmatrix}
-						A \vec{v}_1 \amp A \vec{v}_2 \amp \cdots A \vec{v}_n
+						A \boldsymbol{v}_1 \amp A \boldsymbol{v}_2 \amp \cdots A \boldsymbol{v}_n
 						\end{bmatrix} \\
 						\amp = \begin{bmatrix}
-						\lambda_1  \vec{v}_1 \amp  \lambda_2 \vec{v}_2 \amp \cdots \amp \lambda_n \vec{v}_n
+						\lambda_1  \boldsymbol{v}_1 \amp  \lambda_2 \boldsymbol{v}_2 \amp \cdots \amp \lambda_n \boldsymbol{v}_n
 						\end{bmatrix} </mrow>
 						<mrow>\amp = \begin{bmatrix}
-						\vec{v}_1 \lambda_1 \amp \vec{v}_2 \lambda_2 \amp \cdots \amp \vec{v}_n \lambda_n
+						\boldsymbol{v}_1 \lambda_1 \amp \boldsymbol{v}_2 \lambda_2 \amp \cdots \amp \boldsymbol{v}_n \lambda_n
 						\end{bmatrix}
 						= P D</mrow>
 					</md>
@@ -246,9 +246,9 @@
 
 				<p>
 					<md>
-						<mrow>\vec{v}_1 \amp= \begin{bmatrix}
+						<mrow>\boldsymbol{v}_1 \amp= \begin{bmatrix}
 						1 \\ -1
-						\end{bmatrix}, \amp \vec{v}_2 \amp = \begin{bmatrix}
+						\end{bmatrix}, \amp \boldsymbol{v}_2 \amp = \begin{bmatrix}
 						1 \\ -2
 						\end{bmatrix} </mrow>
 					</md>
@@ -297,7 +297,7 @@
 			<solution>
 				<p>
 					From example <xref ref="ex-eigs-3by3" />, we found that <m>A</m> has eigenvalues <m>\lambda_1 = 1, \lambda_2 = 4, \lambda_3 = -3</m>.
-					It also has eigenvectors <m>\vec{v}_1 =[-4\;\;2\;\;3]^{\intercal} </m>, <m>\vec{v}_2 =[0\;\;1\;\;1]^{\intercal}</m> and <m>\vec{v}_3=[0\;\;-6\;\;1]^{\intercal}</m>.
+					It also has eigenvectors <m>\boldsymbol{v}_1 =[-4\;\;2\;\;3]^{\intercal} </m>, <m>\boldsymbol{v}_2 =[0\;\;1\;\;1]^{\intercal}</m> and <m>\boldsymbol{v}_3=[0\;\;-6\;\;1]^{\intercal}</m>.
 					Therefore the matrices:
 				</p>
 
@@ -668,10 +668,10 @@
 					Briefly, we need to diagonalize both <m>A</m> and <m>B</m>.
 					In example <xref ref="ex-diag-2by2" />, we found that the eigenvalues of <m>A</m>
 					are <m>\lambda_1=2</m> and <m>\lambda_2=3</m> with associated eigenvectors
-					<m>\vec{v}_1=[1\;\;-1]^{\intercal}</m> and <m>\vec{v}_2=[1\;\;-2]^{\intercal}</m>.
+					<m>\boldsymbol{v}_1=[1\;\;-1]^{\intercal}</m> and <m>\boldsymbol{v}_2=[1\;\;-2]^{\intercal}</m>.
 					Using the techniques of section <xref ref="sect-eigenvalues" />, the eigenvalues of <m>B</m>
 					are <m>\lambda_1=2</m> and <m>\lambda_2=3</m> with associated eigenvectors
-					<m>\vec{v}_1=[1\;\;4]^{\intercal}</m> and <m>\vec{v}_2=[0\;\;1]^{\intercal}</m>.
+					<m>\boldsymbol{v}_1=[1\;\;4]^{\intercal}</m> and <m>\boldsymbol{v}_2=[0\;\;1]^{\intercal}</m>.
 					Letting <m>D_1</m> and <m>P_1</m> be the matrices associated with <m>A</m> and
 					<m>D_2</m> and <m>P_2</m>, those associated with <m>B</m>, let
 				</p>

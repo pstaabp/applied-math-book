@@ -81,12 +81,12 @@
 			<statement>
 				<p>
 					Let <m>S</m> be a nonempty subset <m>S</m> of a vector space <m>V</m>, under the inherited operations.
-					If for all <m>\vec{s}_1</m> and <m>\vec{s}_2</m> in <m>S</m> and <m>r_1, r_2 \in \mathbb{R}</m>
+					If for all <m>\boldsymbol{s}_1</m> and <m>\boldsymbol{s}_2</m> in <m>S</m> and <m>r_1, r_2 \in \mathbb{R}</m>
 				</p>
 
 				<p>
 					<me>
-						r_1 \vec{s}_1 + r_2 \vec{s}_2 \in S
+						r_1 \boldsymbol{s}_1 + r_2 \boldsymbol{s}_2 \in S
 					</me>
 				</p>
 
@@ -100,7 +100,7 @@
 				<p>
 					This means that if <m>S</m> is a subset of <m>V</m>, a vector space,
 					to prove that <m>S</m> is a subspace, we only need to check
-					if <m>r_1 \vec{s}_1 + r_2 \vec{s}_2 \in S</m>.
+					if <m>r_1 \boldsymbol{s}_1 + r_2 \boldsymbol{s}_2 \in S</m>.
 				</p>
 
 				<p>
@@ -110,13 +110,13 @@
 				</p>
 
 				<p>
-					Property 1:  Because <m>r_1 \vec{s}_1 + r_2 \vec{s}_2 \in S</m>,
-					let <m>r_1=r_2=1</m>, thus <m>\vec{s}_1+\vec{s}_2 \in S</m>.
+					Property 1:  Because <m>r_1 \boldsymbol{s}_1 + r_2 \boldsymbol{s}_2 \in S</m>,
+					let <m>r_1=r_2=1</m>, thus <m>\boldsymbol{s}_1+\boldsymbol{s}_2 \in S</m>.
 				</p>
 
 				<p>
-					Property 6: Because <m>r_1 \vec{s}_1 + r_2 \vec{s}_2 \in S</m>,
-					let <m>r_2=0</m>, thus <m>r_1 \vec{s}_1 \in S</m>.
+					Property 6: Because <m>r_1 \boldsymbol{s}_1 + r_2 \boldsymbol{s}_2 \in S</m>,
+					let <m>r_2=0</m>, thus <m>r_1 \boldsymbol{s}_1 \in S</m>.
 				</p>
 			</proof>
 		</lemma>
@@ -148,9 +148,9 @@
 
 				<p>
 					<md>
-						<mrow>\vec{u} \amp = \begin{bmatrix}
+						<mrow>\boldsymbol{u} \amp = \begin{bmatrix}
 						u_1 \\ u_2
-						\end{bmatrix} \amp \vec{v} \amp = \begin{bmatrix}
+						\end{bmatrix} \amp \boldsymbol{v} \amp = \begin{bmatrix}
 						v_1 \\ v_2
 						\end{bmatrix}</mrow>
 					</md>
@@ -164,7 +164,7 @@
 
 				<p>
 					<md>
-						<mrow>r_1 \vec{u} + r_2 \vec{v} \amp = r_1 \begin{bmatrix}
+						<mrow>r_1 \boldsymbol{u} + r_2 \boldsymbol{v} \amp = r_1 \begin{bmatrix}
 						u_1 \\ k u_1
 						\end{bmatrix} + r_2 \begin{bmatrix}
 						v_1 \\ k v_1
@@ -262,21 +262,21 @@
 				<p>
 					We will use <xref ref="lemma-subspace" /> to solve this.
 					Let both
-					<m>\vec{x}</m> and <m>\vec{y}</m> be in the null space of <m>A</m>.
-					This means that <m>A\vec{x}=\vec{0}</m> and <m>A\vec{y}=\vec{0}</m>.
-					We need to show that <m>r_1 \vec{x} + r_2 \vec{y}</m> is in the null space of <m>A</m>.
+					<m>\boldsymbol{x}</m> and <m>\boldsymbol{y}</m> be in the null space of <m>A</m>.
+					This means that <m>A\boldsymbol{x}=\boldsymbol{0}</m> and <m>A\boldsymbol{y}=\boldsymbol{0}</m>.
+					We need to show that <m>r_1 \boldsymbol{x} + r_2 \boldsymbol{y}</m> is in the null space of <m>A</m>.
 				</p>
 
 				<p>
 					<md>
-						<mrow>A(r_1 \vec{x} + r_2 \vec{y}) \amp = r_1 A\vec{x} + r_2 A\vec{y} </mrow>
-						<mrow>\amp = r_1 (0) + r_2 (0) = 0</mrow>
+						<mrow>A(r_1 \boldsymbol{x} + r_2 \boldsymbol{y}) \amp = r_1 A\boldsymbol{x} + r_2 A\boldsymbol{y} </mrow>
+						<mrow>\amp = r_1 (\boldsymbol{0}) + r_2 (\boldsymbol{0}) = \boldsymbol{0}</mrow>
 					</md>
 				</p>
 
 				<p>
 					Vectors in the null space are vectors of length <m>n</m>, so the null space is
-					a subset of <m>\mathbb{R}^n</m> and since  <m>r_1 \vec{x} + r_2 \vec{y}</m>
+					a subset of <m>\mathbb{R}^n</m> and since  <m>r_1 \boldsymbol{x} + r_2 \boldsymbol{y}</m>
 					is in the null space of <m>A</m>, then the null space is a subspace of
 					<m>\mathbb{R}^n</m>.
 				</p>
@@ -299,15 +299,15 @@
 		<definition>
 			<statement>
 				<p>
-					The <term>span</term> of a nonempty subset <m>S=\{\vec{s}_1, \vec{s}_2, \ldots, \vec{s}_n\}</m>
+					The <term>span</term> of a nonempty subset <m>S=\{\boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n\}</m>
 					of a vector space is the set of all linear combinations of the vectors in <m>S</m>.
 					That is,
 				</p>
 
 				<p>
 					<me>
-						\text{span}(S) = \{ c_1 \vec{s}_1 + c_2 \vec{s}_2 + \cdots + c_n \vec{s}_n\; | \;
-						\text{$c_1, c_2, \ldots, c_n \in \mathbb{R}, \vec{s}_1, \vec{s}_2, \ldots, \vec{s}_n \in S$} \}.
+						\text{span}(S) = \{ c_1 \boldsymbol{s}_1 + c_2 \boldsymbol{s}_2 + \cdots + c_n \boldsymbol{s}_n\; | \;
+						\text{$c_1, c_2, \ldots, c_n \in \mathbb{R}, \boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n \in S$} \}.
 					</me>
 				</p>
 			</statement>
@@ -374,15 +374,15 @@
 
 			<proof>
 				<p>
-					Let <m>S</m> be the subset and <m>\vec{s}_1, \vec{s}_2, \ldots, \vec{s}_n</m> be the elements of <m>S</m>.
+					Let <m>S</m> be the subset and <m>\boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n</m> be the elements of <m>S</m>.
 					Using Lemma <xref ref="lemma-subspace" />, we need to check that <m>\text{span}(S)</m> is closed under linear combinations.
 					Let
 				</p>
 
 				<p>
 					<md>
-						<mrow>\vec{v} \amp = c_1 \vec{s}_1 + c_2 \vec{s}_2 + \cdots + c_n \vec{s}_n, </mrow>
-						<mrow>\vec{w} \amp = k_1 \vec{s}_1 + k_2 \vec{s}_2 + \cdots + k_n \vec{s}_n</mrow>
+						<mrow>\boldsymbol{v} \amp = c_1 \boldsymbol{s}_1 + c_2 \boldsymbol{s}_2 + \cdots + c_n \boldsymbol{s}_n, </mrow>
+						<mrow>\boldsymbol{w} \amp = k_1 \boldsymbol{s}_1 + k_2 \boldsymbol{s}_2 + \cdots + k_n \boldsymbol{s}_n</mrow>
 					</md>
 				</p>
 
@@ -392,14 +392,14 @@
 
 				<p>
 					<md>
-						<mrow>r_1 \vec{v} + r_2 \vec{w} \amp = r_1 (c_1 \vec{s}_1 + c_2 \vec{s}_2 + \cdots + c_n \vec{s}_n) +
-						r_2 (k_1 \vec{s}_1 + k_2 \vec{s}_2 + \cdots + k_n \vec{s}_n) </mrow>
-						<mrow>\amp = (r_1 c_1 + r_2 k_1) \vec{s}_1 + (r_1c_2 + r_2 k_2) \vec{s}_2 + \cdots + (r_1 c_n + r_2 k_n) \vec{s}_n</mrow>
+						<mrow>r_1 \boldsymbol{v} + r_2 \boldsymbol{w} \amp = r_1 (c_1 \boldsymbol{s}_1 + c_2 \boldsymbol{s}_2 + \cdots + c_n \boldsymbol{s}_n) +
+						r_2 (k_1 \boldsymbol{s}_1 + k_2 \boldsymbol{s}_2 + \cdots + k_n \boldsymbol{s}_n) </mrow>
+						<mrow>\amp = (r_1 c_1 + r_2 k_1) \boldsymbol{s}_1 + (r_1c_2 + r_2 k_2) \boldsymbol{s}_2 + \cdots + (r_1 c_n + r_2 k_n) \boldsymbol{s}_n</mrow>
 					</md>
 				</p>
 
 				<p>
-					Since this shows that <m>r_1 \vec{v} + r_2 \vec{w}</m> is in <m>S</m>, then <m>S</m> is a subspace.
+					Since this shows that <m>r_1 \boldsymbol{v} + r_2 \boldsymbol{w}</m> is in <m>S</m>, then <m>S</m> is a subspace.
 				</p>
 			</proof>
 		</lemma>
@@ -418,13 +418,13 @@
 
 				<p>
 					<md>
-						<mrow>\vec{e}_1 \amp =
+						<mrow>\boldsymbol{e}_1 \amp =
 						\begin{bmatrix}
 						1 \\ 0 \\ 0
-						\end{bmatrix}, \amp \vec{e}_2 \amp =
+						\end{bmatrix}, \amp \boldsymbol{e}_2 \amp =
 						\begin{bmatrix}
 						0 \\ 1 \\ 0
-						\end{bmatrix}, \amp \vec{e}_3 \amp =
+						\end{bmatrix}, \amp \boldsymbol{e}_3 \amp =
 						\begin{bmatrix}
 						0 \\ 0 \\ 1
 						\end{bmatrix}</mrow>
@@ -434,8 +434,8 @@
 
 			<solution>
 				<p>
-					Because the vector <m>\vec{x}=[x_1,x_2,x_3]^T</m> can be
-					written <m>\vec{x}=x_1 \vec{e}_1 + x_2 \vec{e}_2 + x_3 \vec{e}_3</m>,
+					Because the vector <m>\boldsymbol{x}=[x_1,x_2,x_3]^{\intercal}</m> can be
+					written <m>\boldsymbol{x}=x_1 \boldsymbol{e}_1 + x_2 \boldsymbol{e}_2 + x_3 \boldsymbol{e}_3</m>,
 					then these vectors span <m>\mathbb{R}^3</m>.
 				</p>
 			</solution>
@@ -513,7 +513,7 @@
 				Note: the basis will be a tuple of vectors because the order of the
 				vectors will be important.
 				We will denote the tuple with
-				parentheses, <m>( \vec{s}_1, \vec{s}_2, \ldots )</m>.
+				parentheses, <m>( \boldsymbol{s}_1, \boldsymbol{s}_2, \ldots )</m>.
 			</p>
 
 			<example>
@@ -674,7 +674,7 @@
 
 					<p>
 						is called the <term>standard basis</term> or <term>natural basis</term> of <m>\mathbb{R}^n</m>.
-						The vectors in the basis are called <m>\vec{e}_1, \vec{e}_2, \ldots</m>.
+						The vectors in the basis are called <m>\boldsymbol{e}_1, \boldsymbol{e}_2, \ldots</m>.
 					</p>
 				</statement>
 			</definition>
@@ -713,25 +713,25 @@
 				<statement>
 					<p>
 						In a vector space with basis <m>B</m>, the <term>representation of a vector
-						<m>\vec{v}</m> with respect to the basis <m>B</m></term> is the column vector
-						of the coefficients used to express <m>\vec{v}</m> as a linear combination of the basis vectors:
+						<m>\boldsymbol{v}</m> with respect to the basis <m>B</m></term> is the column vector
+						of the coefficients used to express <m>\boldsymbol{v}</m> as a linear combination of the basis vectors:
 					</p>
 
 					<p>
 						<me>
-							\text{Rep}_B (\vec{v}) = \begin{bmatrix}
+							\text{Rep}_B (\boldsymbol{v}) = \begin{bmatrix}
 							c_1 \\ c_2 \\ \vdots \\ c_n
 							\end{bmatrix}
 						</me>
 					</p>
 
 					<p>
-						where <m>B=( \vec{\beta}_1, \vec{\beta}_2, \ldots , \vec{\beta}_n )</m> and
+						where <m>B=( \boldsymbol{\beta}_1, \boldsymbol{\beta}_2, \ldots , \boldsymbol{\beta}_n )</m> and
 					</p>
 
 					<p>
 						<me>
-							\vec{v} = c_1 \vec{\beta}_1 + c_2 \vec{\beta}_2 + \cdots + c_n \vec{\beta}_n
+							\boldsymbol{v} = c_1 \boldsymbol{\beta}_1 + c_2 \boldsymbol{\beta}_2 + \cdots + c_n \boldsymbol{\beta}_n
 						</me>
 					</p>
 				</statement>
@@ -741,7 +741,7 @@
 				<p>
 					Consider the space <m>{\cal P}_2</m>, the space of quadratic functions.
 					Let <m>B=( 1, 1+x,1+x+x^2, )</m> be a basis of <m>{\cal P}_2</m> and
-					<m>\vec{v} = 2x+x^2</m>.
+					<m>\boldsymbol{v} = 2x+x^2</m>.
 					To find the representation,
 					we need to find <m>c_1, c_2</m> and <m>c_3</m> such that
 				</p>
@@ -770,7 +770,7 @@
 
 				<p>
 					<me>
-						\text{Rep}_B (\vec{v}) = \begin{bmatrix}
+						\text{Rep}_B (\boldsymbol{v}) = \begin{bmatrix}
 						-2 \\ 1 \\ 1
 						\end{bmatrix}
 					</me>
@@ -792,7 +792,7 @@
 
 				<p>
 					<me>
-						\text{Rep}_D (\vec{v}) = \begin{bmatrix}
+						\text{Rep}_D (\boldsymbol{v}) = \begin{bmatrix}
 						0 \\ 1 \\ 1
 						\end{bmatrix}
 					</me>
@@ -810,7 +810,7 @@
 				If we used the natural basis <m>E=( 1, x, x^2 )</m>
 				for the quadratic example above, then
 				<me>
-					\text{Rep}_E (\vec{v})  = \begin{bmatrix}
+					\text{Rep}_E (\boldsymbol{v})  = \begin{bmatrix}
 					0 \\ 2 \\ 1
 					\end{bmatrix}
 				</me>
@@ -827,7 +827,7 @@
 
 					<p>
 						<me>
-							\vec{v} = \begin{bmatrix}
+							\boldsymbol{v} = \begin{bmatrix}
 							-3 \\ 2\\ 4
 							\end{bmatrix}
 						</me>
@@ -854,7 +854,7 @@
 
 				<solution>
 					<p>
-						We seek the vector <m>\vec{c}  = [c_1, c_2, c_3]^{\intercal}</m> such that
+						We seek the vector <m>\boldsymbol{c}  = [c_1, c_2, c_3]^{\intercal}</m> such that
 					</p>
 
 					<p>
@@ -878,7 +878,7 @@
 
 					<p>
 						<me>
-							\text{Rep}_{\cal E} (\vec{v})  =
+							\text{Rep}_{\cal E} (\boldsymbol{v})  =
 							\begin{bmatrix}
 							-3 \\ 2 \\ 4
 							\end{bmatrix}

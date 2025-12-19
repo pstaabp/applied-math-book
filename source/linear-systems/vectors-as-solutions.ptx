@@ -40,12 +40,12 @@
 			Recall that if the matrix has only a single column, we called it <term>column vector</term>.
 			As we will see in the first few chapters of this text, vectors are very important so we
 			explore these a bit more here and then later in <xref ref="ch-matrices"/>.
-			A column vector <m>\vec{s}</m> can be written
+			A column vector <m>\boldsymbol{s}</m> can be written
 		</p>
 
 		<p>
 			<men xml:id="eq-column-vector">
-				\vec{s} = \begin{bmatrix}
+				\boldsymbol{s} = \begin{bmatrix}
 				s_1 \\ s_2 \\ \vdots \\ s_n
 				\end{bmatrix}
 			</men>
@@ -97,12 +97,12 @@
 		<definition xml:id="def-">
 			<statement>
 				<p>
-					The <term>sum of two vectors</term> <m>\vec{u}</m> and <m>\vec{v}</m> is defined as
+					The <term>sum of two vectors</term> <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> is defined as
 				</p>
 
 				<p>
 					<me>
-						\vec{u} + \vec{v} = \begin{bmatrix}
+						\boldsymbol{u} + \boldsymbol{v} = \begin{bmatrix}
 						u_1 \\ u_2 \\ \vdots \\ u_n
 						\end{bmatrix} + \begin{bmatrix}
 						v_1 \\ v_2 \\ \vdots \\ v_n
@@ -113,13 +113,13 @@
 				</p>
 
 				<p>
-					and the <term> scalar multiplication of a vector</term> <m>\vec{u}</m> by <m>r \in
+					and the <term> scalar multiplication of a vector</term> <m>\boldsymbol{u}</m> by <m>r \in
 					\mathbb{R}</m> is
 				</p>
 
 				<p>
 					<me>
-						r \vec{u} = r \begin{bmatrix}
+						r \boldsymbol{u} = r \begin{bmatrix}
 						u_1 \\ u_2 \\ \vdots \\ u_n
 						\end{bmatrix} = \begin{bmatrix}
 						r u_1 \\ r u_2 \\ \vdots \\r u_n
@@ -137,28 +137,28 @@
 
 				<p>
 					<md>
-						<mrow>\vec{u} \amp = \begin{bmatrix}
+						<mrow>\boldsymbol{u} \amp = \begin{bmatrix}
 						3 \\ -3 \\ 4
-						\end{bmatrix}, \amp \vec{v} \amp = \begin{bmatrix}
+						\end{bmatrix}, \amp \boldsymbol{v} \amp = \begin{bmatrix}
 						2 \\ 3/2 \\ 9
 						\end{bmatrix}.</mrow>
 					</md>
 				</p>
 
 				<p>
-					Find <m>\vec{u}+\vec{v}</m> and <m>4 \vec{v}</m>.
+					Find <m>\boldsymbol{u}+\boldsymbol{v}</m> and <m>4 \boldsymbol{v}</m>.
 				</p>
 			</statement>
 
 			<solution>
 				<p>
 					<md>
-						<mrow>\vec{u} + \vec{v} \amp = \begin{bmatrix}
+						<mrow>\boldsymbol{u} + \boldsymbol{v} \amp = \begin{bmatrix}
 						3+2 \\ -3 + 3/2 \\ 4+9
 						\end{bmatrix} = \begin{bmatrix}
 						5 \\ -3/2 \\ 13
 						\end{bmatrix},
-						\amp 4 \vec{v} \amp = \begin{bmatrix}
+						\amp 4 \boldsymbol{v} \amp = \begin{bmatrix}
 						4 \cdot 2, \\ 4 \cdot \frac{3}{2}, \\ 4 \cdot 9
 						\end{bmatrix} =
 						\begin{bmatrix}

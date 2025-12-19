@@ -415,9 +415,9 @@
 		<definition>
 			<statement>
 				<p>
-					Let <m>\vec{x}</m> be any vector that satisfies <m>A \vec{x}=\vec{0}</m>.
+					Let <m>\boldsymbol{x}</m> be any vector that satisfies <m>A \boldsymbol{x}=\boldsymbol{0}</m>.
 					The <term>null space</term> of the matrix <m>A</m> is the span of all vectors
-					<m>\vec{x}</m>.
+					<m>\boldsymbol{x}</m>.
 					The number of independent vectors in the null space is called
 					the <term>nullity</term> of <m>A</m>.
 				</p>
@@ -557,7 +557,7 @@
 
 			<solution>
 				<p>
-					Again, we solve the homogeneous linear system <m>A \vec{x} = \vec{0}</m>
+					Again, we solve the homogeneous linear system <m>A \boldsymbol{x} = \boldsymbol{0}</m>
 					by finding the reduced row echelon form of <m>A</m>
 				</p>
 

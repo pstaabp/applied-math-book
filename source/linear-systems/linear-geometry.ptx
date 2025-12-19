@@ -73,9 +73,9 @@
 				\draw [->] (0,-3) -- (0,3);
 				\foreach \x in {-2,-1,1,2} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
 				\foreach \y in {-2,-1,1,2} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
-				\draw [->,very thick] (0,0) -- (2,1) node [above] {$ \vec{v}$};
-				\draw [->,very thick] (0,-1) -- (4,1) node [right] {$ 2\vec{v}$};
-				\draw [->,very thick] (0,2) -- (-2,1) node [left] {$ -\vec{v}$};
+				\draw [->,very thick] (0,0) -- (2,1) node [above] {$ \boldsymbol{v}$};
+				\draw [->,very thick] (0,-1) -- (4,1) node [right] {$ 2\boldsymbol{v}$};
+				\draw [->,very thick] (0,2) -- (-2,1) node [left] {$ -\boldsymbol{v}$};
 				\end{tikzpicture}
 				]]>
 				</latex-image>
@@ -91,7 +91,7 @@
 
 		<p>
 			<me>
-				\vec{u} + \vec{v} = \begin{bmatrix}
+				\boldsymbol{u} + \boldsymbol{v} = \begin{bmatrix}
 				u_1 \\ u_2
 				\end{bmatrix} + \begin{bmatrix}
 				v_1 \\ v_2
@@ -102,7 +102,7 @@
 		</p>
 
 		<p>
-			Consider two vectors <m>\vec{u}</m> and <m>\vec{v}</m> in the plane:
+			Consider two vectors <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> in the plane:
 		</p>
 
 		<figure xml:id="fig-plot-two-vectors">
@@ -111,8 +111,8 @@
 				<latex-image>
 				<![CDATA[
 				\begin{tikzpicture}
-				\draw[->,very thick] (0,0) -- (2,1) node [midway, below right] {$ \vec{u}$};
-				\draw[->,very thick] (-2,1) -- (-1,4) node [midway, above left] {$ \vec{v}$};
+				\draw[->,very thick] (0,0) -- (2,1) node [midway, below right] {$ \boldsymbol{u}$};
+				\draw[->,very thick] (-2,1) -- (-1,4) node [midway, above left] {$ \boldsymbol{v}$};
 				\end{tikzpicture}
 				]]>
 				</latex-image>
@@ -120,8 +120,8 @@
 		</figure>
 
 		<p>
-			The sum of these vectors can be represented by taking the <m>\vec{u}</m> vector, then drawing
-			the <m>\vec{v}</m> at the tail end of the <m>\vec{u}</m> vector.
+			The sum of these vectors can be represented by taking the <m>\boldsymbol{u}</m> vector, then drawing
+			the <m>\boldsymbol{v}</m> at the tail end of the <m>\boldsymbol{u}</m> vector.
 			The resulting vector
 		</p>
 
@@ -131,9 +131,9 @@
 				<latex-image>
 				<![CDATA[
 				\begin{tikzpicture}
-				\draw[->,very thick] (0,0) -- (2,1) node [midway, below right] {$ \vec{u}$};
-				\draw[->,very thick] (2,1) -- (3,5)node [midway, below right] {$ \vec{v}$};
-				\draw[->,very thick] (0,0) -- (3,5) node [pos=0.75, above left] {$ \vec{u}+\vec{v}$};
+				\draw[->,very thick] (0,0) -- (2,1) node [midway, below right] {$ \boldsymbol{u}$};
+				\draw[->,very thick] (2,1) -- (3,5)node [midway, below right] {$ \boldsymbol{v}$};
+				\draw[->,very thick] (0,0) -- (3,5) node [pos=0.75, above left] {$ \boldsymbol{u}+\boldsymbol{v}$};
 				\end{tikzpicture}
 				]]>
 				</latex-image>
@@ -141,15 +141,15 @@
 		</figure>
 
 		<p>
-			starts at the beginning of <m>\vec{u}</m> and ends at the end of <m>\vec{v}</m> as seen
+			starts at the beginning of <m>\boldsymbol{u}</m> and ends at the end of <m>\boldsymbol{v}</m> as seen
 			above.
 		</p>
 
 		<p>
-			Another way to think about this is to use <m>\vec{u}</m> and <m>\vec{v}</m> as the sides of
+			Another way to think about this is to use <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> as the sides of
 			the parallelogram.
-			The vector <m>\vec{u}+\vec{v}</m> is diagonal from the starting point of
-			both <m>\vec{u}</m> and <m>\vec{v}</m> extending to the ending point of both.
+			The vector <m>\boldsymbol{u}+\boldsymbol{v}</m> is diagonal from the starting point of
+			both <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> extending to the ending point of both.
 		</p>
 
 		<figure xml:id="fig-plot-vector-parallelogram">
@@ -158,11 +158,11 @@
 				<latex-image>
 				<![CDATA[
 				\begin{tikzpicture}
-				\draw[->,very thick] (0,0) -- (2,1) node [midway, below right] {$ \vec{u}$};
-				\draw[->,very thick] (2,1) -- (3,5)node [midway, below right] {$ \vec{v}$};
-				\draw[->,very thick] (1,4) -- (3,5) node [midway, above left] {$ \vec{u}$};
-				\draw[->,very thick] (0,0) -- (1,4)node [midway, above left] {$ \vec{v}$};
-				\draw[->,very thick] (0,0) -- (3,5) node [midway, above] {$ \vec{u}+\vec{v}$};
+				\draw[->,very thick] (0,0) -- (2,1) node [midway, below right] {$ \boldsymbol{u}$};
+				\draw[->,very thick] (2,1) -- (3,5)node [midway, below right] {$ \boldsymbol{v}$};
+				\draw[->,very thick] (1,4) -- (3,5) node [midway, above left] {$ \boldsymbol{u}$};
+				\draw[->,very thick] (0,0) -- (1,4)node [midway, above left] {$ \boldsymbol{v}$};
+				\draw[->,very thick] (0,0) -- (3,5) node [midway, above] {$ \boldsymbol{u}+\boldsymbol{v}$};
 				\end{tikzpicture}
 				]]>
 				</latex-image>
@@ -215,10 +215,10 @@
 				\fill (2,1) circle (2.5pt);
 				\fill (3,4) circle (2.5pt);
 				\draw[<->] ({1/3},-4) -- ({10/3},5) node [pos=0.8,below right]{$ L$};
-				\draw[->,very thick] (2,1) -- (3,4) node [at end, below right] {$ \vec{v}$};
-				\draw[->,very thick] (0,0) -- (2,1) node [midway, above] {$ \vec{u}$};
-				\draw[->,very thick, red] (2,1) -- (2.5,2.5) node [midway, below right] {$ t\vec{v}$};
-				\draw[->,very thick, red] (0,0) -- (2.5,2.5) node [pos=0.6, above left]  {$ \vec{u}+t\vec{v}$};
+				\draw[->,very thick] (2,1) -- (3,4) node [at end, below right] {$ \boldsymbol{v}$};
+				\draw[->,very thick] (0,0) -- (2,1) node [midway, above] {$ \boldsymbol{u}$};
+				\draw[->,very thick, red] (2,1) -- (2.5,2.5) node [midway, below right] {$ t\boldsymbol{v}$};
+				\draw[->,very thick, red] (0,0) -- (2.5,2.5) node [pos=0.6, above left]  {$ \boldsymbol{u}+t\boldsymbol{v}$};
 				\end{tikzpicture}
 				]]>
 				</latex-image>
@@ -226,16 +226,16 @@
 		</figure>
 
 		<p>
-			Let's make the vector <m>\vec{v}</m> the vector between the points <m>(2,1)</m> and <m>(3,4)</m>
+			Let's make the vector <m>\boldsymbol{v}</m> the vector between the points <m>(2,1)</m> and <m>(3,4)</m>
 			as shown on the figure above.
 			Recall that a vector and a point is synonymous if the vector
 			starts at the origin.
-			Call <m>\vec{u}</m> the vector from <m>(0,0)</m> to <m>(2,1)</m>.
+			Call <m>\boldsymbol{u}</m> the vector from <m>(0,0)</m> to <m>(2,1)</m>.
 		</p>
 
 		<p>
-			Next, any point on the line can be written as a vector by addition of <m>\vec{u}</m> and a
-			scale of <m>\vec{v}</m> or <m>\vec{u}+t\vec{v}</m>.
+			Next, any point on the line can be written as a vector by addition of <m>\boldsymbol{u}</m> and a
+			scale of <m>\boldsymbol{v}</m> or <m>\boldsymbol{u}+t\boldsymbol{v}</m>.
 			Thus the line between these two points can
 			be written as
 		</p>
@@ -282,8 +282,8 @@
 				\draw[thick,->] (0,0,0) -- (4,0,0) node[anchor=north east]{$ x$};
 				\draw[thick,->] (0,0,0) -- (0,4,0) node[anchor=north west]{$ y$};
 				\draw[thick,->] (0,0,0) -- (0,0,4) node[anchor=south]{$ z$};
-				\draw[-stealth] (0,0,0) -- (2,1,3) node [midway,above left] {$ \vec{u}$};
-				\draw[-stealth,thick] (2,1,3) -- (4,1,1) node [midway,above left] {$ t\vec{v}$};
+				\draw[-stealth] (0,0,0) -- (2,1,3) node [midway,above left] {$ \boldsymbol{u}$};
+				\draw[-stealth,thick] (2,1,3) -- (4,1,1) node [midway,above left] {$ t\boldsymbol{v}$};
 				\draw[<->] (0,1,5) -- (5,1,0);
 				\end{tikzpicture}
 				]]>
@@ -308,13 +308,13 @@
 
 				<p>
 					<me>
-						\{ \vec{p} + \vec{u} t + \vec{v} s \; | t,s \in \mathbb{R} \}
+						\{ \boldsymbol{p} + \boldsymbol{u} t + \boldsymbol{v} s \; | t,s \in \mathbb{R} \}
 					</me>
 				</p>
 
 				<p>
-					for nonzero vectors <m>\vec{u}</m> and <m>\vec{v}</m> and <m>\vec{p},\vec{u}</m> and <m>
-					\vec{v}</m> are vectors in <m>\mathbb{R}^3</m>.
+					for nonzero vectors <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> and <m>\boldsymbol{p},\boldsymbol{u}</m> and <m>
+					\boldsymbol{v}</m> are vectors in <m>\mathbb{R}^3</m>.
 				</p>
 			</statement>
 		</definition>
@@ -328,9 +328,9 @@
 		<p>
 			<md>
 				<mrow>
-				\vec{v} \amp = \begin{bmatrix}
+				\boldsymbol{v} \amp = \begin{bmatrix}
 				1 \\ 1 \\1
-				\end{bmatrix} \amp \vec{w} \amp = \begin{bmatrix}
+				\end{bmatrix} \amp \boldsymbol{w} \amp = \begin{bmatrix}
 				2 \\ 0 \\ -1
 				\end{bmatrix}
 				</mrow>
@@ -352,8 +352,8 @@
 				\draw[thick,->] (0,0,0) -- (4,0,0) node[anchor=north east]{$ x$};
 				\draw[thick,->] (0,0,0) -- (0,4,0) node[anchor=north west]{$ y$};
 				\draw[thick,->] (0,0,0) -- (0,0,4) node[anchor=south]{$ z$};
-				\draw[-stealth] (2,3,1) -- (1,1,1) node [midway,above right] {$ \vec{v}$};
-				\draw[-stealth] (2,3,1) -- (4,3,0) node [midway,above left] {$ \vec{w}$};
+				\draw[-stealth] (2,3,1) -- (1,1,1) node [midway,above right] {$ \boldsymbol{v}$};
+				\draw[-stealth] (2,3,1) -- (4,3,0) node [midway,above left] {$ \boldsymbol{w}$};
 				\draw[-stealth] (1,1,1) -- (3,1,0) -- (4,3,0);
 				\end{tikzpicture}
 				]]>
@@ -391,7 +391,7 @@
 
 				<p>
 					<me>
-						\{ \vec{p} + t_1 \vec{v}_1 + t_2 \vec{v}_2 + \cdots + t_k \vec{v}_k \; | \; t_1, t_2,
+						\{ \boldsymbol{p} + t_1 \boldsymbol{v}_1 + t_2 \boldsymbol{v}_2 + \cdots + t_k \boldsymbol{v}_k \; | \; t_1, t_2,
 						\ldots, t_k \in \mathbb{R} \}
 					</me>
 				</p>
@@ -441,7 +441,7 @@
 
 		<p>
 			<me>
-				\vec{v} = \begin{bmatrix}
+				\boldsymbol{v} = \begin{bmatrix}
 				v_1 \\ v_2
 				\end{bmatrix}
 			</me>
@@ -464,12 +464,12 @@
 				\draw [->] (0,-3) -- (0,3);
 				%\foreach \x in {-2,-1,1,2} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
 				%\foreach \y in {-2,-1,1,2} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
-				\draw [->,very thick] (0,0) -- (2,1) node [above] {$ \vec{v}$};
+				\draw [->,very thick] (0,0) -- (2,1) node [above] {$ \boldsymbol{v}$};
 				\draw (2,0.1) -- (2,-0.1) node [below] {$ v_1$};
 				\draw (0.1,1) -- (-0.1,1) node [left] {$ v_2$};
 				\draw (2,0) -- (2,1) node [midway, right] {$ v_2$};
-				%\draw [->,very thick] (0,-1) -- (4,1) node [right] {$ 2\vec{v}$};
-				%\draw [->,very thick] (0,2) -- (-2,1) node [left] {$ -\vec{v}$};
+				%\draw [->,very thick] (0,-1) -- (4,1) node [right] {$ 2\boldsymbol{v}$};
+				%\draw [->,very thick] (0,2) -- (-2,1) node [left] {$ -\boldsymbol{v}$};
 				\end{tikzpicture}
 				]]>
 				</latex-image>
@@ -477,18 +477,18 @@
 		</figure>
 
 		<p>
-			and using plane geometry, the length of <m>\vec{v}</m>, denoted <m>||\vec{v}||</m> is the
+			and using plane geometry, the length of <m>\boldsymbol{v}</m>, denoted <m>||\boldsymbol{v}||</m> is the
 			hypotenuse of the triangle or
 		</p>
 
 		<p>
 			<me>
-				||\vec{v}|| = \sqrt{v_1^2+v_2^2}
+				||\boldsymbol{v}|| = \sqrt{v_1^2+v_2^2}
 			</me>
 		</p>
 
 		<p>
-			and if <m>\vec{v}</m> is in <m>\mathbb{R}^3</m>, the length would include a square of the
+			and if <m>\boldsymbol{v}</m> is in <m>\mathbb{R}^3</m>, the length would include a square of the
 			third component inside the square root.
 			Thus, we defined the length of any vector in <m>
 			\mathbb{R}^n</m> to be the following.
@@ -497,12 +497,12 @@
 		<definition>
 			<statement>
 				<p>
-					The <term>length</term> of a vector <m>\vec{v} \in \mathbb{R}^n</m> is given by
+					The <term>length</term> of a vector <m>\boldsymbol{v} \in \mathbb{R}^n</m> is given by
 				</p>
 
 				<p>
 					<me>
-						|| \vec{v}|| = \sqrt{v_1^2 + v_2^2 + \cdots v_n^2 }
+						|| \boldsymbol{v}|| = \sqrt{v_1^2 + v_2^2 + \cdots v_n^2 }
 					</me>
 				</p>
 
@@ -520,7 +520,7 @@
 
 				<p>
 					<me>
-						\vec{v} = \begin{bmatrix}
+						\boldsymbol{v} = \begin{bmatrix}
 						3 \\ 1 \\ 0 \\ -5
 						\end{bmatrix}
 					</me>
@@ -530,7 +530,7 @@
 			<solution>
 				<p>
 					<me>
-						||\vec{v}|| = \sqrt{9+1+0+25} = \sqrt{35}
+						||\boldsymbol{v}|| = \sqrt{9+1+0+25} = \sqrt{35}
 					</me>
 				</p>
 			</solution>
@@ -557,8 +557,8 @@
 				\draw [->] (0,-3) -- (0,4);
 				\foreach \x in {-2,-1,1,2,3} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
 				\foreach \y in {-2,-1,1,2,3} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
-				\draw[->] (0,0) -- (3,1) node [below right] {$ \vec{u}$};
-				\draw[->] (0,0) -- (-1,2) node [below left] {$ \vec{v}$};
+				\draw[->] (0,0) -- (3,1) node [below right] {$ \boldsymbol{u}$};
+				\draw[->] (0,0) -- (-1,2) node [below left] {$ \boldsymbol{v}$};
 				\draw(9.48pt,3.16pt) arc [radius=10pt, start angle=18.43, end angle=116.56505118] ;
 				\draw(0.1,0.3) node [above right] {$ \theta$};
 				\end{tikzpicture}
@@ -570,9 +570,9 @@
 		<p>
 			where
 			<md>
-				<mrow>\vec{u} \amp = \begin{bmatrix}
+				<mrow>\boldsymbol{u} \amp = \begin{bmatrix}
 				3 \\ 1
-				\end{bmatrix}, \amp \vec{v} \amp = \begin{bmatrix}
+				\end{bmatrix}, \amp \boldsymbol{v} \amp = \begin{bmatrix}
 				-1 \\ 2
 				\end{bmatrix} </mrow>
 			</md>
@@ -581,7 +581,7 @@
 			you can make a triangle by connecting the end points of each vector.
 			Note that the third leg of the triangle can be written as
 			<me>
-				\vec{v}-\vec{u} = \begin{bmatrix}
+				\boldsymbol{v}-\boldsymbol{u} = \begin{bmatrix}
 				-1 \\ 2
 				\end{bmatrix} - \begin{bmatrix}
 				3 \\ 1
@@ -601,9 +601,9 @@
 				\draw [->] (0,-1.5) -- (0,4);
 				\foreach \x in {-1,1,2,3} {\draw (\x,-0.1) -- (\x,0.1) node [at start, below] {$ \x$};}
 				\foreach \y in {-1,1,2,3} {\draw (-0.1,\y) -- (0.1,\y) node [at start, left] {$ \y$};}
-				\draw[->] (0,0) -- (3,1) node [midway, below right] {$ \vec{u}$};
-				\draw[->] (0,0) -- (-1,2) node [midway, below left] {$ \vec{v}$};
-				\draw[->] (3,1) -- (-1,2) node [midway, above] {$ \vec{v}-\vec{u}$};
+				\draw[->] (0,0) -- (3,1) node [midway, below right] {$ \boldsymbol{u}$};
+				\draw[->] (0,0) -- (-1,2) node [midway, below left] {$ \boldsymbol{v}$};
+				\draw[->] (3,1) -- (-1,2) node [midway, above] {$ \boldsymbol{v}-\boldsymbol{u}$};
 				\draw (9.48pt,3.16pt) arc [radius=10pt, start angle=18.43, end angle=116.56505118] ;
 				\draw(0.1,0.3) node [above right] {$ \theta$};
 				\end{tikzpicture}
@@ -615,11 +615,11 @@
 		<p>
 			and the lengths of the three sides are:
 			<md>
-				<mrow>||\vec{u}|| \amp = \sqrt{10}, \amp ||\vec{v}|| \amp= \sqrt{5}, \amp ||\vec{v}-\vec{u}|| \amp = \sqrt{17} </mrow>
+				<mrow>||\boldsymbol{u}|| \amp = \sqrt{10}, \amp ||\boldsymbol{v}|| \amp= \sqrt{5}, \amp ||\boldsymbol{v}-\boldsymbol{u}|| \amp = \sqrt{17} </mrow>
 			</md>
 			and then using the law of cosines:
 			<md>
-				<mrow>||\vec{v}-\vec{u}||^2 \amp = ||\vec{u}||^2 + || \vec{v}||^2 -2 ||\vec{u}|| \,  ||\vec{v}| \cos \theta \\
+				<mrow>||\boldsymbol{v}-\boldsymbol{u}||^2 \amp = ||\boldsymbol{u}||^2 + || \boldsymbol{v}||^2 -2 ||\boldsymbol{u}|| \,  ||\boldsymbol{v}| \cos \theta \\
 				17 \amp = 10+5 - 2 \sqrt{10}\sqrt{5} \cos \theta \\
 				\frac{2}{-2 \sqrt{10}\sqrt{5}} \amp = \cos \theta
 				</mrow>
@@ -645,7 +645,7 @@
 
 		<p>
 			<me>
-				||\vec{u}-\vec{v}||^2 = ||\vec{u}||^2 + || \vec{v}||^2 -2 ||\vec{u}|| \,  ||\vec{v}| \cos \theta \\
+				||\boldsymbol{u}-\boldsymbol{v}||^2 = ||\boldsymbol{u}||^2 + || \boldsymbol{v}||^2 -2 ||\boldsymbol{u}|| \,  ||\boldsymbol{v}| \cos \theta \\
 			</me>
 		</p>
 
@@ -655,10 +655,10 @@
 
 		<p>
 			<md>
-				<mrow>\vec{u} \amp = \begin{bmatrix}
+				<mrow>\boldsymbol{u} \amp = \begin{bmatrix}
 				u_1 \\ u_2 \\ \vdots \\ u_n
 				\end{bmatrix} \amp
-				\vec{v} \amp = \begin{bmatrix}
+				\boldsymbol{v} \amp = \begin{bmatrix}
 				v_1 \\ v_2 \\ \vdots \\ v_n
 				\end{bmatrix}
 				</mrow>
@@ -671,9 +671,9 @@
 
 		<p>
 			<md>
-				<mrow>||\vec{u}-\vec{v}||^2 \amp = (u_1-v_1)^2 + (u_2-v_2)^2 + \cdots + (u_n -v_n)^2, </mrow>
-				<mrow>||\vec{u}||^2 \amp = u_1^2 + u_2^2 + \cdots + u_n^2, </mrow>
-				<mrow>||\vec{v}||^2 \amp = v_1^2 + v_2^2 + \cdots + v_n^2,</mrow>
+				<mrow>||\boldsymbol{u}-\boldsymbol{v}||^2 \amp = (u_1-v_1)^2 + (u_2-v_2)^2 + \cdots + (u_n -v_n)^2, </mrow>
+				<mrow>||\boldsymbol{u}||^2 \amp = u_1^2 + u_2^2 + \cdots + u_n^2, </mrow>
+				<mrow>||\boldsymbol{v}||^2 \amp = v_1^2 + v_2^2 + \cdots + v_n^2,</mrow>
 			</md>
 		</p>
 
@@ -683,7 +683,7 @@
 
 		<p>
 			<md>
-				<mrow>||\vec{u}-\vec{v}||^2-||\vec{u}||^2-||\vec{v}||^2  \amp = -2u_1v_1 - 2u_2v_2 - \cdots -2u_nv_n</mrow>
+				<mrow>||\boldsymbol{u}-\boldsymbol{v}||^2-||\boldsymbol{u}||^2-||\boldsymbol{v}||^2  \amp = -2u_1v_1 - 2u_2v_2 - \cdots -2u_nv_n</mrow>
 				<mrow> \amp = -2 (u_1 v_1 + u_2 v_2 + \cdots + u_n v_n) </mrow>
 			</md>
 		</p>
@@ -696,12 +696,12 @@
 			<statement>
 				<p>
 					The <term>dot product</term> (or <term>inner product</term>) of the
-					vectors <m>\vec{u}</m> and <m>\vec{v}</m> is defined as
+					vectors <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> is defined as
 				</p>
 
 				<p>
 					<me>
-						\vec{u} \cdot \vec{v}  = u_1v_1 + u_2v_2 + \cdots +u_nv_n
+						\boldsymbol{u} \cdot \boldsymbol{v}  = u_1v_1 + u_2v_2 + \cdots +u_nv_n
 					</me>
 				</p>
 			</statement>
@@ -710,13 +710,13 @@
 		<p>
 			Note:  the dot product between two vectors results in a number (a scalar).
 			Also, the dot product is only defined between two vectors of the same length.
-			Also, for any vector <m>\vec{u}</m>, there is a nice relationship between the
+			Also, for any vector <m>\boldsymbol{u}</m>, there is a nice relationship between the
 			length and the dot product:
 		</p>
 
 		<p>
 			<me>
-				\vec{u} \cdot \vec{u}   = ||\vec{u}||^2
+				\boldsymbol{u} \cdot \boldsymbol{u}   = ||\boldsymbol{u}||^2
 			</me>
 		</p>
 
@@ -726,9 +726,9 @@
 
 		<p>
 			<md>
-				<mrow>\cos \theta \amp = \frac{||\vec{u}-\vec{v}||^2-||\vec{u}||^2-||\vec{v}||^2}{-2 ||\vec{u}|| \, ||\vec{v}||}</mrow>
-				<mrow>\amp = \frac{-2 \vec{u} \cdot \vec{v}}{-2 ||\vec{u}|| \, ||\vec{v}||} </mrow>
-				<mrow>\amp = \frac{\vec{u} \cdot \vec{v}}{||\vec{u}|| \, ||\vec{v}||}</mrow>
+				<mrow>\cos \theta \amp = \frac{||\boldsymbol{u}-\boldsymbol{v}||^2-||\boldsymbol{u}||^2-||\boldsymbol{v}||^2}{-2 ||\boldsymbol{u}|| \, ||\boldsymbol{v}||}</mrow>
+				<mrow>\amp = \frac{-2 \boldsymbol{u} \cdot \boldsymbol{v}}{-2 ||\boldsymbol{u}|| \, ||\boldsymbol{v}||} </mrow>
+				<mrow>\amp = \frac{\boldsymbol{u} \cdot \boldsymbol{v}}{||\boldsymbol{u}|| \, ||\boldsymbol{v}||}</mrow>
 			</md>
 		</p>
 	</subsection>
@@ -745,21 +745,21 @@
 			<li>
 				<title>Commutative</title>
 				<p>
-					<m>\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}</m>,
+					<m>\boldsymbol{u} \cdot \boldsymbol{v} = \boldsymbol{v} \cdot \boldsymbol{u}</m>,
 				</p>
 			</li>
 
 			<li>
 				<title>Distributative</title>
 				<p>
-					<m>\vec{u} \cdot (\vec{v} + \vec{w}) = \vec{u} \cdot \vec{v} + \vec{u} \cdot \vec{w}</m>.
+					<m>\boldsymbol{u} \cdot (\boldsymbol{v} + \boldsymbol{w}) = \boldsymbol{u} \cdot \boldsymbol{v} + \boldsymbol{u} \cdot \boldsymbol{w}</m>.
 				</p>
 			</li>
 
 			<li>
 				<title>Associative</title>
 				<p>
-					<m>\vec{u} \cdot (r\vec{v}) = (r \vec{u}) \cdot \vec{v} = r (\vec{u} \cdot \vec{v})</m>.
+					<m>\boldsymbol{u} \cdot (r\boldsymbol{v}) = (r \boldsymbol{u}) \cdot \boldsymbol{v} = r (\boldsymbol{u} \cdot \boldsymbol{v})</m>.
 				</p>
 			</li>
 			</dl>
@@ -773,12 +773,12 @@
 			<title>The Triangle Inequality</title>
 			<statement>
 				<p>
-					For any <m>\vec{u}</m> and <m>\vec{v}</m> both in <m>\mathbb{R}^n</m>, then
+					For any <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> both in <m>\mathbb{R}^n</m>, then
 				</p>
 
 				<p>
 					<men  xml:id="eq-tri-inequal">
-						||\vec{u}+\vec{v}||   \leq ||\vec{u}||+||\vec{v}||
+						||\boldsymbol{u}+\boldsymbol{v}||   \leq ||\boldsymbol{u}||+||\boldsymbol{v}||
 					</men>
 				</p>
 
@@ -790,19 +790,19 @@
 
 			<proof>
 				<p>
-					First, note that if either <m>\vec{u} = \vec{0}</m> or <m>\vec{v} = \vec{0}</m>, then
+					First, note that if either <m>\boldsymbol{u} = \boldsymbol{0}</m> or <m>\boldsymbol{v} = \boldsymbol{0}</m>, then
 					then <xref ref="eq-tri-inequal" /> holds.
 				</p>
 
 				<p>
-					Therefore, assume that neither <m>\vec{u}</m> nor <m>\vec{v}</m> is the zero vector.
+					Therefore, assume that neither <m>\boldsymbol{u}</m> nor <m>\boldsymbol{v}</m> is the zero vector.
 					Then create
 					the vector
 				</p>
 
 				<p>
 					<me>
-						||\vec{u}|| \vec{v} - ||\vec{v}||\vec{u}.
+						||\boldsymbol{u}|| \boldsymbol{v} - ||\boldsymbol{v}||\boldsymbol{u}.
 					</me>
 				</p>
 
@@ -812,39 +812,39 @@
 
 				<p>
 					<md>
-						<mrow>0  \leq \amp ||(||\vec{u}|| \vec{v} - ||\vec{v}||\vec{u})||^2 </mrow>
-						<mrow>\amp = (||\vec{u}|| \vec{v} - ||\vec{v}||\vec{u}) \cdot (||\vec{u}|| \vec{v} - ||\vec{v}||\vec{u})</mrow>
-						<mrow>\amp  = (||\vec{u} || \vec{v}) \cdot (||\vec{u}|| \vec{v}) - (||\vec{u}|| \vec{v}) \cdot (||\vec{v}|| \vec{u})
-						- (||\vec{v} || \vec{u}) \cdot (||\vec{u}|| \vec{v}) + (||\vec{v}|| \vec{u}) \cdot (||\vec{v}|| \vec{u})</mrow>
+						<mrow>0  \leq \amp ||(||\boldsymbol{u}|| \boldsymbol{v} - ||\boldsymbol{v}||\boldsymbol{u})||^2 </mrow>
+						<mrow>\amp = (||\boldsymbol{u}|| \boldsymbol{v} - ||\boldsymbol{v}||\boldsymbol{u}) \cdot (||\boldsymbol{u}|| \boldsymbol{v} - ||\boldsymbol{v}||\boldsymbol{u})</mrow>
+						<mrow>\amp  = (||\boldsymbol{u} || \boldsymbol{v}) \cdot (||\boldsymbol{u}|| \boldsymbol{v}) - (||\boldsymbol{u}|| \boldsymbol{v}) \cdot (||\boldsymbol{v}|| \boldsymbol{u})
+						- (||\boldsymbol{v} || \boldsymbol{u}) \cdot (||\boldsymbol{u}|| \boldsymbol{v}) + (||\boldsymbol{v}|| \boldsymbol{u}) \cdot (||\boldsymbol{v}|| \boldsymbol{u})</mrow>
 						<mrow>\amp \qquad \qquad\text{using properties of the dot product}</mrow>
-						<mrow>\amp = ||\vec{u}||^2 (\vec{v} \cdot \vec{v}) - 2 (||\vec{u}||\vec{v}  \cdot ||\vec{v}|| \vec{u})
-						+ ||\vec{v}||^2 (\vec{u} \cdot \vec{u})
+						<mrow>\amp = ||\boldsymbol{u}||^2 (\boldsymbol{v} \cdot \boldsymbol{v}) - 2 (||\boldsymbol{u}||\boldsymbol{v}  \cdot ||\boldsymbol{v}|| \boldsymbol{u})
+						+ ||\boldsymbol{v}||^2 (\boldsymbol{u} \cdot \boldsymbol{u})
 						</mrow>
-						<mrow> \amp = \leq ||\vec{u}||^2 ||\vec{v}||^2 - 2 ||\vec{u}|| \, ||\vec{v}||  (\vec{v}  \cdot \vec{u})
-						+ ||\vec{v}||^2 ||\vec{v}||^2
+						<mrow> \amp = \leq ||\boldsymbol{u}||^2 ||\boldsymbol{v}||^2 - 2 ||\boldsymbol{u}|| \, ||\boldsymbol{v}||  (\boldsymbol{v}  \cdot \boldsymbol{u})
+						+ ||\boldsymbol{v}||^2 ||\boldsymbol{v}||^2
 						</mrow>
-						<mrow> \amp = \qquad \qquad \text{divide through by $||\vec{u}|| \, ||\vec{v}||$} </mrow>
-						<mrow xml:id="eq-tri-inequal2" number="yes"> \amp \leq 2||\vec{u}|| \, ||\vec{v}|| - 2 (\vec{v}  \cdot \vec{u}) </mrow>
+						<mrow> \amp = \qquad \qquad \text{divide through by $||\boldsymbol{u}|| \, ||\boldsymbol{v}||$} </mrow>
+						<mrow xml:id="eq-tri-inequal2" number="yes"> \amp \leq 2||\boldsymbol{u}|| \, ||\boldsymbol{v}|| - 2 (\boldsymbol{v}  \cdot \boldsymbol{u}) </mrow>
 					</md>
 				</p>
 
 				<p>
-					Adding <m>||\vec{u} + \vec{v}||^2 = (\vec{u}+\vec{v}) \cdot (\vec{u}+\vec{v})</m> to both sides
+					Adding <m>||\boldsymbol{u} + \boldsymbol{v}||^2 = (\boldsymbol{u}+\boldsymbol{v}) \cdot (\boldsymbol{u}+\boldsymbol{v})</m> to both sides
 				</p>
 
 				<p>
 					<md>
 						<mrow>
-						||\vec{u} +\vec{v}||^2 \amp \leq  (\vec{u}+\vec{v}) \cdot (\vec{u}+\vec{v}) +
-						2||\vec{u}|| ||\vec{v}|| - 2 (\vec{v}  \cdot \vec{u}) </mrow>
+						||\boldsymbol{u} +\boldsymbol{v}||^2 \amp \leq  (\boldsymbol{u}+\boldsymbol{v}) \cdot (\boldsymbol{u}+\boldsymbol{v}) +
+						2||\boldsymbol{u}|| ||\boldsymbol{v}|| - 2 (\boldsymbol{v}  \cdot \boldsymbol{u}) </mrow>
 						<mrow>
-						\amp = \vec{u} \cdot \vec{u} + 2 \vec{u} \cdot \vec{v} + \vec{v} \cdot \vec{v} +
-						2||\vec{u}|| ||\vec{v}|| - 2 (\vec{v}  \cdot \vec{u}) </mrow>
+						\amp = \boldsymbol{u} \cdot \boldsymbol{u} + 2 \boldsymbol{u} \cdot \boldsymbol{v} + \boldsymbol{v} \cdot \boldsymbol{v} +
+						2||\boldsymbol{u}|| ||\boldsymbol{v}|| - 2 (\boldsymbol{v}  \cdot \boldsymbol{u}) </mrow>
 						<mrow>
-						\amp  = ||\vec{u}||^2 + 2 ||\vec{u}||\,||\vec{v}|| + ||\vec{v}||^2
+						\amp  = ||\boldsymbol{u}||^2 + 2 ||\boldsymbol{u}||\,||\boldsymbol{v}|| + ||\boldsymbol{v}||^2
 						</mrow>
 						<mrow>
-						\amp  = (||\vec{u}|| + ||\vec{v}||)^2
+						\amp  = (||\boldsymbol{u}|| + ||\boldsymbol{v}||)^2
 						</mrow>
 					</md>
 				</p>
@@ -855,31 +855,31 @@
 
 				<p>
 					<me>
-						||\vec{u} + \vec{v}|| \leq ||\vec{u}|| + ||\vec{v}||
+						||\boldsymbol{u} + \boldsymbol{v}|| \leq ||\boldsymbol{u}|| + ||\boldsymbol{v}||
 					</me>
 				</p>
 
 				<p>
-					To show equality, assume that <m>||\vec{v}|| \neq 0</m>,
+					To show equality, assume that <m>||\boldsymbol{v}|| \neq 0</m>,
 				</p>
 
 				<p>
 					<md>
-						<mrow>||\vec{u}||\vec{v} - ||\vec{v}|| \vec{u} \amp = 0 </mrow>
+						<mrow>||\boldsymbol{u}||\boldsymbol{v} - ||\boldsymbol{v}|| \boldsymbol{u} \amp = 0 </mrow>
 						<mrow> \text{or} \qquad \qquad \amp </mrow>
-						<mrow>\vec{u} \amp = \frac{||\vec{u}||}{||\vec{v}||} \vec{v}</mrow>
+						<mrow>\boldsymbol{u} \amp = \frac{||\boldsymbol{u}||}{||\boldsymbol{v}||} \boldsymbol{v}</mrow>
 					</md>
 				</p>
 
 				<p>
-					therefore <m>\vec{u}</m> is a scalar multiple of <m>\vec{v}</m>.
+					therefore <m>\boldsymbol{u}</m> is a scalar multiple of <m>\boldsymbol{v}</m>.
 				</p>
 			</proof>
 		</theorem>
 
 		<p>
-			This can be visualized by considering the plane in which <m>\vec{u}</m>
-			and <m>\vec{v}</m> lie (and note that regardless of the value of <m>n</m>,
+			This can be visualized by considering the plane in which <m>\boldsymbol{u}</m>
+			and <m>\boldsymbol{v}</m> lie (and note that regardless of the value of <m>n</m>,
 			they will lie in a plane or planar subset of <m>\mathbb{R}^n</m>.)
 		</p>
 
@@ -889,9 +889,9 @@
 				<latex-image>
 				<![CDATA[
 				\begin{tikzpicture}
-				\draw[->, thick] (0,0) -- (3,1) node [midway,below right] {$\vec{u}$};
-				\draw[->,thick] (3,1) -- (5,3) node [midway,below right] {$\vec{v}$};
-				\draw[->,thick] (0,0) -- (5,3) node [midway,above left] {$\vec{u}+\vec{v}$};
+				\draw[->, thick] (0,0) -- (3,1) node [midway,below right] {$\boldsymbol{u}$};
+				\draw[->,thick] (3,1) -- (5,3) node [midway,below right] {$\boldsymbol{v}$};
+				\draw[->,thick] (0,0) -- (5,3) node [midway,above left] {$\boldsymbol{u}+\boldsymbol{v}$};
 				\end{tikzpicture}
 				]]>
 				</latex-image>
@@ -899,7 +899,7 @@
 		</figure>
 
 		<p>
-			The vector <m>\vec{u}+\vec{v}</m> is one side of the triangle and
+			The vector <m>\boldsymbol{u}+\boldsymbol{v}</m> is one side of the triangle and
 			we know that any one side must always be no larger than the sum of
 			the other two.
 		</p>
@@ -908,18 +908,18 @@
 			<title>Cauchy-Swartz Inequality</title>
 			<statement>
 				<p>
-					Let <m>\vec{u}</m> and <m>\vec{v}</m> be vectors in <m>\mathbb{R}^n</m>.
+					Let <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> be vectors in <m>\mathbb{R}^n</m>.
 					Then
 				</p>
 
 				<p>
 					<me>
-						| \vec{u} \cdot \vec{v}| \leq ||\vec{u}|| \, ||\vec{v}||
+						| \boldsymbol{u} \cdot \boldsymbol{v}| \leq ||\boldsymbol{u}|| \, ||\boldsymbol{v}||
 					</me>
 				</p>
 
 				<p>
-					with equality if and only if <m>\vec{u}</m> and <m>\vec{v}</m> are scalar multiples of each other.
+					with equality if and only if <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> are scalar multiples of each other.
 				</p>
 			</statement>
 
@@ -927,30 +927,30 @@
 			<proof>
 				<p>
 					A consequence of the Triangle Inequality is <xref ref="eq-tri-inequal2" />,
-					thus the Cauchy-Swartz Inequality holds if <m>\vec{u} \cdot \vec{v} \gt 0</m>.
-					Assume that <m>\vec{u} \cdot \vec{v}  \lt 0</m>.
+					thus the Cauchy-Swartz Inequality holds if <m>\boldsymbol{u} \cdot \boldsymbol{v} \gt 0</m>.
+					Assume that <m>\boldsymbol{u} \cdot \boldsymbol{v}  \lt 0</m>.
 					Then
 				</p>
 
 				<p>
 					<md>
-						<mrow>\vec{u} \cdot \vec{v} = - (\vec{u} \cdot \vec{v}) = (-\vec{u} \cdot \vec{v}) \amp \leq ||-\vec{u}|| ||\vec{v}|| </mrow>
+						<mrow>\boldsymbol{u} \cdot \boldsymbol{v} = - (\boldsymbol{u} \cdot \boldsymbol{v}) = (-\boldsymbol{u} \cdot \boldsymbol{v}) \amp \leq ||-\boldsymbol{u}|| ||\boldsymbol{v}|| </mrow>
 						<mrow>
-						\text{and since} \; ||-\vec{u}|| = ||\vec{u}|| \qquad \amp </mrow>
-						<mrow>\amp = ||\vec{u}|| \, ||\vec{v}||</mrow>
+						\text{and since} \; ||-\boldsymbol{u}|| = ||\boldsymbol{u}|| \qquad \amp </mrow>
+						<mrow>\amp = ||\boldsymbol{u}|| \, ||\boldsymbol{v}||</mrow>
 					</md>
 				</p>
 
 				<p>
-					For equality, assume that <m>\vec{u} = k \vec{v}</m> for some real number <m>k</m>.
+					For equality, assume that <m>\boldsymbol{u} = k \boldsymbol{v}</m> for some real number <m>k</m>.
 					Then
 				</p>
 
 				<p>
 					<md>
-						<mrow> |\vec{u}\cdot \vec{v} | \amp = |k \vec{v} \cdot \vec{v}| </mrow>
-						<mrow> \amp = |k| \; |\vec{v} \cdot \vec{v} | </mrow>
-						<mrow> \amp = |k| \; || \vec{v} ||^2 </mrow>
+						<mrow> |\boldsymbol{u}\cdot \boldsymbol{v} | \amp = |k \boldsymbol{v} \cdot \boldsymbol{v}| </mrow>
+						<mrow> \amp = |k| \; |\boldsymbol{v} \cdot \boldsymbol{v} | </mrow>
+						<mrow> \amp = |k| \; || \boldsymbol{v} ||^2 </mrow>
 					</md>
 				</p>
 
@@ -967,12 +967,12 @@
 		<definition>
 			<statement>
 				<p>
-					The <term>angle between vectors</term> <m>\vec{u}</m> and <m>\vec{v}</m> is the value of <m>\theta</m> that satisfies:
+					The <term>angle between vectors</term> <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> is the value of <m>\theta</m> that satisfies:
 				</p>
 
 				<p>
 					<me>
-						\cos \theta = \frac{ \vec{u} \cdot \vec{v}}{||\vec{u}||\, ||\vec{v}||}
+						\cos \theta = \frac{ \boldsymbol{u} \cdot \boldsymbol{v}}{||\boldsymbol{u}||\, ||\boldsymbol{v}||}
 					</me>
 				</p>
 			</statement>
@@ -990,9 +990,9 @@
 
 				<p>
 					<md>
-						<mrow>\vec{u} \amp = \begin{bmatrix}
+						<mrow>\boldsymbol{u} \amp = \begin{bmatrix}
 						2 \\ -4 \\ 1 \\ 1
-						\end{bmatrix} \amp \vec{v} \amp = \begin{bmatrix}
+						\end{bmatrix} \amp \boldsymbol{v} \amp = \begin{bmatrix}
 						3 \\ 2 \\ 0 \\ 5
 						\end{bmatrix}.</mrow>
 					</md>
@@ -1002,13 +1002,13 @@
 			<solution>
 				<p>
 					<md>
-						<mrow>||\vec{u}|| \amp =\sqrt{22}, \amp ||\vec{v}|| \amp = \sqrt{38} </mrow>
+						<mrow>||\boldsymbol{u}|| \amp =\sqrt{22}, \amp ||\boldsymbol{v}|| \amp = \sqrt{38} </mrow>
 					</md>
 				</p>
 
 				<p>
 					<me>
-						\vec{u} \cdot \vec{v} = 6-8+0+5 = 3
+						\boldsymbol{u} \cdot \boldsymbol{v} = 6-8+0+5 = 3
 					</me>
 				</p>
 
@@ -1040,7 +1040,7 @@
 		<definition>
 			<statement>
 				<p>
-					Two vectors <m>\vec{u}</m> and <m>\vec{v}</m> are <term>perpendicular</term>
+					Two vectors <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> are <term>perpendicular</term>
 					or <term>orthogonal</term> if their dot product is 0.
 				</p>
 			</statement>

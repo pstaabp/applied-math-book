@@ -49,13 +49,13 @@
 	<definition>
 		<statement>
 			<p>
-				Let <m>\vec{s}_1, \vec{s}_2, \ldots, \vec{s}_n</m> be vectors in <m>\mathbb{R}^n</m>.
-				A <term>linear combination</term> of a set of vectors <m>\{ \vec{s}_1, \vec{s}_2, \ldots, \vec{s}_n \}</m> is
+				Let <m>\boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n</m> be vectors in <m>\mathbb{R}^n</m>.
+				A <term>linear combination</term> of a set of vectors <m>\{ \boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n \}</m> is
 			</p>
 
 			<p>
 				<me>
-					c_1 \vec{s}_1+ c_2 \vec{s}_2 + \cdots + c_n \vec{s}_n
+					c_1 \boldsymbol{s}_1+ c_2 \boldsymbol{s}_2 + \cdots + c_n \boldsymbol{s}_n
 				</me>
 			</p>
 
@@ -120,7 +120,7 @@
 	<definition>
 		<statement>
 			<p>
-				The <term>span</term> of a nonempty set subset <m>S=\{\vec{s}_1,\ldots, \vec{s}_n\}</m> of
+				The <term>span</term> of a nonempty set subset <m>S=\{\boldsymbol{s}_1,\ldots, \boldsymbol{s}_n\}</m> of
 				a vector space is the set of all linear combinations of the vectors in <m>S</m>.
 				In
 				particular,
@@ -128,7 +128,7 @@
 
 			<p>
 				<me>
-					\text{span}(S) = \{ c_1 \vec{s}_1 + \cdots + c_n \vec{s}_n\; | \; \text{$c_1, c_2, \ldots,
+					\text{span}(S) = \{ c_1 \boldsymbol{s}_1 + \cdots + c_n \boldsymbol{s}_n\; | \; \text{$c_1, c_2, \ldots,
 					c_n \in \mathbb{R}$} \}.
 				</me>
 			</p>

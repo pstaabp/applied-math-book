@@ -1,795 +1,812 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <section xml:id="sect-det">
-	<title>Determinants of Square Matrices</title>
-	<objectives>
-		<ul>
-			<li>
-				<p>
-					Define the determinant as a function with a set of properties.
-				</p>
-			</li>
-
-			<li>
-				<p>
-					Find the determinant of a <m>2 \times 2</m> matrix
-				</p>
-			</li>
-
-			<li>
-				<p>
-					Use the Laplace expansion method to find the determinant of a matrix.
-				</p>
-			</li>
-
-			<li>
-				<p>
-					Use row operations to find the determinant of a matrix.
-				</p>
-			</li>
-
-			<li>
-				<p>
-					Understand the geometry of the determinant.
-				</p>
-			</li>
-		</ul>
-	</objectives>
-
-	<introduction>
-		<p>
-			The determinant is a useful function for specifying when matrix is invertible or singular.
-			For example, in section <xref ref="sect-matrix-inverse" />, we saw that for
-		</p>
-
-		<p>
-			<men xml:id="eq-gen-2by2-matrix">
-				A = \begin{bmatrix}
-				a \amp b \\ c \amp d
-				\end{bmatrix}
-			</men>
-		</p>
-
-		<p>
-			that the inverse matrix exists if and only if <m>ad-bc \neq 0</m>.
-			The determinant of this
-			matrix will be the function <m>
-			ad-bc</m>.
-			We will see two different methods for finding the determinant of an <m>n \times n</m>
-			matrix.
-		</p>
-	</introduction>
-
-	<subsection>
-		<title>Properties of the Determinant</title>
-		<definition xml:id="defn-det">
-			<statement>
-				<p>
-					Consider an <m>n \times n</m> matrix <m>A</m> and denote the rows by <m>\vec{\rho}_1,
-					\vec{\rho}_2, \ldots, \vec{\rho}_n</m>.
-					An <m>n \times n</m> <term>determinant</term> is a
-					function <m>\det: {\cal M}_{n \times n} \rightarrow \mathbb{R}</m> such that
-				</p>
-
-				<p>
-					<ol>
-						<li>
-							<p>
-								<m>\det(\vec{\rho}_1,\ldots, k \vec{\rho}_i + \vec{\rho}_j, \ldots, \vec{\rho}_n) =
-								\det(\vec{\rho}_1, \ldots, \vec{\rho}_j , \ldots, \vec{\rho}_n)</m> for <m>i \neq j</m>
-								,
-							</p>
-						</li>
-
-						<li>
-							<p>
-								<m>\det(\vec{\rho}_1,\ldots, \vec{\rho}_i, \ldots, \vec{\rho}_j, \ldots,
-								\vec{\rho}_n) = -\det(\vec{\rho}_1, \ldots, \vec{\rho}_j, \ldots, \vec{\rho}_i,
-								\ldots, \vec{\rho}_n)</m> for <m>i \neq j</m>,
-							</p>
-						</li>
-
-						<li>
-							<p>
-								<m>\det(\vec{\rho}_1,\ldots, k \vec{\rho}_i, \ldots, \vec{\rho}_n) = k
-								\det(\vec{\rho}_1, \ldots, \vec{\rho}_i , \ldots, \vec{\rho}_n)</m>,
-							</p>
-						</li>
-
-						<li>
-							<p>
-								<m>\det(I) =1</m>, where <m>I</m> is the identity matrix.
-							</p>
-						</li>
-					</ol>
-				</p>
-
-				<p>
-					The <m>\vec{\rho}_i</m>'s are the rows of the matrix and often the notation <m>|T| =
-					\det(T)</m> is used.
-				</p>
-			</statement>
-		</definition>
-
-		<p>
-			In more colloquial terms, these properties are:
-		</p>
-
-		<p>
-			<ol>
-				<li>
-					<p>
-						if one multiplies a row by a constant and adds to a second row that
-						the determinant is unchanged.
-					</p>
-				</li>
-
-				<li>
-					<p>
-						If one swaps rows in a matrix, the determinant of the
-						new matrix is the opposite sign of the original matrix.
-					</p>
-				</li>
-
-				<li>
-					<p>
-						If one multiplies any row of a matrix by <m>k</m> then the determinant of the new
-						matrix is <m>k</m> times the determinant of the original matrix.
-					</p>
-				</li>
-
-				<li>
-					<p>
-						The determinant of the identity matrix is 1.
-					</p>
-				</li>
-			</ol>
-		</p>
-
-		<p>
-			Notice that the above explain the properties of a matrix, but how does one
-			compute it? If
-		</p>
-
-		<p>
-			<me>
-				A = \begin{bmatrix}
-				a \amp b \\ c \amp d
-				\end{bmatrix}
-			</me>
-		</p>
-
-		<p>
-			then define <m>f(A) = ad-bc</m>.
-			We will show that <m>f</m> satisfies the properties of the
-			determinant, therefore is the determinant formula for a <m>2 \times 2</m> matrix.
-		</p>
-
-		<p>
-			<ol>
-				<li>
-					<p>
-						<me>
-							kR_1 +R_2 \rightarrow R_2 \qquad A' = \begin{bmatrix}
-							a \amp b \\ ka +c \amp kb + d
-							\end{bmatrix}
-						</me>
-						and
-						<md>
-							<mrow>\det(A') \amp = a(kb+d) - b(ka+c)</mrow>
-							<mrow> \amp = kab+ad-kab-bc </mrow>
-							<mrow> \amp = ad-bc </mrow>
-							<mrow> \amp = \det(A) </mrow>
-						</md>
-					</p>
-				</li>
-
-				<li>
-					<p>
-						<me>
-							R_1 \leftrightarrow R_2 \qquad A' = \begin{bmatrix}
-							c \amp d \\ a \amp b
-							\end{bmatrix}
-						</me>
-						and
-						<me>
-							\det(A') = cb-ad = -\det(A)
-						</me>
-					</p>
-				</li>
-
-				<li>
-					<p>
-						<me>
-							kR_1 \rightarrow R_1 \qquad A' = \begin{bmatrix}
-							ka \amp kb \\ c \amp d
-							\end{bmatrix}
-						</me>
-						and
-						<md>
-							<mrow> \det(A') \amp = kad-kbc </mrow>
-							<mrow> \amp =k(ad-bc) </mrow>
-							<mrow> \amp = k\det(A) </mrow>
-						</md>
-					</p>
-				</li>
-
-				<li>
-					<p>
-						And finally if
-						<me>
-							A' = \begin{bmatrix}
-							1 \amp 0 \\ 0 \amp 1
-							\end{bmatrix}
-						</me>
-						then
-						<me>
-							\det(A') = 1(1)-0(0) = 1
-						</me>
-					</p>
-				</li>
-			</ol>
-		</p>
-
-		<remark>
-			<p>
-				If
-			</p>
-
-			<p>
-				<me>
-					A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}
-				</me>
-			</p>
-
-			<p>
-				then
-			</p>
-
-			<p>
-				<me>
-					\det(A) = ad - bc
-				</me>
-			</p>
-		</remark>
-
-		<lemma>
-			<statement>
-				<p>
-					The following are additional properties of a determinant.
-				</p>
-
-				<p>
-					<ol>
-						<li>
-							<p>
-								A matrix with two identical rows has a zero determinant.
-							</p>
-						</li>
-
-						<li>
-							<p>
-								A matrix with a row of zeros has a zero determinant.
-							</p>
-						</li>
-
-						<li>
-							<p>
-								A matrix is nonsingular if and only if its determinant is nonzero.
-							</p>
-						</li>
-
-						<li>
-							<p>
-								The determinant of a matrix in echelon form is the product of its diagonal
-								elements.
-							</p>
-						</li>
-					</ol>
-				</p>
-			</statement>
-
-
-			<proof>
-				<p>
-					<ol>
-						<li>
-							<p>
-								Consider a matrix with two identical rows.
-								Swapping the two rows
-								changes the sign of the determinant, however leaves the matrix unchanged.
-								This implies that the determinant must be zero.
-							</p>
-						</li>
-
-						<li>
-							<p>
-								Call the row <m>i</m> with the row of zeros.
-								Let <m>j</m> be any other row.
-								Apply the row operation <m>R_j + R_i \to R_i</m> and now rows <m>i</m> and <m>j</m> are identical and the
-								determinant has not changed.
-								From the previous statement, the determinant is 0.
-							</p>
-						</li>
-
-						<li>
-							<p>
-								Recall that for a matrix to be nonsingular, that a linear system with coefficients
-								from the matrix has a unique system or the row reduced echelon form of the matrix
-								has no row of zeros.
-								Let <m>T</m> be the original matrix and <m>\hat{T}</m> is the
-								matrix in echelon form.
-								If the <m>\hat{T}</m> is nonsingular, then it is the
-								identity matrix, which has the nonzero determinant 1.
-							</p>
-
-							<p>
-								A singular matrix <m>T</m> reduces to a matrix <m>\hat{T}</m> with a row of zeros.
-								By #2, this determinant is 0.
-							</p>
-						</li>
-
-						<li>
-							<p>
-								Consider a matrix in echelon form:
-							</p>
-
-							<p>
-								<md>
-									<mrow>|\hat{T}| \amp = \begin{vmatrix}
-									t_{1,1} \amp t_{1,2} \amp \cdots \amp t_{1,n} \\
-									0 \amp t_{2,2} \amp \amp t_{2,n} \\
-									\vdots \amp \amp \ddots \amp \\
-									0 \amp 0 \amp \vdots \amp t_{n,n} \\
-									\end{vmatrix} </mrow>
-								</md>
-							</p>
-
-							<p>
-								Using property (3) of the determinant defintion,
-							</p>
-
-							<p>
-								<md>
-									<mrow>\amp
-									= t_{1,1} t_{2,2} \cdots t_{n,n}
-									\begin{bmatrix}
-									1 \amp t_{1,2}/t_{1,1} \amp \cdots \amp t_{1,n}/t_{1,1} \\
-									0 \amp 1 \amp \amp t_{2,n}/t_{2,2} \\
-									\vdots \amp \amp \ddots \amp \\
-									0 \amp 0 \amp \vdots \amp 1\\
-									\end{bmatrix} </mrow>
-								</md>
-							</p>
-
-							<p>
-								The matrix can be reduced to the identity matrix, with
-								determinant 1
-							</p>
-
-							<p>
-								<md>
-									<mrow>\amp = t_{1,1} t_{2,2} \cdots t_{n,n}</mrow>
-								</md>
-							</p>
-
-							<p>
-								The 1st, 2nd and 4th statements of the lemma are very helpful for
-								calculating the determinant.
-								The 4th statement gives a very
-								general way to calculate a determinant.
-								Use the elementary row operations
-								to put the matrix in echelon form (recall to keep track of multiplying any
-								row by a constant and row swaps).
-								The determinant will then be the product
-								of the diagonal elements.
-							</p>
-
-							<p>
-								The third statement of the lemma above gives a function (the determinant)
-								that determines whether or not a matrix is singular.
-							</p>
-						</li>
-					</ol>
-				</p>
-			</proof>
-		</lemma>
-	</subsection>
-
-	<subsection>
-		<title>Calculating Determinants</title>
-		<p>
-			We now calculate the determinant of two square matrices.
-			The first example is a <m>2 \times 2</m> matrix and we use both the formula as well as Gauss' method.
-		</p>
-
-		<example>
-			<statement>
-				<p>
-					Find the determinant of the following matrix using a) the formula for <m>2 \times 2</m>
-					determinants and b) using Gauss' method.
-				</p>
-
-				<p>
-					<me>
-						T = \begin{bmatrix}
-						3 \amp 2 \\
-						1 \amp -2
-						\end{bmatrix}
-					</me>
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					Using the formula <m>|T| = ad-bc=-6-2=-8</m>.
-				</p>
-
-				<p>
-					Using Gauss's method,
-				</p>
-
-				<p>
-					<md>
-						<mrow>\qquad |T| \amp= \begin{vmatrix}
-						3 \amp 2 \\
-						1 \amp -2
-						\end{vmatrix} </mrow>
-						<mrow>R_1 \leftrightarrow R_2 \qquad
-						-|T|\amp= \begin{vmatrix}
-						1 \amp -2 \\
-						3 \amp 2
-						\end{vmatrix} </mrow>
-						<mrow>-3R_1 + R_2 \rightarrow R_2 \qquad
-						-|T|\amp= \begin{vmatrix}
-						1 \amp -2 \\
-						0 \amp 8
-						\end{vmatrix} = 8</mrow>
-					</md>
-				</p>
-
-				<p>
-					So <m>|T|=-8</m>.
-				</p>
-
-				<p>
-					This shows that although Gauss' method succeeds in
-					finding the determinant, it takes more operations than the simple formula.
-				</p>
-			</solution>
-		</example>
-
-		<example xml:id="ex-det-gauss">
-			<statement>
-				<p>
-					Use Gauss's method to find the determinants of the following matrices:
-				</p>
-
-				<p>
-					<md>
-						<mrow>T \amp = \begin{bmatrix}
-						3 \amp 0 \amp 2 \\
-						1 \amp 4 \amp 0 \\
-						0 \amp 2 \amp 5
-						\end{bmatrix} \amp S \amp = \begin{bmatrix}
-						0 \amp 1 \amp 3 \amp -4 \\
-						2 \amp 0 \amp 2 \amp 7 \\
-						0 \amp 0 \amp 6 \amp 8 \\
-						1 \amp 0 \amp 10 \amp 6
-						\end{bmatrix}</mrow>
-					</md>
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					For both examples, we use row operations and keep track of any row swaps (introducing a <m>-1</m>)
-					or multiples.
-				</p>
-
-				<p>
-					<ol>
-						<li>
-							<p>
-								<md>
-									<mrow>|T| = \amp \begin{vmatrix}
-									3 \amp 0 \amp 2 \\
-									1 \amp 4 \amp 0 \\
-									0 \amp 2 \amp 5
-									\end{vmatrix}</mrow>
-									<mrow>R_1 \leftrightarrow R_2 \qquad -|T|= \amp \begin{vmatrix}
-									1 \amp 4 \amp 0 \\
-									3 \amp 0 \amp 2 \\
-									0 \amp 2 \amp 5
-									\end{vmatrix} </mrow>
-									<mrow>-3 R_1 + R_2 \rightarrow R_2 \qquad -|T| = \amp
-									\begin{vmatrix}
-									1 \amp 4 \amp 0 \\
-									0 \amp -12 \amp 2 \\
-									0 \amp 2 \amp 5
-									\end{vmatrix} </mrow>
-									<mrow>R_2 \leftrightarrow R_3 \qquad |T|= \amp
-									\begin{vmatrix}
-									1 \amp 4 \amp 0 \\
-									0 \amp 2 \amp 5 \\
-									0 \amp -12 \amp 2 \\
-									\end{vmatrix} </mrow>
-									<mrow>6 R_2 + R_3 \rightarrow R_3 \qquad |T| = \amp
-									\begin{vmatrix}
-									1 \amp 4 \amp 0 \\
-									0 \amp 2 \amp 5 \\
-									0 \amp 0 \amp 32 \\
-									\end{vmatrix} = 64</mrow>
-								</md>
-							</p>
-						</li>
-
-						<li>
-							<p>
-								<md>
-									<mrow>|S| \amp = \begin{vmatrix}
-									0 \amp 1 \amp 3 \amp -4 \\
-									2 \amp 0 \amp 2 \amp 7 \\
-									0 \amp 0 \amp 6 \amp 8 \\
-									1 \amp 0 \amp 10 \amp 6
-									\end{vmatrix} </mrow>
-									<mrow>R_1 \leftrightarrow R_4 \qquad -|S| \amp =
-									\begin{vmatrix}
-									1 \amp 0 \amp 10 \amp 6 \\
-									2 \amp 0 \amp 2 \amp 7 \\
-									0 \amp 0 \amp 6 \amp 8 \\
-									0 \amp 1 \amp 3 \amp -4 \\
-									\end{vmatrix} </mrow>
-									<mrow>-2R_1 + R_2 \rightarrow R_2 \qquad -|S| \amp =
-									\begin{vmatrix}
-									1 \amp 0 \amp 10 \amp 6 \\
-									0 \amp 0 \amp -18 \amp -5 \\
-									0 \amp 0 \amp 6 \amp 8 \\
-									0 \amp 1 \amp 3 \amp -4 \\
-									\end{vmatrix} </mrow>
-									<mrow>R_2 \leftrightarrow R_4 \qquad |S| \amp=
-									\begin{vmatrix}
-									1 \amp 0 \amp 10 \amp 6 \\
-									0 \amp 1 \amp 3 \amp -4 \\
-									0 \amp 0 \amp 6 \amp 8 \\
-									0 \amp 0 \amp -18 \amp -5 \\
-									\end{vmatrix} </mrow>
-									<mrow>3 R_3 + R_4 \rightarrow R_4 \qquad |S| \amp =
-									\begin{vmatrix}
-									1 \amp 0 \amp 10 \amp 6 \\
-									0 \amp 1 \amp 3 \amp -4 \\
-									0 \amp 0 \amp 6 \amp 8 \\
-									0 \amp 0 \amp 0 \amp 19 \\
-									\end{vmatrix} = 6 (19) = 114</mrow>
-								</md>
-							</p>
-						</li>
-					</ol>
-				</p>
-			</solution>
-		</example>
-	</subsection>
-
-	<subsection>
-		<title>Expansion Method for finding the Determinant</title>
-		<p>
-			Although Gauss' method is a very robust and in general efficient method
-			for finding determinants, a method called the Laplace Expansion method
-			can be quite helpful at times as well.
-			Before defining this, we need to
-			know a matrix minor and cofactor first.
-		</p>
-
-		<definition>
-			<statement>
-				<p>
-					For any <m>n\times n</m> matrix <m>T</m> , the <m>(n - 1)\times(n - 1)</m> matrix formed
-					by deleting row <m>i</m> and column <m>j</m> of <m>T</m> is the <term><m>i,j</m> minor of <m>
-					T</m></term>.
-					The <term><m>i,j</m> cofactor <m>T_{i,j}</m></term> of <m>T</m> is <m>
-					(-1)^{i+j}</m> times the determinant of the <m>i, j</m> minor of <m>T</m> and denoted <m>(-1)^{i+j}
-					|T_{i,j}|</m>.
-				</p>
-			</statement>
-		</definition>
-
-		<example>
-			<statement>
-				<p>
-					Find the <m>T_{1,1}</m> and <m>T_{2,3}</m> minors and cofactors of the matrix
-				</p>
-
-				<p>
-					<me>
-						T = \begin{bmatrix}
-						1 \amp 2 \amp 3 \\
-						4 \amp 5 \amp 6 \\
-						7 \amp 8 \amp 9
-						\end{bmatrix}
-					</me>
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					Recall that <m>T_{i,j}</m> minor is found by removing the <m>i</m>th row and <m>j</m>th
-					column or
-				</p>
-
-				<p>
-					<md>
-						<mrow>T_{1,1} \amp = \begin{bmatrix}
-						5 \amp 6 \\
-						8 \amp 9
-						\end{bmatrix} \amp T_{2,3} \amp = \begin{bmatrix}
-						1 \amp 2 \\
-						7 \amp 8
-						\end{bmatrix}</mrow>
-					</md>
-				</p>
-
-				<p>
-					and the cofactors are the determinants of each of these matrices times <m>(-1)^{i+j}</m>
-					or
-				</p>
-
-				<p>
-					<md>
-						<mrow>(-1)^{1+1} |T_{1,1}| \amp= (1) (45-24) = 21 </mrow>
-						<mrow>(-1)^{2+3} |T_{2,3}| \amp = (-1) (8-14) = 6</mrow>
-					</md>
-				</p>
-			</solution>
-		</example>
-
-		<p>
-			Now that we have the prerequisites, the following is the Laplace
-			Expansion method for finding a determinant.
-		</p>
-
-		<theorem>
-			<title>Laplace Expansion of Determinants</title>
-			<statement>
-				<p>
-					The determinant of an <m>n \times n</m> matrix <m>T</m> can be found by expanding by
-					cofactors on row <m>i</m> or column <m>j</m> of <m>T</m>.
-					That is
-				</p>
-
-				<p>
-					<me>
-						|T| = t_{i,1} T_{i,1} + t_{i,2} T_{i,2} + \cdots + t_{i,n} T_{i,n}
-					</me>
-				</p>
-
-				<p>
-					for any <m>i</m> satisfying <m>1 \leq i \leq n</m> or
-				</p>
-
-				<p>
-					<me>
-						|T| = t_{1,j} T_{1,j} + t_{2,j} T_{2,j} + \cdots + t_{n,j} T_{n,j}
-					</me>
-				</p>
-
-				<p>
-					for any <m>j</m> satisfying <m>1 \leq j \leq n</m>.
-				</p>
-			</statement>
-		</theorem>
-
-		<example>
-			<statement>
-				<p>
-					Use the expansion formula to find the determinants of the matrices in <xref
-					ref="ex-det-gauss" />, namely
-				</p>
-
-				<p>
-					<md>
-						<mrow>T \amp = \begin{bmatrix}
-						3 \amp 0 \amp 2 \\
-						1 \amp 4 \amp 0 \\
-						0 \amp 2 \amp 5
-						\end{bmatrix} \amp S \amp = \begin{bmatrix}
-						0 \amp 1 \amp 3 \amp -4 \\
-						2 \amp 0 \amp 2 \amp 7 \\
-						0 \amp 0 \amp 6 \amp 8 \\
-						1 \amp 0 \amp 10 \amp 6
-						\end{bmatrix}</mrow>
-					</md>
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					In the case of <m>T</m>, we will expand across the first row and use the formula for the <m>2\times
-					2</m> determinant.
-				</p>
-
-				<p>
-					<md>
-						<mrow>|T| \amp = (-1)^{1+1} (3) \begin{vmatrix}4 \amp 0 \\ 2 \amp 5
-						\end{vmatrix} + (-1)^{1+2} (0) \begin{vmatrix}
-						1 \amp 0 \\ 0 \amp 5
-						\end{vmatrix} + (-1)^{1+3} (2) \begin{vmatrix}
-						1 \amp 4 \\ 0 \amp 2
-						\end{vmatrix} \\
-						\amp = 3 (20) + (2) (2-0) = 64</mrow>
-					</md>
-				</p>
-
-				<p>
-					and for <m>S</m>, we'll expand down the 2nd column because all but one is zero.
-					And
-					because of this, I won't show the cofactors of <m>T_{1,2}, T_{1,3}</m> and <m>T_{1,4}</m>.
-				</p>
-
-				<p>
-					<md>
-						<mrow>|S| \amp = (-1)^{1+2} (1) \begin{vmatrix}
-						2 \amp 2 \amp 7 \\
-						0 \amp 6 \amp 8 \\
-						1 \amp 10 \amp 6
-						\end{vmatrix} + 0 + 0 + 0</mrow>
-					</md>
-				</p>
-
-				<p>
-					and now to find this <m>3\times 3</m> determinant, expand about the 2nd row
-				</p>
-
-				<p>
-					<md>
-						<mrow>
-						|S| \amp = (-1) \bigl( (-1)^{2+2} (6) \begin{vmatrix}
-						2 \amp 7 \\
-						1 \amp 6
-						\end{vmatrix} + (-1)^{2+3} (8) \begin{vmatrix}
-						2 \amp 2 \\
-						1 \amp 10
-						\end{vmatrix} \bigr)
-						</mrow>
-					</md>
-				</p>
-
-				<p>
-					and now use the formula for <m>2 \times 2</m> determinants.
-				</p>
-
-				<p>
-					<me>
-						|S| = -(6 (12-7) - 8 (20-2)) = -(30- 144) =114
-					</me>
-				</p>
-			</solution>
-		</example>
-	</subsection>
-
-	<subsection>
-		<title>Geometry of Determinants</title>
-		<introduction>
-			<p>
-				In the previous section, the determinant was introduced as a function that determines
-				whether or not a matrix was singular due to whether or not the function was 0.
-				In this
-				section, we will look at a geometric approach to the determinant and show that it can be
-				used to determine areas (and volumes) of regions bounded by vectors.
-				We will show that this
-				geometric approach is identical (in the two-dimensional case) as the properties in <xref
-				ref="defn-det" />.
-			</p>
-
-			<p>
-				Consider the parallelogram formed by two vectors.
-				In the argument below, it is important
-				that the vector <m>\langle x_1, y_1 \rangle</m> is below and to the right of the vector <m>\langle
-				x_2, y_2 \rangle</m>.
-			</p>
-
-			<figure xml:id="fig-parallelogram">
-				<caption>Plot of two vectors in <m>\mathbb{R}^2</m> forming a parallelogram.</caption>
-				<image width="50%" xml:id="plot-parallelogram">
-					<latex-image>
+  <title>Determinants of Square Matrices</title>
+
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Define the determinant and understand the notion of permutations that is needed for the defintion.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Find the determinant of a <m>2 \times 2</m> and <m>3 \times 3</m> matrix using the defintion.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Understand many properties of the determinant including how to find the determinant of a few special cases of matrices.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Use the Laplace expansion method to find the determinant of a matrix.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Use row operations to find the determinant of a matrix.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Understand the geometry of the determinant.
+        </p>
+      </li>
+    </ul>
+  </objectives>
+
+  <introduction>
+    <p>
+      Recall from <xref ref="sect-linear-independence"/> that we saw two examples.
+      <xref ref="ex-linear-independence"/> showed that the vectors
+      <me>
+        \left\{ \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 1 \end{bmatrix}\right\}
+      </me>
+      is a linear independent set and
+      <me>
+        \left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \begin{bmatrix} 2 \\ 4 \end{bmatrix}\right\}
+      </me>
+      is a set of linear dependent vectors in <m>\mathbb{R}^2</m>.
+    </p>
+
+    <p>
+      In general, if we have two vectors
+      <me>
+        \boldsymbol{u} = \begin{bmatrix} a \\ c\end{bmatrix}, \qquad \boldsymbol{v}= \begin{bmatrix} b\\ d \end{bmatrix}
+      </me>
+      we can determine if they are linearly dependent or independent by solving
+      <me>
+        k_1 \boldsymbol{u} + k_2 \boldsymbol{v} = \boldsymbol{0}.
+      </me>
+      To determine linear independence, we need to solve for <m>k_1</m> and <m>k_2</m>.
+      This can be found with the augmented matrix:
+      <me>
+        \left[ \begin{array}{rr|r} a \amp c \amp 0 \\ b \amp d \amp 0 \end{array}\right]
+      </me>
+      Row-reducing
+      <me>
+        -c R_1 + a R_2 \to R_2 \qquad \left[ \begin{array}{rr|r} a \amp b \amp 0 \\ 0 \amp -c b + ad \amp 0 \end{array}\right]
+      </me>
+    </p>
+
+    <p>
+      This system has a unique solution (of <m>k_1=k_2=0</m>) if <m>ad-bc  \neq 0</m> and an infinite set of solutions if <m>ad-bc  =0</m>.
+      Analogous situations occur in other parts of linear algebra (like the inverse matrix) that are equivalent to this and so we name this function from matrices to the reals.
+      For
+      <men xml:id="eq-gen-2by2-matrix">
+        A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}
+      </men>
+      define <m>\det(A) = ad-bc</m>.
+    </p>
+
+    <p>
+      This section expands the definition to other matrix sizes and lists other properties of the determinant.
+    </p>
+  </introduction>
+
+
+  <subsection xml:id="subsec-defintion-determinant">
+    <title>Definition of the Determinant</title>
+
+    <p>
+      Before formally defining the determinant for a general matrix, there is some other needed background.
+      We first need to understand a <term>permutation</term> of a set of integers.
+      In short a permutation is a shuffling of items.
+      In the context of determinants, we need the items to be the first <m>n</m> integers.
+    </p>
+
+    <p>
+      For example, there are six permutations of <m>\{1,2,3\}</m>, specifically <m>(1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2)</m> and <m>(3,2,1)</m>.
+      Mathematically, we often think of a single permutation as a function from the set <m>\{1,2,\ldots, n\}</m> to itself.
+      For example, for the permutation <m>(2,3,1)</m>, the function <m>\sigma</m> is
+      <me>
+        \sigma(1) = 2 \qquad \sigma(2) = 3 \qquad \sigma(3)=1.
+      </me>
+    </p>
+
+    <p>
+      It is important to know that there are <m>n!</m> permutations of the set <m>\{1,2,\ldots,n\}</m>.
+      Also, any permutation can be built from a number of swaps of the trivial permutation <m>(1,2,\ldots,n)</m>.
+      For example in the example above <m>(2,3,1)</m> can be created by starting with <m>(1,2,3)</m> and swapping the first two elements to get <m>(2,1,3)</m> and then swapping the last two elements to get <m>(2,3,1).</m>
+    </p>
+
+    <definition xml:id="def-permutation-odd-even">
+      <statement>
+        <p>
+          A permutation <m>\sigma</m> is <term>even</term> if it can be generated from the trivial permutation with an even number of swaps and <term>odd</term> if it can be generated with an odd number of swaps.
+          Also the sign of the permutation, denoted <m>\text{sgn}</m> is
+          <me>
+            \sgn(\sigma) = \begin{cases} 1 \amp \text{if $\sigma$ is even} \\ -1 \amp \text{if $\sigma$ is odd.} \end{cases}
+          </me>
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-det">
+      <statement>
+        <p>
+          For an <m>n \times n</m> matrix, <m>A</m>, the <term>determinant</term> is
+          <men xml:id="eq-def-det">
+            \det(A) = \sum_{\sigma} \sgn(\sigma) a_{1,\sigma(1)} a_{2,\sigma(2)} \cdots a_{n,\sigma(n)}
+          </men>
+          where the sum is over all permutations of <m>n</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Although this defintion works for square matrices, let's ground ourselves a bit more before moving on.
+      First, if we have the case of a <m>1 \times 1</m> matrix, then
+      <me>
+        \det(A) = \det([a_{1,1}]) = \sum_{\sigma} a_{1,\sigma(1)} = a_{1,1}
+      </me>
+      where we have used the fact that there is one permutation of the set <m>\{1\}</m>, resulting in the scalar that is the only entry.
+    </p>
+
+    <p>
+      Recall that there are two permutations of <m>\{1,2\}</m> and that is <m>(1,2)</m> and <m>(2,1)</m>, so for a <m>2 \times 2</m> matrix, we have
+      <me>
+        \begin{aligned}\det\left(\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}\right) \amp = \sgn((1,2)) a_{1,\sigma(1)}a_{2,\sigma(2)} + \sgn((2,1)) a_{1,\sigma(1)}a_{2,\sigma(2)} \\ \amp = (1) a_{1,1} a_{2,2}  + (-1) a_{1,2} a_{2,1} = ad-bc \end{aligned}
+      </me>
+      where recall that the 2nd term has the permutation <m>\sigma(1)=2, \sigma(2)=1</m>.
+      This is identical to the <m>2 \times 2</m> example above.
+    </p>
+
+    <p>
+      It may seem like now that we have the definition in <xref ref="def-det"/>, we can calculate the determinant of any square matrix.
+      The following example shows how to calculate it with a <m>3 \times 3</m> matrix:
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Use the definition in <xref ref="def-det"/> to find <m>\det(A)</m> if
+          <me>
+            A = \begin{bmatrix} 3 \amp 2 \amp -1 \\ 0 \amp 2 \amp 1 \\ 1 \amp 0 \amp -2 \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Note that the permutations of <m>\{1,2,3\}</m> are those that are above and for a general <m>3 \times 3</m> matrix <m>A</m>
+          <men xml:id="eq-det-3by3">
+            \begin{aligned} \det(A) \amp = a_{1,1} a_{2,2} a_{3,3} - a_{1,1}a_{2,3}a_{3,2} - a_{1,2} a_{2,1} a_{3,3} \\ \amp \qquad + a_{1,2}a_{2,3}a_{3,1} + a_{1,3} a_{2,2} a_{3,1} - a_{1,3}a_{2,1}a_{3,2} \end{aligned}
+          </men>
+          and then evaluating it with the given element of <m>A</m>
+          <me>
+            \begin{aligned} \det(A) \amp = (1)(3)(2)(-2)  + (-1)(3)(1)(0) + (-1)2(0)(2) + (1)2(1)(1)  \\ \amp \qquad +(1)(-1)(2)(1) + (-1)(-1)(0)(0) \\ \amp = -12 +2 -2 = -12 \end{aligned}
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      This example isn't too bad.
+      However, due to the nature of permutations, the formula in <xref ref="eq-def-det"/> is unwieldy.
+      For a 5 by 5 matrix, there would be <m>5!=120</m> terms.
+      Fortunately, there are other formulas available to perform the calculation.
+      One thing to notice is using a little factoring, we can simplify the formula in <xref ref="eq-det-3by3"/> and make it easier to compute.
+      This will be done formally below.
+    </p>
+
+    <p>
+      Before presenting other computational methods of the determinant, let's look at the properties of the determinant.
+    </p>
+  </subsection>
+
+
+  <subsection>
+    <title>Basic Properties of the Determinant</title>
+
+    <p>
+      We start with a few basic properties of the determinant that will help us with the deeper understanding of determinants and how to calculate a few basic determinants.
+    </p>
+
+    <lemma xml:id="lem-det-upper-triangular">
+      <statement>
+        <p>
+          The determinant of an upper-triangular matrix is the product of diagonal entries.
+          That is <m>\det(A)=a_{1,1}a_{2,2} \cdots a_{n,n}</m>.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          Let <m>A</m> be an upper-diagonal matrix.
+          That is <m>a_{i,j}=0</m> if <m>j \lt i</m>.
+          Then
+        </p>
+
+        <p>
+          <me>
+            \det(A) = \sum_{\sigma} \sgn(\sigma) a_{1,\sigma(1)} a_{2,\sigma(2)} \cdots a_{n,\sigma(n)}
+          </me>
+          and the only case where there is not a term <m>a_{i,j}</m> with <m>j \lt i </m> is the trivial permutation.
+          Therefore,
+          <me>
+            \det(A) = \sum_{\sigma} \sgn(\sigma) a_{1,1} a_{2,2}\cdots a_{n,n} = a_{1,1}a_{2,2} \cdots a_{n,n}
+          </me>
+          with <m>\sgn(\sigma) =1</m>.
+        </p>
+      </proof>
+    </lemma>
+
+    <corollary xml:id="cor-det-diagonal-matrix">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> diagonal matrix.
+          Then
+          <me>
+            \det(A) = a_{1,1} a_{2,2} \cdots a_{n,n}
+          </me>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          Since a diagonal matrix is an upper-triangular matrix then this follows directly from <xref ref="lem-det-upper-triangular"/>.
+        </p>
+      </proof>
+    </corollary>
+
+    <corollary xml:id="cor-det-identity-matrix">
+      <statement>
+        <p>
+          <me>
+            \det(I)=1
+          </me>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          This follows directly from <xref ref="cor-det-diagonal-matrix"/>.
+        </p>
+      </proof>
+    </corollary>
+
+    <lemma xml:id="lem-det-row-swap">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix and <m>A'</m> be the matrix <m>A</m> with rows <m>i</m> and <m>j</m> swapped.
+          Then <m>\det(A) = -\det(A')</m>.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          Let <m>\sigma'</m> be the permutation resulting from swapping positions <m>i</m> and <m>j</m> in permutation <m>\sigma</m>.
+        </p>
+
+        <p>
+          Also, since <m>\sigma</m> and <m>\sigma'</m> differ by a row swap
+          <me>
+            \sgn(\sigma)  = -\sgn(\sigma')
+          </me>
+        </p>
+
+        <p>
+          <me>
+            \begin{aligned} \det(A') \amp = \sum_{\sigma'} \sgn(\sigma') a_{1,\sigma'(1)} \cdots a_{j, \sigma'(j)} \cdots a_{i,\sigma'(i)} \cdots a_{n,\sigma'(n)} \\ \amp = \sum_{\sigma'} \sgn(\sigma') a_{1,\sigma'(1)} \cdots a_{i, \sigma'(i)} \cdots a_{j,\sigma'(j)} \cdots a_{n,\sigma'(n)} \\ \amp = \sum_{\sigma'} (-\sgn(\sigma)) a_{1,\sigma(1)} \cdots a_{i, \sigma(i)} \cdots a_{j,\sigma(j)} \cdots a_{n,\sigma(n)} \\ \amp = - \sum_{\sigma} \sgn(\sigma) a_{1,\sigma(1)} \cdots a_{i, \sigma(i)} \cdots a_{j,\sigma(j)} \cdots a_{n,\sigma(n)} \\ \amp = - \det(A) \end{aligned}
+          </me>
+          and note that summing over <m>\sigma</m> amd <m>\sigma'</m> is the same.
+        </p>
+      </proof>
+    </lemma>
+
+    <lemma xml:id="lem-det-matrix-identical-rows">
+      <statement>
+        <p>
+          Let <m>A</m> have two identical rows.
+          Then <m>\det(A)=0</m>.
+        </p>
+      </statement>
+    </lemma>
+
+    <p>
+      The proof of this is left to the reader.
+    </p>
+
+    <p>
+      We will see below that elementary matrices play an important role in determinants.
+      We also saw in <xref ref="lem-det-row-swap"/> that performing a row swap on a matrix, changes it's sign.
+      The next pair of lemmas are also related to row operations.
+    </p>
+
+    <lemma xml:id="lem-det-multiply-row-by-constant">
+      <statement>
+        <p>
+          Let <m>A'</m> be the matrix <m>A</m> where the <m>i</m>th row has been multiplied by <m>c</m>.
+          Then <m>\det(A') = c \det(A)</m>.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          <me>
+            \begin{aligned} \det(A') \amp = \sum_{\sigma} a_{1,\sigma(1)} \cdots (ca_{i,\sigma(i)}) \cdots a_{n, \sigma(n)} \\ \amp = c \sum_{\sigma} a_{1,\sigma(1)} \cdots a_{i,\sigma(i)} \cdots a_{n, \sigma(n)} \\ \amp = c \det(A) \end{aligned}
+          </me>
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      The following performs a row operation <m>R_i + cR_j \to R_j</m>.
+      Surprisingly, this does not change the determinant.
+    </p>
+
+    <lemma xml:id="lem-det-multiply-row-and-add">
+      <statement>
+        <p>
+          Let <m>A'</m> be the matrix <m>A</m> where the <m>i</m>th row has been multiplied by <m>c</m> and added to the <m>j</m>th row.
+          Then <m>\det(A') = \det(A)</m>.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          <me>
+            \begin{aligned} \det(A') \amp = \sum_{\sigma} a_{1,\sigma(1)} \cdots (a_{i,\sigma(i)} + c a_{j,\sigma(i)}) \cdots a_{j, \sigma(j)} \cdots a_{n, \sigma(n)} \\ \amp = \sum_{\sigma} a_{1,\sigma(1)} \cdots a_{i,\sigma(i)}\cdots a_{j, \sigma(j)} \cdots a_{n, \sigma(n)} + c \sum_{\sigma} a_{1,\sigma(1)} \cdots a_{j,\sigma(j)} \cdots a_{j, \sigma(j)} \cdots a_{n, \sigma(n)} \\ \amp = \det(A) \end{aligned}
+          </me>
+          where the property that a matrix with two identical rows has determinant 0 in the second sum of the 2nd step.
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+
+
+  <subsection xml:id="subsec-det-elem-matrices">
+    <title>Determinants of Elementary Matrices</title>
+
+    <p>
+      Recall that the Elementary Matrices have the property that multiplying a matrix by such a matrix results in a row operation as we saw in <xref ref="sect-elem-matrices"/>.
+      We will use these matrices to provide additional properties of determinants.
+    </p>
+
+    <lemma xml:id="lem-det-elem-matrices">
+      <statement>
+        <p>
+          The following are determinants of elementary matrices:
+        </p>
+
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m> \det(E_{i \leftrightarrow j}) = -1 </m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m> \det(E_{cR_i}) = c </m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m> \det(E_{cR_i+Rj}) = 1 </m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </lemma>
+
+    <p>
+      The proofs of these are related to those above and the formalization of them is left to the reader.
+    </p>
+
+    <p>
+      Elementary matrices  play a fundamental role related to determinants.
+      This next set of lemmas shows that if a matrix is transformed using a elementary matrix, then the determinant of the product of the matrices is the product of the determinants.
+    </p>
+
+    <lemma xml:id="lem-elem-mat-row-swap">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix and <m>A'</m> be the matrix where rows <m>i</m> and <m>j</m> are swapped.
+          Then
+          <me>
+            \det(A') = \det(E_{i \leftrightarrow j} A) = \det(E_{i \leftrightarrow j})\det(A)
+          </me>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          From <xref ref="lem-det-row-swap"/>, <m>\det(A) = -\det(A')</m> and from <xref ref="lem-det-elem-matrices"/>, <m>\det(E_{i \leftrightarrow j}) = -1</m> and the result follows from these.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      We now see that the same result works for multiplying a row in a matrix by a constant.
+    </p>
+
+    <lemma xml:id="lem-elem-mat-row-multiply">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix and <m>A'</m> be the matrix where row <m>i</m> is multiplied by a constant <m>c</m>.
+          Then
+          <me>
+            \det(A') = \det(E_{cR_i} A) = \det(E_{cR_i}) \det(A)
+          </me>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          From <xref ref="lem-det-multiply-row-by-constant"/>, <m>\det(A') = c \det(A)</m> and from <xref ref="lem-det-elem-matrices"/>, <m>\det(E_{cR_i}) = c</m> and the result follows.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      This last lemma shows a similar result for the row multiplication with an addition.
+    </p>
+
+    <lemma xml:id="lem-elem-mat-row-multiply-addition">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix and <m>A'</m> be the matrix where row <m>i</m> is multiplied by a constant <m>c</m> and added to row <m>j</m>.
+          Then
+          <me>
+            \det(A') = \det(E_{cR_i+ R_j} A) = \det(E_{cR_i + R_j}) \det(A)
+          </me>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          From <xref ref="lem-det-multiply-row-by-constant"/>, <m>\det(A') =  \det(A)</m> and from <xref ref="lem-det-elem-matrices"/>, <m>\det(E_{cR_i+R_j}) = 1</m> and the result follows.
+        </p>
+      </proof>
+    </lemma>
+
+    <lemma xml:id="lem-det-product-elem-matrices">
+      <statement>
+        <p>
+          Let <m>E_1, E_2, \ldots, E_k</m> be elementary matrices.
+          Then
+          <me>
+            \det(E_1 E_2 \cdots E_k) = \det(E_1) \det(E_2) \cdots \det(E_k)
+          </me>
+          and
+          <me>
+            \det(E_1 E_2 \cdots E_kA ) = \det(E_1) \det(E_2) \cdots \det(E_k) \det(A)
+          </me>
+        </p>
+      </statement>
+    </lemma>
+
+    <lemma xml:id="lem-det-product-matrices">
+      <statement>
+        <p>
+          Let <m>A</m> and <m>B</m> both be <m>n \times n</m> matrices, then <m>\det(AB) = \det(A)\det(B)</m>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          Let <m>A'</m> and <m>B'</m> be the reduced row-echelon forms of <m>A</m> and <m>B</m> respectively.
+          Let <m>E_1, E_2, \ldots E_k</m> and <m>F_1, F_2, \ldots, F_{\ell}</m> be the elementary matrices such that
+          <me>
+            A = E_1 E_2 \cdots E_k A' \qquad B = F_1 F_2 \cdots F_{\ell}B'
+          </me>
+          (see lemma ???).
+          If <m>A' = I</m>, that is <m>A</m> is invertible then
+          <me>
+            \begin{aligned} \det(AB) \amp = \det(E_1 E_2 \cdots E_k I F_1 F_2 \cdots F_{\ell}B') \\ \amp = \det(E_1) \det(E_2) \cdots \det(E_k) \cdot \det(I) \det(F_1) \det(F_2) \cdots \det(F_{\ell})B' \\ \amp = \det(A) \det(B) \end{aligned}
+          </me>
+        </p>
+
+        <p>
+          If <m>\det(A) = 0</m>, then <m>A'</m> is not the identity matrix and there must be a row of zeros.
+          Call this row <m>i</m>
+          <me>
+            \begin{aligned} \det(AB) \amp = \det(E_1 E_2 \cdots E_k A' B) \\ \amp = \det(E_1) \det(E_2) \cdots \det(E_k) \det(A'B) \\ \amp = \det(E_1) \det(E_2) \cdots \det(E_k) \det(E_{cR_i} A'B) \\ \end{aligned}
+          </me>
+          where multiplying <m>A'</m> by the elementary matrix <m>E_{cR_i}</m> does not change it since there are only 0s in row <m>i</m>.
+          <me>
+            \begin{aligned} \amp = \det(E_1) \det(E_2) \cdots \det(E_k) c \det(A'B) \end{aligned}
+          </me>
+        </p>
+
+        <p>
+          Since this shows that <m>\det(AB) = c \det(AB)</m> for all values of <m>c</m>, then <m>\det(AB) =0 </m> and since <m>\det(A)=0</m>, then the result follows.
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+  
+  <subsection>
+    <title>Gauss' Method for Calculating Determinants</title>
+
+    <p>
+      We saw how to calculate the determinant for very specific matrices.
+      However, up until this point, we should use the definition if the matrix doesn't have any particular structure.
+      However,  <term>Gauss' Method for Calculating Determinants</term> uses <xref ref="lem-det-row-swap"/>, <xref ref="lem-det-multiply-row-by-constant"/> and <xref ref="lem-det-multiply-row-and-add"/> to simplify a matrix and then take the determinant.
+      Generally, row operations are performed to get a matrix in upper-triangular (or echelon) form and then use <xref ref="lem-det-upper-triangular"/>.
+      The following examples show how to use the method.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Find the determinant of the following matrix using a) the formula for <m>2 \times 2</m> determinants and b) using Gauss' method.
+        </p>
+
+        <p>
+          <me>
+            T = \begin{bmatrix} 3 \amp 2 \\ 1 \amp -2 \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Using the formula <m>|T| = ad-bc=-6-2=-8</m>.
+        </p>
+
+        <p>
+          Using Gauss's method,
+        </p>
+
+        <p>
+          <md>
+            <mrow>\qquad |T| \amp= \begin{vmatrix} 3 \amp 2 \\ 1 \amp -2 \end{vmatrix} </mrow>
+            <mrow>R_1 \leftrightarrow R_2 \qquad -|T|\amp= \begin{vmatrix} 1 \amp -2 \\ 3 \amp 2 \end{vmatrix} </mrow>
+            <mrow>-3R_1 + R_2 \rightarrow R_2 \qquad -|T|\amp= \begin{vmatrix} 1 \amp -2 \\ 0 \amp 8 \end{vmatrix} = 8</mrow>
+          </md>
+        </p>
+
+        <p>
+          So <m>|T|=-8</m>.
+        </p>
+
+        <p>
+          This shows that although Gauss' method succeeds in finding the determinant, it takes more operations than the simple formula.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-det-gauss">
+      <statement>
+        <p>
+          Use Gauss's method to find the determinants of the following matrices:
+        </p>
+
+        <p>
+          <md>
+            <mrow>T \amp = \begin{bmatrix} 3 \amp 0 \amp 2 \\ 1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 5 \end{bmatrix} \amp S \amp = \begin{bmatrix} 0 \amp 1 \amp 3 \amp -4 \\ 2 \amp 0 \amp 2 \amp 7 \\ 0 \amp 0 \amp 6 \amp 8 \\ 1 \amp 0 \amp 10 \amp 6 \end{bmatrix}</mrow>
+          </md>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          For both examples, we use row operations and keep track of any row swaps (introducing a <m>-1</m>) or multiples.
+        </p>
+
+        <p>
+          <ol>
+            <li>
+              <p>
+                <md>
+                  <mrow>|T| = \amp \begin{vmatrix} 3 \amp 0 \amp 2 \\ 1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 5 \end{vmatrix}</mrow>
+                  <mrow>R_1 \leftrightarrow R_2 \qquad -|T|= \amp \begin{vmatrix} 1 \amp 4 \amp 0 \\ 3 \amp 0 \amp 2 \\ 0 \amp 2 \amp 5 \end{vmatrix} </mrow>
+                  <mrow>-3 R_1 + R_2 \rightarrow R_2 \qquad -|T| = \amp \begin{vmatrix} 1 \amp 4 \amp 0 \\ 0 \amp -12 \amp 2 \\ 0 \amp 2 \amp 5 \end{vmatrix} </mrow>
+                  <mrow>R_2 \leftrightarrow R_3 \qquad |T|= \amp \begin{vmatrix} 1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 5 \\ 0 \amp -12 \amp 2 \\ \end{vmatrix} </mrow>
+                  <mrow>6 R_2 + R_3 \rightarrow R_3 \qquad |T| = \amp \begin{vmatrix} 1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 5 \\ 0 \amp 0 \amp 32 \\ \end{vmatrix} = 64</mrow>
+                </md>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <md>
+                  <mrow>|S| \amp = \begin{vmatrix} 0 \amp 1 \amp 3 \amp -4 \\ 2 \amp 0 \amp 2 \amp 7 \\ 0 \amp 0 \amp 6 \amp 8 \\ 1 \amp 0 \amp 10 \amp 6 \end{vmatrix} </mrow>
+                  <mrow>R_1 \leftrightarrow R_4 \qquad -|S| \amp = \begin{vmatrix} 1 \amp 0 \amp 10 \amp 6 \\ 2 \amp 0 \amp 2 \amp 7 \\ 0 \amp 0 \amp 6 \amp 8 \\ 0 \amp 1 \amp 3 \amp -4 \\ \end{vmatrix} </mrow>
+                  <mrow>-2R_1 + R_2 \rightarrow R_2 \qquad -|S| \amp = \begin{vmatrix} 1 \amp 0 \amp 10 \amp 6 \\ 0 \amp 0 \amp -18 \amp -5 \\ 0 \amp 0 \amp 6 \amp 8 \\ 0 \amp 1 \amp 3 \amp -4 \\ \end{vmatrix} </mrow>
+                  <mrow>R_2 \leftrightarrow R_4 \qquad |S| \amp= \begin{vmatrix} 1 \amp 0 \amp 10 \amp 6 \\ 0 \amp 1 \amp 3 \amp -4 \\ 0 \amp 0 \amp 6 \amp 8 \\ 0 \amp 0 \amp -18 \amp -5 \\ \end{vmatrix} </mrow>
+                  <mrow>3 R_3 + R_4 \rightarrow R_4 \qquad |S| \amp = \begin{vmatrix} 1 \amp 0 \amp 10 \amp 6 \\ 0 \amp 1 \amp 3 \amp -4 \\ 0 \amp 0 \amp 6 \amp 8 \\ 0 \amp 0 \amp 0 \amp 19 \\ \end{vmatrix} = 6 (19) = 114</mrow>
+                </md>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+
+  <subsection>
+    <title>Expansion Method for finding the Determinant</title>
+
+    <p>
+      Although Gauss' method is a very robust and in general efficient method for finding determinants, a method called the Laplace Expansion method can be quite helpful at times as well.
+      Before defining this, we need to know a matrix minor and cofactor first.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          For any <m>n\times n</m> matrix <m>T</m> , the <m>(n - 1)\times(n - 1)</m> matrix formed by deleting row <m>i</m> and column <m>j</m> of <m>T</m> is the <term><m>i,j</m> minor of <m> T</m></term>.
+          The <term><m>i,j</m> cofactor <m>T_{i,j}</m></term> of <m>T</m> is <m> (-1)^{i+j}</m> times the determinant of the <m>i, j</m> minor of <m>T</m> and denoted <m>(-1)^{i+j} |T_{i,j}|</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example>
+      <statement>
+        <p>
+          Find the <m>T_{1,1}</m> and <m>T_{2,3}</m> minors and cofactors of the matrix
+        </p>
+
+        <p>
+          <me>
+            T = \begin{bmatrix} 1 \amp 2 \amp 3 \\ 4 \amp 5 \amp 6 \\ 7 \amp 8 \amp 9 \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Recall that <m>T_{i,j}</m> minor is found by removing the <m>i</m>th row and <m>j</m>th column or
+        </p>
+
+        <p>
+          <md>
+            <mrow>T_{1,1} \amp = \begin{bmatrix} 5 \amp 6 \\ 8 \amp 9 \end{bmatrix} \amp T_{2,3} \amp = \begin{bmatrix} 1 \amp 2 \\ 7 \amp 8 \end{bmatrix}</mrow>
+          </md>
+        </p>
+
+        <p>
+          and the cofactors are the determinants of each of these matrices times <m>(-1)^{i+j}</m> or
+        </p>
+
+        <p>
+          <md>
+            <mrow>(-1)^{1+1} |T_{1,1}| \amp= (1) (45-24) = 21 </mrow>
+            <mrow>(-1)^{2+3} |T_{2,3}| \amp = (-1) (8-14) = 6</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Now that we have the prerequisites, the following is the Laplace Expansion method for finding a determinant.
+    </p>
+
+    <theorem>
+      <title>Laplace Expansion of Determinants</title>
+
+      <statement>
+        <p>
+          The determinant of an <m>n \times n</m> matrix <m>T</m> can be found by expanding by cofactors on row <m>i</m> or column <m>j</m> of <m>T</m>.
+          That is
+        </p>
+
+        <p>
+          <me>
+            |T| = t_{i,1} T_{i,1} + t_{i,2} T_{i,2} + \cdots + t_{i,n} T_{i,n}
+          </me>
+        </p>
+
+        <p>
+          for any <m>i</m> satisfying <m>1 \leq i \leq n</m> or
+        </p>
+
+        <p>
+          <me>
+            |T| = t_{1,j} T_{1,j} + t_{2,j} T_{2,j} + \cdots + t_{n,j} T_{n,j}
+          </me>
+        </p>
+
+        <p>
+          for any <m>j</m> satisfying <m>1 \leq j \leq n</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <example>
+      <statement>
+        <p>
+          Use the expansion formula to find the determinants of the matrices in <xref ref="ex-det-gauss" />, namely
+        </p>
+
+        <p>
+          <md>
+            <mrow>T \amp = \begin{bmatrix} 3 \amp 0 \amp 2 \\ 1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 5 \end{bmatrix} \amp S \amp = \begin{bmatrix} 0 \amp 1 \amp 3 \amp -4 \\ 2 \amp 0 \amp 2 \amp 7 \\ 0 \amp 0 \amp 6 \amp 8 \\ 1 \amp 0 \amp 10 \amp 6 \end{bmatrix}</mrow>
+          </md>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          In the case of <m>T</m>, we will expand across the first row and use the formula for the <m>2\times 2</m> determinant.
+        </p>
+
+        <p>
+          <md>
+            <mrow>|T| \amp = (-1)^{1+1} (3) \begin{vmatrix}4 \amp 0 \\ 2 \amp 5 \end{vmatrix} + (-1)^{1+2} (0) \begin{vmatrix} 1 \amp 0 \\ 0 \amp 5 \end{vmatrix} + (-1)^{1+3} (2) \begin{vmatrix} 1 \amp 4 \\ 0 \amp 2 \end{vmatrix} \\ \amp = 3 (20) + (2) (2-0) = 64</mrow>
+          </md>
+        </p>
+
+        <p>
+          and for <m>S</m>, we'll expand down the 2nd column because all but one is zero.
+          And because of this, I won't show the cofactors of <m>T_{1,2}, T_{1,3}</m> and <m>T_{1,4}</m>.
+        </p>
+
+        <p>
+          <md>
+            <mrow>|S| \amp = (-1)^{1+2} (1) \begin{vmatrix} 2 \amp 2 \amp 7 \\ 0 \amp 6 \amp 8 \\ 1 \amp 10 \amp 6 \end{vmatrix} + 0 + 0 + 0</mrow>
+          </md>
+        </p>
+
+        <p>
+          and now to find this <m>3\times 3</m> determinant, expand about the 2nd row
+        </p>
+
+        <p>
+          <md>
+            <mrow> |S| \amp = (-1) \bigl( (-1)^{2+2} (6) \begin{vmatrix} 2 \amp 7 \\ 1 \amp 6 \end{vmatrix} + (-1)^{2+3} (8) \begin{vmatrix} 2 \amp 2 \\ 1 \amp 10 \end{vmatrix} \bigr) </mrow>
+          </md>
+        </p>
+
+        <p>
+          and now use the formula for <m>2 \times 2</m> determinants.
+        </p>
+
+        <p>
+          <me>
+            |S| = -(6 (12-7) - 8 (20-2)) = -(30- 144) =114
+          </me>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+
+  <subsection>
+    <title>Geometry of Determinants</title>
+
+    <introduction>
+      <p>
+        In the previous section, the determinant was introduced as a function that determines whether or not a matrix was singular due to whether or not the function was 0.
+        In this section, we will look at a geometric approach to the determinant and show that it can be used to determine areas (and volumes) of regions bounded by vectors.
+        We will show that this geometric approach is identical (in the two-dimensional case) as the properties in <xref ref="def-det" />.
+      </p>
+
+      <p>
+        Consider the parallelogram formed by two vectors.
+        In the argument below, it is important that the vector <m>\langle x_1, y_1 \rangle</m> is below and to the right of the vector <m>\langle x_2, y_2 \rangle</m>.
+      </p>
+
+      <figure xml:id="fig-parallelogram">
+        <caption>Plot of two vectors in <m>\mathbb{R}^2</m> forming a parallelogram.</caption>
+        <image width="50%" xml:id="plot-parallelogram">
+          <latex-image>
 					<![CDATA[
 					\begin{tikzpicture}[scale=0.8]
 					\draw[->] (-1,0) -- (5,0) node [above right] {$x$};
@@ -804,20 +821,18 @@
 					\draw[->] (1,3) -- (5,4);
 					\end{tikzpicture}
 					]]>
-					</latex-image>
-				</image>
-			</figure>
+          </latex-image>
+        </image>
+      </figure>
 
-			<p>
-				The area of the parallelogram can be determined by taking the area of the enclosing
-				rectangle and subtracting out the rectangles <m>A</m> and <m>F</m> and triangles <m>B, C, D</m>
-				and <m>E</m> as shown below:
-			</p>
+      <p>
+        The area of the parallelogram can be determined by taking the area of the enclosing rectangle and subtracting out the rectangles <m>A</m> and <m>F</m> and triangles <m>B, C, D</m> and <m>E</m> as shown below:
+      </p>
 
-			<figure xml:id="fig-parallelogram2">
-				<caption>Finding the area of the parallelogram</caption>
-				<image width="50%" xml:id="plot-parallelogram2">
-					<latex-image>
+      <figure xml:id="fig-parallelogram2">
+        <caption>Finding the area of the parallelogram</caption>
+        <image width="50%" xml:id="plot-parallelogram2">
+          <latex-image>
 					<![CDATA[
 					\begin{tikzpicture}[scale=1.25]
 					\draw (0,0) rectangle (5,4);
@@ -839,217 +854,279 @@
 					\draw (4.5,1.5) node {$D$};
 					\end{tikzpicture}
 					]]>
-					</latex-image>
-				</image>
-			</figure>
+          </latex-image>
+        </image>
+      </figure>
 
-			<p>
-				<md>
-					<mrow>\text{area of parallelogram} \amp = \text{area of enclosing rect} </mrow>
-					<mrow>\amp \qquad - \text{area of rectangle $A$} - \text{area of triangle $B$} </mrow>
-					<mrow>\amp \qquad \cdots - \text{area of rectangle $F$} </mrow>
-					<mrow>\amp =
-					(x_1+x_2)(y_1+y_2) - x_2 y_1 - \frac{1}{2} x_1 y_1 </mrow>
-					<mrow>\amp \qquad - \frac{1}{2} x_2 y_2 - \frac{1}{2} x_2 y_2 - \frac{1}{2} x_1 y_1 - x_2
-					y_1 </mrow>
-					<mrow>\amp = x_1 y_2 - x_2 y_1</mrow>
-				</md>
-			</p>
+      <p>
+        <md>
+          <mrow>\text{area of parallelogram} \amp = \text{area of enclosing rect} </mrow>
+          <mrow>\amp \qquad - \text{area of rectangle $A$} - \text{area of triangle $B$} </mrow>
+          <mrow>\amp \qquad \cdots - \text{area of rectangle $F$} </mrow>
+          <mrow>\amp = (x_1+x_2)(y_1+y_2) - x_2 y_1 - \frac{1}{2} x_1 y_1 </mrow>
+          <mrow>\amp \qquad - \frac{1}{2} x_2 y_2 - \frac{1}{2} x_2 y_2 - \frac{1}{2} x_1 y_1 - x_2 y_1 </mrow>
+          <mrow>\amp = x_1 y_2 - x_2 y_1</mrow>
+        </md>
+      </p>
 
-			<p>
-				and note that
-			</p>
+      <p>
+        and note that
+      </p>
 
-			<p>
-				<me>
-					\begin{vmatrix}
-					x_1 \amp x_2 \\
-					y_1 \amp y_2
-					\end{vmatrix} = x_1 y_2 - x_2 y_1
-				</me>
-			</p>
+      <p>
+        <me>
+          \begin{vmatrix} x_1 \amp x_2 \\ y_1 \amp y_2 \end{vmatrix} = x_1 y_2 - x_2 y_1
+        </me>
+      </p>
 
-			<p>
-				And this result is identical to the determinant seen above.
-				Again, as noted,
-				the vectors were set up to have a positive area, however in general,
-				one can define the area as the absolute value of the determinant.
-			</p>
-		</introduction>
+      <p>
+        And this result is identical to the determinant seen above.
+        Again, as noted, the vectors were set up to have a positive area, however in general, one can define the area as the absolute value of the determinant.
+      </p>
+    </introduction>
 
-		<subsubsection>
-			<title>Transformation of the Vectors and the size of the Parallelogram</title>
-			<p>
-				From above, the area of the parallelogram is the determinant of the vectors
-				that are along the sides.
-			</p>
+    <subsubsection>
+      <title>Transformation of the Vectors and the size of the Parallelogram</title>
 
-			<p>
-				Consider two vectors in <m>\mathbb{R}^2</m> and rotate them so one is on the <m>x</m>-axis.
-				Also take <m>\vec{u}</m> and multiply it by a factor of <m>k</m>
-			</p>
+      <p>
+        From above, the area of the parallelogram is the determinant of the vectors that are along the sides.
+      </p>
 
-			<figure xml:id="fig-parallelogram-scale">
-				<caption>Scaling a parallelogram</caption>
-				<image width="70%" xml:id="plot-parallelogram-scale">
-					<latex-image>
+      <p>
+        Consider two vectors in <m>\mathbb{R}^2</m> and rotate them so one is on the <m>x</m>-axis.
+        Also take <m>\boldsymbol{u}</m> and multiply it by a factor of <m>k</m>
+      </p>
+
+      <figure xml:id="fig-parallelogram-scale">
+        <caption>Scaling a parallelogram</caption>
+        <image width="70%" xml:id="plot-parallelogram-scale">
+          <latex-image>
 					<![CDATA[
 					\begin{tikzpicture}
 					\fill [lightgray] (0,0)-- (4,0) -- (5,3) -- (1,3) -- cycle ;
-					\draw[->,very thick] (0,0) -- (1,3) node [above] {$\vec{v}$};
-					\draw[->,very thick] (0,0) -- (4,0) node [below right] {$\vec{u}$};
+					\draw[->,very thick] (0,0) -- (1,3) node [above] {$\boldsymbol{v}$};
+					\draw[->,very thick] (0,0) -- (4,0) node [below right] {$\boldsymbol{u}$};
 					\end{tikzpicture}
 					\begin{tikzpicture}
 					\fill [lightgray] (0,0)-- (4,0) -- (5,3) -- (1,3) -- cycle ;
-					\draw[->,very thick] (0,0) -- (1,3) node [above] {$\vec{v}$};
-					\draw[->,very thick] (0,0) -- (5,0) node [below right] {$k\vec{u}$};
+					\draw[->,very thick] (0,0) -- (1,3) node [above] {$\boldsymbol{v}$};
+					\draw[->,very thick] (0,0) -- (5,0) node [below right] {$k\boldsymbol{u}$};
 					\draw (5,0) -- (6,3) -- (1,3);
 					\end{tikzpicture}
 					]]>
-					</latex-image>
-				</image>
-			</figure>
+          </latex-image>
+        </image>
+      </figure>
 
-			<p>
-				From this geometric argument, the area of the parallelogram formed by the vectors <m>
-				\vec{v}</m> and <m>k\vec{u}</m> appears to <m>k</m> times larger.
-				This is property 3 of
-				Definition <xref ref="defn-det" />.
-			</p>
+      <p>
+        From this geometric argument, the area of the parallelogram formed by the vectors <m> \boldsymbol{v}</m> and <m>k\boldsymbol{u}</m> appears to <m>k</m> times larger.
+        This is property 3 of Definition <xref ref="def-det" />.
+      </p>
 
-			<p>
-				Next, let's look at transformation <m>\vec{u} + k\vec{v}</m>.
-				The picture on the left is
-				the original two vectors and that on the right is the transformed vectors (with <m>k</m>
-				about 0.2 in this picture).
-				The original area and the transformed area are identical in this
-				case since neither the height of the parallelogram nor its width has changed.
-			</p>
+      <p>
+        Next, let's look at transformation <m>\boldsymbol{u} + k\boldsymbol{v}</m>.
+        The picture on the left is the original two vectors and that on the right is the transformed vectors (with <m>k</m> about 0.2 in this picture).
+        The original area and the transformed area are identical in this case since neither the height of the parallelogram nor its width has changed.
+      </p>
 
-			<figure xml:id="fig-parallelogram-skew">
-				<caption>Skewing a parallelogram</caption>
-				<image width="70%" xml:id="plot-parallelogram-skew">
-					<latex-image>
+      <figure xml:id="fig-parallelogram-skew">
+        <caption>Skewing a parallelogram</caption>
+        <image width="70%" xml:id="plot-parallelogram-skew">
+          <latex-image>
 					<![CDATA[
 					\begin{tikzpicture}
 					\fill [lightgray] (0,0)-- (4,0) -- (5,3) -- (1,3) -- cycle ;
-					\draw[->,very thick] (0,0) -- (1,3) node [above] {$\vec{v}$};
-					\draw[->,very thick] (0,0) -- (4,0) node [below right] {$\vec{u}$};
+					\draw[->,very thick] (0,0) -- (1,3) node [above] {$\boldsymbol{v}$};
+					\draw[->,very thick] (0,0) -- (4,0) node [below right] {$\boldsymbol{u}$};
 					\end{tikzpicture}
 					\begin{tikzpicture}
 					\fill [lightgray] (0,0)-- (4,0) -- (5,3) -- (1,3) -- cycle ;
-					\draw[->,very thick] (0,0) -- (2,3) node [above] {$\vec{v}+k\vec{u}$};
-					\draw[->,very thick] (0,0) -- (4,0) node [below right] {$\vec{u}$};
+					\draw[->,very thick] (0,0) -- (2,3) node [above] {$\boldsymbol{v}+k\boldsymbol{u}$};
+					\draw[->,very thick] (0,0) -- (4,0) node [below right] {$\boldsymbol{u}$};
 					\draw (4,0) -- (6,3) -- (2,3);
 					\end{tikzpicture}
 					]]>
-					</latex-image>
-				</image>
-			</figure>
+          </latex-image>
+        </image>
+      </figure>
 
-			<p>
-				This property shows that replacing a row with a constant times another row plus the
-				current row results in an unchanged area is consistent with property 1 of <xref
-				ref="defn-det" />.
-			</p>
+      <p>
+        This property shows that replacing a row with a constant times another row plus the current row results in an unchanged area is consistent with property 1 of <xref ref="def-det" />.
+      </p>
 
-			<p>
-				The other transformation related to the determinant is property 2 of <xref ref="defn-det" />
-				or in other words, if one switched the order of the vectors (row swaps), that the
-				determinant changes sign.
-				The area does not change because the area is the absolute value of
-				the determinant.
-			</p>
+      <p>
+        The other transformation related to the determinant is property 2 of <xref ref="def-det" /> or in other words, if one switched the order of the vectors (row swaps), that the determinant changes sign.
+        The area does not change because the area is the absolute value of the determinant.
+      </p>
 
-			<definition>
-				<statement>
-					<p>
-						In <m>\mathbb{R}^n</m>, the <term>parallelpiped</term> formed by <m>\langle \vec{v}_1,
-						\vec{v}_2, \ldots, \vec{v}_n \rangle</m> includes the set
-					</p>
+      <definition>
+        <statement>
+          <p>
+            In <m>\mathbb{R}^n</m>, the <term>parallelepiped</term> formed by <m>\langle \boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n \rangle</m> includes the set
+          </p>
 
-					<p>
-						<me>
-							\{ t_1 \vec{v}_1 + t_2 \vec{v}_2 + \cdots + t_n \vec{v}_n\; | \; t_1, t_2, \ldots, t_n
-							\in [0,1] \}
-						</me>
-					</p>
+          <p>
+            <me>
+              \{ t_1 \boldsymbol{v}_1 + t_2 \boldsymbol{v}_2 + \cdots + t_n \boldsymbol{v}_n\; | \; t_1, t_2, \ldots, t_n \in [0,1] \}
+            </me>
+          </p>
 
-					<p>
-						The <term>volume</term> of the parallelepiped is the absolute value of the determinant
-						of the matrix whose columns are <m>\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n</m>.
-					</p>
-				</statement>
-			</definition>
+          <p>
+            The <term>volume</term> of the parallelepiped is the absolute value of the determinant of the matrix whose columns are <m>\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n</m>.
+          </p>
+        </statement>
+      </definition>
 
-			<example>
-				<statement>
-					<p>
-						Find the volume of the parallelpiped formed by the vectors:
-					</p>
+      <example>
+        <statement>
+          <p>
+            Find the volume of the parallelepiped formed by the vectors:
+          </p>
 
-					<p>
-						<me>
-							\begin{bmatrix}
-							3 \\ 0 \\ 2
-							\end{bmatrix}, \begin{bmatrix}
-							-1 \\ 2 \\ 0
-							\end{bmatrix}, \begin{bmatrix}
-							2 \\ 3 \\ 1
-							\end{bmatrix}
-						</me>
-					</p>
-				</statement>
+          <p>
+            <me>
+              \begin{bmatrix} 3 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} 2 \\ 3 \\ 1 \end{bmatrix}
+            </me>
+          </p>
+        </statement>
 
-				<solution>
-					<p>
-						The volume is the absolute value of the determinant of the matrix with these three
-						columns.
-						We'll use Gauss' method to find the determinant.
-					</p>
+        <solution>
+          <p>
+            The volume is the absolute value of the determinant of the matrix with these three columns.
+            We'll use Gauss' method to find the determinant.
+          </p>
 
-					<p>
-						<md>
-							<mrow>|A| \amp= \begin{vmatrix}
-							3 \amp -1 \amp 2 \\
-							0 \amp 2 \amp 3 \\
-							2 \amp 0 \amp 1
-							\end{vmatrix} </mrow>
-							<mrow>3R_3 \rightarrow R_3 \qquad
-							3|A| \amp= \begin{vmatrix}
-							3 \amp -1 \amp 2 \\
-							0 \amp 2 \amp 3 \\
-							6 \amp 0 \amp 3
-							\end{vmatrix} </mrow>
-							<mrow>-2 R_1 + R_3 \rightarrow R_3 \qquad
-							3|A| \amp= \begin{vmatrix}
-							3 \amp -1 \amp 2 \\
-							0 \amp 2 \amp 3 \\
-							0 \amp 2 \amp -1
-							\end{vmatrix} </mrow>
-							<mrow>-R_2 + R_3 \rightarrow R_3 \qquad
-							3|A| \amp= \begin{vmatrix}
-							3 \amp -1 \amp 2 \\
-							0 \amp 2 \amp 3 \\
-							0 \amp 0 \amp -4
-							\end{vmatrix}</mrow>
-						</md>
-					</p>
+          <p>
+            <md>
+              <mrow>|A| \amp= \begin{vmatrix} 3 \amp -1 \amp 2 \\ 0 \amp 2 \amp 3 \\ 2 \amp 0 \amp 1 \end{vmatrix} </mrow>
+              <mrow>3R_3 \rightarrow R_3 \qquad 3|A| \amp= \begin{vmatrix} 3 \amp -1 \amp 2 \\ 0 \amp 2 \amp 3 \\ 6 \amp 0 \amp 3 \end{vmatrix} </mrow>
+              <mrow>-2 R_1 + R_3 \rightarrow R_3 \qquad 3|A| \amp= \begin{vmatrix} 3 \amp -1 \amp 2 \\ 0 \amp 2 \amp 3 \\ 0 \amp 2 \amp -1 \end{vmatrix} </mrow>
+              <mrow>-R_2 + R_3 \rightarrow R_3 \qquad 3|A| \amp= \begin{vmatrix} 3 \amp -1 \amp 2 \\ 0 \amp 2 \amp 3 \\ 0 \amp 0 \amp -4 \end{vmatrix}</mrow>
+            </md>
+          </p>
 
-					<p>
-						and multiplying down the diagonal, <m>3|A| =
-						-24</m>, so <m>|A|=-8</m>.
-						This means that the volume is 8 units.
-					</p>
-				</solution>
-			</example>
-		</subsubsection>
-	</subsection>
+          <p>
+            and multiplying down the diagonal, <m>3|A| = -24</m>, so <m>|A|=-8</m>.
+            This means that the volume is 8 units.
+          </p>
+        </solution>
+      </example>
+    </subsubsection>
+  </subsection>
 
-	<subsection>
-		<title>Properties of Determinants</title>
-		<p>
-			Need something here.
-		</p>
-	</subsection>
+
+  <subsection>
+    <title>Other Properties of Determinants</title>
+
+    <p>
+      This section has a number of other properties of determinants.
+      We start by showing that a matrix and it's transpose have the same determinant.
+    </p>
+
+    <lemma xml:id="lem-det-transpose">
+      <statement>
+        <p>
+          Let <m>A</m> an <m>n \times n</m> matrix.
+          Then
+          <me>
+            \det(A) = \det(A^{\intercal})
+          </me>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          We first start with using the properties of elementary matrices
+        </p>
+
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m>\det(E_{i \leftrightarrow j}) = \det(E_{i \leftrightarrow j}^{\intercal})</m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\det(E_{cR_i}) = \det(E_{cR_i}^{\intercal})</m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\det(E_{cR_i + R_j}) = \det(E_{cR_i + R_j}^{\intercal})</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+
+        <p>
+          where proving these are left to the reader.
+          That is for any elementary matrix, <m>\det(E) = \det(E^{\intercal})</m>
+        </p>
+
+        <p>
+          The proof comes down to two cases.
+          The first is when the matrix is invertible or <m>\det(A) \neq 0</m>.
+          The second case is when <m>A</m> is not invertible.
+        </p>
+
+        <p>
+          <ul>
+            <li>
+              <p>
+                <alert>Case 1: <m>A</m> is invertible. </alert>
+              </p>
+
+              <p>
+                From <xref ref="lem-matrix-product-elem-matrices"/>, any invertible matrix <m>A</m> can be written as the product of elementary matrices.
+                Assume that <m>A = E_1 E_2 \cdots E_k</m>.
+                First note that
+                <me>
+                  \begin{aligned} \det(A) \amp = \det(E_1 E_2 \cdots E_k ) \\ \amp = \det(E_1) \det(E_2) \cdot \det(E_k) \end{aligned}
+                </me>
+                Now, evaluate the determinant of <m>A^{\intercal}</m> with
+                <me>
+                  \begin{aligned} \det(A^{\intercal}) \amp = \det((E_1 E_{2} \cdots E_k)^{\intercal}) \\ \amp = \det(E_k^{\intercal}E_{k-1}^{\intercal} \cdots E_1^{\intercal}) \\ \amp =  \det(E_k^{\intercal}) \det(E_{k-2}^{\intercal}) \cdots \det(E_1^{\intercal}) \\ \amp =  \det(E_k) \det(E_{k-1}) \cdots \det(E_1)  \\ \amp = \det(A) \end{aligned}
+                </me>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <alert>Case 2: <m>A</m> is not invertible</alert>
+              </p>
+
+              <p>
+                If <m>A</m> is not invertible, then <m>\det(A)=0</m>.
+                Also, since <m>A</m> is not invertible, then <m>A^{\intercal}</m> is also not invertible, so <m>\det(A^{\intercal})=0</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      The last lemma presented here is related to the determinant of the inverse of a matrix.
+    </p>
+
+    <lemma xml:id="lem-det-inverse">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> invertible matrix.
+          Then
+          <me>
+            \det(A^{-1}) = \frac{1}{\det(A)}
+          </me>
+        </p>
+      </statement>
+    </lemma>
+
+    <p>
+      The proof of this is left to the reader, but it follows from other lemmas in this section.
+    </p>
+  </subsection>
 </section>

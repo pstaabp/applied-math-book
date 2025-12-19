@@ -35,20 +35,20 @@
 		<statement>
 			<p>
 				Let <m>T:V \rightarrow V</m> be a linear map and <m>V</m> be a finite dimensional vector space.
-				The nonzero vector <m>\vec{x}</m> is an <term>eigenvector</term> with associated
+				The nonzero vector <m>\boldsymbol{x}</m> is an <term>eigenvector</term> with associated
 				<term>eigenvalue</term> if
 			</p>
 
 			<p>
 				<me>
-					T(\vec{x}) = \lambda \vec{x}.
+					T(\boldsymbol{x}) = \lambda \boldsymbol{x}.
 				</me>
 			</p>
 		</statement>
 	</definition>
 
 	<p>
-		There are a few ways to find <m>\vec{x}</m> and <m>\lambda</m>.
+		There are a few ways to find <m>\boldsymbol{x}</m> and <m>\lambda</m>.
 		In this section, we'll only see
 		some examples that are relatively simple to see as well as finding the matrix representation of
 		the map.
@@ -78,23 +78,23 @@
 
 			<p>
 				<me>
-					S(\vec{x}) = k \vec{x}
+					S(\boldsymbol{x}) = k \boldsymbol{x}
 				</me>
 			</p>
 
 			<p>
-				To find the eigenvalues and eigenvectors of <m>S</m>, we seek an <m>\vec{x}</m> and a <m>
+				To find the eigenvalues and eigenvectors of <m>S</m>, we seek an <m>\boldsymbol{x}</m> and a <m>
 				\lambda</m> such that
 			</p>
 
 			<p>
 				<me>
-					S(\vec{x})=\lambda \vec{x}
+					S(\boldsymbol{x})=\lambda \boldsymbol{x}
 				</me>
 			</p>
 
 			<p>
-				but since <m>S(\vec{x})=k \vec{x}</m>, then <m>\lambda =k</m> and any <m>\vec{x}</m> is an
+				but since <m>S(\boldsymbol{x})=k \boldsymbol{x}</m>, then <m>\lambda =k</m> and any <m>\boldsymbol{x}</m> is an
 				eigenvector.
 			</p>
 
@@ -186,9 +186,9 @@
 			<p>
 				<md>
 					<mrow>
-					\vec{v}_1 \amp = \begin{bmatrix}
+					\boldsymbol{v}_1 \amp = \begin{bmatrix}
 					1 \\ 0
-					\end{bmatrix} \amp \vec{v}_2 \amp = \begin{bmatrix}
+					\end{bmatrix} \amp \boldsymbol{v}_2 \amp = \begin{bmatrix}
 					0 \\ 1
 					\end{bmatrix}
 					</mrow>
@@ -366,17 +366,17 @@
 			<p>
 				<md>
 					<mrow>
-					\lambda_1 \amp = 1 \amp \vec{v}_1 \amp = \begin{bmatrix}
+					\lambda_1 \amp = 1 \amp \boldsymbol{v}_1 \amp = \begin{bmatrix}
 					1 \\ 1 \\ 1 \\1
 					\end{bmatrix} \amp
-					\lambda_2 \amp = -1 \amp \vec{v}_2 \amp = \begin{bmatrix}
+					\lambda_2 \amp = -1 \amp \boldsymbol{v}_2 \amp = \begin{bmatrix}
 					1 \\ -1 \\ -1 \\ 1
 					\end{bmatrix}, </mrow>
 					<mrow>
-					\lambda_3 \amp = i \amp \vec{v}_3 \amp = \begin{bmatrix}
+					\lambda_3 \amp = i \amp \boldsymbol{v}_3 \amp = \begin{bmatrix}
 					1 \\ -i \\ i \\ -1
 					\end{bmatrix} \amp
-					\lambda_4 \amp = -i \amp \vec{v}_4 \amp = \begin{bmatrix}
+					\lambda_4 \amp = -i \amp \boldsymbol{v}_4 \amp = \begin{bmatrix}
 					1 \\ i \\ -i \\ -1
 					\end{bmatrix}</mrow>
 				</md>
@@ -386,7 +386,7 @@
 				To translate this back to the map that rotates the matrix, we translate
 				each of the eigenvectors
 				to the matrix that it represents.
-				For example, <m>\vec{v}_1</m> is the matrix
+				For example, <m>\boldsymbol{v}_1</m> is the matrix
 			</p>
 
 			<p>

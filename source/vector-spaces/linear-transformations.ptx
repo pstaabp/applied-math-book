@@ -17,15 +17,15 @@
 			<p>
 				Let <m>V</m> and <m>W</m> be vector spaces.
 				A <term>linear transformation</term> or <term>linear
-				map</term> <m>T</m> from <m>V</m> to <m>W</m> is a function that assigns to each vector <m>\vec{v}
-				\in V</m> a unique vector <m>T\vec{v} \in W</m> and that satisfies for each <m>\vec{u}</m>
+				map</term> <m>T</m> from <m>V</m> to <m>W</m> is a function that assigns to each vector <m>\boldsymbol{v}
+				\in V</m> a unique vector <m>T\boldsymbol{v} \in W</m> and that satisfies for each <m>\boldsymbol{u}</m>
 				and <m>
-				\vec{v}</m> in <m>V</m> and each scalar <m>\alpha</m>,
+				\boldsymbol{v}</m> in <m>V</m> and each scalar <m>\alpha</m>,
 				<md>
-					<mrow xml:id="eq-linear-map-add" number="yes">(\vec{u} + \vec{v}) \amp = T(\vec{u}) + T
-					(\vec{v}), </mrow>
-					<mrow xml:id="eq-linear-map-prod" number="yes">T(\alpha \vec{v}) \amp = \alpha T
-					(\vec{v}), </mrow>
+					<mrow xml:id="eq-linear-map-add" number="yes">(\boldsymbol{u} + \boldsymbol{v}) \amp = T(\boldsymbol{u}) + T
+					(\boldsymbol{v}), </mrow>
+					<mrow xml:id="eq-linear-map-prod" number="yes">T(\alpha \boldsymbol{v}) \amp = \alpha T
+					(\boldsymbol{v}), </mrow>
 				</md>
 			</p>
 		</statement>
@@ -93,9 +93,9 @@
 
 			<p>
 				<md>
-					<mrow>\vec{x} \amp = \begin{bmatrix}
+					<mrow>\boldsymbol{x} \amp = \begin{bmatrix}
 					x_1 \\ x_2
-					\end{bmatrix}, \amp \vec{y} \amp = \begin{bmatrix}
+					\end{bmatrix}, \amp \boldsymbol{y} \amp = \begin{bmatrix}
 					y_1 \\ y_2
 					\end{bmatrix}
 					</mrow>
@@ -112,7 +112,7 @@
 
 			<p>
 				<md>
-					<mrow>T(\vec{x}+\vec{y}) \amp = T \biggl( \begin{bmatrix}
+					<mrow>T(\boldsymbol{x}+\boldsymbol{y}) \amp = T \biggl( \begin{bmatrix}
 					x_1 \\ x_2
 					\end{bmatrix}+ \begin{bmatrix}
 					y_1 \\ y_2
@@ -128,7 +128,7 @@
 					x_1 \\ -x_2
 					\end{bmatrix} + \begin{bmatrix}
 					y_1 \\ -y_2
-					\end{bmatrix} = T(\vec{x}) + T(\vec{y}).</mrow>
+					\end{bmatrix} = T(\boldsymbol{x}) + T(\boldsymbol{y}).</mrow>
 				</md>
 			</p>
 
@@ -139,7 +139,7 @@
 
 			<p>
 				<md>
-					<mrow>T(\alpha \vec{x}) \amp = T \biggl( \alpha \begin{bmatrix}
+					<mrow>T(\alpha \boldsymbol{x}) \amp = T \biggl( \alpha \begin{bmatrix}
 					x_1 \\ x_2
 					\end{bmatrix} \biggr) = T \biggl( \begin{bmatrix}
 					\alpha x_1 \\ \alpha x_2
@@ -148,7 +148,7 @@
 					\alpha x_1 \\ -\alpha x_2
 					\end{bmatrix} = \alpha \begin{bmatrix}
 					x_1 \\ -x_2
-					\end{bmatrix} = \alpha T(\vec{x}).</mrow>
+					\end{bmatrix} = \alpha T(\boldsymbol{x}).</mrow>
 				</md>
 			</p>
 
@@ -171,18 +171,18 @@
 			<p>
 				Let
 				<me>
-					\vec{x} =
+					\boldsymbol{x} =
 					\begin{bmatrix}
 					x_1 \\ x_2
 					\end{bmatrix}
 				</me>
 				be a vector in <m>\mathbb{R}^2</m>.
 				Let the function <m>T</m> take
-				the vector <m>\vec{x}</m> and rotate it by <m>\theta</m> radians in the counterclockwise
+				the vector <m>\boldsymbol{x}</m> and rotate it by <m>\theta</m> radians in the counterclockwise
 				direction.
 				Call the new vector
 				<me>
-					\vec{y} =\begin{bmatrix}
+					\boldsymbol{y} =\begin{bmatrix}
 					y_1 \\ y_2
 					\end{bmatrix}
 				</me>
@@ -214,10 +214,10 @@
 
 		<solution>
 			<p>
-				Let <m>r = ||\vec{x}||</m> and since <m>\vec{y}</m> is the rotated version of <m>\vec{x}</m>
-				it has the same length, therefore <m>r=||\vec{y}||</m>.
+				Let <m>r = ||\boldsymbol{x}||</m> and since <m>\boldsymbol{y}</m> is the rotated version of <m>\boldsymbol{x}</m>
+				it has the same length, therefore <m>r=||\boldsymbol{y}||</m>.
 				The values <m>x_1, x_2, y_1,y_2</m>
-				can be written in terms of <m>\alpha</m>, the angle that the vector <m>\vec{x}</m> makes
+				can be written in terms of <m>\alpha</m>, the angle that the vector <m>\boldsymbol{x}</m> makes
 				with the positive horizontal axis, and <m>\theta</m> the angle between the vectors as
 				follows.
 			</p>
@@ -270,7 +270,7 @@
 
 			<p>
 				<me>
-					S(\vec{x}) = k \vec{x}
+					S(\boldsymbol{x}) = k \boldsymbol{x}
 				</me>
 			</p>
 
@@ -311,13 +311,13 @@
 			<p>
 				Again, we show that <xref ref="eq-linear-map-add" /> and <xref
 				ref="eq-linear-map-prod" /> are satisfied.
-				Let <m>\vec{x}</m> and <m>\vec{y}</m> be
+				Let <m>\boldsymbol{x}</m> and <m>\boldsymbol{y}</m> be
 				elements of <m>\mathbb{R}^2</m>.
 			</p>
 
 			<p>
 				<me>
-					S(\vec{x}+\vec{y}) = k(\vec{x}+\vec{y}) = k\vec{x} + k \vec{y} = S(\vec{x}) + S(\vec{y})
+					S(\boldsymbol{x}+\boldsymbol{y}) = k(\boldsymbol{x}+\boldsymbol{y}) = k\boldsymbol{x} + k \boldsymbol{y} = S(\boldsymbol{x}) + S(\boldsymbol{y})
 				</me>
 			</p>
 
@@ -327,7 +327,7 @@
 
 			<p>
 				<me>
-					S(\alpha \vec{x}) = k (\alpha \vec{x} ) = \alpha (k \vec{x}) = \alpha S(\vec{x})
+					S(\alpha \boldsymbol{x}) = k (\alpha \boldsymbol{x} ) = \alpha (k \boldsymbol{x}) = \alpha S(\boldsymbol{x})
 				</me>
 			</p>
 
@@ -340,7 +340,7 @@
 	xml:id="thm-matrix-linear-trans">
 	<statement>
 		<p>
-			If a transformation map <m>T</m> is written as a matrix or <m>T(\vec{x}) = A\vec{x}</m>,
+			If a transformation map <m>T</m> is written as a matrix or <m>T(\boldsymbol{x}) = A\boldsymbol{x}</m>,
 			then <m>T</m> is a linear transformation.
 		</p>
 	</statement>
@@ -350,9 +350,9 @@
 		<p>
 			This is a consequence of matrix operations.
 			<md>
-				<mrow>T(\vec{x}+\vec{y}) &amp;= A(\vec{x}+\vec{y}) = A\vec{x} + A \vec{y} = T(\vec{x}) +
-				T(\vec{y}) </mrow>
-				<mrow>T(\alpha \vec{x}) &amp; = A (\alpha \vec{x}) = \alpha A\vec{x} = \alpha T(\vec{x}).</mrow>
+				<mrow>T(\boldsymbol{x}+\boldsymbol{y}) &amp;= A(\boldsymbol{x}+\boldsymbol{y}) = A\boldsymbol{x} + A \boldsymbol{y} = T(\boldsymbol{x}) +
+				T(\boldsymbol{y}) </mrow>
+				<mrow>T(\alpha \boldsymbol{x}) &amp; = A (\alpha \boldsymbol{x}) = \alpha A\boldsymbol{x} = \alpha T(\boldsymbol{x}).</mrow>
 			</md>
 		</p>
 	</proof>
@@ -373,7 +373,7 @@
 			Then
 			there exists a unique <m>m</m> by <m>n</m> matrix <m>A_T</m> such that
 			<me>
-				T \vec{x} = A_T \vec{x} \qquad \qquad \text{for every $\vec{x} \in \mathbb{R}^n.$}
+				T \boldsymbol{x} = A_T \boldsymbol{x} \qquad \qquad \text{for every $\boldsymbol{x} \in \mathbb{R}^n.$}
 			</me>
 		</p>
 	</statement>
@@ -395,38 +395,38 @@
 		transformation, <m>T: V \rightarrow W</m> can be written in matrix form.
 		This section explains
 		how to find it.
-		Let <m>B_V=(\vec{v}_1,\vec{v}_2, \ldots, \vec{v}_m)</m> be a basis of <m>V</m>
-		and <m>B_W=(\vec{w}_1,\vec{w}_2,
-		\ldots, \vec{w}_n)</m> be a basis of <m>W</m>.
-		Any vector <m>\vec{x}</m> in <m>V</m> can be
+		Let <m>B_V=(\boldsymbol{v}_1,\boldsymbol{v}_2, \ldots, \boldsymbol{v}_m)</m> be a basis of <m>V</m>
+		and <m>B_W=(\boldsymbol{w}_1,\boldsymbol{w}_2,
+		\ldots, \boldsymbol{w}_n)</m> be a basis of <m>W</m>.
+		Any vector <m>\boldsymbol{x}</m> in <m>V</m> can be
 		written
 		<me>
-			\vec{x} = c_1 \vec{v}_1 + c_2 \vec{v}_2 + \cdots + c_m \vec{v}_m = \sum_{j=1}^m c_j
-			\vec{v}_j
+			\boldsymbol{x} = c_1 \boldsymbol{v}_1 + c_2 \boldsymbol{v}_2 + \cdots + c_m \boldsymbol{v}_m = \sum_{j=1}^m c_j
+			\boldsymbol{v}_j
 		</me>
-		or in other words <m>\text{Rep}_{B_V}(\vec{x}) = \vec{c}</m>.
-		Applying the map to <m>\vec{x}</m>
+		or in other words <m>\text{Rep}_{B_V}(\boldsymbol{x}) = \boldsymbol{c}</m>.
+		Applying the map to <m>\boldsymbol{x}</m>
 		is
 		<me>
-			T(\vec{x}) = T\biggl(\sum_{j=1}^m c_j \vec{v}_j \biggr) \notag
+			T(\boldsymbol{x}) = T\biggl(\sum_{j=1}^m c_j \boldsymbol{v}_j \biggr) \notag
 		</me>
 		and since it is a linear map
 		<men xml:id="eq-lin-trans1">
-			T(\vec{x})= \sum_{j=1}^m c_j T(\vec{v}_j)
+			T(\boldsymbol{x})= \sum_{j=1}^m c_j T(\boldsymbol{v}_j)
 		</men>
 		Next, we write the transformation in terms of the basis vectors of <m>W</m> or
 		<men xml:id="eq-lin-trans2">
-			T(\vec{v}_j) = a_{1,j} \vec{w}_1 + a_{2,j} \vec{w}_2 + \cdots + a_{n,j} \vec{w}_n =
-			\sum_{i=1}^n a_{i,j} \vec{w}_i
+			T(\boldsymbol{v}_j) = a_{1,j} \boldsymbol{w}_1 + a_{2,j} \boldsymbol{w}_2 + \cdots + a_{n,j} \boldsymbol{w}_n =
+			\sum_{i=1}^n a_{i,j} \boldsymbol{w}_i
 		</men>
 		Substituting <xref ref="eq-lin-trans2" /> into <xref ref="eq-lin-trans1" /> results in
 		<me>
-			T(\vec{x}) = \sum_{j=1}^m c_j \sum_{i=1}^n a_{i,j} \vec{w}_i
-			= \sum_{i=1}^n \sum_{j=1}^m a_{i,j} c_j \vec{w}_i
+			T(\boldsymbol{x}) = \sum_{j=1}^m c_j \sum_{i=1}^n a_{i,j} \boldsymbol{w}_i
+			= \sum_{i=1}^n \sum_{j=1}^m a_{i,j} c_j \boldsymbol{w}_i
 		</me>
 		and letting <m>A_T</m> be the <m>m \times n</m> matrix with entries <m>a_{i,j}</m> then
 		<me>
-			\text{Rep}_{B_W} (T(\vec{x}))  = A_T\vec{c}
+			\text{Rep}_{B_W} (T(\boldsymbol{x}))  = A_T\boldsymbol{c}
 		</me>
 		or in other words, the matrix
 		performs the map on the coefficients.
@@ -435,7 +435,7 @@
 		That equation can also be thought of as a
 		representation of the basis vectors or
 		<me>
-			\text{Rep}_{B_W} ( T(\vec{v}_j)) = \vec{a}_j
+			\text{Rep}_{B_W} ( T(\boldsymbol{v}_j)) = \boldsymbol{a}_j
 		</me>
 		where <m>a_j</m> is the <m>j</m>th
 		column of <m>A</m>.
@@ -447,7 +447,7 @@
 			If <m>A_T</m> is
 			the matrix representation of the map <m>T</m>, then the <m>j</m>th column of <m>A_T</m> is the
 			vector <m>
-			\text{Rep}_{B_W}(T(\vec{v}_j))</m>, the map applied to the <m>j</m>th basis vector of <m>V</m>
+			\text{Rep}_{B_W}(T(\boldsymbol{v}_j))</m>, the map applied to the <m>j</m>th basis vector of <m>V</m>
 			written in terms of the basis of <m>W</m>.
 		</p>
 	</remark>
@@ -487,9 +487,9 @@
 
 			<p>
 				<md>
-					<mrow>   \vec{v}_1 \amp = \begin{bmatrix}
+					<mrow>   \boldsymbol{v}_1 \amp = \begin{bmatrix}
 					1 \\ 0
-					\end{bmatrix} \amp \vec{v}_2 = \begin{bmatrix}
+					\end{bmatrix} \amp \boldsymbol{v}_2 = \begin{bmatrix}
 					0 \\ 1
 					\end{bmatrix}</mrow>
 				</md>
@@ -501,9 +501,9 @@
 
 			<p>
 				<md>
-					<mrow>T(\vec{v}_1) \amp = \begin{bmatrix}
+					<mrow>T(\boldsymbol{v}_1) \amp = \begin{bmatrix}
 					1 \\ 0
-					\end{bmatrix} \amp T(\vec{v}_2) \amp = \begin{bmatrix}
+					\end{bmatrix} \amp T(\boldsymbol{v}_2) \amp = \begin{bmatrix}
 					0 \\ -1
 					\end{bmatrix}</mrow>
 				</md>

@@ -24,7 +24,7 @@
 			We seek to write <m>A=LU</m>, where <m>L</m> is a lower
 			triangular matrix and <m>U</m> is an upper triangular matrix.
 			The reason for doing such a
-			factorization is often to solve <m>A\vec{x}=\vec{b}</m> for multiple right hand sides.
+			factorization is often to solve <m>A\boldsymbol{x}=\boldsymbol{b}</m> for multiple right hand sides.
 		</p>
 
 		<p>
@@ -498,7 +498,7 @@
 		<p>
 			The main application of LU decomposition is that of solving linear systems.
 			Consider the
-			matrix equation <m>A\vec{x} = \vec{b}</m> and assume that <m>A=LU</m> (that is the needed
+			matrix equation <m>A\boldsymbol{x} = \boldsymbol{b}</m> and assume that <m>A=LU</m> (that is the needed
 			permutation matrix is <m>P=I</m>).
 		</p>
 
@@ -506,34 +506,34 @@
 			<ol>
 				<li>
 					<p>
-						Solve <m>L\vec{y} = \vec{b}</m> for <m>\vec{y}</m>.
+						Solve <m>L\boldsymbol{y} = \boldsymbol{b}</m> for <m>\boldsymbol{y}</m>.
 					</p>
 				</li>
 
 				<li>
 					<p>
-						Then solve <m>U\vec{x} = \vec{y}</m> for <m>\vec{x}</m>.
+						Then solve <m>U\boldsymbol{x} = \boldsymbol{y}</m> for <m>\boldsymbol{x}</m>.
 					</p>
 				</li>
 			</ol>
 		</p>
 
 		<p>
-			First, this works, because if <m>\vec{y} = U\vec{x}</m>, then
+			First, this works, because if <m>\boldsymbol{y} = U\boldsymbol{x}</m>, then
 		</p>
 
 		<p>
 			<md>
-				<mrow>L\vec{y} \amp = \vec{b} </mrow>
-				<mrow>L U\vec{x} \amp = \vec{b} </mrow>
-				<mrow>A \vec{x} \amp = \vec{b}</mrow>
+				<mrow>L\boldsymbol{y} \amp = \boldsymbol{b} </mrow>
+				<mrow>L U\boldsymbol{x} \amp = \boldsymbol{b} </mrow>
+				<mrow>A \boldsymbol{x} \amp = \boldsymbol{b}</mrow>
 			</md>
 		</p>
 
 		<example>
 			<statement>
 				<p>
-					Solve the system <m>A\vec{x}=\vec{b}</m> using <m>LU</m>-decomposition for
+					Solve the system <m>A\boldsymbol{x}=\boldsymbol{b}</m> using <m>LU</m>-decomposition for
 				</p>
 
 				<p>
@@ -542,7 +542,7 @@
 						3 \amp -2 \amp 1 \\
 						6 \amp 0 \amp 4 \\
 						-6 \amp -8 \amp -7 \\
-						\end{bmatrix} \amp \vec{b} \amp = \begin{bmatrix}
+						\end{bmatrix} \amp \boldsymbol{b} \amp = \begin{bmatrix}
 						14 \\22 \\ -9
 						\end{bmatrix}</mrow>
 					</md>
@@ -571,7 +571,7 @@
 				</p>
 
 				<p>
-					To use this to solve <m>A\vec{x}=\vec{b}</m>, first we solve <m>L \vec{y} = \vec{b}</m>
+					To use this to solve <m>A\boldsymbol{x}=\boldsymbol{b}</m>, first we solve <m>L \boldsymbol{y} = \boldsymbol{b}</m>
 					via forward substitution.
 				</p>
 
@@ -589,8 +589,8 @@
 				</p>
 
 				<p>
-					So the solution to <m>L\vec{y}=\vec{b}</m> is <m>\vec{y}=[14,-6,1]^{\intercal}</m>.
-					Next, we solve <m>U\vec{x}=\vec{y}</m> by back substitution,
+					So the solution to <m>L\boldsymbol{y}=\boldsymbol{b}</m> is <m>\boldsymbol{y}=[14,-6,1]^{\intercal}</m>.
+					Next, we solve <m>U\boldsymbol{x}=\boldsymbol{y}</m> by back substitution,
 				</p>
 
 				<p>
@@ -613,7 +613,7 @@
 
 				<p>
 					<me>
-						\vec{x} = \begin{bmatrix}
+						\boldsymbol{x} = \begin{bmatrix}
 						1 \\ -2 \\ 3
 						\end{bmatrix}
 					</me>
@@ -623,7 +623,7 @@
 
 		<p>
 			You can see from the example above that once the matrix <m>A</m> factored that it is
-			relatively simple to find the solutions to <m>L\vec{y}=\vec{b}</m> and <m>A\vec{x}=\vec{y}</m>
+			relatively simple to find the solutions to <m>L\boldsymbol{y}=\boldsymbol{b}</m> and <m>A\boldsymbol{x}=\boldsymbol{y}</m>
 			and there are relatively few computations to perform.
 		</p>
 
@@ -631,7 +631,7 @@
 			In fact, this is true in general.
 			In that if one actually finds the factorization of <m>A</m>
 			and then solves this in the manner show that about 1/2 of the operations are done then
-			solving <m>A\vec{x}=\vec{b}</m> directly, say by reducing the matrix to reduced row echelon
+			solving <m>A\boldsymbol{x}=\boldsymbol{b}</m> directly, say by reducing the matrix to reduced row echelon
 			form.
 		</p>
 	</subsection>
@@ -639,8 +639,8 @@
 	<subsection>
 		<title>Inverting a Matrix</title>
 		<p>
-			The same idea can be use to find inverse of <m>A</m> by repeated solving <m>LU\vec{x} =
-			\vec{b}</m> by repeating this for <m>\vec{b}</m> the columns of the identity matrix.
+			The same idea can be use to find inverse of <m>A</m> by repeated solving <m>LU\boldsymbol{x} =
+			\boldsymbol{b}</m> by repeating this for <m>\boldsymbol{b}</m> the columns of the identity matrix.
 			The
 			example below shows this without all of the details of finding the factorization:
 		</p>
@@ -683,86 +683,86 @@
 				</p>
 
 				<p>
-					and we will solve <m>A\vec{x}=LU\vec{x}=\vec{e}_j</m>, where <m>\vec{e}_j</m> is the <m>
+					and we will solve <m>A\boldsymbol{x}=LU\boldsymbol{x}=\boldsymbol{e}_j</m>, where <m>\boldsymbol{e}_j</m> is the <m>
 					j</m>th column of the 3 by 3 identity matrix.
 				</p>
 
 				<p>
-					Solving <m>LU\vec{x} = \vec{e}_1</m> by solving <m>L\vec{y}_1 = (1,0,0)^{\intercal}</m>
+					Solving <m>LU\boldsymbol{x} = \boldsymbol{e}_1</m> by solving <m>L\boldsymbol{y}_1 = (1,0,0)^{\intercal}</m>
 					or
 				</p>
 
 				<p>
 					<me>
-						\vec{y_1} = \begin{bmatrix}
+						\boldsymbol{y_1} = \begin{bmatrix}
 						1 \\ -2/3 \\ -4/3
 						\end{bmatrix}
 					</me>
 				</p>
 
 				<p>
-					then solve <m>U\vec{x}_1 = \vec{y}_1</m> for <m>\vec{x}_1</m> or
+					then solve <m>U\boldsymbol{x}_1 = \boldsymbol{y}_1</m> for <m>\boldsymbol{x}_1</m> or
 				</p>
 
 				<p>
 					<me>
-						\vec{x}_1 = \begin{bmatrix}
+						\boldsymbol{x}_1 = \begin{bmatrix}
 						-11 \\ 10 \\ -4
 						\end{bmatrix}
 					</me>
 				</p>
 
 				<p>
-					Repeating this for <m>\vec{b}=\vec{e}_2</m>, first solving <m>L\vec{y}_2 =
+					Repeating this for <m>\boldsymbol{b}=\boldsymbol{e}_2</m>, first solving <m>L\boldsymbol{y}_2 =
 					(0,1,0)^{\intercal}</m> or
 				</p>
 
 				<p>
 					<me>
-						\vec{y}_2 = \begin{bmatrix}
+						\boldsymbol{y}_2 = \begin{bmatrix}
 						0 \\ 1 \\ 2
 						\end{bmatrix}
 					</me>
 				</p>
 
 				<p>
-					then solve <m>U\vec{x}_2 = \vec{y}_2</m> for <m>\vec{x}_2</m> or
+					then solve <m>U\boldsymbol{x}_2 = \boldsymbol{y}_2</m> for <m>\boldsymbol{x}_2</m> or
 				</p>
 
 				<p>
 					<me>
-						\vec{x}_2 = \begin{bmatrix}
+						\boldsymbol{x}_2 = \begin{bmatrix}
 						17 \\ -15 \\ 6
 						\end{bmatrix}
 					</me>
 				</p>
 
 				<p>
-					and lastly, solve <m>L\vec{y}_3 = (0,0,1)^{\intercal}</m> or
+					and lastly, solve <m>L\boldsymbol{y}_3 = (0,0,1)^{\intercal}</m> or
 				</p>
 
 				<p>
 					<me>
-						\vec{y}_3 = \begin{bmatrix}
+						\boldsymbol{y}_3 = \begin{bmatrix}
 						0 \\ 0 \\ 1
 						\end{bmatrix}
 					</me>
 				</p>
 
 				<p>
-					and solving <m>U\vec{x}_3 = \vec{y}_3</m> results in
+					and solving <m>U\boldsymbol{x}_3 = \boldsymbol{y}_3</m> results in
 				</p>
 
 				<p>
 					<me>
-						\vec{x}_3 = \begin{bmatrix}
+						\boldsymbol{x}_3 = \begin{bmatrix}
 						8 \\ -7 \\ 3
 						\end{bmatrix}
 					</me>
 				</p>
 
 				<p>
-					The inverse matrix is then the matrix with <m>\vec{x}_j</m> as the columns or
+					The inverse matrix is then the matrix with <m>\boldsymbol{x}_j</m> as the columns or
 				</p>
 
 				<p>

@@ -34,33 +34,33 @@
 			<statement>
 				<p>
 					For a square matrix <m>A</m>, an <term>eigenvalue</term> <m>\lambda</m> with related <term>
-					eigenvector</term> <m>\vec{v}</m> satisfy
+					eigenvector</term> <m>\boldsymbol{v}</m> satisfy
 				</p>
 
 				<p>
 					<me>
-						A \vec{v} = \lambda \vec{v}
+						A \boldsymbol{v} = \lambda \boldsymbol{v}
 					</me>
 				</p>
 
 				<p>
-					as long as <m>\vec{v}</m> is not the zero vector.
+					as long as <m>\boldsymbol{v}</m> is not the zero vector.
 				</p>
 			</statement>
 		</definition>
 
 		<p>
-			Recall that the matrix operation <m>A \vec{v}</m> is a linear transformation on <m>\vec{v}</m>,
-			that is, it take a vector <m>\vec{v}</m> to another vector.
+			Recall that the matrix operation <m>A \boldsymbol{v}</m> is a linear transformation on <m>\boldsymbol{v}</m>,
+			that is, it take a vector <m>\boldsymbol{v}</m> to another vector.
 			Thus the eigenvector of a matrix
-			is a vector such that <m>A\vec{v}</m> results in a vector in the same direction as <m>\vec{v}</m>.
+			is a vector such that <m>A\boldsymbol{v}</m> results in a vector in the same direction as <m>\boldsymbol{v}</m>.
 			The eigenvalue is the scalar transformation associated with this.
 		</p>
 
 		<example>
 			<statement>
 				<p>
-					Show that <m>\vec{v}=[1\;\;1]^{\intercal}</m> is a eigenvector of
+					Show that <m>\boldsymbol{v}=[1\;\;1]^{\intercal}</m> is a eigenvector of
 				</p>
 
 				<p>
@@ -75,14 +75,14 @@
 
 			<solution>
 				<p>
-					We need to show that this satisfies <m>A \vec{v} = \lambda \vec{v}</m> for some scalar <m>
+					We need to show that this satisfies <m>A \boldsymbol{v} = \lambda \boldsymbol{v}</m> for some scalar <m>
 					\lambda</m>.
 					Since
 				</p>
 
 				<p>
 					<me>
-						A \vec{v} =
+						A \boldsymbol{v} =
 						\begin{bmatrix}
 						3 \amp 4 \\
 						2 \amp 5
@@ -97,7 +97,7 @@
 				</p>
 
 				<p>
-					and since this matrix is 7 times the vector <m>\vec{v}</m>, this proves that <m>\vec{v}</m>
+					and since this matrix is 7 times the vector <m>\boldsymbol{v}</m>, this proves that <m>\boldsymbol{v}</m>
 					is an eigenvector.
 					The scale number 7 is the eigenvalue.
 				</p>
@@ -114,12 +114,12 @@
 
 		<p>
 			<md>
-				<mrow>A \vec{v} \amp = \lambda \vec{v} \amp \amp \text{subtract $\lambda \vec{v}$}</mrow>
-				<mrow>A \vec{v} - \lambda \vec{v} \amp = \vec{0}, \amp \amp \text{introduce an identity
+				<mrow>A \boldsymbol{v} \amp = \lambda \boldsymbol{v} \amp \amp \text{subtract $\lambda \boldsymbol{v}$}</mrow>
+				<mrow>A \boldsymbol{v} - \lambda \boldsymbol{v} \amp = \boldsymbol{0}, \amp \amp \text{introduce an identity
 				matrix}</mrow>
-				<mrow>A \vec{v} - \lambda I \vec{v} \amp = \vec{0}, \amp \amp
-				\text{factor out the $\vec{v}$}</mrow>
-				<mrow xml:id="eq-eigenvector-homo">(A - \lambda I) \vec{v} \amp = \vec{0}</mrow>
+				<mrow>A \boldsymbol{v} - \lambda I \boldsymbol{v} \amp = \boldsymbol{0}, \amp \amp
+				\text{factor out the $\boldsymbol{v}$}</mrow>
+				<mrow xml:id="eq-eigenvector-homo">(A - \lambda I) \boldsymbol{v} \amp = \boldsymbol{0}</mrow>
 			</md>
 		</p>
 
@@ -127,7 +127,7 @@
 			and we have transformed this into a homogeneous matrix equation.
 			As stated in the definition
 			of the eigenvector, it cannot be the zero vector, and by <xref ref="thm-sing-matrices" />, the
-			only solution where <m>\vec{v}</m> is nonzero is when
+			only solution where <m>\boldsymbol{v}</m> is nonzero is when
 		</p>
 
 		<p>
@@ -147,12 +147,12 @@
 
 		<p>
 			<me>
-				(A - \lambda I) \vec{v} = \vec{0}
+				(A - \lambda I) \boldsymbol{v} = \boldsymbol{0}
 			</me>
 		</p>
 
 		<p>
-			for <m>\vec{v}</m>, that is find the basis of the null space of the matrix <m>A - \lambda I</m>
+			for <m>\boldsymbol{v}</m>, that is find the basis of the null space of the matrix <m>A - \lambda I</m>
 			.
 		</p>
 
@@ -210,11 +210,11 @@
 
 				<p>
 					<me>
-						(A-1 I)\vec{v} =
+						(A-1 I)\boldsymbol{v} =
 						\begin{bmatrix}
 						2 \amp 4 \\
 						2 \amp 4
-						\end{bmatrix} \vec{v} = 0
+						\end{bmatrix} \boldsymbol{v} = 0
 					</me>
 				</p>
 
@@ -261,7 +261,7 @@
 
 				<p>
 					<me>
-						\vec{v} =
+						\boldsymbol{v} =
 						\begin{bmatrix}
 						-2 \\ 1
 						\end{bmatrix}
@@ -274,11 +274,11 @@
 
 				<p>
 					<me>
-						(A - 7 I) \vec{v} =
+						(A - 7 I) \boldsymbol{v} =
 						\begin{bmatrix}
 						-4 \amp 4 \\
 						2 \amp -2
-						\end{bmatrix} \vec{v} = \vec{0}
+						\end{bmatrix} \boldsymbol{v} = \boldsymbol{0}
 					</me>
 				</p>
 
@@ -322,7 +322,7 @@
 
 				<p>
 					<me>
-						\vec{v} =
+						\boldsymbol{v} =
 						\begin{bmatrix}
 						1 \\ 1
 						\end{bmatrix}
@@ -335,10 +335,10 @@
 
 				<p>
 					<md>
-						<mrow>\lambda_1 \amp = 1, \quad \vec{v}_1 = \begin{bmatrix}
+						<mrow>\lambda_1 \amp = 1, \quad \boldsymbol{v}_1 = \begin{bmatrix}
 						-2 \\1
 						\end{bmatrix} \amp
-						\lambda_2 \amp = 7, \quad \vec{v}_2 = \begin{bmatrix}
+						\lambda_2 \amp = 7, \quad \boldsymbol{v}_2 = \begin{bmatrix}
 						1 \\1
 						\end{bmatrix}</mrow>
 					</md>
@@ -380,8 +380,8 @@
 		<lemma xml:id="lem-eigenvector-scale">
 			<statement>
 				<p>
-					If <m>\vec{v}</m> is an eigenvector of <m>A</m> with corresponding eigenvalue <m>\lambda</m>,
-					then <m>k\vec{v}</m> is also an eigenvector of <m>A</m> with corresponding eigenvalue <m>
+					If <m>\boldsymbol{v}</m> is an eigenvector of <m>A</m> with corresponding eigenvalue <m>\lambda</m>,
+					then <m>k\boldsymbol{v}</m> is also an eigenvector of <m>A</m> with corresponding eigenvalue <m>
 					\lambda</m> if <m>k \neq 0</m>.
 				</p>
 			</statement>
@@ -389,22 +389,22 @@
 
 			<proof>
 				<p>
-					Since <m>\vec{v}</m> is an eigenvector of <m>A</m> with corresponding eigenvalue <m>
-					\lambda</m>, then <m>A \vec{v} = \lambda \vec{v}</m>.
+					Since <m>\boldsymbol{v}</m> is an eigenvector of <m>A</m> with corresponding eigenvalue <m>
+					\lambda</m>, then <m>A \boldsymbol{v} = \lambda \boldsymbol{v}</m>.
 					Multiplying this by <m>k</m> results
 					in
 				</p>
 
 				<p>
 					<md>
-						<mrow>k(A \vec{v}) \amp = k (\lambda \vec{v}) </mrow>
-						<mrow>A (k \vec{v}) \amp = \lambda (k \vec{v})</mrow>
+						<mrow>k(A \boldsymbol{v}) \amp = k (\lambda \boldsymbol{v}) </mrow>
+						<mrow>A (k \boldsymbol{v}) \amp = \lambda (k \boldsymbol{v})</mrow>
 					</md>
 				</p>
 
 				<p>
 					which shows the result.
-					Also note, that <m>k</m> cannot be zero, because <m>0\vec{v}</m>
+					Also note, that <m>k</m> cannot be zero, because <m>0\boldsymbol{v}</m>
 					is the zero vector, which is not an eigenvector.
 				</p>
 			</proof>
@@ -476,7 +476,7 @@
 				</p>
 
 				<p>
-					and the eigenvector is <m>\vec{v} = [-1\;\; 1]^{\intercal}</m>.
+					and the eigenvector is <m>\boldsymbol{v} = [-1\;\; 1]^{\intercal}</m>.
 				</p>
 			</solution>
 		</example>
@@ -534,7 +534,7 @@
 				</p>
 
 				<p>
-					so <m>\vec{v}_1 = [1\;\;0]^{\intercal}</m> and <m>\vec{v}_2=[0\; \;1]^{\intercal}</m>
+					so <m>\boldsymbol{v}_1 = [1\;\;0]^{\intercal}</m> and <m>\boldsymbol{v}_2=[0\; \;1]^{\intercal}</m>
 					are both eigenvectors associated with <m>\lambda=2</m>.
 					In fact, since any vector in <m>\mathbb{R}^2</m> is in the span of
 					these two eigenvectors, then any vector in <m>\mathbb{R}^2</m> is an eigenvector.
@@ -694,21 +694,21 @@
 				<p>
 					Let <m>A</m> be a real matrix.
 					If <m>\lambda</m> is an complex eigenvalue with
-					corresponding eigenvector, <m>\vec{v}</m>, then the complex conjugate of <m>\lambda,</m>
+					corresponding eigenvector, <m>\boldsymbol{v}</m>, then the complex conjugate of <m>\lambda,</m>
 					denoted <m>\overline{\lambda}</m> is also an eigenvalue with corresponding complex
-					conjuate eigenvector <m>\overline{\vec{v}}</m>.
+					conjuate eigenvector <m>\overline{\boldsymbol{v}}</m>.
 				</p>
 			</statement>
 
 
 			<proof>
 				<p>
-					If <m>\lambda</m>, <m>\vec{v}</m> is an eigenvalue-eigenvector pair of <m>A</m>, then
+					If <m>\lambda</m>, <m>\boldsymbol{v}</m> is an eigenvalue-eigenvector pair of <m>A</m>, then
 				</p>
 
 				<p>
 					<me>
-						A\vec{v} = \lambda \vec{v}
+						A\boldsymbol{v} = \lambda \boldsymbol{v}
 					</me>
 				</p>
 
@@ -719,14 +719,14 @@
 
 				<p>
 					<md>
-						<mrow>\overline{A\vec{v}} \amp = \overline{\lambda \vec{v}} </mrow>
-						<mrow>A \overline{\vec{v}} \amp = \overline{\lambda} \, \overline{\vec{v}}</mrow>
+						<mrow>\overline{A\boldsymbol{v}} \amp = \overline{\lambda \boldsymbol{v}} </mrow>
+						<mrow>A \overline{\boldsymbol{v}} \amp = \overline{\lambda} \, \overline{\boldsymbol{v}}</mrow>
 					</md>
 				</p>
 
 				<p>
 					where <m>\overline{A}=A</m> because <m>A</m> is a real matrix.
-					This shows that <m>\overline{\lambda}</m>, <m>\overline{\vec{v}}</m> is an
+					This shows that <m>\overline{\lambda}</m>, <m>\overline{\boldsymbol{v}}</m> is an
 					eigenvalue-eigenvector pair of <m>A</m>.
 				</p>
 			</proof>
@@ -736,9 +736,9 @@
 			The result of this theorem will save work if you have a real matrix and find a complex
 			eigenvalue.
 			<xref ref="ex-eigs-complex" /> shows that the eigenvalue-eigenvector pairs are
-			<m>\lambda_1=2i</m> and <m>\vec{v}_1=[-i \; \; 1]^{\intercal}</m>.
+			<m>\lambda_1=2i</m> and <m>\boldsymbol{v}_1=[-i \; \; 1]^{\intercal}</m>.
 			The above theorem shows that <m>\lambda_2=\overline{\lambda_1}= -2i</m> and
-			<m>\vec{v}_2=\overline{\vec{v}_1} = [i \; \; 1]^{\intercal}</m> is another
+			<m>\boldsymbol{v}_2=\overline{\boldsymbol{v}_1} = [i \; \; 1]^{\intercal}</m> is another
 			eigenvalue-eigenvector pair.
 			The next example has real eigenvalue and eigenvector, but has a
 			different feature than <xref ref="ex-eigs-real1" />.
@@ -905,7 +905,7 @@
 								1]^{\intercal}</m> as an eigenvector, however, from <xref
 								ref="lem-eigenvector-scale" />, a scalar multiple of an eigenvector is also an
 								eigenvector, so multiplying by 3 results in <m>
-								\vec{v}_1=[-4\;\;2\;\;3]^{\intercal}</m>.
+								\boldsymbol{v}_1=[-4\;\;2\;\;3]^{\intercal}</m>.
 							</p>
 						</li>
 
@@ -1012,7 +1012,7 @@
 							</p>
 
 							<p>
-								Therefore the eigenvector is <m>\vec{v}_3=[0\;\;-6\;\;1]^{\intercal}</m>
+								Therefore the eigenvector is <m>\boldsymbol{v}_3=[0\;\;-6\;\;1]^{\intercal}</m>
 							</p>
 						</li>
 					</ul>
@@ -1020,9 +1020,9 @@
 				<p>In summary, for this matrix, there are three real eigenvalues and each has a corresponding eigenvector. These are</p>
 				<p>
 					<md>
-						<mrow> \lambda_1 \amp = 1 \amp \vec{v}_1 \amp = \begin{bmatrix} -4 \\ 2 \\ 3 \end{bmatrix} </mrow>
-						<mrow> \lambda_2 \amp =4 \amp \vec{v}_2 \amp = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} </mrow>
-						<mrow> \lambda_3 \amp =-3 \amp \vec{v}_3 \amp = \begin{bmatrix} 0 \\ -6 \\ 1 \end{bmatrix} </mrow>
+						<mrow> \lambda_1 \amp = 1 \amp \boldsymbol{v}_1 \amp = \begin{bmatrix} -4 \\ 2 \\ 3 \end{bmatrix} </mrow>
+						<mrow> \lambda_2 \amp =4 \amp \boldsymbol{v}_2 \amp = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} </mrow>
+						<mrow> \lambda_3 \amp =-3 \amp \boldsymbol{v}_3 \amp = \begin{bmatrix} 0 \\ -6 \\ 1 \end{bmatrix} </mrow>
 					</md>
 				</p>
 			</solution>
@@ -1114,9 +1114,9 @@
 
 				<p>
 					<md>
-						<mrow> \vec{v}_1 \amp = \begin{bmatrix}
+						<mrow> \boldsymbol{v}_1 \amp = \begin{bmatrix}
 						0 \\ 1\\ 0
-						\end{bmatrix}\amp \vec{v}_2 \amp = \begin{bmatrix}
+						\end{bmatrix}\amp \boldsymbol{v}_2 \amp = \begin{bmatrix}
 						-2 \\ 0 \\ 1
 						\end{bmatrix}</mrow>
 					</md>
@@ -1192,8 +1192,8 @@
 					the second has a single corresponding eigenvector. These are</p>
 				<p>
 					<md>
-						<mrow> \lambda_1 \amp = 0 \amp \vec{v}_1 \amp = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \amp \vec{v}_2 \amp = \begin{bmatrix} -2 \\ 0 \\ 1 \end{bmatrix}</mrow>
-						<mrow> \lambda_3 \amp = -1 \amp \vec{v}_3 \amp = \begin{bmatrix} -1  \\ -2 \\ 1 \end{bmatrix} </mrow>
+						<mrow> \lambda_1 \amp = 0 \amp \boldsymbol{v}_1 \amp = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \amp \boldsymbol{v}_2 \amp = \begin{bmatrix} -2 \\ 0 \\ 1 \end{bmatrix}</mrow>
+						<mrow> \lambda_3 \amp = -1 \amp \boldsymbol{v}_3 \amp = \begin{bmatrix} -1  \\ -2 \\ 1 \end{bmatrix} </mrow>
 					</md>
 				</p>
 			</solution>

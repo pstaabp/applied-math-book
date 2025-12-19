@@ -35,15 +35,15 @@ Definition of linear dependence and independence.
 			<p> Specifically, if the only solution to </p>
 			<p>
 				<me>
-					c_1 \vec{u}_1 + c_2 \vec{u}_2 + \cdots + c_n \vec{u}_n = \vec{0}
+					c_1 \boldsymbol{u}_1 + c_2 \boldsymbol{u}_2 + \cdots + c_n \boldsymbol{u}_n = \boldsymbol{0}
 				</me>
 			</p>
-			<p> is <m>c_1=c_2 = \cdots = c_n=0</m>, then the vectors, <m> \vec{u}_1, \vec{u}_2, \ldots,
-				\vec{u}_n</m> are linearly independent.</p>
+			<p> is <m>c_1=c_2 = \cdots = c_n=0</m>, then the vectors, <m> \boldsymbol{u}_1, \boldsymbol{u}_2, \ldots,
+				\boldsymbol{u}_n</m> are linearly independent.</p>
 		</statement>
 	</definition>
 
-	<example>
+	<example xml:id="ex-linear-independence">
 		<statement>
 			<p>
 				Show that
@@ -69,7 +69,7 @@ Definition of linear dependence and independence.
 		</solution>
 	</example>
 
-	<example>
+	<example xml:id="ex-linear-dependence">
 		<statement>
 			<p>
 				Is the set of vectors </p>
@@ -130,7 +130,7 @@ Definition of linear dependence and independence.
 			<p>
 				<md>
 					<mrow>
-						c_1 \vec{u}_1 + c_2 \vec{u}_2 + c_3 \vec{u}_3 \amp = \vec{0} \amp \text{or}\amp\amp
+						c_1 \boldsymbol{u}_1 + c_2 \boldsymbol{u}_2 + c_3 \boldsymbol{u}_3 \amp = \boldsymbol{0} \amp \text{or}\amp\amp
 						c_1 \begin{bmatrix}
 						1 \\ 0 \\ 0
 						\end{bmatrix}+ c_2 \begin{bmatrix}
@@ -256,7 +256,7 @@ Definition of linear dependence and independence.
 
 	<theorem>
 		<statement>
-			<p> Let <m>\{\vec{u}_1, \vec{u}_2, \ldots, \vec{u}_k\}</m> be a set of <m>k</m> vectors in <m>
+			<p> Let <m>\{\boldsymbol{u}_1, \boldsymbol{u}_2, \ldots, \boldsymbol{u}_k\}</m> be a set of <m>k</m> vectors in <m>
 				\mathbb{R}^n</m>. If <m> k \gt n </m>, then the set of vectors is linearly dependent.</p>
 		</statement>
 	</theorem>

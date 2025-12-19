@@ -7,7 +7,7 @@
     This covers how much of all of the above concepts are related. </p>
 
 
-  <theorem xml:id="thm-nonsing-matrices">
+  <theorem xml:id="thm-nonsingular-matrices">
     <statement>
       <p> Let <m>A</m> be an <m>n \times n</m> matrix of real numbers. The following statements
         are equivalent: </p>
@@ -23,12 +23,12 @@
             <p> The inverse matrix, <m>A^{-1}</m> exists.</p>
           </li>
           <li>
-            <p> For every vector <m>\vec{b}</m>, the equation <m>A \vec{x}=\vec{b}</m> has a unique
-              solution <m>\vec{x} = A^{-1} \vec{b}</m>.</p>
+            <p> For every vector <m>\boldsymbol{b}</m>, the equation <m>A \boldsymbol{x}=\boldsymbol{b}</m> has a unique
+              solution <m>\boldsymbol{x} = A^{-1} \boldsymbol{b}</m>.</p>
           </li>
           <li>
-            <p> The matrix equation <m>A \vec{x} = \vec{0}</m> has the unique solution <m>\vec{x} =
-              \vec{0}</m>.</p>
+            <p> The matrix equation <m>A \boldsymbol{x} = \boldsymbol{0}</m> has the unique solution <m>\boldsymbol{x} =
+              \boldsymbol{0}</m>.</p>
           </li>
           <li>
             <p> The columns of <m>A</m> are linearly independent.</p>
@@ -46,7 +46,7 @@
             <p> The row space of <m>A</m> is <m>\mathbb{R}^n</m>.</p>
           </li>
           <li>
-            <p> The null space of <m>A</m> is <m>\{\vec{0}\}</m> and the nullity is 0.</p>
+            <p> The null space of <m>A</m> is <m>\{\boldsymbol{0}\}</m> and the nullity is 0.</p>
           </li>
           <li>
             <p> The reduced row echelon form of <m>A</m> is <m>I</m>, the identity matrix.</p>
@@ -58,7 +58,7 @@
 
   <example>
     <statement>
-      <p> Examine <xref ref="thm-nonsing-matrices" /> using the matrix </p>
+      <p> Examine <xref ref="thm-nonsingular-matrices" /> using the matrix </p>
       <p>
         <me>
           A = \begin{bmatrix}
@@ -132,15 +132,15 @@
           </li>
 
           <li>
-            <p> Since the inverse matrix exists, then a unique solution to <m>A\vec{x}=\vec{b}</m>
-              can be found by <m>\vec{x}=A^{-1}\vec{b}</m>.</p>
+            <p> Since the inverse matrix exists, then a unique solution to <m>A\boldsymbol{x}=\boldsymbol{b}</m>
+              can be found by <m>\boldsymbol{x}=A^{-1}\boldsymbol{b}</m>.</p>
           </li>
 
           <li>
             <p> Again, since <m>A^{-1}</m> exists, then</p>
             <p>
               <me>
-                \vec{x} = A^{-1}\vec{0} = \vec{0}
+                \boldsymbol{x} = A^{-1}\boldsymbol{0} = \boldsymbol{0}
               </me>
             </p>
           </li>
@@ -266,8 +266,8 @@
 
 
           <li>
-            <p> The null space is the set of all <m>\vec{x}</m> such that <m>A\vec{x}=\vec{0}</m>,
-              but from #4, we showed that the only solution to this is <m>\vec{x}=\vec{0}</m>. The
+            <p> The null space is the set of all <m>\boldsymbol{x}</m> such that <m>A\boldsymbol{x}=\boldsymbol{0}</m>,
+              but from #4, we showed that the only solution to this is <m>\boldsymbol{x}=\boldsymbol{0}</m>. The
               nullity is the number of linearly independent vectors in this set which is 0, by
               definition. </p>
           </li>
@@ -293,11 +293,11 @@
             </p>
           </li>
           <li>
-            <p> The matrix equation <m>A \vec{x} = \vec{b}</m> has no solution or an infinite number
+            <p> The matrix equation <m>A \boldsymbol{x} = \boldsymbol{b}</m> has no solution or an infinite number
               of solutions. </p>
           </li>
           <li>
-            <p> The matrix equation <m>A \vec{x} = \vec{0}</m> has a nontrivial solution.</p>
+            <p> The matrix equation <m>A \boldsymbol{x} = \boldsymbol{0}</m> has a nontrivial solution.</p>
           </li>
           <li>
             <p> The rank of <m>A</m> is less than <m>n</m>.</p>
@@ -325,7 +325,7 @@
           \end{bmatrix}
         </me>
       </p>
-      <p> Show that <m>A\vec{x} = \vec{0}</m> has a nontrivial solution first by using <xref
+      <p> Show that <m>A\boldsymbol{x} = \boldsymbol{0}</m> has a nontrivial solution first by using <xref
           ref="thm-sing-matrices" /> then by directly finding solutions.</p>
     </statement>
 
@@ -343,8 +343,8 @@
           <mrow>\amp = (-10-(-2)) + 2 (0-(-4)) = -8 + 8 = 0 </mrow>
         </md>
       </p>
-      <p> and therefore by Theorem <xref ref="thm-sing-matrices" />, there is a nontrivial solution
-        to <m>A \vec{x} = \vec{0}</m>
+      <p> and therefore by <xref ref="thm-sing-matrices" />, there is a nontrivial solution
+        to <m>A \boldsymbol{x} = \boldsymbol{0}</m>
       </p>
 
       <p> Next, we'll solve the matrix equation by Gauss' method.
@@ -397,7 +397,7 @@
           \end{bmatrix} x_3 \; | \; x_3 \in \mathbb{R} \right\}
         </me>
       </p>
-      <p> This shows directly that the matrix equation <m>A\vec{x}=\vec{0}</m> does not have a
+      <p> This shows directly that the matrix equation <m>A\boldsymbol{x}=\boldsymbol{0}</m> does not have a
         trivial solution. </p>
     </solution>
   </example>

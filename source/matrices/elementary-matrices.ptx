@@ -1,468 +1,424 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <section xml:id="sect-elem-matrices">
-	<title>Elementary Matrices</title>
-	<objectives>
-		<ul>
-			<li>
-				<p>
-					Define a elementary matrix.
-				</p>
-			</li>
-			<li>
-				<p>
-					Show that the row operations from the previous chapter can be written as matrix products
-					with elementary matrices.
-				</p>
-			</li>
-			<li>
-				<p>
-					Reexamination a reduced row-echelon form of a matrix with elementary matrices.
-				</p>
-			</li>
-		</ul>
-	</objectives>
+  <title>Elementary Matrices</title>
 
-	<p>
-		In <xref ref="ch-linear-systems" />, linear systems and solutions were introduced.
-		The standard
-		way to solve these is to use elementary row operations as were shown in <xref
-		ref="sect-gaussian-elimination" />.
-		In this section, we learn that we can write all of the row
-		operations as matrix products.
-	</p>
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Define a elementary matrix.
+        </p>
+      </li>
 
-	<p>
-		We will denote by the matrix <m>E</m> any matrix that performs an elementary row operations.
-		For example,
-	</p>
+      <li>
+        <p>
+          Show that the row operations from the previous chapter can be written as matrix products with elementary matrices.
+        </p>
+      </li>
 
-	<p>
-		<me>
-			E = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
-		</me>
-	</p>
+      <li>
+        <p>
+          Reexamination a reduced row-echelon form of a matrix with elementary matrices.
+        </p>
+      </li>
+    </ul>
+  </objectives>
 
-	<p>
-		will swap the rows in a 2 by 2 matrix.
-		The matrix
-	</p>
+  <introduction>
+    <p>
+      In <xref ref="ch-linear-systems" />, linear systems and solutions were introduced.
+      The standard way to solve these is to use elementary row operations as were shown in <xref ref="sect-gaussian-elimination" />.
+      In this section, we learn that we can write all of the row operations as matrix products.
+    </p>
 
-	<p>
-		<me>
-			E = \begin{bmatrix} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
-		</me>
-	</p>
+    <p>
+      We will denote by the matrix <m>E</m> any matrix that performs an elementary row operations.
+      For example,
+    </p>
 
-	<p>
-		will multiply the first row of a 3 by 3 matrix by 2.
-		The matrix
-	</p>
+    <p>
+      <me>
+        E_1 = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \\  0 \amp 0 \amp 1 \amp 0 \\ 0 \amp 1 \amp 0 \amp 0 \end{bmatrix}
+      </me>
+    </p>
 
-	<p>
-		<me>
-			E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ -2 \amp 0 \amp 1 \end{bmatrix}
-		</me>
-	</p>
+    <p>
+      will swap rows 2 and 4 in a <m>4 \times 4</m> matrix.
+      The matrix
+    </p>
 
-	<p>
-		is the operation that multiplies the first row of a 3 by 3 matrix by <m>-2</m> and add to the
-		third row.
-	</p>
+    <p>
+      <me>
+        E_2 = \begin{bmatrix} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+      </me>
+    </p>
 
-	<definition>
-		<title>Elementary Matrices and Row Operations</title>
-		<statement>
-			<p>
-				Let <m>E</m> be a <m>n \times n </m> matrix.
-				The matrix <m>E</m> is an <term>elementary
-				matrix</term> is the result of applying one row operation to <m>I_n</m>, the <m> n \times n</m>
-				identity matrix.
-			</p>
+    <p>
+      will multiply the first row of a 3 by 3 matrix by 2.
+      The matrix
+    </p>
 
-			<p>
-				An elementary matrix that involves switching rows is also called a <term>permutation matrix</term>
-				.
-			</p>
-		</statement>
-	</definition>
+    <p>
+      <me>
+        E_3 = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0\\ 0 \amp 1 \amp 0 \amp 0 \\ -2 \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1\end{bmatrix}
+      </me>
+    </p>
 
-	<p>
-		Although we have examples above, here are the specifics of the related row operations and the
-		elementary matrix.
-	</p>
+    <p>
+      is the operation that multiplies the first row of a 4 by 4 matrix by <m>-2</m> and add to the third row.
+    </p>
 
-	<p>
-		<dl>
-		<li>
-			<title>
-			<m>R_i \leftrightarrow R_j</m>
-			</title>
+    <definition>
+      <title>Elementary Matrices and Row Operations</title>
 
-			<p>
-				<m>E_{ i \leftrightarrow j} </m> is the identity matrix with rows <m>i</m> and <m>j</m>
-				switched.
-			</p>
-		</li>
+      <statement>
+        <p>
+          Let <m>E</m> be a <m>n \times n </m> matrix.
+          The matrix <m>E</m> is an <term>elementary matrix</term> is the result of applying one row operation to <m>I_n</m>, the <m> n \times n</m> identity matrix.
+        </p>
 
-		<li>
-			<title>
-			<m>c R_i </m>
-			</title>
+        <p>
+          An elementary matrix that involves switching rows is also called a <term>permutation matrix</term> .
+        </p>
+      </statement>
+    </definition>
 
-			<p>
-				<m>E_{cR_i}</m> is the identity matrix where the element is row <m>i</m>, column <m>i</m>
-				is replaced with <m>c</m>.
-			</p>
-		</li>
+    <p>
+      Although we have examples above, here are the specifics of the related row operations and the elementary matrix.
+    </p>
 
-		<li>
-			<title>
-			<m>c R_i + R_j</m>
-			</title>
+    <p>
+      <dl>
+      <li>
+        <title> <m>R_i \leftrightarrow R_j</m> </title>
 
-			<p>
-				<m>E_{cR_i + R_j}</m> is the identity matrix with the element in row <m>j</m>, column <m>i</m>
-				has the number <m>c</m>.
-			</p>
-		</li>
-		</dl>
-	</p>
+        <p>
+          <m>E_{ i \leftrightarrow j} </m> is the identity matrix with rows <m>i</m> and <m>j</m> switched.
+        </p>
+      </li>
 
-	<example>
-		<statement>
-			<p>
-				Consider <m>4 \times 4</m> elementary matrices.
-				Find the following:
-				<ol>
-					<li>
-						<p>
-							<m>E_{1 \leftrightarrow 3}</m>
-						</p>
-					</li>
+      <li>
+        <title> <m>c R_i </m> </title>
 
-					<li>
-						<p>
-							<m>E_{-2 R_2 + R_4}</m>
-						</p>
-					</li>
+        <p>
+          <m>E_{cR_i}</m> is the identity matrix where the element is row <m>i</m>, column <m>i</m> is replaced with <m>c</m>.
+        </p>
+      </li>
 
-					<li>
-						<p>
-							<m>E_{7 R_3}</m>
-						</p>
-					</li>
-				</ol>
-			</p>
-		</statement>
+      <li>
+        <title> <m>c R_i + R_j</m> </title>
 
-		<solution>
-			<p>
-				<dl>
-				<li>
-					<title>
-					<m>E_{1 \leftrightarrow 3}</m>
-					</title>
+        <p>
+          <m>E_{cR_i + R_j}</m> is the identity matrix with the element in row <m>j</m>, column <m>i</m> has the number <m>c</m>.
+        </p>
+      </li>
+      </dl>
+    </p>
 
-					<p>
-						<me>
-							\begin{bmatrix}
-							0 \amp 0 \amp 1 \amp 0 \\
-							0 \amp 1 \amp 0 \amp 0 \\
-							1 \amp 0 \amp 0 \amp 0 \\
-							0 \amp 0 \amp 0 \amp 1
-							\end{bmatrix}
-						</me>
-					</p>
-				</li>
+    <example>
+      <statement>
+        <p>
+          Consider <m>4 \times 4</m> elementary matrices.
+          Find the following:
+          <ol>
+            <li>
+              <p>
+                <m>E_{1 \leftrightarrow 3}</m>
+              </p>
+            </li>
 
-				<li>
-					<title>
-					<m>E_{-2 R_2 + R_4}</m>
-					</title>
+            <li>
+              <p>
+                <m>E_{-2 R_2 + R_4}</m>
+              </p>
+            </li>
 
-					<p>
-						<me>
-							\begin{bmatrix}
-							1 \amp 0 \amp 0 \amp 0 \\
-							0 \amp 1 \amp 0 \amp 0 \\
-							0 \amp 0 \amp 1 \amp 0 \\
-							0 \amp -2 \amp 0 \amp 1
-							\end{bmatrix}
-						</me>
-					</p>
-				</li>
+            <li>
+              <p>
+                <m>E_{7 R_3}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
 
-				<li>
-					<title>
-					<m>E_{7 R_3}</m>
-					</title>
+      <solution>
+        <p>
+          <dl>
+          <li>
+            <title> <m>E_{1 \leftrightarrow 3}</m> </title>
 
-					<p>
-						<me>
-							\begin{bmatrix}
-							1 \amp 0 \amp 0 \amp 0 \\
-							0 \amp 1 \amp 0 \amp 0 \\
-							0 \amp 0 \amp 7 \amp 0 \\
-							0 \amp 0 \amp 0 \amp 1
-							\end{bmatrix}
-						</me>
-					</p>
-				</li>
-				</dl>
-			</p>
-		</solution>
-	</example>
+            <p>
+              <me>
+                \begin{bmatrix} 0 \amp 0 \amp 1 \amp 0 \\ 0 \amp 1 \amp 0 \amp 0 \\ 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}
+              </me>
+            </p>
+          </li>
 
-	<p>
-		There are a lot of nice properties of elementary matrices.
-		We now show that all elementary
-		matrices are invertible.
-	</p>
+          <li>
+            <title> <m>E_{-2 R_2 + R_4}</m> </title>
 
-	<theorem>
-		<statement>
-			<p>
-				Every elementary matrix is invertible and its inverse is also an elementary matrix.
-				In paticular,
-			</p>
+            <p>
+              <me>
+                \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \\ 0 \amp -2 \amp 0 \amp 1 \end{bmatrix}
+              </me>
+            </p>
+          </li>
 
-			<p>
-				<ul>
-					<li>
-						<p>
-							The inverse of <m>E_{cR_i}</m> is <m>E_{(1/c)R_i}</m>.
-						</p>
-					</li>
+          <li>
+            <title> <m>E_{7 R_3}</m> </title>
 
-					<li>
-						<p>
-							The inverse of <m>E_{i \leftrightarrow i}</m> is itself.
-						</p>
-					</li>
+            <p>
+              <me>
+                \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 7 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}
+              </me>
+            </p>
+          </li>
+          </dl>
+        </p>
+      </solution>
+    </example>
 
-					<li>
-						<p>
-							The inverse of <m>E_{c R_i + R_j}</m> is <m>E_{-c R_i + R_j}</m>
-						</p>
-					</li>
-				</ul>
-			</p>
-		</statement>
-	</theorem>
+    <p>
+      There are a lot of nice properties of elementary matrices.
+      We now show that all elementary matrices are invertible.
+    </p>
 
-	<example>
-		<statement>
-			<p>
-				Find the inverses of the following elementary matrices and the determine the
-				row operation the inverse represents
-			</p>
+    <theorem>
+      <statement>
+        <p>
+          Every elementary matrix is invertible and its inverse is also an elementary matrix.
+          In paticular,
+        </p>
 
-			<p>
-				<ul>
-					<li>
-						<p>
-							<me>
-								\begin{bmatrix} 1 \amp 0 \amp 0 \\ -2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1
-								\end{bmatrix}
-							</me>
-						</p>
-					</li>
+        <p>
+          <ul>
+            <li>
+              <p>
+                The inverse of <m>E_{cR_i}</m> is <m>E_{(1/c)R_i}</m>.
+              </p>
+            </li>
 
-					<li>
-						<p>
-							<me>
-								\begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 3 \amp 0 \amp 0 \\ 0 \amp 0 \amp
-								1 \amp 0
-								\\ 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}
-							</me>
-						</p>
-					</li>
+            <li>
+              <p>
+                The inverse of <m>E_{i \leftrightarrow i}</m> is itself.
+              </p>
+            </li>
 
-					<li>
-						<p>
-							<me>
-								\begin{bmatrix} 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \end{bmatrix}
-							</me>
-						</p>
-					</li>
-				</ul>
-			</p>
-		</statement>
+            <li>
+              <p>
+                The inverse of <m>E_{c R_i + R_j}</m> is <m>E_{-c R_i + R_j}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
 
-		<solution>
-			<p>
-				<ul>
-					<li>
-						<p>
-							Note that this represents the operation <m>-2R_1+R_2</m>, so the inverse is
-							<m>E_{2R_1+R_2}</m> or
-						</p>
+    <example>
+      <statement>
+        <p>
+          Find the inverses of the following elementary matrices and the determine the row operation the inverse represents
+        </p>
 
-						<p>
-							<me>
-								\begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1
-								\end{bmatrix}
-							</me>
-						</p>
-					</li>
+        <p>
+          <ul>
+            <li>
+              <p>
+                <me>
+                  \begin{bmatrix} 1 \amp 0 \amp 0 \\ -2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+                </me>
+              </p>
+            </li>
 
-					<li>
-						<p>
-							This is the operation <m>3R_2</m> so the inverse is <m>E_{(1/3) R_2}</m> or
-						</p>
+            <li>
+              <p>
+                <me>
+                  \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 3 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}
+                </me>
+              </p>
+            </li>
 
-						<p>
-							<me>
-								\begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 1/3 \amp 0 \amp 0 \\ 0 \amp 0 \amp
-								1 \amp 0
-								\\ 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}
-							</me>
-						</p>
-					</li>
+            <li>
+              <p>
+                <me>
+                  \begin{bmatrix} 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \end{bmatrix}
+                </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
 
-					<li>
-						<p>
-							This is the operation <m>R_1 \leftrightarrow R_3</m>, so the inverse is also the matrix
-							<m>E_{1 \leftrightarrow 3}</m> or
-						</p>
+      <solution>
+        <p>
+          <ul>
+            <li>
+              <p>
+                Note that this represents the operation <m>-2R_1+R_2</m>, so the inverse is <m>E_{2R_1+R_2}</m> or
+              </p>
 
-						<p>
-							<me>
-								\begin{bmatrix} 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \end{bmatrix}
-							</me>
-						</p>
-					</li>
-				</ul>
-			</p>
-		</solution>
-	</example>
+              <p>
+                <me>
+                  \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+                </me>
+              </p>
+            </li>
 
-	<p>
-		We next look at putting matrix is reduced row-echelon form using elementary matrices.
-		The
-		following lemma indicates that we can do this.
-	</p>
+            <li>
+              <p>
+                This is the operation <m>3R_2</m> so the inverse is <m>E_{(1/3) R_2}</m> or
+              </p>
 
-	<lemma>
-		<statement>
-			<p>
-				Let <m>A</m> be a <m>m \times n</m> matrix and let <m>B</m> be its reduced row-echelon
-				form.
-				We can write
-			</p>
+              <p>
+                <me>
+                  \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 1/3 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}
+                </me>
+              </p>
+            </li>
 
-			<p>
-				<me>
-					B = UA
-				</me>
-			</p>
+            <li>
+              <p>
+                This is the operation <m>R_1 \leftrightarrow R_3</m>, so the inverse is also the matrix <m>E_{1 \leftrightarrow 3}</m> or
+              </p>
 
-			<p>
-				where <m>U</m> is the product of elementary matrices representing the row operations
-				performed on <m>A</m> to obtain <m>B</m>.
-			</p>
-		</statement>
-	</lemma>
+              <p>
+                <me>
+                  \begin{bmatrix} 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \end{bmatrix}
+                </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </solution>
+    </example>
+  </introduction>
 
-	<p>
-		Let's take a look at an example.
-	</p>
 
-	<example>
-		<statement>
-			<p>
-				Consider the matrix
-			</p>
+  <subsection xml:id="subsec-product-elem-matrices">
+    <title>Matrices as Products of Elementary Matrices</title>
 
-			<p>
-				<me>
-					A = \begin{bmatrix}
-					1 \amp 2 \amp 0 \\
-					0 \amp -2 \amp 2 \\
-					3 \amp 0 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+    <p>
+      The last idea of this section is that of a writing a matrix as a product of elementary matrices.
+      As we will see here, this is possible, if the matrix <m>A</m> is invertible.
+    </p>
 
-			<p>
-				Find all elementary matrices to put <m>A</m> in row-echelon form and show that
-				the product of the matrices form <m>U</m>.
-			</p>
-		</statement>
+    <p>
+      Let's find the inverse of
+      <me>
+        A = \begin{bmatrix} 1 \amp 2 \amp 0 \\ 0 \amp -2 \amp 2 \\ 3 \amp 0 \amp 1 \end{bmatrix}
+      </me>
+      using elementary row operations using the techniques in <xref ref="sect-matrix-inverse"/>.
+    </p>
 
-		<solution>
-			<p>
-				The first step is <m>-3R_1+R_3 \to R_3</m>, which has the corresponding elementary matrix
-			</p>
+    <p>
+      <me>
+        \begin{aligned} \amp \qquad		\left[\begin{array}{rrr|rrr} 1 \amp 2 \amp 0 \amp 1 \amp 0 \amp 0\\ 0 \amp -2 \amp 2 \amp 0 \amp 1 \amp 0\\ 3 \amp 0 \amp 1 \amp 0 \amp 0 \amp 1\\ \end{array} \right] \\ -3R_1 + R_3 \to R_3 \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 2 \amp 0 \amp 1 \amp 0 \amp 0\\ 0 \amp -2 \amp 2 \amp 0 \amp 1 \amp 0\\ 0 \amp -6 \amp 1 \amp -3 \amp 0 \amp 1\\ \end{array} \right] \\ \begin{array}{r} -3R_2 + R_3 \to R_3, \\ R_2 + R_1 \to R_1 \end{array} \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 0 \amp 2 \amp 1 \amp 1 \amp 0\\ 0 \amp -2 \amp 2 \amp 0 \amp 1 \amp 0\\ 0 \amp 0 \amp -5 \amp -3 \amp -3 \amp 1\\ \end{array} \right] \\ -\frac{1}{5} R_3 \to R_3 \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 0 \amp 2 \amp 1 \amp 1 \amp 0\\ 0 \amp -2 \amp 2 \amp 0 \amp 1 \amp 0\\ 0 \amp 0 \amp 1 \amp 3/5 \amp 3/5 \amp -1/5\\ \end{array} \right] \\ \begin{array}{r} -2R_3 + R_2 \to R_2, \\ -2R_3 + R_1 \to R_1 \end{array} \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 0 \amp 0 \amp -1/5 \amp -1/5 \amp 2/5\\ 0 \amp -2 \amp 0 \amp -6/5 \amp -1/5 \amp 2/5\\ 0 \amp 0 \amp 1 \amp 3/5 \amp 3/5 \amp -1/5\\ \end{array} \right]  \\ -\frac{1}{2} R_2 \to R_2 \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 0 \amp 0 \amp -1/5 \amp -1/5 \amp 2/5\\ 0 \amp 1 \amp 0 \amp 3/5 \amp 1/10 \amp -1/5\\ 0 \amp 0 \amp 1 \amp 3/5 \amp 3/5 \amp -1/5\\ \end{array} \right] \end{aligned}
+      </me>
+    </p>
 
-			<p>
-				<me>
-					E_1 = \begin{bmatrix}
-					1 \amp 0 \amp 0 \\
-					0 \amp 1 \amp 0 \\
-					-3 \amp 0 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+    <p>
+      The important parts here are the row operations.
+      If we let
+      <me>
+        \begin{aligned} E_1 \amp = E_{-3R_1+R_3} \amp E_2 \amp = E_{-3R_2+R_3} \amp E_3 \amp = E_{R_2+R_1} \\ E_4 \amp = E_{(-1/5)R_3} \amp E_5 \amp = E_{-2R_3+R_2} \amp E_6 \amp = E_{-2R_3+R_1} \\ E_7 \amp = E_{(-1/2)R_2} \end{aligned}
+      </me>
+      then applying the row operations using the matrices above, leads to:
+      <me>
+        I = E_7 E_6 E_5 E_4 E_3 E_2 E_1 A
+      </me>
+      or reversing everything
+      <me>
+        E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}E_5^{-1}E_6^{-1}E_7^{-1} I = A
+      </me>
+    </p>
 
-			<p>
-				And the product <m>E_1A</m> is
-			</p>
+    <exercise>
+      <statement>
+        <p>
+          Find the inverses of <m>E_1, E_2, \ldots, E_7</m>, find the product and show that the result is <m>A</m>.
+        </p>
+      </statement>
 
-			<p>
-				<me>
-					E_1 A = \begin{bmatrix}
-					1 \amp 2 \amp 0 \\
-					0 \amp -2 \amp 2 \\
-					0 \amp -6 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+      <solution>
+        <p>
+          <me>
+            \begin{aligned} E_1^{-1}  = E_{3R_1+R_3} = \amp \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 3 \amp 0 \amp 1 \end{bmatrix} \\ E_2^{-1}  = E_{3R_2 +R_3} = \amp \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 3 \amp 1 \end{bmatrix} \\ E_3^{-1}  = E_{-R_2+R_1} = \amp \begin{bmatrix} 1 \amp -1 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \\ E_4^{-1}  = E_{5R_3} = \amp \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 5 \end{bmatrix} \\ E_5^{-1}  = E_{2R_3+R_2} = \amp \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix} \\ E_6^{-1}  = E_{2R_3+R_1} = \amp \begin{bmatrix} 1 \amp 0 \amp 2 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \\ E_7^{-1}  = E_{-2R_2} = \amp \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -2 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \end{aligned}
+          </me>
+        </p>
 
-			<p>
-				Next, the step <m>-3R_2 + R_3 \to R_3</m> which correspond to the
-				elementary matrix
-			</p>
+        <p>
+          and performed the operation <m>E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}E_5^{-1}E_6^{-1}E_7^{-1} </m> results in <m>A</m>.
+          It's a good idea to check this using some software.
+          <me>
+          </me>
+        </p>
+      </solution>
+    </exercise>
 
-			<p>
-				<me>
-					E_2  =\begin{bmatrix}
-					1 \amp 0 \amp 0 \\
-					0 \amp 1 \amp 0 \\
-					0 \amp -3 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+    <lemma xml:id="lem-matrix-product-elem-matrices">
+      <statement>
+        <p>
+          Let <m>A</m> be a <m>n \times n</m> invertible matrix.
+          Then <m>A</m> can be written as a product of elementary matrices.
+          That is:
+        </p>
 
-			<p>
-				And now the product of the elementary matrices and <m>A</m> is
-			</p>
+        <p>
+          <me>
+            A = E_1 E_2 E_3 \cdots E_k
+          </me>
+        </p>
+      </statement>
+    </lemma>
 
-			<p>
-				<me>
-					E_2 E_1 A = \begin{bmatrix}
-					1 \amp 0 \amp 2 \\
-					0 \amp -2 \amp 2 \\
-					0 \amp 0 \amp -5
-					\end{bmatrix}
-				</me>
-			</p>
+    <p>
+      Let's do another example.
+    </p>
 
-			<p>
-				And since this matrix is an upper triangular matrix, we stop here.
-				The matrix on the
-				right hand side is <m>B</m> and the matrix <m>U</m> is
-			</p>
+    <example>
+      <statement>
+        <p>
+          Consider the matrix
+        </p>
 
-			<p>
-				<me>
-					U = E_2 E_1 = \begin{bmatrix}
-					1 \amp 0 \amp 0 \\
-					0 \amp 1 \amp 0 \\
-					-3 \amp -3 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
-		</solution>
-	</example>
+        <p>
+          <me>
+            A = \begin{bmatrix} 1 \amp 2 \amp 0 \amp 2 \\ 0 \amp -2  \amp 1 \amp 2 \\ 1 \amp 3 \amp 0 \amp 1 \\ 0 \amp 1 \amp -1 \amp 0 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          Find all elementary matrices to write <m>A = E_1 E_2 \cdots E_k </m>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We'll find the inverse of the matrix using row operations on the matrix <m>[A ~ | ~ I]</m>
+        </p>
+
+        <p>
+          <me>
+            \begin{aligned} \amp \qquad \left[\begin{array}{rrrr|rrrr} 1 \amp 2 \amp 0 \amp 2 \amp 1 \amp 0 \amp 0 \amp 0\\ 0 \amp -2 \amp 1 \amp 2 \amp 0 \amp 1 \amp 0 \amp 0\\ 1 \amp 3 \amp 0 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0\\ 0 \amp 1 \amp -1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1\\ \end{array} \right]  \\ -R_1+R_3 \to R_3 \amp \qquad \left[\begin{array}{rrrr|rrrr} 1 \amp 2 \amp 0 \amp 2 \amp 1 \amp 0 \amp 0 \amp 0\\ 0 \amp -2 \amp 1 \amp 2 \amp 0 \amp 1 \amp 0 \amp 0\\ 0 \amp 1 \amp 0 \amp -1 \amp -1 \amp 0 \amp 1 \amp 0\\ 0 \amp 1 \amp -1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1\\ \end{array} \right]  \\ R_2 \leftrightarrow R_3 \amp \qquad \left[\begin{array}{rrrr|rrrr} 1 \amp 2 \amp 0 \amp 2 \amp 1 \amp 0 \amp 0 \amp 0\\ 0 \amp 1 \amp 0 \amp -1 \amp -1 \amp 0 \amp 1 \amp 0\\ 0 \amp -2 \amp 1 \amp 2 \amp 0 \amp 1 \amp 0 \amp 0\\ 0 \amp 1 \amp -1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1\\ \end{array} \right] \\ \begin{array}{r} -2R_2 + R_1 \to R_1, \\ 2R_2 + R_3 \to R_3, \\ -R_2 + R_4 \to R_4 \end{array} \amp \qquad \left[\begin{array}{rrrr|rrrr} 1 \amp 0 \amp 0 \amp 4 \amp 3 \amp 0 \amp -2 \amp 0\\ 0 \amp 1 \amp 0 \amp -1 \amp -1 \amp 0 \amp 1 \amp 0\\ 0 \amp 0 \amp 1 \amp 0 \amp -2 \amp 1 \amp 2 \amp 0\\ 0 \amp 0 \amp -1 \amp 1 \amp 1 \amp 0 \amp -1 \amp 1\\ \end{array} \right] \\ R_3 + R_4 \to R_4 \amp \qquad \left[\begin{array}{rrrr|rrrr} 1 \amp 0 \amp 0 \amp 4 \amp 3 \amp 0 \amp -2 \amp 0\\ 0 \amp 1 \amp 0 \amp -1 \amp -1 \amp 0 \amp 1 \amp 0\\ 0 \amp 0 \amp 1 \amp 0 \amp -2 \amp 1 \amp 2 \amp 0\\ 0 \amp 0 \amp 0 \amp 1 \amp -1 \amp 1 \amp 1 \amp 1\\ \end{array} \right]  \\ \begin{array}{r} R_4 + R_2 \to R_2 \\ -4R_4 + R_1 \to R_1 \end{array} \amp \qquad \left[\begin{array}{rrrr|rrrr} 1 \amp 0 \amp 0 \amp 0 \amp 7 \amp -4 \amp -6 \amp -4\\ 0 \amp 1 \amp 0 \amp 0 \amp -2 \amp 1 \amp 2 \amp 1\\ 0 \amp 0 \amp 1 \amp 0 \amp -2 \amp 1 \amp 2 \amp 0\\ 0 \amp 0 \amp 0 \amp 1 \amp -1 \amp 1 \amp 1 \amp 1\\ \end{array} \right] \end{aligned}
+          </me>
+        </p>
+
+        <p>
+          We need to find the elementary matrices of each of these row operations and then the inverses.
+          <me>
+            \begin{aligned} E_1 \amp = E_{-R_1+R_3} \amp E_2 \amp = E_{R_2 \leftrightarrow R_3} \amp E_3 \amp = E_{(-2R_2+R_1)} \\ E_4 \amp = E_{2R_2 + R_3} \amp E_5 \amp = E_{2R_2 + R_3} \amp E_6 \amp = E_{-R_2 + R_4} \\ E_7 \amp = E_{R_3 + R_4} \amp E_8 \amp = E_{R_4 + R_2} \amp E_9 \amp = E_{-4R_4+R_1} \end{aligned}
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Note: the above lemma works only for invertible matrices.
+      There are some ways of writing a matrix as the product of other matrices like this.
+      This is called factorization and we will see more details of this in <xref ref="ch-matrix-factoring"/>.
+      In fact, this notation above leads directly to <m>LU</m>-factorization.
+    </p>
+  </subsection>
 </section>

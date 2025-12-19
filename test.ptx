@@ -419,7 +419,7 @@ The size of <m>A</m> is 3 by 2 and the size of <m>B</m> is 2 by 2, so the inner 
 
 </subsection><subsection><title>Matrix-Vector Multiplication</title>
 
-Since a vector can be thought of as a matrix, the matrix-vector product (and vector-matrix products) exist if they are compatible.  If <m>A</m> is a <m>m \times n</m> matrix and <m>\vec{u}</m> is a column vector of size <m>n</m>, then the result is valid.
+Since a vector can be thought of as a matrix, the matrix-vector product (and vector-matrix products) exist if they are compatible.  If <m>A</m> is a <m>m \times n</m> matrix and <m>\boldsymbol{u}</m> is a column vector of size <m>n</m>, then the result is valid.
 
 
 <example>
@@ -430,18 +430,18 @@ A \amp = \begin{bmatrix}
 3 \amp -2 \amp 7 \\
 0 \amp 3 \amp 5 \\
 2 \amp -1 \amp 3
-\end{bmatrix} \amp \vec{u} \amp = \begin{bmatrix}
+\end{bmatrix} \amp \boldsymbol{u} \amp = \begin{bmatrix}
 2 \\ 4 \\ 9
 \end{bmatrix}
 </md>
-Find <m>A\vec{u}</m>.
+Find <m>A\boldsymbol{u}</m>.
 
 \solution
 
-This product is found by taking the dot product of rows of <m>A</m> and <m>\vec{u}</m>.
+This product is found by taking the dot product of rows of <m>A</m> and <m>\boldsymbol{u}</m>.
 
 <md>
-A \vec{u} \amp = \begin{bmatrix}
+A \boldsymbol{u} \amp = \begin{bmatrix}
 3 \amp -2 \amp 7 \\
 0 \amp 3 \amp 5 \\
 2 \amp -1 \amp 3
@@ -463,17 +463,17 @@ A \vec{u} \amp = \begin{bmatrix}
 
 </subsection><subsection><title>Reexamination of the Dot Product</title>
 
-Recall that the dot product of two vectors <m>\vec{u}</m> and <m>\vec{v}</m> of the same length discussed in Section <xref ref="sect-length-angles" /> is the sum of the products of the individual elements.
+Recall that the dot product of two vectors <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> of the same length discussed in Section <xref ref="sect-length-angles" /> is the sum of the products of the individual elements.
 
  We can see that the dot product can also be defined as
 %
 <md>
-\vec{u} \cdot \vec{v} = \vec{u}^{\intercal} \vec{v} = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n
+\boldsymbol{u} \cdot \boldsymbol{v} = \boldsymbol{u}^{\intercal} \boldsymbol{v} = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n
 </md>
 or alternatively using summation notation
 %
 <md>
-\vec{u}^{\intercal} \vec{v} \amp = \sum_{i=1}^n u_i v_i
+\boldsymbol{u}^{\intercal} \boldsymbol{v} \amp = \sum_{i=1}^n u_i v_i
 </md>
 
 
@@ -518,16 +518,16 @@ If we let
 	A \amp =
 \begin{bmatrix}
 3 \amp 2 \amp -1 \\ 1 \amp -2 \amp 1 \\ 2 \amp -2 \amp 4
-\end{bmatrix} \amp \vec{u} \amp =\begin{bmatrix}
+\end{bmatrix} \amp \boldsymbol{u} \amp =\begin{bmatrix}
 x \\ y \\ z
-\end{bmatrix} \amp \vec{b} \amp = \begin{bmatrix}
+\end{bmatrix} \amp \boldsymbol{b} \amp = \begin{bmatrix}
 10 \\ 11 \\ 5
 \end{bmatrix}
 </md>
 then the linear system can be written as
 %
 <md>
-	A\vec{u}=\vec{b}
+	A\boldsymbol{u}=\boldsymbol{b}
 </md>
 
 In the next section we will learn a way to solve a linear system in this way using an alternative method to Gauss' method.
