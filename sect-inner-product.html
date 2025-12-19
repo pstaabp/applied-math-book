@@ -101,15 +101,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.6';
+eBookConfig.runestone_version = '7.11.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -130,7 +130,8 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-vector-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-linear-transformations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
+\DeclareMathOperator{\sgn}{sgn}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -235,12 +236,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Inverse</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.3.4</span> <span class="title">The Matrix Inverse</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\boldsymbol{u}=\boldsymbol{b}\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.3.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elem-matrices.html#subsec-product-elem-matrices" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Matrices as Products of Elementary Matrices</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear Independence</span></a></div></li>
 <li class="toc-item toc-section">
@@ -255,14 +259,16 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Determinants of Square Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-4" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-6" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-defintion-determinant" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Basic Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-det-elem-matrices" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Determinants of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Gauss’ Method for Calculating Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7-3" class="internal"><span class="codenumber">2.8.4.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9-3" class="internal"><span class="codenumber">2.8.6.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Other Properties of Determinants</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
@@ -335,7 +341,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\vec{x}''= A\vec{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -473,12 +479,12 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-inner-product"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inner Product Spaces</span>
 </h2>
-<section class="introduction" id="sect-inner-product-2"><div class="para" id="sect-inner-product-2-1">In <a href="sect-linear-geometry.html#sect-length-angles" class="internal" title="Subsection 1.6.7: Length and Angle Measures">Subsection 1.6.7</a>, we examined the dot product between two vectors. Recall that we can write the dot product between two vectors <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> in <span class="process-math">\(\mathbb{R}^n\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="sect-inner-product-2"><div class="para" id="sect-inner-product-2-1">In <a href="sect-linear-geometry.html#sect-length-angles" class="internal" title="Subsection 1.6.7: Length and Angle Measures">Subsection 1.6.7</a>, we examined the dot product between two vectors. Recall that we can write the dot product between two vectors <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> in <span class="process-math">\(\mathbb{R}^n\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-2-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-2-2-1">
 \begin{equation*}
-\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + \cdots +u_nv_n
+\boldsymbol{u} \cdot \boldsymbol{v} = u_1v_1 + u_2v_2 + \cdots +u_nv_n
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -488,28 +494,28 @@ eBookConfig.enable_chatcodes =  false;
 <article class="definition definition-like" id="sect-inner-product-2-4"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sect-inner-product-2-4-1-1">The vector space <span class="process-math">\(V\)</span> is called an <dfn class="terminology">inner product space</dfn> if for every pair of vectors <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> in <span class="process-math">\(V\)</span> there is a unique number <span class="process-math">\(\langle
-\vec{u}, \vec{v} \rangle\text{,}\)</span> called the <dfn class="terminology">inner product</dfn> of <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> such that for all <span class="process-math">\(\vec{u}, \vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> in <span class="process-math">\(V\)</span> and <span class="process-math">\(a,
+<div class="para" id="sect-inner-product-2-4-1-1">The vector space <span class="process-math">\(V\)</span> is called an <dfn class="terminology">inner product space</dfn> if for every pair of vectors <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> in <span class="process-math">\(V\)</span> there is a unique number <span class="process-math">\(\langle
+\boldsymbol{u}, \boldsymbol{v} \rangle\text{,}\)</span> called the <dfn class="terminology">inner product</dfn> of <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> such that for all <span class="process-math">\(\boldsymbol{u}, \boldsymbol{v}\)</span> and <span class="process-math">\(\boldsymbol{w}\)</span> in <span class="process-math">\(V\)</span> and <span class="process-math">\(a,
 b \in \mathbb{R}\)</span> then the following properties are satisfied:<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-inner-product-2-4-1-2">
 <ol class="decimal" id="sect-inner-product-2-4-1-2-1">
 <li id="sect-inner-product-2-4-1-2-1-1">
 <div class="para" id="sect-inner-product-2-4-1-2-1-1-1">
-<span class="process-math">\(\displaystyle \langle \vec{u}, \vec{v} \rangle = \langle \vec{v}, \vec{u} \rangle\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-4-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle \langle \boldsymbol{u}, \boldsymbol{v} \rangle = \langle \boldsymbol{v}, \boldsymbol{u} \rangle\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-4-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 1"><a href="#sect-inner-product-2-4-1-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="sect-inner-product-2-4-1-2-1-2">
 <div class="para" id="sect-inner-product-2-4-1-2-1-2-1">
-<span class="process-math">\(\langle a \vec{u} + b \vec{v}, \vec{w} \rangle = a \langle \vec{u},
-\vec{w} \rangle + b \langle \vec{v}, \vec{w} \rangle\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-4-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\langle a \boldsymbol{u} + b \boldsymbol{v}, \boldsymbol{w} \rangle = a \langle \boldsymbol{u},
+\boldsymbol{w} \rangle + b \langle \boldsymbol{v}, \boldsymbol{w} \rangle\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-4-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 2"><a href="#sect-inner-product-2-4-1-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 <li id="sect-inner-product-2-4-1-2-1-3">
 <div class="para" id="sect-inner-product-2-4-1-2-1-3-1">
-<span class="process-math">\(\langle \vec{u}, \vec{u} \rangle \geq 0\)</span> and equals 0 if and only if <span class="process-math">\(\vec{u}
-= \vec{0}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-4-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\langle \boldsymbol{u}, \boldsymbol{u} \rangle \geq 0\)</span> and equals 0 if and only if <span class="process-math">\(\boldsymbol{u}
+= \boldsymbol{0}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-4-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 3"><a href="#sect-inner-product-2-4-1-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
@@ -522,9 +528,9 @@ b \in \mathbb{R}\)</span> then the following properties are satisfied:<div class
 </div> <div class="para logical" id="sect-inner-product-2-5-1-2">
 <div class="displaymath process-math" id="sect-inner-product-2-5-1-2-1">
 \begin{align*}
-\vec{u} \amp= \begin{bmatrix}
+\boldsymbol{u} \amp= \begin{bmatrix}
 u_1 \\ u_2 \\ \vdots \\ u_n
-\end{bmatrix} \amp \vec{v} \amp =
+\end{bmatrix} \amp \boldsymbol{v} \amp =
 \begin{bmatrix}
 v_1 \\ v_2 \\ \vdots \\ v_n
 \end{bmatrix}
@@ -533,11 +539,11 @@ v_1 \\ v_2 \\ \vdots \\ v_n
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-inner-product-2-5-1-3">and<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-inner-product-2-5-1-4">
-<span class="process-math">\(\langle \vec{u}, \vec{v} \rangle = \vec{u}^T\vec{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\langle \boldsymbol{u}, \boldsymbol{v} \rangle = \boldsymbol{u}^{\intercal}\boldsymbol{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="sect-inner-product-2-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-inner-product-2-5-2-1">First, the set <span class="process-math">\(\mathbb{R}^n\)</span> is a vector space. Next, we need to show that the three properties are satisfied for <span class="process-math">\(\langle \vec{u}, \vec{v} \rangle = \vec{u}^T
-\vec{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-2-5-2-1">First, the set <span class="process-math">\(\mathbb{R}^n\)</span> is a vector space. Next, we need to show that the three properties are satisfied for <span class="process-math">\(\langle \boldsymbol{u}, \boldsymbol{v} \rangle = \boldsymbol{u}^{\intercal}
+\boldsymbol{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-2-5-2-2">
 <ol class="decimal" id="sect-inner-product-2-5-2-2-1">
@@ -545,20 +551,20 @@ v_1 \\ v_2 \\ \vdots \\ v_n
 <div class="para logical" id="sect-inner-product-2-5-2-2-1-1-1">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sect-transpose.html" id="sect-inner-product-2-5-2-2-1-1-1-1">
 \begin{align*}
-\langle \vec{u}, \vec{v} \rangle \amp = \vec{u}^T \vec{v}
+\langle \boldsymbol{u}, \boldsymbol{v} \rangle \amp = \boldsymbol{u}^{\intercal} \boldsymbol{v}
 \end{align*}
 </div>
 <div class="para">since the transpose of a number is itself</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sect-transpose.html" id="sect-inner-product-2-5-2-2-1-1-1-2">
 \begin{align*}
-\amp = (\vec{u}^T \vec{v})^T 
+\amp = (\boldsymbol{u}^{\intercal} \boldsymbol{v})^{\intercal} 
 \end{align*}
 </div>
 <div class="para">using the properties of transposes in <a href="sect-matrix-operations.html#sect-transpose" class="internal" title="Subsection 2.2.6: Transpose">Subsection 2.2.6</a>.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sect-transpose.html" id="sect-inner-product-2-5-2-2-1-1-1-4">
 \begin{align*}
-\amp = \vec{v}^T (\vec{u}^T)^T = \vec{v}^T \vec{u} = \langle \vec{v},
-\vec{u}
+\amp = \boldsymbol{v}^{\intercal} (\boldsymbol{u}^{\intercal})^{\intercal} = \boldsymbol{v}^{\intercal} \boldsymbol{u} = \langle \boldsymbol{v},
+\boldsymbol{u}
 \rangle.
 \end{align*}
 </div>
@@ -571,12 +577,12 @@ v_1 \\ v_2 \\ \vdots \\ v_n
 <div class="para logical" id="sect-inner-product-2-5-2-2-1-2-1">
 <div class="displaymath process-math" id="sect-inner-product-2-5-2-2-1-2-1-1">
 \begin{align*}
-\langle a \vec{u} + b \vec{v}, \vec{w} \rangle \amp = (a \vec{u} +
-b\vec{v})^T
-\vec{w} = (a \vec{u}^T + b \vec{v}^T) \vec{w} \\
-\amp = a \vec{u}^T \vec{w} + b \vec{v}^T \vec{w} = a \langle \vec{u},
-\vec{w}
-\rangle + b \langle \vec{v}, \vec{w} \rangle.
+\langle a \boldsymbol{u} + b \boldsymbol{v}, \boldsymbol{w} \rangle \amp = (a \boldsymbol{u} +
+b\boldsymbol{v})^{\intercal}
+\boldsymbol{w} = (a \boldsymbol{u}^{\intercal} + b \boldsymbol{v}^{\intercal}) \boldsymbol{w} \\
+\amp = a \boldsymbol{u}^{\intercal} \boldsymbol{w} + b \boldsymbol{v}^{\intercal} \boldsymbol{w} = a \langle \boldsymbol{u},
+\boldsymbol{w}
+\rangle + b \langle \boldsymbol{v}, \boldsymbol{w} \rangle.
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -585,16 +591,16 @@ b\vec{v})^T
 </li>
 <li id="sect-inner-product-2-5-2-2-1-3">
 <div class="para logical" id="sect-inner-product-2-5-2-2-1-3-1">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-2-5-2-2-1-3-1-1">
 \begin{equation*}
-\langle \vec{u}, \vec{u} \rangle = \vec{u}^T \vec{u} = u_1^2 + u_2^2 + u_3^2 +
+\langle \boldsymbol{u}, \boldsymbol{u} \rangle = \boldsymbol{u}^{\intercal} \boldsymbol{u} = u_1^2 + u_2^2 + u_3^2 +
 \cdots + u_n^2
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-inner-product-2-5-2-2-1-3-2">which satisfies <span class="process-math">\(\geq 0\text{.}\)</span> The only time that this quantity equals 0, is when <span class="process-math">\(u_1=u_2
-= \cdots =u_n\)</span> or <span class="process-math">\(\vec{u} = \vec{0}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-2-2-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+= \cdots =u_n\)</span> or <span class="process-math">\(\boldsymbol{u} = \boldsymbol{0}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-5-2-2-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 3"><a href="#sect-inner-product-2-5-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
@@ -609,7 +615,7 @@ b\vec{v})^T
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-inner-product-2-7-1-1">Show that <span class="process-math">\(\mathcal{P}_n\)</span> on the interval <span class="process-math">\([0,1]\)</span> is a inner product space with<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-inner-product-2-7-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-2-7-1-2-1">
 \begin{equation*}
 \langle p,q \rangle = \int_0^1 p q \, dx
 \end{equation*}
@@ -624,7 +630,7 @@ b\vec{v})^T
 <ol class="decimal" id="sect-inner-product-2-7-2-2-1">
 <li id="sect-inner-product-2-7-2-2-1-1">
 <div class="para logical" id="sect-inner-product-2-7-2-2-1-1-1">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-2-7-2-2-1-1-1-1">
 \begin{equation*}
 \langle p, q \rangle = \int_0^1 pq \, dx = \int_0^1 q p \, dx = \langle q, p
 \rangle.
@@ -652,7 +658,7 @@ b\vec{v})^T
 </li>
 <li id="sect-inner-product-2-7-2-2-1-3">
 <div class="para logical" id="sect-inner-product-2-7-2-2-1-3-1">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-2-7-2-2-1-3-1-1">
 \begin{equation*}
 \langle p, p \rangle = \int_0^1 p^2 \, dx
 \end{equation*}
@@ -674,43 +680,43 @@ b\vec{v})^T
 <article class="definition definition-like" id="sect-inner-product-3-2"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-inner-product-3-2-1-1">Let <span class="process-math">\(\vec{u}\)</span> be an element of an inner product space. The norm of the vector <span class="process-math">\(\vec{u}\)</span> is given by<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-3-2-1-1">Let <span class="process-math">\(\boldsymbol{u}\)</span> be an element of an inner product space. The norm of the vector <span class="process-math">\(\boldsymbol{u}\)</span> is given by<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-inner-product-3-2-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-3-2-1-2-1">
 \begin{equation*}
-|| \vec{u} || = \sqrt{\langle \vec{u},\vec{u} \rangle}
+|| \boldsymbol{u} || = \sqrt{\langle \boldsymbol{u},\boldsymbol{u} \rangle}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.3.4"><a href="#sect-inner-product-3-2" title="Copy heading and permalink for Definition 3.3.4" aria-label="Copy heading and permalink for Definition 3.3.4">🔗</a></div></article><div class="para" id="sect-inner-product-3-3">Note: if <span class="process-math">\(\vec{u} \in \mathbb{R}^n\)</span> then the vector norm is the length of the vector.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 3.3.4"><a href="#sect-inner-product-3-2" title="Copy heading and permalink for Definition 3.3.4" aria-label="Copy heading and permalink for Definition 3.3.4">🔗</a></div></article><div class="para" id="sect-inner-product-3-3">Note: if <span class="process-math">\(\boldsymbol{u} \in \mathbb{R}^n\)</span> then the vector norm is the length of the vector.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="sect-inner-product-3-4"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-inner-product-3-4-1-1">The distance between vectors <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> denoted <span class="process-math">\(d(\vec{u},\vec{v})\)</span> and is defined as<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-3-4-1-1">The distance between vectors <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> denoted <span class="process-math">\(d(\boldsymbol{u},\boldsymbol{v})\)</span> and is defined as<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-inner-product-3-4-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-3-4-1-2-1">
 \begin{equation*}
-d(\vec{u},\vec{v})=||\vec{u}-\vec{v}||.
+d(\boldsymbol{u},\boldsymbol{v})=||\boldsymbol{u}-\boldsymbol{v}||.
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.3.5"><a href="#sect-inner-product-3-4" title="Copy heading and permalink for Definition 3.3.5" aria-label="Copy heading and permalink for Definition 3.3.5">🔗</a></div></article><div class="para" id="sect-inner-product-3-5">Note: if <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> are in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> then the distance function is the standard distance function where the vectors are considered to be points.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 3.3.5"><a href="#sect-inner-product-3-4" title="Copy heading and permalink for Definition 3.3.5" aria-label="Copy heading and permalink for Definition 3.3.5">🔗</a></div></article><div class="para" id="sect-inner-product-3-5">Note: if <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> are in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> then the distance function is the standard distance function where the vectors are considered to be points.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-distance-zero"><h4 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="lem-distance-zero-1-1">The distance <span class="process-math">\(||\vec{u}-\vec{v}||=0\)</span> if and only if <span class="process-math">\(\vec{u}=\vec{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-distance-zero-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="lem-distance-zero-1-1">The distance <span class="process-math">\(||\boldsymbol{u}-\boldsymbol{v}||=0\)</span> if and only if <span class="process-math">\(\boldsymbol{u}=\boldsymbol{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-distance-zero-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Lemma 3.3.6"><a href="#lem-distance-zero" title="Copy heading and permalink for Lemma 3.3.6" aria-label="Copy heading and permalink for Lemma 3.3.6">🔗</a></div></article><details id="lem-distance-zero-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-distance-zero-2-1">
-<span class="process-math">\(\Longrightarrow\)</span> Let <span class="process-math">\(||\vec{u}-\vec{v}||=0\text{,}\)</span> then <span class="process-math">\(\langle
-\vec{u}-\vec{v},\vec{u}-\vec{v} \rangle=0\)</span> By definition, this is only zero if <span class="process-math">\(\vec{u}-\vec{v}=\vec{0}\text{,}\)</span> therefore <span class="process-math">\(\vec{u}=\vec{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-distance-zero-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\Longrightarrow\)</span> Let <span class="process-math">\(||\boldsymbol{u}-\boldsymbol{v}||=0\text{,}\)</span> then <span class="process-math">\(\langle
+\boldsymbol{u}-\boldsymbol{v},\boldsymbol{u}-\boldsymbol{v} \rangle=0\)</span> By definition, this is only zero if <span class="process-math">\(\boldsymbol{u}-\boldsymbol{v}=\boldsymbol{0}\text{,}\)</span> therefore <span class="process-math">\(\boldsymbol{u}=\boldsymbol{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-distance-zero-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="lem-distance-zero-2-2">
-<span class="process-math">\(\Longleftarrow\)</span> If <span class="process-math">\(\vec{u}=\vec{v}\text{,}\)</span> then <span class="process-math">\(||\vec{u}-\vec{v}|| =
-||\vec{0}||=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-distance-zero-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\Longleftarrow\)</span> If <span class="process-math">\(\boldsymbol{u}=\boldsymbol{v}\text{,}\)</span> then <span class="process-math">\(||\boldsymbol{u}-\boldsymbol{v}|| =
+||\boldsymbol{0}||=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-distance-zero-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Proof 3.3.6.1"><a href="#lem-distance-zero-2" title="Copy heading and permalink for Proof 3.3.6.1" aria-label="Copy heading and permalink for Proof 3.3.6.1">🔗</a></div></article></details><div class="para" id="sect-inner-product-3-7">Except for the example of the inner product as an integral, all of the other discussion in this section has been about vectors in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> and this is mainly because it is the canonical vector and inner product space and some of the interpretations of length of vectors don’t make a lot of sense when talking about polynomials or other functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -719,18 +725,18 @@ d(\vec{u},\vec{v})=||\vec{u}-\vec{v}||.
 <div class="autopermalink" data-description="Subsection 3.3.1: Vector Norms and distance"><a href="#sect-inner-product-3" title="Copy heading and permalink for Subsection 3.3.1: Vector Norms and distance" aria-label="Copy heading and permalink for Subsection 3.3.1: Vector Norms and distance">🔗</a></div></section><section class="subsection" id="sect-inner-product-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Angles between vectors</span>
 </h3>
-<div class="para" id="sect-inner-product-4-2">If <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> are vectors in <span class="process-math">\(\mathbb{R}^2\)</span> then we saw in <a href="sect-linear-geometry.html#sect-length-angles" class="internal" title="Subsection 1.6.7: Length and Angle Measures">Subsection 1.6.7</a> that<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-4-2">If <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> are vectors in <span class="process-math">\(\mathbb{R}^2\)</span> then we saw in <a href="sect-linear-geometry.html#sect-length-angles" class="internal" title="Subsection 1.6.7: Length and Angle Measures">Subsection 1.6.7</a> that<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-4-3">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-4-3-1">
 \begin{equation*}
-\cos \theta = \frac{\langle \vec{u},\vec{v} \rangle}{||\vec{u}||\, || \vec{v}||}
+\cos \theta = \frac{\langle \boldsymbol{u},\boldsymbol{v} \rangle}{||\boldsymbol{u}||\, || \boldsymbol{v}||}
 \end{equation*}
 </div>
 <div class="para">and thus the angle between the vectors can be found.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-4-4">This notion generalizes to any vectors in an inner product space, <span class="process-math">\(V\text{.}\)</span> Most helpful, two vectors meet at a right angle if <span class="process-math">\(\langle \vec{u},\vec{v}\rangle=0\)</span> and it is said that if this holds then <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> are orthogonal. The next section talks about how an entire set of vectors can be orthogonal .<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-4-4">This notion generalizes to any vectors in an inner product space, <span class="process-math">\(V\text{.}\)</span> Most helpful, two vectors meet at a right angle if <span class="process-math">\(\langle \boldsymbol{u},\boldsymbol{v}\rangle=0\)</span> and it is said that if this holds then <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> are orthogonal. The next section talks about how an entire set of vectors can be orthogonal .<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Subsection 3.3.2: Angles between vectors"><a href="#sect-inner-product-4" title="Copy heading and permalink for Subsection 3.3.2: Angles between vectors" aria-label="Copy heading and permalink for Subsection 3.3.2: Angles between vectors">🔗</a></div></section><section class="subsection" id="sect-inner-product-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthonormal sets of vectors</span>
@@ -738,19 +744,19 @@ d(\vec{u},\vec{v})=||\vec{u}-\vec{v}||.
 <article class="definition definition-like" id="sect-inner-product-5-2"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-inner-product-5-2-1-1">Let <span class="process-math">\(\{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\}\)</span> each be elements of an inner product space, <span class="process-math">\(V\text{.}\)</span> The set is called an <dfn class="terminology">orthonormal set</dfn> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-5-2-1-1">Let <span class="process-math">\(\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\}\)</span> each be elements of an inner product space, <span class="process-math">\(V\text{.}\)</span> The set is called an <dfn class="terminology">orthonormal set</dfn> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-inner-product-5-2-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-5-2-1-2-1">
 \begin{equation*}
-\langle \vec{v}_i, \vec{v}_j \rangle = 0 \qquad \text{if $i \neq j$}
+\langle \boldsymbol{v}_i, \boldsymbol{v}_j \rangle = 0 \qquad \text{if $i \neq j$}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-inner-product-5-2-1-3">and<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-2-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-inner-product-5-2-1-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-5-2-1-4-1">
 \begin{equation*}
-||\vec{v}_i|| = \sqrt{\langle \vec{v}_i, \vec{v}_i \rangle} = 1
+||\boldsymbol{v}_i|| = \sqrt{\langle \boldsymbol{v}_i, \boldsymbol{v}_i \rangle} = 1
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-2-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -762,15 +768,15 @@ d(\vec{u},\vec{v})=||\vec{u}-\vec{v}||.
 </div> <div class="para logical" id="sect-inner-product-5-3-1-2">
 <div class="displaymath process-math" id="sect-inner-product-5-3-1-2-1">
 \begin{align*}
-\vec{v}_1 \amp=
+\boldsymbol{v}_1 \amp=
 \begin{bmatrix}
 1 \\ 0 \\ 0
 \end{bmatrix}, \amp
-\vec{v}_2 \amp =
+\boldsymbol{v}_2 \amp =
 \begin{bmatrix}
 0 \\ 1/\sqrt{2} \\ 1/\sqrt{2}
 \end{bmatrix}, \amp
-\vec{v}_3 \amp =
+\boldsymbol{v}_3 \amp =
 \begin{bmatrix}
 0 \\ 1/\sqrt{2} \\ -1/\sqrt{2}
 \end{bmatrix}
@@ -785,11 +791,11 @@ d(\vec{u},\vec{v})=||\vec{u}-\vec{v}||.
 <div class="para logical" id="sect-inner-product-5-3-2-2">
 <div class="displaymath process-math" id="sect-inner-product-5-3-2-2-1">
 \begin{align*}
-\langle \vec{v}_1, \vec{v}_2 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
+\langle \boldsymbol{v}_1, \boldsymbol{v}_2 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
 (0)(1/\sqrt{2}) = 0 \\
-\langle \vec{v}_1, \vec{v}_3 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
+\langle \boldsymbol{v}_1, \boldsymbol{v}_3 \rangle \amp = (1)(0) + (0)(1/\sqrt{2}) +
 (0)(-1/\sqrt{2}) = 0 \\
-\langle \vec{v}_2, \vec{v}_3 \rangle \amp = (0)(0) + (1/\sqrt{2})(1/\sqrt{2}) +
+\langle \boldsymbol{v}_2, \boldsymbol{v}_3 \rangle \amp = (0)(0) + (1/\sqrt{2})(1/\sqrt{2}) +
 (1/\sqrt{2})(-1/\sqrt{2}) = \frac{1}{2} - \frac{1}{2} = 0 
 \end{align*}
 </div>
@@ -800,10 +806,10 @@ d(\vec{u},\vec{v})=||\vec{u}-\vec{v}||.
 <div class="para logical" id="sect-inner-product-5-3-2-4">
 <div class="displaymath process-math" id="sect-inner-product-5-3-2-4-1">
 \begin{align*}
-||\vec{v}_1|| \amp = \sqrt{(1)^2 + (0)^2 + (0^2)} = 1 \\
-||\vec{v}_2|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (1/\sqrt{2})^2} = \sqrt{0 +
+||\boldsymbol{v}_1|| \amp = \sqrt{(1)^2 + (0)^2 + (0^2)} = 1 \\
+||\boldsymbol{v}_2|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (1/\sqrt{2})^2} = \sqrt{0 +
 \frac{1}{2} + \frac{1}{2}} = 1 \\
-||\vec{v}_3|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (-1/\sqrt{2})^2} = \sqrt{0 +
+||\boldsymbol{v}_3|| \amp = \sqrt{(0)^2 + (1/\sqrt{2})^2 + (-1/\sqrt{2})^2} = \sqrt{0 +
 \frac{1}{2} + \frac{1}{2}} = 1
 \end{align*}
 </div>
@@ -817,7 +823,7 @@ d(\vec{u},\vec{v})=||\vec{u}-\vec{v}||.
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-orthog-set-1-1">Show that<div class="autopermalink" data-description="Paragraph"><a href="#ex-orthog-set-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-orthog-set-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-orthog-set-1-2-1">
 \begin{equation*}
 \{\sin x, \sin 2x, \sin 3x\}
 \end{equation*}
@@ -862,7 +868,7 @@ e^{-ix}}{2}
 <div class="para" id="ex-orthog-set-2-7">The other two inner products are similar. In fact it can be shown (and we will later) that<div class="autopermalink" data-description="Paragraph"><a href="#ex-orthog-set-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-orthog-set-2-8">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-orthog-set-2-8-1">
 \begin{equation*}
 \langle \sin kx, \sin \ell x \rangle = \int_{-\pi}^{\pi} \sin kx \sin \ell x \, dx = 0
 \end{equation*}
@@ -878,22 +884,22 @@ e^{-ix}}{2}
 <article class="theorem theorem-like" id="thm-cauchy-swartz"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cauchy-Swartz Inequality.</span>
 </h4>
-<div class="para" id="thm-cauchy-swartz-2-1">If <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> are elements of an inner product space then<div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="thm-cauchy-swartz-2-1">If <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> are elements of an inner product space then<div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="thm-cauchy-swartz-2-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-cauchy-swartz-2-2-1">
 \begin{equation*}
-| \langle \vec{u}, \vec{v} \rangle| \leq || \vec{u} ||\, ||\vec{v}||
+| \langle \boldsymbol{u}, \boldsymbol{v} \rangle| \leq || \boldsymbol{u} ||\, ||\boldsymbol{v}||
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 3.3.10: Cauchy-Swartz Inequality"><a href="#thm-cauchy-swartz" title="Copy heading and permalink for Theorem 3.3.10: Cauchy-Swartz Inequality" aria-label="Copy heading and permalink for Theorem 3.3.10: Cauchy-Swartz Inequality">🔗</a></div></article><details id="thm-cauchy-swartz-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-cauchy-swartz-3-1">If <span class="process-math">\(\vec{v}=\vec{0}\text{,}\)</span> then the inequality is satisfied. Assume <span class="process-math">\(\vec{v} \neq
-\vec{0}\)</span> and define<div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 3.3.10: Cauchy-Swartz Inequality"><a href="#thm-cauchy-swartz" title="Copy heading and permalink for Theorem 3.3.10: Cauchy-Swartz Inequality" aria-label="Copy heading and permalink for Theorem 3.3.10: Cauchy-Swartz Inequality">🔗</a></div></article><details id="thm-cauchy-swartz-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-cauchy-swartz-3-1">If <span class="process-math">\(\boldsymbol{v}=\boldsymbol{0}\text{,}\)</span> then the inequality is satisfied. Assume <span class="process-math">\(\boldsymbol{v} \neq
+\boldsymbol{0}\)</span> and define<div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-cauchy-swartz-3-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-cauchy-swartz-3-2-1">
 \begin{equation*}
-\lambda = \langle \vec{v},\vec{v} \rangle^{-1} \langle \vec{u},\vec{v} \rangle.
+\lambda = \langle \boldsymbol{v},\boldsymbol{v} \rangle^{-1} \langle \boldsymbol{u},\boldsymbol{v} \rangle.
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -903,7 +909,7 @@ e^{-ix}}{2}
 <div class="para logical" id="thm-cauchy-swartz-3-4">
 <div class="displaymath process-math" id="thm-cauchy-swartz-3-4-1">
 \begin{align*}
-0 \leq\amp \langle \vec{u} - \lambda \vec{v}, \vec{u} -\lambda \vec{v} \rangle
+0 \leq\amp \langle \boldsymbol{u} - \lambda \boldsymbol{v}, \boldsymbol{u} -\lambda \boldsymbol{v} \rangle
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -913,25 +919,25 @@ e^{-ix}}{2}
 <div class="para logical" id="thm-cauchy-swartz-3-6">
 <div class="displaymath process-math" id="thm-cauchy-swartz-3-6-1">
 \begin{align*}
-0 \leq \amp \langle \vec{u}, \vec{u} \rangle - 2 \lambda \langle \vec{u}, \vec{v}
-\rangle + \lambda^2 \langle \vec{v},\vec{v} \rangle \\
-= \amp \langle \vec{u},\vec{u} \rangle - 2 \langle \vec{v},\vec{v} \rangle^{-1}
-\langle \vec{u},\vec{v} \rangle \langle \vec{u}, \vec{v} \rangle + \bigl(\langle
-\vec{v},\vec{v} \rangle^{-1} \langle \vec{u},\vec{v} \rangle \bigr)^2 \langle
-\vec{v},\vec{v} \rangle.\\
-= \amp \langle \vec{u}, \vec{u} \rangle - \langle \vec{v},\vec{v} \rangle^{-1}
-\langle \vec{u},\vec{v} \rangle ^2
+0 \leq \amp \langle \boldsymbol{u}, \boldsymbol{u} \rangle - 2 \lambda \langle \boldsymbol{u}, \boldsymbol{v}
+\rangle + \lambda^2 \langle \boldsymbol{v},\boldsymbol{v} \rangle \\
+= \amp \langle \boldsymbol{u},\boldsymbol{u} \rangle - 2 \langle \boldsymbol{v},\boldsymbol{v} \rangle^{-1}
+\langle \boldsymbol{u},\boldsymbol{v} \rangle \langle \boldsymbol{u}, \boldsymbol{v} \rangle + \bigl(\langle
+\boldsymbol{v},\boldsymbol{v} \rangle^{-1} \langle \boldsymbol{u},\boldsymbol{v} \rangle \bigr)^2 \langle
+\boldsymbol{v},\boldsymbol{v} \rangle.\\
+= \amp \langle \boldsymbol{u}, \boldsymbol{u} \rangle - \langle \boldsymbol{v},\boldsymbol{v} \rangle^{-1}
+\langle \boldsymbol{u},\boldsymbol{v} \rangle ^2
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="thm-cauchy-swartz-3-7">Multiply through by <span class="process-math">\(\langle\vec{v},\vec{v}\rangle\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="thm-cauchy-swartz-3-7">Multiply through by <span class="process-math">\(\langle\boldsymbol{v},\boldsymbol{v}\rangle\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-cauchy-swartz-3-8">
 <div class="displaymath process-math" id="thm-cauchy-swartz-3-8-1">
 \begin{align*}
-\amp \langle \vec{u},\vec{u} \rangle \langle \vec{v},\vec{v} \rangle - \langle
-\vec{u},\vec{v} \rangle^2
+\amp \langle \boldsymbol{u},\boldsymbol{u} \rangle \langle \boldsymbol{v},\boldsymbol{v} \rangle - \langle
+\boldsymbol{u},\boldsymbol{v} \rangle^2
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -939,10 +945,10 @@ e^{-ix}}{2}
 <div class="para" id="thm-cauchy-swartz-3-9">This can be rearranged to get:<div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-cauchy-swartz-3-10">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-cauchy-swartz-3-10-1">
 \begin{equation*}
-\langle \vec{u},\vec{v} \rangle^2 \leq \langle \vec{u},\vec{u} \rangle \langle \vec{v},
-\vec{v} \rangle
+\langle \boldsymbol{u},\boldsymbol{v} \rangle^2 \leq \langle \boldsymbol{u},\boldsymbol{u} \rangle \langle \boldsymbol{v},
+\boldsymbol{v} \rangle
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-swartz-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -954,9 +960,9 @@ e^{-ix}}{2}
 <div class="para" id="sect-inner-product-5-8">Recall that above in this section, the angle between two vectors was defined as the angle <span class="process-math">\(\theta\)</span> that satisfies<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-5-9">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-5-9-1">
 \begin{equation*}
-\cos \theta = \frac{\langle \vec{u}, \vec{v} \rangle}{||\vec{u}||\, ||\vec{v}||}
+\cos \theta = \frac{\langle \boldsymbol{u}, \boldsymbol{v} \rangle}{||\boldsymbol{u}||\, ||\boldsymbol{v}||}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -964,9 +970,9 @@ e^{-ix}}{2}
 <div class="para" id="sect-inner-product-5-10">and solving for the inner product,<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-5-11">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-5-11-1">
 \begin{equation*}
-\langle \vec{u}, \vec{v} \rangle = ||\vec{u}||\, ||\vec{v}|| \cos \theta
+\langle \boldsymbol{u}, \boldsymbol{v} \rangle = ||\boldsymbol{u}||\, ||\boldsymbol{v}|| \cos \theta
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -974,11 +980,11 @@ e^{-ix}}{2}
 <div class="para" id="sect-inner-product-5-12">and using the Cauchy-Swartz Inequality,<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-5-13">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-5-13-1">
 \begin{equation*}
-|\langle \vec{u}, \vec{v} \rangle | = \bigl\vert ||\vec{u}||\, ||\vec{v}|| \cos \theta
+|\langle \boldsymbol{u}, \boldsymbol{v} \rangle | = \bigl\vert ||\boldsymbol{u}||\, ||\boldsymbol{v}|| \cos \theta
 \bigr\vert
-\leq ||\vec{u}||\, ||\vec{v}||
+\leq ||\boldsymbol{u}||\, ||\boldsymbol{v}||
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -986,7 +992,7 @@ e^{-ix}}{2}
 <div class="para" id="sect-inner-product-5-14">which results in<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-5-15">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-5-15-1">
 \begin{equation*}
 |\cos \theta| \leq 1
 \end{equation*}
@@ -1004,13 +1010,13 @@ e^{-ix}}{2}
 </div>
 <details id="sect-inner-product-6-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-inner-product-6-4-1-1">Find a orthonormal set of vectors that span the same set as <span class="process-math">\(\{\vec{u}_1,\vec{u}_2\}\text{,}\)</span> where<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-inner-product-6-4-1-1">Find a orthonormal set of vectors that span the same set as <span class="process-math">\(\{\boldsymbol{u}_1,\boldsymbol{u}_2\}\text{,}\)</span> where<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-inner-product-6-4-1-2">
 <div class="displaymath process-math" id="sect-inner-product-6-4-1-2-1">
 \begin{align*}
-\vec{u}_1 \amp= \begin{bmatrix}
+\boldsymbol{u}_1 \amp= \begin{bmatrix}
 2 \\ 0
-\end{bmatrix}, \amp \vec{u}_2 \amp = \begin{bmatrix}
+\end{bmatrix}, \amp \boldsymbol{u}_2 \amp = \begin{bmatrix}
 1 \\ 1
 \end{bmatrix}
 \end{align*}
@@ -1018,12 +1024,12 @@ e^{-ix}}{2}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="sect-inner-product-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-inner-product-6-4-2-1">There are many ways of doing this, but the following will always work. First, let’s start by finding a unit vector in the same direction as <span class="process-math">\(\vec{u}_1\text{.}\)</span> We denote this as <span class="process-math">\(\hat{v}_1\)</span> and this can be found by dividing <span class="process-math">\(\vec{u}_1\)</span> by its length:<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-4-2-1">There are many ways of doing this, but the following will always work. First, let’s start by finding a unit vector in the same direction as <span class="process-math">\(\boldsymbol{u}_1\text{.}\)</span> We denote this as <span class="process-math">\(\hat{v}_1\)</span> and this can be found by dividing <span class="process-math">\(\boldsymbol{u}_1\)</span> by its length:<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-6-4-2-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-6-4-2-2-1">
 \begin{equation*}
-\hat{v}_1 = \frac{1}{||\vec{u}_1||} \vec{u}_1 = \frac{1}{2} \begin{bmatrix}
+\hat{v}_1 = \frac{1}{||\boldsymbol{u}_1||} \boldsymbol{u}_1 = \frac{1}{2} \begin{bmatrix}
 2 \\ 0
 \end{bmatrix} = \begin{bmatrix}
 1 \\ 0
@@ -1032,12 +1038,12 @@ e^{-ix}}{2}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-6-4-2-3">Next, we will form a new vector <span class="process-math">\(\vec{v}_2\)</span> which is a linear combination of <span class="process-math">\(\hat{v}_1\)</span> and <span class="process-math">\(\vec{u}_2\)</span> and has the property that it is orthogonal to <span class="process-math">\(\vec{v}_1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-4-2-3">Next, we will form a new vector <span class="process-math">\(\boldsymbol{v}_2\)</span> which is a linear combination of <span class="process-math">\(\hat{v}_1\)</span> and <span class="process-math">\(\boldsymbol{u}_2\)</span> and has the property that it is orthogonal to <span class="process-math">\(\boldsymbol{v}_1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-6-4-2-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-6-4-2-4-1">
 \begin{equation*}
-\vec{v}_2 = c_1 \hat{v}_1 + c_2 \vec{u}_2
+\boldsymbol{v}_2 = c_1 \hat{v}_1 + c_2 \boldsymbol{u}_2
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1047,9 +1053,9 @@ e^{-ix}}{2}
 <div class="para logical" id="sect-inner-product-6-4-2-6">
 <div class="displaymath process-math" id="sect-inner-product-6-4-2-6-1">
 \begin{align*}
-0 \amp = \langle \vec{v}_2, \hat{v}_1 \rangle \\
-\amp = \langle \hat{v}_1 + c_2 \vec{u}_2, \hat{v}_1 \rangle \\
-\amp = \langle \hat{v}_1 \hat{v_1} \rangle + c_2 \langle \vec{u}_2, \hat{v}_1
+0 \amp = \langle \boldsymbol{v}_2, \hat{v}_1 \rangle \\
+\amp = \langle \hat{v}_1 + c_2 \boldsymbol{u}_2, \hat{v}_1 \rangle \\
+\amp = \langle \hat{v}_1 \hat{v_1} \rangle + c_2 \langle \boldsymbol{u}_2, \hat{v}_1
 \rangle 
 \end{align*}
 </div>
@@ -1060,18 +1066,18 @@ e^{-ix}}{2}
 <div class="para logical" id="sect-inner-product-6-4-2-8">
 <div class="displaymath process-math" id="sect-inner-product-6-4-2-8-1">
 \begin{align*}
-c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
+c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 {\langle \hat{v}_1 \hat{v_1} \rangle}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-6-4-2-9">and since <span class="process-math">\(\vec{v}_1\)</span> is a unit vector<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-4-2-9">and since <span class="process-math">\(\boldsymbol{v}_1\)</span> is a unit vector<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-6-4-2-10">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-6-4-2-10-1">
 \begin{equation*}
-= -\langle \vec{u}_2, \hat{v}_1 \rangle = -1
+= -\langle \boldsymbol{u}_2, \hat{v}_1 \rangle = -1
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1081,7 +1087,7 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 <div class="para logical" id="sect-inner-product-6-4-2-12">
 <div class="displaymath process-math" id="sect-inner-product-6-4-2-12-1">
 \begin{align*}
-\amp \vec{v}_2 \amp = \hat{v}_1 - \vec{u}_2 = \begin{bmatrix}
+\amp \boldsymbol{v}_2 \amp = \hat{v}_1 - \boldsymbol{u}_2 = \begin{bmatrix}
 1 \\ 0
 \end{bmatrix} - \begin{bmatrix}
 1 \\ 1
@@ -1092,10 +1098,10 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-6-4-2-13">Now since <span class="process-math">\(\vec{v}_2\)</span> is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-4-2-13">Now since <span class="process-math">\(\boldsymbol{v}_2\)</span> is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-4-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-6-4-2-14">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-6-4-2-14-1">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 1\\0
@@ -1113,26 +1119,26 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 <article class="remark remark-like" id="sect-inner-product-6-6"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-inner-product-6-6-1">The <dfn class="terminology">Gram-Schmidt Orthogonalization</dfn> algorithm is the following. Consider a set of vectors <span class="process-math">\(\{\vec{u}_1,\vec{u}_2, \ldots, \vec{u}_n\}\)</span> which is the basis for some vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-6-1">The <dfn class="terminology">Gram-Schmidt Orthogonalization</dfn> algorithm is the following. Consider a set of vectors <span class="process-math">\(\{\boldsymbol{u}_1,\boldsymbol{u}_2, \ldots, \boldsymbol{u}_n\}\)</span> which is the basis for some vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-6-6-2">
 <ol class="decimal" id="sect-inner-product-6-6-2-1">
 <li id="sect-inner-product-6-6-2-1-1">
-<div class="para" id="sect-inner-product-6-6-2-1-1-1">Let <span class="process-math">\(\vec{v}_1=\vec{u}_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-6-2-1-1-1">Let <span class="process-math">\(\boldsymbol{v}_1=\boldsymbol{u}_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 1"><a href="#sect-inner-product-6-6-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="sect-inner-product-6-6-2-1-2">
-<div class="para" id="sect-inner-product-6-6-2-1-2-1">Let <span class="process-math">\(\vec{v}_2 = \vec{u}_2 - \dfrac{\langle \vec{v}_1,\vec{u}_2 \rangle}{\langle
-\vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-6-2-1-2-1">Let <span class="process-math">\(\boldsymbol{v}_2 = \boldsymbol{u}_2 - \dfrac{\langle \boldsymbol{v}_1,\boldsymbol{u}_2 \rangle}{\langle
+\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 2"><a href="#sect-inner-product-6-6-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 <li id="sect-inner-product-6-6-2-1-3">
-<div class="para" id="sect-inner-product-6-6-2-1-3-1">Let <span class="process-math">\(\vec{v}_3 = \vec{u}_3 - \dfrac{\langle \vec{v}_2,\vec{u}_3 \rangle}{\langle
-\vec{v}_2,\vec{v}_2 \rangle} \vec{v}_2-\dfrac{\langle \vec{v}_1,\vec{u}_3
+<div class="para" id="sect-inner-product-6-6-2-1-3-1">Let <span class="process-math">\(\boldsymbol{v}_3 = \boldsymbol{u}_3 - \dfrac{\langle \boldsymbol{v}_2,\boldsymbol{u}_3 \rangle}{\langle
+\boldsymbol{v}_2,\boldsymbol{v}_2 \rangle} \boldsymbol{v}_2-\dfrac{\langle \boldsymbol{v}_1,\boldsymbol{u}_3
 \rangle}{\langle
-\vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 3"><a href="#sect-inner-product-6-6-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
@@ -1141,16 +1147,16 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 <div class="para">And so on with</div>
 <div class="displaymath process-math" id="sect-inner-product-6-6-2-1-4-1-1">
 \begin{align*}
-\vec{v}_k \amp = \vec{u}_k - \frac{\langle \vec{v}_{k-1},\vec{u}_k
-\rangle}{\langle \vec{v}_{k-1},\vec{v}_{k-1} \rangle} \vec{v}_{k-1}-\frac{\langle
-\vec{v}_{k-2},\vec{u}_k \rangle}{\langle \vec{v}_{k-2},\vec{v}_{k-2} \rangle}
-\vec{v}_{k-2} \\
-\amp \qquad \qquad \cdots - \frac{\langle \vec{v}_2,\vec{u}_k \rangle}{\langle
-\vec{v}_2,\vec{v}_2 \rangle} \vec{v}_2-\frac{\langle \vec{v}_1,\vec{u}_k
+\boldsymbol{v}_k \amp = \boldsymbol{u}_k - \frac{\langle \boldsymbol{v}_{k-1},\boldsymbol{u}_k
+\rangle}{\langle \boldsymbol{v}_{k-1},\boldsymbol{v}_{k-1} \rangle} \boldsymbol{v}_{k-1}-\frac{\langle
+\boldsymbol{v}_{k-2},\boldsymbol{u}_k \rangle}{\langle \boldsymbol{v}_{k-2},\boldsymbol{v}_{k-2} \rangle}
+\boldsymbol{v}_{k-2} \\
+\amp \qquad \qquad \cdots - \frac{\langle \boldsymbol{v}_2,\boldsymbol{u}_k \rangle}{\langle
+\boldsymbol{v}_2,\boldsymbol{v}_2 \rangle} \boldsymbol{v}_2-\frac{\langle \boldsymbol{v}_1,\boldsymbol{u}_k
 \rangle}{\langle
-\vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1 \\
-\amp = \vec{u}_k - \sum_{i=1}^{k-1} \dfrac{\langle \vec{v}_i, \vec{u}_k
-\rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \vec{v}_i
+\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1 \\
+\amp = \boldsymbol{u}_k - \sum_{i=1}^{k-1} \dfrac{\langle \boldsymbol{v}_i, \boldsymbol{u}_k
+\rangle}{\langle \boldsymbol{v}_i,\boldsymbol{v}_i \rangle} \boldsymbol{v}_i
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1160,38 +1166,38 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-6-6-3">The resulting set of vectors <span class="process-math">\(\{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\}\)</span> are orthogonal. If the set also needs to be orthonormal, for each vector <span class="process-math">\(\vec{v}_k\)</span> divide through by its length.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-6-3">The resulting set of vectors <span class="process-math">\(\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\}\)</span> are orthogonal. If the set also needs to be orthonormal, for each vector <span class="process-math">\(\boldsymbol{v}_k\)</span> divide through by its length.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 3.3.12"><a href="#sect-inner-product-6-6" title="Copy heading and permalink for Remark 3.3.12" aria-label="Copy heading and permalink for Remark 3.3.12">🔗</a></div></article><details id="sect-inner-product-6-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of Gram-Schmidt Orthogonalization.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-inner-product-6-7-2">To prove Gram-Schmidt orthogonalization works, we will prove that <span class="process-math">\(\vec{v}_k\)</span> is orthogonal to <span class="process-math">\(\vec{v}_i\)</span> for all <span class="process-math">\(i \lt k\text{.}\)</span> We will show this by induction. First show that <span class="process-math">\(\vec{v}_2\)</span> is orthogonal to <span class="process-math">\(\vec{v}_1\)</span> :<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 3.3.12"><a href="#sect-inner-product-6-6" title="Copy heading and permalink for Remark 3.3.12" aria-label="Copy heading and permalink for Remark 3.3.12">🔗</a></div></article><details id="sect-inner-product-6-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of Gram-Schmidt Orthogonalization.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-inner-product-6-7-2">To prove Gram-Schmidt orthogonalization works, we will prove that <span class="process-math">\(\boldsymbol{v}_k\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_i\)</span> for all <span class="process-math">\(i \lt k\text{.}\)</span> We will show this by induction. First show that <span class="process-math">\(\boldsymbol{v}_2\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_1\)</span> :<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-6-7-3">
 <div class="displaymath process-math" id="sect-inner-product-6-7-3-1">
 \begin{align*}
-\langle \vec{v}_2 , \vec{v}_1 \rangle \amp = \biggl\langle \vec{u}_2 -
+\langle \boldsymbol{v}_2 , \boldsymbol{v}_1 \rangle \amp = \biggl\langle \boldsymbol{u}_2 -
 \dfrac{\langle
-\vec{v}_1,\vec{u}_2 \rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \vec{v}_1, \vec{v}_1
+\boldsymbol{v}_1,\boldsymbol{u}_2 \rangle}{\langle \boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1, \boldsymbol{v}_1
 \biggr\rangle \\
-\amp = \langle \vec{u}_2, \vec{v}_1 \rangle - \dfrac{\langle \vec{v}_1,\vec{u}_2
-\rangle}{\langle \vec{v}_1,\vec{v}_1 \rangle} \langle \vec{v}_1, \vec{v}_1 \rangle \\
-\amp = \langle \vec{u}_2, \vec{v}_1\rangle - \langle \vec{v}_1, \vec{u}_2 \rangle =
+\amp = \langle \boldsymbol{u}_2, \boldsymbol{v}_1 \rangle - \dfrac{\langle \boldsymbol{v}_1,\boldsymbol{u}_2
+\rangle}{\langle \boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \langle \boldsymbol{v}_1, \boldsymbol{v}_1 \rangle \\
+\amp = \langle \boldsymbol{u}_2, \boldsymbol{v}_1\rangle - \langle \boldsymbol{v}_1, \boldsymbol{u}_2 \rangle =
 0
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-6-7-4">Now assume that <span class="process-math">\(\vec{v}_k\)</span> is orthogonal to all other <span class="process-math">\(\vec{v}\)</span>’s or <span class="process-math">\(\langle\vec{v}_k, \vec{v}_i \rangle =0\)</span> for <span class="process-math">\(i=k-1,k-2,\ldots,
-2,1\text{.}\)</span> Now we will prove that <span class="process-math">\(\vec{v}_{k+1}\text{,}\)</span> given by Gram-Schmidt is orthogonal to all other <span class="process-math">\(\vec{v}\)</span>’s. For all <span class="process-math">\(j=1,2,\ldots,k\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-7-4">Now assume that <span class="process-math">\(\boldsymbol{v}_k\)</span> is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s or <span class="process-math">\(\langle\boldsymbol{v}_k, \boldsymbol{v}_i \rangle =0\)</span> for <span class="process-math">\(i=k-1,k-2,\ldots,
+2,1\text{.}\)</span> Now we will prove that <span class="process-math">\(\boldsymbol{v}_{k+1}\text{,}\)</span> given by Gram-Schmidt is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s. For all <span class="process-math">\(j=1,2,\ldots,k\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-6-7-5">
 <div class="displaymath process-math" id="sect-inner-product-6-7-5-1">
 \begin{align*}
-\langle \vec{v}_{k+1}, \vec{v}_j \rangle \amp =
-\biggl \langle \vec{u}_{k+1} - \sum_{i=1}^{k} \dfrac{\langle \vec{v}_i, \vec{u}_{k+1}
-\rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \vec{v}_i , \vec{v}_j \biggl \rangle, \\
-\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle - \sum_{i=1}^k \dfrac{\langle
-\vec{v}_i, \vec{u}_{k+1} \rangle}{\langle \vec{v}_i,\vec{v}_i \rangle} \langle
-\vec{v}_i,
-\vec{v}_j \rangle
+\langle \boldsymbol{v}_{k+1}, \boldsymbol{v}_j \rangle \amp =
+\biggl \langle \boldsymbol{u}_{k+1} - \sum_{i=1}^{k} \dfrac{\langle \boldsymbol{v}_i, \boldsymbol{u}_{k+1}
+\rangle}{\langle \boldsymbol{v}_i,\boldsymbol{v}_i \rangle} \boldsymbol{v}_i , \boldsymbol{v}_j \biggl \rangle, \\
+\amp = \langle \boldsymbol{u}_{k+1}, \boldsymbol{v}_j \rangle - \sum_{i=1}^k \dfrac{\langle
+\boldsymbol{v}_i, \boldsymbol{u}_{k+1} \rangle}{\langle \boldsymbol{v}_i,\boldsymbol{v}_i \rangle} \langle
+\boldsymbol{v}_i,
+\boldsymbol{v}_j \rangle
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1201,22 +1207,22 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 <div class="para logical" id="sect-inner-product-6-7-7">
 <div class="displaymath process-math" id="sect-inner-product-6-7-7-1">
 \begin{align*}
-\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle - \dfrac{\langle \vec{v}_j,
-\vec{u}_{k+1} \rangle}{\langle \vec{v}_j,\vec{v}_i \rangle} \langle \vec{v}_j, \vec{v}_j
+\amp = \langle \boldsymbol{u}_{k+1}, \boldsymbol{v}_j \rangle - \dfrac{\langle \boldsymbol{v}_j,
+\boldsymbol{u}_{k+1} \rangle}{\langle \boldsymbol{v}_j,\boldsymbol{v}_i \rangle} \langle \boldsymbol{v}_j, \boldsymbol{v}_j
 \rangle \\
-\amp = \langle \vec{u}_{k+1}, \vec{v}_j \rangle -\langle \vec{v}_j, \vec{u}_{k+1}
+\amp = \langle \boldsymbol{u}_{k+1}, \boldsymbol{v}_j \rangle -\langle \boldsymbol{v}_j, \boldsymbol{u}_{k+1}
 \rangle = 0
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-6-7-8">Therefore <span class="process-math">\(\vec{v}_{k+1}\)</span> is orthogonal to all other <span class="process-math">\(\vec{v}\)</span>’s and thus the basis consisting of <span class="process-math">\(\vec{v}\)</span> form an orthonormal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-7-8">Therefore <span class="process-math">\(\boldsymbol{v}_{k+1}\)</span> is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s and thus the basis consisting of <span class="process-math">\(\boldsymbol{v}\)</span> form an orthonormal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Proof 3.3.4.1: Proof of Gram-Schmidt Orthogonalization"><a href="#sect-inner-product-6-7" title="Copy heading and permalink for Proof 3.3.4.1: Proof of Gram-Schmidt Orthogonalization" aria-label="Copy heading and permalink for Proof 3.3.4.1: Proof of Gram-Schmidt Orthogonalization">🔗</a></div></article></details><details id="sect-inner-product-6-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sect-inner-product-6-8-1-1">
 <div class="para">Find a orthogonal set of vectors than spans the same subspace as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-6-8-1-1-1">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 1 \\ 0 \\ 1
@@ -1230,15 +1236,15 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="sect-inner-product-6-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-inner-product-6-8-2-1">Let <span class="process-math">\(\vec{u}_1, \vec{u}_2\)</span> and <span class="process-math">\(\vec{u}_3\)</span> be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-8-2-1">Let <span class="process-math">\(\boldsymbol{u}_1, \boldsymbol{u}_2\)</span> and <span class="process-math">\(\boldsymbol{u}_3\)</span> be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-6-8-2-2">
 <ol class="decimal" id="sect-inner-product-6-8-2-2-1">
 <li id="sect-inner-product-6-8-2-2-1-1">
 <div class="para logical" id="sect-inner-product-6-8-2-2-1-1-1">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-6-8-2-2-1-1-1-1">
 \begin{equation*}
-\vec{v}_1 = \vec{u}_1 = \begin{bmatrix}
+\boldsymbol{v}_1 = \boldsymbol{u}_1 = \begin{bmatrix}
 1 \\ 0 \\ 1
 \end{bmatrix}
 \end{equation*}
@@ -1249,10 +1255,10 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 </li>
 <li id="sect-inner-product-6-8-2-2-1-2">
 <div class="para logical" id="sect-inner-product-6-8-2-2-1-2-1">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-inner-product-6-8-2-2-1-2-1-1">
 \begin{equation*}
-\vec{v}_2 = \vec{u}_2 - \frac{\langle \vec{u}_2, \vec{v}_1 \rangle}{\langle
-\vec{v}_1, \vec{v}_1 \rangle} \vec{v}_1 = \begin{bmatrix}
+\boldsymbol{v}_2 = \boldsymbol{u}_2 - \frac{\langle \boldsymbol{u}_2, \boldsymbol{v}_1 \rangle}{\langle
+\boldsymbol{v}_1, \boldsymbol{v}_1 \rangle} \boldsymbol{v}_1 = \begin{bmatrix}
 1 \\ 1\\ 0
 \end{bmatrix} - \frac{1}{2} \begin{bmatrix}
 1 \\ 0 \\ 1
@@ -1269,10 +1275,10 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 <div class="para logical" id="sect-inner-product-6-8-2-2-1-3-1">
 <div class="displaymath process-math" id="sect-inner-product-6-8-2-2-1-3-1-1">
 \begin{align*}
-\vec{v}_3 \amp = \vec{u}_3 - \frac{\langle \vec{u}_3, \vec{v}_2
-\rangle}{\langle \vec{v}_2, \vec{v}_2 \rangle}
-\vec{v}_2- \frac{\langle \vec{u}_3, \vec{v}_1 \rangle}{\langle \vec{v}_1,
-\vec{v}_1 \rangle} \vec{v}_1\\
+\boldsymbol{v}_3 \amp = \boldsymbol{u}_3 - \frac{\langle \boldsymbol{u}_3, \boldsymbol{v}_2
+\rangle}{\langle \boldsymbol{v}_2, \boldsymbol{v}_2 \rangle}
+\boldsymbol{v}_2- \frac{\langle \boldsymbol{u}_3, \boldsymbol{v}_1 \rangle}{\langle \boldsymbol{v}_1,
+\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1\\
 \amp = \begin{bmatrix}
 0 \\ 1 \\ 1
 \end{bmatrix} - \frac{1/2}{3/2} \begin{bmatrix}
@@ -1291,7 +1297,7 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-6-8-2-3">And the set <span class="process-math">\(\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}\)</span> is now orthogonal (check it).<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-8-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-inner-product-6-8-2-3">And the set <span class="process-math">\(\{\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3\}\)</span> is now orthogonal (check it).<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-8-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-inner-product-6-8-2-4">Note:	there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-8-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1303,7 +1309,7 @@ c_2 \amp = -\frac{\langle \vec{u}_2, \hat{v}_1 \rangle }
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="example-gram-schmidt-p3-1-1">Use Gram-Schmidt orthogonalization to find a orthogonal set that spans <span class="process-math">\(\mathcal{P}_3[-1,1]\text{,}\)</span> the set of all cubic functions on the interval <span class="process-math">\([-1,1]\)</span> with inner product<div class="autopermalink" data-description="Paragraph"><a href="#example-gram-schmidt-p3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="example-gram-schmidt-p3-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="example-gram-schmidt-p3-1-2-1">
 \begin{equation*}
 \langle p, q \rangle = \int_{-1}^1 p(x) q(x) \, dx
 \end{equation*}
@@ -1371,7 +1377,7 @@ x - \frac{\int_{-1}^1 x^3 \cdot 1 \,dx }{\int_{-1}^1 1 \cdot 1 \, dx}
 <div class="para" id="example-gram-schmidt-p3-2-9">There an orthogonal set of cubic polynomials that span <span class="process-math">\(\mathcal{P}_3[-1,1]\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#example-gram-schmidt-p3-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="example-gram-schmidt-p3-2-10">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="example-gram-schmidt-p3-2-10-1">
 \begin{equation*}
 \{1,x,x^2-\frac{1}{3},x^3-\frac{3}{5}x \}
 \end{equation*}

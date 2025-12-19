@@ -101,15 +101,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.6';
+eBookConfig.runestone_version = '7.11.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -130,7 +130,8 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-bessel-eqn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-pde.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
+\DeclareMathOperator{\sgn}{sgn}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -235,12 +236,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Inverse</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.3.4</span> <span class="title">The Matrix Inverse</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\boldsymbol{u}=\boldsymbol{b}\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.3.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elem-matrices.html#subsec-product-elem-matrices" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Matrices as Products of Elementary Matrices</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear Independence</span></a></div></li>
 <li class="toc-item toc-section">
@@ -255,14 +259,16 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Determinants of Square Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-4" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-6" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-defintion-determinant" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Basic Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-det-elem-matrices" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Determinants of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Gauss’ Method for Calculating Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7-3" class="internal"><span class="codenumber">2.8.4.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9-3" class="internal"><span class="codenumber">2.8.6.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Other Properties of Determinants</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
@@ -335,7 +341,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\vec{x}''= A\vec{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -499,7 +505,7 @@ x \amp = r \cos \theta \amp y \amp = r \sin \theta .
 <div class="para" id="sect-heat-circular-2-7">To convert the heat equation to polar coordinates, we need to write the right hand side of (<a href="sect-2d-heat-eqn.html#eq-heat-eqn-2D" class="xref" data-knowl="./knowl/xref/eq-heat-eqn-2D.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.6.1">(7.6.1)</a>) or<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-2-8">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-2-8-1">
 \begin{equation*}
 \frac{\partial^2 u}{\partial {x}^2} + \frac{\partial^2 u}{\partial {y}^2}
 \end{equation*}
@@ -601,7 +607,7 @@ u_{xx}+u_{yy} \amp = u_{rr} \frac{x^2+y^2}{r^2} + u_{r\theta} \biggl(-\frac{xy}{
 <div class="para" id="sect-heat-circular-3-2">The general case is a bit hard to deal with, so we first start with a <em class="emphasis">rotationally symmetric solution</em>, which means that there is no <span class="process-math">\(\theta\)</span> dependence. Thus the term <span class="process-math">\(\frac{\partial^2 u}{\partial {\theta}^2} =0\)</span> and the heat equation becomes:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-3-3">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-3-3-1">
 \begin{equation*}
 \frac{1}{\kappa} \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial {r}^2}  + \frac{1}{r} \frac{\partial u}{\partial r}
 \end{equation*}
@@ -642,7 +648,7 @@ r R'' + R' + \lambda r R \amp = 0, \amp R(L)\amp = 0, \qquad  R(0) \text{ is fin
 <div class="para" id="sect-heat-circular-3-10">This is a difficult problem to solve in that letting <span class="process-math">\(R(r) = e^{pr}\)</span> does not work. There are techniques to solve this, but let’s use Maple to get:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-3-11">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-3-11-1">
 \begin{equation*}
 R(r) = c_1 J_0(\sqrt{\lambda} r) + c_2 Y_0(\sqrt{\lambda} r)
 \end{equation*}
@@ -657,7 +663,7 @@ R(r) = c_1 J_0(\sqrt{\lambda} r) + c_2 Y_0(\sqrt{\lambda} r)
 <div class="para" id="sect-heat-circular-4-2">If we apply the first ``boundary’’ condition that <span class="process-math">\(R(0)\)</span> must be finite, we take that <span class="process-math">\(c_2=0\)</span> since <span class="process-math">\(Y_0(x)\)</span> is not finite at <span class="process-math">\(x=0\text{.}\)</span> The next boundary condition is <span class="process-math">\(R(L)=0\)</span> or<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-4-3">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-4-3-1">
 \begin{equation*}
 R(L) = c_1 J_0(\sqrt{\lambda} L) = 0
 \end{equation*}
@@ -678,7 +684,7 @@ R(L) = c_1 J_0(\sqrt{\lambda} L) = 0
 <div class="para" id="sect-heat-circular-4-6">are the eigenvalues of the problem with  eigenfunctions:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-4-7">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-4-7-1">
 \begin{equation*}
 R_n(r) = J_0\biggl(\frac{\sigma_n x}{L}\biggr)
 \end{equation*}
@@ -688,7 +694,7 @@ R_n(r) = J_0\biggl(\frac{\sigma_n x}{L}\biggr)
 <div class="para" id="sect-heat-circular-4-8">Next, the solution to<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-4-9">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-4-9-1">
 \begin{equation*}
 T' + \kappa \lambda T  = 0
 \end{equation*}
@@ -698,7 +704,7 @@ T' + \kappa \lambda T  = 0
 <div class="para" id="sect-heat-circular-4-10">is<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-4-11">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-4-11-1">
 \begin{equation*}
 T_n = e^{-\kappa \sigma_n t/L}
 \end{equation*}
@@ -719,7 +725,7 @@ u \amp = \sum_{n=1}^{\infty} u_n(r,t) \\
 <div class="para" id="sect-heat-circular-4-14">Lastly, using the initial condition, we get:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-4-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-4-15">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-4-15-1">
 \begin{equation*}
 u(r,0) = f(r) =\sum_{n=1}^{\infty} c_n J_0\biggl(\frac{\sigma_n r}{L} \biggr)
 \end{equation*}
@@ -729,7 +735,7 @@ u(r,0) = f(r) =\sum_{n=1}^{\infty} c_n J_0\biggl(\frac{\sigma_n r}{L} \biggr)
 <div class="para" id="sect-heat-circular-4-16">which is a Fourier-type series with<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-4-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-4-17">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-4-17-1">
 \begin{equation*}
 c_n = \frac{\int_0^L r f(r) J_0(\sigma_n r/L) \, dr}{\int_0^{L} r J_0^2(\sigma_n r/L) \, dr}
 \end{equation*}
@@ -756,7 +762,7 @@ c_3 \amp = \frac{\int_0^1  r(1-r) J_0(\sigma_3 r) \, dr}{\int_0^1 r J_0^2(\sigma
 <div class="para" id="sect-heat-circular-4-18-2-3">So the solution is<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-4-18-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-4-18-2-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-4-18-2-4-1">
 \begin{equation*}
 u(r,t) = \sum_{n=1}^{\infty}c_n J_0(\sigma_n r) e^{-\kappa \sigma_n t}
 \end{equation*}
@@ -783,7 +789,7 @@ T'\Theta R \amp= R'' T\Theta+ \frac{1}{r} R' T \Theta + \frac{1}{r^2} R T \Theta
 <div class="para" id="sect-heat-circular-5-4">Assume that<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-5-5">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-5-5-1">
 \begin{equation*}
 \frac{\Theta''}{\Theta} = -\lambda
 \end{equation*}
@@ -793,7 +799,7 @@ T'\Theta R \amp= R'' T\Theta+ \frac{1}{r} R' T \Theta + \frac{1}{r^2} R T \Theta
 <div class="para" id="sect-heat-circular-5-6">and then the right hand side becomes:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-5-7">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-5-7-1">
 \begin{equation*}
 \frac{R''}{R} + \frac{1}{r} \frac{R'}{R} - \frac{\lambda}{r^2}  = \nu
 \end{equation*}
@@ -803,7 +809,7 @@ T'\Theta R \amp= R'' T\Theta+ \frac{1}{r} R' T \Theta + \frac{1}{r^2} R T \Theta
 <div class="para" id="sect-heat-circular-5-8">mulitply through by <span class="process-math">\(r^2\)</span> and rearrange<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-5-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-5-9">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-5-9-1">
 \begin{equation*}
 r^2 R'' + r R' + (r^2 \nu - \lambda) R = 0
 \end{equation*}
@@ -816,7 +822,7 @@ r^2 R'' + r R' + (r^2 \nu - \lambda) R = 0
 <div class="para" id="sect-heat-circular-6-2">The first Sturm-Liouville problem is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-3">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-3-1">
 \begin{equation*}
 \Theta'' + \lambda \Theta = 0
 \end{equation*}
@@ -826,7 +832,7 @@ r^2 R'' + r R' + (r^2 \nu - \lambda) R = 0
 <div class="para" id="sect-heat-circular-6-4">and <span class="process-math">\(\Theta(0) = \Theta(2\pi)\)</span> as well as <span class="process-math">\(\Theta'(0) = \Theta'(2\pi)\text{.}\)</span> If <span class="process-math">\(\lambda &lt; 0\text{,}\)</span> then <span class="process-math">\(\Theta(\theta) = c_1 e^{-\sqrt{-\lambda} \theta} + c_2 e^{\sqrt{-\lambda} \theta}\text{.}\)</span> No solution of this exists that satsifies the boundary conditions. If <span class="process-math">\(\lambda = 0\text{,}\)</span> then <span class="process-math">\(\Theta(\theta) = c_1 + c_2 \theta\text{.}\)</span> To satisfy the boundary conditions <span class="process-math">\(\Theta(\theta) = c_1\text{.}\)</span> If <span class="process-math">\(\lambda &gt; 0\text{,}\)</span> then <span class="process-math">\(\Theta(\theta)  = c_1 \cos \sqrt{\lambda} \theta + c_2 \sin \sqrt{\lambda} \theta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-5">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-5-1">
 \begin{equation*}
 \Theta (0) = c_1 = \Theta(2\pi) = c_1 \cos 2\pi\sqrt{\lambda} + c_2 \sin 2\pi \sqrt{\lambda}
 \end{equation*}
@@ -836,7 +842,7 @@ r^2 R'' + r R' + (r^2 \nu - \lambda) R = 0
 <div class="para" id="sect-heat-circular-6-6">which is satisfied when <span class="process-math">\(\lambda = n^2\text{,}\)</span> for <span class="process-math">\(n=1,2,3,\ldots\text{.}\)</span> The derivative of <span class="process-math">\(\Theta\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-7">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-7-1">
 \begin{equation*}
 \Theta(\theta) = -n c_1 \sin n \theta + n c_2 \cos n\theta
 \end{equation*}
@@ -846,7 +852,7 @@ r^2 R'' + r R' + (r^2 \nu - \lambda) R = 0
 <div class="para" id="sect-heat-circular-6-8">The second boundary condition:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-9">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-9-1">
 \begin{equation*}
 \Theta'(0) = n c_2 \cos (0) = \Theta'(2\pi) = -n c_1(0) + n c_2 \cos 2\pi n
 \end{equation*}
@@ -867,7 +873,7 @@ r^2 R'' + r R' + (r^2 \nu - \lambda) R = 0
 <div class="para" id="sect-heat-circular-6-12">each satisfy the boundary condition. The next differential equation is<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-13">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-13-1">
 \begin{equation*}
 r^2 R''+ r R' + (r^2 \nu-n^2) R = 0
 \end{equation*}
@@ -877,7 +883,7 @@ r^2 R''+ r R' + (r^2 \nu-n^2) R = 0
 <div class="para" id="sect-heat-circular-6-14">The solution of this is<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-15">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-15-1">
 \begin{equation*}
 R(r) = c_1 J_n(\sqrt{\nu} r) + c_2 Y_n(\sqrt{\nu} r)
 \end{equation*}
@@ -887,7 +893,7 @@ R(r) = c_1 J_n(\sqrt{\nu} r) + c_2 Y_n(\sqrt{\nu} r)
 <div class="para" id="sect-heat-circular-6-16">and the boundary conditions are <span class="process-math">\(R(0)\)</span> is finite and <span class="process-math">\(R(L)=0\text{.}\)</span> The condition at <span class="process-math">\(r=0\)</span> sets <span class="process-math">\(c_2=0\)</span> and the other condition:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-17">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-17-1">
 \begin{equation*}
 0  = c_1 J_n(\sqrt{\nu}L)
 \end{equation*}
@@ -897,7 +903,7 @@ R(r) = c_1 J_n(\sqrt{\nu} r) + c_2 Y_n(\sqrt{\nu} r)
 <div class="para" id="sect-heat-circular-6-18">results in<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-19">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-19-1">
 \begin{equation*}
 \sqrt{\nu} L = \sigma_{n,i}
 \end{equation*}
@@ -907,7 +913,7 @@ R(r) = c_1 J_n(\sqrt{\nu} r) + c_2 Y_n(\sqrt{\nu} r)
 <div class="para" id="sect-heat-circular-6-20">where <span class="process-math">\(\sigma_{n,i}\)</span> is the <span class="process-math">\(i\)</span>th root of <span class="process-math">\(J_n(x)\text{.}\)</span> Thus the eigenvalue is<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-21">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-21-1">
 \begin{equation*}
 \nu  = \frac{\sigma_{n,i}^2}{L^2}
 \end{equation*}
@@ -917,7 +923,7 @@ R(r) = c_1 J_n(\sqrt{\nu} r) + c_2 Y_n(\sqrt{\nu} r)
 <div class="para" id="sect-heat-circular-6-22">and the eigenfunction is<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-23">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-23-1">
 \begin{equation*}
 J_n\biggl(\frac{\sigma_{n,i} r}{L} \biggr)
 \end{equation*}
@@ -927,7 +933,7 @@ J_n\biggl(\frac{\sigma_{n,i} r}{L} \biggr)
 <div class="para" id="sect-heat-circular-6-24">The last DE is<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-25">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-25-1">
 \begin{equation*}
 \frac{1}{\kappa} \frac{T'}{T} = \nu = \frac{\sigma_{n,i}^2}{L^2}
 \end{equation*}
@@ -937,7 +943,7 @@ J_n\biggl(\frac{\sigma_{n,i} r}{L} \biggr)
 <div class="para" id="sect-heat-circular-6-26">of which the solution is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-27">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-27-1">
 \begin{equation*}
 T = e^{-\kappa (\sigma_{n,i}^2/L^2) t}
 \end{equation*}
@@ -968,7 +974,7 @@ u(r,\theta,t) \amp = \sum_{i=1}^{\infty} a_0 J_0\biggl(\frac{\sigma_{0,i} r}{L} 
 <div class="para" id="sect-heat-circular-6-31">Finding the coefficients. In this case we use the initial condition that<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-32">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-32-1">
 \begin{equation*}
 u(r,\theta,0) = f(r,\theta)
 \end{equation*}
@@ -978,7 +984,7 @@ u(r,\theta,0) = f(r,\theta)
 <div class="para" id="sect-heat-circular-6-33">and substituting into the solution:<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-34">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-34-1">
 \begin{equation*}
 f(r,\theta) = \sum_{i=1}^{\infty} a_0 J_0\biggl(\frac{\sigma_{0,i} r}{L} \biggr) +
 \sum_{i=1}^{\infty}  \sum_{n=1}^{\infty} J_n\biggl(\frac{\sigma_{n,i} r}{L} \biggr) ( a_n \cos n \theta + b_n \sin \theta)
@@ -1022,7 +1028,7 @@ a_{n,i} \amp = 0 \qquad n \neq 1, i \neq 1.
 <div class="para" id="sect-heat-circular-6-37-2-3">So the solution is<div class="autopermalink" data-description="Paragraph"><a href="#sect-heat-circular-6-37-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-heat-circular-6-37-2-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-heat-circular-6-37-2-4-1">
 \begin{equation*}
 u(r, \theta,t)  = J_1(\sigma_{1,1} r) \sin \theta e^{-0.04 \sigma{1,1}^2 t}
 \end{equation*}

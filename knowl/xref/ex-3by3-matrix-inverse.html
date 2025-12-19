@@ -19,15 +19,13 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para">Find the inverse of<div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical">
 <div class="displaymath process-math">
 \begin{equation*}
-A = \begin{bmatrix}
-3 \amp 3 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5
-\end{bmatrix}
+A = \begin{bmatrix} 3 \amp 3 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -37,11 +35,7 @@ A = \begin{bmatrix}
 <div class="para">First, we write <span class="process-math">\([\;A\;|\;I\;]\)</span> and then use the Gauss-Jordon Method.</div>
 <div class="displaymath process-math">
 \begin{align*}
-\amp \qquad \left[\begin{array}{rrr|rrr}
-3 \amp 3 \amp -1 \amp 1 \amp 0 \amp 0\\
-2 \amp 1 \amp -3 \amp 0 \amp 1 \amp 0\\
-0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
-\end{array}\right]
+\amp \qquad \left[\begin{array}{rrr|rrr} 3 \amp 3 \amp -1 \amp 1 \amp 0 \amp 0\\ 2 \amp 1 \amp -3 \amp 0 \amp 1 \amp 0\\ 0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\ \end{array}\right]
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -51,12 +45,7 @@ A = \begin{bmatrix}
 <div class="para logical">
 <div class="displaymath process-math">
 \begin{align*}
--R_2 + R_1 \rightarrow R_2 \amp \qquad
-\left[\begin{array}{rrr|rrr}
-1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\
-2 \amp 1 \amp -3 \amp 0 \amp 1 \amp 0\\
-0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
-\end{array}\right]
+-R_2 + R_1 \rightarrow R_2 \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\ 2 \amp 1 \amp -3 \amp 0 \amp 1 \amp 0\\ 0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\ \end{array}\right]
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -66,12 +55,7 @@ A = \begin{bmatrix}
 <div class="para logical">
 <div class="displaymath process-math">
 \begin{align*}
--2 R_1 + R_2 \rightarrow R_2 \amp \qquad
-\left[\begin{array}{rrr|rrr}
-1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\
-0 \amp -3 \amp -7 \amp -2 \amp 3 \amp 0\\
-0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
-\end{array}\right] 
+-2 R_1 + R_2 \rightarrow R_2 \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\ 0 \amp -3 \amp -7 \amp -2 \amp 3 \amp 0\\ 0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\ \end{array}\right] 
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -81,12 +65,7 @@ A = \begin{bmatrix}
 <div class="para logical">
 <div class="displaymath process-math">
 \begin{align*}
-2 R_3 + R_2 \rightarrow R_2 \amp \qquad
-\left[\begin{array}{rrr|rrr}
-1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\
-0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\
-0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\
-\end{array}\right]
+2 R_3 + R_2 \rightarrow R_2 \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 2 \amp 2 \amp 1 \amp -1 \amp 0\\ 0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\ 0 \amp 2 \amp 5 \amp 0 \amp 0 \amp 1\\ \end{array}\right]
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -96,15 +75,7 @@ A = \begin{bmatrix}
 <div class="para logical">
 <div class="displaymath process-math">
 \begin{align*}
-\begin{array}{r}
--2 R_2 + R_3 \rightarrow R_3 \\
-- 2R_2 + R_1 \rightarrow R_1
-\end{array} \amp \qquad
-\left[\begin{array}{rrr|rrr}
-1 \amp 0 \amp -4 \amp 5 \amp -7 \amp -4\\
-0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\
-0 \amp 0 \amp -1 \amp 4 \amp -6 \amp -3\\
-\end{array}\right] 
+\begin{array}{r} -2 R_2 + R_3 \rightarrow R_3 \\ - 2R_2 + R_1 \rightarrow R_1 \end{array} \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 0 \amp -4 \amp 5 \amp -7 \amp -4\\ 0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\ 0 \amp 0 \amp -1 \amp 4 \amp -6 \amp -3\\ \end{array}\right] 
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -114,12 +85,7 @@ A = \begin{bmatrix}
 <div class="para logical">
 <div class="displaymath process-math">
 \begin{align*}
--R_3 \rightarrow R_3 \amp \qquad
-\left[\begin{array}{rrr|rrr}
-1 \amp 0 \amp -4 \amp 5 \amp -7 \amp -4\\
-0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\
-0 \amp 0 \amp 1 \amp -4 \amp 6 \amp 3\\
-\end{array}\right]
+-R_3 \rightarrow R_3 \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 0 \amp -4 \amp 5 \amp -7 \amp -4\\ 0 \amp 1 \amp 3 \amp -2 \amp 3 \amp 2\\ 0 \amp 0 \amp 1 \amp -4 \amp 6 \amp 3\\ \end{array}\right]
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -129,15 +95,7 @@ A = \begin{bmatrix}
 <div class="para logical">
 <div class="displaymath process-math">
 \begin{align*}
-\begin{array}{r}
--3 R_3 + R_2 \rightarrow R_2 \\
-4 R_3 + R_1 \rightarrow R_1
-\end{array} \amp \qquad
-\left[\begin{array}{rrr|rrr}
-1 \amp 0 \amp 0 \amp -11 \amp 17 \amp 8\\
-0 \amp 1 \amp 0 \amp 10 \amp -15 \amp -7\\
-0 \amp 0 \amp 1 \amp -4 \amp 6 \amp 3\\
-\end{array}\right]
+\begin{array}{r} -3 R_3 + R_2 \rightarrow R_2 \\ 4 R_3 + R_1 \rightarrow R_1 \end{array} \amp \qquad \left[\begin{array}{rrr|rrr} 1 \amp 0 \amp 0 \amp -11 \amp 17 \amp 8\\ 0 \amp 1 \amp 0 \amp 10 \amp -15 \amp -7\\ 0 \amp 0 \amp 1 \amp -4 \amp 6 \amp 3\\ \end{array}\right]
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -147,18 +105,13 @@ A = \begin{bmatrix}
 <div class="para logical">
 <div class="displaymath process-math">
 \begin{equation*}
-A^{-1} =
-\begin{bmatrix}
--11 \amp 17 \amp 8 \\
-10 \amp -15 \amp -7 \\
--4 \amp 6 \amp 3\\
-\end{bmatrix}
+A^{-1} = \begin{bmatrix} -11 \amp 17 \amp 8 \\ 10 \amp -15 \amp -7 \\ -4 \amp 6 \amp 3\\ \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 2.3.12.1"><a href="#ex-3by3-matrix-inverse-2" title="Copy heading and permalink for Solution 2.3.12.1" aria-label="Copy heading and permalink for Solution 2.3.12.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 2.3.13.1"><a href="#ex-3by3-matrix-inverse-2" title="Copy heading and permalink for Solution 2.3.13.1" aria-label="Copy heading and permalink for Solution 2.3.13.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.12"><a href="#ex-3by3-matrix-inverse" title="Copy heading and permalink for Example 2.3.12" aria-label="Copy heading and permalink for Example 2.3.12">🔗</a></div></article><span class="incontext"><a class="internal" href="sect-matrix-inverse.html#ex-3by3-matrix-inverse">in-context</a></span>
+<div class="autopermalink" data-description="Example 2.3.13"><a href="#ex-3by3-matrix-inverse" title="Copy heading and permalink for Example 2.3.13" aria-label="Copy heading and permalink for Example 2.3.13">🔗</a></div></article><span class="incontext"><a class="internal" href="sect-matrix-inverse.html#ex-3by3-matrix-inverse">in-context</a></span>
 </body>
 </html>

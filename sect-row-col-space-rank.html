@@ -101,15 +101,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.6';
+eBookConfig.runestone_version = '7.11.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -130,7 +130,8 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-linear-independence.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrices.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-det.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
+\DeclareMathOperator{\sgn}{sgn}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -235,12 +236,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Inverse</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.3.4</span> <span class="title">The Matrix Inverse</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\boldsymbol{u}=\boldsymbol{b}\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.3.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elem-matrices.html#subsec-product-elem-matrices" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Matrices as Products of Elementary Matrices</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear Independence</span></a></div></li>
 <li class="toc-item toc-section contains-active">
@@ -255,14 +259,16 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Determinants of Square Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-4" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-6" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-defintion-determinant" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Basic Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-det-elem-matrices" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Determinants of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Gauss’ Method for Calculating Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7-3" class="internal"><span class="codenumber">2.8.4.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9-3" class="internal"><span class="codenumber">2.8.6.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Other Properties of Determinants</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
@@ -335,7 +341,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\vec{x}''= A\vec{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -506,7 +512,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-row-col-space-rank-4-4-1-1">The row space of<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-row-col-space-rank-4-4-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-4-4-1-2-1">
 \begin{equation*}
 \begin{bmatrix}
 2 \amp 1 \\
@@ -517,7 +523,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-row-col-space-rank-4-4-1-3">is the set of all <span class="process-math">\(2\)</span>-component row vectors with the form:<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-4-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-row-col-space-rank-4-4-1-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-4-4-1-4-1">
 \begin{equation*}
 \left\{ c_1 \cdot \begin{bmatrix}
 2 \amp 1
@@ -535,7 +541,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-row-col-space-rank-4-6-1-1">The row space of<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-row-col-space-rank-4-6-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-4-6-1-2-1">
 \begin{equation*}
 \begin{bmatrix}
 2 \amp 1 \amp -4 \\
@@ -546,7 +552,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-row-col-space-rank-4-6-1-3">can be written as<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-6-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-row-col-space-rank-4-6-1-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-4-6-1-4-1">
 \begin{equation*}
 \{ c_1 \cdot \begin{bmatrix}
 2 \amp 1 \amp -4
@@ -558,7 +564,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-6-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-row-col-space-rank-4-6-1-5">However, since the two vectors are not linearly independent, the row space can be written as<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-6-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-row-col-space-rank-4-6-1-6">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-4-6-1-6-1">
 \begin{equation*}
 \{ c_1 \cdot \begin{bmatrix}
 2 \amp 1 \amp -4
@@ -596,7 +602,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-row-col-space-rank-4-11-1-1">Consider the linear system (written as a matrix) from Example <a href="sect-gaussian-elimination.html#ex-solve-linear-syst" class="xref" data-knowl="./knowl/xref/ex-solve-linear-syst.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.7: Solving a Linear System">Example 1.3.7</a>:<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-row-col-space-rank-4-11-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-4-11-1-2-1">
 \begin{equation*}
 \begin{bmatrix}
 4 \amp 0 \amp -1 \amp 0 \\
@@ -612,7 +618,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="sect-row-col-space-rank-4-11-2-1">The row operations are<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-4-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-row-col-space-rank-4-11-2-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-4-11-2-2-1">
 \begin{equation*}
 \begin{array}{r}
 -R_1+4R_2 \rightarrow R_2, \\
@@ -643,7 +649,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-row-col-space-rank-5-3-1-1">Find the column space and column rank of<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-row-col-space-rank-5-3-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-5-3-1-2-1">
 \begin{equation*}
 A  =
 \begin{bmatrix}
@@ -659,7 +665,7 @@ A  =
 <div class="para" id="sect-row-col-space-rank-5-3-2-1">In this case, since the columns of the matrix are linearly independent (because one can see that they are not multiples of one another), the column space is<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-5-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-row-col-space-rank-5-3-2-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-5-3-2-2-1">
 \begin{equation*}
 \left\{ c_1 \begin{bmatrix} 1 \\ -5 \\ 1\end{bmatrix}
 + c_2 \begin{bmatrix}3 \\ 4 \\ 3 \end{bmatrix} \; | \; c_1, c_2 \in \mathbb{R}\right\}
@@ -682,7 +688,7 @@ A  =
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-row-col-space-rank-5-6-1-1">Find the column space and column rank of<div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-5-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-row-col-space-rank-5-6-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-5-6-1-2-1">
 \begin{equation*}
 A  =
 \begin{bmatrix}
@@ -701,7 +707,7 @@ A  =
 <li id="sect-row-col-space-rank-5-6-2-1-1-1">
 <div class="para logical" id="sect-row-col-space-rank-5-6-2-1-1-1-1">
 <div class="para">First take the transpose</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-5-6-2-1-1-1-1-1">
 \begin{equation*}
 A^{\intercal} = \begin{bmatrix}
 1 \amp 2 \amp 0 \amp 3 \\
@@ -744,7 +750,7 @@ A^{\intercal} = \begin{bmatrix}
 <li id="sect-row-col-space-rank-5-6-2-1-1-3">
 <div class="para logical" id="sect-row-col-space-rank-5-6-2-1-1-3-1">
 <div class="para">Take the transpose of the first two rows. The span of this is the column space:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-row-col-space-rank-5-6-2-1-1-3-1-1">
 \begin{equation*}
 \text{colspace}(A)  = \text{span}\left(\left\{ \begin{bmatrix}
 1 \\ 2 \\ 0 \\ 3
@@ -784,13 +790,13 @@ A^{\intercal} = \begin{bmatrix}
 <article class="definition definition-like" id="sect-row-col-space-rank-6-2"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-row-col-space-rank-6-2-1-1">Let <span class="process-math">\(\vec{x}\)</span> be any vector that satisfies <span class="process-math">\(A \vec{x}=\vec{0}\text{.}\)</span> The <dfn class="terminology">null space</dfn> of the matrix <span class="process-math">\(A\)</span> is the span of all vectors <span class="process-math">\(\vec{x}\text{.}\)</span> The number of independent vectors in the null space is called the <dfn class="terminology">nullity</dfn> of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-row-col-space-rank-6-2-1-1">Let <span class="process-math">\(\boldsymbol{x}\)</span> be any vector that satisfies <span class="process-math">\(A \boldsymbol{x}=\boldsymbol{0}\text{.}\)</span> The <dfn class="terminology">null space</dfn> of the matrix <span class="process-math">\(A\)</span> is the span of all vectors <span class="process-math">\(\boldsymbol{x}\text{.}\)</span> The number of independent vectors in the null space is called the <dfn class="terminology">nullity</dfn> of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-row-col-space-rank-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Definition 2.7.14"><a href="#sect-row-col-space-rank-6-2" title="Copy heading and permalink for Definition 2.7.14" aria-label="Copy heading and permalink for Definition 2.7.14">🔗</a></div></article><details id="ex-nullity1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-nullity1-1-1">Find the null space of the matrix<div class="autopermalink" data-description="Paragraph"><a href="#ex-nullity1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-nullity1-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-nullity1-1-2-1">
 \begin{equation*}
 A  = \begin{bmatrix}
 1 \amp 2 \amp 3\\
@@ -851,7 +857,7 @@ x_2 +7x_3 \amp = 0
 <div class="para" id="ex-nullity1-2-7">and the solution set can be written as in vector form:<div class="autopermalink" data-description="Paragraph"><a href="#ex-nullity1-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-nullity1-2-8">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-nullity1-2-8-1">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 -11 \\ 7 \\ 1
@@ -863,7 +869,7 @@ x_2 +7x_3 \amp = 0
 <div class="para" id="ex-nullity1-2-9">and this set is the null space of the matrix. The null space is<div class="autopermalink" data-description="Paragraph"><a href="#ex-nullity1-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-nullity1-2-10">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-nullity1-2-10-1">
 \begin{equation*}
 \text{span} \left(\left\{\begin{bmatrix}
 -11 \\ 7 \\ 1
@@ -889,7 +895,7 @@ x_2 +7x_3 \amp = 0
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-nullity2-1-1">Find the null space of<div class="autopermalink" data-description="Paragraph"><a href="#ex-nullity2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-nullity2-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-nullity2-1-2-1">
 \begin{equation*}
 A = \begin{bmatrix}
 1 \amp 0 \amp 2 \amp 0 \\
@@ -902,7 +908,7 @@ A = \begin{bmatrix}
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-nullity2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="ex-nullity2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-nullity2-2-1">Again, we solve the homogeneous linear system <span class="process-math">\(A \vec{x} = \vec{0}\)</span> by finding the reduced row echelon form of <span class="process-math">\(A\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-nullity2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-nullity2-2-1">Again, we solve the homogeneous linear system <span class="process-math">\(A \boldsymbol{x} = \boldsymbol{0}\)</span> by finding the reduced row echelon form of <span class="process-math">\(A\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-nullity2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-nullity2-2-2">
 <div class="displaymath process-math" id="ex-nullity2-2-2-1">
@@ -942,7 +948,7 @@ x_2 + x_3 + 2x_4 \amp = 0
 <div class="para" id="ex-nullity2-2-5">which has the solution set:<div class="autopermalink" data-description="Paragraph"><a href="#ex-nullity2-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-nullity2-2-6">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-nullity2-2-6-1">
 \begin{equation*}
 \{ \begin{bmatrix}
 -2 \\ -1 \\ 1 \\ 0

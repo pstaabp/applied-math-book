@@ -835,7 +835,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Matrix and Vector Definition",
-  "body": " Matrix and Vector Definition     Definitions of matrices and vectors.    Learning some notation around matrices and vectors.      Matrices    A matrix is a rectangular grid of numbers. An by matrix has rows and columns.    For example,   The size of a matrix is the number of rows and columns in the matrix. The number of rows is listed first. The size of the example above is 2 by 4.  The numbers in a matrix are called the entries or elements of the matrix. For example, for the matrix in , the entry on the first row and third column is 11. Often we will use the notation , where the subscript 1 is the row number and is the column number.    Vectors  We saw vectors in however we repeat some of these to put them in a broader context.    A vector is a matrix with one of its dimensions is 1. If a matrix only has one column it is called a column vector . If the matrix has only one row it is called a a row vector . The number of elements (numbers) in the vector is called the length .    As we investigate matrices, since vectors are in fact matrices, the properties will hold for vectors as well.    Matrix, Vector and Scalar Notation  A scalar is a fancy term for a number. Mathematicians use this term to distinguish them from matrices and vectors, which are not scalars. Whenever variables are used for scalars, then lower case letters will be used. For example, and are scalar variables.  When we use variable names for matrices, we will use capital letters. For example, and are matrix (or vector) variables.  Often, vectors will be lower case with an arrow on top. For example, here are vectors: .   In general, a matrix can be written . These will be used in proofs later on in this chapter and for defintions of operations. A vector can be written and although this notation can be used for both column and row vectors, unless denoted as such vectors will be consider as column vectors. We will see later in this chapter that we can simply write a row vector as a transformation of a column vector.    "
+  "body": " Matrix and Vector Definition     Definitions of matrices and vectors.    Learning some notation around matrices and vectors.      Matrices    A matrix is a rectangular grid of numbers. An by matrix has rows and columns.    For example,   The size of a matrix is the number of rows and columns in the matrix. The number of rows is listed first. The size of the example above is 2 by 4.  The numbers in a matrix are called the entries or elements of the matrix. For example, for the matrix in , the entry on the first row and third column is 11. Often we will use the notation , where the subscript 1 is the row number and is the column number.    Vectors  We saw vectors in however we repeat some of these to put them in a broader context.    A vector is a matrix with one of its dimensions is 1. If a matrix only has one column it is called a column vector . If the matrix has only one row it is called a a row vector . The number of elements (numbers) in the vector is called the length .    The following are examples of vectors.    The first two are column vectors. The third is a row vectors.     Since a vector has a single dimension, the individual elements can be identified with a single index. For example, and . The lengths of and are 4,3 and 3 respectively.   Vectors can be thought of as individual columns or rows of a matrix. Also, a column vector can be thought of as an matrix and a row vector as a matrix and properties of matrices will pertain to vectors as well.     Matrix, Vector and Scalar Notation  A scalar is a fancy term for a number. Mathematicians use this term to distinguish them from matrices and vectors, which are not scalars. Whenever variables are used for scalars, then lower case letters will be used. For example, and are scalar variables.  When we use variable names for matrices, we will use capital letters. For example, and are matrix (or vector) variables.  Generally, vectors will be lower case and bold. For example, here are vectors: . Note: sometimes vectors are indicated with a arrow above the variable name, like .   In general, a matrix can be written . These will be used in proofs later on in this chapter and for defintions of operations. A vector can be written and although this notation can be used for both column and row vectors, unless denoted as such vectors will be consider as column vectors. We will see later in this chapter that we can simply write a row vector as a transformation of a column vector.    "
 },
 {
   "id": "sect-matrix-definition-2",
@@ -883,6 +883,24 @@ var ptx_lunr_docs = [
   "body": "  A vector is a matrix with one of its dimensions is 1. If a matrix only has one column it is called a column vector . If the matrix has only one row it is called a a row vector . The number of elements (numbers) in the vector is called the length .   "
 },
 {
+  "id": "sect-vectors-5",
+  "level": "2",
+  "url": "sect-matrix-definition.html#sect-vectors-5",
+  "type": "Example",
+  "number": "2.1.3",
+  "title": "",
+  "body": "  The first two are column vectors. The third is a row vectors.    "
+},
+{
+  "id": "sect-vectors-7",
+  "level": "2",
+  "url": "sect-matrix-definition.html#sect-vectors-7",
+  "type": "Note",
+  "number": "2.1.4",
+  "title": "",
+  "body": " Vectors can be thought of as individual columns or rows of a matrix. Also, a column vector can be thought of as an matrix and a row vector as a matrix and properties of matrices will pertain to vectors as well.  "
+},
+{
   "id": "sect-matrix-definition-5-2",
   "level": "2",
   "url": "sect-matrix-definition.html#sect-matrix-definition-5-2",
@@ -896,7 +914,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-definition.html#sect-matrix-definition-5-5",
   "type": "Remark",
-  "number": "2.1.3",
+  "number": "2.1.5",
   "title": "",
   "body": " In general, a matrix can be written . These will be used in proofs later on in this chapter and for defintions of operations. A vector can be written and although this notation can be used for both column and row vectors, unless denoted as such vectors will be consider as column vectors. We will see later in this chapter that we can simply write a row vector as a transformation of a column vector.  "
 },
@@ -907,7 +925,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Matrix Operations",
-  "body": " Matrix Operations     Learn the basic matrix operations of addition, subtraction and scalar mulitplication.    Rewrite a linear system in a vector form to motivate a matrix-vector product.    Extend a matrix-vector product to a matrix-matrix product and understand the require size restrictions on products.    Learn the matrix transpose and reexamine the dot product.      Addition and Subtraction of Matrices  In this section, we learn how to perform some basic operations between matrices. First, we will look at adding and subtracting two matrices and later we will look at multiplying a matrix by a scalar (a number).    In this case, let and be matrices. Then      is the matrix formed by     That is to add matrices, we add element by element.     is the matrix formed by     That is to add matrices, we subtract element by element.     If and are not the same size then and does not exist.    Note: an alternative definition of matrix subtraction, , which is consistent with subtraction of real numbers. We will define later in this chapter.   Let Then the sum is found by adding the individual elements. similarly we can subtract in the same way      Find the following result or state that it does not exist.     Since the matrices are not the same size, this operation is not valid.    There are many properties of matrix operations and they will look familiar in relation to real numbers.    Let and be matrices of the same size. The following hold.     Commutative Law of Addition       Associative Law of Addition       Existence of an Additive Identity  There exists a matrix such that for any matrix        Existence of an Additive Inverse  For every matrix , there exists a matrix denoted such that     where is the additive identity matrix above.       We will prove the first property: Commutative Law: . Start with the left hand side and get to the right hand side.       Note that we have used the notation that through this proof. This shorthand notation makes it easier to write matrices and provide proofs.    Scalar Multiplication of Vectors and Matrices  Scalar multiplication of vectors and matrices is a simple operation where the result is the scalar times each element of the vector or matrix.    Let , then       Evaluate:                                  The following are properties of scalar multiplication    Let and be matrices of the same size and and be scalars, then     Distributive Law over Matrix Addition       Distributive Law over scalar Addition       Associative Law for Scalar Multiplication       Scalar Multiplication by 1          This is a proof of the first property (Distributive Law over Matrix Addition)         Reexamining Linear Systems  The next matrix operation is that of multiplication. We will take a look back at linear systems to motivate why multiplication works the way it does. Consider the following linear system.     We can write this system as the vector equation     and then separate the left hand side as the sum of three vectors:     And then using scalar multiplication, we get the following     If we let     be the coefficient matrix of the linear system then it seems natural if     Then if we define the matrix multiplication      In the next section we will learn a way to solve a linear system in this way using an alternative method to Gauss' method.    Matrix-Vector Product  Using the motivation of the previous section, we now define a general matrix-vector product   Matrix-Vector Product   Let be an matrix and be a column vector of length with entries . Let be the column vectors of or     The product is the column vector of length :         Let     Find .          Matrix Form of a Linear System   Consider the linear system:     The matrix form of the linear system is given by     or         Matrix-Matrix Product   This now leads naturally to the following definition of a matrix multiplication is naturally the matrix formed by multiplying be each of the columns of .    Let be a matrix and be a matrix of the form:     where are the columns of . The matrix product is the matrix defined as     Note: if the number of columns of does not equal the number of rows of , then the product is undefined .      Size Restrictions on Matrices  Note that for each element in the resulting matrix, there is a vector-vector product, coming from each row of the first matrix and each column of the second matrix:   The number of columns of the first matrix must equal the number of rows of the second matrix.   The size of the resulting matrix can also be found by the sizes of the input matrices.   If the matrices and are multiplied then this diagram helps with a valid product as well as the size of the result.   Diagram of valid dimensions for matrix product.      That is if is by and is by , then has size by .     Let be a matrix that is 2 by 3, be a matrix that is 3 by 3 and be a matrix that is 2 by 2. Determine which of the following products are valid and if the product is valid, list its size.                                         Since is 2 by 3 and is 3 by 3, the inner numbers are equal and thus multiplication is valid and the result is 2 by 3.    Since is 2 by 3 and is 2 by 2, the inner numbers are not equal, so multiplication is not valid.    Since is 3 by 3 and is 2 by 2, the inner numbers are not equal, so multiplication is not valid.    Since is 3 by 3 and is 2 by 3, the inner numbers are not equal, so multiplication is not valid.    Since is 2 by 2 and is 2 by 3, the inner numbers are equal so multiplication is valid and the result are the outer numbers or 2 by 3.    In this case, from (e), the size of is 2 by 3 and is 3 by 3, so the inner numbers are equal so multiplication is valid and the result is 2 by 3.         Let     find if this is a valid operation.    The size of is 3 by 2 and the size of is 2 by 2, so the inner numbers are equal and thus this operations is valid. The size of the result is 3 by 2.         Find if       First, since the number of rows of is 2 and the number of columns of is 2, the size of is 2.     The 1st row and 1st column of is the 1st row of times the 1st column of .    The 1st row and 2nd column of is the 1st row of times the 2nd column of .    The 2nd row and 1st column of is the 2nd row of times the 1st column of .    The 2nd row and 2nd column of is the 2nd row of times the 2nd column of .     We now explicitly show the dot products.         Alternative Form of the Matrix-Matrix Product  An alternative form of the matrix-matrix product is     or     This form is both helpful for proofs as we will see below as well as an alternative way to compute the matrix product.    Find, if possible, if       First, from the sizes of and , we know that the size of the product must be . For each element of the product matrix, we take the product of the th row of and th column of .         Properties of Matrix-Matrix Products  Let     Note that     which shows that the commutative property does not hold.   Properties of Matrix Multiplication   The following hold for matrices and and scalars and      distributive property 1       distributive property 2       associative property          The proof of the first uses Definition ... of matrix multiply.         Transpose  The last basic matrix operation that we will cover here in the transpose of a matrix. As an example, if     then the transpose is the matrix, given by     where the row and column of each element is flipped.    The transpose of an matrix , denoted is flipped over the diagonal. In particular, the element in the th row and th column of is given by the th row and column of .  Using the shorthand notation,     which is useful for proofs.    We will see that transposes play a big role in linear algebra.   Properties of Transposes                 .            Proof of the 2nd property:         Reexamination of the Dot Product  Recall that the dot product of two vectors and of the same length discussed in is the sum of the products of the individual elements.  We can see that the dot product can also be defined as or alternatively using summation notation     "
+  "body": " Matrix Operations     Learn the basic matrix operations of addition, subtraction and scalar mulitplication.    Rewrite a linear system in a vector form to motivate a matrix-vector product.    Extend a matrix-vector product to a matrix-matrix product and understand the require size restrictions on products.    Learn the matrix transpose and reexamine the dot product.      Addition and Subtraction of Matrices  In this section, we learn how to perform some basic operations between matrices. First, we will look at adding and subtracting two matrices and later we will look at multiplying a matrix by a scalar (a number).    In this case, let and be matrices. Then      is the matrix formed by     That is to add matrices, we add element by element.     is the matrix formed by     That is to add matrices, we subtract element by element.     If and are not the same size then and does not exist.    Note: an alternative definition of matrix subtraction, , which is consistent with subtraction of real numbers. We will define later in this chapter.   Let Then the sum is found by adding the individual elements. similarly we can subtract in the same way      Find the following result or state that it does not exist.     Since the matrices are not the same size, this operation is not valid.    There are many properties of matrix operations and they will look familiar in relation to real numbers.    Let and be matrices of the same size. The following hold.     Commutative Law of Addition       Associative Law of Addition       Existence of an Additive Identity  There exists a matrix such that for any matrix        Existence of an Additive Inverse  For every matrix , there exists a matrix denoted such that     where is the additive identity matrix above.       We will prove the first property: Commutative Law: . Start with the left hand side and get to the right hand side.       Note that we have used the notation that through this proof. This shorthand notation makes it easier to write matrices and provide proofs.    Scalar Multiplication of Vectors and Matrices  Scalar multiplication of vectors and matrices is a simple operation where the result is the scalar times each element of the vector or matrix.    Let , then       Evaluate:                                  The following are properties of scalar multiplication    Let and be matrices of the same size and and be scalars, then     Distributive Law over Matrix Addition       Distributive Law over scalar Addition       Associative Law for Scalar Multiplication       Scalar Multiplication by 1          This is a proof of the first property (Distributive Law over Matrix Addition)         Reexamining Linear Systems  The next matrix operation is that of multiplication. We will take a look back at linear systems to motivate why multiplication works the way it does. Consider the following linear system.     We can write this system as the vector equation     and then separate the left hand side as the sum of three vectors:     And then using scalar multiplication, we get the following     If we let     be the coefficient matrix of the linear system then it seems natural if     Then if we define the matrix multiplication      In the next section we will learn a way to solve a linear system in this way using an alternative method to Gauss' method.    Matrix-Vector Product  Using the motivation of the previous section, we now define a general matrix-vector product   Matrix-Vector Product   Let be an matrix and be a column vector of length with entries . Let be the column vectors of or     The product is the column vector of length :         Let     Find .          Matrix Form of a Linear System   Consider the linear system:     The matrix form of the linear system is given by     or         Matrix-Matrix Product   This now leads naturally to the following definition of a matrix multiplication is naturally the matrix formed by multiplying be each of the columns of .    Let be a matrix and be a matrix of the form:     where are the columns of . The matrix product is the matrix defined as     Note: if the number of columns of does not equal the number of rows of , then the product is undefined .      Size Restrictions on Matrices  Note that for each element in the resulting matrix, there is a vector-vector product, coming from each row of the first matrix and each column of the second matrix:   The number of columns of the first matrix must equal the number of rows of the second matrix.   The size of the resulting matrix can also be found by the sizes of the input matrices.   If the matrices and are multiplied then this diagram helps with a valid product as well as the size of the result.   Diagram of valid dimensions for matrix product.      That is if is by and is by , then has size by .     Let be a matrix that is 2 by 3, be a matrix that is 3 by 3 and be a matrix that is 2 by 2. Determine which of the following products are valid and if the product is valid, list its size.                                         Since is 2 by 3 and is 3 by 3, the inner numbers are equal and thus multiplication is valid and the result is 2 by 3.    Since is 2 by 3 and is 2 by 2, the inner numbers are not equal, so multiplication is not valid.    Since is 3 by 3 and is 2 by 2, the inner numbers are not equal, so multiplication is not valid.    Since is 3 by 3 and is 2 by 3, the inner numbers are not equal, so multiplication is not valid.    Since is 2 by 2 and is 2 by 3, the inner numbers are equal so multiplication is valid and the result are the outer numbers or 2 by 3.    In this case, from (e), the size of is 2 by 3 and is 3 by 3, so the inner numbers are equal so multiplication is valid and the result is 2 by 3.         Let     find if this is a valid operation.    The size of is 3 by 2 and the size of is 2 by 2, so the inner numbers are equal and thus this operations is valid. The size of the result is 3 by 2.         Find if              Alternative Form of the Matrix-Matrix Product  An alternative form of the matrix-matrix product is     or     This form is both helpful for proofs as we will see below as well as an alternative way to compute the matrix product.    Find, if possible, if       First, from the sizes of and , we know that the size of the product must be . For each element of the product matrix, we take the product of the th row of and th column of .         Properties of Matrix-Matrix Products  Let     Note that     which shows that the commutative property does not hold.   Properties of Matrix Multiplication   The following hold for matrices and and scalars and      distributive property 1       distributive property 2       associative property          The proof of the first uses for matrix multiply.     The remainder of the proofs are left to the reader.       Transpose  The last basic matrix operation that we will cover here in the transpose of a matrix. As an example, if     then the transpose is the matrix, given by     where the row and column of each element is flipped.    The transpose of an matrix , denoted is flipped over the diagonal. In particular, the element in the th row and th column of is given by the th row and column of .  Using the shorthand notation,     which is useful for proofs.    We will see that transposes play a big role in linear algebra.   Properties of Transposes                 .            Proof of the 2nd property:         Reexamination of the Dot Product  Recall that the dot product of two vectors and of the same length discussed in is the sum of the products of the individual elements.  We can see that the dot product can also be defined as or alternatively using summation notation     "
 },
 {
   "id": "sect-matrix-operations-2",
@@ -1069,7 +1087,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.2.17",
   "title": "",
-  "body": "  Find if       First, since the number of rows of is 2 and the number of columns of is 2, the size of is 2.     The 1st row and 1st column of is the 1st row of times the 1st column of .    The 1st row and 2nd column of is the 1st row of times the 2nd column of .    The 2nd row and 1st column of is the 2nd row of times the 1st column of .    The 2nd row and 2nd column of is the 2nd row of times the 2nd column of .     We now explicitly show the dot products.      "
+  "body": "  Find if           "
 },
 {
   "id": "sect-matrix-matrix-product-alt-7",
@@ -1087,7 +1105,7 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "2.2.19",
   "title": "Properties of Matrix Multiplication.",
-  "body": " Properties of Matrix Multiplication   The following hold for matrices and and scalars and      distributive property 1       distributive property 2       associative property          The proof of the first uses Definition ... of matrix multiply.      "
+  "body": " Properties of Matrix Multiplication   The following hold for matrices and and scalars and      distributive property 1       distributive property 2       associative property          The proof of the first uses for matrix multiply.     The remainder of the proofs are left to the reader.   "
 },
 {
   "id": "sect-transpose-7",
@@ -1114,7 +1132,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "The Inverse of a Matrix",
-  "body": " The Inverse of a Matrix     Learn what an identity matrix is and why it is useful.    Define the matrix inverse.    Find an inverse matrix of a matrix.    Find the inverse of a matrix using the Gauss-Jordon method.    Solve a linear system using the matrix inverse.      The Identity Matrix    The identity matrix of size is an by matrix of all zeros except ones on the diagonal (from upper left to lower right).    The following are identity matrices of sizes 2, 3, and 4     The identity matrix is a matrix such that and note that the size of the identity matrix can be anything so generally is chosen for a defined matrix product.    The Inverse  Recall that we showed at the end of the previous section that a linear system can be written as: where is the coefficient matrix of the linear equations, is a column vector of unknowns, and is the right hand sides of each equation.  We possibly would like to say that: but how do we divide through by ? Maybe we just haven't learned about matrix division, however (spoiler alert) there is no matrix divsion. Instead, we will see that there is a matrix which will let us multiply through to give the answer.    Solving a simple linear equation  To motivate solving a matrix equation, let's look at solving , where each is simply a number (or technically a scalar). The solution is , but we can also write it as , where is the reciprocal of , which has the property     for any value of . And the important part of this is that the solution uses only multiplication for the solution.    The Matrix Inverse    For a square matrix , if there exists a matrix , such that   then is called the inverse matrix of and is denoted .    It is noted that not every matrix has an inverse matrix. We will see examples of this later in this section.  First, let's determine how to find the inverse of a 2 by 2 matrix.    The inverse of a 2 by 2 matrix is given by     if . If , the matrix does not have an inverse.    We will prove this, by showing that if is an inverse then (or ).     From properties in , the scalar can be written out front.     Multiply the two matrices like we did in the previous section.     simplify and multiply through by .     Similarly, we can show that , and these two properties proves the formula for the inverse in .    The following example uses the formula in to find the inverse matrix of a 2 by 2 matrix.    Find the inverse of       The term out front of is . Then apply the formula,       The next example shows that not every matrix has an inverse. Since a matrix inverse is similar to the reciprocal of a number, a matrix with no inverse is similar to a number with no reciprocal. And this occurs for the number 0 because is undefined.    Show that the matrix     does not have an inverse.    Again we use , but because , the matrix does not have an inverse.      Solving  At the end of , we learned how to take a linear system and write it as the matrix equation . In this section we will learn how to solve a system written in this form. If we start with the equation, so if we can find the inverse of a matrix, then solving linear systems becomes matrix multiplication.   If you are trying to solve the matrix equation     for a square matrix and the inverse matrix exists, then        Solve the system:     by writing the system as , then finding and finally by writing .    First, write down , and . (We learned how to do this in .)     Then find the inverse of , which is a 2 by 2 matrix, so we will use . Since .     Then write down the solution:     So the solution is or and .    The next example shows how to perform the same steps for a 3 by 3 matrix, although we don't know how to find an inverse of a 3 by 3 matrix yet.    We will later show that if     then     Use this to find the solution to:       First, the linear system can be written as if   Then we write the solution to this systems as   therefore the solution is and .      the Gauss-Jordan Method for Calculating Inverses  As we have seen, often matrices are larger than 2 by 2 and thus far we have no method to find an inverse of a matrix of this size. In this section, we will see that the Gauss-Jordon method can help us do this.  Recall that finding an inverse is the same as solving for . If we write and in terms of its column vectors, then     Then if we solve , for all , then we have all columns of .  We will use this method to find the inverse of the same matrix as in     Use the method explained above to find the inverse of       First, we will solve where     We will use Gauss-Jordon to solve this.     and this shows that     Now, we will solve where     and use Gauss-Jordon to solve this.     and this shows that     This shows that the inverse is       You should notice that the steps to solve each of the linear systems above were exactly the same. We can take advantage of this to solve for both systems simultaneously. The result is the following method of finding inverses.   Using Gauss-Jordon to find Matrix Inverses  If we write a matrix of the form     where the matrix is on the left and the identity matrix is on the right and apply Gauss-Jordon to get the identity matrix on the left, then the matrix will look like,     and the matrix on the right half is the inverse matrix, .  If the row-reduced form of the matrix does not have the identity matrix on left side the inverse does not exist.      Use the Gauss-Jordan Method to find the inverse of       First, write the matrix and then perform Gaussian Elimination.     We desire a 1 in the upper right. Instead of dividing the first row by 3, we will do the following,     Then eliminate the lower right element on the left side,     Multiply through by to get a 1 in the lower right of the left side     And finally zero out the 2nd column, 1st row.     We stop here because the left half of the matrix is the identity matrix. The right half is now the inverse. Therefore:       This example showed how to find the inverse of a 2 by 2 matrix using the Gauss-Jordan method. We saw the formula in , and generally it is easier to compute the inverse using that formula. However, the formula in only works for 2 by 2 matrices. The next example shows how to use the Gauss-Jordan method to find the inverse of a 3 by 3 matrix.    Find the inverse of       First, we write and then use the Gauss-Jordon Method.   Since we want a 1 in the upper right and don't want fractions, try     And zero out the rest of the first column.     Again, to avoid fractions, try     And zero out the other elements in the 2nd column.     Next, we need a 1 where the is.     And lastly zero out the rest of the 3rd column.     Since we have found the 3 by 3 identity on the left, the inverse is on the right or       As we saw with some 2 by 2 matrices (as in ), their inverse does not exist. We see how using the Gauss-Jordon method results in this situation for a 3 by 3 example.    Show that the matrix     does not have an inverse.    First, write and then use the Gauss-Jordan Method to alter the matrix.     And we stop since the row of zeros on the bottom of the left half of the matrix indicates that we cannot get an identity matrix on the left half of the matrix. This shows that the matrix is not invertible.    This next example, shows how to solve a linear system of 3 variables and 3 equations, find 1) written in in the form , 2) Find the inverse matrix and 3) finding .    Consider the linear system     Write this system as and then solve it use the inverse matrix.    First, let     We need to find and will use Gauss-Jordan:     Thus the inverse is:     Next, we solve the linear system by writing     and therefore the solution to the linear system is , and .    The last example shows how to perform a linear system solve using the inverse matrix technique of a linear system with 4 equations and 4 unknowns. The technique is exactly the same as the previous example, however there are quite a few steps to find the inverse.    Use Matrix Inversion to solve:       First, we need to find the inverse. Use the Gauss-Jordan method:     Therefore:     and then the solution to , where is     Note that since the matrix is symmetric (in many ways), the matrix is also symmetric.      Properties of the Inverse Matrix  An inverse matrix is just a matrix, so in many cases has the same properties as general matrices. However, one important is the inverse of the product of matrices.   Product of Matrix Inverses   Let and be invertible matrices. Then             "
+  "body": " The Inverse of a Matrix     Learn what an identity matrix is and why it is useful.    Define the matrix inverse.    Find an inverse matrix of a matrix.    Find the inverse of a matrix using the Gauss-Jordon method.    Solve a linear system using the matrix inverse.      The Identity Matrix    The identity matrix of size is an by matrix of all zeros except ones on the diagonal (from upper left to lower right). If , then and if .    The following are identity matrices of sizes 2, 3, and 4      Properties of the Identity Matrix   Let be an matrix and be a column vector of length . The following are properties of the matrix identity, where the size of the identity is chosen for matrix multiply compatibility.                            Using and A proof to the first property where the matrix multiply in is used in the first line and since for , then the sum is only the element on the diagonal.    The identity matrix is used throughout linear algebra, but will see it directly in the next subsection.    The Inverse  Recall that we showed at the end of the previous section that a linear system can be written as: where is the coefficient matrix of the linear equations, is a column vector of unknowns, and is the right hand sides of each equation.  We possibly would like to say that: but how do we divide through by ? Maybe we just haven't learned about matrix division, however (spoiler alert) there is no matrix divsion. Instead, we will see that there is a matrix which will let us multiply through to give the answer.    Solving a simple linear equation  To motivate solving a matrix equation, let's look at solving , where each is simply a number (or technically a scalar). The solution is , but we can also write it as , where is the reciprocal of , which has the property     for any value of . And the important part of this is that the solution uses only multiplication for the solution.    The Matrix Inverse    For a square matrix , if there exists a matrix , such that   then is called the inverse matrix of and is denoted .    It is noted that not every matrix has an inverse matrix. We will see examples of this later in this section.  First, let's determine how to find the inverse of a 2 by 2 matrix.    The inverse of a 2 by 2 matrix is given by     if . If , the matrix does not have an inverse.    We will prove this, by showing that if is an inverse then (or ).     From properties in , the scalar can be written out front.     Multiply the two matrices like we did in the previous section.     simplify and multiply through by .     Similarly, we can show that , and these two properties proves the formula for the inverse in .    The following example uses the formula in to find the inverse matrix of a 2 by 2 matrix.    Find the inverse of       The term out front of is . Then apply the formula,       The next example shows that not every matrix has an inverse. Since a matrix inverse is similar to the reciprocal of a number, a matrix with no inverse is similar to a number with no reciprocal. And this occurs for the number 0 because is undefined.    Show that the matrix     does not have an inverse.    Again we use , but because , the matrix does not have an inverse.      Solving  At the end of , we learned how to take a linear system and write it as the matrix equation . In this section we will learn how to solve a system written in this form. If we start with the equation, so if we can find the inverse of a matrix, then solving linear systems becomes matrix multiplication.   If you are trying to solve the matrix equation     for a square matrix and the inverse matrix exists, then        Solve the system:     by writing the system as , then finding and finally by writing .    First, write down , and . (We learned how to do this in .)     Then find the inverse of , which is a 2 by 2 matrix, so we will use . Since .     Then write down the solution:     So the solution is or and .    The next example shows how to perform the same steps for a 3 by 3 matrix, although we don't know how to find an inverse of a 3 by 3 matrix yet.    We will later show that if     then     Use this to find the solution to:       First, the linear system can be written as if   Then we write the solution to this systems as   therefore the solution is and .      the Gauss-Jordan Method for Calculating Inverses  As we have seen, often matrices are larger than 2 by 2 and thus far we have no method to find an inverse of a matrix of this size. In this section, we will see that the Gauss-Jordon method can help us do this.  Recall that finding an inverse is the same as solving for . If we write and in terms of its column vectors, then     Then if we solve , for all , then we have all columns of .  We will use this method to find the inverse of the same matrix as in     Use the method explained above to find the inverse of       First, we will solve where     We will use Gauss-Jordon to solve this.     and this shows that     Now, we will solve where     and use Gauss-Jordon to solve this.     and this shows that     This shows that the inverse is       You should notice that the steps to solve each of the linear systems above were exactly the same. We can take advantage of this to solve for both systems simultaneously. The result is the following method of finding inverses.   Using Gauss-Jordon to find Matrix Inverses  If we write a matrix of the form     where the matrix is on the left and the identity matrix is on the right and apply Gauss-Jordon to get the identity matrix on the left, then the matrix will look like,     and the matrix on the right half is the inverse matrix, .  If the row-reduced form of the matrix does not have the identity matrix on left side the inverse does not exist.      Use the Gauss-Jordan Method to find the inverse of       First, write the matrix and then perform Gaussian Elimination.     We desire a 1 in the upper right. Instead of dividing the first row by 3, we will do the following,     Then eliminate the lower right element on the left side,     Multiply through by to get a 1 in the lower right of the left side     And finally zero out the 2nd column, 1st row.     We stop here because the left half of the matrix is the identity matrix. The right half is now the inverse. Therefore:       This example showed how to find the inverse of a 2 by 2 matrix using the Gauss-Jordan method. We saw the formula in , and generally it is easier to compute the inverse using that formula. However, the formula in only works for 2 by 2 matrices. The next example shows how to use the Gauss-Jordan method to find the inverse of a 3 by 3 matrix.    Find the inverse of       First, we write and then use the Gauss-Jordon Method.   Since we want a 1 in the upper right and don't want fractions, try     And zero out the rest of the first column.     Again, to avoid fractions, try     And zero out the other elements in the 2nd column.     Next, we need a 1 where the is.     And lastly zero out the rest of the 3rd column.     Since we have found the 3 by 3 identity on the left, the inverse is on the right or       As we saw with some 2 by 2 matrices (as in ), their inverse does not exist. We see how using the Gauss-Jordon method results in this situation for a 3 by 3 example.    Show that the matrix     does not have an inverse.    First, write and then use the Gauss-Jordan Method to alter the matrix.     And we stop since the row of zeros on the bottom of the left half of the matrix indicates that we cannot get an identity matrix on the left half of the matrix. This shows that the matrix is not invertible.    This next example, shows how to solve a linear system of 3 variables and 3 equations, find 1) written in in the form , 2) Find the inverse matrix and 3) finding .    Consider the linear system     Write this system as and then solve it use the inverse matrix.    First, let     We need to find and will use Gauss-Jordan:     Thus the inverse is:     Next, we solve the linear system by writing     and therefore the solution to the linear system is , and .    The last example shows how to perform a linear system solve using the inverse matrix technique of a linear system with 4 equations and 4 unknowns. The technique is exactly the same as the previous example, however there are quite a few steps to find the inverse.    Use Matrix Inversion to solve:       First, we need to find the inverse. Use the Gauss-Jordan method:     Therefore:     and then the solution to , where is     Note that since the matrix is symmetric (in many ways), the matrix is also symmetric.      Properties of the Inverse Matrix  An inverse matrix is just a matrix, so in many cases has the same properties as general matrices. However, one important is the inverse of the product of matrices.   Other Properties of Matrix Inverses      Let and be invertible matrices. Then       Let be an invertible matrix. Then     If is an invertible matrix then              "
 },
 {
   "id": "sect-matrix-inverse-2",
@@ -1132,14 +1150,23 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "2.3.1",
   "title": "",
-  "body": "  The identity matrix of size is an by matrix of all zeros except ones on the diagonal (from upper left to lower right).   "
+  "body": "  The identity matrix of size is an by matrix of all zeros except ones on the diagonal (from upper left to lower right). If , then and if .   "
+},
+{
+  "id": "lem-properties-identity",
+  "level": "2",
+  "url": "sect-matrix-inverse.html#lem-properties-identity",
+  "type": "Lemma",
+  "number": "2.3.2",
+  "title": "Properties of the Identity Matrix.",
+  "body": " Properties of the Identity Matrix   Let be an matrix and be a column vector of length . The following are properties of the matrix identity, where the size of the identity is chosen for matrix multiply compatibility.                            Using and A proof to the first property where the matrix multiply in is used in the first line and since for , then the sum is only the element on the diagonal.   "
 },
 {
   "id": "def-matrix-inverse",
   "level": "2",
   "url": "sect-matrix-inverse.html#def-matrix-inverse",
   "type": "Definition",
-  "number": "2.3.2",
+  "number": "2.3.3",
   "title": "",
   "body": "  For a square matrix , if there exists a matrix , such that   then is called the inverse matrix of and is denoted .   "
 },
@@ -1148,7 +1175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#sect-matrix-inverse-6-5",
   "type": "Lemma",
-  "number": "2.3.3",
+  "number": "2.3.4",
   "title": "",
   "body": "  The inverse of a 2 by 2 matrix is given by     if . If , the matrix does not have an inverse.    We will prove this, by showing that if is an inverse then (or ).     From properties in , the scalar can be written out front.     Multiply the two matrices like we did in the previous section.     simplify and multiply through by .     Similarly, we can show that , and these two properties proves the formula for the inverse in .   "
 },
@@ -1157,7 +1184,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#ex-inv-2-by-2",
   "type": "Example",
-  "number": "2.3.4",
+  "number": "2.3.5",
   "title": "",
   "body": "  Find the inverse of       The term out front of is . Then apply the formula,      "
 },
@@ -1166,7 +1193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#ex-2by2-noinverse",
   "type": "Example",
-  "number": "2.3.5",
+  "number": "2.3.6",
   "title": "",
   "body": "  Show that the matrix     does not have an inverse.    Again we use , but because , the matrix does not have an inverse.   "
 },
@@ -1175,7 +1202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#sect-matrix-inverse-7-3",
   "type": "Remark",
-  "number": "2.3.6",
+  "number": "2.3.7",
   "title": "",
   "body": " If you are trying to solve the matrix equation     for a square matrix and the inverse matrix exists, then     "
 },
@@ -1184,7 +1211,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#ex-solve-by-inverse",
   "type": "Example",
-  "number": "2.3.7",
+  "number": "2.3.8",
   "title": "",
   "body": "  Solve the system:     by writing the system as , then finding and finally by writing .    First, write down , and . (We learned how to do this in .)     Then find the inverse of , which is a 2 by 2 matrix, so we will use . Since .     Then write down the solution:     So the solution is or and .   "
 },
@@ -1193,7 +1220,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#sect-matrix-inverse-7-6",
   "type": "Example",
-  "number": "2.3.8",
+  "number": "2.3.9",
   "title": "",
   "body": "  We will later show that if     then     Use this to find the solution to:       First, the linear system can be written as if   Then we write the solution to this systems as   therefore the solution is and .   "
 },
@@ -1202,7 +1229,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#sect-matrix-inverse-8-7",
   "type": "Example",
-  "number": "2.3.9",
+  "number": "2.3.10",
   "title": "",
   "body": "  Use the method explained above to find the inverse of       First, we will solve where     We will use Gauss-Jordon to solve this.     and this shows that     Now, we will solve where     and use Gauss-Jordon to solve this.     and this shows that     This shows that the inverse is      "
 },
@@ -1211,7 +1238,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#sect-matrix-inverse-8-9",
   "type": "Remark",
-  "number": "2.3.10",
+  "number": "2.3.11",
   "title": "Using Gauss-Jordon to find Matrix Inverses.",
   "body": " Using Gauss-Jordon to find Matrix Inverses  If we write a matrix of the form     where the matrix is on the left and the identity matrix is on the right and apply Gauss-Jordon to get the identity matrix on the left, then the matrix will look like,     and the matrix on the right half is the inverse matrix, .  If the row-reduced form of the matrix does not have the identity matrix on left side the inverse does not exist.   "
 },
@@ -1220,7 +1247,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#sect-matrix-inverse-8-10",
   "type": "Example",
-  "number": "2.3.11",
+  "number": "2.3.12",
   "title": "",
   "body": "  Use the Gauss-Jordan Method to find the inverse of       First, write the matrix and then perform Gaussian Elimination.     We desire a 1 in the upper right. Instead of dividing the first row by 3, we will do the following,     Then eliminate the lower right element on the left side,     Multiply through by to get a 1 in the lower right of the left side     And finally zero out the 2nd column, 1st row.     We stop here because the left half of the matrix is the identity matrix. The right half is now the inverse. Therefore:      "
 },
@@ -1229,7 +1256,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#ex-3by3-matrix-inverse",
   "type": "Example",
-  "number": "2.3.12",
+  "number": "2.3.13",
   "title": "",
   "body": "  Find the inverse of       First, we write and then use the Gauss-Jordon Method.   Since we want a 1 in the upper right and don't want fractions, try     And zero out the rest of the first column.     Again, to avoid fractions, try     And zero out the other elements in the 2nd column.     Next, we need a 1 where the is.     And lastly zero out the rest of the 3rd column.     Since we have found the 3 by 3 identity on the left, the inverse is on the right or      "
 },
@@ -1238,7 +1265,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#sect-matrix-inverse-8-14",
   "type": "Example",
-  "number": "2.3.13",
+  "number": "2.3.14",
   "title": "",
   "body": "  Show that the matrix     does not have an inverse.    First, write and then use the Gauss-Jordan Method to alter the matrix.     And we stop since the row of zeros on the bottom of the left half of the matrix indicates that we cannot get an identity matrix on the left half of the matrix. This shows that the matrix is not invertible.   "
 },
@@ -1247,7 +1274,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#sect-matrix-inverse-8-16",
   "type": "Example",
-  "number": "2.3.14",
+  "number": "2.3.15",
   "title": "",
   "body": "  Consider the linear system     Write this system as and then solve it use the inverse matrix.    First, let     We need to find and will use Gauss-Jordan:     Thus the inverse is:     Next, we solve the linear system by writing     and therefore the solution to the linear system is , and .   "
 },
@@ -1256,7 +1283,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#sect-matrix-inverse-8-18",
   "type": "Example",
-  "number": "2.3.15",
+  "number": "2.3.16",
   "title": "",
   "body": "  Use Matrix Inversion to solve:       First, we need to find the inverse. Use the Gauss-Jordan method:     Therefore:     and then the solution to , where is     Note that since the matrix is symmetric (in many ways), the matrix is also symmetric.   "
 },
@@ -1265,9 +1292,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-matrix-inverse.html#thm-matrix-inverse",
   "type": "Theorem",
-  "number": "2.3.16",
-  "title": "Product of Matrix Inverses.",
-  "body": " Product of Matrix Inverses   Let and be invertible matrices. Then           "
+  "number": "2.3.17",
+  "title": "Other Properties of Matrix Inverses.",
+  "body": " Other Properties of Matrix Inverses      Let and be invertible matrices. Then       Let be an invertible matrix. Then     If is an invertible matrix then            "
 },
 {
   "id": "sect-elem-matrices",
@@ -1276,7 +1303,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Elementary Matrices",
-  "body": " Elementary Matrices     Define a elementary matrix.    Show that the row operations from the previous chapter can be written as matrix products with elementary matrices.    Reexamination a reduced row-echelon form of a matrix with elementary matrices.     In , linear systems and solutions were introduced. The standard way to solve these is to use elementary row operations as were shown in . In this section, we learn that we can write all of the row operations as matrix products.  We will denote by the matrix any matrix that performs an elementary row operations. For example,     will swap the rows in a 2 by 2 matrix. The matrix     will multiply the first row of a 3 by 3 matrix by 2. The matrix     is the operation that multiplies the first row of a 3 by 3 matrix by and add to the third row.   Elementary Matrices and Row Operations   Let be a matrix. The matrix is an elementary matrix is the result of applying one row operation to , the identity matrix.  An elementary matrix that involves switching rows is also called a permutation matrix .    Although we have examples above, here are the specifics of the related row operations and the elementary matrix.         is the identity matrix with rows and switched.        is the identity matrix where the element is row , column is replaced with .        is the identity matrix with the element in row , column has the number .       Consider elementary matrices. Find the following:                                                   There are a lot of nice properties of elementary matrices. We now show that all elementary matrices are invertible.    Every elementary matrix is invertible and its inverse is also an elementary matrix. In paticular,     The inverse of is .    The inverse of is itself.    The inverse of is          Find the inverses of the following elementary matrices and the determine the row operation the inverse represents                          Note that this represents the operation , so the inverse is or       This is the operation so the inverse is or       This is the operation , so the inverse is also the matrix or          We next look at putting matrix is reduced row-echelon form using elementary matrices. The following lemma indicates that we can do this.    Let be a matrix and let be its reduced row-echelon form. We can write     where is the product of elementary matrices representing the row operations performed on to obtain .    Let's take a look at an example.    Consider the matrix     Find all elementary matrices to put in row-echelon form and show that the product of the matrices form .    The first step is , which has the corresponding elementary matrix     And the product is     Next, the step which correspond to the elementary matrix     And now the product of the elementary matrices and is     And since this matrix is an upper triangular matrix, we stop here. The matrix on the right hand side is and the matrix is       "
+  "body": " Elementary Matrices     Define a elementary matrix.    Show that the row operations from the previous chapter can be written as matrix products with elementary matrices.    Reexamination a reduced row-echelon form of a matrix with elementary matrices.      In , linear systems and solutions were introduced. The standard way to solve these is to use elementary row operations as were shown in . In this section, we learn that we can write all of the row operations as matrix products.  We will denote by the matrix any matrix that performs an elementary row operations. For example,     will swap rows 2 and 4 in a matrix. The matrix     will multiply the first row of a 3 by 3 matrix by 2. The matrix     is the operation that multiplies the first row of a 4 by 4 matrix by and add to the third row.   Elementary Matrices and Row Operations   Let be a matrix. The matrix is an elementary matrix is the result of applying one row operation to , the identity matrix.  An elementary matrix that involves switching rows is also called a permutation matrix .    Although we have examples above, here are the specifics of the related row operations and the elementary matrix.         is the identity matrix with rows and switched.        is the identity matrix where the element is row , column is replaced with .        is the identity matrix with the element in row , column has the number .       Consider elementary matrices. Find the following:                                                   There are a lot of nice properties of elementary matrices. We now show that all elementary matrices are invertible.    Every elementary matrix is invertible and its inverse is also an elementary matrix. In paticular,     The inverse of is .    The inverse of is itself.    The inverse of is          Find the inverses of the following elementary matrices and the determine the row operation the inverse represents                          Note that this represents the operation , so the inverse is or       This is the operation so the inverse is or       This is the operation , so the inverse is also the matrix or            Matrices as Products of Elementary Matrices  The last idea of this section is that of a writing a matrix as a product of elementary matrices. As we will see here, this is possible, if the matrix is invertible.  Let's find the inverse of using elementary row operations using the techniques in .     The important parts here are the row operations. If we let then applying the row operations using the matrices above, leads to: or reversing everything     Find the inverses of , find the product and show that the result is .       and performed the operation results in . It's a good idea to check this using some software.       Let be a invertible matrix. Then can be written as a product of elementary matrices. That is:       Let's do another example.    Consider the matrix     Find all elementary matrices to write     We'll find the inverse of the matrix using row operations on the matrix      We need to find the elementary matrices of each of these row operations and then the inverses.     Note: the above lemma works only for invertible matrices. There are some ways of writing a matrix as the product of other matrices like this. This is called factorization and we will see more details of this in . In fact, this notation above leads directly to -factorization.   "
 },
 {
   "id": "sect-elem-matrices-2",
@@ -1288,58 +1315,67 @@ var ptx_lunr_docs = [
   "body": "   Define a elementary matrix.    Show that the row operations from the previous chapter can be written as matrix products with elementary matrices.    Reexamination a reduced row-echelon form of a matrix with elementary matrices.    "
 },
 {
-  "id": "sect-elem-matrices-11",
+  "id": "sect-elem-matrices-3-9",
   "level": "2",
-  "url": "sect-elem-matrices.html#sect-elem-matrices-11",
+  "url": "sect-elem-matrices.html#sect-elem-matrices-3-9",
   "type": "Definition",
   "number": "2.4.1",
   "title": "Elementary Matrices and Row Operations.",
   "body": " Elementary Matrices and Row Operations   Let be a matrix. The matrix is an elementary matrix is the result of applying one row operation to , the identity matrix.  An elementary matrix that involves switching rows is also called a permutation matrix .   "
 },
 {
-  "id": "sect-elem-matrices-14",
+  "id": "sect-elem-matrices-3-12",
   "level": "2",
-  "url": "sect-elem-matrices.html#sect-elem-matrices-14",
+  "url": "sect-elem-matrices.html#sect-elem-matrices-3-12",
   "type": "Example",
   "number": "2.4.2",
   "title": "",
   "body": "  Consider elementary matrices. Find the following:                                                  "
 },
 {
-  "id": "sect-elem-matrices-16",
+  "id": "sect-elem-matrices-3-14",
   "level": "2",
-  "url": "sect-elem-matrices.html#sect-elem-matrices-16",
+  "url": "sect-elem-matrices.html#sect-elem-matrices-3-14",
   "type": "Theorem",
   "number": "2.4.3",
   "title": "",
   "body": "  Every elementary matrix is invertible and its inverse is also an elementary matrix. In paticular,     The inverse of is .    The inverse of is itself.    The inverse of is       "
 },
 {
-  "id": "sect-elem-matrices-17",
+  "id": "sect-elem-matrices-3-15",
   "level": "2",
-  "url": "sect-elem-matrices.html#sect-elem-matrices-17",
+  "url": "sect-elem-matrices.html#sect-elem-matrices-3-15",
   "type": "Example",
   "number": "2.4.4",
   "title": "",
   "body": "  Find the inverses of the following elementary matrices and the determine the row operation the inverse represents                          Note that this represents the operation , so the inverse is or       This is the operation so the inverse is or       This is the operation , so the inverse is also the matrix or         "
 },
 {
-  "id": "sect-elem-matrices-19",
+  "id": "subsec-product-elem-matrices-6",
   "level": "2",
-  "url": "sect-elem-matrices.html#sect-elem-matrices-19",
-  "type": "Lemma",
+  "url": "sect-elem-matrices.html#subsec-product-elem-matrices-6",
+  "type": "Checkpoint",
   "number": "2.4.5",
   "title": "",
-  "body": "  Let be a matrix and let be its reduced row-echelon form. We can write     where is the product of elementary matrices representing the row operations performed on to obtain .   "
+  "body": "  Find the inverses of , find the product and show that the result is .       and performed the operation results in . It's a good idea to check this using some software.    "
 },
 {
-  "id": "sect-elem-matrices-21",
+  "id": "lem-matrix-product-elem-matrices",
   "level": "2",
-  "url": "sect-elem-matrices.html#sect-elem-matrices-21",
-  "type": "Example",
+  "url": "sect-elem-matrices.html#lem-matrix-product-elem-matrices",
+  "type": "Lemma",
   "number": "2.4.6",
   "title": "",
-  "body": "  Consider the matrix     Find all elementary matrices to put in row-echelon form and show that the product of the matrices form .    The first step is , which has the corresponding elementary matrix     And the product is     Next, the step which correspond to the elementary matrix     And now the product of the elementary matrices and is     And since this matrix is an upper triangular matrix, we stop here. The matrix on the right hand side is and the matrix is      "
+  "body": "  Let be a invertible matrix. Then can be written as a product of elementary matrices. That is:      "
+},
+{
+  "id": "subsec-product-elem-matrices-9",
+  "level": "2",
+  "url": "sect-elem-matrices.html#subsec-product-elem-matrices-9",
+  "type": "Example",
+  "number": "2.4.7",
+  "title": "",
+  "body": "  Consider the matrix     Find all elementary matrices to write     We'll find the inverse of the matrix using row operations on the matrix      We need to find the elementary matrices of each of these row operations and then the inverses.    "
 },
 {
   "id": "sect-linear-comb-span",
@@ -1432,18 +1468,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a set of vectors from . The set is linearly independent if none of the elements of can be written in terms of the other elements of . If it is not linearly independent, then is said to be linearly dependent .  Specifically, if the only solution to     is , then the vectors, are linearly independent.   "
 },
 {
-  "id": "sect-linear-independence-5",
+  "id": "ex-linear-independence",
   "level": "2",
-  "url": "sect-linear-independence.html#sect-linear-independence-5",
+  "url": "sect-linear-independence.html#ex-linear-independence",
   "type": "Example",
   "number": "2.6.2",
   "title": "",
   "body": "  Show that     is linearly independent.    In this case, there are only two vectors and it is fairly easy to see that the second cannot be written as a linear combination of the first (or vise versa). Therefore, this set is linearly independent.   "
 },
 {
-  "id": "sect-linear-independence-6",
+  "id": "ex-linear-dependence",
   "level": "2",
-  "url": "sect-linear-independence.html#sect-linear-independence-6",
+  "url": "sect-linear-independence.html#ex-linear-dependence",
   "type": "Example",
   "number": "2.6.3",
   "title": "",
@@ -1672,7 +1708,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.8",
   "title": "Determinants of Square Matrices",
-  "body": " Determinants of Square Matrices     Define the determinant as a function with a set of properties.    Find the determinant of a matrix    Use the Laplace expansion method to find the determinant of a matrix.    Use row operations to find the determinant of a matrix.    Understand the geometry of the determinant.      The determinant is a useful function for specifying when matrix is invertible or singular. For example, in section , we saw that for     that the inverse matrix exists if and only if . The determinant of this matrix will be the function . We will see two different methods for finding the determinant of an matrix.    Properties of the Determinant    Consider an matrix and denote the rows by . An  determinant is a function such that      for ,     for ,     ,     , where is the identity matrix.     The 's are the rows of the matrix and often the notation is used.    In more colloquial terms, these properties are:     if one multiplies a row by a constant and adds to a second row that the determinant is unchanged.    If one swaps rows in a matrix, the determinant of the new matrix is the opposite sign of the original matrix.    If one multiplies any row of a matrix by then the determinant of the new matrix is times the determinant of the original matrix.    The determinant of the identity matrix is 1.     Notice that the above explain the properties of a matrix, but how does one compute it? If     then define . We will show that satisfies the properties of the determinant, therefore is the determinant formula for a matrix.      and      and      and     And finally if then       If     then        The following are additional properties of a determinant.     A matrix with two identical rows has a zero determinant.    A matrix with a row of zeros has a zero determinant.    A matrix is nonsingular if and only if its determinant is nonzero.    The determinant of a matrix in echelon form is the product of its diagonal elements.          Consider a matrix with two identical rows. Swapping the two rows changes the sign of the determinant, however leaves the matrix unchanged. This implies that the determinant must be zero.    Call the row with the row of zeros. Let be any other row. Apply the row operation and now rows and are identical and the determinant has not changed. From the previous statement, the determinant is 0.    Recall that for a matrix to be nonsingular, that a linear system with coefficients from the matrix has a unique system or the row reduced echelon form of the matrix has no row of zeros. Let be the original matrix and is the matrix in echelon form. If the is nonsingular, then it is the identity matrix, which has the nonzero determinant 1.  A singular matrix reduces to a matrix with a row of zeros. By #2, this determinant is 0.    Consider a matrix in echelon form:     Using property (3) of the determinant defintion,     The matrix can be reduced to the identity matrix, with determinant 1     The 1st, 2nd and 4th statements of the lemma are very helpful for calculating the determinant. The 4th statement gives a very general way to calculate a determinant. Use the elementary row operations to put the matrix in echelon form (recall to keep track of multiplying any row by a constant and row swaps). The determinant will then be the product of the diagonal elements.  The third statement of the lemma above gives a function (the determinant) that determines whether or not a matrix is singular.         Calculating Determinants  We now calculate the determinant of two square matrices. The first example is a matrix and we use both the formula as well as Gauss' method.    Find the determinant of the following matrix using a) the formula for determinants and b) using Gauss' method.       Using the formula .  Using Gauss's method,     So .  This shows that although Gauss' method succeeds in finding the determinant, it takes more operations than the simple formula.      Use Gauss's method to find the determinants of the following matrices:       For both examples, we use row operations and keep track of any row swaps (introducing a ) or multiples.                    Expansion Method for finding the Determinant  Although Gauss' method is a very robust and in general efficient method for finding determinants, a method called the Laplace Expansion method can be quite helpful at times as well. Before defining this, we need to know a matrix minor and cofactor first.    For any matrix , the matrix formed by deleting row and column of is the minor of . The cofactor of is times the determinant of the minor of and denoted .      Find the and minors and cofactors of the matrix       Recall that minor is found by removing the th row and th column or     and the cofactors are the determinants of each of these matrices times or       Now that we have the prerequisites, the following is the Laplace Expansion method for finding a determinant.   Laplace Expansion of Determinants   The determinant of an matrix can be found by expanding by cofactors on row or column of . That is     for any satisfying or     for any satisfying .      Use the expansion formula to find the determinants of the matrices in , namely       In the case of , we will expand across the first row and use the formula for the determinant.     and for , we'll expand down the 2nd column because all but one is zero. And because of this, I won't show the cofactors of and .     and now to find this determinant, expand about the 2nd row     and now use the formula for determinants.         Geometry of Determinants   In the previous section, the determinant was introduced as a function that determines whether or not a matrix was singular due to whether or not the function was 0. In this section, we will look at a geometric approach to the determinant and show that it can be used to determine areas (and volumes) of regions bounded by vectors. We will show that this geometric approach is identical (in the two-dimensional case) as the properties in .  Consider the parallelogram formed by two vectors. In the argument below, it is important that the vector is below and to the right of the vector .   Plot of two vectors in forming a parallelogram.      The area of the parallelogram can be determined by taking the area of the enclosing rectangle and subtracting out the rectangles and and triangles and as shown below:   Finding the area of the parallelogram         and note that     And this result is identical to the determinant seen above. Again, as noted, the vectors were set up to have a positive area, however in general, one can define the area as the absolute value of the determinant.    Transformation of the Vectors and the size of the Parallelogram  From above, the area of the parallelogram is the determinant of the vectors that are along the sides.  Consider two vectors in and rotate them so one is on the -axis. Also take and multiply it by a factor of    Scaling a parallelogram      From this geometric argument, the area of the parallelogram formed by the vectors and appears to times larger. This is property 3 of Definition .  Next, let's look at transformation . The picture on the left is the original two vectors and that on the right is the transformed vectors (with about 0.2 in this picture). The original area and the transformed area are identical in this case since neither the height of the parallelogram nor its width has changed.   Skewing a parallelogram      This property shows that replacing a row with a constant times another row plus the current row results in an unchanged area is consistent with property 1 of .  The other transformation related to the determinant is property 2 of or in other words, if one switched the order of the vectors (row swaps), that the determinant changes sign. The area does not change because the area is the absolute value of the determinant.    In , the parallelpiped formed by includes the set     The volume of the parallelepiped is the absolute value of the determinant of the matrix whose columns are .      Find the volume of the parallelpiped formed by the vectors:       The volume is the absolute value of the determinant of the matrix with these three columns. We'll use Gauss' method to find the determinant.     and multiplying down the diagonal, , so . This means that the volume is 8 units.       Properties of Determinants  Need something here.   "
+  "body": " Determinants of Square Matrices     Define the determinant and understand the notion of permutations that is needed for the defintion.    Find the determinant of a and matrix using the defintion.    Understand many properties of the determinant including how to find the determinant of a few special cases of matrices.    Use the Laplace expansion method to find the determinant of a matrix.    Use row operations to find the determinant of a matrix.    Understand the geometry of the determinant.      Recall from that we saw two examples. showed that the vectors is a linear independent set and is a set of linear dependent vectors in .  In general, if we have two vectors we can determine if they are linearly dependent or independent by solving To determine linear independence, we need to solve for and . This can be found with the augmented matrix: Row-reducing   This system has a unique solution (of ) if and an infinite set of solutions if . Analogous situations occur in other parts of linear algebra (like the inverse matrix) that are equivalent to this and so we name this function from matrices to the reals. For define .  This section expands the definition to other matrix sizes and lists other properties of the determinant.    Definition of the Determinant  Before formally defining the determinant for a general matrix, there is some other needed background. We first need to understand a permutation of a set of integers. In short a permutation is a shuffling of items. In the context of determinants, we need the items to be the first integers.  For example, there are six permutations of , specifically and . Mathematically, we often think of a single permutation as a function from the set to itself. For example, for the permutation , the function is   It is important to know that there are permutations of the set . Also, any permutation can be built from a number of swaps of the trivial permutation . For example in the example above can be created by starting with and swapping the first two elements to get and then swapping the last two elements to get     A permutation is even if it can be generated from the trivial permutation with an even number of swaps and odd if it can be generated with an odd number of swaps. Also the sign of the permutation, denoted is       For an matrix, , the determinant is where the sum is over all permutations of .    Although this defintion works for square matrices, let's ground ourselves a bit more before moving on. First, if we have the case of a matrix, then where we have used the fact that there is one permutation of the set , resulting in the scalar that is the only entry.  Recall that there are two permutations of and that is and , so for a matrix, we have where recall that the 2nd term has the permutation . This is identical to the example above.  It may seem like now that we have the definition in , we can calculate the determinant of any square matrix. The following example shows how to calculate it with a matrix:    Use the definition in to find if     Note that the permutations of are those that are above and for a general matrix  and then evaluating it with the given element of      This example isn't too bad. However, due to the nature of permutations, the formula in is unwieldy. For a 5 by 5 matrix, there would be terms. Fortunately, there are other formulas available to perform the calculation. One thing to notice is using a little factoring, we can simplify the formula in and make it easier to compute. This will be done formally below.  Before presenting other computational methods of the determinant, let's look at the properties of the determinant.    Basic Properties of the Determinant  We start with a few basic properties of the determinant that will help us with the deeper understanding of determinants and how to calculate a few basic determinants.    The determinant of an upper-triangular matrix is the product of diagonal entries. That is .    Let be an upper-diagonal matrix. That is if . Then   and the only case where there is not a term with is the trivial permutation. Therefore, with .      Let be an diagonal matrix. Then     Since a diagonal matrix is an upper-triangular matrix then this follows directly from .           This follows directly from .      Let be an matrix and be the matrix with rows and swapped. Then .    Let be the permutation resulting from swapping positions and in permutation .  Also, since and differ by a row swap    and note that summing over amd is the same.      Let have two identical rows. Then .    The proof of this is left to the reader.  We will see below that elementary matrices play an important role in determinants. We also saw in that performing a row swap on a matrix, changes it's sign. The next pair of lemmas are also related to row operations.    Let be the matrix where the th row has been multiplied by . Then .         The following performs a row operation . Surprisingly, this does not change the determinant.    Let be the matrix where the th row has been multiplied by and added to the th row. Then .     where the property that a matrix with two identical rows has determinant 0 in the second sum of the 2nd step.      Determinants of Elementary Matrices  Recall that the Elementary Matrices have the property that multiplying a matrix by such a matrix results in a row operation as we saw in . We will use these matrices to provide additional properties of determinants.    The following are determinants of elementary matrices:                       The proofs of these are related to those above and the formalization of them is left to the reader.  Elementary matrices play a fundamental role related to determinants. This next set of lemmas shows that if a matrix is transformed using a elementary matrix, then the determinant of the product of the matrices is the product of the determinants.    Let be an matrix and be the matrix where rows and are swapped. Then     From , and from , and the result follows from these.    We now see that the same result works for multiplying a row in a matrix by a constant.    Let be an matrix and be the matrix where row is multiplied by a constant . Then     From , and from , and the result follows.    This last lemma shows a similar result for the row multiplication with an addition.    Let be an matrix and be the matrix where row is multiplied by a constant and added to row . Then     From , and from , and the result follows.      Let be elementary matrices. Then and       Let and both be matrices, then     Let and be the reduced row-echelon forms of and respectively. Let and be the elementary matrices such that (see lemma ???). If , that is is invertible then   If , then is not the identity matrix and there must be a row of zeros. Call this row  where multiplying by the elementary matrix does not change it since there are only 0s in row .   Since this shows that for all values of , then and since , then the result follows.       Gauss' Method for Calculating Determinants  We saw how to calculate the determinant for very specific matrices. However, up until this point, we should use the definition if the matrix doesn't have any particular structure. However, Gauss' Method for Calculating Determinants uses , and to simplify a matrix and then take the determinant. Generally, row operations are performed to get a matrix in upper-triangular (or echelon) form and then use . The following examples show how to use the method.    Find the determinant of the following matrix using a) the formula for determinants and b) using Gauss' method.       Using the formula .  Using Gauss's method,     So .  This shows that although Gauss' method succeeds in finding the determinant, it takes more operations than the simple formula.      Use Gauss's method to find the determinants of the following matrices:       For both examples, we use row operations and keep track of any row swaps (introducing a ) or multiples.                    Expansion Method for finding the Determinant  Although Gauss' method is a very robust and in general efficient method for finding determinants, a method called the Laplace Expansion method can be quite helpful at times as well. Before defining this, we need to know a matrix minor and cofactor first.    For any matrix , the matrix formed by deleting row and column of is the minor of . The cofactor of is times the determinant of the minor of and denoted .      Find the and minors and cofactors of the matrix       Recall that minor is found by removing the th row and th column or     and the cofactors are the determinants of each of these matrices times or       Now that we have the prerequisites, the following is the Laplace Expansion method for finding a determinant.   Laplace Expansion of Determinants   The determinant of an matrix can be found by expanding by cofactors on row or column of . That is     for any satisfying or     for any satisfying .      Use the expansion formula to find the determinants of the matrices in , namely       In the case of , we will expand across the first row and use the formula for the determinant.     and for , we'll expand down the 2nd column because all but one is zero. And because of this, I won't show the cofactors of and .     and now to find this determinant, expand about the 2nd row     and now use the formula for determinants.         Geometry of Determinants   In the previous section, the determinant was introduced as a function that determines whether or not a matrix was singular due to whether or not the function was 0. In this section, we will look at a geometric approach to the determinant and show that it can be used to determine areas (and volumes) of regions bounded by vectors. We will show that this geometric approach is identical (in the two-dimensional case) as the properties in .  Consider the parallelogram formed by two vectors. In the argument below, it is important that the vector is below and to the right of the vector .   Plot of two vectors in forming a parallelogram.      The area of the parallelogram can be determined by taking the area of the enclosing rectangle and subtracting out the rectangles and and triangles and as shown below:   Finding the area of the parallelogram         and note that     And this result is identical to the determinant seen above. Again, as noted, the vectors were set up to have a positive area, however in general, one can define the area as the absolute value of the determinant.    Transformation of the Vectors and the size of the Parallelogram  From above, the area of the parallelogram is the determinant of the vectors that are along the sides.  Consider two vectors in and rotate them so one is on the -axis. Also take and multiply it by a factor of    Scaling a parallelogram      From this geometric argument, the area of the parallelogram formed by the vectors and appears to times larger. This is property 3 of Definition .  Next, let's look at transformation . The picture on the left is the original two vectors and that on the right is the transformed vectors (with about 0.2 in this picture). The original area and the transformed area are identical in this case since neither the height of the parallelogram nor its width has changed.   Skewing a parallelogram      This property shows that replacing a row with a constant times another row plus the current row results in an unchanged area is consistent with property 1 of .  The other transformation related to the determinant is property 2 of or in other words, if one switched the order of the vectors (row swaps), that the determinant changes sign. The area does not change because the area is the absolute value of the determinant.    In , the parallelepiped formed by includes the set     The volume of the parallelepiped is the absolute value of the determinant of the matrix whose columns are .      Find the volume of the parallelepiped formed by the vectors:       The volume is the absolute value of the determinant of the matrix with these three columns. We'll use Gauss' method to find the determinant.     and multiplying down the diagonal, , so . This means that the volume is 8 units.       Other Properties of Determinants  This section has a number of other properties of determinants. We start by showing that a matrix and it's transpose have the same determinant.    Let an matrix. Then     We first start with using the properties of elementary matrices                     where proving these are left to the reader. That is for any elementary matrix,   The proof comes down to two cases. The first is when the matrix is invertible or . The second case is when is not invertible.      Case 1: is invertible.   From , any invertible matrix can be written as the product of elementary matrices. Assume that . First note that Now, evaluate the determinant of with      Case 2: is not invertible   If is not invertible, then . Also, since is not invertible, then is also not invertible, so .       The last lemma presented here is related to the determinant of the inverse of a matrix.    Let be an invertible matrix. Then     The proof of this is left to the reader, but it follows from other lemmas in this section.   "
 },
 {
   "id": "sect-det-2",
@@ -1681,41 +1717,176 @@ var ptx_lunr_docs = [
   "type": "Objectives",
   "number": "2.8",
   "title": "",
-  "body": "   Define the determinant as a function with a set of properties.    Find the determinant of a matrix    Use the Laplace expansion method to find the determinant of a matrix.    Use row operations to find the determinant of a matrix.    Understand the geometry of the determinant.    "
+  "body": "   Define the determinant and understand the notion of permutations that is needed for the defintion.    Find the determinant of a and matrix using the defintion.    Understand many properties of the determinant including how to find the determinant of a few special cases of matrices.    Use the Laplace expansion method to find the determinant of a matrix.    Use row operations to find the determinant of a matrix.    Understand the geometry of the determinant.    "
 },
 {
-  "id": "defn-det",
+  "id": "subsec-defintion-determinant-2",
   "level": "2",
-  "url": "sect-det.html#defn-det",
+  "url": "sect-det.html#subsec-defintion-determinant-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "permutation "
+},
+{
+  "id": "def-permutation-odd-even",
+  "level": "2",
+  "url": "sect-det.html#def-permutation-odd-even",
   "type": "Definition",
   "number": "2.8.1",
   "title": "",
-  "body": "  Consider an matrix and denote the rows by . An  determinant is a function such that      for ,     for ,     ,     , where is the identity matrix.     The 's are the rows of the matrix and often the notation is used.   "
+  "body": "  A permutation is even if it can be generated from the trivial permutation with an even number of swaps and odd if it can be generated with an odd number of swaps. Also the sign of the permutation, denoted is    "
 },
 {
-  "id": "sect-det-4-9",
+  "id": "def-det",
   "level": "2",
-  "url": "sect-det.html#sect-det-4-9",
-  "type": "Remark",
+  "url": "sect-det.html#def-det",
+  "type": "Definition",
   "number": "2.8.2",
   "title": "",
-  "body": " If     then     "
+  "body": "  For an matrix, , the determinant is where the sum is over all permutations of .   "
 },
 {
-  "id": "sect-det-4-10",
+  "id": "subsec-defintion-determinant-10",
   "level": "2",
-  "url": "sect-det.html#sect-det-4-10",
-  "type": "Lemma",
+  "url": "sect-det.html#subsec-defintion-determinant-10",
+  "type": "Example",
   "number": "2.8.3",
   "title": "",
-  "body": "  The following are additional properties of a determinant.     A matrix with two identical rows has a zero determinant.    A matrix with a row of zeros has a zero determinant.    A matrix is nonsingular if and only if its determinant is nonzero.    The determinant of a matrix in echelon form is the product of its diagonal elements.          Consider a matrix with two identical rows. Swapping the two rows changes the sign of the determinant, however leaves the matrix unchanged. This implies that the determinant must be zero.    Call the row with the row of zeros. Let be any other row. Apply the row operation and now rows and are identical and the determinant has not changed. From the previous statement, the determinant is 0.    Recall that for a matrix to be nonsingular, that a linear system with coefficients from the matrix has a unique system or the row reduced echelon form of the matrix has no row of zeros. Let be the original matrix and is the matrix in echelon form. If the is nonsingular, then it is the identity matrix, which has the nonzero determinant 1.  A singular matrix reduces to a matrix with a row of zeros. By #2, this determinant is 0.    Consider a matrix in echelon form:     Using property (3) of the determinant defintion,     The matrix can be reduced to the identity matrix, with determinant 1     The 1st, 2nd and 4th statements of the lemma are very helpful for calculating the determinant. The 4th statement gives a very general way to calculate a determinant. Use the elementary row operations to put the matrix in echelon form (recall to keep track of multiplying any row by a constant and row swaps). The determinant will then be the product of the diagonal elements.  The third statement of the lemma above gives a function (the determinant) that determines whether or not a matrix is singular.      "
+  "body": "  Use the definition in to find if     Note that the permutations of are those that are above and for a general matrix  and then evaluating it with the given element of     "
 },
 {
-  "id": "sect-det-5-3",
+  "id": "lem-det-upper-triangular",
   "level": "2",
-  "url": "sect-det.html#sect-det-5-3",
-  "type": "Example",
+  "url": "sect-det.html#lem-det-upper-triangular",
+  "type": "Lemma",
   "number": "2.8.4",
+  "title": "",
+  "body": "  The determinant of an upper-triangular matrix is the product of diagonal entries. That is .    Let be an upper-diagonal matrix. That is if . Then   and the only case where there is not a term with is the trivial permutation. Therefore, with .   "
+},
+{
+  "id": "cor-det-diagonal-matrix",
+  "level": "2",
+  "url": "sect-det.html#cor-det-diagonal-matrix",
+  "type": "Corollary",
+  "number": "2.8.5",
+  "title": "",
+  "body": "  Let be an diagonal matrix. Then     Since a diagonal matrix is an upper-triangular matrix then this follows directly from .   "
+},
+{
+  "id": "cor-det-identity-matrix",
+  "level": "2",
+  "url": "sect-det.html#cor-det-identity-matrix",
+  "type": "Corollary",
+  "number": "2.8.6",
+  "title": "",
+  "body": "       This follows directly from .   "
+},
+{
+  "id": "lem-det-row-swap",
+  "level": "2",
+  "url": "sect-det.html#lem-det-row-swap",
+  "type": "Lemma",
+  "number": "2.8.7",
+  "title": "",
+  "body": "  Let be an matrix and be the matrix with rows and swapped. Then .    Let be the permutation resulting from swapping positions and in permutation .  Also, since and differ by a row swap    and note that summing over amd is the same.   "
+},
+{
+  "id": "lem-det-matrix-identical-rows",
+  "level": "2",
+  "url": "sect-det.html#lem-det-matrix-identical-rows",
+  "type": "Lemma",
+  "number": "2.8.8",
+  "title": "",
+  "body": "  Let have two identical rows. Then .   "
+},
+{
+  "id": "lem-det-multiply-row-by-constant",
+  "level": "2",
+  "url": "sect-det.html#lem-det-multiply-row-by-constant",
+  "type": "Lemma",
+  "number": "2.8.9",
+  "title": "",
+  "body": "  Let be the matrix where the th row has been multiplied by . Then .        "
+},
+{
+  "id": "lem-det-multiply-row-and-add",
+  "level": "2",
+  "url": "sect-det.html#lem-det-multiply-row-and-add",
+  "type": "Lemma",
+  "number": "2.8.10",
+  "title": "",
+  "body": "  Let be the matrix where the th row has been multiplied by and added to the th row. Then .     where the property that a matrix with two identical rows has determinant 0 in the second sum of the 2nd step.   "
+},
+{
+  "id": "lem-det-elem-matrices",
+  "level": "2",
+  "url": "sect-det.html#lem-det-elem-matrices",
+  "type": "Lemma",
+  "number": "2.8.11",
+  "title": "",
+  "body": "  The following are determinants of elementary matrices:                      "
+},
+{
+  "id": "lem-elem-mat-row-swap",
+  "level": "2",
+  "url": "sect-det.html#lem-elem-mat-row-swap",
+  "type": "Lemma",
+  "number": "2.8.12",
+  "title": "",
+  "body": "  Let be an matrix and be the matrix where rows and are swapped. Then     From , and from , and the result follows from these.   "
+},
+{
+  "id": "lem-elem-mat-row-multiply",
+  "level": "2",
+  "url": "sect-det.html#lem-elem-mat-row-multiply",
+  "type": "Lemma",
+  "number": "2.8.13",
+  "title": "",
+  "body": "  Let be an matrix and be the matrix where row is multiplied by a constant . Then     From , and from , and the result follows.   "
+},
+{
+  "id": "lem-elem-mat-row-multiply-addition",
+  "level": "2",
+  "url": "sect-det.html#lem-elem-mat-row-multiply-addition",
+  "type": "Lemma",
+  "number": "2.8.14",
+  "title": "",
+  "body": "  Let be an matrix and be the matrix where row is multiplied by a constant and added to row . Then     From , and from , and the result follows.   "
+},
+{
+  "id": "lem-det-product-elem-matrices",
+  "level": "2",
+  "url": "sect-det.html#lem-det-product-elem-matrices",
+  "type": "Lemma",
+  "number": "2.8.15",
+  "title": "",
+  "body": "  Let be elementary matrices. Then and    "
+},
+{
+  "id": "lem-det-product-matrices",
+  "level": "2",
+  "url": "sect-det.html#lem-det-product-matrices",
+  "type": "Lemma",
+  "number": "2.8.16",
+  "title": "",
+  "body": "  Let and both be matrices, then     Let and be the reduced row-echelon forms of and respectively. Let and be the elementary matrices such that (see lemma ???). If , that is is invertible then   If , then is not the identity matrix and there must be a row of zeros. Call this row  where multiplying by the elementary matrix does not change it since there are only 0s in row .   Since this shows that for all values of , then and since , then the result follows.   "
+},
+{
+  "id": "sect-det-7-2",
+  "level": "2",
+  "url": "sect-det.html#sect-det-7-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gauss' Method for Calculating Determinants "
+},
+{
+  "id": "sect-det-7-3",
+  "level": "2",
+  "url": "sect-det.html#sect-det-7-3",
+  "type": "Example",
+  "number": "2.8.17",
   "title": "",
   "body": "  Find the determinant of the following matrix using a) the formula for determinants and b) using Gauss' method.       Using the formula .  Using Gauss's method,     So .  This shows that although Gauss' method succeeds in finding the determinant, it takes more operations than the simple formula.   "
 },
@@ -1724,43 +1895,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#ex-det-gauss",
   "type": "Example",
-  "number": "2.8.5",
+  "number": "2.8.18",
   "title": "",
   "body": "  Use Gauss's method to find the determinants of the following matrices:       For both examples, we use row operations and keep track of any row swaps (introducing a ) or multiples.                 "
 },
 {
-  "id": "sect-det-6-3",
+  "id": "sect-det-8-3",
   "level": "2",
-  "url": "sect-det.html#sect-det-6-3",
+  "url": "sect-det.html#sect-det-8-3",
   "type": "Definition",
-  "number": "2.8.6",
+  "number": "2.8.19",
   "title": "",
   "body": "  For any matrix , the matrix formed by deleting row and column of is the minor of . The cofactor of is times the determinant of the minor of and denoted .   "
 },
 {
-  "id": "sect-det-6-4",
+  "id": "sect-det-8-4",
   "level": "2",
-  "url": "sect-det.html#sect-det-6-4",
+  "url": "sect-det.html#sect-det-8-4",
   "type": "Example",
-  "number": "2.8.7",
+  "number": "2.8.20",
   "title": "",
   "body": "  Find the and minors and cofactors of the matrix       Recall that minor is found by removing the th row and th column or     and the cofactors are the determinants of each of these matrices times or      "
 },
 {
-  "id": "sect-det-6-6",
+  "id": "sect-det-8-6",
   "level": "2",
-  "url": "sect-det.html#sect-det-6-6",
+  "url": "sect-det.html#sect-det-8-6",
   "type": "Theorem",
-  "number": "2.8.8",
+  "number": "2.8.21",
   "title": "Laplace Expansion of Determinants.",
   "body": " Laplace Expansion of Determinants   The determinant of an matrix can be found by expanding by cofactors on row or column of . That is     for any satisfying or     for any satisfying .   "
 },
 {
-  "id": "sect-det-6-7",
+  "id": "sect-det-8-7",
   "level": "2",
-  "url": "sect-det.html#sect-det-6-7",
+  "url": "sect-det.html#sect-det-8-7",
   "type": "Example",
-  "number": "2.8.9",
+  "number": "2.8.22",
   "title": "",
   "body": "  Use the expansion formula to find the determinants of the matrices in , namely       In the case of , we will expand across the first row and use the formula for the determinant.     and for , we'll expand down the 2nd column because all but one is zero. And because of this, I won't show the cofactors of and .     and now to find this determinant, expand about the 2nd row     and now use the formula for determinants.      "
 },
@@ -1769,7 +1940,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#fig-parallelogram",
   "type": "Figure",
-  "number": "2.8.10",
+  "number": "2.8.23",
   "title": "",
   "body": " Plot of two vectors in forming a parallelogram.     "
 },
@@ -1778,7 +1949,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#fig-parallelogram2",
   "type": "Figure",
-  "number": "2.8.11",
+  "number": "2.8.24",
   "title": "",
   "body": " Finding the area of the parallelogram     "
 },
@@ -1787,7 +1958,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#fig-parallelogram-scale",
   "type": "Figure",
-  "number": "2.8.12",
+  "number": "2.8.25",
   "title": "",
   "body": " Scaling a parallelogram     "
 },
@@ -1796,27 +1967,45 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#fig-parallelogram-skew",
   "type": "Figure",
-  "number": "2.8.13",
+  "number": "2.8.26",
   "title": "",
   "body": " Skewing a parallelogram     "
 },
 {
-  "id": "sect-det-7-3-10",
+  "id": "sect-det-9-3-10",
   "level": "2",
-  "url": "sect-det.html#sect-det-7-3-10",
+  "url": "sect-det.html#sect-det-9-3-10",
   "type": "Definition",
-  "number": "2.8.14",
+  "number": "2.8.27",
   "title": "",
-  "body": "  In , the parallelpiped formed by includes the set     The volume of the parallelepiped is the absolute value of the determinant of the matrix whose columns are .   "
+  "body": "  In , the parallelepiped formed by includes the set     The volume of the parallelepiped is the absolute value of the determinant of the matrix whose columns are .   "
 },
 {
-  "id": "sect-det-7-3-11",
+  "id": "sect-det-9-3-11",
   "level": "2",
-  "url": "sect-det.html#sect-det-7-3-11",
+  "url": "sect-det.html#sect-det-9-3-11",
   "type": "Example",
-  "number": "2.8.15",
+  "number": "2.8.28",
   "title": "",
-  "body": "  Find the volume of the parallelpiped formed by the vectors:       The volume is the absolute value of the determinant of the matrix with these three columns. We'll use Gauss' method to find the determinant.     and multiplying down the diagonal, , so . This means that the volume is 8 units.   "
+  "body": "  Find the volume of the parallelepiped formed by the vectors:       The volume is the absolute value of the determinant of the matrix with these three columns. We'll use Gauss' method to find the determinant.     and multiplying down the diagonal, , so . This means that the volume is 8 units.   "
+},
+{
+  "id": "lem-det-transpose",
+  "level": "2",
+  "url": "sect-det.html#lem-det-transpose",
+  "type": "Lemma",
+  "number": "2.8.29",
+  "title": "",
+  "body": "  Let an matrix. Then     We first start with using the properties of elementary matrices                     where proving these are left to the reader. That is for any elementary matrix,   The proof comes down to two cases. The first is when the matrix is invertible or . The second case is when is not invertible.      Case 1: is invertible.   From , any invertible matrix can be written as the product of elementary matrices. Assume that . First note that Now, evaluate the determinant of with      Case 2: is not invertible   If is not invertible, then . Also, since is not invertible, then is also not invertible, so .      "
+},
+{
+  "id": "lem-det-inverse",
+  "level": "2",
+  "url": "sect-det.html#lem-det-inverse",
+  "type": "Lemma",
+  "number": "2.8.30",
+  "title": "",
+  "body": "  Let be an invertible matrix. Then    "
 },
 {
   "id": "sect-linear-algebra-summary",
@@ -1825,12 +2014,12 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.9",
   "title": "Summary of the basics of linear algebra",
-  "body": " Summary of the basics of linear algebra  We finish this chapter with a summarizing theorem about linear algebra. This covers how much of all of the above concepts are related.    Let be an matrix of real numbers. The following statements are equivalent:          The inverse matrix, exists.    For every vector , the equation has a unique solution .    The matrix equation has the unique solution .    The columns of are linearly independent.    The rows of are linearly independent.    The rank of is .    The column space of is    The row space of is .    The null space of is and the nullity is 0.    The reduced row echelon form of is , the identity matrix.         Examine using the matrix       In this example, we will show all of the equivalent properties directly on the matrix .     First find the determinant. Using the Laplace expansion method and expanding down the first column     which is nonzero.    Next, we'll find the inverse matrix:  and this shows that the inverse matrix is       Since the inverse matrix exists, then a unique solution to can be found by .    Again, since exists, then       See #8 below.    See #9 below.    See #8 and #9 below.    The column space is found by row reducing .    which is now in echelon form and since all nonzero row in a echelon form matrix are linearly independent, this shows #5.  Continuing to put this is reduced row echelon form:     and this shows that the column space of is     which is all of . This also shows that the rank of is 3.    In a similar manner to #8, we put in reduced row echelon form:     and thus the row space is     and this is . In addition, this shows that the rank of is 3.    The null space is the set of all such that , but from #4, we showed that the only solution to this is . The nullity is the number of linearly independent vectors in this set which is 0, by definition.    From #9, we showed that the reduced row echelon form of is .         Let be an real matrix. The following statements are equivalent          The matrix equation has no solution or an infinite number of solutions.    The matrix equation has a nontrivial solution.    The rank of is less than .       This theorem will be extremely helpful in finding a certain type of scalar and vector called an eigenvalue and eigenvector. The following example shows its usefulness.    Let     Show that has a nontrivial solution first by using then by directly finding solutions.    First, find the determinant by expansion:     and therefore by Theorem , there is a nontrivial solution to   Next, we'll solve the matrix equation by Gauss' method.     The resulting equations are     or     and the solution set is     This shows directly that the matrix equation does not have a trivial solution.    Also notice that the last matrix of Gauss' method showed that the rank was 2 (since there were only 2 nonzero rows). This was another statement in the theorem.  "
+  "body": " Summary of the basics of linear algebra  We finish this chapter with a summarizing theorem about linear algebra. This covers how much of all of the above concepts are related.    Let be an matrix of real numbers. The following statements are equivalent:          The inverse matrix, exists.    For every vector , the equation has a unique solution .    The matrix equation has the unique solution .    The columns of are linearly independent.    The rows of are linearly independent.    The rank of is .    The column space of is    The row space of is .    The null space of is and the nullity is 0.    The reduced row echelon form of is , the identity matrix.         Examine using the matrix       In this example, we will show all of the equivalent properties directly on the matrix .     First find the determinant. Using the Laplace expansion method and expanding down the first column     which is nonzero.    Next, we'll find the inverse matrix:  and this shows that the inverse matrix is       Since the inverse matrix exists, then a unique solution to can be found by .    Again, since exists, then       See #8 below.    See #9 below.    See #8 and #9 below.    The column space is found by row reducing .    which is now in echelon form and since all nonzero row in a echelon form matrix are linearly independent, this shows #5.  Continuing to put this is reduced row echelon form:     and this shows that the column space of is     which is all of . This also shows that the rank of is 3.    In a similar manner to #8, we put in reduced row echelon form:     and thus the row space is     and this is . In addition, this shows that the rank of is 3.    The null space is the set of all such that , but from #4, we showed that the only solution to this is . The nullity is the number of linearly independent vectors in this set which is 0, by definition.    From #9, we showed that the reduced row echelon form of is .         Let be an real matrix. The following statements are equivalent          The matrix equation has no solution or an infinite number of solutions.    The matrix equation has a nontrivial solution.    The rank of is less than .       This theorem will be extremely helpful in finding a certain type of scalar and vector called an eigenvalue and eigenvector. The following example shows its usefulness.    Let     Show that has a nontrivial solution first by using then by directly finding solutions.    First, find the determinant by expansion:     and therefore by , there is a nontrivial solution to   Next, we'll solve the matrix equation by Gauss' method.     The resulting equations are     or     and the solution set is     This shows directly that the matrix equation does not have a trivial solution.    Also notice that the last matrix of Gauss' method showed that the rank was 2 (since there were only 2 nonzero rows). This was another statement in the theorem.  "
 },
 {
-  "id": "thm-nonsing-matrices",
+  "id": "thm-nonsingular-matrices",
   "level": "2",
-  "url": "sect-linear-algebra-summary.html#thm-nonsing-matrices",
+  "url": "sect-linear-algebra-summary.html#thm-nonsingular-matrices",
   "type": "Theorem",
   "number": "2.9.1",
   "title": "",
@@ -1861,7 +2050,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.9.4",
   "title": "",
-  "body": "  Let     Show that has a nontrivial solution first by using then by directly finding solutions.    First, find the determinant by expansion:     and therefore by Theorem , there is a nontrivial solution to   Next, we'll solve the matrix equation by Gauss' method.     The resulting equations are     or     and the solution set is     This shows directly that the matrix equation does not have a trivial solution.   "
+  "body": "  Let     Show that has a nontrivial solution first by using then by directly finding solutions.    First, find the determinant by expansion:     and therefore by , there is a nontrivial solution to   Next, we'll solve the matrix equation by Gauss' method.     The resulting equations are     or     and the solution set is     This shows directly that the matrix equation does not have a trivial solution.   "
 },
 {
   "id": "sect-vector-spaces",
@@ -1870,7 +2059,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Vector Spaces",
-  "body": " Vector Spaces     The definition of a vector space. This has 10 properties, most of them are familiar.    Examples of sets of \"vectors\" some of which are vectors and some of which are not.      A vector space as we will see is a set of vectors with a certain collection of properties. This notion arose from vectors of , however, we will see that they generalize.   Vector Space   Let be a nonempty set of elements with and . The set is called a real vector space and the elements of are called vectors if in there are defined two algebraic operations called vector addition and denoted and scalar multiplication and denoted that satisfy the following:     Vector Addition:  The operation satisfies:     (Closure): .    (Commutativity:)     (Associativity:)     (Identity Element:) There exist an element that satisfies: .    (Inverse Elements:) For every , there exists an element denoted such that .       Scalar Multiplication:  The real numbers and are called scalars . The operations and also satisfy:     (Closure:) .    (Distributivity:)     (Distributivity:)     (Associativity:)     (Identity): For every , .          We will show that the familiar sets and are vectors spaces. However, it is interesting that there are many other common sets of mathematical objects that are also vectors spaces.    Examples of Vector Spaces  Let's begin with the set of all vectors of length 2, which we typically write as .    Show that together with the standard notions of vector addition and scalar multiplication is a vector space.    Let     where and as well as vector addition and scalar multiplication as     We now show that all 10 properties of a vector space hold:      Additive Closure: Since are elements of , the closure by addition holds.     Additive Commutativity: For all ,      Additive Associativity:       Additive Identity Element: The zero element is and it satisfies,      Additive Inverse Element: The inverse element is given as and the following satisfies:      Multiplicative Closure: For , which is in , so scalar multiplication is closed.     Distributivity over vectors: Let and      Distributivity over scalars: Let and be elements of .      Scalar Multiplicative Associativity: Let and be elements of .      Multiplicative Identity element:         The next example shows that quadratic functions also satisfy these properties, hence the set of all polynomials of degree 2 form a vector space.    Show than the set, , is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     with   Vector addition is simply polynomial addition for example:     and scalar multiplication is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The following are also vector spaces. There are not proofs associated with these.      , the set of polynomials of degree .    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of all matrices, with standard definition of matrix addition and scalar multiplication.     In the next example, we will also show some other interesting sets are vector spaces. To save a bunch of time and effort, in some cases, we don't need to show all 10 properties. We can skip most of properties, if the set is a subset of a known vector space. The reason for this is that properties 2-5 and 7-10 will automatically hold because the vectors are already in a vector space. We will do this formally in the next section.    Show that all lines that pass through the origin, or the set     is a vector space.    First, let's rewrite the vector space as     because this is the same set of points, but it is written in terms of a vector, which makes things easier to show. As stated above, since is a subset of , we don't need to prove properties 2--5, 7--10, which hold because we already showed that these properties show. Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in .     Let . Therefore the two equations and are satisfied. Now check the sum,     and need to show that this is in . Since     then .    We need to show that , so that the vector satisfies the property that the line passes through the origin.     and since , then     therefore .     So this is a vector space.    The next example shows that polynomials (specifically quadratics) are vector spaces. Since we haven't shown anything about polynomials yet, we need to show all 10 properties of hold.    Show than the set, , the set of all polynomials of degree is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     Vector addition is simply polynomial addition for example:     and scalar addition is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The above example shows that there are examples of vectors and vector spaces that don't seem like vectors in . The following are also vector spaces:     The set .    The set of functions of a single variable.    The set of functions that satisfy .    Solutions of homogeneous differential equations, which is a generalization of functions that satisfy .     Note that above there are sets of functions that are vector spaces. Similar to the 2nd degree polynomials, the vector addition is given by and the scalar multiplication is .    Is every set a vector space?  In short, no. For example, consider the following: which is the first quadrant of the plane. To check if this is a vector space, we don't need to check all 10 properties. This is because since is a subset of , most of the properties (commutative, associative, distributive, for examples) will work just as they did in . The only two that we do need to check are the closure properties.     If , then and since are all nonnegative, then this vector is in .    Let , then but if then , so is not a vector space.       Is the set     a vector space? If not what properties does it violate?    This set is a circle of radius one centered at the origin. Again, like above, is a subset of and thus the properties to check are the closure properties.     If we let both be in , then Is this in . To check sum the squares of the individual elements. which is only 1 in special circumstances and not in general, so this is not a vector space.    The additive identity requires that the zero vector is an element of the vector space. However, since is not in , then this property is also not satisfied.    This property is also not satisfied for the same reason as #1. Geometrically if is in then is on a circle of radius , so won't be in in general.        We have an alternative way of looking at the circle that will be a vector space. We can still define the vectors to be on the unit circle, however, this time addition will be defined as the vector whose angle is the sum of the angles, where angle is defined from the positive -axis. Scalar multiplication will be the scalar multiplication of the angle. There are some other details that are needed to formalize this as a vector space.    "
+  "body": " Vector Spaces     The definition of a vector space, a set of mathematical objects with ten properties.    To prove that a set of mathematical objects with scalar multiplication and vector addition is a vector space.    Examples of sets of vectors some of which are vectors and some of which are not.      A vector space as we will see is a set of vectors with a certain collection of properties. This notion arose from vectors of , however, we will see that they generalize.   Vector Space   Let be a nonempty set of elements with and . The set is called a real vector space and the elements of are called vectors if in there are defined two algebraic operations called vector addition and denoted and scalar multiplication and denoted that satisfy the following:     Vector Addition:  The operation satisfies:     (Closure): .    (Commutativity:)     (Associativity:)     (Identity Element:) There exist an element that satisfies: .    (Inverse Elements:) For every , there exists an element denoted such that .       Scalar Multiplication:  The real numbers and are called scalars . The operations and also satisfy:     (Closure:) .    (Distributivity:)     (Distributivity:)     (Associativity:)     (Identity): For every , .          We will show that the familiar sets and are vectors spaces. However, it is interesting that there are many other common sets of mathematical objects that are also vectors spaces.    Examples of Vector Spaces  Let's begin with the set of all vectors of length 2, which we typically write as .    Show that together with the standard notions of vector addition and scalar multiplication is a vector space.    Let     where and as well as vector addition and scalar multiplication as     We now show that all 10 properties of a vector space hold:      Additive Closure: Since are elements of , the closure by addition holds.     Additive Commutativity: For all ,      Additive Associativity:       Additive Identity Element: The zero element is and it satisfies,      Additive Inverse Element: The inverse element is given as and the following satisfies:      Multiplicative Closure: For , which is in , so scalar multiplication is closed.     Distributivity over vectors: Let and      Distributivity over scalars: Let and be elements of .      Scalar Multiplicative Associativity: Let and be elements of .      Multiplicative Identity element:         The next example shows that quadratic functions also satisfy these properties, hence the set of all polynomials of degree 2 form a vector space.    Show than the set, , is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     with   Vector addition is simply polynomial addition for example:     and scalar multiplication is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The following are also vector spaces. There are not proofs associated with these.      , the set of polynomials of degree .    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of all matrices, with standard definition of matrix addition and scalar multiplication.     In the next example, we will also show some other interesting sets are vector spaces. To save a bunch of time and effort, in some cases, we don't need to show all 10 properties. We can skip most of properties, if the set is a subset of a known vector space. The reason for this is that properties 2-5 and 7-10 will automatically hold because the vectors are already in a vector space. We will do this formally in the next section.    Show that all lines that pass through the origin, or the set     is a vector space.    First, let's rewrite the vector space as     because this is the same set of points, but it is written in terms of a vector, which makes things easier to show. As stated above, since is a subset of , we don't need to prove properties 2-5, 7-10, which hold because we already showed that these properties show. Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in .     Let . Therefore the two equations and are satisfied. Now check the sum,     and need to show that this is in . Since     then .    We need to show that , so that the vector satisfies the property that the line passes through the origin.     and since , then     therefore .     So this is a vector space.    The next example shows that polynomials (specifically quadratics) are vector spaces. Since we haven't shown anything about polynomials yet, we need to show all 10 properties of hold.    Show than the set, , the set of all polynomials of degree is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     Vector addition is simply polynomial addition for example:     and scalar addition is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The above example shows that there are examples of vectors and vector spaces that don't seem like vectors in . The following are also vector spaces:     The set .    The set of functions of a single variable.    The set of functions that satisfy .    Solutions of homogeneous differential equations, which is a generalization of functions that satisfy .     Note that above there are sets of functions that are vector spaces. Similar to the 2nd degree polynomials, the vector addition is given by and the scalar multiplication is .    Is every set a vector space?  In short, no. For example, consider the following: which is the first quadrant of the plane. To check if this is a vector space, we don't need to check all 10 properties. This is because since is a subset of , most of the properties (commutative, associative, distributive, for examples) will work just as they did in . The only two that we do need to check are the closure properties.     If , then and since are all nonnegative, then this vector is in .    Let , then but if then , so is not a vector space.       Is the set     a vector space? If not what properties does it violate?    This set is a circle of radius one centered at the origin. Again, like above, is a subset of and thus the properties to check are the closure properties.     If we let both be in , then Is this in . To check sum the squares of the individual elements. which is only 1 in special circumstances and not in general, so this is not a vector space.    The additive identity requires that the zero vector is an element of the vector space. However, since is not in , then this property is also not satisfied.    This property is also not satisfied for the same reason as #1. Geometrically if is in then is on a circle of radius , so won't be in in general.        We have an alternative way of looking at the circle that will be a vector space. We can still define the vectors to be on the unit circle, however, this time addition will be defined as the vector whose angle is the sum of the angles, where angle is defined from the positive -axis. Scalar multiplication will be the scalar multiplication of the angle. There are some other details that are needed to formalize this as a vector space.    "
 },
 {
   "id": "sect-vector-spaces-2",
@@ -1879,7 +2068,7 @@ var ptx_lunr_docs = [
   "type": "Objectives",
   "number": "3.1",
   "title": "",
-  "body": "   The definition of a vector space. This has 10 properties, most of them are familiar.    Examples of sets of \"vectors\" some of which are vectors and some of which are not.    "
+  "body": "   The definition of a vector space, a set of mathematical objects with ten properties.    To prove that a set of mathematical objects with scalar multiplication and vector addition is a vector space.    Examples of sets of vectors some of which are vectors and some of which are not.    "
 },
 {
   "id": "def-vector-space",
@@ -1915,7 +2104,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.1.4",
   "title": "",
-  "body": "  Show that all lines that pass through the origin, or the set     is a vector space.    First, let's rewrite the vector space as     because this is the same set of points, but it is written in terms of a vector, which makes things easier to show. As stated above, since is a subset of , we don't need to prove properties 2--5, 7--10, which hold because we already showed that these properties show. Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in .     Let . Therefore the two equations and are satisfied. Now check the sum,     and need to show that this is in . Since     then .    We need to show that , so that the vector satisfies the property that the line passes through the origin.     and since , then     therefore .     So this is a vector space.   "
+  "body": "  Show that all lines that pass through the origin, or the set     is a vector space.    First, let's rewrite the vector space as     because this is the same set of points, but it is written in terms of a vector, which makes things easier to show. As stated above, since is a subset of , we don't need to prove properties 2-5, 7-10, which hold because we already showed that these properties show. Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in .     Let . Therefore the two equations and are satisfied. Now check the sum,     and need to show that this is in . Since     then .    We need to show that , so that the vector satisfies the property that the line passes through the origin.     and since , then     therefore .     So this is a vector space.   "
 },
 {
   "id": "sect-vector-spaces-4-11",

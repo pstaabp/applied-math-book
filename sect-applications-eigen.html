@@ -101,15 +101,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.6';
+eBookConfig.runestone_version = '7.11.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -130,7 +130,8 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-sym-matrix-quad-form.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-eigenvalues-eigenvectors.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-matrix-factoring.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
+\DeclareMathOperator{\sgn}{sgn}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -235,12 +236,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Inverse</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.3.4</span> <span class="title">The Matrix Inverse</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\boldsymbol{u}=\boldsymbol{b}\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.3.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elem-matrices.html#subsec-product-elem-matrices" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Matrices as Products of Elementary Matrices</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear Independence</span></a></div></li>
 <li class="toc-item toc-section">
@@ -255,14 +259,16 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Determinants of Square Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-4" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-6" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-defintion-determinant" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Basic Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-det-elem-matrices" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Determinants of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Gauss’ Method for Calculating Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7-3" class="internal"><span class="codenumber">2.8.4.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9-3" class="internal"><span class="codenumber">2.8.6.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Other Properties of Determinants</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
@@ -335,7 +341,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\vec{x}''= A\vec{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -523,9 +529,9 @@ q_{n+1} \amp = \alpha p_n + \beta q_n
 <div class="para" id="sect-leslie-models-4">where at each stage the fraction <span class="process-math">\(\alpha\)</span> of the juveniles survive to adulthood, and the population of the adults will produce a factor <span class="process-math">\(k\)</span> juveniles. Finally, the fraction <span class="process-math">\(\beta\)</span> of the adults survive one time unit. This linear system can be written as the matrix equation<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-5">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-leslie-models-5-1">
 \begin{equation*}
-\vec{p}_{n+1} = A \vec{p}_n
+\boldsymbol{p}_{n+1} = A \boldsymbol{p}_n
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -535,7 +541,7 @@ q_{n+1} \amp = \alpha p_n + \beta q_n
 <div class="para logical" id="sect-leslie-models-7">
 <div class="displaymath process-math" id="sect-leslie-models-7-1">
 \begin{align*}
-\vec{p} \amp=
+\boldsymbol{p} \amp=
 \begin{bmatrix}
 p \\ q
 \end{bmatrix}
@@ -550,7 +556,7 @@ p \\ q
 <div class="para" id="sect-leslie-models-8">As a specific example, let’s consider<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-9">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-leslie-models-9-1">
 \begin{equation*}
 A =
 \begin{bmatrix}
@@ -566,9 +572,9 @@ A =
 <div class="para" id="sect-leslie-models-11">Let’s see what happens to this population for some initial condition. Let’s say that we have 10 female adults and 0 juvenile adults. Then<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-12">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-leslie-models-12-1">
 \begin{equation*}
-\vec{p}_1 = A \vec{p}_0 =
+\boldsymbol{p}_1 = A \boldsymbol{p}_0 =
 \begin{bmatrix}
 0 \amp 2 \\
 0.3 \amp 0.5
@@ -586,9 +592,9 @@ A =
 <div class="para" id="sect-leslie-models-13">In general,<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-14">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-leslie-models-14-1">
 \begin{equation*}
-\vec{p}_n = A^n \vec{p}_0
+\boldsymbol{p}_n = A^n \boldsymbol{p}_0
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -678,7 +684,7 @@ A =
 </table></div></figure><div class="para" id="sect-leslie-models-16">We’d like to explain what is going on here. As we will show, the eigenvalues are important. The characteristic equation is<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-17">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-leslie-models-17-1">
 \begin{equation*}
 \lambda^2 -0.5 \lambda -0.6 = 0
 \end{equation*}
@@ -688,7 +694,7 @@ A =
 <div class="para" id="sect-leslie-models-18">which has the solutions<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-19">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-leslie-models-19-1">
 \begin{equation*}
 \lambda = \frac{0.5 \pm \sqrt{0.25 + 2.4}}{2} \approx 1.06, -0.56
 \end{equation*}
@@ -700,10 +706,10 @@ A =
 <div class="para logical" id="sect-leslie-models-21">
 <div class="displaymath process-math" id="sect-leslie-models-21-1">
 \begin{align*}
-\vec{v}_1 \amp =
+\boldsymbol{v}_1 \amp =
 \begin{bmatrix}
 1.88 \\ 1
-\end{bmatrix} \amp \vec{v}_2 \amp =
+\end{bmatrix} \amp \boldsymbol{v}_2 \amp =
 \begin{bmatrix}
 -3.54 \\1
 \end{bmatrix}
@@ -711,24 +717,24 @@ A =
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-leslie-models-22">Assume that <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> are the eigenvalues of <span class="process-math">\(A\)</span> and <span class="process-math">\(\vec{v}_1\)</span> and <span class="process-math">\(\vec{v}_2\)</span> are the eigenvectors. If <span class="process-math">\(\vec{v}_1\)</span> and <span class="process-math">\(\vec{v}_2\)</span> are linearly independent, then we can write<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-leslie-models-22">Assume that <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> are the eigenvalues of <span class="process-math">\(A\)</span> and <span class="process-math">\(\boldsymbol{v}_1\)</span> and <span class="process-math">\(\boldsymbol{v}_2\)</span> are the eigenvectors. If <span class="process-math">\(\boldsymbol{v}_1\)</span> and <span class="process-math">\(\boldsymbol{v}_2\)</span> are linearly independent, then we can write<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-23">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-leslie-models-23-1">
 \begin{equation*}
-\vec{p}_0 = a_1 \vec{v}_1 + a_2 \vec{v}_2
+\boldsymbol{p}_0 = a_1 \boldsymbol{v}_1 + a_2 \boldsymbol{v}_2
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-leslie-models-24">for some real numbers <span class="process-math">\(a_1\)</span> and <span class="process-math">\(a_2\text{.}\)</span> Let’s use the matrix equations above to find <span class="process-math">\(\vec{p}_1\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-leslie-models-24">for some real numbers <span class="process-math">\(a_1\)</span> and <span class="process-math">\(a_2\text{.}\)</span> Let’s use the matrix equations above to find <span class="process-math">\(\boldsymbol{p}_1\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-25">
 <div class="displaymath process-math" id="sect-leslie-models-25-1">
 \begin{align*}
-\vec{p}_1 \amp = A \vec{p}_0 = A (a_1 \vec{v}_1 + a_2 \vec{v}_2) \\
-\amp = a_1 A \vec{v}_1 + a_2 A \vec{v}_2 \\
-\amp = a_1 \lambda_1 \vec{v}_1 + a_2 \lambda_2 \vec{v}_2
+\boldsymbol{p}_1 \amp = A \boldsymbol{p}_0 = A (a_1 \boldsymbol{v}_1 + a_2 \boldsymbol{v}_2) \\
+\amp = a_1 A \boldsymbol{v}_1 + a_2 A \boldsymbol{v}_2 \\
+\amp = a_1 \lambda_1 \boldsymbol{v}_1 + a_2 \lambda_2 \boldsymbol{v}_2
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -738,9 +744,9 @@ A =
 <div class="para logical" id="sect-leslie-models-27">
 <div class="displaymath process-math" id="sect-leslie-models-27-1">
 \begin{align*}
-\vec{p}_2 \amp = A \vec{p}_1 = A(a_1 \lambda_1 \vec{v}_1 + a_2 \lambda_2 \vec{v}_2)\\
-\amp= a_1 \lambda_1 A \vec{v}_1 + a_2 \lambda_2 A \vec{v}_2 \\
-\amp = a_1 \lambda_1^2 \vec{v}_1 + a_2 \lambda_2^2 \vec{v}_2
+\boldsymbol{p}_2 \amp = A \boldsymbol{p}_1 = A(a_1 \lambda_1 \boldsymbol{v}_1 + a_2 \lambda_2 \boldsymbol{v}_2)\\
+\amp= a_1 \lambda_1 A \boldsymbol{v}_1 + a_2 \lambda_2 A \boldsymbol{v}_2 \\
+\amp = a_1 \lambda_1^2 \boldsymbol{v}_1 + a_2 \lambda_2^2 \boldsymbol{v}_2
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -748,10 +754,10 @@ A =
 <div class="para" id="sect-leslie-models-28">Now assume that <span class="process-math">\(|\lambda_1|&gt;|\lambda_2|\)</span> and factor <span class="process-math">\(\lambda_1^n\)</span> out from the equation above:<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-29">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-leslie-models-29-1">
 \begin{equation*}
-\vec{p}_n = \lambda_1^n \biggl( a_1 \vec{v}_1 + a_2 \frac{\lambda_2^n}{\lambda_1^n}
-\vec{v}_2 \biggr)
+\boldsymbol{p}_n = \lambda_1^n \biggl( a_1 \boldsymbol{v}_1 + a_2 \frac{\lambda_2^n}{\lambda_1^n}
+\boldsymbol{v}_2 \biggr)
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -759,9 +765,9 @@ A =
 <div class="para" id="sect-leslie-models-30">as <span class="process-math">\(n\)</span> increases the ratio <span class="process-math">\((\lambda_2/\lambda_1)^n\)</span> goes to zero, so<div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-leslie-models-31">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-leslie-models-31-1">
 \begin{equation*}
-\vec{p}_n \approx a_1 \lambda_1^n \vec{v}_1
+\boldsymbol{p}_n \approx a_1 \lambda_1^n \boldsymbol{v}_1
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-leslie-models-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -786,9 +792,9 @@ m_2 x_2 '' \amp = - k_2 (x_2-x_1) .
 <div class="para" id="sect-second-order-de-6">This can be written in matrix form as<div class="autopermalink" data-description="Paragraph"><a href="#sect-second-order-de-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-second-order-de-7">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-second-order-de-7-1">
 \begin{equation*}
-M \vec{x}'' = K\vec{x}
+M \boldsymbol{x}'' = K\boldsymbol{x}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-second-order-de-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -812,9 +818,9 @@ K \amp =\begin{bmatrix}
 <div class="para" id="sect-second-order-de-10">where <span class="process-math">\(M\)</span> is the mass matrix and <span class="process-math">\(K\)</span> is called the stiffness matrix, which can take other forms depending on the connectedness of the spring system. Since <span class="process-math">\(M\)</span> is nonsingular, we can find <span class="process-math">\(M^{-1}\)</span> and write the system above as:<div class="autopermalink" data-description="Paragraph"><a href="#sect-second-order-de-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-second-order-de-11">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-second-order-de-11-1">
 \begin{equation*}
-\vec{x}'' = A \vec{x}
+\boldsymbol{x}'' = A \boldsymbol{x}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-second-order-de-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -822,16 +828,16 @@ K \amp =\begin{bmatrix}
 <div class="para" id="sect-second-order-de-12">where <span class="process-math">\(A = M^{-1} K\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-second-order-de-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Subsection 4.4.2: Second-Order Differential Equations Systems"><a href="#sect-second-order-de" title="Copy heading and permalink for Subsection 4.4.2: Second-Order Differential Equations Systems" aria-label="Copy heading and permalink for Subsection 4.4.2: Second-Order Differential Equations Systems">🔗</a></div></section><section class="subsection" id="sect-solutions-of-second-order-de"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solutions of <span class="process-math">\(\vec{x}''= A\vec{x}\)</span></span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span>
 </h3>
-<div class="para" id="sect-solutions-of-second-order-de-2">Let <span class="process-math">\(v\)</span> be an eigenvector of <span class="process-math">\(A\text{,}\)</span> with eigenvalue <span class="process-math">\(\lambda = \alpha^2\text{,}\)</span> then <span class="process-math">\(\vec{x}
-=\vec{v}(c_1e^{\alpha t} + c_2 e^{-\alpha t})\)</span> is a solution.<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-solutions-of-second-order-de-2">Let <span class="process-math">\(v\)</span> be an eigenvector of <span class="process-math">\(A\text{,}\)</span> with eigenvalue <span class="process-math">\(\lambda = \alpha^2\text{,}\)</span> then <span class="process-math">\(\boldsymbol{x}
+=\boldsymbol{v}(c_1e^{\alpha t} + c_2 e^{-\alpha t})\)</span> is a solution.<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-solutions-of-second-order-de-3">
 <div class="displaymath process-math" id="sect-solutions-of-second-order-de-3-1">
 \begin{align*}
-\vec{x}'' \amp = \alpha^2 \vec{v} (c_1 e^{\alpha t}+ c_2 e^{-\alpha t}) \\
-\amp = A \vec{v}(c_1e^{\alpha t} + c_2 e^{-\alpha t})
+\boldsymbol{x}'' \amp = \alpha^2 \boldsymbol{v} (c_1 e^{\alpha t}+ c_2 e^{-\alpha t}) \\
+\amp = A \boldsymbol{v}(c_1e^{\alpha t} + c_2 e^{-\alpha t})
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -839,19 +845,19 @@ K \amp =\begin{bmatrix}
 <div class="para" id="sect-solutions-of-second-order-de-4">if <span class="process-math">\(\lambda \lt 0\text{,}\)</span> then the <span class="process-math">\(\lambda = - \omega^2\)</span> and the solution is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-solutions-of-second-order-de-5">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-5-1">
 \begin{equation*}
-\vec{x} = \vec{v} (a \cos \omega t + b \sin \omega t)
+\boldsymbol{x} = \boldsymbol{v} (a \cos \omega t + b \sin \omega t)
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-solutions-of-second-order-de-6">If <span class="process-math">\(\lambda = 0\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> with corresponding eigenvector <span class="process-math">\(\vec{v}_0\text{,}\)</span> then the part of the solution associate with this is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-solutions-of-second-order-de-6">If <span class="process-math">\(\lambda = 0\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> with corresponding eigenvector <span class="process-math">\(\boldsymbol{v}_0\text{,}\)</span> then the part of the solution associate with this is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-solutions-of-second-order-de-7">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-7-1">
 \begin{equation*}
-\vec{x}(t) = (a_0 + b_0 t) \vec{v}_0
+\boldsymbol{x}(t) = (a_0 + b_0 t) \boldsymbol{v}_0
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -862,25 +868,25 @@ K \amp =\begin{bmatrix}
 <div class="para" id="sect-solutions-of-second-order-de-8-1-1">If the <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(A\)</span> has distinct negative eigenvalues <span class="process-math">\(-\omega_1^2,
 -\omega_2^2, \ldots, -\omega_n^2\)</span> with associated real eigenvectors, then a general solution to<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-8-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-8-1-2-1">
 \begin{equation*}
-\vec{x''} = A x
+\boldsymbol{x''} = A x
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-8-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-solutions-of-second-order-de-8-1-3">is given by<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-8-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-8-1-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-8-1-4-1">
 \begin{equation*}
-\vec{x} = \sum_{i=1}^n (a_i \cos \omega_i t + b_i \sin \omega_i t)\vec{v}_i
+\boldsymbol{x} = \sum_{i=1}^n (a_i \cos \omega_i t + b_i \sin \omega_i t)\boldsymbol{v}_i
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-8-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-solutions-of-second-order-de-8-1-5">where <span class="process-math">\(a_i\)</span> and <span class="process-math">\(b_i\)</span> arbitrary constants. If <span class="process-math">\(\lambda = 0\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> with corresponding eigenvector <span class="process-math">\(\vec{v}_0\text{,}\)</span> then the part of the solution associate with this is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-8-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sect-solutions-of-second-order-de-8-1-5">where <span class="process-math">\(a_i\)</span> and <span class="process-math">\(b_i\)</span> arbitrary constants. If <span class="process-math">\(\lambda = 0\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> with corresponding eigenvector <span class="process-math">\(\boldsymbol{v}_0\text{,}\)</span> then the part of the solution associate with this is:<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-8-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-8-1-6">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-8-1-6-1">
 \begin{equation*}
-\vec{x}(t) = (a_0 + b_0 t) \vec{v}_0
+\boldsymbol{x}(t) = (a_0 + b_0 t) \boldsymbol{v}_0
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-8-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -903,11 +909,11 @@ K \amp = \begin{bmatrix}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-solutions-of-second-order-de-9-1-3">resulting in the system:<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-9-1-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-9-1-4-1">
 \begin{equation*}
-\vec{x}'' = \begin{bmatrix}
+\boldsymbol{x}'' = \begin{bmatrix}
 -3 \amp 2 \\ -1 \amp 2
-\end{bmatrix} \vec{x}
+\end{bmatrix} \boldsymbol{x}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -915,8 +921,8 @@ K \amp = \begin{bmatrix}
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-9-1-6">
 <div class="displaymath process-math" id="sect-solutions-of-second-order-de-9-1-6-1">
 \begin{align*}
-\lambda_1 \amp = -4 \amp \vec{v}_1 \amp = (-2,1)^T \\
-\lambda_2 \amp = -1 \amp \vec{v}_2 \amp = (1,1)^T
+\lambda_1 \amp = -4 \amp \boldsymbol{v}_1 \amp = (-2,1)^T \\
+\lambda_2 \amp = -1 \amp \boldsymbol{v}_2 \amp = (1,1)^T
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -924,7 +930,7 @@ K \amp = \begin{bmatrix}
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-9-1-8">
 <div class="displaymath process-math" id="eq-mass-spring-solution">
 \begin{equation}
-\vec{x} = (a_1 \cos 2t + b_1 \sin 2t) \begin{bmatrix}
+\boldsymbol{x} = (a_1 \cos 2t + b_1 \sin 2t) \begin{bmatrix}
 -2 \\ 1
 \end{bmatrix} + (a_2 \cos t + b_2 \sin t) \begin{bmatrix}
 1 \\1
@@ -934,17 +940,17 @@ K \amp = \begin{bmatrix}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-solutions-of-second-order-de-9-1-9">Next, let’s find the values of the <span class="process-math">\(a\)</span>’s and <span class="process-math">\(b\)</span>’s if <span class="process-math">\(x_1=1\)</span> and <span class="process-math">\(x_2=2\)</span> when <span class="process-math">\(t=0\)</span> or<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-9-1-10">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-9-1-10-1">
 \begin{equation*}
-\vec{x}(0) = \begin{bmatrix}
+\boldsymbol{x}(0) = \begin{bmatrix}
 1 \\ 2
 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-solutions-of-second-order-de-9-1-11">and <span class="process-math">\(\vec{x}'(0)=\vec{0}\text{.}\)</span> First use the initial value <span class="process-math">\(\vec{x}(0)\)</span> in (<a href="sect-applications-eigen.html#eq-mass-spring-solution" class="xref" data-knowl="./knowl/xref/eq-mass-spring-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.1">(4.4.1)</a>),<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sect-solutions-of-second-order-de-9-1-11">and <span class="process-math">\(\boldsymbol{x}'(0)=\boldsymbol{0}\text{.}\)</span> First use the initial value <span class="process-math">\(\boldsymbol{x}(0)\)</span> in (<a href="sect-applications-eigen.html#eq-mass-spring-solution" class="xref" data-knowl="./knowl/xref/eq-mass-spring-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.1">(4.4.1)</a>),<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-9-1-12">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-9-1-12-1">
 \begin{equation*}
 \begin{bmatrix}
 1 \\ 2
@@ -960,7 +966,7 @@ K \amp = \begin{bmatrix}
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-9-1-14">
 <div class="displaymath process-math" id="sect-solutions-of-second-order-de-9-1-14-1">
 \begin{align*}
-\vec{x}'(t) \amp = (-2a_1 \sin 2t + 2b_1
+\boldsymbol{x}'(t) \amp = (-2a_1 \sin 2t + 2b_1
 \cos 2t ) \begin{bmatrix} -2 \\ 1 \end{bmatrix} + (-a_2 \sin t + b_2 \cos t)
 \begin{bmatrix} 1
 1 \end{bmatrix} 
@@ -969,9 +975,9 @@ K \amp = \begin{bmatrix}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-solutions-of-second-order-de-9-1-15">and evaluate it at <span class="process-math">\(t=0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-9-1-16">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-9-1-16-1">
 \begin{equation*}
-\vec{x}'(0) = \begin{bmatrix} 0 \\ 0
+\boldsymbol{x}'(0) = \begin{bmatrix} 0 \\ 0
 \end{bmatrix} = 2b_1 \begin{bmatrix} -2 \\ 1 \end{bmatrix} + 2b_2 \begin{bmatrix} 1 \\ 1
 \end{bmatrix}
 \end{equation*}
@@ -979,9 +985,9 @@ K \amp = \begin{bmatrix}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-solutions-of-second-order-de-9-1-17">or <span class="process-math">\(b_1=0\)</span> and <span class="process-math">\(b_2=0\text{.}\)</span> The solution with the given initial condition,<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-solutions-of-second-order-de-9-1-18">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-solutions-of-second-order-de-9-1-18-1">
 \begin{equation*}
-\vec{x}(t) = \frac{1}{3} \cos 2t \begin{bmatrix}
+\boldsymbol{x}(t) = \frac{1}{3} \cos 2t \begin{bmatrix}
 -2 \\ 1
 \end{bmatrix} + \frac{5}{3} \cos t \begin{bmatrix}
 1 \\ 1
@@ -991,7 +997,7 @@ K \amp = \begin{bmatrix}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-solutions-of-second-order-de-9-1-19">The value of <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\text{,}\)</span> the position of the two masses are the first and second components. A plot of these two are:<div class="autopermalink" data-description="Paragraph"><a href="#sect-solutions-of-second-order-de-9-1-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="sect-solutions-of-second-order-de-9-1-20"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="generated/latex-image/plot-second-order-de-solution.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Solution of a second-order differential equation.<div class="autopermalink" data-description="Figure 4.4.5"><a href="#sect-solutions-of-second-order-de-9-1-20" title="Copy heading and permalink for Figure 4.4.5" aria-label="Copy heading and permalink for Figure 4.4.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 4.4.4"><a href="#sect-solutions-of-second-order-de-9" title="Copy heading and permalink for Example 4.4.4" aria-label="Copy heading and permalink for Example 4.4.4">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.4.3: Solutions of \vec{x}''= A\vec{x}"><a href="#sect-solutions-of-second-order-de" title="Copy heading and permalink for Subsection 4.4.3: Solutions of \vec{x}''= A\vec{x}" aria-label="Copy heading and permalink for Subsection 4.4.3: Solutions of \vec{x}''= A\vec{x}">🔗</a></div></section><div class="autopermalink" data-description="Section 4.4: Applications of Eigenvalues and Eigenvectors"><a href="#sect-applications-eigen" title="Copy heading and permalink for Section 4.4: Applications of Eigenvalues and Eigenvectors" aria-label="Copy heading and permalink for Section 4.4: Applications of Eigenvalues and Eigenvectors">🔗</a></div></section></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Solution of a second-order differential equation.<div class="autopermalink" data-description="Figure 4.4.5"><a href="#sect-solutions-of-second-order-de-9-1-20" title="Copy heading and permalink for Figure 4.4.5" aria-label="Copy heading and permalink for Figure 4.4.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 4.4.4"><a href="#sect-solutions-of-second-order-de-9" title="Copy heading and permalink for Example 4.4.4" aria-label="Copy heading and permalink for Example 4.4.4">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.4.3: Solutions of \boldsymbol{x}''= A\boldsymbol{x}"><a href="#sect-solutions-of-second-order-de" title="Copy heading and permalink for Subsection 4.4.3: Solutions of \boldsymbol{x}''= A\boldsymbol{x}" aria-label="Copy heading and permalink for Subsection 4.4.3: Solutions of \boldsymbol{x}''= A\boldsymbol{x}">🔗</a></div></section><div class="autopermalink" data-description="Section 4.4: Applications of Eigenvalues and Eigenvectors"><a href="#sect-applications-eigen" title="Copy heading and permalink for Section 4.4: Applications of Eigenvalues and Eigenvectors" aria-label="Copy heading and permalink for Section 4.4: Applications of Eigenvalues and Eigenvectors">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sect-sym-matrix-quad-form.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-matrix-factoring.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

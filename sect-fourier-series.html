@@ -101,15 +101,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.6';
+eBookConfig.runestone_version = '7.11.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -130,7 +130,8 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-funct-props.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-fourier-series.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-even-odd.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
+\DeclareMathOperator{\sgn}{sgn}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -235,12 +236,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Inverse</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.3.4</span> <span class="title">The Matrix Inverse</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\vec{u}=\vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\boldsymbol{u}=\boldsymbol{b}\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.3.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elem-matrices.html#subsec-product-elem-matrices" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Matrices as Products of Elementary Matrices</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear Independence</span></a></div></li>
 <li class="toc-item toc-section">
@@ -255,14 +259,16 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Determinants of Square Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-4" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Properties of the Determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-6" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-defintion-determinant" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Basic Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-det-elem-matrices" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Determinants of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Gauss’ Method for Calculating Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7-3" class="internal"><span class="codenumber">2.8.4.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9-3" class="internal"><span class="codenumber">2.8.6.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Other Properties of Determinants</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
@@ -335,7 +341,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\vec{x}''= A\vec{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -535,7 +541,7 @@ b_n \amp = \frac{1}{\pi} \langle f(x), \sin nx \rangle = \frac{1}{\pi}
 </h3>
 <div class="para" id="thm-fourier-series-1-1">Let <span class="process-math">\(f\)</span> be a continuous function that is periodic with period <span class="process-math">\(2\pi\text{.}\)</span> Then <span class="process-math">\(f\)</span> can be written as a trigonometric series or<div class="autopermalink" data-description="Paragraph"><a href="#thm-fourier-series-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="thm-fourier-series-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-fourier-series-1-2-1">
 \begin{equation*}
 f(x) = a_0 + \sum_{n=1}^{\infty} (a_n \cos n x + b_n \sin nx).
 \end{equation*}
@@ -562,7 +568,7 @@ b_n \langle \sin nx , 1 \rangle \right)\right) \\
 <div class="para" id="thm-fourier-series-2-3">and solving for <span class="process-math">\(a_0\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-fourier-series-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-fourier-series-2-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-fourier-series-2-4-1">
 \begin{equation*}
 a_ 0 = \frac{\langle f(x),1 \rangle}{\langle 1,1 \rangle} = \frac{1}{2\pi}
 \int_{-\pi}^{\pi} f(x) \, dx
@@ -591,7 +597,7 @@ mx, \cos n x \rangle \\
 <div class="para" id="thm-fourier-series-2-7">All of the inner products on the right side are zero except when <span class="process-math">\(n=m\text{.}\)</span> Canceling a <span class="process-math">\(\sqrt{\pi}\text{,}\)</span> the result is<div class="autopermalink" data-description="Paragraph"><a href="#thm-fourier-series-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-fourier-series-2-8">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-fourier-series-2-8-1">
 \begin{equation*}
 \langle \cos nx, f(x) \rangle = a_n \langle \cos nx, \cos nx \rangle
 \end{equation*}
@@ -601,7 +607,7 @@ mx, \cos n x \rangle \\
 <div class="para" id="thm-fourier-series-2-9">or solving for <span class="process-math">\(a_n\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-fourier-series-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-fourier-series-2-10">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-fourier-series-2-10-1">
 \begin{equation*}
 a_n = \frac{\langle f(x), \cos nx \rangle}{\langle \cos nx, \cos nx \rangle} =
 \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \, dx
@@ -630,7 +636,7 @@ mx, \sin n x \rangle \\
 <div class="para" id="thm-fourier-series-2-13">All of the inner products on the right side are zero except when <span class="process-math">\(n=m\text{.}\)</span> Canceling a <span class="process-math">\(\sqrt{\pi}\text{,}\)</span> the result is<div class="autopermalink" data-description="Paragraph"><a href="#thm-fourier-series-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-fourier-series-2-14">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-fourier-series-2-14-1">
 \begin{equation*}
 \langle \sin nx, f(x) \rangle = b_n \langle \sin nx, \sin nx \rangle
 \end{equation*}
@@ -640,7 +646,7 @@ mx, \sin n x \rangle \\
 <div class="para" id="thm-fourier-series-2-15">and solving for <span class="process-math">\(b_n\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-fourier-series-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-fourier-series-2-16">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-fourier-series-2-16-1">
 \begin{equation*}
 b_n = \frac{\langle f(x), \sin nx \rangle}{\langle \sin nx, \sin nx \rangle} =
 \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx
@@ -654,7 +660,7 @@ b_n = \frac{\langle f(x), \sin nx \rangle}{\langle \sin nx, \sin nx \rangle} =
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-FS-square-wave-1-1">Find the Fourier coefficients and the Fourier series for the periodic extension square wave:<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-square-wave-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-FS-square-wave-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-FS-square-wave-1-2-1">
 \begin{equation*}
 f(x) = \begin{cases}
 1 \amp 0 \leq x \leq \pi \\
@@ -724,7 +730,7 @@ F(x) \amp = \sum_{n=1}^{\infty} \frac{2}{n\pi} (1- (-1)^n) \sin nx \\
 <div class="autopermalink" data-description="Example 6.2.3"><a href="#ex-FS-square-wave" title="Copy heading and permalink for Example 6.2.3" aria-label="Copy heading and permalink for Example 6.2.3">🔗</a></div></article></details><div class="para" id="sect-fourier-series-3-10">The above series also shows an interesting result that you should have seen in the series chapter of Calculus. If we let <span class="process-math">\(x=\pi/2\text{,}\)</span> then <span class="process-math">\(\sin (2n-1)\frac{\pi}{2}=(-1)^{n+1}\)</span> and <span class="process-math">\(F(\pi/2) = 1\)</span> from the definition of the square wave and substituting this into the Fourier series, we get:<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-fourier-series-3-11">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-fourier-series-3-11-1">
 \begin{equation*}
 1 = \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n-1}
 \end{equation*}
@@ -734,7 +740,7 @@ F(x) \amp = \sum_{n=1}^{\infty} \frac{2}{n\pi} (1- (-1)^n) \sin nx \\
 <div class="para" id="sect-fourier-series-3-12">or multiplying both sides by <span class="process-math">\(\pi/4\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-fourier-series-3-13">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-fourier-series-3-13-1">
 \begin{equation*}
 \frac{\pi}{4} = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n-1}
 \end{equation*}
@@ -751,7 +757,7 @@ F(x) \amp = \sum_{n=1}^{\infty} \frac{2}{n\pi} (1- (-1)^n) \sin nx \\
 <div class="para" id="ex-FS-sawtooth-2-1">Let <span class="process-math">\(f(x)\)</span> be the sawtooth wave defined in the picture above. We can write it as a piecewise function as<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-sawtooth-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-FS-sawtooth-2-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-FS-sawtooth-2-2-1">
 \begin{equation*}
 f(x) = \begin{cases}
 x \amp 0 \leq x \leq \pi \\
@@ -805,7 +811,7 @@ n\pi \biggr) -
 <div class="para" id="ex-FS-sawtooth-2-11">Lastly,<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-sawtooth-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-FS-sawtooth-2-12">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-FS-sawtooth-2-12-1">
 \begin{equation*}
 b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx
 \end{equation*}
@@ -815,7 +821,7 @@ b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx
 <div class="para" id="ex-FS-sawtooth-2-13">but this is a product of a even and an odd function, which is odd and integrating an odd function over a symmetric interval is 0. Therefore the Fourier series is<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-sawtooth-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-FS-sawtooth-2-14">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-FS-sawtooth-2-14-1">
 \begin{equation*}
 F(x) = \frac{\pi}{2} + \sum_{n=1}^{\infty} \frac{2}{\pi n^2} \bigl( (-1)^n - 1) \cos nx
 \end{equation*}
@@ -830,7 +836,7 @@ F(x) = \frac{\pi}{2} + \sum_{n=1}^{\infty} \frac{2}{\pi n^2} \bigl( (-1)^n - 1) 
 <div class="para" id="sect-fourier-series-4-2">Since Fourier series are infinite series, it is important to consider if it converges. As we will see, Fourier series will generally converge, to what value will depend on <span class="process-math">\(x\text{.}\)</span> Consider the Fourier series in <a href="sect-fourier-series.html#ex-FS-sawtooth" class="xref" data-knowl="./knowl/xref/ex-FS-sawtooth.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.2.5">Example 6.2.5</a>. If we let<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-fourier-series-4-3">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-fourier-series-4-3-1">
 \begin{equation*}
 F(x) = \frac{\pi}{2} + \sum_{n=1}^{\infty} \frac{1}{n^2} \bigl( (-1)^n - 1) \cos nx
 \end{equation*}
@@ -846,7 +852,7 @@ F(x) = \frac{\pi}{2} + \sum_{n=1}^{\infty} \frac{1}{n^2} \bigl( (-1)^n - 1) \cos
 </h4>
 <div class="para" id="sect-fourier-series-4-6-1-1">Let <span class="process-math">\(f(x)\)</span> be periodic with period <span class="process-math">\(2\pi\)</span> and piecewise continuous in the interval <span class="process-math">\(-\pi \leq x \leq \pi\text{.}\)</span> Let <span class="process-math">\(F(x)\)</span> be the Fourier series of <span class="process-math">\(f(x)\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-4-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-fourier-series-4-6-1-2">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-fourier-series-4-6-1-2-1">
 \begin{equation*}
 F(x) = \begin{cases}
 f(x) \amp \text{if $f$ is continuous at $x$} \\
@@ -867,7 +873,7 @@ f(x) \amp \text{if $f$ is continuous at $x$} \\
 <div class="para" id="sect-fourier-series-4-7-2-2">Alternatively, we can evaluate the Fourier series of the square wave function directly. Evaluating the Fourier series at <span class="process-math">\(x=0\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-4-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-fourier-series-4-7-2-3">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sect-fourier-series-4-7-2-3-1">
 \begin{equation*}
 F(0) = \sum_{n=1}^{\infty} \frac{2}{n\pi} (1-\cos(n\pi)) \sin n x \biggl \vert_{x=0} =
 0,
@@ -938,7 +944,7 @@ b_n \amp = -\frac{x}{n\pi} \cos (n \pi x) + \frac{1}{n^2 \pi^2} \sin (n\pi x)
 <div class="para" id="ex-FS-x-2-3">The Fourier Series of the function is<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-x-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-FS-x-2-4">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex-FS-x-2-4-1">
 \begin{equation*}
 \sum_{n=1}^{\infty} \frac{2}{n\pi} (-1)^{n+1} \sin n \pi x
 \end{equation*}
