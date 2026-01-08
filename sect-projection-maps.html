@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.7';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c2757fc695bc848c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -132,6 +132,11 @@ eBookConfig.enable_chatcodes =  false;
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-linear-transformations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-vector-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-eigenvalues-eigenvectors.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\mnr}{mnr}
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\adj}{adj}
+\newcommand{\real}[1]{\operatorname{Re}(#1)}
+\newcommand{\imag}[1]{\operatorname{Im}(#1)}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -140,7 +145,13 @@ eBookConfig.enable_chatcodes =  false;
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Linear Systems</span></a></div>
 <ul class="structural toc-item-list">
@@ -208,6 +219,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-vectors" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Vectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-matrix-definition-5" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Matrix, Vector and Scalar Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-triangular-matrices" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Diagonal and Triangular Matrices</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -263,213 +275,213 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Basic Properties of the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-det-elem-matrices" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Determinants of Elementary Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Gauss’ Method for Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-minors-cofactors" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Minors and Cofactors of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9-3" class="internal"><span class="codenumber">2.8.6.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10-3" class="internal"><span class="codenumber">2.8.7.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Other Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-11" class="internal"><span class="codenumber">2.8.8</span> <span class="title">Other Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-adjugate-matrices" class="internal"><span class="codenumber">2.8.9</span> <span class="title">Adjugate Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-cramers-rule" class="internal"><span class="codenumber">2.8.10</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions-calculus.html" class="internal"><span class="codenumber">3</span> <span class="title">Functions and Calculus of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-complex-numbers.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-complex-basics" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Basics of Complex Numbers and the Complex Plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-arithmetic-complex" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Arithmetic with Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-polar-form-complex" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Polar Form of Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sec-roots-of-unity" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Roots of unity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-complex-exponential" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Complex Exponential</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Periodic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">3.2.3</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Odd and Even Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Tabular Integration</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">3</span> <span class="title">Vector and Inner Product Spaces</span></a></div>
+<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector and Inner Product Spaces</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-vector-spaces.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Spaces</span></a></div>
+<div class="toc-title-box"><a href="sect-vector-spaces.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Vector Spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-4" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Examples of Vector Spaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-5" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Is every set a vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-4" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Examples of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-5" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Is every set a vector space?</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-subspaces.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Span and Basis of a Subspace</span></a></div>
+<div class="toc-title-box"><a href="sect-subspaces.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Span and Basis of a Subspace</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-3" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Span of a set of vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Span of a set of vectors</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4" class="internal"><span class="codenumber">3.2.2</span> <span class="title">The Basis and Dimension of a Vector Space</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4-3" class="internal"><span class="codenumber">3.2.2.1</span> <span class="title">Representations in the natural basis</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5" class="internal"><span class="codenumber">4.2.2</span> <span class="title">The Basis and Dimension of a Vector Space</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5-3" class="internal"><span class="codenumber">4.2.2.1</span> <span class="title">Representations in the natural basis</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Dimension</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-6" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Bases of Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-6" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-7" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Bases of Subspaces</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-inner-product.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Inner Product Spaces</span></a></div>
+<div class="toc-title-box"><a href="sect-inner-product.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Inner Product Spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-3" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Angles between vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">3.3.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Angles between vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-7" class="internal"><span class="codenumber">4.3.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-8" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Orthogonal infinite sets of functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Linear Transformations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Projection Maps</span></a></div>
+<div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Projection Maps</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-eigenvalues-eigenvectors.html" class="internal"><span class="codenumber">4</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<div class="toc-title-box"><a href="ch-eigenvalues-eigenvectors.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-eigenvalues.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<div class="toc-title-box"><a href="sect-eigenvalues.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Finding Eigenvalues and Eigenvectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Finding Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Symmetric and Orthogonal Matrices and Quadratic Forms</span></a></div>
+<div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Symmetric and Orthogonal Matrices and Quadratic Forms</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-orthogonal-transformations" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Orthogonal Transformations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-quad-forms" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Principle Axes of Quadratic Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-orthogonal-transformations" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Orthogonal Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-quad-forms" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Principle Axes of Quadratic Forms</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-applications-eigen.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
+<div class="toc-title-box"><a href="sect-applications-eigen.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-matrix-factoring.html" class="internal"><span class="codenumber">5</span> <span class="title">Matrix Factoring</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-factoring.html" class="internal"><span class="codenumber">6</span> <span class="title">Matrix Factoring</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-matrix-factoring-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Matrix Properties and Operations</span></a></div>
+<div class="toc-title-box"><a href="sect-lu-factorization.html" class="internal"><span class="codenumber">6.1</span> <span class="title">LU Factorization</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#sect-matrix-transpose" class="internal"><span class="codenumber">5.1.1</span> <span class="title">The Matrix Transpose</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="ch-matrix-factoring-3.html#set-sym-matrices" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Symmetric Matrices</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#set-sym-matrices-3" class="internal"><span class="codenumber">5.1.2.1</span> <span class="title">Eigenvalues of Symmetric Matrices</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-5" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Orthogonal Matrices</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-6" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Upper- and Lower-Triangular Matrices</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-3" class="internal"><span class="codenumber">5.1.4.1</span> <span class="title">Back Substitution</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-4" class="internal"><span class="codenumber">5.1.4.2</span> <span class="title">Forward Substitution</span></a></div></li>
-</ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">6.1.1</span> <span class="title">LU factorization and elementary matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-lu-factorization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">LU Factorization</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-factoring-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Diagonalization of Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">5.2.2</span> <span class="title">LU fatorization and elementary matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Powers of Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Similar Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Similar and Diagonalizable Matrices</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-matrix-factoring-5.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Diagonalization of Matrices</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-factoring-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Singular Value Decomposition</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-3" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Powers of Diagonalizable Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-4" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Similar Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-5" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Similar and Diagonalizable Matrices</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-matrix-factoring-6.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Singular Value Decomposition</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-6.html#ch-matrix-factoring-6-3" class="internal"><span class="codenumber">5.4.1</span> <span class="title">The geometry of the SVD</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-6.html#ch-matrix-factoring-6-4" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Finding a best-fit line and plane using SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-3" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The geometry of the SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-4" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Finding a best-fit line and plane using SVD</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-fourier-series.html" class="internal"><span class="codenumber">6</span> <span class="title">Fourier Series</span></a></div>
+<div class="toc-title-box"><a href="ch-fourier-series.html" class="internal"><span class="codenumber">7</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Properties of Functions</span></a></div>
+<div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Odd and Even Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Fourier Series</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
+<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">7</span> <span class="title">Partial Differential Equations</span></a></div>
+<div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">8</span> <span class="title">Partial Differential Equations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Partial Derivatives and Differential Equations</span></a></div>
+<div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Partial Derivatives and Differential Equations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Differential Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Differential Equations</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-modeling-pdes.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Modeling with PDEs</span></a></div>
+<div class="toc-title-box"><a href="sect-modeling-pdes.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Modeling with PDEs</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Heat Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Wave Equation: Modeling a Taut String</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-5" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-3" class="internal"><span class="codenumber">8.2.1</span> <span class="title">The Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-4" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Wave Equation: Modeling a Taut String</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-5" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-linear-ode.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Linear ordinary differential equations</span></a></div>
+<div class="toc-title-box"><a href="sect-linear-ode.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Linear ordinary differential equations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-3" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Second-order Constant-Coefficient Homogeneous differential equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-4" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Solutions Differential Equations as Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-3" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Second-order Constant-Coefficient Homogeneous differential equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-4" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Solutions Differential Equations as Vector Spaces</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pde-6.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pde-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">8.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">8.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">7.8</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">8.8</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">7.8.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">7.8.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">7.8.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">7.8.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">8.8.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">8.8.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">8.8.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">8.8.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -477,17 +489,17 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-projection-maps"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Projection Maps</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Projection Maps</span>
 </h2>
 <section class="introduction" id="sect-projection-maps-2"><div class="para" id="sect-projection-maps-2-1">There is a class of linear transformations that are very important and have a nice geometric interpretation called projection maps. Let’s look at an example in the <span class="process-math">\(xy\)</span>-plane. Consider the point <span class="process-math">\((1,4)\)</span> as shown below.<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="sect-projection-maps-2-2"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-min-dist.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Projecting a point onto the <span class="process-math">\(x\)</span>-axis.<div class="autopermalink" data-description="Figure 3.5.1"><a href="#sect-projection-maps-2-2" title="Copy heading and permalink for Figure 3.5.1" aria-label="Copy heading and permalink for Figure 3.5.1">🔗</a></div></figcaption></figure><div class="para" id="sect-projection-maps-2-3">If the point (or the vector) is projected onto the <span class="process-math">\(x\)</span>-axis, then the result is the point <span class="process-math">\((1,0)\)</span> found by taking the <span class="process-math">\(x\)</span>-component of the point. In term of the vector, this is <span class="process-math">\([1\;\;0]^T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Projecting a point onto the <span class="process-math">\(x\)</span>-axis.<div class="autopermalink" data-description="Figure 4.5.1"><a href="#sect-projection-maps-2-2" title="Copy heading and permalink for Figure 4.5.1" aria-label="Copy heading and permalink for Figure 4.5.1">🔗</a></div></figcaption></figure><div class="para" id="sect-projection-maps-2-3">If the point (or the vector) is projected onto the <span class="process-math">\(x\)</span>-axis, then the result is the point <span class="process-math">\((1,0)\)</span> found by taking the <span class="process-math">\(x\)</span>-component of the point. In term of the vector, this is <span class="process-math">\([1\;\;0]^T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-projection-maps-2-4">We now look at projecting a vector <span class="process-math">\(\boldsymbol{u}\)</span> onto a line (or a vector <span class="process-math">\(\boldsymbol{v}\)</span>). We will derive this in the <span class="process-math">\(xy\)</span>-plane, however the result will work for any vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="sect-projection-maps-2-5"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-min-dist2.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Projecting a vector onto another vector.<div class="autopermalink" data-description="Figure 3.5.2"><a href="#sect-projection-maps-2-5" title="Copy heading and permalink for Figure 3.5.2" aria-label="Copy heading and permalink for Figure 3.5.2">🔗</a></div></figcaption></figure><div class="para" id="sect-projection-maps-2-6">Let <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> be two vectors in <span class="process-math">\(\mathbb{R}^2\)</span> as shown above. We seek the projection of <span class="process-math">\(\boldsymbol{u}\)</span> onto <span class="process-math">\(\boldsymbol{v}\)</span> and denote this as <span class="process-math">\(\text{Proj}_{\boldsymbol{v}}
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Projecting a vector onto another vector.<div class="autopermalink" data-description="Figure 4.5.2"><a href="#sect-projection-maps-2-5" title="Copy heading and permalink for Figure 4.5.2" aria-label="Copy heading and permalink for Figure 4.5.2">🔗</a></div></figcaption></figure><div class="para" id="sect-projection-maps-2-6">Let <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> be two vectors in <span class="process-math">\(\mathbb{R}^2\)</span> as shown above. We seek the projection of <span class="process-math">\(\boldsymbol{u}\)</span> onto <span class="process-math">\(\boldsymbol{v}\)</span> and denote this as <span class="process-math">\(\text{Proj}_{\boldsymbol{v}}
 \boldsymbol{u}\text{.}\)</span> The projection is a vector that is in the same direction as <span class="process-math">\(\boldsymbol{v}\text{.}\)</span> The length will be explained below.<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-projection-maps-2-7">Any vector <span class="process-math">\(\boldsymbol{u}\)</span> can be split into two parts, <span class="process-math">\(\boldsymbol{u}_{||}\)</span> a vector in a direction parallel to <span class="process-math">\(\boldsymbol{v}\)</span> and a vector <span class="process-math">\(\boldsymbol{u}_{\perp}\)</span> which satisfies <span class="process-math">\(\langle
@@ -496,14 +508,14 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para logical" id="sect-projection-maps-2-8">
 <div class="displaymath process-math" id="eq-proj-derive">
 \begin{equation}
-\boldsymbol{u} = \boldsymbol{u}_{||} + \boldsymbol{v}_{\perp}\tag{3.5.1}
+\boldsymbol{u} = \boldsymbol{u}_{||} + \boldsymbol{v}_{\perp}\tag{4.5.1}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-projection-maps-2-9">where <span class="process-math">\(\boldsymbol{u}_{||} = \alpha \boldsymbol{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-projection-maps-2-10">Take the inner product of both sides of (<a href="sect-projection-maps.html#eq-proj-derive" class="xref" data-knowl="./knowl/xref/eq-proj-derive.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.5.1">(3.5.1)</a>) with the vector <span class="process-math">\(\boldsymbol{v}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-projection-maps-2-10">Take the inner product of both sides of (<a href="sect-projection-maps.html#eq-proj-derive" class="xref" data-knowl="./knowl/xref/eq-proj-derive.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.5.1">(4.5.1)</a>) with the vector <span class="process-math">\(\boldsymbol{v}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-projection-maps-2-11">
 <div class="displaymath process-math" id="sect-projection-maps-2-11-1">
@@ -533,7 +545,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="displaymath process-math" id="eq-proj-vector">
 \begin{equation}
 \text{Proj}_{\boldsymbol{v}} \boldsymbol{u} = \frac{ \langle \boldsymbol{u}, \boldsymbol{v} \rangle}{\langle \boldsymbol{v},
-\boldsymbol{v} \rangle} \boldsymbol{v}\tag{3.5.2}
+\boldsymbol{v} \rangle} \boldsymbol{v}\tag{4.5.2}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -552,7 +564,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="sect-projection-maps-2-18">Although we derived this projection in <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> there is nothing about the projection formula to indicate it’s confined to <span class="process-math">\(\mathbb{R}^2\text{.}\)</span> In fact, as we will see, the projection mapping is a linear transformation and applies to vectors in an inner product space.<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="remark remark-like" id="sect-projection-maps-2-19"><h3 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sect-projection-maps-2-19-1">
 <div class="para">The projection of any vector <span class="process-math">\(\boldsymbol{u} \in \mathbb{R}^n\)</span> onto a vector <span class="process-math">\(\boldsymbol{v} \in
@@ -573,10 +585,10 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 3.5.3"><a href="#sect-projection-maps-2-19" title="Copy heading and permalink for Remark 3.5.3" aria-label="Copy heading and permalink for Remark 3.5.3">🔗</a></div></article><div class="para" id="sect-projection-maps-2-20">The example below finds the projection of vectors in <span class="process-math">\(\mathbb{R}^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 4.5.3"><a href="#sect-projection-maps-2-19" title="Copy heading and permalink for Remark 4.5.3" aria-label="Copy heading and permalink for Remark 4.5.3">🔗</a></div></article><div class="para" id="sect-projection-maps-2-20">The example below finds the projection of vectors in <span class="process-math">\(\mathbb{R}^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sect-projection-maps-2-21" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-projection-maps-2-21-1-1">Find the projection of <span class="process-math">\(\boldsymbol{u} = [1\;\;2\;\;3]^T\)</span> onto the vector <span class="process-math">\(\boldsymbol{v}=[-2\;\;
 0\;\; 4]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -600,14 +612,14 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 3.5.4.1"><a href="#sect-projection-maps-2-21-2" title="Copy heading and permalink for Solution 3.5.4.1" aria-label="Copy heading and permalink for Solution 3.5.4.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.5.4.1"><a href="#sect-projection-maps-2-21-2" title="Copy heading and permalink for Solution 4.5.4.1" aria-label="Copy heading and permalink for Solution 4.5.4.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 3.5.4"><a href="#sect-projection-maps-2-21" title="Copy heading and permalink for Example 3.5.4" aria-label="Copy heading and permalink for Example 3.5.4">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-proj-map"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 4.5.4"><a href="#sect-projection-maps-2-21" title="Copy heading and permalink for Example 4.5.4" aria-label="Copy heading and permalink for Example 4.5.4">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-proj-map"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="thm-proj-map-1-1">Given a nonzero vector <span class="process-math">\(\boldsymbol{v}\)</span> and a vector <span class="process-math">\(\boldsymbol{u}\)</span> both in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> the projection map in (<a href="sect-projection-maps.html#eq-proj-vector" class="xref" data-knowl="./knowl/xref/eq-proj-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.5.2">(3.5.2)</a>) is a linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#thm-proj-map-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="thm-proj-map-1-1">Given a nonzero vector <span class="process-math">\(\boldsymbol{v}\)</span> and a vector <span class="process-math">\(\boldsymbol{u}\)</span> both in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> the projection map in (<a href="sect-projection-maps.html#eq-proj-vector" class="xref" data-knowl="./knowl/xref/eq-proj-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.5.2">(4.5.2)</a>) is a linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#thm-proj-map-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 3.5.5"><a href="#thm-proj-map" title="Copy heading and permalink for Theorem 3.5.5" aria-label="Copy heading and permalink for Theorem 3.5.5">🔗</a></div></article><details id="thm-proj-map-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-proj-map-2-1">We need to prove the two properties of linear transformations in <a href="sect-linear-transformations.html#def-linear-trans" class="xref" data-knowl="./knowl/xref/def-linear-trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.4.1: Linear Transformation">Definition 3.4.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-proj-map-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 4.5.5"><a href="#thm-proj-map" title="Copy heading and permalink for Theorem 4.5.5" aria-label="Copy heading and permalink for Theorem 4.5.5">🔗</a></div></article><details id="thm-proj-map-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-proj-map-2-1">We need to prove the two properties of linear transformations in <a href="sect-linear-transformations.html#def-linear-trans" class="xref" data-knowl="./knowl/xref/def-linear-trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.4.1: Linear Transformation">Definition 4.4.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-proj-map-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-proj-map-2-2">
 <div class="displaymath process-math" id="thm-proj-map-2-2-1">
@@ -636,10 +648,10 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-proj-map-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.5.5.1"><a href="#thm-proj-map-2" title="Copy heading and permalink for Proof 3.5.5.1" aria-label="Copy heading and permalink for Proof 3.5.5.1">🔗</a></div></article></details><div class="para" id="sect-projection-maps-2-23">The example shown so far for projections have been onto a vector (which can be thought of as the line through the origin with that direction), but in general, one can project onto any linear space (more technically, any inner product space). Before showing the general projection, let’s consider the projection of a vector onto a plane. The following example shows this.<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 4.5.5.1"><a href="#thm-proj-map-2" title="Copy heading and permalink for Proof 4.5.5.1" aria-label="Copy heading and permalink for Proof 4.5.5.1">🔗</a></div></article></details><div class="para" id="sect-projection-maps-2-23">The example shown so far for projections have been onto a vector (which can be thought of as the line through the origin with that direction), but in general, one can project onto any linear space (more technically, any inner product space). Before showing the general projection, let’s consider the projection of a vector onto a plane. The following example shows this.<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sect-projection-maps-2-24" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-projection-maps-2-24-1-1">Find the projection of vector <span class="process-math">\([6,-2,3]^T\)</span> onto plane given by <span class="process-math">\(x+2y+3z=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-24-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="sect-projection-maps-2-24-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
@@ -729,16 +741,16 @@ c_2 \amp = \frac{\langle \boldsymbol{u},\boldsymbol{v}_2 \rangle}{\langle \bolds
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-2-24-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 3.5.6.1"><a href="#sect-projection-maps-2-24-2" title="Copy heading and permalink for Solution 3.5.6.1" aria-label="Copy heading and permalink for Solution 3.5.6.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.5.6.1"><a href="#sect-projection-maps-2-24-2" title="Copy heading and permalink for Solution 4.5.6.1" aria-label="Copy heading and permalink for Solution 4.5.6.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 3.5.6"><a href="#sect-projection-maps-2-24" title="Copy heading and permalink for Example 3.5.6" aria-label="Copy heading and permalink for Example 3.5.6">🔗</a></div></article></details></section><section class="subsection" id="sect-projection-maps-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Using Projections to solve Least-Squares Problems</span>
+<div class="autopermalink" data-description="Example 4.5.6"><a href="#sect-projection-maps-2-24" title="Copy heading and permalink for Example 4.5.6" aria-label="Copy heading and permalink for Example 4.5.6">🔗</a></div></article></details></section><section class="subsection" id="sect-projection-maps-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Using Projections to solve Least-Squares Problems</span>
 </h3>
 <div class="para" id="sect-projection-maps-3-2">A useful problem is to find the minimum distance between a point and line. For example consider the point <span class="process-math">\((1,4)\)</span> and the line <span class="process-math">\(L:  y= \frac{1}{2} x\)</span> as shown in the figure below.<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="sect-projection-maps-3-3"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-point-and-line.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Line and a point<div class="autopermalink" data-description="Figure 3.5.7"><a href="#sect-projection-maps-3-3" title="Copy heading and permalink for Figure 3.5.7" aria-label="Copy heading and permalink for Figure 3.5.7">🔗</a></div></figcaption></figure><div class="para logical" id="sect-projection-maps-3-4">
-<div class="para">If we want to minimize the distance from the point <span class="process-math">\(P\)</span> to the line <span class="process-math">\(L\text{,}\)</span> we often minimize the square<details class="ptx-footnote" aria-live="polite" id="sect-projection-maps-3-4-3"><summary class="ptx-footnote__number" title="Footnote 3.5.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sect-projection-maps-3-4-3">Recall that the point that minimizes a function is the same point that to minimizes the square of the function. The reason for doing this it it gets rid of the square root and makes calculations easier to do.</div></details>  of the distance from the point to the line or</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Line and a point<div class="autopermalink" data-description="Figure 4.5.7"><a href="#sect-projection-maps-3-3" title="Copy heading and permalink for Figure 4.5.7" aria-label="Copy heading and permalink for Figure 4.5.7">🔗</a></div></figcaption></figure><div class="para logical" id="sect-projection-maps-3-4">
+<div class="para">If we want to minimize the distance from the point <span class="process-math">\(P\)</span> to the line <span class="process-math">\(L\text{,}\)</span> we often minimize the square<details class="ptx-footnote" aria-live="polite" id="sect-projection-maps-3-4-3"><summary class="ptx-footnote__number" title="Footnote 4.5.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sect-projection-maps-3-4-3">Recall that the point that minimizes a function is the same point that to minimizes the square of the function. The reason for doing this it it gets rid of the square root and makes calculations easier to do.</div></details>  of the distance from the point to the line or</div>
 <div class="displaymath process-math" id="sect-projection-maps-3-4-4">
 \begin{equation*}
 g(x)  = (x-1)^2 + \biggl(\frac{1}{2} x - 4\biggr)^2
@@ -748,7 +760,7 @@ g(x)  = (x-1)^2 + \biggl(\frac{1}{2} x - 4\biggr)^2
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="sect-projection-maps-3-5"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-point-line2.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Find a point on a line that minimizes distance<div class="autopermalink" data-description="Figure 3.5.8"><a href="#sect-projection-maps-3-5" title="Copy heading and permalink for Figure 3.5.8" aria-label="Copy heading and permalink for Figure 3.5.8">🔗</a></div></figcaption></figure><div class="para logical" id="sect-projection-maps-3-6">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Find a point on a line that minimizes distance<div class="autopermalink" data-description="Figure 4.5.8"><a href="#sect-projection-maps-3-5" title="Copy heading and permalink for Figure 4.5.8" aria-label="Copy heading and permalink for Figure 4.5.8">🔗</a></div></figcaption></figure><div class="para logical" id="sect-projection-maps-3-6">
 <div class="para">In light of projections, we can reframe this problem. We are seeking the point on <span class="process-math">\(L\)</span> closest to <span class="process-math">\(P\text{.}\)</span> This can be found by projecting the vector <span class="process-math">\(\overrightarrow{OP}\)</span> to the line <span class="process-math">\(L\)</span> or</div>
 <div class="displaymath process-math" id="sect-projection-maps-3-6-5">
 \begin{equation*}
@@ -769,8 +781,8 @@ g(x)  = (x-1)^2 + \biggl(\frac{1}{2} x - 4\biggr)^2
 <div class="para">which is the same result as from Calculus.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 3.5.1: Using Projections to solve Least-Squares Problems"><a href="#sect-projection-maps-3" title="Copy heading and permalink for Subsection 3.5.1: Using Projections to solve Least-Squares Problems" aria-label="Copy heading and permalink for Subsection 3.5.1: Using Projections to solve Least-Squares Problems">🔗</a></div></section><section class="subsection" id="sect-projection-maps-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Projecting onto a Vector Space</span>
+<div class="autopermalink" data-description="Subsection 4.5.1: Using Projections to solve Least-Squares Problems"><a href="#sect-projection-maps-3" title="Copy heading and permalink for Subsection 4.5.1: Using Projections to solve Least-Squares Problems" aria-label="Copy heading and permalink for Subsection 4.5.1: Using Projections to solve Least-Squares Problems">🔗</a></div></section><section class="subsection" id="sect-projection-maps-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Projecting onto a Vector Space</span>
 </h3>
 <div class="para" id="sect-projection-maps-4-2">We again generalize from projecting onto a single vector or set of vectors to a general vector space, <span class="process-math">\(V\text{.}\)</span> First, to make things easier, we will use an orthogonal basis for <span class="process-math">\(V\text{,}\)</span> call it, <span class="process-math">\(( \boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n )\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -778,10 +790,10 @@ g(x)  = (x-1)^2 + \biggl(\frac{1}{2} x - 4\biggr)^2
 <div class="para">Recall that a projection onto a vector is found by writing the original vector, <span class="process-math">\(\boldsymbol{u}=\boldsymbol{u}_{||} + \boldsymbol{u}_{\perp}\text{,}\)</span> where <span class="process-math">\(\boldsymbol{u}_{||}\)</span> is in <span class="process-math">\(V\)</span> or</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-projection-vector-space.html" id="eq-projection-vector-space">
 \begin{equation}
-\boldsymbol{u} = \boldsymbol{u}_{\perp} + \sum_{i=1}^n c_i \boldsymbol{v}_i\tag{3.5.3}
+\boldsymbol{u} = \boldsymbol{u}_{\perp} + \sum_{i=1}^n c_i \boldsymbol{v}_i\tag{4.5.3}
 \end{equation}
 </div>
-<div class="para">Finding the projection is analogous to finding the constants <span class="process-math">\(c_i\text{.}\)</span> Take the inner product of (<a href="sect-projection-maps.html#eq-projection-vector-space" class="xref" data-knowl="./knowl/xref/eq-projection-vector-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.5.3">(3.5.3)</a>) with <span class="process-math">\(v_k\text{,}\)</span> the <span class="process-math">\(k\)</span>th basis vector of <span class="process-math">\(V\)</span> or</div>
+<div class="para">Finding the projection is analogous to finding the constants <span class="process-math">\(c_i\text{.}\)</span> Take the inner product of (<a href="sect-projection-maps.html#eq-projection-vector-space" class="xref" data-knowl="./knowl/xref/eq-projection-vector-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.5.3">(4.5.3)</a>) with <span class="process-math">\(v_k\text{,}\)</span> the <span class="process-math">\(k\)</span>th basis vector of <span class="process-math">\(V\)</span> or</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-projection-vector-space.html" id="sect-projection-maps-4-3-10">
 \begin{align*}
 \langle \boldsymbol{u}, \boldsymbol{v}_k \rangle \amp= \biggl\langle \boldsymbol{u}_{\perp} + \sum_{i=1}^n c_i \boldsymbol{v}_i , \boldsymbol{v}_k \biggr\rangle \\
@@ -805,7 +817,7 @@ c_k = \frac{\langle \boldsymbol{u}, \boldsymbol{v}_k \rangle}{\langle \boldsymbo
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="remark remark-like" id="sect-projection-maps-4-4"><h4 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="sect-projection-maps-4-4-1">
 <div class="para">Let <span class="process-math">\(\boldsymbol{u}\)</span> be an element in a vector space <span class="process-math">\(S\)</span> and <span class="process-math">\(( \boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n )\)</span> be an orthogonal basis of a subspace <span class="process-math">\(V\text{.}\)</span> The projection of <span class="process-math">\(\boldsymbol{u}\)</span> onto <span class="process-math">\(V\)</span> can be written:</div>
@@ -824,17 +836,17 @@ c_k = \frac{\langle \boldsymbol{u}, \boldsymbol{v}_k \rangle}{\langle \boldsymbo
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 3.5.9"><a href="#sect-projection-maps-4-4" title="Copy heading and permalink for Remark 3.5.9" aria-label="Copy heading and permalink for Remark 3.5.9">🔗</a></div></article><details id="sect-projection-maps-4-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-projection-maps-4-5-1-1">Find the projection of <span class="process-math">\(\sin \pi x\text{,}\)</span> an element of <span class="process-math">\({\cal C}^{(0)}\)</span> onto <span class="process-math">\({\cal P}_5[-1,1]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 4.5.9"><a href="#sect-projection-maps-4-4" title="Copy heading and permalink for Remark 4.5.9" aria-label="Copy heading and permalink for Remark 4.5.9">🔗</a></div></article><details id="sect-projection-maps-4-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-projection-maps-4-5-1-1">Find the projection of <span class="process-math">\(\sin \pi x\text{,}\)</span> an element of <span class="process-math">\({\cal C}^{(0)}\)</span> onto <span class="process-math">\({\cal P}_3[-1,1]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="sect-projection-maps-4-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-projection-maps-4-5-2-1">First, we need a orthogonal basis of the subspace and we found this above in <a href="sect-inner-product.html#example-gram-schmidt-p3" class="xref" data-knowl="./knowl/xref/example-gram-schmidt-p3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.3.14">Example 3.3.14</a>. These are the first four Legendre polynomials (scaled to eliminate fractions) or<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-projection-maps-4-5-2-1">First, we need a orthogonal basis of the subspace and we found this above in <a href="sect-inner-product.html#example-gram-schmidt-p3" class="xref" data-knowl="./knowl/xref/example-gram-schmidt-p3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.15">Example 4.3.15</a>. These are the first four Legendre polynomials (scaled to eliminate fractions) or<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-projection-maps-4-5-2-2">
 <div class="displaymath process-math" id="eq-legendre-poly">
 \begin{equation}
-(1,x,3x^2-1,5x^3-3x)\tag{3.5.4}
+(1,x,3x^2-1,5x^3-3x)\tag{4.5.4}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -871,10 +883,10 @@ c_0 p_0 + c_1 p_1 + c_2 p_2 + c_3 p_3
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-projection-maps-4-5-2-9">where <span class="process-math">\(P_k\)</span> is the <span class="process-math">\(k\)</span>th Legendre polynomial as in (<a href="sect-projection-maps.html#eq-legendre-poly" class="xref" data-knowl="./knowl/xref/eq-legendre-poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.5.4">(3.5.4)</a>). A plot of this is<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-projection-maps-4-5-2-9">where <span class="process-math">\(P_k\)</span> is the <span class="process-math">\(k\)</span>th Legendre polynomial as in <a href="sect-projection-maps.html#eq-legendre-poly" class="xref" data-knowl="./knowl/xref/eq-legendre-poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.5.4">(4.5.4)</a>. A plot of this is<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-plot-sine"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-sine.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Find a projection of <span class="process-math">\(\sin x\)</span> onto <span class="process-math">\({\cal P}_3\)</span><div class="autopermalink" data-description="Figure 3.5.11"><a href="#fig-plot-sine" title="Copy heading and permalink for Figure 3.5.11" aria-label="Copy heading and permalink for Figure 3.5.11">🔗</a></div></figcaption></figure><div class="para logical" id="sect-projection-maps-4-5-2-11">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Find a projection of <span class="process-math">\(\sin x\)</span> onto <span class="process-math">\({\cal P}_3\)</span><div class="autopermalink" data-description="Figure 4.5.11"><a href="#fig-plot-sine" title="Copy heading and permalink for Figure 4.5.11" aria-label="Copy heading and permalink for Figure 4.5.11">🔗</a></div></figcaption></figure><div class="para logical" id="sect-projection-maps-4-5-2-11">
 <div class="para">which looks quite sine-like. Notice that if we plot the absolute difference between the function and the projection that we get</div>
 <div class="displaymath process-math" id="sect-projection-maps-4-5-2-11-1">
 \begin{equation*}
@@ -884,13 +896,13 @@ c_0 p_0 + c_1 p_1 + c_2 p_2 + c_3 p_3
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-plot-sine-ex3"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-sine-ex3.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Difference between <span class="process-math">\(\sin x\)</span> and its projection.<div class="autopermalink" data-description="Figure 3.5.12"><a href="#fig-plot-sine-ex3" title="Copy heading and permalink for Figure 3.5.12" aria-label="Copy heading and permalink for Figure 3.5.12">🔗</a></div></figcaption></figure><div class="para" id="sect-projection-maps-4-5-2-13">This plot shows that except for near the ends of the interval, the projection (or an approximation is within 1 decimal places.)<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Difference between <span class="process-math">\(\sin x\)</span> and its projection.<div class="autopermalink" data-description="Figure 4.5.12"><a href="#fig-plot-sine-ex3" title="Copy heading and permalink for Figure 4.5.12" aria-label="Copy heading and permalink for Figure 4.5.12">🔗</a></div></figcaption></figure><div class="para" id="sect-projection-maps-4-5-2-13">This plot shows that except for near the ends of the interval, the projection (or an approximation is within 1 decimal places.)<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-5-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 3.5.10.1"><a href="#sect-projection-maps-4-5-2" title="Copy heading and permalink for Solution 3.5.10.1" aria-label="Copy heading and permalink for Solution 3.5.10.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.5.10.1"><a href="#sect-projection-maps-4-5-2" title="Copy heading and permalink for Solution 4.5.10.1" aria-label="Copy heading and permalink for Solution 4.5.10.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 3.5.10"><a href="#sect-projection-maps-4-5" title="Copy heading and permalink for Example 3.5.10" aria-label="Copy heading and permalink for Example 3.5.10">🔗</a></div></article></details><div class="para" id="sect-projection-maps-4-6">This last example shows the power of projections. If we are using functions as elements of vector spaces, then a projection of a function onto a vector space (using the span of a vector space), is the closest function in the vector space to the original function. In <a href="ch-fourier-series.html" class="internal" title="Chapter 6: Fourier Series">Chapter 6</a>, we will do this with trigonometric function and is called Fourier Series.<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.5.10"><a href="#sect-projection-maps-4-5" title="Copy heading and permalink for Example 4.5.10" aria-label="Copy heading and permalink for Example 4.5.10">🔗</a></div></article></details><div class="para" id="sect-projection-maps-4-6">This last example shows the power of projections. If we are using functions as elements of vector spaces, then a projection of a function onto a vector space (using the span of a vector space), is the closest function in the vector space to the original function. In <a href="ch-fourier-series.html" class="internal" title="Chapter 7: Fourier Series">Chapter 7</a>, we will do this with trigonometric function and is called Fourier Series.<div class="autopermalink" data-description="Paragraph"><a href="#sect-projection-maps-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 3.5.2: Projecting onto a Vector Space"><a href="#sect-projection-maps-4" title="Copy heading and permalink for Subsection 3.5.2: Projecting onto a Vector Space" aria-label="Copy heading and permalink for Subsection 3.5.2: Projecting onto a Vector Space">🔗</a></div></section><div class="autopermalink" data-description="Section 3.5: Projection Maps"><a href="#sect-projection-maps" title="Copy heading and permalink for Section 3.5: Projection Maps" aria-label="Copy heading and permalink for Section 3.5: Projection Maps">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Subsection 4.5.2: Projecting onto a Vector Space"><a href="#sect-projection-maps-4" title="Copy heading and permalink for Subsection 4.5.2: Projecting onto a Vector Space" aria-label="Copy heading and permalink for Subsection 4.5.2: Projecting onto a Vector Space">🔗</a></div></section><div class="autopermalink" data-description="Section 4.5: Projection Maps"><a href="#sect-projection-maps" title="Copy heading and permalink for Section 4.5: Projection Maps" aria-label="Copy heading and permalink for Section 4.5: Projection Maps">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sect-linear-transformations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-eigenvalues-eigenvectors.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

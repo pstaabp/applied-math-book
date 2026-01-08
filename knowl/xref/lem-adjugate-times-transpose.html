@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \adj(A) = \det(A) I
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-adjugate-times-transpose-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 2.8.33"><a href="#lem-adjugate-times-transpose" title="Copy heading and permalink for Lemma 2.8.33" aria-label="Copy heading and permalink for Lemma 2.8.33">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Let <span class="process-math">\(C = \adj(A)\)</span> and let <span class="process-math">\(B = A C^{\intercal}\text{.}\)</span> Note that <span class="process-math">\(b_{ij}\)</span> is the product of the <span class="process-math">\(i\)</span>th row of <span class="process-math">\(A\)</span> times the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(C^{\intercal}\text{,}\)</span> or the <span class="process-math">\(j\)</span>th row of <span class="process-math">\(C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-adjugate-times-transpose-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Consider first <span class="process-math">\(b_{ii}\text{.}\)</span> This is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-laplace-expansion-det.html">
+\begin{equation*}
+b_{ii} = a_{i1} C_{i1} + \cdots a_{ii} C_{ii} + \cdots a_{in} C_{in}
+\end{equation*}
+</div>
+<div class="para">which is <span class="process-math">\(\det(A)\)</span> by <a href="sect-det.html#thm-laplace-expansion-det" class="xref" data-knowl="./knowl/xref/thm-laplace-expansion-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.8.22: Laplace Expansion of Determinants">Theorem 2.8.22</a>, the Laplace Expansion method of finding determinants.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-adjugate-times-transpose-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For <span class="process-math">\(b_{ij}\)</span> where <span class="process-math">\(i \neq j\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_{ij} = a_{i1} C_{j1} + \cdots a_{ji} C_{ji} + \cdots a_{jn} C_{jn}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-adjugate-times-transpose-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">This is the determinant of a matrix where row <span class="process-math">\(j\)</span> has been replaced by a copy of row <span class="process-math">\(i\text{.}\)</span> Since this matrix has two identical rows, then by <a href="sect-det.html#lem-det-matrix-identical-rows" class="xref" data-knowl="./knowl/xref/lem-det-matrix-identical-rows.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.9">Lemma 2.8.9</a>, this determinant is 0. Thus <span class="process-math">\(B\)</span> is a diagonal matrix with <span class="process-math">\(\det(A)\)</span> on each entry on the diagonal or</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-det-matrix-identical-rows.html">
+\begin{equation*}
+B = \det(A) I,
+\end{equation*}
+</div>
+<div class="para">and the result is shown.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-adjugate-times-transpose-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.8.33.1"><a href="#lem-adjugate-times-transpose-2" title="Copy heading and permalink for Proof 2.8.33.1" aria-label="Copy heading and permalink for Proof 2.8.33.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sect-det.html#lem-adjugate-times-transpose">in-context</a></span>
+</body>
+</html>

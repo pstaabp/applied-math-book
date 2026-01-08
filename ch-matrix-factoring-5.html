@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Diagonalization of Matrices</title>
+<title>Singular Value Decomposition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.7';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c2757fc695bc848c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -129,9 +129,14 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-lu-factorization.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrix-factoring.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-matrix-factoring-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-matrix-factoring-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrix-factoring.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-fourier-series.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\mnr}{mnr}
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\adj}{adj}
+\newcommand{\real}[1]{\operatorname{Re}(#1)}
+\newcommand{\imag}[1]{\operatorname{Im}(#1)}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -140,7 +145,13 @@ eBookConfig.enable_chatcodes =  false;
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Linear Systems</span></a></div>
 <ul class="structural toc-item-list">
@@ -208,6 +219,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-vectors" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Vectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-matrix-definition-5" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Matrix, Vector and Scalar Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-triangular-matrices" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Diagonal and Triangular Matrices</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -263,213 +275,213 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Basic Properties of the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-det-elem-matrices" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Determinants of Elementary Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Gauss’ Method for Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-minors-cofactors" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Minors and Cofactors of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9-3" class="internal"><span class="codenumber">2.8.6.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10-3" class="internal"><span class="codenumber">2.8.7.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Other Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-11" class="internal"><span class="codenumber">2.8.8</span> <span class="title">Other Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-adjugate-matrices" class="internal"><span class="codenumber">2.8.9</span> <span class="title">Adjugate Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-cramers-rule" class="internal"><span class="codenumber">2.8.10</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">3</span> <span class="title">Vector and Inner Product Spaces</span></a></div>
+<div class="toc-title-box"><a href="ch-functions-calculus.html" class="internal"><span class="codenumber">3</span> <span class="title">Functions and Calculus of Functions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-vector-spaces.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Spaces</span></a></div>
+<div class="toc-title-box"><a href="sect-complex-numbers.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Complex Numbers</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-4" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Examples of Vector Spaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-5" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Is every set a vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-complex-basics" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Basics of Complex Numbers and the Complex Plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-arithmetic-complex" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Arithmetic with Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-polar-form-complex" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Polar Form of Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sec-roots-of-unity" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Roots of unity</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-subspaces.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Span and Basis of a Subspace</span></a></div>
+<div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-3" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Span of a set of vectors</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4" class="internal"><span class="codenumber">3.2.2</span> <span class="title">The Basis and Dimension of a Vector Space</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4-3" class="internal"><span class="codenumber">3.2.2.1</span> <span class="title">Representations in the natural basis</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Dimension</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-6" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Bases of Subspaces</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-inner-product.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Inner Product Spaces</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-3" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Angles between vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">3.3.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Linear Transformations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Projection Maps</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-complex-exponential" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Complex Exponential</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Periodic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">3.2.3</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Odd and Even Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Tabular Integration</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-eigenvalues-eigenvectors.html" class="internal"><span class="codenumber">4</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector and Inner Product Spaces</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-eigenvalues.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<div class="toc-title-box"><a href="sect-vector-spaces.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Vector Spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Finding Eigenvalues and Eigenvectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Symmetric and Orthogonal Matrices and Quadratic Forms</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-orthogonal-transformations" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Orthogonal Transformations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-quad-forms" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Principle Axes of Quadratic Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-4" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Examples of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-5" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Is every set a vector space?</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-applications-eigen.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
+<div class="toc-title-box"><a href="sect-subspaces.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Span and Basis of a Subspace</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Span of a set of vectors</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5" class="internal"><span class="codenumber">4.2.2</span> <span class="title">The Basis and Dimension of a Vector Space</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5-3" class="internal"><span class="codenumber">4.2.2.1</span> <span class="title">Representations in the natural basis</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-6" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-7" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Bases of Subspaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-inner-product.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Inner Product Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Angles between vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-7" class="internal"><span class="codenumber">4.3.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-8" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Orthogonal infinite sets of functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Projection Maps</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-eigenvalues-eigenvectors.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-eigenvalues.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Finding Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Symmetric and Orthogonal Matrices and Quadratic Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-orthogonal-transformations" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Orthogonal Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-quad-forms" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Principle Axes of Quadratic Forms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-applications-eigen.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-matrix-factoring.html" class="internal"><span class="codenumber">5</span> <span class="title">Matrix Factoring</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-factoring.html" class="internal"><span class="codenumber">6</span> <span class="title">Matrix Factoring</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-matrix-factoring-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Matrix Properties and Operations</span></a></div>
+<div class="toc-title-box"><a href="sect-lu-factorization.html" class="internal"><span class="codenumber">6.1</span> <span class="title">LU Factorization</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#sect-matrix-transpose" class="internal"><span class="codenumber">5.1.1</span> <span class="title">The Matrix Transpose</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="ch-matrix-factoring-3.html#set-sym-matrices" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Symmetric Matrices</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#set-sym-matrices-3" class="internal"><span class="codenumber">5.1.2.1</span> <span class="title">Eigenvalues of Symmetric Matrices</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-5" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Orthogonal Matrices</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-6" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Upper- and Lower-Triangular Matrices</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-3" class="internal"><span class="codenumber">5.1.4.1</span> <span class="title">Back Substitution</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-4" class="internal"><span class="codenumber">5.1.4.2</span> <span class="title">Forward Substitution</span></a></div></li>
-</ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">6.1.1</span> <span class="title">LU factorization and elementary matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-lu-factorization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">LU Factorization</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-factoring-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Diagonalization of Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">5.2.2</span> <span class="title">LU fatorization and elementary matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Powers of Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Similar Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Similar and Diagonalizable Matrices</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="ch-matrix-factoring-5.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Diagonalization of Matrices</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-factoring-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Singular Value Decomposition</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-3" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Powers of Diagonalizable Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-4" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Similar Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-5" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Similar and Diagonalizable Matrices</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-matrix-factoring-6.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Singular Value Decomposition</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-6.html#ch-matrix-factoring-6-3" class="internal"><span class="codenumber">5.4.1</span> <span class="title">The geometry of the SVD</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-6.html#ch-matrix-factoring-6-4" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Finding a best-fit line and plane using SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-3" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The geometry of the SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-4" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Finding a best-fit line and plane using SVD</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-fourier-series.html" class="internal"><span class="codenumber">6</span> <span class="title">Fourier Series</span></a></div>
+<div class="toc-title-box"><a href="ch-fourier-series.html" class="internal"><span class="codenumber">7</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Properties of Functions</span></a></div>
+<div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Odd and Even Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Fourier Series</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
+<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">7</span> <span class="title">Partial Differential Equations</span></a></div>
+<div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">8</span> <span class="title">Partial Differential Equations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Partial Derivatives and Differential Equations</span></a></div>
+<div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Partial Derivatives and Differential Equations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Differential Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Differential Equations</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-modeling-pdes.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Modeling with PDEs</span></a></div>
+<div class="toc-title-box"><a href="sect-modeling-pdes.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Modeling with PDEs</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Heat Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Wave Equation: Modeling a Taut String</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-5" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-3" class="internal"><span class="codenumber">8.2.1</span> <span class="title">The Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-4" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Wave Equation: Modeling a Taut String</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-5" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-linear-ode.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Linear ordinary differential equations</span></a></div>
+<div class="toc-title-box"><a href="sect-linear-ode.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Linear ordinary differential equations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-3" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Second-order Constant-Coefficient Homogeneous differential equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-4" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Solutions Differential Equations as Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-3" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Second-order Constant-Coefficient Homogeneous differential equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-4" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Solutions Differential Equations as Vector Spaces</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pde-6.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pde-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">8.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">8.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">7.8</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">8.8</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">7.8.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">7.8.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">7.8.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">7.8.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">8.8.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">8.8.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">8.8.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">8.8.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -477,628 +489,485 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="ch-matrix-factoring-5"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Diagonalization of Matrices</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Singular Value Decomposition</span>
 </h2>
-<section class="introduction" id="ch-matrix-factoring-5-2"><div class="para" id="ch-matrix-factoring-5-2-1">Consider a matrix <span class="process-math">\(A\text{.}\)</span> There are many application where the power of the matrix, <span class="process-math">\(A^n\)</span> is helpful. One such cases is at the end of this this chapter. One way to approach this is that the <span class="process-math">\(n\)</span>th power is just the matrix product with itself <span class="process-math">\(n\)</span> times or<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="ch-matrix-factoring-5-2"><div class="para" id="ch-matrix-factoring-5-2-1">The singular value decomposition, also known as the SVD, is yet another way to factor a matrix. In short, a matrix <span class="process-math">\(A\)</span> can be written <span class="process-math">\(A=U \Sigma V^{\intercal}\text{,}\)</span> where <span class="process-math">\(U\)</span> and <span class="process-math">\(V\)</span> are orthogonal matrices and <span class="process-math">\(\Sigma\)</span> is a diagonal matrix. These can be thought of as a rotation, followed by a scaling, followed by another rotation. It has numerous applications as we will see at the end of this section.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ch-matrix-factoring-5-2-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-2-1">
-\begin{align*}
-A^2 \amp = A A \amp  A^3 \amp = A A A 
-\end{align*}
+<div class="para" id="ch-matrix-factoring-5-2-2">We will show that it is possible to factor any <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrix <span class="process-math">\(A\)</span> in this form and also determine how to find the matrices <span class="process-math">\(U\text{,}\)</span> <span class="process-math">\(\Sigma\)</span> and <span class="process-math">\(V\text{.}\)</span> Consider a real <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrix <span class="process-math">\(A\text{.}\)</span> We will consider <span class="process-math">\(U\text{,}\)</span> an <span class="process-math">\(m\)</span> by <span class="process-math">\(m\)</span> matrix, <span class="process-math">\(\Sigma\text{,}\)</span> an <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrix and <span class="process-math">\(V\)</span> a <span class="process-math">\(n\)</span> by <span class="process-math">\(n\)</span> matrix.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="theorem theorem-like" id="thm-svd"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Singular Value Decomposition.</span>
+</h3>
+<div class="para" id="thm-svd-2-1">Let <span class="process-math">\(A\)</span> be a general <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrix. The matrix can be written:<div class="autopermalink" data-description="Paragraph"><a href="#thm-svd-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="thm-svd-2-2">
+<div class="displaymath process-math" id="eq-SVD-decomp">
+\begin{equation}
+A = U \Sigma V^{\intercal}\tag{6.3.1}
+\end{equation}
 </div>
-<div class="para" id="ch-matrix-factoring-5-2-3">and this can be extended to any positive integer power. However, finding the 50th power may not be practical.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-svd-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="thm-svd-2-3">where <span class="process-math">\(U\)</span> and <span class="process-math">\(V\)</span> are square orthogonal matrices of size <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> respectively and <span class="process-math">\(\Sigma\)</span> is an <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> diagonal matrix. The columns of <span class="process-math">\(U\)</span> are the eigenvectors of <span class="process-math">\(AA^{\intercal}\)</span> and the columns of <span class="process-math">\(V\)</span> are the eigenvectors of <span class="process-math">\(A^{\intercal}A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-svd-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-2-4">To make this an easier task, let’s assume that we can write <span class="process-math">\(A\)</span> in the form:<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 6.3.1: Singular Value Decomposition"><a href="#thm-svd" title="Copy heading and permalink for Theorem 6.3.1: Singular Value Decomposition" aria-label="Copy heading and permalink for Theorem 6.3.1: Singular Value Decomposition">🔗</a></div></article><div class="para" id="ch-matrix-factoring-5-2-4">The general proof is not presented here. Instead, assume that the matrix can be factored as in the Singular Value Decomposition, then<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ch-matrix-factoring-5-2-5">
-<div class="displaymath process-math" id="eq-diag-matrix">
-\begin{equation}
-A = P D P^{-1}\tag{5.3.1}
-\end{equation}
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-5-1">
+\begin{align}
+AA^{\intercal} \amp = U \Sigma V^{\intercal} (U \Sigma V^{\intercal})^{\intercal}\notag\\
+\amp = U \Sigma V^{\intercal} V \Sigma^{\intercal} U^{\intercal}\notag\\
+\text{and since $V^{\intercal}V=I$, then }\notag\\
+AA^{\intercal}\amp = U \Sigma \Sigma^{\intercal} U^{\intercal}.\tag{6.3.2}
+\end{align}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-2-6">where <span class="process-math">\(D\)</span> is a diagonal matrix and <span class="process-math">\(P\)</span> is invertible. If this is possible, then<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-2-6">The astute reader will notice that <a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-5-1" class="xref" data-knowl="./knowl/xref/eq-SVD-similar.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.2">(6.3.2)</a> shows that the matrices <span class="process-math">\(AA^{\intercal}\)</span> and <span class="process-math">\(\Sigma \Sigma^{\intercal}\)</span> are similar and thus have the same eigenvalues. Recall also that <span class="process-math">\(U\)</span> will be the eigenvectors of <span class="process-math">\(AA^{\intercal}\text{.}\)</span> These properties are used to actually find <span class="process-math">\(U\)</span> and <span class="process-math">\(\Sigma\text{.}\)</span> Also, if you can find either <span class="process-math">\(U\)</span> or <span class="process-math">\(V\text{,}\)</span> then finding the other is easier by solving <a href="ch-matrix-factoring-5.html#eq-SVD-decomp" class="xref" data-knowl="./knowl/xref/eq-SVD-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.1">(6.3.1)</a>. If we know <span class="process-math">\(V\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ch-matrix-factoring-5-2-7">
 <div class="displaymath process-math" id="ch-matrix-factoring-5-2-7-1">
 \begin{align*}
-A^3 \amp = A A A \\
-\amp = (P D P^{-1}) (P D P^{-1}(P D P^{-1})\\
-\amp = P D^3 P^{-1}
+U \Sigma V^{\intercal} \amp = A\\
+\Sigma V^{\intercal}  \amp = U^{-1} A 
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-2-8">and <span class="process-math">\(D^3\)</span> is easy to find because it is a diagonal matrix.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-2-8">and recall that since <span class="process-math">\(U\)</span> is an orthogonal matrix that <span class="process-math">\(U^{-1}=U^{\intercal}\text{.}\)</span> This is now left-multiplied by <span class="process-math">\(\Sigma^{\intercal}\)</span> in case the original matrix is not square, then <span class="process-math">\(\Sigma\)</span> is not square and the inverse is not defined.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-2-9">If it’s possible to factor <span class="process-math">\(A\)</span> as in (<a href="ch-matrix-factoring-5.html#eq-diag-matrix" class="xref" data-knowl="./knowl/xref/eq-diag-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.1">(5.3.1)</a>), then we call a matrix diagonalizable. Here’s a formal definition.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="ch-matrix-factoring-5-2-9">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-9-1">
+\begin{align}
+\Sigma^{\intercal} \Sigma V^{\intercal}  \amp = \Sigma^{\intercal} U^{\intercal} A\notag\\
+V^{\intercal} \amp = (\Sigma^{\intercal} \Sigma)^{-1} \Sigma^{\intercal} U^{\intercal} A \notag\\
+V \amp = ((\Sigma^{\intercal} \Sigma)^{-1} \Sigma^{\intercal} U^{\intercal} A)^{\intercal}\notag\\
+V \amp = A^{\intercal} U \Sigma ((\Sigma^{\intercal} \Sigma)^{-1})^{\intercal}\tag{6.3.3}
+\end{align}
 </div>
-<article class="definition definition-like" id="ch-matrix-factoring-5-2-10"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="ch-matrix-factoring-5-2-10-1-1">An <span class="process-math">\(n\)</span> by <span class="process-math">\(n\)</span>  matrix <span class="process-math">\(A\)</span> is said to be <dfn class="terminology">diagonalizable</dfn> if it can be written<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ch-matrix-factoring-5-2-10-1-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-10-1-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-matrix-factoring-5-2-10">where the fourth property of <a href="sect-matrix-operations.html#lem-matrix-transpose" class="xref" data-knowl="./knowl/xref/lem-matrix-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.2.21: Properties of Transposes">Lemma 2.2.21</a> was used. Similarly, if one solves for <span class="process-math">\(U\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-matrix-factoring-5-2-11">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-11-1">
+\begin{align}
+U \Sigma V^{\intercal} \amp = A \notag\\
+U \Sigma V^{\intercal}V \amp = AV \notag\\
+U \Sigma \amp = A V \notag\\
+U \Sigma \Sigma^{\intercal} \amp = A V \Sigma^{\intercal} \notag\\
+U \amp = A V \Sigma^{\intercal} (\Sigma \Sigma^{\intercal})^{-1} \tag{6.3.4}
+\end{align}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-matrix-factoring-5-2-12">where <span class="process-math">\(V^{-1}=V^{\intercal}\)</span> is used on the 3rd step since <span class="process-math">\(V\)</span> is an orthogonal matrix.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-matrix-factoring-5-2-13">Two examples of finding the SVD are presented below. The first is for a square matrix and the second is for a non-square matrix. We first start with the SVD of a 2 by 2 matrix with the following example.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-svd-2by2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-svd-2by2-1-1">Find <span class="process-math">\(U, \Sigma,\)</span> and <span class="process-math">\(V\)</span> of the SVD for the matrix<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-svd-2by2-1-2">
+<div class="displaymath process-math" id="ex-svd-2by2-1-2-1">
 \begin{equation*}
-A = P D P^{-1}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-10-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ch-matrix-factoring-5-2-10-1-3">where <span class="process-math">\(D\)</span> is a diagonal matrix and <span class="process-math">\(P\)</span> is invertible.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-10-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Definition 5.3.1"><a href="#ch-matrix-factoring-5-2-10" title="Copy heading and permalink for Definition 5.3.1" aria-label="Copy heading and permalink for Definition 5.3.1">🔗</a></div></article><div class="para" id="ch-matrix-factoring-5-2-11">Before explaining how starting with a matrix <span class="process-math">\(A\text{,}\)</span> we can find matrices <span class="process-math">\(D\)</span> and <span class="process-math">\(P\text{,}\)</span> let’s look at one that is factored in this way.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<details id="ch-matrix-factoring-5-2-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="ch-matrix-factoring-5-2-12-1-1">Let<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ch-matrix-factoring-5-2-12-1-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-12-1-2-1">
-\begin{align*}
-A \amp=
-\begin{bmatrix}
-1 \amp 2 \\ 4 \amp 3
-\end{bmatrix}
-\amp P\amp = \begin{bmatrix}
-1 \amp  1 \\
--1 \amp 2
-\end{bmatrix} \amp D \amp = \begin{bmatrix}
--1 \amp 0 \\
-0 \amp 5
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ch-matrix-factoring-5-2-12-1-3">Show that <span class="process-math">\(A = P D P^{-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="solutions"><details id="ch-matrix-factoring-5-2-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ch-matrix-factoring-5-2-12-2-1">First, recall that<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-2-12-2-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-12-2-2-1">
-\begin{align*}
-P^{-1} \amp = \frac{1}{|P|} \begin{bmatrix}
-2 \amp -1 \\
-1 \amp 1
-\end{bmatrix} = \frac{1}{3} \begin{bmatrix}
-2 \amp -1 \\
-1 \amp 1
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ch-matrix-factoring-5-2-12-2-3">and<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-2-12-2-4">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-12-2-4-1">
-\begin{equation*}
-P D = \begin{bmatrix}
--1 \amp 5 \\
-1 \amp 10
+A  = \begin{bmatrix}
+-1 \amp 2 \\
+1 \amp 2
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-2-12-2-5">then<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="ex-svd-2by2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-svd-2by2-2-1">As explained above, the columns of <span class="process-math">\(U\)</span> are the eigenvectors of <span class="process-math">\(AA^{\intercal}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ch-matrix-factoring-5-2-12-2-6">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-12-2-6-1">
+<div class="para logical" id="ex-svd-2by2-2-2">
+<div class="displaymath process-math" id="ex-svd-2by2-2-2-1">
 \begin{equation*}
-P D P^{-1} =  \begin{bmatrix}
-1 \amp 2 \\
-4 \amp 3
+A A^{\intercal} = \begin{bmatrix}
+5 \amp 3 \\
+3 \amp 5
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-2-12-2-7">which shows in this particular example that <span class="process-math">\(A=PDP^{-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-12-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-svd-2by2-2-3">The eigenvalues are found by<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 5.3.2.1"><a href="#ch-matrix-factoring-5-2-12-2" title="Copy heading and permalink for Solution 5.3.2.1" aria-label="Copy heading and permalink for Solution 5.3.2.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 5.3.2"><a href="#ch-matrix-factoring-5-2-12" title="Copy heading and permalink for Example 5.3.2" aria-label="Copy heading and permalink for Example 5.3.2">🔗</a></div></article></details><article class="theorem theorem-like" id="ch-matrix-factoring-5-2-13"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="ch-matrix-factoring-5-2-13-1-1">An <span class="process-math">\(n\)</span> by <span class="process-math">\(n\)</span> matrix <span class="process-math">\(A\)</span> is diagonalizable if and only if it has <span class="process-math">\(n\)</span> linearly independent eigenvectors. The matrix <span class="process-math">\(P\)</span> is a matrix of the eigenvectors and the matrix <span class="process-math">\(D\)</span> is the diagonal matrix of eigenvalues.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 5.3.3"><a href="#ch-matrix-factoring-5-2-13" title="Copy heading and permalink for Theorem 5.3.3" aria-label="Copy heading and permalink for Theorem 5.3.3">🔗</a></div></article><details id="ch-matrix-factoring-5-2-13-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="ch-matrix-factoring-5-2-13-2-1">Thus we want to show that<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-2-13-2-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-13-2-2-1">
-\begin{align*}
-A \amp = P D P^{-1} \amp\amp \text{or} \\
-A P \amp = P D
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-13-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ch-matrix-factoring-5-2-13-2-3">since <span class="process-math">\(P\)</span> is invertible. Let<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-13-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-2-13-2-4">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-13-2-4-1">
-\begin{align*}
-P  \amp = \begin{bmatrix}
-\boldsymbol{v}_1 \amp \boldsymbol{v}_2 \amp  \cdots \amp \boldsymbol{v}_n
-\end{bmatrix}
-\amp D \amp = \begin{bmatrix}
-\lambda_1 \amp 0 \amp 0 \amp \cdots \amp 0 \\
-0 \amp \lambda_2 \amp 0 \amp \cdots \amp 0 \\
-0 \amp 0 \amp \lambda_3 \amp \cdots \amp 0 \\
-\vdots \amp \vdots \amp \vdots \amp  \amp \vdots \\
-0 \amp 0 \amp 0 \amp \cdots \amp \lambda_n
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-13-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ch-matrix-factoring-5-2-13-2-5">where <span class="process-math">\(\boldsymbol{v}_i\)</span> is the eigenvector associated with the eigenvalue <span class="process-math">\(\lambda_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-13-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-2-13-2-6">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-13-2-6-1">
-\begin{align*}
-A P \amp = \begin{bmatrix}
-A \boldsymbol{v}_1 \amp A \boldsymbol{v}_2 \amp \cdots A \boldsymbol{v}_n
-\end{bmatrix} \\
-\amp = \begin{bmatrix}
-\lambda_1  \boldsymbol{v}_1 \amp  \lambda_2 \boldsymbol{v}_2 \amp \cdots \amp \lambda_n \boldsymbol{v}_n
-\end{bmatrix} \\
-\amp = \begin{bmatrix}
-\boldsymbol{v}_1 \lambda_1 \amp \boldsymbol{v}_2 \lambda_2 \amp \cdots \amp \boldsymbol{v}_n \lambda_n
-\end{bmatrix}
-= P D
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-13-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 5.3.3.1"><a href="#ch-matrix-factoring-5-2-13-2" title="Copy heading and permalink for Proof 5.3.3.1" aria-label="Copy heading and permalink for Proof 5.3.3.1">🔗</a></div></article></details><details id="ex-diag-2by2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-diag-2by2-1-1">Is the matrix<div class="autopermalink" data-description="Paragraph"><a href="#ex-diag-2by2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-diag-2by2-1-2">
-<div class="displaymath process-math" id="ex-diag-2by2-1-2-1">
+<div class="para logical" id="ex-svd-2by2-2-4">
+<div class="displaymath process-math" id="ex-svd-2by2-2-4-1">
 \begin{equation*}
-A = \begin{bmatrix}
-1 \amp -1 \\
-2 \amp 4
+\det(A-\lambda I) = \begin{vmatrix}
+5 - \lambda \amp 3 \\ 3 \amp 5- \lambda
+\end{vmatrix} = (5-\lambda)^2 - 9  = 0
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-svd-2by2-2-5">with solutions <span class="process-math">\(\lambda = 2, 8\text{.}\)</span> If <span class="process-math">\(\lambda = 2\text{,}\)</span> then the solution to<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-svd-2by2-2-6">
+<div class="displaymath process-math" id="ex-svd-2by2-2-6-1">
+\begin{equation*}
+(AA^{\intercal}-2I)\boldsymbol{v}_1  = \begin{bmatrix}
+3 \amp 3 \\ 3 \amp 3
+\end{bmatrix}\boldsymbol{v}_1 = \begin{bmatrix}
+0 \\ 0
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-diag-2by2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-diag-2by2-1-3">diagonalizable?  If so, find <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-diag-2by2-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-diag-2by2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-diag-2by2-2-1">To check this, we need to find the eigenvalues and eigenvectors. First, find the eigenvalues by solving <span class="process-math">\(|A-\lambda I|=0\)</span> or <span class="process-math">\(\lambda^2-5\lambda+6=(\lambda-3)(\lambda-2)=0\)</span> or <span class="process-math">\(\lambda_1=2\)</span> and <span class="process-math">\(\lambda_2=3\)</span> The associated eigenvectors are<div class="autopermalink" data-description="Paragraph"><a href="#ex-diag-2by2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-svd-2by2-2-7">is <span class="process-math">\(\boldsymbol{v}_1 = [1,-1]^{\intercal}\text{.}\)</span> And if <span class="process-math">\(\lambda = 8\text{,}\)</span> then the solution to<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ex-diag-2by2-2-2">
-<div class="displaymath process-math" id="ex-diag-2by2-2-2-1">
-\begin{align*}
-\boldsymbol{v}_1 \amp= \begin{bmatrix}
-1 \\ -1
-\end{bmatrix}, \amp \boldsymbol{v}_2 \amp = \begin{bmatrix}
-1 \\ -2
-\end{bmatrix} 
-\end{align*}
+<div class="para logical" id="ex-svd-2by2-2-8">
+<div class="displaymath process-math" id="ex-svd-2by2-2-8-1">
+\begin{equation*}
+(AA^{\intercal}-8I) \boldsymbol{v}_2  = \begin{bmatrix}
+-3 \amp 3 \\
+3 \amp -3
+\end{bmatrix} \boldsymbol{v}_2  = \begin{bmatrix}
+0 \\ 0
+\end{bmatrix}
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-diag-2by2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-diag-2by2-2-3">(The steps to find these aren’t shown, but follow the steps in section  <a href="sect-eigenvalues.html" class="internal" title="Section 4.1: Eigenvalues and Eigenvectors">Section 4.1</a>). Since there are 2 linearly independent eigenvectors, this vector is diagonalizable and<div class="autopermalink" data-description="Paragraph"><a href="#ex-diag-2by2-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-svd-2by2-2-9">is <span class="process-math">\(\boldsymbol{v}_2 = [1,1]^{\intercal}\text{.}\)</span> Thus the columns of <span class="process-math">\(U\)</span> are the two eigenvectors scaled to be unit vectors,<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ex-diag-2by2-2-4">
-<div class="displaymath process-math" id="ex-diag-2by2-2-4-1">
-\begin{align*}
-P \amp = \begin{bmatrix}
-1 \amp 1 \\ -1 \amp -2
-\end{bmatrix} \amp D \amp = \begin{bmatrix}
+<div class="para logical" id="ex-svd-2by2-2-10">
+<div class="displaymath process-math" id="ex-svd-2by2-2-10-1">
+\begin{equation*}
+U  = \begin{bmatrix}
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+-1/\sqrt{2} \amp 1/\sqrt{2}
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-svd-2by2-2-11">The singular values in the matrix <span class="process-math">\(\Sigma\)</span> are the square roots of the eigenvalues of <span class="process-math">\(AA^{\intercal}\)</span> and the matrix is<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-svd-2by2-2-12">
+<div class="displaymath process-math" id="ex-svd-2by2-2-12-1">
+\begin{equation*}
+\Sigma = \begin{bmatrix}
+\sqrt{2} \amp 0 \\
+0 \amp \sqrt{8}
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-svd-2by2-2-13">To find the matrix <span class="process-math">\(V\text{,}\)</span> we will use (<a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-9-1" class="xref" data-knowl="./knowl/xref/eq-SVD-V.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.3">(6.3.3)</a>). Since<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-svd-2by2-2-14">
+<div class="displaymath process-math" id="ex-svd-2by2-2-14-1">
+\begin{equation*}
+\Sigma^{\intercal} \Sigma = \begin{bmatrix}
 2 \amp 0 \\
-0 \amp 3
-\end{bmatrix} 
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-diag-2by2-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Solution 5.3.4.1"><a href="#ex-diag-2by2-2" title="Copy heading and permalink for Solution 5.3.4.1" aria-label="Copy heading and permalink for Solution 5.3.4.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 5.3.4"><a href="#ex-diag-2by2" title="Copy heading and permalink for Example 5.3.4" aria-label="Copy heading and permalink for Example 5.3.4">🔗</a></div></article></details><details id="ch-matrix-factoring-5-2-15" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="ch-matrix-factoring-5-2-15-1-1">Is the matrix<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ch-matrix-factoring-5-2-15-1-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-15-1-2-1">
-\begin{equation*}
-A =
-\begin{bmatrix}
-1 \amp 0 \amp 0 \\
-3 \amp -2 \amp 6 \\
-2 \amp 1 \amp 3
+0 \amp 8
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-15-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ch-matrix-factoring-5-2-15-1-3">diagonalizable? If so, find <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-15-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ch-matrix-factoring-5-2-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ch-matrix-factoring-5-2-15-2-1">From example <a href="sect-eigenvalues.html#ex-eigs-3by3" class="xref" data-knowl="./knowl/xref/ex-eigs-3by3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.10">Example 4.1.10</a>, we found that <span class="process-math">\(A\)</span> has eigenvalues <span class="process-math">\(\lambda_1 = 1, \lambda_2 = 4, \lambda_3 = -3\text{.}\)</span> It also has eigenvectors <span class="process-math">\(\boldsymbol{v}_1 =[-4\;\;2\;\;3]^{\intercal} \text{,}\)</span> <span class="process-math">\(\boldsymbol{v}_2 =[0\;\;1\;\;1]^{\intercal}\)</span> and <span class="process-math">\(\boldsymbol{v}_3=[0\;\;-6\;\;1]^{\intercal}\text{.}\)</span> Therefore the matrices:<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-svd-2by2-2-15">and<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ch-matrix-factoring-5-2-15-2-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-2-15-2-2-1">
+<div class="para logical" id="ex-svd-2by2-2-16">
+<div class="displaymath process-math" id="ex-svd-2by2-2-16-1">
+\begin{equation*}
+(\Sigma^{\intercal} \Sigma)^{-1}  = \begin{bmatrix}
+1/2 \amp 0 \\
+0 \amp 1/8
+\end{bmatrix},
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-svd-2by2-2-17">then using <a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-9-1" class="xref" data-knowl="./knowl/xref/eq-SVD-V.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.3">(6.3.3)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-svd-2by2-2-18">
+<div class="displaymath process-math" id="ex-svd-2by2-2-18-1">
 \begin{align*}
-P \amp = \begin{bmatrix}
--4 \amp 0 \amp 0 \\
-2 \amp 1 \amp -6 \\
-3 \amp 1 \amp 1
-\end{bmatrix} \amp
-D \amp =
+V \amp = A^{\intercal} U \Sigma ((\Sigma^{\intercal} \Sigma)^{-1})^{\intercal} \\
+\amp = \begin{bmatrix}
+-1 \amp 1 \\
+2 \amp 2
+\end{bmatrix}
 \begin{bmatrix}
-1 \amp 0 \amp 0 \\ 0 \amp 4 \amp 0 \\ 0 \amp 0 \amp -3
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+-1/\sqrt{2} \amp 1/\sqrt{2}
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{2} \amp 0 \\
+0 \amp \sqrt{8}
+\end{bmatrix}
+\begin{bmatrix}
+1/2 \amp 0 \\
+0 \amp 1/8
+\end{bmatrix} \\
+\amp = \begin{bmatrix}
+-1 \amp 0 \\ 0 \amp 1
 \end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-15-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-2-15-2-3">satisfy <span class="process-math">\(A = PDP^{-1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-15-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-svd-2by2-2-19">It can be checked that indeed <span class="process-math">\(A=U\Sigma V^{\intercal}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-svd-2by2-2-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 5.3.5.1"><a href="#ch-matrix-factoring-5-2-15-2" title="Copy heading and permalink for Solution 5.3.5.1" aria-label="Copy heading and permalink for Solution 5.3.5.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 6.3.2.1"><a href="#ex-svd-2by2-2" title="Copy heading and permalink for Solution 6.3.2.1" aria-label="Copy heading and permalink for Solution 6.3.2.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 5.3.5"><a href="#ch-matrix-factoring-5-2-15" title="Copy heading and permalink for Example 5.3.5" aria-label="Copy heading and permalink for Example 5.3.5">🔗</a></div></article></details></section><section class="subsection" id="ch-matrix-factoring-5-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Powers of Diagonalizable Matrices</span>
-</h3>
-<div class="para" id="ch-matrix-factoring-5-3-2">One main reason for writing a matrix in diagonalizable form is that powers of the matrix are easy to compute. Note that if <span class="process-math">\(A = P^{-1} DP\text{,}\)</span>  then<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 6.3.2"><a href="#ex-svd-2by2" title="Copy heading and permalink for Example 6.3.2" aria-label="Copy heading and permalink for Example 6.3.2">🔗</a></div></article></details><div class="para" id="ch-matrix-factoring-5-2-15">The next example finds the SVD of a 2 by 3 matrix, showing how to handle a non-square matrix.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ch-matrix-factoring-5-3-3">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-3-3-1">
+<details id="ch-matrix-factoring-5-2-16" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="ch-matrix-factoring-5-2-16-1-1">Find the SVD of the matrix<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ch-matrix-factoring-5-2-16-1-2">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-16-1-2-1">
+\begin{equation*}
+A  = \begin{bmatrix}
+2 \amp -3 \amp -3 \\
+2 \amp 3 \amp 3
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ch-matrix-factoring-5-2-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ch-matrix-factoring-5-2-16-2-1">In this example, we will first find the columns of <span class="process-math">\(V\)</span> by the eigenvectors of <span class="process-math">\(A^{\intercal}A\text{.}\)</span> Generally, if the original matrix is not square, one should select the larger matrix between <span class="process-math">\(AA^{\intercal}\)</span> and <span class="process-math">\(A^{\intercal}A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-matrix-factoring-5-2-16-2-2">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-16-2-2-1">
+\begin{equation*}
+A^{\intercal}A = \begin{bmatrix}
+8 \amp 0 \amp 0 \\
+0 \amp 18 \amp 18 \\
+0 \amp 18 \amp 18
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-matrix-factoring-5-2-16-2-3">and the eigenvalues of <span class="process-math">\(A^{\intercal}A\)</span> is found by<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-matrix-factoring-5-2-16-2-4">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-16-2-4-1">
 \begin{align*}
-A^2 \amp = ( PDP^{-1})(PDP^{-1}) \\
-\amp = PD^2P^{-1}
+\det(A^{\intercal}A-\lambda I) \amp = \begin{vmatrix}
+8-\lambda \amp 0 \amp 0 \\
+0 \amp 18-\lambda \amp 18 \\
+0 \amp 18 \amp 18-\lambda
+\end{vmatrix} = (8-\lambda)\bigl((18-\lambda)^2-18^2\bigr)\\
+\amp = (8-\lambda)(\lambda^2-36\lambda) = 0 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-3-4">and by induction:<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-2-16-2-5">which has the solutions <span class="process-math">\(\lambda=8,36,0\text{.}\)</span> Thus the singular values result in<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-matrix-factoring-5-2-16-2-6">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-16-2-6-1">
+\begin{equation*}
+\Sigma = \begin{bmatrix}
+\sqrt{8} \amp 0 \amp 0 \\
+0 \amp 6 \amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-matrix-factoring-5-2-16-2-7">and recall that this matrix is always the same size as the original matrix, <span class="process-math">\(A\text{.}\)</span> Also, you will get zero eigenvalues whenever the matrix is not square. The corresponding eigenvectors are<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-matrix-factoring-5-2-16-2-8">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-16-2-8-1">
+\begin{align*}
+\boldsymbol{v}_1 \amp = \begin{bmatrix}
+1 \\ 0 \\ 0
+\end{bmatrix}, \amp \boldsymbol{v}_2 \amp = \begin{bmatrix}
+0 \\ 1 \\1
+\end{bmatrix} \amp \boldsymbol{v}_3 \amp = \begin{bmatrix}
+0 \\ -1 \\ 1
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-matrix-factoring-5-2-16-2-9">And the matrix <span class="process-math">\(V\)</span> with the columns above scaled to make them unit vectors is<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-matrix-factoring-5-2-16-2-10">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-16-2-10-1">
+\begin{equation*}
+V  = \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+0 \amp 1/\sqrt{2} \amp -1/\sqrt{2} \\
+0 \amp 1/\sqrt{2} \amp 1/\sqrt{2}
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-matrix-factoring-5-2-16-2-11">To find <span class="process-math">\(U\text{,}\)</span> we will use (<a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-11-1" class="xref" data-knowl="./knowl/xref/eq-SVD-U.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.4">(6.3.4)</a>) and note that<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-matrix-factoring-5-2-16-2-12">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-16-2-12-1">
+\begin{equation*}
+(\Sigma \Sigma^{\intercal})^{-1}  = \begin{bmatrix}
+1/8 \amp 0 \\
+0 \amp 1/36
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-matrix-factoring-5-2-16-2-13">and now using (<a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-11-1" class="xref" data-knowl="./knowl/xref/eq-SVD-U.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.4">(6.3.4)</a>)<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-matrix-factoring-5-2-16-2-14">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-2-16-2-14-1">
+\begin{align*}
+U \amp = A V \Sigma^{\intercal} (\Sigma \Sigma^{\intercal})^{-1}  \\
+\amp = \begin{bmatrix}
+2 \amp -3 \amp -3 \\
+2 \amp 3 \amp 3
+\end{bmatrix} \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+0 \amp 1/\sqrt{2} \amp -1/\sqrt{2} \\
+0 \amp 1/\sqrt{2} \amp 1/\sqrt{2}
+\end{bmatrix}\begin{bmatrix}
+\sqrt{8} \amp 0  \\
+0 \amp 6 \\
+0 \amp 0
+\end{bmatrix}\begin{bmatrix}
+1/8 \amp 0 \\
+0 \amp 1/36
+\end{bmatrix} \\
+\amp = \begin{bmatrix}
+\sqrt{2}/2 \amp \sqrt{2}/2 \\
+\sqrt{2}/2 \amp -\sqrt{2}/2
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-matrix-factoring-5-2-16-2-15">and it can be checked that <span class="process-math">\(U\Sigma V^{\intercal} = A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-16-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.3.1"><a href="#ch-matrix-factoring-5-2-16-2" title="Copy heading and permalink for Solution 6.3.3.1" aria-label="Copy heading and permalink for Solution 6.3.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.3"><a href="#ch-matrix-factoring-5-2-16" title="Copy heading and permalink for Example 6.3.3" aria-label="Copy heading and permalink for Example 6.3.3">🔗</a></div></article></details><div class="para" id="ch-matrix-factoring-5-2-17">It is noted that the above two examples result in fairly nice matrices <span class="process-math">\(U,V\)</span> and <span class="process-math">\(\Sigma\text{.}\)</span> This very rarely happens. In addition, as the size of the matrices grow, the eigenvalues generally cannot be found exactly. Therefore for matrices of sizes larger than 3 by 3, numerical techniques are used to find the factors.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="ch-matrix-factoring-5-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The geometry of the SVD</span>
+</h3>
+<div class="para" id="ch-matrix-factoring-5-3-2">This section will explain in geometric terms what the SVD generates for an example that can be plotted in 2D. First, let’s consider 100 points that are scattered around the origin and perhaps they look like the following:<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-random-points"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/plot-random-points.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Some Random Points<div class="autopermalink" data-description="Figure 6.3.4"><a href="#fig-random-points" title="Copy heading and permalink for Figure 6.3.4" aria-label="Copy heading and permalink for Figure 6.3.4">🔗</a></div></figcaption></figure><div class="para" id="ch-matrix-factoring-5-3-4">the matrix is a 2 by 100 matrix with each column the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> value of each point, we can perform an SVD of this. The results for <span class="process-math">\(U\)</span> and the 2 diagonal elements of <span class="process-math">\(\Sigma\)</span> (denoted <span class="process-math">\(\sigma_1\)</span> and <span class="process-math">\(\sigma_2\)</span>) are<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ch-matrix-factoring-5-3-5">
 <div class="displaymath process-math" id="ch-matrix-factoring-5-3-5-1">
-\begin{equation*}
-A^k = PD^k P^{-1}
-\end{equation*}
+\begin{align*}
+\sigma_1 \amp = 54.51177 \amp \sigma_2 \amp =
+5.576430 \amp U \amp = \begin{bmatrix}
+-0.953478 \amp -0.30146\\
+-0.30146 \amp 0.953478
+\end{bmatrix}
+\end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-3-6">Note that raising the diagonal matrix <span class="process-math">\(D\)</span> to a power is a simple process .<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-3-6">where these have been done using software (not by hand). If we plot the two vectors in the columns of <span class="process-math">\(U\)</span> with relative sizes of those found in <span class="process-math">\(\Sigma\text{,}\)</span> you see in the plot above that the larger vector points in the direction of stretch of the points and the second vector is orthogonal. The relative lengths are the relative stretches of the points. The geometry of the columns in the <span class="process-math">\(V\)</span> matrix is more difficult to understand in this situation because each of the vectors are length 100. If the original matrix had 3 rows, then each column is a point in 3 dimensions. The 3 columns in <span class="process-math">\(U\)</span> would again show the stretching of the points in 3 orthogonal directions with the stretching factor in the <span class="process-math">\(\Sigma\)</span> matrix.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="ch-matrix-factoring-5-3-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ch-matrix-factoring-5-3-7-1-1">Use the fact that <span class="process-math">\(A\)</span> is diagonalizable to find<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ch-matrix-factoring-5-3-7-1-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-3-7-1-2-1">
-\begin{equation*}
-\begin{bmatrix}
-1 \amp -1 \\
-2 \amp 4
-\end{bmatrix}^5
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-7-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="solutions"><details id="ch-matrix-factoring-5-3-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ch-matrix-factoring-5-3-7-2-1">From <a href="ch-matrix-factoring-5.html#ex-diag-2by2" class="xref" data-knowl="./knowl/xref/ex-diag-2by2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.3.4">Example 5.3.4</a>, <span class="process-math">\(A\)</span> can be written <span class="process-math">\(A=PDP^{-1}\)</span> with<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-3-7-2-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-3-7-2-2-1">
-\begin{align*}
-P \amp = \begin{bmatrix}
-1 \amp 1 \\ -1 \amp -2
-\end{bmatrix} \amp D \amp = \begin{bmatrix}
-2 \amp 0 \\
-0 \amp 3
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ch-matrix-factoring-5-3-7-2-3">Then, <span class="process-math">\(A^5\)</span> can be written<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-7-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-3-7-2-4">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-3-7-2-4-1">
-\begin{align*}
-A^5 \amp = P D^5 P^{-1} \\
-\amp = \begin{bmatrix}
-1 \amp 1 \\
--1 \amp -2
-\end{bmatrix} \begin{bmatrix}
-2 \amp 0 \\
-0 \amp 3
-\end{bmatrix}^5  \begin{bmatrix}
-2 \amp 1 \\
--1 \amp -1
-\end{bmatrix} \\
-\amp = \begin{bmatrix}
-1 \amp 1 \\
--1 \amp -2
-\end{bmatrix} \begin{bmatrix}
-32 \amp 0 \\
-0 \amp 243
-\end{bmatrix} \begin{bmatrix}
-2 \amp 1 \\
--1 \amp -1
-\end{bmatrix} \\
-\amp = \begin{bmatrix}
--179 \amp -211 \\
-422 \amp 454
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-3-7-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Solution 5.3.6.1"><a href="#ch-matrix-factoring-5-3-7-2" title="Copy heading and permalink for Solution 5.3.6.1" aria-label="Copy heading and permalink for Solution 5.3.6.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 5.3.6"><a href="#ch-matrix-factoring-5-3-7" title="Copy heading and permalink for Example 5.3.6" aria-label="Copy heading and permalink for Example 5.3.6">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 5.3.1: Powers of Diagonalizable Matrices"><a href="#ch-matrix-factoring-5-3" title="Copy heading and permalink for Subsection 5.3.1: Powers of Diagonalizable Matrices" aria-label="Copy heading and permalink for Subsection 5.3.1: Powers of Diagonalizable Matrices">🔗</a></div></section><section class="subsection" id="ch-matrix-factoring-5-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Similar Matrices</span>
+<div class="autopermalink" data-description="Subsection 6.3.1: The geometry of the SVD"><a href="#ch-matrix-factoring-5-3" title="Copy heading and permalink for Subsection 6.3.1: The geometry of the SVD" aria-label="Copy heading and permalink for Subsection 6.3.1: The geometry of the SVD">🔗</a></div></section><section class="subsection" id="ch-matrix-factoring-5-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding a best-fit line and plane using SVD</span>
 </h3>
-<article class="definition definition-like" id="ch-matrix-factoring-5-4-2"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="ch-matrix-factoring-5-4-2-1-1">Two <span class="process-math">\(n\)</span> by <span class="process-math">\(n\)</span> matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are said to be <dfn class="terminology">similar</dfn> if there exists an invertible matrix <span class="process-math">\(S\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ch-matrix-factoring-5-4-2-1-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-4-2-1-2-1">
-\begin{equation*}
-B = S^{-1} A S
-\end{equation*}
+<div class="para" id="ch-matrix-factoring-5-4-2">You might notice from above that perhaps we can use the SVD to find a line to a set of points and this is true. We will use a simpler example to show how this work and how it is similar to other fitting techniques. We can also use a similar technique to find the best-fit plane through points in 3 dimensions. We first start with a simple example of points in the plan. Consider the points (1,2), (2,2), (3,5), (6,7). We wish to fit a line that best fits the points.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figure class="figure figure-like" id="fig-best-fit-points-svd"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/plot-best-fit-points-svd.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Best fit points<div class="autopermalink" data-description="Figure 6.3.5"><a href="#fig-best-fit-points-svd" title="Copy heading and permalink for Figure 6.3.5" aria-label="Copy heading and permalink for Figure 6.3.5">🔗</a></div></figcaption></figure><div class="para" id="ch-matrix-factoring-5-4-4">First, we will find the center of these points by just finding the average of the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> values.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 5.3.7"><a href="#ch-matrix-factoring-5-4-2" title="Copy heading and permalink for Definition 5.3.7" aria-label="Copy heading and permalink for Definition 5.3.7">🔗</a></div></article><article class="theorem theorem-like" id="ch-matrix-factoring-5-4-3"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="ch-matrix-factoring-5-4-3-1-1">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar <span class="process-math">\(n\)</span> by <span class="process-math">\(n\)</span> matrices, then the following are identical for the two matrices:<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ch-matrix-factoring-5-4-3-1-2">
-<ul class="disc" id="ch-matrix-factoring-5-4-3-1-2-1">
-<li id="ch-matrix-factoring-5-4-3-1-2-1-1">
-<div class="para" id="ch-matrix-factoring-5-4-3-1-2-1-1-1">Rank<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-3-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ch-matrix-factoring-5-4-3-1-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ch-matrix-factoring-5-4-3-1-2-1-2">
-<div class="para" id="ch-matrix-factoring-5-4-3-1-2-1-2-1">Determinant<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-3-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ch-matrix-factoring-5-4-3-1-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ch-matrix-factoring-5-4-3-1-2-1-3">
-<div class="para" id="ch-matrix-factoring-5-4-3-1-2-1-3-1">Trace<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-3-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ch-matrix-factoring-5-4-3-1-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-</ul>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 5.3.8"><a href="#ch-matrix-factoring-5-4-3" title="Copy heading and permalink for Theorem 5.3.8" aria-label="Copy heading and permalink for Theorem 5.3.8">🔗</a></div></article><article class="theorem theorem-like" id="ch-matrix-factoring-5-4-4"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="ch-matrix-factoring-5-4-4-1-1">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar <span class="process-math">\(n\)</span> by <span class="process-math">\(n\)</span> matrices, then <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same characteristic equation and therefore have the same eigenvalues.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 5.3.9"><a href="#ch-matrix-factoring-5-4-4" title="Copy heading and permalink for Theorem 5.3.9" aria-label="Copy heading and permalink for Theorem 5.3.9">🔗</a></div></article><details id="ch-matrix-factoring-5-4-4-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="ch-matrix-factoring-5-4-4-2-1">Let <span class="process-math">\(A\)</span> satisfy the characteristic equation<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-4-4-2-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-4-4-2-2-1">
-\begin{equation*}
-\det(A - \lambda I) = 0
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ch-matrix-factoring-5-4-4-2-3">Since <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, then <span class="process-math">\(A=S^{-1}BS\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-4-4-2-4">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-4-4-2-4-1">
+<div class="para logical" id="ch-matrix-factoring-5-4-5">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-4-5-1">
 \begin{align*}
-\det(S^{-1} B S - \lambda I) \amp = 0 \qquad \text{Since $S^{-1}S=I=S^{-1} IS$}\\
-\det(S^{-1} B S - \lambda S^{-1} I S) \amp = 0 \qquad\text{Factoring out a $S^{-1}$ from the left and $S$ from the right}\\
-\det (S^{-1}(B - \lambda S I S^{-1}) S) \amp  = 0 \\
-\det(S^{-1}) \det(B-\lambda I) \det(S) \amp = 0\\
-\amp \qquad \text{since $\det(S^{-1}) \det(S)= \det(S^{-1}S)=\det(I)= 1$}\\
-\det(B - \lambda I) \amp = 0
+\overline{x} \amp = \frac{1+2+3+6}{4} = 3 \amp \overline{y} \amp = \frac{2+2+5+7}{4} = 4
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-4-4-2-5">so the characteristic equation is identical, thus the eigenvalues are the same.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-4-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-4-6">We now generate a new data set where each <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> value is adjusted by the means above. The new data set is <span class="process-math">\(\{(-2,-2),(-1,-2),(0,1),(3,3)\}\text{.}\)</span> We then use these values to find<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 5.3.9.1"><a href="#ch-matrix-factoring-5-4-4-2" title="Copy heading and permalink for Proof 5.3.9.1" aria-label="Copy heading and permalink for Proof 5.3.9.1">🔗</a></div></article></details><div class="para" id="ch-matrix-factoring-5-4-5">Note:  The eigenvectors are in general not the same in <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<details id="ex-sim-matrices" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-sim-matrices-1-1">Show that<div class="autopermalink" data-description="Paragraph"><a href="#ex-sim-matrices-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-sim-matrices-1-2">
-<div class="displaymath process-math" id="ex-sim-matrices-1-2-1">
-\begin{align*}
-A \amp = \begin{bmatrix}
-1 \amp -1 \\ 2 \amp 4
-\end{bmatrix} \amp B \amp = \begin{bmatrix}
-2 \amp 2 \\ 0 \amp 3
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-sim-matrices-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-sim-matrices-1-3">are similar matrices with<div class="autopermalink" data-description="Paragraph"><a href="#ex-sim-matrices-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-sim-matrices-1-4">
-<div class="displaymath process-math" id="ex-sim-matrices-1-4-1">
+<div class="para logical" id="ch-matrix-factoring-5-4-7">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-4-7-1">
 \begin{equation*}
-S = \begin{bmatrix}
--1 \amp 1 \\ 1 \amp 0
+A = \begin{bmatrix}
+-2 \amp -1 \amp 0 \amp 3 \\
+-2 \amp -2 \amp 1 \amp 3
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-sim-matrices-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-sim-matrices-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-sim-matrices-2-1">First, using the formula for the inverse of a <span class="process-math">\(2 \times 2\)</span> matrix,<div class="autopermalink" data-description="Paragraph"><a href="#ex-sim-matrices-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-4-8">As above, the singular values in <span class="process-math">\(\Sigma\)</span> and the matrix <span class="process-math">\(U\)</span> will be most important. As above, the matrix <span class="process-math">\(U\)</span> have the eigenvectors of <span class="process-math">\(AA^{\intercal}\)</span> with the eigenvalues as the diagonal elements of <span class="process-math">\(\Sigma\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ex-sim-matrices-2-2">
-<div class="displaymath process-math" id="ex-sim-matrices-2-2-1">
+<div class="para logical" id="ch-matrix-factoring-5-4-9">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-4-9-1">
 \begin{equation*}
-S^{-1}  =  \begin{bmatrix}
-0 \amp 1 \\ 1 \amp 1
+AA^{\intercal} = \begin{bmatrix}
+14 \amp 15 \\ 15 \amp 18
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-sim-matrices-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-sim-matrices-2-3">and<div class="autopermalink" data-description="Paragraph"><a href="#ex-sim-matrices-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-4-10">Again, using software, the diagonal elements of <span class="process-math">\(\Sigma\text{,}\)</span> labelled <span class="process-math">\(\sigma_1\)</span> and <span class="process-math">\(\sigma_2\)</span> and the matrix <span class="process-math">\(U\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ex-sim-matrices-2-4">
-<div class="displaymath process-math" id="ex-sim-matrices-2-4-1">
+<div class="para logical" id="ch-matrix-factoring-5-4-11">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-4-11-1">
 \begin{align*}
-S^{-1} A S \amp = \begin{bmatrix}
-0 \amp 1 \\ 1 \amp 1
-\end{bmatrix} \begin{bmatrix}
-1 \amp -1 \\ 2 \amp 4
-\end{bmatrix}\begin{bmatrix}
--1 \amp 1 \\ 1 \amp 0
-\end{bmatrix} = \begin{bmatrix}
-2\amp 2 \\ 0  \amp 3
-\end{bmatrix} = B
+\sigma_1 \amp = 5.5796 \amp \sigma_2 \amp = 0.93126 \amp U \amp = \begin{bmatrix}
+-0.658724 \amp -0.752384 \\
+-0.752384 \amp 0.658725
+\end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-sim-matrices-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 5.3.10.1"><a href="#ex-sim-matrices-2" title="Copy heading and permalink for Solution 5.3.10.1" aria-label="Copy heading and permalink for Solution 5.3.10.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 5.3.10"><a href="#ex-sim-matrices" title="Copy heading and permalink for Example 5.3.10" aria-label="Copy heading and permalink for Example 5.3.10">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 5.3.2: Similar Matrices"><a href="#ch-matrix-factoring-5-4" title="Copy heading and permalink for Subsection 5.3.2: Similar Matrices" aria-label="Copy heading and permalink for Subsection 5.3.2: Similar Matrices">🔗</a></div></section><section class="subsection" id="ch-matrix-factoring-5-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Similar and Diagonalizable Matrices</span>
-</h3>
-<div class="para" id="ch-matrix-factoring-5-5-2">It appears that there is a connection to similar and diagonalizable matrices through at least their near identical formulas. Notice that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar if there exists an invertible matrix <span class="process-math">\(P\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-4-12">The prominent eigenvector is the one corresponding to the larger singular value (the first one), so the eigenvalue to use is the first column of <span class="process-math">\(U\text{.}\)</span> The slope of the line will be the <span class="process-math">\(y\)</span>-component over the <span class="process-math">\(x\)</span>-component (rise over run) or<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ch-matrix-factoring-5-5-3">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-5-3-1">
+<div class="para logical" id="ch-matrix-factoring-5-4-13">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-4-13-1">
 \begin{equation*}
-A = S^{-1} B S
+m = \frac{-0.752384}{-0.658724} = 1.1421830
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-5-4">and <span class="process-math">\(A\)</span> is diagonalizable if there exists a <span class="process-math">\(P_1\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-4-14">Lastly, to find the line, we will use the point-slope form with the average values (or center point) of <span class="process-math">\((3,4)\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ch-matrix-factoring-5-5-5">
-<div class="displaymath process-math" id="eq-diag-A">
-\begin{equation}
-A  = P_1D_1 P^{-1}_1\tag{5.3.2}
-\end{equation}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ch-matrix-factoring-5-5-6">for a diagonal matrix <span class="process-math">\(D_1\text{.}\)</span> Similarly <span class="process-math">\(B\)</span> is diagonalizable if there exists an invertible <span class="process-math">\(P_2\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-5-7">
-<div class="displaymath process-math" id="eq-diag-B">
-\begin{equation}
-B  = P_2 D_2 P_{2}^{-1}\tag{5.3.3}
-\end{equation}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ch-matrix-factoring-5-5-8">for diagonal matrix <span class="process-math">\(D_2\text{.}\)</span> We know that the matrices <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\)</span> exist if there are <span class="process-math">\(n\)</span> linearly independent eigenvectors, but how do you find <span class="process-math">\(S\text{?}\)</span> Solving for <span class="process-math">\(D_1\)</span> in <a href="ch-matrix-factoring-5.html#eq-diag-A" class="xref" data-knowl="./knowl/xref/eq-diag-A.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.2">(5.3.2)</a> and <span class="process-math">\(D_2\)</span> in <a href="ch-matrix-factoring-5.html#eq-diag-B" class="xref" data-knowl="./knowl/xref/eq-diag-B.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.3">(5.3.3)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-5-9">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-5-9-1">
+<div class="para logical" id="ch-matrix-factoring-5-4-15">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-4-15-1">
 \begin{align*}
-D_1 \amp = P_1^{-1}A P_1 \amp D_2 \amp = P_2^{-1} B P_2
+y-4 \amp = 1.1428130 (x-3)\\
+y \amp = 1.1428130 x + 0.571561
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ch-matrix-factoring-5-5-10">
-<div class="para">Also, since the eigenvalues of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are the same, we can rearrange the eigenvectors of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> to the same order thus without loss of generality, <span class="process-math">\(D_1=D_2\)</span> and</div>
-<div class="displaymath process-math" id="ch-matrix-factoring-5-5-10-6">
-\begin{align*}
-P_1^{-1} A P_1 \amp = P_2^{-1} B P_2\\
-\text{left multiplying by $P_1$ and right multiplying by $P_1^{-1}$}\\
-A \amp = P_1 P_2^{-1} B P_2 P_1^{-1}
-\end{align*}
+<div class="para" id="ch-matrix-factoring-5-4-16">and the following is a plot of the data and the line:<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figure class="figure figure-like" id="fig-points-and-line"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/plot-points-and-line.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Best fit line using SVD<div class="autopermalink" data-description="Figure 6.3.6"><a href="#fig-points-and-line" title="Copy heading and permalink for Figure 6.3.6" aria-label="Copy heading and permalink for Figure 6.3.6">🔗</a></div></figcaption></figure><div class="para" id="ch-matrix-factoring-5-4-18">And as a comparison, if we use least-squares to find the line, the result is<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-5-11">thus let<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-5-12">
-<div class="displaymath process-math" id="eq-similar-matrix">
-\begin{equation}
-S = P_2 P_1^{-1}.\tag{5.3.4}
-\end{equation}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<details id="ch-matrix-factoring-5-5-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ch-matrix-factoring-5-5-13-1-1">Above we showed that the matrices<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ch-matrix-factoring-5-5-13-1-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-5-13-1-2-1">
-\begin{align*}
-A \amp = \begin{bmatrix}
-1 \amp -1 \\ 2 \amp 4
-\end{bmatrix} \amp B \amp = \begin{bmatrix}
-2 \amp 2 \\ 0 \amp 3
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ch-matrix-factoring-5-5-13-1-3">are similar. Use the above discussion to find <span class="process-math">\(S\)</span> such that <span class="process-math">\(A=S^{-1}BS\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="solutions"><details id="ch-matrix-factoring-5-5-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ch-matrix-factoring-5-5-13-2-1">Briefly, we need to diagonalize both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> In example <a href="ch-matrix-factoring-5.html#ex-diag-2by2" class="xref" data-knowl="./knowl/xref/ex-diag-2by2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.3.4">Example 5.3.4</a>, we found that the eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1=2\)</span> and <span class="process-math">\(\lambda_2=3\)</span> with associated eigenvectors <span class="process-math">\(\boldsymbol{v}_1=[1\;\;-1]^{\intercal}\)</span> and <span class="process-math">\(\boldsymbol{v}_2=[1\;\;-2]^{\intercal}\text{.}\)</span> Using the techniques of section <a href="sect-eigenvalues.html" class="internal" title="Section 4.1: Eigenvalues and Eigenvectors">Section 4.1</a>, the eigenvalues of <span class="process-math">\(B\)</span> are <span class="process-math">\(\lambda_1=2\)</span> and <span class="process-math">\(\lambda_2=3\)</span> with associated eigenvectors <span class="process-math">\(\boldsymbol{v}_1=[1\;\;4]^{\intercal}\)</span> and <span class="process-math">\(\boldsymbol{v}_2=[0\;\;1]^{\intercal}\text{.}\)</span> Letting <span class="process-math">\(D_1\)</span> and <span class="process-math">\(P_1\)</span> be the matrices associated with <span class="process-math">\(A\)</span> and <span class="process-math">\(D_2\)</span> and <span class="process-math">\(P_2\text{,}\)</span> those associated with <span class="process-math">\(B\text{,}\)</span> let<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-5-13-2-2">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-5-13-2-2-1">
+<div class="para logical" id="ch-matrix-factoring-5-4-19">
+<div class="displaymath process-math" id="ch-matrix-factoring-5-4-19-1">
 \begin{equation*}
-D_1 = D_2 = \begin{bmatrix}
-3 \amp 0 \\ 0 \amp 2
-\end{bmatrix}
+m = 1.0714x+ 0.285714
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ch-matrix-factoring-5-5-13-2-3">and<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ch-matrix-factoring-5-4-20">The reason for the difference is because each method minimizes something different. The least-squares line is the one that minimizes the vertical distance between the data and the line. The SVD best-fit line produces a line that minimizes the square of the orthogonal distance to all the points.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-4-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ch-matrix-factoring-5-5-13-2-4">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-5-13-2-4-1">
-\begin{align*}
-P_1 \amp = \begin{bmatrix}
-1 \amp 1 \\
--1 \amp -2
-\end{bmatrix}, \amp P_2 \amp = \begin{bmatrix}
-2 \amp 1 \\
-1 \amp 0
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ch-matrix-factoring-5-5-13-2-5">and using <a href="ch-matrix-factoring-5.html#eq-similar-matrix" class="xref" data-knowl="./knowl/xref/eq-similar-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.4">(5.3.4)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ch-matrix-factoring-5-5-13-2-6">
-<div class="displaymath process-math" id="ch-matrix-factoring-5-5-13-2-6-1">
-\begin{equation*}
-S = P_{2} P_1^{-1} = \begin{bmatrix}
-2 \amp 1 \\ 1 \amp 0
-\end{bmatrix} \begin{bmatrix}
--1 \amp -1\\
-2 \amp 1\\
-\end{bmatrix}= \begin{bmatrix}
-0 \amp  -1 \\
--1 \amp -1
-\end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ch-matrix-factoring-5-5-13-2-7">And although this <span class="process-math">\(S\)</span> is not the same <span class="process-math">\(S\)</span> as  <a href="ch-matrix-factoring-5.html#ex-sim-matrices" class="xref" data-knowl="./knowl/xref/ex-sim-matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.3.10">Example 5.3.10</a>, this matrix <span class="process-math">\(S\)</span> is the negative of the inverse of that matrix in <a href="ch-matrix-factoring-5.html#ex-sim-matrices" class="xref" data-knowl="./knowl/xref/ex-sim-matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.3.10">Example 5.3.10</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ch-matrix-factoring-5-5-13-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Solution 5.3.11.1"><a href="#ch-matrix-factoring-5-5-13-2" title="Copy heading and permalink for Solution 5.3.11.1" aria-label="Copy heading and permalink for Solution 5.3.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 5.3.11"><a href="#ch-matrix-factoring-5-5-13" title="Copy heading and permalink for Example 5.3.11" aria-label="Copy heading and permalink for Example 5.3.11">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 5.3.3: Similar and Diagonalizable Matrices"><a href="#ch-matrix-factoring-5-5" title="Copy heading and permalink for Subsection 5.3.3: Similar and Diagonalizable Matrices" aria-label="Copy heading and permalink for Subsection 5.3.3: Similar and Diagonalizable Matrices">🔗</a></div></section><div class="autopermalink" data-description="Section 5.3: Diagonalization of Matrices"><a href="#ch-matrix-factoring-5" title="Copy heading and permalink for Section 5.3: Diagonalization of Matrices" aria-label="Copy heading and permalink for Section 5.3: Diagonalization of Matrices">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Subsection 6.3.2: Finding a best-fit line and plane using SVD"><a href="#ch-matrix-factoring-5-4" title="Copy heading and permalink for Subsection 6.3.2: Finding a best-fit line and plane using SVD" aria-label="Copy heading and permalink for Subsection 6.3.2: Finding a best-fit line and plane using SVD">🔗</a></div></section><div class="autopermalink" data-description="Section 6.3: Singular Value Decomposition"><a href="#ch-matrix-factoring-5" title="Copy heading and permalink for Section 6.3: Singular Value Decomposition" aria-label="Copy heading and permalink for Section 6.3: Singular Value Decomposition">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sect-lu-factorization.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-matrix-factoring-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-matrix-factoring-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-fourier-series.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

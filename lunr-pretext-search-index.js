@@ -1,6 +1,24 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
+  "id": "front-colophon",
+  "level": "1",
+  "url": "front-colophon.html",
+  "type": "Colophon",
+  "number": "",
+  "title": "Colophon",
+  "body": "  "
+},
+{
+  "id": "preface",
+  "level": "1",
+  "url": "preface.html",
+  "type": "Preface",
+  "number": "",
+  "title": "Preface",
+  "body": "  To the Student  This is a textbook that I have developed starting around 2010 for students in the Applied Mathematics class at Fitchburg State University. I got my Ph.D. in Applied Mathematics and there was some core material that I felt was needed for such a course and at the time did not find an appropriate text for the course.  In 2024, I adapted the book from a solely latex book to one written in PreTeXt and since then I have been refining it.  First, if you are reading this, kudos to you. I have to admit that I don't always read the preface to a book. If you are reading this, then I think you may already have a deeper belief in understanding than someone who is just interested in the answer. I (and I believe most authors) decide to write a book and spend a lot of time thinking about it and editing to give the material in the book a context. I want to spend a bit of time discussing this in this preface.  Why have a textbook in the age of Artificial Intelligence? I think this is a great question. I feel that a textbook is very grounding and gives structure to a class.   "
+},
+{
   "id": "sect-linear-systems",
   "level": "1",
   "url": "sect-linear-systems.html",
@@ -307,9 +325,9 @@ var ptx_lunr_docs = [
   "body": "  Solving a linear system by reducing its corresponding augmented matrix to a reduced row-echelon form matrix, then interpreting its solution is called Gauss-Jordon reduction .   "
 },
 {
-  "id": "sect-gaussian-elimination-5-4",
+  "id": "ex-solve-3by3",
   "level": "2",
-  "url": "sect-gaussian-elimination.html#sect-gaussian-elimination-5-4",
+  "url": "sect-gaussian-elimination.html#ex-solve-3by3",
   "type": "Example",
   "number": "1.3.10",
   "title": "",
@@ -835,7 +853,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Matrix and Vector Definition",
-  "body": " Matrix and Vector Definition     Definitions of matrices and vectors.    Learning some notation around matrices and vectors.      Matrices    A matrix is a rectangular grid of numbers. An by matrix has rows and columns.    For example,   The size of a matrix is the number of rows and columns in the matrix. The number of rows is listed first. The size of the example above is 2 by 4.  The numbers in a matrix are called the entries or elements of the matrix. For example, for the matrix in , the entry on the first row and third column is 11. Often we will use the notation , where the subscript 1 is the row number and is the column number.    Vectors  We saw vectors in however we repeat some of these to put them in a broader context.    A vector is a matrix with one of its dimensions is 1. If a matrix only has one column it is called a column vector . If the matrix has only one row it is called a a row vector . The number of elements (numbers) in the vector is called the length .    The following are examples of vectors.    The first two are column vectors. The third is a row vectors.     Since a vector has a single dimension, the individual elements can be identified with a single index. For example, and . The lengths of and are 4,3 and 3 respectively.   Vectors can be thought of as individual columns or rows of a matrix. Also, a column vector can be thought of as an matrix and a row vector as a matrix and properties of matrices will pertain to vectors as well.     Matrix, Vector and Scalar Notation  A scalar is a fancy term for a number. Mathematicians use this term to distinguish them from matrices and vectors, which are not scalars. Whenever variables are used for scalars, then lower case letters will be used. For example, and are scalar variables.  When we use variable names for matrices, we will use capital letters. For example, and are matrix (or vector) variables.  Generally, vectors will be lower case and bold. For example, here are vectors: . Note: sometimes vectors are indicated with a arrow above the variable name, like .   In general, a matrix can be written . These will be used in proofs later on in this chapter and for defintions of operations. A vector can be written and although this notation can be used for both column and row vectors, unless denoted as such vectors will be consider as column vectors. We will see later in this chapter that we can simply write a row vector as a transformation of a column vector.    "
+  "body": " Matrix and Vector Definition     Definitions of matrices and vectors.    Learning some notation around matrices and vectors.    Definitions of upper and lower triangular matrices.      Matrices    A matrix is a rectangular grid of numbers. An by matrix has rows and columns.    For example,   The size of a matrix is the number of rows and columns in the matrix. The number of rows is listed first. The size of the example above is 2 by 4.  The numbers in a matrix are called the entries or elements of the matrix. For example, for the matrix in , the entry on the first row and third column is 11. Often we will use the notation , where the subscript 1 is the row number and is the column number.    Vectors  We saw vectors in however we repeat some of these to put them in a broader context.    A vector is a matrix with one of its dimensions is 1. If a matrix only has one column it is called a column vector . If the matrix has only one row it is called a a row vector . The number of elements (numbers) in the vector is called the length .    The following are examples of vectors.    The first two are column vectors. The third is a row vectors.     Since a vector has a single dimension, the individual elements can be identified with a single index. For example, and . The lengths of and are 4,3 and 3 respectively.   Vectors can be thought of as individual columns or rows of a matrix. Also, a column vector can be thought of as an matrix and a row vector as a matrix and properties of matrices will pertain to vectors as well.     Matrix, Vector and Scalar Notation  A scalar is a fancy term for a number. Mathematicians use this term to distinguish them from matrices and vectors, which are not scalars. Whenever variables are used for scalars, then lower case letters will be used. For example, and are scalar variables.  When we use variable names for matrices, we will use capital letters. For example, and are matrix (or vector) variables.  Generally, vectors will be lower case and bold. For example, here are vectors: . Note: sometimes vectors are indicated with a arrow above the variable name, like .   In general, a matrix can be written . These will be used in proofs later on in this chapter and for defintions of operations. A vector can be written and although this notation can be used for both column and row vectors, unless denoted as such vectors will be consider as column vectors. We will see later in this chapter that we can simply write a row vector as a transformation of a column vector.     Diagonal and Triangular Matrices  As we will see throughout this chapter, there are many important forms of matrices and in this section we see diagonal and triangular matrices.    A matrix with only non-zero entries are on the main diagonal Recall that the main diagonal is the one where the row number equals the column number, or more informally the diagonal from upper left to lower right. is called a diagonal matrix . Using the subscript notation, is diagonal if for all where .    The following show examples of diagonal matrices.    These matrices are diagonal matrices.     Another class of matrices are triangular. These are matrices with all zeros above or below the diagonal.    An upper-triangular matrix is a matrix where all entries below the main diagonal is 0 or is upper-triangular if if .  A lower-triangular matrix is a matrix where all entries above the main diagonal is 0 or is lower-triangular if if .    And here are some examples.    The following are upper-triangular matrices.   The following are lower-triangular matrices.      "
 },
 {
   "id": "sect-matrix-definition-2",
@@ -844,7 +862,7 @@ var ptx_lunr_docs = [
   "type": "Objectives",
   "number": "2.1",
   "title": "",
-  "body": "   Definitions of matrices and vectors.    Learning some notation around matrices and vectors.    "
+  "body": "   Definitions of matrices and vectors.    Learning some notation around matrices and vectors.    Definitions of upper and lower triangular matrices.    "
 },
 {
   "id": "def-matrix",
@@ -917,6 +935,42 @@ var ptx_lunr_docs = [
   "number": "2.1.5",
   "title": "",
   "body": " In general, a matrix can be written . These will be used in proofs later on in this chapter and for defintions of operations. A vector can be written and although this notation can be used for both column and row vectors, unless denoted as such vectors will be consider as column vectors. We will see later in this chapter that we can simply write a row vector as a transformation of a column vector.  "
+},
+{
+  "id": "def-diagonal-matrix",
+  "level": "2",
+  "url": "sect-matrix-definition.html#def-diagonal-matrix",
+  "type": "Definition",
+  "number": "2.1.6",
+  "title": "",
+  "body": "  A matrix with only non-zero entries are on the main diagonal Recall that the main diagonal is the one where the row number equals the column number, or more informally the diagonal from upper left to lower right. is called a diagonal matrix . Using the subscript notation, is diagonal if for all where .   "
+},
+{
+  "id": "sect-triangular-matrices-5",
+  "level": "2",
+  "url": "sect-matrix-definition.html#sect-triangular-matrices-5",
+  "type": "Example",
+  "number": "2.1.7",
+  "title": "",
+  "body": "  These matrices are diagonal matrices.    "
+},
+{
+  "id": "def-diagonal-triangular-matrix",
+  "level": "2",
+  "url": "sect-matrix-definition.html#def-diagonal-triangular-matrix",
+  "type": "Definition",
+  "number": "2.1.8",
+  "title": "",
+  "body": "  An upper-triangular matrix is a matrix where all entries below the main diagonal is 0 or is upper-triangular if if .  A lower-triangular matrix is a matrix where all entries above the main diagonal is 0 or is lower-triangular if if .   "
+},
+{
+  "id": "sect-triangular-matrices-9",
+  "level": "2",
+  "url": "sect-matrix-definition.html#sect-triangular-matrices-9",
+  "type": "Example",
+  "number": "2.1.9",
+  "title": "",
+  "body": "  The following are upper-triangular matrices.   The following are lower-triangular matrices.    "
 },
 {
   "id": "sect-matrix-operations",
@@ -1117,9 +1171,9 @@ var ptx_lunr_docs = [
   "body": "  The transpose of an matrix , denoted is flipped over the diagonal. In particular, the element in the th row and th column of is given by the th row and column of .  Using the shorthand notation,     which is useful for proofs.   "
 },
 {
-  "id": "sect-transpose-9",
+  "id": "lem-matrix-transpose",
   "level": "2",
-  "url": "sect-matrix-operations.html#sect-transpose-9",
+  "url": "sect-matrix-operations.html#lem-matrix-transpose",
   "type": "Lemma",
   "number": "2.2.21",
   "title": "Properties of Transposes.",
@@ -1708,7 +1762,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.8",
   "title": "Determinants of Square Matrices",
-  "body": " Determinants of Square Matrices     Define the determinant and understand the notion of permutations that is needed for the defintion.    Find the determinant of a and matrix using the defintion.    Understand many properties of the determinant including how to find the determinant of a few special cases of matrices.    Use the Laplace expansion method to find the determinant of a matrix.    Use row operations to find the determinant of a matrix.    Understand the geometry of the determinant.      Recall from that we saw two examples. showed that the vectors is a linear independent set and is a set of linear dependent vectors in .  In general, if we have two vectors we can determine if they are linearly dependent or independent by solving To determine linear independence, we need to solve for and . This can be found with the augmented matrix: Row-reducing   This system has a unique solution (of ) if and an infinite set of solutions if . Analogous situations occur in other parts of linear algebra (like the inverse matrix) that are equivalent to this and so we name this function from matrices to the reals. For define .  This section expands the definition to other matrix sizes and lists other properties of the determinant.    Definition of the Determinant  Before formally defining the determinant for a general matrix, there is some other needed background. We first need to understand a permutation of a set of integers. In short a permutation is a shuffling of items. In the context of determinants, we need the items to be the first integers.  For example, there are six permutations of , specifically and . Mathematically, we often think of a single permutation as a function from the set to itself. For example, for the permutation , the function is   It is important to know that there are permutations of the set . Also, any permutation can be built from a number of swaps of the trivial permutation . For example in the example above can be created by starting with and swapping the first two elements to get and then swapping the last two elements to get     A permutation is even if it can be generated from the trivial permutation with an even number of swaps and odd if it can be generated with an odd number of swaps. Also the sign of the permutation, denoted is       For an matrix, , the determinant is where the sum is over all permutations of .    Although this defintion works for square matrices, let's ground ourselves a bit more before moving on. First, if we have the case of a matrix, then where we have used the fact that there is one permutation of the set , resulting in the scalar that is the only entry.  Recall that there are two permutations of and that is and , so for a matrix, we have where recall that the 2nd term has the permutation . This is identical to the example above.  It may seem like now that we have the definition in , we can calculate the determinant of any square matrix. The following example shows how to calculate it with a matrix:    Use the definition in to find if     Note that the permutations of are those that are above and for a general matrix  and then evaluating it with the given element of      This example isn't too bad. However, due to the nature of permutations, the formula in is unwieldy. For a 5 by 5 matrix, there would be terms. Fortunately, there are other formulas available to perform the calculation. One thing to notice is using a little factoring, we can simplify the formula in and make it easier to compute. This will be done formally below.  Before presenting other computational methods of the determinant, let's look at the properties of the determinant.    Basic Properties of the Determinant  We start with a few basic properties of the determinant that will help us with the deeper understanding of determinants and how to calculate a few basic determinants.    The determinant of an upper-triangular matrix is the product of diagonal entries. That is .    Let be an upper-diagonal matrix. That is if . Then   and the only case where there is not a term with is the trivial permutation. Therefore, with .      Let be an diagonal matrix. Then     Since a diagonal matrix is an upper-triangular matrix then this follows directly from .           This follows directly from .      Let be an matrix and be the matrix with rows and swapped. Then .    Let be the permutation resulting from swapping positions and in permutation .  Also, since and differ by a row swap    and note that summing over amd is the same.      Let have two identical rows. Then .    The proof of this is left to the reader.  We will see below that elementary matrices play an important role in determinants. We also saw in that performing a row swap on a matrix, changes it's sign. The next pair of lemmas are also related to row operations.    Let be the matrix where the th row has been multiplied by . Then .         The following performs a row operation . Surprisingly, this does not change the determinant.    Let be the matrix where the th row has been multiplied by and added to the th row. Then .     where the property that a matrix with two identical rows has determinant 0 in the second sum of the 2nd step.      Determinants of Elementary Matrices  Recall that the Elementary Matrices have the property that multiplying a matrix by such a matrix results in a row operation as we saw in . We will use these matrices to provide additional properties of determinants.    The following are determinants of elementary matrices:                       The proofs of these are related to those above and the formalization of them is left to the reader.  Elementary matrices play a fundamental role related to determinants. This next set of lemmas shows that if a matrix is transformed using a elementary matrix, then the determinant of the product of the matrices is the product of the determinants.    Let be an matrix and be the matrix where rows and are swapped. Then     From , and from , and the result follows from these.    We now see that the same result works for multiplying a row in a matrix by a constant.    Let be an matrix and be the matrix where row is multiplied by a constant . Then     From , and from , and the result follows.    This last lemma shows a similar result for the row multiplication with an addition.    Let be an matrix and be the matrix where row is multiplied by a constant and added to row . Then     From , and from , and the result follows.      Let be elementary matrices. Then and       Let and both be matrices, then     Let and be the reduced row-echelon forms of and respectively. Let and be the elementary matrices such that (see lemma ???). If , that is is invertible then   If , then is not the identity matrix and there must be a row of zeros. Call this row  where multiplying by the elementary matrix does not change it since there are only 0s in row .   Since this shows that for all values of , then and since , then the result follows.       Gauss' Method for Calculating Determinants  We saw how to calculate the determinant for very specific matrices. However, up until this point, we should use the definition if the matrix doesn't have any particular structure. However, Gauss' Method for Calculating Determinants uses , and to simplify a matrix and then take the determinant. Generally, row operations are performed to get a matrix in upper-triangular (or echelon) form and then use . The following examples show how to use the method.    Find the determinant of the following matrix using a) the formula for determinants and b) using Gauss' method.       Using the formula .  Using Gauss's method,     So .  This shows that although Gauss' method succeeds in finding the determinant, it takes more operations than the simple formula.      Use Gauss's method to find the determinants of the following matrices:       For both examples, we use row operations and keep track of any row swaps (introducing a ) or multiples.                    Expansion Method for finding the Determinant  Although Gauss' method is a very robust and in general efficient method for finding determinants, a method called the Laplace Expansion method can be quite helpful at times as well. Before defining this, we need to know a matrix minor and cofactor first.    For any matrix , the matrix formed by deleting row and column of is the minor of . The cofactor of is times the determinant of the minor of and denoted .      Find the and minors and cofactors of the matrix       Recall that minor is found by removing the th row and th column or     and the cofactors are the determinants of each of these matrices times or       Now that we have the prerequisites, the following is the Laplace Expansion method for finding a determinant.   Laplace Expansion of Determinants   The determinant of an matrix can be found by expanding by cofactors on row or column of . That is     for any satisfying or     for any satisfying .      Use the expansion formula to find the determinants of the matrices in , namely       In the case of , we will expand across the first row and use the formula for the determinant.     and for , we'll expand down the 2nd column because all but one is zero. And because of this, I won't show the cofactors of and .     and now to find this determinant, expand about the 2nd row     and now use the formula for determinants.         Geometry of Determinants   In the previous section, the determinant was introduced as a function that determines whether or not a matrix was singular due to whether or not the function was 0. In this section, we will look at a geometric approach to the determinant and show that it can be used to determine areas (and volumes) of regions bounded by vectors. We will show that this geometric approach is identical (in the two-dimensional case) as the properties in .  Consider the parallelogram formed by two vectors. In the argument below, it is important that the vector is below and to the right of the vector .   Plot of two vectors in forming a parallelogram.      The area of the parallelogram can be determined by taking the area of the enclosing rectangle and subtracting out the rectangles and and triangles and as shown below:   Finding the area of the parallelogram         and note that     And this result is identical to the determinant seen above. Again, as noted, the vectors were set up to have a positive area, however in general, one can define the area as the absolute value of the determinant.    Transformation of the Vectors and the size of the Parallelogram  From above, the area of the parallelogram is the determinant of the vectors that are along the sides.  Consider two vectors in and rotate them so one is on the -axis. Also take and multiply it by a factor of    Scaling a parallelogram      From this geometric argument, the area of the parallelogram formed by the vectors and appears to times larger. This is property 3 of Definition .  Next, let's look at transformation . The picture on the left is the original two vectors and that on the right is the transformed vectors (with about 0.2 in this picture). The original area and the transformed area are identical in this case since neither the height of the parallelogram nor its width has changed.   Skewing a parallelogram      This property shows that replacing a row with a constant times another row plus the current row results in an unchanged area is consistent with property 1 of .  The other transformation related to the determinant is property 2 of or in other words, if one switched the order of the vectors (row swaps), that the determinant changes sign. The area does not change because the area is the absolute value of the determinant.    In , the parallelepiped formed by includes the set     The volume of the parallelepiped is the absolute value of the determinant of the matrix whose columns are .      Find the volume of the parallelepiped formed by the vectors:       The volume is the absolute value of the determinant of the matrix with these three columns. We'll use Gauss' method to find the determinant.     and multiplying down the diagonal, , so . This means that the volume is 8 units.       Other Properties of Determinants  This section has a number of other properties of determinants. We start by showing that a matrix and it's transpose have the same determinant.    Let an matrix. Then     We first start with using the properties of elementary matrices                     where proving these are left to the reader. That is for any elementary matrix,   The proof comes down to two cases. The first is when the matrix is invertible or . The second case is when is not invertible.      Case 1: is invertible.   From , any invertible matrix can be written as the product of elementary matrices. Assume that . First note that Now, evaluate the determinant of with      Case 2: is not invertible   If is not invertible, then . Also, since is not invertible, then is also not invertible, so .       The last lemma presented here is related to the determinant of the inverse of a matrix.    Let be an invertible matrix. Then     The proof of this is left to the reader, but it follows from other lemmas in this section.   "
+  "body": " Determinants of Square Matrices     Define the determinant and understand the notion of permutations that is needed for the defintion.    Find the determinant of a and matrix using the defintion.    Understand many properties of the determinant including how to find the determinant of a few special cases of matrices.    Use the Laplace expansion method to find the determinant of a matrix.    Use row operations to find the determinant of a matrix.    Understand the geometry of the determinant.      Recall from that we saw two examples. showed that the vectors is a linear independent set and is a set of linear dependent vectors in .  In general, if we have two vectors we can determine if they are linearly dependent or independent by solving To determine linear independence, we need to solve for and . This can be found with the augmented matrix: Row-reducing   This system has a unique solution (of ) if and an infinite set of solutions if . Analogous situations occur in other parts of linear algebra (like the inverse matrix) that are equivalent to this and so we name this function from matrices to the reals. For define .  The matrix inverse of a matrix was found in . Notice that the expression appeared in the formula as well.  This section expands the definition to other matrix sizes and lists other properties of the determinant.    Definition of the Determinant  Before formally defining the determinant for a general matrix, there is some other needed background. We first need to understand a permutation of a set of integers. In short a permutation is a shuffling of items. In the context of determinants, we need the items to be the first integers.  For example, there are six permutations of , specifically and . Mathematically, we often think of a single permutation as a function from the set to itself. For example, for the permutation , the function is   It is important to know that there are permutations of the set . Also, any permutation can be built from a number of swaps of the trivial permutation . For example in the example above can be created by starting with and swapping the first two elements to get and then swapping the last two elements to get     A permutation is even if it can be generated from the trivial permutation with an even number of swaps and odd if it can be generated with an odd number of swaps. Also the sign of the permutation, denoted is       For an matrix, , the determinant is where the sum is over all permutations of .    Although this defintion works for square matrices, let's ground ourselves a bit more before moving on. First, if we have the case of a matrix, then where we have used the fact that there is one permutation of the set , resulting in the scalar that is the only entry.  Recall that there are two permutations of and that is and , so for a matrix, we have where recall that the 2nd term has the permutation . This is identical to the example above.   The Determinant of a matrix  As you learn linear algebra, matrices arise often and it is helpful to know (maybe even memorize) the determinant formula above. That is:      It may seem like now that we have the definition in , we can calculate the determinant of any square matrix. The following example shows how to calculate it with a matrix:    Use the definition in to find if     Note that the permutations of are those that are above and for a general matrix  and then evaluating it with the given element of      This example isn't too bad. However, due to the nature of permutations, the formula in is unwieldy. For a 5 by 5 matrix, there would be terms. Fortunately, there are other formulas available to perform the calculation. One thing to notice is using a little factoring, we can simplify the formula in and make it easier to compute. This will be done formally below.  Before presenting other computational methods of the determinant, let's look at the properties of the determinant.    Basic Properties of the Determinant  We start with a few basic properties of the determinant that will help us with the deeper understanding of determinants and how to calculate a few basic determinants.    The determinant of an upper-triangular matrix is the product of diagonal entries. That is .    Let be an upper-diagonal matrix. That is if . Then   and the only case where there is not a term with is the trivial permutation. Therefore, with .      Let be an diagonal matrix. Then     Since a diagonal matrix is an upper-triangular matrix then this follows directly from .           This follows directly from .      Let be an matrix and be the matrix with rows and swapped. Then .    Let be the permutation resulting from swapping positions and in permutation .  Also, since and differ by a row swap    and note that summing over amd is the same.      Let have two identical rows. Then .    The proof of this is left to the reader.  We will see below that elementary matrices play an important role in determinants. We also saw in that performing a row swap on a matrix, changes it's sign. The next pair of lemmas are also related to row operations.    Let be the matrix where the th row has been multiplied by . Then .         The following performs a row operation . Surprisingly, this does not change the determinant.    Let be the matrix where the th row has been multiplied by and added to the th row. Then .     where the property that a matrix with two identical rows has determinant 0 in the second sum of the 2nd step.      Determinants of Elementary Matrices  Recall that the Elementary Matrices have the property that multiplying a matrix by such a matrix results in a row operation as we saw in . We will use these matrices to provide additional properties of determinants.    The following are determinants of elementary matrices:                       The proofs of these are related to those above and the formalization of them is left to the reader.  Elementary matrices play a fundamental role related to determinants. This next set of lemmas shows that if a matrix is transformed using a elementary matrix, then the determinant of the product of the matrices is the product of the determinants.    Let be an matrix and be the matrix where rows and are swapped. Then     From , and from , and the result follows from these.    We now see that the same result works for multiplying a row in a matrix by a constant.    Let be an matrix and be the matrix where row is multiplied by a constant . Then     From , and from , and the result follows.    This last lemma shows a similar result for the row multiplication with an addition.    Let be an matrix and be the matrix where row is multiplied by a constant and added to row . Then     From , and from , and the result follows.      Let be elementary matrices. Then and       Let and both be matrices, then     Let and be the reduced row-echelon forms of and respectively. Let and be the elementary matrices such that (see lemma ???). If , that is is invertible then   If , then is not the identity matrix and there must be a row of zeros. Call this row  where multiplying by the elementary matrix does not change it since there are only 0s in row .   Since this shows that for all values of , then and since , then the result follows.      Gauss' Method for Calculating Determinants  We saw how to calculate the determinant for very specific matrices. However, up until this point, we should use the definition if the matrix doesn't have any particular structure. However, Gauss' Method for Calculating Determinants uses , and to simplify a matrix and then take the determinant. Generally, row operations are performed to get a matrix in upper-triangular (or echelon) form and then use . The following examples show how to use the method.    Find the determinant of the following matrix using a) the formula for determinants and b) using Gauss' method.       Using the formula .  Using Gauss's method,     So .  This shows that although Gauss' method succeeds in finding the determinant, it takes more operations than the simple formula.      Use Gauss's method to find the determinants of the following matrices:       For both examples, we use row operations and keep track of any row swaps (introducing a ) or multiples.                    Minors and Cofactors of a Matrix  Although Gauss' method is a very robust and in general efficient method for finding determinants, a method called the Laplace Expansion method can be quite helpful at times as well. Before defining this, we need to know a matrix minor and cofactor first.    For any matrix , the matrix formed by deleting row and column of is the minor of . It is denoted The cofactor of is The cofactor matrix or is the matrix of cofactors. Thus     Before moving on, let's find some minors, cofactors and the cofactor matrix of a matrix. Note that since the determinant is needed for these, note that we use the determinant formula for the matrix in .    Let      Find and     Recall that minor is found by removing the th row and th column or         Find and     Note that the minors are above and the cofactors are the determinants of these with a factor of        Find the cofactor matrix of .    If we continue finding the remainders of the minors and cofactors, then          Expansion Method for finding the Determinant  Now that we have the prerequisites, the following is the Laplace Expansion method for finding a determinant.   Laplace Expansion of Determinants   The determinant of an matrix can be found by expanding by cofactors on row or column of . That is     for any satisfying or     for any satisfying .      Use the expansion formula to find the determinants of the matrices in , namely       In the case of , we will expand across the first row and use the formula for the determinant.     and for , we'll expand down the 2nd column because all but one is zero. And because of this, I won't show the cofactors of and .     and now to find this determinant, expand about the 2nd row     and now use the formula for determinants.       We have now seen a few different approaches to calculating a determinant. When there are many tools to entering a matrix to find the result, perhaps these are less useful, but understanding these different approaches leads to understanding matrices and the relationships between various aspects of them in a deeper manner.    Geometry of Determinants   In the previous section, the determinant was introduced as a function that determines whether or not a matrix was singular due to whether or not the function was 0. In this section, we will look at a geometric approach to the determinant and show that it can be used to determine areas (and volumes) of regions bounded by vectors. We will show that this geometric approach is identical (in the two-dimensional case) as the properties in .  Consider the parallelogram formed by two vectors. In the argument below, it is important that the vector is below and to the right of the vector .   Plot of two vectors in forming a parallelogram.      The area of the parallelogram can be determined by taking the area of the enclosing rectangle and subtracting out the rectangles and and triangles and as shown below:   Finding the area of the parallelogram         and note that     And this result is identical to the determinant seen above. Again, as noted, the vectors were set up to have a positive area, however in general, one can define the area as the absolute value of the determinant.    Transformation of the Vectors and the size of the Parallelogram  From above, the area of the parallelogram is the determinant of the vectors that are along the sides.  Consider two vectors in and rotate them so one is on the -axis. Also take and multiply it by a factor of    Scaling a parallelogram      From this geometric argument, the area of the parallelogram formed by the vectors and appears to times larger. This is property 3 of Definition .  Next, let's look at transformation . The picture on the left is the original two vectors and that on the right is the transformed vectors (with about 0.2 in this picture). The original area and the transformed area are identical in this case since neither the height of the parallelogram nor its width has changed.   Skewing a parallelogram      This property shows that replacing a row with a constant times another row plus the current row results in an unchanged area is consistent with property 1 of .  The other transformation related to the determinant is property 2 of or in other words, if one switched the order of the vectors (row swaps), that the determinant changes sign. The area does not change because the area is the absolute value of the determinant.    In , the parallelepiped formed by includes the set     The volume of the parallelepiped is the absolute value of the determinant of the matrix whose columns are .      Find the volume of the parallelepiped formed by the vectors:       The volume is the absolute value of the determinant of the matrix with these three columns. We'll use Gauss' method to find the determinant.     and multiplying down the diagonal, , so . This means that the volume is 8 units.       Other Properties of Determinants  This section has a number of other properties of determinants. We start by showing that a matrix and it's transpose have the same determinant.    Let an matrix. Then     We first start with using the properties of elementary matrices                     where proving these are left to the reader. That is for any elementary matrix,   The proof comes down to two cases. The first is when the matrix is invertible or . The second case is when is not invertible.      Case 1: is invertible.   From , any invertible matrix can be written as the product of elementary matrices. Assume that . First note that Now, evaluate the determinant of with      Case 2: is not invertible   If is not invertible, then . Also, since is not invertible, then is also not invertible, so .       The last lemma presented here is related to the determinant of the inverse of a matrix.    Let be an invertible matrix. Then     The proof of this is left to the reader, but it follows from other lemmas in this section.    Adjugate Matrices  Another matrix that is related to the inverse (as we will see below) is the adjugate matrix . In short, this is the transpose of the cofactor matrix, which was presented in . Let's look at another example.    Find the cofactor matrix and the adjugate matrix if     In this case, we find the cofactor of each of the element of . The result is     You might be wondering what the adjugate is for and that is an excellent question. First of all, it satisfies the following lemma, which we will see is quite useful.    Let be an matrix. Then     Let and let . Note that is the product of the th row of times the th column of , or the th row of .  Consider first . This is which is by , the Laplace Expansion method of finding determinants.  For where ,   This is the determinant of a matrix where row has been replaced by a copy of row . Since this matrix has two identical rows, then by , this determinant is 0. Thus is a diagonal matrix with on each entry on the diagonal or and the result is shown.    Before moving on, let's do an example with the adjugate to show the results of this lemma.    Use the matrix in or to verify     The last part of found the cofactor matrix or   The product of these is     Notice that the definition of the adjugate or the statement in says nothing about if needs to be invertible. The following example shows that if has determinant 0, that is the zero matrix.    Consider the matrix   Find and show that , the zero matrix.    The cofactor matrix is and the product is the matrix of all zeros.    The result of the adjugate in isn't that helpful, however the following shows a way to find the inverse.    Let be an matrix. If is invertible then,     Note that is invertible then , Which is .    Let's see that this formula results in the inverse by using to solve .    Using to find the inverse of     First, the cofactor matrix is   Note: this takes a lot of work (there are nine determinants). Next, we take the determinant of . Again this is not shown, but . The inverse therefore is   This is the same result that was found in .    The last lemma presented here relates determinants to inverse matrices. At the top of the section, we noted where the notion of the determinant might arise and we will formalize this here.    Let be an matrix. The matrix is invertible if and only if .    First, the forward direction: If , then from , then can be found.  Next, the revsere direction: If , we will use proof by contradiction and assume that exists that is   If we take the determinant of both sides then Now, use and the above becomes which is a contradiction, therefore the assumption that has a inverse is false.      Cramer's Rule  This is an optional section that is an interesting use of the determinant. Cramer's Rule is a method for solving the standard matrix equation if is an invertible matrix.  Let be the matrix with the th column of is replaced with the vector . Then   Before looking at why this works, let's redo using Cramer's rule.    Find the solution to if using Cramer's rule.    First, we create the matrices and which replaces the first, second and third vectors with      Next, we find the deterimants of these matrix as well as    Next, we find the solution with and this is the same solution that we found in .    Cramer's rule seems like a nice approach to solving linear systems, however, it is computationally intensive. For this (small) 3 by 3 example, 4 determinants need to be computed. If done by hand, there are a lot calculations to do. For larger systems, this can be untenable even if software is used. Row operations are generally the method to use to do in fewer steps.  Also, if is not square then this method cannot be used. However, it is nice to have an alternative method for solving some linear systems.  Justification for why Cramer's Rule works?????   "
 },
 {
   "id": "sect-det-2",
@@ -1747,11 +1801,20 @@ var ptx_lunr_docs = [
   "body": "  For an matrix, , the determinant is where the sum is over all permutations of .   "
 },
 {
-  "id": "subsec-defintion-determinant-10",
+  "id": "subsec-defintion-determinant-9",
   "level": "2",
-  "url": "sect-det.html#subsec-defintion-determinant-10",
-  "type": "Example",
+  "url": "sect-det.html#subsec-defintion-determinant-9",
+  "type": "Note",
   "number": "2.8.3",
+  "title": "The Determinant of a <span class=\"process-math\">\\(2 \\times 2\\)<\/span> matrix.",
+  "body": " The Determinant of a matrix  As you learn linear algebra, matrices arise often and it is helpful to know (maybe even memorize) the determinant formula above. That is:     "
+},
+{
+  "id": "subsec-defintion-determinant-11",
+  "level": "2",
+  "url": "sect-det.html#subsec-defintion-determinant-11",
+  "type": "Example",
+  "number": "2.8.4",
   "title": "",
   "body": "  Use the definition in to find if     Note that the permutations of are those that are above and for a general matrix  and then evaluating it with the given element of     "
 },
@@ -1760,7 +1823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-upper-triangular",
   "type": "Lemma",
-  "number": "2.8.4",
+  "number": "2.8.5",
   "title": "",
   "body": "  The determinant of an upper-triangular matrix is the product of diagonal entries. That is .    Let be an upper-diagonal matrix. That is if . Then   and the only case where there is not a term with is the trivial permutation. Therefore, with .   "
 },
@@ -1769,7 +1832,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#cor-det-diagonal-matrix",
   "type": "Corollary",
-  "number": "2.8.5",
+  "number": "2.8.6",
   "title": "",
   "body": "  Let be an diagonal matrix. Then     Since a diagonal matrix is an upper-triangular matrix then this follows directly from .   "
 },
@@ -1778,7 +1841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#cor-det-identity-matrix",
   "type": "Corollary",
-  "number": "2.8.6",
+  "number": "2.8.7",
   "title": "",
   "body": "       This follows directly from .   "
 },
@@ -1787,7 +1850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-row-swap",
   "type": "Lemma",
-  "number": "2.8.7",
+  "number": "2.8.8",
   "title": "",
   "body": "  Let be an matrix and be the matrix with rows and swapped. Then .    Let be the permutation resulting from swapping positions and in permutation .  Also, since and differ by a row swap    and note that summing over amd is the same.   "
 },
@@ -1796,7 +1859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-matrix-identical-rows",
   "type": "Lemma",
-  "number": "2.8.8",
+  "number": "2.8.9",
   "title": "",
   "body": "  Let have two identical rows. Then .   "
 },
@@ -1805,7 +1868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-multiply-row-by-constant",
   "type": "Lemma",
-  "number": "2.8.9",
+  "number": "2.8.10",
   "title": "",
   "body": "  Let be the matrix where the th row has been multiplied by . Then .        "
 },
@@ -1814,7 +1877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-multiply-row-and-add",
   "type": "Lemma",
-  "number": "2.8.10",
+  "number": "2.8.11",
   "title": "",
   "body": "  Let be the matrix where the th row has been multiplied by and added to the th row. Then .     where the property that a matrix with two identical rows has determinant 0 in the second sum of the 2nd step.   "
 },
@@ -1823,7 +1886,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-elem-matrices",
   "type": "Lemma",
-  "number": "2.8.11",
+  "number": "2.8.12",
   "title": "",
   "body": "  The following are determinants of elementary matrices:                      "
 },
@@ -1832,7 +1895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-elem-mat-row-swap",
   "type": "Lemma",
-  "number": "2.8.12",
+  "number": "2.8.13",
   "title": "",
   "body": "  Let be an matrix and be the matrix where rows and are swapped. Then     From , and from , and the result follows from these.   "
 },
@@ -1841,7 +1904,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-elem-mat-row-multiply",
   "type": "Lemma",
-  "number": "2.8.13",
+  "number": "2.8.14",
   "title": "",
   "body": "  Let be an matrix and be the matrix where row is multiplied by a constant . Then     From , and from , and the result follows.   "
 },
@@ -1850,7 +1913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-elem-mat-row-multiply-addition",
   "type": "Lemma",
-  "number": "2.8.14",
+  "number": "2.8.15",
   "title": "",
   "body": "  Let be an matrix and be the matrix where row is multiplied by a constant and added to row . Then     From , and from , and the result follows.   "
 },
@@ -1859,7 +1922,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-product-elem-matrices",
   "type": "Lemma",
-  "number": "2.8.15",
+  "number": "2.8.16",
   "title": "",
   "body": "  Let be elementary matrices. Then and    "
 },
@@ -1868,7 +1931,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-product-matrices",
   "type": "Lemma",
-  "number": "2.8.16",
+  "number": "2.8.17",
   "title": "",
   "body": "  Let and both be matrices, then     Let and be the reduced row-echelon forms of and respectively. Let and be the elementary matrices such that (see lemma ???). If , that is is invertible then   If , then is not the identity matrix and there must be a row of zeros. Call this row  where multiplying by the elementary matrix does not change it since there are only 0s in row .   Since this shows that for all values of , then and since , then the result follows.   "
 },
@@ -1886,7 +1949,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#sect-det-7-3",
   "type": "Example",
-  "number": "2.8.17",
+  "number": "2.8.18",
   "title": "",
   "body": "  Find the determinant of the following matrix using a) the formula for determinants and b) using Gauss' method.       Using the formula .  Using Gauss's method,     So .  This shows that although Gauss' method succeeds in finding the determinant, it takes more operations than the simple formula.   "
 },
@@ -1895,43 +1958,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#ex-det-gauss",
   "type": "Example",
-  "number": "2.8.18",
+  "number": "2.8.19",
   "title": "",
   "body": "  Use Gauss's method to find the determinants of the following matrices:       For both examples, we use row operations and keep track of any row swaps (introducing a ) or multiples.                 "
 },
 {
-  "id": "sect-det-8-3",
+  "id": "subsec-minors-cofactors-3",
   "level": "2",
-  "url": "sect-det.html#sect-det-8-3",
+  "url": "sect-det.html#subsec-minors-cofactors-3",
   "type": "Definition",
-  "number": "2.8.19",
-  "title": "",
-  "body": "  For any matrix , the matrix formed by deleting row and column of is the minor of . The cofactor of is times the determinant of the minor of and denoted .   "
-},
-{
-  "id": "sect-det-8-4",
-  "level": "2",
-  "url": "sect-det.html#sect-det-8-4",
-  "type": "Example",
   "number": "2.8.20",
   "title": "",
-  "body": "  Find the and minors and cofactors of the matrix       Recall that minor is found by removing the th row and th column or     and the cofactors are the determinants of each of these matrices times or      "
+  "body": "  For any matrix , the matrix formed by deleting row and column of is the minor of . It is denoted The cofactor of is The cofactor matrix or is the matrix of cofactors. Thus    "
 },
 {
-  "id": "sect-det-8-6",
+  "id": "ex-minor-cofactors",
   "level": "2",
-  "url": "sect-det.html#sect-det-8-6",
-  "type": "Theorem",
+  "url": "sect-det.html#ex-minor-cofactors",
+  "type": "Example",
   "number": "2.8.21",
+  "title": "",
+  "body": "  Let      Find and     Recall that minor is found by removing the th row and th column or         Find and     Note that the minors are above and the cofactors are the determinants of these with a factor of        Find the cofactor matrix of .    If we continue finding the remainders of the minors and cofactors, then     "
+},
+{
+  "id": "thm-laplace-expansion-det",
+  "level": "2",
+  "url": "sect-det.html#thm-laplace-expansion-det",
+  "type": "Theorem",
+  "number": "2.8.22",
   "title": "Laplace Expansion of Determinants.",
   "body": " Laplace Expansion of Determinants   The determinant of an matrix can be found by expanding by cofactors on row or column of . That is     for any satisfying or     for any satisfying .   "
 },
 {
-  "id": "sect-det-8-7",
+  "id": "sect-det-9-4",
   "level": "2",
-  "url": "sect-det.html#sect-det-8-7",
+  "url": "sect-det.html#sect-det-9-4",
   "type": "Example",
-  "number": "2.8.22",
+  "number": "2.8.23",
   "title": "",
   "body": "  Use the expansion formula to find the determinants of the matrices in , namely       In the case of , we will expand across the first row and use the formula for the determinant.     and for , we'll expand down the 2nd column because all but one is zero. And because of this, I won't show the cofactors of and .     and now to find this determinant, expand about the 2nd row     and now use the formula for determinants.      "
 },
@@ -1940,7 +2003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#fig-parallelogram",
   "type": "Figure",
-  "number": "2.8.23",
+  "number": "2.8.24",
   "title": "",
   "body": " Plot of two vectors in forming a parallelogram.     "
 },
@@ -1949,7 +2012,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#fig-parallelogram2",
   "type": "Figure",
-  "number": "2.8.24",
+  "number": "2.8.25",
   "title": "",
   "body": " Finding the area of the parallelogram     "
 },
@@ -1958,7 +2021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#fig-parallelogram-scale",
   "type": "Figure",
-  "number": "2.8.25",
+  "number": "2.8.26",
   "title": "",
   "body": " Scaling a parallelogram     "
 },
@@ -1967,25 +2030,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#fig-parallelogram-skew",
   "type": "Figure",
-  "number": "2.8.26",
+  "number": "2.8.27",
   "title": "",
   "body": " Skewing a parallelogram     "
 },
 {
-  "id": "sect-det-9-3-10",
+  "id": "sect-det-10-3-10",
   "level": "2",
-  "url": "sect-det.html#sect-det-9-3-10",
+  "url": "sect-det.html#sect-det-10-3-10",
   "type": "Definition",
-  "number": "2.8.27",
+  "number": "2.8.28",
   "title": "",
   "body": "  In , the parallelepiped formed by includes the set     The volume of the parallelepiped is the absolute value of the determinant of the matrix whose columns are .   "
 },
 {
-  "id": "sect-det-9-3-11",
+  "id": "sect-det-10-3-11",
   "level": "2",
-  "url": "sect-det.html#sect-det-9-3-11",
+  "url": "sect-det.html#sect-det-10-3-11",
   "type": "Example",
-  "number": "2.8.28",
+  "number": "2.8.29",
   "title": "",
   "body": "  Find the volume of the parallelepiped formed by the vectors:       The volume is the absolute value of the determinant of the matrix with these three columns. We'll use Gauss' method to find the determinant.     and multiplying down the diagonal, , so . This means that the volume is 8 units.   "
 },
@@ -1994,7 +2057,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-transpose",
   "type": "Lemma",
-  "number": "2.8.29",
+  "number": "2.8.30",
   "title": "",
   "body": "  Let an matrix. Then     We first start with using the properties of elementary matrices                     where proving these are left to the reader. That is for any elementary matrix,   The proof comes down to two cases. The first is when the matrix is invertible or . The second case is when is not invertible.      Case 1: is invertible.   From , any invertible matrix can be written as the product of elementary matrices. Assume that . First note that Now, evaluate the determinant of with      Case 2: is not invertible   If is not invertible, then . Also, since is not invertible, then is also not invertible, so .      "
 },
@@ -2003,9 +2066,99 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-det.html#lem-det-inverse",
   "type": "Lemma",
-  "number": "2.8.30",
+  "number": "2.8.31",
   "title": "",
   "body": "  Let be an invertible matrix. Then    "
+},
+{
+  "id": "subsec-adjugate-matrices-2",
+  "level": "2",
+  "url": "sect-det.html#subsec-adjugate-matrices-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "adjugate matrix "
+},
+{
+  "id": "subsec-adjugate-matrices-3",
+  "level": "2",
+  "url": "sect-det.html#subsec-adjugate-matrices-3",
+  "type": "Example",
+  "number": "2.8.32",
+  "title": "",
+  "body": "  Find the cofactor matrix and the adjugate matrix if     In this case, we find the cofactor of each of the element of . The result is    "
+},
+{
+  "id": "lem-adjugate-times-transpose",
+  "level": "2",
+  "url": "sect-det.html#lem-adjugate-times-transpose",
+  "type": "Lemma",
+  "number": "2.8.33",
+  "title": "",
+  "body": "  Let be an matrix. Then     Let and let . Note that is the product of the th row of times the th column of , or the th row of .  Consider first . This is which is by , the Laplace Expansion method of finding determinants.  For where ,   This is the determinant of a matrix where row has been replaced by a copy of row . Since this matrix has two identical rows, then by , this determinant is 0. Thus is a diagonal matrix with on each entry on the diagonal or and the result is shown.   "
+},
+{
+  "id": "subsec-adjugate-matrices-7",
+  "level": "2",
+  "url": "sect-det.html#subsec-adjugate-matrices-7",
+  "type": "Example",
+  "number": "2.8.34",
+  "title": "",
+  "body": "  Use the matrix in or to verify     The last part of found the cofactor matrix or   The product of these is    "
+},
+{
+  "id": "subsec-adjugate-matrices-9",
+  "level": "2",
+  "url": "sect-det.html#subsec-adjugate-matrices-9",
+  "type": "Example",
+  "number": "2.8.35",
+  "title": "",
+  "body": "  Consider the matrix   Find and show that , the zero matrix.    The cofactor matrix is and the product is the matrix of all zeros.   "
+},
+{
+  "id": "lem-adj-inverse",
+  "level": "2",
+  "url": "sect-det.html#lem-adj-inverse",
+  "type": "Lemma",
+  "number": "2.8.36",
+  "title": "",
+  "body": "  Let be an matrix. If is invertible then,     Note that is invertible then , Which is .   "
+},
+{
+  "id": "subsec-adjugate-matrices-13",
+  "level": "2",
+  "url": "sect-det.html#subsec-adjugate-matrices-13",
+  "type": "Example",
+  "number": "2.8.37",
+  "title": "",
+  "body": "  Using to find the inverse of     First, the cofactor matrix is   Note: this takes a lot of work (there are nine determinants). Next, we take the determinant of . Again this is not shown, but . The inverse therefore is   This is the same result that was found in .   "
+},
+{
+  "id": "lem-inverse-matrix-determinant",
+  "level": "2",
+  "url": "sect-det.html#lem-inverse-matrix-determinant",
+  "type": "Lemma",
+  "number": "2.8.38",
+  "title": "",
+  "body": "  Let be an matrix. The matrix is invertible if and only if .    First, the forward direction: If , then from , then can be found.  Next, the revsere direction: If , we will use proof by contradiction and assume that exists that is   If we take the determinant of both sides then Now, use and the above becomes which is a contradiction, therefore the assumption that has a inverse is false.   "
+},
+{
+  "id": "subsec-cramers-rule-2",
+  "level": "2",
+  "url": "sect-det.html#subsec-cramers-rule-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Cramer's Rule "
+},
+{
+  "id": "subsec-cramers-rule-5",
+  "level": "2",
+  "url": "sect-det.html#subsec-cramers-rule-5",
+  "type": "Example",
+  "number": "2.8.39",
+  "title": "",
+  "body": "  Find the solution to if using Cramer's rule.    First, we create the matrices and which replaces the first, second and third vectors with      Next, we find the deterimants of these matrix as well as    Next, we find the solution with and this is the same solution that we found in .   "
 },
 {
   "id": "sect-linear-algebra-summary",
@@ -2053,20 +2206,371 @@ var ptx_lunr_docs = [
   "body": "  Let     Show that has a nontrivial solution first by using then by directly finding solutions.    First, find the determinant by expansion:     and therefore by , there is a nontrivial solution to   Next, we'll solve the matrix equation by Gauss' method.     The resulting equations are     or     and the solution set is     This shows directly that the matrix equation does not have a trivial solution.   "
 },
 {
+  "id": "sect-complex-numbers",
+  "level": "1",
+  "url": "sect-complex-numbers.html",
+  "type": "Section",
+  "number": "3.1",
+  "title": "Complex Numbers",
+  "body": " Complex Numbers     Understand the basics of a complex number and the complex plane.    Perform arithmetic with complex numbers.    Convert between the standard and polar forms of a complex number.    Using the Polar Form for multiplication of complex numbers, as well as powers and roots.    Find the roots of unity.      The mathematics of complex numbers all arise from defining the imaginary unit to be . In this section and continuing in the next few are how this fact can generate interesting results    Basics of Complex Numbers and the Complex Plane  With the imaginary unit , we can build up a complex number like . Any complex number can be simplified with real number arithmetic to a number .    A complex number is a number of the form , where and are real numbers and .  The real part of is and can be written . The imaginary part of is and is written .    A visual of a complex number can be helpful. The complex plane. In this plane, the horizontal axis is the real part of the number and the vertical axis is the imaginary part. So the complex number would be plotted at the point in this plane.   The complex plane with sample complex numbers plotted.        Another important concept in complex numbers is that of the complex conjugate of a number . If we use , then the complex conjugate is , which is simply found by changing the sign of the imaginary part of the number.    Arithmetic with Complex Numbers  All of the standard operations go through as expected where the final result is often written in the form . If we let then   Before finishing with division of complex numbers, if a number is multiplied by its complex conjugate, then where it is important to note that is a real number.  Also, if we have , then we can write this as multiply top and bottom by , the complex conjugate of the number. and in a similar manner:   An integer power of a number is found by successive multiplications. For example, but we will also see an alternative way to do this below.  There is one other operation that is quite helpful and that is the absolute value. Although you might wonder how to apply the absolute value to a complex number (do we ensure that the signs on each part is positive). Before that, we can interpret the absolute value of a real as if the number is plotted on the number line, then it is the distance from the origin (or ). For example is five units from the origin and is seven units from the origin.  So in that spirit, we define the absolute value of a complex number as the distance from the origin. For , this is    Arithmetic of Complex Numbers  In summary, the following are basic arithmetic operations of complex numbers. If then    Addition and subtraction of complex numbers have additional geometric meaning. Let's look at a particular example. Let , . If we draw these in the complex plane along with vectors of each starting at the origin, then:   Examples of Addition and Subtraction in the complex plane        Notice that these are just vector addition and subtraction.    Polar Form of Complex Numbers  Another important form of a complex number is called the polar form . If we find , the distance from the origin to the point and , the counterclockwise angle between the positive axis and the line segment as shown in the next figure.            Let be a complex number. can be written in the form where is the counterclockwise angle between the line segment from to the complex number and the positive real axis as shown in .    Let where will show that in SECTION ????.     Multiplication of Complex Numbers in Polar Form  Multiplication of complex numbers have a nice form and geometric interpretation if they are written in polar form. If we write then or in other words, the product of two complex numbers is found by multiplying the distances and the angle is the sum.    Find the the product of and using the form above.    First, we write the two complex numbers in polar form. That is Then the product is     Note that if written in form using   This can also be found by multiplying the two numbers directly.    Powers and Roots of Complex Numbers in Polar Form  The polar form of a complex number is also helpful for powers and roots. First, writing a number in polar form and then raising that to the power results in   For example, if , then powers of can be written as   If , then This can then be converted back to the standard form as   A plot of the powers have some interesting properties. Consider the first 6 powers of          This can be interpreted as raising the distance to the power and rotating the angle times around. For example, the plot about actually shows the number and its 2nd and 3rd power.  If the power is a fraction, we can interpret the same way. For example, the square root of can be written:   What this means is that to find the square root of a complex number, you take the square root of the distance and then return the number with angle half of the input.    Find the square root of . Note that and that the angle (argument) is . The resultant would have distance and the angle would be so        Roots of unity  An interesting function to study in complex numbers is for positive integers . When , we get the function which isn't that interesting, but not bad. Note that the roots of this are . Let's look at the solution to .  A good way to do this is to recall that we can write in its polar form or and then we want to solve Since we can write , then results in or and . This is the number and we know that . What else?  We can also write so or , so another root of is   and lastly, we can also write so another root when or the number   These points are on the unit circle and equally spaced with a root. This is true in general for functions of the form , which will have the roots on the unit circle equally spaced radians apart from each other.  The solutions in the complex plane to the equation are called the roots of unity . We will use the technique above to find the solution.  First, recall that the fundamental theorem of algebra states that there are exactly complex solutions to a degree polynomial (including multiplicities), so we expect solutions to this. And these values are on the unit circle, one of which is and the others are equally spaced around the circle.    If , then the values are      "
+},
+{
+  "id": "sect-complex-numbers-2",
+  "level": "2",
+  "url": "sect-complex-numbers.html#sect-complex-numbers-2",
+  "type": "Objectives",
+  "number": "3.1",
+  "title": "",
+  "body": "   Understand the basics of a complex number and the complex plane.    Perform arithmetic with complex numbers.    Convert between the standard and polar forms of a complex number.    Using the Polar Form for multiplication of complex numbers, as well as powers and roots.    Find the roots of unity.    "
+},
+{
+  "id": "def-complex-number",
+  "level": "2",
+  "url": "sect-complex-numbers.html#def-complex-number",
+  "type": "Definition",
+  "number": "3.1.1",
+  "title": "",
+  "body": "  A complex number is a number of the form , where and are real numbers and .  The real part of is and can be written . The imaginary part of is and is written .   "
+},
+{
+  "id": "fig-complex-plane",
+  "level": "2",
+  "url": "sect-complex-numbers.html#fig-complex-plane",
+  "type": "Figure",
+  "number": "3.1.2",
+  "title": "",
+  "body": " The complex plane with sample complex numbers plotted.       "
+},
+{
+  "id": "sect-complex-basics-6",
+  "level": "2",
+  "url": "sect-complex-numbers.html#sect-complex-basics-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "complex conjugate "
+},
+{
+  "id": "sect-arithmetic-complex-8",
+  "level": "2",
+  "url": "sect-complex-numbers.html#sect-arithmetic-complex-8",
+  "type": "Observation",
+  "number": "3.1.3",
+  "title": "Arithmetic of Complex Numbers.",
+  "body": " Arithmetic of Complex Numbers  In summary, the following are basic arithmetic operations of complex numbers. If then   "
+},
+{
+  "id": "fig-addition-subtraction-complex",
+  "level": "2",
+  "url": "sect-complex-numbers.html#fig-addition-subtraction-complex",
+  "type": "Figure",
+  "number": "3.1.4",
+  "title": "",
+  "body": " Examples of Addition and Subtraction in the complex plane       "
+},
+{
+  "id": "fig-polar-form-complex",
+  "level": "2",
+  "url": "sect-complex-numbers.html#fig-polar-form-complex",
+  "type": "Figure",
+  "number": "3.1.5",
+  "title": "",
+  "body": "       "
+},
+{
+  "id": "lem-polar-form-complex",
+  "level": "2",
+  "url": "sect-complex-numbers.html#lem-polar-form-complex",
+  "type": "Lemma",
+  "number": "3.1.6",
+  "title": "",
+  "body": "  Let be a complex number. can be written in the form where is the counterclockwise angle between the line segment from to the complex number and the positive real axis as shown in .    Let where will show that in SECTION ????.   "
+},
+{
+  "id": "sect-polar-form-complex-5-3",
+  "level": "2",
+  "url": "sect-complex-numbers.html#sect-polar-form-complex-5-3",
+  "type": "Example",
+  "number": "3.1.7",
+  "title": "",
+  "body": "  Find the the product of and using the form above.    First, we write the two complex numbers in polar form. That is Then the product is    "
+},
+{
+  "id": "fig-powers-polar-form",
+  "level": "2",
+  "url": "sect-complex-numbers.html#fig-powers-polar-form",
+  "type": "Figure",
+  "number": "3.1.8",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "sect-polar-form-complex-6-10",
+  "level": "2",
+  "url": "sect-complex-numbers.html#sect-polar-form-complex-6-10",
+  "type": "Example",
+  "number": "3.1.9",
+  "title": "",
+  "body": "  Find the square root of . Note that and that the angle (argument) is . The resultant would have distance and the angle would be so    "
+},
+{
+  "id": "sec-roots-of-unity-9",
+  "level": "2",
+  "url": "sect-complex-numbers.html#sec-roots-of-unity-9",
+  "type": "Example",
+  "number": "3.1.10",
+  "title": "",
+  "body": "  If , then the values are    "
+},
+{
+  "id": "sect-funct-props",
+  "level": "1",
+  "url": "sect-funct-props.html",
+  "type": "Section",
+  "number": "3.2",
+  "title": "Properties of Functions",
+  "body": " Properties of Functions     The definition of a periodic function.    Definitions of one-sided limits and derivatives as well as piecewise continuous functions.    Definition of even and odd functions and properties of even and odd functions.    The technique of tabular integration.    The definitions of inner products of functions.      In , we reviewed inner product spaces and saw orthonormal sets of vectors (both in as well as polynomials). In this section, we will examine another set of functions, sines and cosines that are orthogonal. First, let's see a short review of periodic functions.    The Complex Exponential  In section , we used the equation   This equation, known as Euler's Formula isn't obvious. We'll spend this section deriving it. First, we need to recall the Maclaurin Series This is often covered in the infinite series section of Calculus. See APEX Calculus for an open-source version or other Calculus texts for details on series. of and .     Expanding using the above Maclaurin series, where has been used to reduce powers of and then the result is split into terms with and without a factor of .  Euler's formula also leads to the following:   The Most Interesting Equation in Mathematics      and this is often called the most interesting equation in mathematics because it arguably contains the 5 most important mathematical constants: 0, 1, , , .    Periodic Functions    A function is periodic with period if     for all . The smallest value of for which this true is called the period of the function.      Show that is periodic with period .       where the sum of angles sine formula is used.      What is the period of the function ?    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .    The periodic functions that we will mostly be using in this text are the sine and cosine function. We review here a few convenient identities with these functions and the complex exponential. From Euler's formula,     we can then write sine and cosine in terms of        If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds. If ,     because from , but this is raised to an even power so       One-Side Limits and Derivatives; Piecewise Continuous Functions  As we will see, the notion of a piecewise continuous function is a function that is continuous on subintervals. However, there are some technical details that we need before a formal definition.    A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.    If one is talking about either a left- or right-handed limit, these are typically called one-sided limits. Also, an example of these will be shown below.    A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.    If one is talking about either a left- or right-handed derivative, these are typically called one-sided derivatives. An example of these will be shown below.    A function is piecewise continuous on an interval if is continuous on all except for a finite number of points . In addition for all , and exist.      The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise continuous function.      In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.      Find both the left- and right-handed derivatives of the function defined in at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is       Show that is not a piecewise continuous function on .    The function on is not continuous at . Also     and since the one-sided limits are not finite, then is not piecewise continuous on .      Odd and Even Functions    A function is an odd function if for all in its domain.    Note: recall that an odd function is symmetric about the origin, meaning that if the graph of is rotated a half circle about the origin, that one gets the graph back.    A function is an even function if for all in its domain.    Recall that an even function is symmetric about the -axis. This means that if the graph is reflected over the -axis that one gets the same graph upon the reflection.    Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:     The following functions are even: .       The following theorem is helpful for finding whether or not products of functions are odd or even.      The product of two odd functions is even.    The product of two even functions is even.    The product of an even and an odd function is odd.        The derivative of an even function is odd. The derivative of an odd function is even.    Let be an even function, then for all .     by the chain rule. And the proof that the derivative of an odd function is similar.    And as a corollary, antiderivatives work in the same way.       Let be an odd function. Any antiderivative of is even.    Let be an even function and be its antiderivative. The antiderivative such that is odd.         Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.      Tabular Integration  A very handy formula for many integrations in this section is called tabular integration , which is just a recursive version of integration by parts that works well for integrals of a certain type. Before we show this, recall that the integration by parts formula is     and integration by parts is helpful for rewriting one integral (on the left) in terms of a second integral (on the right) and generally it is used to create a simpler integral. The next example shows a standard integration done with integration by parts.    Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get       This example shows that in order to integrate with the by parts formula, one must replace one integral with another. In more difficult examples, this may need to be done multiple times until the resulting integral is able to be done without by parts. This is the case when tabular integration is useful.   The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.   This is best seen with a couple of examples.    Find     using tabular integration.    First, we will build the table:   Tabular integration of       Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.    And the following is an example that is similar as we will see below:    Find     using tabular integration.    First, we will build the table:   Tabular integration of .      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.        "
+},
+{
+  "id": "sect-funct-props-2",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-2",
+  "type": "Objectives",
+  "number": "3.2",
+  "title": "",
+  "body": "   The definition of a periodic function.    Definitions of one-sided limits and derivatives as well as piecewise continuous functions.    Definition of even and odd functions and properties of even and odd functions.    The technique of tabular integration.    The definitions of inner products of functions.    "
+},
+{
+  "id": "sect-complex-exponential-3",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-complex-exponential-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Euler's Formula "
+},
+{
+  "id": "sect-complex-exponential-7",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-complex-exponential-7",
+  "type": "Remark",
+  "number": "3.2.1",
+  "title": "The Most Interesting Equation in Mathematics.",
+  "body": " The Most Interesting Equation in Mathematics     "
+},
+{
+  "id": "sect-funct-props-5-2",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-5-2",
+  "type": "Definition",
+  "number": "3.2.2",
+  "title": "",
+  "body": "  A function is periodic with period if     for all . The smallest value of for which this true is called the period of the function.   "
+},
+{
+  "id": "sect-funct-props-5-3",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-5-3",
+  "type": "Example",
+  "number": "3.2.3",
+  "title": "",
+  "body": "  Show that is periodic with period .       where the sum of angles sine formula is used.   "
+},
+{
+  "id": "sect-funct-props-5-4",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-5-4",
+  "type": "Example",
+  "number": "3.2.4",
+  "title": "",
+  "body": "  What is the period of the function ?    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .   "
+},
+{
+  "id": "lem-int-complex-exp",
+  "level": "2",
+  "url": "sect-funct-props.html#lem-int-complex-exp",
+  "type": "Lemma",
+  "number": "3.2.5",
+  "title": "",
+  "body": "  If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds. If ,     because from , but this is raised to an even power so    "
+},
+{
+  "id": "sect-funct-props-6-3",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-6-3",
+  "type": "Definition",
+  "number": "3.2.6",
+  "title": "",
+  "body": "  A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.   "
+},
+{
+  "id": "sect-funct-props-6-5",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-6-5",
+  "type": "Definition",
+  "number": "3.2.7",
+  "title": "",
+  "body": "  A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.   "
+},
+{
+  "id": "sect-funct-props-6-7",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-6-7",
+  "type": "Definition",
+  "number": "3.2.8",
+  "title": "",
+  "body": "  A function is piecewise continuous on an interval if is continuous on all except for a finite number of points . In addition for all , and exist.   "
+},
+{
+  "id": "ex-piecewise-cont-function",
+  "level": "2",
+  "url": "sect-funct-props.html#ex-piecewise-cont-function",
+  "type": "Example",
+  "number": "3.2.9",
+  "title": "",
+  "body": "  The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise continuous function.      In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.   "
+},
+{
+  "id": "sect-funct-props-6-9",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-6-9",
+  "type": "Example",
+  "number": "3.2.11",
+  "title": "",
+  "body": "  Find both the left- and right-handed derivatives of the function defined in at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is    "
+},
+{
+  "id": "sect-funct-props-6-10",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-6-10",
+  "type": "Example",
+  "number": "3.2.12",
+  "title": "",
+  "body": "  Show that is not a piecewise continuous function on .    The function on is not continuous at . Also     and since the one-sided limits are not finite, then is not piecewise continuous on .   "
+},
+{
+  "id": "sect-even-odd-functions-2",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-even-odd-functions-2",
+  "type": "Definition",
+  "number": "3.2.13",
+  "title": "",
+  "body": "  A function is an odd function if for all in its domain.   "
+},
+{
+  "id": "sect-even-odd-functions-4",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-even-odd-functions-4",
+  "type": "Definition",
+  "number": "3.2.14",
+  "title": "",
+  "body": "  A function is an even function if for all in its domain.   "
+},
+{
+  "id": "sect-even-odd-functions-6",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-even-odd-functions-6",
+  "type": "Example",
+  "number": "3.2.15",
+  "title": "",
+  "body": "  Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:     The following functions are even: .      "
+},
+{
+  "id": "sect-even-odd-functions-8",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-even-odd-functions-8",
+  "type": "Theorem",
+  "number": "3.2.16",
+  "title": "",
+  "body": "    The product of two odd functions is even.    The product of two even functions is even.    The product of an even and an odd function is odd.     "
+},
+{
+  "id": "sect-even-odd-functions-9",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-even-odd-functions-9",
+  "type": "Lemma",
+  "number": "3.2.17",
+  "title": "",
+  "body": "  The derivative of an even function is odd. The derivative of an odd function is even.    Let be an even function, then for all .     by the chain rule. And the proof that the derivative of an odd function is similar.   "
+},
+{
+  "id": "sect-even-odd-functions-11",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-even-odd-functions-11",
+  "type": "Corollary",
+  "number": "3.2.18",
+  "title": "",
+  "body": "     Let be an odd function. Any antiderivative of is even.    Let be an even function and be its antiderivative. The antiderivative such that is odd.      "
+},
+{
+  "id": "thm-even-odd-integrals",
+  "level": "2",
+  "url": "sect-funct-props.html#thm-even-odd-integrals",
+  "type": "Theorem",
+  "number": "3.2.19",
+  "title": "",
+  "body": "  Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.   "
+},
+{
+  "id": "sect-funct-props-8-2",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-8-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "tabular integration "
+},
+{
+  "id": "sect-funct-props-8-5",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-8-5",
+  "type": "Example",
+  "number": "3.2.20",
+  "title": "",
+  "body": "  Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get      "
+},
+{
+  "id": "sect-funct-props-8-7",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-8-7",
+  "type": "Remark",
+  "number": "3.2.21",
+  "title": "",
+  "body": " The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.  "
+},
+{
+  "id": "sect-funct-props-8-9",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-8-9",
+  "type": "Example",
+  "number": "3.2.22",
+  "title": "",
+  "body": "  Find     using tabular integration.    First, we will build the table:   Tabular integration of       Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.   "
+},
+{
+  "id": "sect-funct-props-8-11",
+  "level": "2",
+  "url": "sect-funct-props.html#sect-funct-props-8-11",
+  "type": "Example",
+  "number": "3.2.24",
+  "title": "",
+  "body": "  Find     using tabular integration.    First, we will build the table:   Tabular integration of .      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.      "
+},
+{
   "id": "sect-vector-spaces",
   "level": "1",
   "url": "sect-vector-spaces.html",
   "type": "Section",
-  "number": "3.1",
+  "number": "4.1",
   "title": "Vector Spaces",
-  "body": " Vector Spaces     The definition of a vector space, a set of mathematical objects with ten properties.    To prove that a set of mathematical objects with scalar multiplication and vector addition is a vector space.    Examples of sets of vectors some of which are vectors and some of which are not.      A vector space as we will see is a set of vectors with a certain collection of properties. This notion arose from vectors of , however, we will see that they generalize.   Vector Space   Let be a nonempty set of elements with and . The set is called a real vector space and the elements of are called vectors if in there are defined two algebraic operations called vector addition and denoted and scalar multiplication and denoted that satisfy the following:     Vector Addition:  The operation satisfies:     (Closure): .    (Commutativity:)     (Associativity:)     (Identity Element:) There exist an element that satisfies: .    (Inverse Elements:) For every , there exists an element denoted such that .       Scalar Multiplication:  The real numbers and are called scalars . The operations and also satisfy:     (Closure:) .    (Distributivity:)     (Distributivity:)     (Associativity:)     (Identity): For every , .          We will show that the familiar sets and are vectors spaces. However, it is interesting that there are many other common sets of mathematical objects that are also vectors spaces.    Examples of Vector Spaces  Let's begin with the set of all vectors of length 2, which we typically write as .    Show that together with the standard notions of vector addition and scalar multiplication is a vector space.    Let     where and as well as vector addition and scalar multiplication as     We now show that all 10 properties of a vector space hold:      Additive Closure: Since are elements of , the closure by addition holds.     Additive Commutativity: For all ,      Additive Associativity:       Additive Identity Element: The zero element is and it satisfies,      Additive Inverse Element: The inverse element is given as and the following satisfies:      Multiplicative Closure: For , which is in , so scalar multiplication is closed.     Distributivity over vectors: Let and      Distributivity over scalars: Let and be elements of .      Scalar Multiplicative Associativity: Let and be elements of .      Multiplicative Identity element:         The next example shows that quadratic functions also satisfy these properties, hence the set of all polynomials of degree 2 form a vector space.    Show than the set, , is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     with   Vector addition is simply polynomial addition for example:     and scalar multiplication is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The following are also vector spaces. There are not proofs associated with these.      , the set of polynomials of degree .    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of all matrices, with standard definition of matrix addition and scalar multiplication.     In the next example, we will also show some other interesting sets are vector spaces. To save a bunch of time and effort, in some cases, we don't need to show all 10 properties. We can skip most of properties, if the set is a subset of a known vector space. The reason for this is that properties 2-5 and 7-10 will automatically hold because the vectors are already in a vector space. We will do this formally in the next section.    Show that all lines that pass through the origin, or the set     is a vector space.    First, let's rewrite the vector space as     because this is the same set of points, but it is written in terms of a vector, which makes things easier to show. As stated above, since is a subset of , we don't need to prove properties 2-5, 7-10, which hold because we already showed that these properties show. Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in .     Let . Therefore the two equations and are satisfied. Now check the sum,     and need to show that this is in . Since     then .    We need to show that , so that the vector satisfies the property that the line passes through the origin.     and since , then     therefore .     So this is a vector space.    The next example shows that polynomials (specifically quadratics) are vector spaces. Since we haven't shown anything about polynomials yet, we need to show all 10 properties of hold.    Show than the set, , the set of all polynomials of degree is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     Vector addition is simply polynomial addition for example:     and scalar addition is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The above example shows that there are examples of vectors and vector spaces that don't seem like vectors in . The following are also vector spaces:     The set .    The set of functions of a single variable.    The set of functions that satisfy .    Solutions of homogeneous differential equations, which is a generalization of functions that satisfy .     Note that above there are sets of functions that are vector spaces. Similar to the 2nd degree polynomials, the vector addition is given by and the scalar multiplication is .    Is every set a vector space?  In short, no. For example, consider the following: which is the first quadrant of the plane. To check if this is a vector space, we don't need to check all 10 properties. This is because since is a subset of , most of the properties (commutative, associative, distributive, for examples) will work just as they did in . The only two that we do need to check are the closure properties.     If , then and since are all nonnegative, then this vector is in .    Let , then but if then , so is not a vector space.       Is the set     a vector space? If not what properties does it violate?    This set is a circle of radius one centered at the origin. Again, like above, is a subset of and thus the properties to check are the closure properties.     If we let both be in , then Is this in . To check sum the squares of the individual elements. which is only 1 in special circumstances and not in general, so this is not a vector space.    The additive identity requires that the zero vector is an element of the vector space. However, since is not in , then this property is also not satisfied.    This property is also not satisfied for the same reason as #1. Geometrically if is in then is on a circle of radius , so won't be in in general.        We have an alternative way of looking at the circle that will be a vector space. We can still define the vectors to be on the unit circle, however, this time addition will be defined as the vector whose angle is the sum of the angles, where angle is defined from the positive -axis. Scalar multiplication will be the scalar multiplication of the angle. There are some other details that are needed to formalize this as a vector space.    "
+  "body": " Vector Spaces     The definition of a vector space, a set of mathematical objects with ten properties.    To prove that a set of mathematical objects with scalar multiplication and vector addition is a vector space.    Examples of sets of vectors some of which are vectors and some of which are not.      A vector space as we will see is a set of vectors with a certain collection of properties. This notion arose from vectors of , however, we will see that they generalize.   Vector Space   Let be a nonempty set of elements with and . The set is called a real vector space and the elements of are called vectors if in there are defined two algebraic operations called vector addition and denoted and scalar multiplication and denoted that satisfy the following:     Vector Addition:  The operation satisfies:     (Closure): .    (Commutativity:)     (Associativity:)     (Identity Element:) There exist an element that satisfies: .    (Inverse Element:) For every , there exists an element denoted such that .       Scalar Multiplication:  The real numbers and are called scalars . The operations and also satisfy:     (Closure:) .    (Distributivity:)     (Distributivity:)     (Associativity:)     (Identity): For every , .          We will show that the familiar sets and are vectors spaces. However, it is interesting that there are many other common sets of mathematical objects that are also vectors spaces.    Examples of Vector Spaces  Let's begin with the set of all vectors of length 2, which we typically write as .    Show that together with the standard notions of vector addition and scalar multiplication is a vector space.    Let     where and as well as vector addition and scalar multiplication as     We now show that all 10 properties of a vector space hold:      Additive Closure: Since are elements of , the closure by addition holds.     Additive Commutativity: For all ,      Additive Associativity:       Additive Identity Element: The zero element is and it satisfies,      Additive Inverse Element: The inverse element is given as and the following satisfies:      Multiplicative Closure: For , which is in , so scalar multiplication is closed.     Distributivity over vectors: Let and      Distributivity over scalars: Let and be elements of .      Scalar Multiplicative Associativity: Let and be elements of .      Multiplicative Identity element:         The following are also vector spaces. There are not proofs associated with these.      , the set of polynomials of degree .    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of vectors that consist of with the standard definition of vector addition and scalar multiplication.    The set of all matrices, with standard definition of matrix addition and scalar multiplication.     In the next example, we will also show some other interesting sets are vector spaces. To save a bunch of time and effort, in some cases, we don't need to show all 10 properties. We can skip most of properties, if the set is a subset of a known vector space. The reason for this is that properties 2-5 and 7-10 will automatically hold because the vectors are already in a vector space. We will do this formally in the next section.    Show that all lines that pass through the origin, or the set     is a vector space.    First, let's rewrite the vector space as     because this is the same set of points, but it is written in terms of a vector, which makes things easier to show. As stated above, since is a subset of , we don't need to prove properties 2-5, 7-10, which hold because we already showed that these properties show. Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in .     Let . Therefore the two equations and are satisfied. Now check the sum,     and need to show that this is in . Since     then .    We need to show that , so that the vector satisfies the property that the line passes through the origin.     and since , then     therefore .     So this is a vector space.    The next example shows that polynomials (specifically quadratics) are vector spaces. Since we haven't shown anything about polynomials yet, we need to show all 10 properties of hold.    Show than the set, , the set of all polynomials of degree is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     Vector addition is simply polynomial addition for example:     and scalar addition is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:         The above example shows that there are examples of vectors and vector spaces that don't seem like vectors in . The following are also vector spaces:     The set .    The set of functions of a single variable.    The set of functions that satisfy .    Solutions of homogeneous differential equations, which is a generalization of functions that satisfy .     Note that above there are sets of functions that are vector spaces. Similar to the 2nd degree polynomials, the vector addition is given by and the scalar multiplication is .    Is every set a vector space?  In short, no. For example, consider the following: which is the first quadrant of the plane. To check if this is a vector space, we don't need to check all 10 properties. This is because since is a subset of , most of the properties (commutative, associative, distributive, for examples) will work just as they did in . The only two that we do need to check are the closure properties.     If , then and since are all nonnegative, then this vector is in .    Let , then but if then , so is not a vector space.       Is the set     a vector space? If not what properties does it violate?    This set is a circle of radius one centered at the origin. Again, like above, is a subset of and thus the properties to check are the closure properties.     If we let both be in , then Is this in . To check sum the squares of the individual elements. which is only 1 in special circumstances and not in general, so this is not a vector space.    The additive identity requires that the zero vector is an element of the vector space. However, since is not in , then this property is also not satisfied.    This property is also not satisfied for the same reason as #1. Geometrically if is in then is on a circle of radius , so won't be in in general.        We have an alternative way of looking at the circle that will be a vector space. We can still define the vectors to be on the unit circle, however, this time addition will be defined as the vector whose angle is the sum of the angles, where angle is defined from the positive -axis. Scalar multiplication will be the scalar multiplication of the angle. There are some other details that are needed to formalize this as a vector space.    "
 },
 {
   "id": "sect-vector-spaces-2",
   "level": "2",
   "url": "sect-vector-spaces.html#sect-vector-spaces-2",
   "type": "Objectives",
-  "number": "3.1",
+  "number": "4.1",
   "title": "",
   "body": "   The definition of a vector space, a set of mathematical objects with ten properties.    To prove that a set of mathematical objects with scalar multiplication and vector addition is a vector space.    Examples of sets of vectors some of which are vectors and some of which are not.    "
 },
@@ -2075,43 +2579,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-vector-spaces.html#def-vector-space",
   "type": "Definition",
-  "number": "3.1.1",
+  "number": "4.1.1",
   "title": "Vector Space.",
-  "body": " Vector Space   Let be a nonempty set of elements with and . The set is called a real vector space and the elements of are called vectors if in there are defined two algebraic operations called vector addition and denoted and scalar multiplication and denoted that satisfy the following:     Vector Addition:  The operation satisfies:     (Closure): .    (Commutativity:)     (Associativity:)     (Identity Element:) There exist an element that satisfies: .    (Inverse Elements:) For every , there exists an element denoted such that .       Scalar Multiplication:  The real numbers and are called scalars . The operations and also satisfy:     (Closure:) .    (Distributivity:)     (Distributivity:)     (Associativity:)     (Identity): For every , .         "
+  "body": " Vector Space   Let be a nonempty set of elements with and . The set is called a real vector space and the elements of are called vectors if in there are defined two algebraic operations called vector addition and denoted and scalar multiplication and denoted that satisfy the following:     Vector Addition:  The operation satisfies:     (Closure): .    (Commutativity:)     (Associativity:)     (Identity Element:) There exist an element that satisfies: .    (Inverse Element:) For every , there exists an element denoted such that .       Scalar Multiplication:  The real numbers and are called scalars . The operations and also satisfy:     (Closure:) .    (Distributivity:)     (Distributivity:)     (Associativity:)     (Identity): For every , .         "
 },
 {
   "id": "sect-vector-spaces-4-3",
   "level": "2",
   "url": "sect-vector-spaces.html#sect-vector-spaces-4-3",
   "type": "Lemma",
-  "number": "3.1.2",
+  "number": "4.1.2",
   "title": "",
   "body": "  Show that together with the standard notions of vector addition and scalar multiplication is a vector space.    Let     where and as well as vector addition and scalar multiplication as     We now show that all 10 properties of a vector space hold:      Additive Closure: Since are elements of , the closure by addition holds.     Additive Commutativity: For all ,      Additive Associativity:       Additive Identity Element: The zero element is and it satisfies,      Additive Inverse Element: The inverse element is given as and the following satisfies:      Multiplicative Closure: For , which is in , so scalar multiplication is closed.     Distributivity over vectors: Let and      Distributivity over scalars: Let and be elements of .      Scalar Multiplicative Associativity: Let and be elements of .      Multiplicative Identity element:        "
-},
-{
-  "id": "sect-vector-spaces-4-5",
-  "level": "2",
-  "url": "sect-vector-spaces.html#sect-vector-spaces-4-5",
-  "type": "Example",
-  "number": "3.1.3",
-  "title": "",
-  "body": "  Show than the set, , is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     with   Vector addition is simply polynomial addition for example:     and scalar multiplication is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:        "
 },
 {
   "id": "ex-lines-through-origin-vector-space",
   "level": "2",
   "url": "sect-vector-spaces.html#ex-lines-through-origin-vector-space",
   "type": "Example",
-  "number": "3.1.4",
+  "number": "4.1.3",
   "title": "",
   "body": "  Show that all lines that pass through the origin, or the set     is a vector space.    First, let's rewrite the vector space as     because this is the same set of points, but it is written in terms of a vector, which makes things easier to show. As stated above, since is a subset of , we don't need to prove properties 2-5, 7-10, which hold because we already showed that these properties show. Instead, to save time and effort, we only prove properties 1 and 6 of definition of a vector space in .     Let . Therefore the two equations and are satisfied. Now check the sum,     and need to show that this is in . Since     then .    We need to show that , so that the vector satisfies the property that the line passes through the origin.     and since , then     therefore .     So this is a vector space.   "
 },
 {
-  "id": "sect-vector-spaces-4-11",
+  "id": "sect-vector-spaces-4-9",
   "level": "2",
-  "url": "sect-vector-spaces.html#sect-vector-spaces-4-11",
+  "url": "sect-vector-spaces.html#sect-vector-spaces-4-9",
   "type": "Example",
-  "number": "3.1.5",
+  "number": "4.1.4",
   "title": "",
   "body": "  Show than the set, , the set of all polynomials of degree is a vector space with vector addition defined as the sum of two polynomials and scalar multiplication as the multiplication of a polynomial by a constant.    In this case scalars are elements in and the vector space is the set of all polynomials of degree at most . Let     Vector addition is simply polynomial addition for example:     and scalar addition is given by         Additive Closure: Show that is in , the set of polynomials of degree 2. which is a polynomial of degree 2, so this is in .     Additive Commutativity:       Additive Associativity:       Additive Identity: The zero element is the function 0.      Additive Inverse: The inverse element is , and      Closure under scalar multiplication:  since this is a polynomial of degree 2, then .     Scalar Multiple Distributivity: Let ,      Vector Distributivity: Let ,      Scalar Multiple Associativity: Let ,      Scalar Multiple Identity:        "
 },
@@ -2120,7 +2615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-vector-spaces.html#sect-vector-spaces-5-4",
   "type": "Example",
-  "number": "3.1.6",
+  "number": "4.1.5",
   "title": "",
   "body": "  Is the set     a vector space? If not what properties does it violate?    This set is a circle of radius one centered at the origin. Again, like above, is a subset of and thus the properties to check are the closure properties.     If we let both be in , then Is this in . To check sum the squares of the individual elements. which is only 1 in special circumstances and not in general, so this is not a vector space.    The additive identity requires that the zero vector is an element of the vector space. However, since is not in , then this property is also not satisfied.    This property is also not satisfied for the same reason as #1. Geometrically if is in then is on a circle of radius , so won't be in in general.      "
 },
@@ -2129,7 +2624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-vector-spaces.html#sect-vector-spaces-5-5",
   "type": "Note",
-  "number": "3.1.7",
+  "number": "4.1.6",
   "title": "",
   "body": " We have an alternative way of looking at the circle that will be a vector space. We can still define the vectors to be on the unit circle, however, this time addition will be defined as the vector whose angle is the sum of the angles, where angle is defined from the positive -axis. Scalar multiplication will be the scalar multiplication of the angle. There are some other details that are needed to formalize this as a vector space.  "
 },
@@ -2138,43 +2633,52 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-subspaces.html",
   "type": "Section",
-  "number": "3.2",
+  "number": "4.2",
   "title": "The Span and Basis of a Subspace",
-  "body": "The Span and Basis of a Subspace   In , we saw the span of vectors in . We now extend this example to the span of any subspace. In addition, the notion of a basis of the subspace is introduced.    Let be a subset of a vector space . If is also a vector space, then is a subspace .      We showed in that the set of all lines in that pass through the origin is a vector space. Since the set is a subset of , it is a subspace of as well.      Show that is a subspace of .    Since is itself a vector space and a subset of , then is a subspace.      Recall that the set is the set of all quadratic functions.  The set of all linear functions is itself a vector space as well as a subset of , therefore is a subspace of .  In addition, the set is a vector space as well as a subset of , therefore it is a subspace.    The above examples show that there are many already known subspaces. There are many cases though that aren't evident or to show it is a subspace, we would need to prove all 10 properties that it is a vector space. The next lemma, however, shows that isn't the case.    Let be a nonempty subset of a vector space , under the inherited operations. If for all and in and      then is a subspace.    This means that if is a subset of , a vector space, to prove that is a subspace, we only need to check if .  Since is a subspace of , properties (2)-(5) and (7)-(10) of hold for . Thus we only need to prove closure under addition and scalar multiplication.  Property 1: Because , let , thus .  Property 6: Because , let , thus .      Show that     (that is, all vectors on a line of slope ) is a subspace of .    We will use . Let     be elements of . That is and . Then     which is an element of because the second component is times the first one. Thus is a subspace of .      Show using that     the set of all diagonal matrices is a subspace of , the vector space of all matrices.    In this case, if we show that for any two matrices     and scalars that is in the set.     which is a diagonal matrix, therefore in , thus this is a subspace.      Let be an by matrix. The null space of is a subspace of .    We will use to solve this. Let both and be in the null space of . This means that and . We need to show that is in the null space of .     Vectors in the null space are vectors of length , so the null space is a subset of and since is in the null space of , then the null space is a subspace of .    This is an important result that we will see in eigenvalues in the next chapter.    The Span of a set of vectors  We saw in the span of a set of vectors in . We now generalize this to any vector space.    The span of a nonempty subset of a vector space is the set of all linear combinations of the vectors in . That is,       To show that a subset of vectors span a subspace , we need to show that any vector in can be written as a linear combination of the spanning vectors.    Show that the set spans .    In this case, we need show that a general polynomial in can be written as a linear combination of elements of the given set. That is     and if there is a solution for the 's, then that shows the the set spans . To find the solution, use the technique of equating coefficients. Write down the coefficients for the constant terms, terms and terms respectively.     This has a solution and , which means that a linear combination of the three vectors can form any quadratic function, thus the given set spans .      The span of any subset of a vector space is a subspace.    Let be the subset and be the elements of . Using Lemma , we need to check that is closed under linear combinations. Let     then     Since this shows that is in , then is a subspace.    This lemma allows us to talk about a vector space in terms of the vectors that span it. For example, instead of thinking of ,we think of the span of (in this case, it may not be more helpful, but other cases it is).    Show that the following vectors span :       Because the vector can be written , then these vectors span .      Does span ?    To determine this, we will try write a general polynomial in ,     as a linear combination of the set of vectors or     and equating coefficients,     There's no solution to this because can't simultaneously equal and , so does not span .      The Basis and Dimension of a Vector Space   In the previous section, we saw that there some correspondence between a vector space and a set of spanning vectors. In this section, we formalize this relationship.    The basis of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.    Note: the basis will be a tuple of vectors because the order of the vectors will be important. We will denote the tuple with parentheses, .   We showed in that the set     spans and since the second is not a multiple of the first, they are linearly independent. Therefore the tuple     form a basis for .    The tuple of vectors     is a different basis of because of the order of vectors. The fact that they span and are linearly independent do not depend on the order.     There are many bases of a vector space. For example,     also spans and are linearly independent.      Does     form a basis of ?    These three vectors are not linearly independent. Although one can show this in general, note that     and since they are not linearly independent, then they cannot form a basis of .    Although there are lots of different bases for a given subspace, there are some that are more useful than others. There is a basis for more subspaces called a standard basis.    The tuple     is called the standard basis or natural basis of . The vectors in the basis are called .     The natural basis of is .   We saw bases of vector spaces (or subspaces) at the beginning of this course without knowing that they were vector spaces. For example, in , we solved a linear system. It's associated homogeneous system is The solution (which is a subspace of ) can be written as The two vectors in the solution are a basis of the solution space. Since there are only two vectors and they are not constant multiples of each other, it's easy to see that they are linearly independent. Also because of the form of the solution set, you can also see that that span the space.    In a vector space with basis , the representation of a vector with respect to the basis is the column vector of the coefficients used to express as a linear combination of the basis vectors:     where and        Consider the space , the space of quadratic functions. Let be a basis of and . To find the representation, we need to find and such that     by equating coefficients this is same as solving the linear system:     resulting in , therefore     If instead the basis is given as , then     which shows that , therefore        Representations in the natural basis  As we saw above, finding representations in a basis requires solving another linear system. However, representations in the natural basis are simple calculations. If we used the natural basis for the quadratic example above, then are just the coefficients of terms of the vector . The following example shows that the representation of a vector in is what we expect, itself.    Find the Representation of the vector     in the natural basis       We seek the vector such that     which is just that and so the representation of the vector in the basis is     which is just the original vector.    The last example in this section uses matrices. The natural basis for is       Find       Formally, one needs to find and such that     but since the nice structure of the basis and , so       One can generalize to show that and this shows that matrices (which are vectors in the formal sense of vector spaces) can be represented by vectors by reshaping the matrix as a vector.     Dimension  We have been talking about a few big topics in this chapter. One of those is the spanning set of a vector space. We noted that many different sets can span a vector space. This brought in the notation of linear independence and a basis. However for a vector space there can be many different bases.  Although we did introduce a natural basis, this works well for some spaces, like and , however what is the natural basis for a solution of homogeneous linear system.  Perhaps if two people argue over the basis of a vector space, one thing they will agree on is the number of vectors in a basis as we will see. We noted earlier that disregarding extra vectors is generally a good thing to result in a basis, but there is a unique thing about bases and that is the number of vectors in any basis.    A vector space is finite dimensional if it has a basis with only finitely-many vectors.      In any finite-dimensional vector space, all of the bases have the same number of elements.    Because of this theorem, we define the dimension in following manner.    The dimension of a finite dimensional vector space is the number of vectors in any of its bases.         The dimension of is . Although there are many bases, consider , the natural basis, which has elements.    The dimension of is . The natural basis of is with elements.    The dimension of , the vector space of all 2 by 2 matrices is 4. A natural basis for this is: and since there are 4 elements, the dimension is 4.    The dimension of .         Bases of Subspaces  There were a number of important ideas in this section, so a summary is necessary. The basis of a space or subspace is useful for writing down elements in the space. That is, if we know the basis, then we know what's in the space. Additionally, the representation of an element are the coefficients in terms of the basis.  This means that any vector in a finite-dimensional vector space can be represented as a vector and as we will see this will be helpful in that we can use many of the nice techniques from to help. We will start to see that since we can write any polynomial as a vector, that many operations that we do to polynomials (such as multiplication, differentiation, and integration) can be done using matrices and vectors.    "
+  "body": " The Span and Basis of a Subspace    Define a subspace of a vector space.  Show that a subset is a subspace.  Define the span of a set of vectors in a vector space.  Show that a set of vectors spans a subspace.  Define the basis of a vector space.  Find the representation of a vector with respect to a basis.     In , we saw the span of vectors in . We now extend this example to the span of any subspace. In addition, the notion of a basis of the subspace is introduced.  Recall that it is important to understand if a set of vectors is a span of a set or space, because we are able to take a linear combination of the vectors to get any other vector in the set. Since we have extended the notion of a vector space, the span will play the same role.    Let be a subset of a vector space . If is also a vector space, then is a subspace .    The next three examples show that we have already seen subspaces because we know subsets of known vector spaces that are vector spaces themselves.    We showed in that the set of all lines in that pass through the origin is a vector space. Since the set is a subset of , it is a subspace of as well.      Show that is a subspace of .    Since is itself a vector space and a subset of , then is a subspace.      Recall that the set is the set of all quadratic functions.  The set of all linear functions is itself a vector space as well as a subset of , therefore is a subspace of .  In addition, the set is a vector space as well as a subset of , therefore it is a subspace.    The above examples show that there are many already known subspaces. There are many cases though that aren't evident or to show it is a subspace, we would need to prove all 10 properties that it is a vector space. The next lemma, however, shows that isn't the case.    Let be a nonempty subset of a vector space , under the inherited operations of vector addition and scalar multiplication. If for all and ,     then is a subspace.    This means that if is a subset of , a vector space, to prove that is a subspace, we only need to check if .  Since is a subspace of , properties (2), (3), (5) and (7)-(10) of hold for . Thus we only need to prove closure under addition and scalar multiplication as well as the existence of the identity element.  Property 1: Because , let , thus .  Property 4: If and , then this shows that , so there is an identity element.  Property 6: Because , let , thus .    We will use this definition to prove that certain sets are subspaces.    Show that     (that is, all vectors on a line of slope ) is a subspace of .    We will use . Let     be elements of . That is and . Then     which is an element of because the second component is times the first one. Thus is a subspace of .      Show using that     the set of all diagonal matrices is a subspace of , the vector space of all matrices.    In this case, if we show that for any two matrices     and scalars that is in the set.     which is a diagonal matrix, therefore in , thus this is a subspace.    In , we explored the null space of a matrix. In the next lemma, we show that any null space is a subspace.    Let be an by matrix. The null space of is a subspace of .    We will use to solve this. Let both and be in the null space of . This means that and . We need to show that is in the null space of .     Vectors in the null space are vectors of length , so the null space is a subset of and since is in the null space of , then the null space is a subspace of .    This is an important result that we will see in eigenvalues in the next chapter.    The Span of a set of vectors  We saw in the span of a set of vectors in . We now generalize this to any vector space.    The span of a nonempty subset of a vector space is the set of all linear combinations of the vectors in . That is,       To show that a subset of vectors span a subspace , we need to show that any vector in can be written as a linear combination of the spanning vectors.    Show that the set spans .    In this case, we need show that a general polynomial in can be written as a linear combination of elements of the given set. That is     and if there is a solution for the 's, then that shows the the set spans . To find the solution, use the technique of equating coefficients. Write down the coefficients for the constant terms, terms and terms respectively.     This has a solution and , which means that a linear combination of the three vectors can form any quadratic function, thus the given set spans .      The span of any subset of a vector space is a subspace.    Let be the subset and be the elements of . Using , we need to check that is closed under linear combinations. Let     then     Since this shows that is in , then is a subspace.    This lemma allows us to talk about a vector space in terms of the vectors that span it. For example, instead of thinking of ,we think of the span of (in this case, it may not be more helpful, but other cases it is).    Show that the following vectors span :       Because the vector can be written , then these vectors span .      Does span ?    To determine this, we will try write a general polynomial in ,     as a linear combination of the set of vectors or     and equating coefficients,     There's no solution to this because can't simultaneously equal and , so does not span .      The Basis and Dimension of a Vector Space   In the previous section, we saw that there some correspondence between a vector space and a set of spanning vectors. In this section, we formalize this relationship.    The basis of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.    Note: the basis will be a tuple of vectors because the order of the vectors will be important. We will denote the tuple with parentheses, .   We showed in that the set     spans and since the second is not a multiple of the first, they are linearly independent. Therefore the tuple     form a basis for .    The tuple of vectors     is a different basis of because of the order of vectors. The fact that they span and are linearly independent do not depend on the order.     There are many bases of a vector space. For example,     also spans and are linearly independent.      Does     form a basis of ?    These three vectors are not linearly independent. Although one can show this in general, note that     and since they are not linearly independent, then they cannot form a basis of .    Although there are lots of different bases for a given subspace, there are some that are more useful than others. There is a basis for more subspaces called a standard basis.    The tuple     is called the standard basis or natural basis of . The vectors in the basis are called .     The natural basis of is .   We saw bases of vector spaces (or subspaces) at the beginning of this course without knowing that they were vector spaces. For example, in , we solved a linear system. It's associated homogeneous system is The solution (which is a subspace of ) can be written as If we let and be the two vectors above, then form a basis of the solution space. Since there are only two vectors and they are not constant multiples of each other, it's easy to see that they are linearly independent. Also because of the form of the solution set, you can also see that that span the space.    In a vector space with basis , the representation of a vector with respect to the basis is the column vector of the coefficients used to express as a linear combination of the basis vectors:     where and        Consider the space , the space of quadratic functions. Let be a basis of and . To find the representation, we need to find and such that     by equating coefficients this is same as solving the linear system:     resulting in , therefore     If instead the basis is given as , then     which shows that , therefore        Representations in the natural basis  As we saw above, finding representations in a basis requires solving another linear system. However, representations in the natural basis are simple calculations. If we used the natural basis for the quadratic example above, then are just the coefficients of terms of the vector . The following example shows that the representation of a vector in is what we expect, itself.    Find the Representation of the vector     in the natural basis       We seek the vector such that     which is just that and so the representation of the vector in the basis is     which is just the original vector.    The last example in this section uses matrices. The natural basis for is       Find       Formally, one needs to find and such that     but since the nice structure of the basis and , so       One can generalize to show that and this shows that matrices (which are vectors in the formal sense of vector spaces) can be represented by vectors by reshaping the matrix as a vector.     Dimension  We have been talking about a few big topics in this chapter. One of those is the spanning set of a vector space. We noted that many different sets can span a vector space. This brought in the notation of linear independence and a basis. However for a vector space there can be many different bases.  Although we did introduce a natural basis, this works well for some spaces, like and , however what is the natural basis for a solution of homogeneous linear system.  Perhaps if two people argue over the basis of a vector space, one thing they will agree on is the number of vectors in a basis as we will see. We noted earlier that disregarding extra vectors is generally a good thing to result in a basis, but there is a unique thing about bases and that is the number of vectors in any basis.    A vector space is finite dimensional if it has a basis with only finitely-many vectors.      In any finite-dimensional vector space, all of the bases have the same number of elements.    Because of this theorem, we define the dimension in following manner.    The dimension of a finite dimensional vector space is the number of vectors in any of its bases.         The dimension of is . Although there are many bases, consider , the natural basis, which has elements.    The dimension of is . The natural basis of is with elements.    The dimension of , the vector space of all 2 by 2 matrices is 4. A natural basis for this is: and since there are 4 elements, the dimension is 4.    The dimension of . There is a natural basis that is similar to the previous example.         Bases of Subspaces  There were a number of important ideas in this section, so a summary is necessary. The basis of a space or subspace is useful for writing down elements in the space. That is, if we know the basis, then we know what's in the space. Additionally, the representation of an element are the coefficients in terms of the basis.  This means that any vector in a finite-dimensional vector space can be represented as a vector and as we will see this will be helpful in that we can use many of the nice techniques from and to help. We will start to see that since we can write any polynomial as a vector, that many operations that we do to polynomials (such as multiplication, differentiation, and integration) can be done using matrices and vectors.   "
 },
 {
-  "id": "sect-subspaces-2-2",
+  "id": "sect-subspaces-2",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-2-2",
+  "url": "sect-subspaces.html#sect-subspaces-2",
+  "type": "Objectives",
+  "number": "4.2",
+  "title": "",
+  "body": "  Define a subspace of a vector space.  Show that a subset is a subspace.  Define the span of a set of vectors in a vector space.  Show that a set of vectors spans a subspace.  Define the basis of a vector space.  Find the representation of a vector with respect to a basis.   "
+},
+{
+  "id": "sect-subspaces-3-3",
+  "level": "2",
+  "url": "sect-subspaces.html#sect-subspaces-3-3",
   "type": "Definition",
-  "number": "3.2.1",
+  "number": "4.2.1",
   "title": "",
   "body": "  Let be a subset of a vector space . If is also a vector space, then is a subspace .   "
 },
 {
-  "id": "sect-subspaces-2-3",
+  "id": "sect-subspaces-3-5",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-2-3",
+  "url": "sect-subspaces.html#sect-subspaces-3-5",
   "type": "Example",
-  "number": "3.2.2",
+  "number": "4.2.2",
   "title": "",
   "body": "  We showed in that the set of all lines in that pass through the origin is a vector space. Since the set is a subset of , it is a subspace of as well.   "
 },
 {
-  "id": "sect-subspaces-2-4",
+  "id": "sect-subspaces-3-6",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-2-4",
+  "url": "sect-subspaces.html#sect-subspaces-3-6",
   "type": "Example",
-  "number": "3.2.3",
+  "number": "4.2.3",
   "title": "",
   "body": "  Show that is a subspace of .    Since is itself a vector space and a subset of , then is a subspace.   "
 },
 {
-  "id": "sect-subspaces-2-5",
+  "id": "sect-subspaces-3-7",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-2-5",
+  "url": "sect-subspaces.html#sect-subspaces-3-7",
   "type": "Example",
-  "number": "3.2.4",
+  "number": "4.2.4",
   "title": "",
   "body": "  Recall that the set is the set of all quadratic functions.  The set of all linear functions is itself a vector space as well as a subset of , therefore is a subspace of .  In addition, the set is a vector space as well as a subset of , therefore it is a subspace.   "
 },
@@ -2183,16 +2687,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-subspaces.html#lemma-subspace",
   "type": "Lemma",
-  "number": "3.2.5",
+  "number": "4.2.5",
   "title": "",
-  "body": "  Let be a nonempty subset of a vector space , under the inherited operations. If for all and in and      then is a subspace.    This means that if is a subset of , a vector space, to prove that is a subspace, we only need to check if .  Since is a subspace of , properties (2)-(5) and (7)-(10) of hold for . Thus we only need to prove closure under addition and scalar multiplication.  Property 1: Because , let , thus .  Property 6: Because , let , thus .   "
+  "body": "  Let be a nonempty subset of a vector space , under the inherited operations of vector addition and scalar multiplication. If for all and ,     then is a subspace.    This means that if is a subset of , a vector space, to prove that is a subspace, we only need to check if .  Since is a subspace of , properties (2), (3), (5) and (7)-(10) of hold for . Thus we only need to prove closure under addition and scalar multiplication as well as the existence of the identity element.  Property 1: Because , let , thus .  Property 4: If and , then this shows that , so there is an identity element.  Property 6: Because , let , thus .   "
 },
 {
-  "id": "sect-subspaces-2-8",
+  "id": "sect-subspaces-3-11",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-2-8",
+  "url": "sect-subspaces.html#sect-subspaces-3-11",
   "type": "Example",
-  "number": "3.2.6",
+  "number": "4.2.6",
   "title": "",
   "body": "  Show that     (that is, all vectors on a line of slope ) is a subspace of .    We will use . Let     be elements of . That is and . Then     which is an element of because the second component is times the first one. Thus is a subspace of .   "
 },
@@ -2201,151 +2705,160 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-subspaces.html#eq-example-diag-matrix",
   "type": "Example",
-  "number": "3.2.7",
+  "number": "4.2.7",
   "title": "",
   "body": "  Show using that     the set of all diagonal matrices is a subspace of , the vector space of all matrices.    In this case, if we show that for any two matrices     and scalars that is in the set.     which is a diagonal matrix, therefore in , thus this is a subspace.   "
 },
 {
-  "id": "sect-subspaces-2-10",
+  "id": "sect-subspaces-3-13",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-2-10",
+  "url": "sect-subspaces.html#sect-subspaces-3-13",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "null space "
+},
+{
+  "id": "sect-subspaces-3-14",
+  "level": "2",
+  "url": "sect-subspaces.html#sect-subspaces-3-14",
   "type": "Lemma",
-  "number": "3.2.8",
+  "number": "4.2.8",
   "title": "",
   "body": "  Let be an by matrix. The null space of is a subspace of .    We will use to solve this. Let both and be in the null space of . This means that and . We need to show that is in the null space of .     Vectors in the null space are vectors of length , so the null space is a subset of and since is in the null space of , then the null space is a subspace of .   "
 },
 {
-  "id": "sect-subspaces-3-3",
+  "id": "sect-subspaces-4-3",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-3",
+  "url": "sect-subspaces.html#sect-subspaces-4-3",
   "type": "Definition",
-  "number": "3.2.9",
+  "number": "4.2.9",
   "title": "",
   "body": "  The span of a nonempty subset of a vector space is the set of all linear combinations of the vectors in . That is,      "
 },
 {
-  "id": "sect-subspaces-3-5",
+  "id": "sect-subspaces-4-5",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-5",
+  "url": "sect-subspaces.html#sect-subspaces-4-5",
   "type": "Example",
-  "number": "3.2.10",
+  "number": "4.2.10",
   "title": "",
   "body": "  Show that the set spans .    In this case, we need show that a general polynomial in can be written as a linear combination of elements of the given set. That is     and if there is a solution for the 's, then that shows the the set spans . To find the solution, use the technique of equating coefficients. Write down the coefficients for the constant terms, terms and terms respectively.     This has a solution and , which means that a linear combination of the three vectors can form any quadratic function, thus the given set spans .   "
 },
 {
-  "id": "sect-subspaces-3-6",
+  "id": "sect-subspaces-4-6",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-6",
+  "url": "sect-subspaces.html#sect-subspaces-4-6",
   "type": "Lemma",
-  "number": "3.2.11",
+  "number": "4.2.11",
   "title": "",
-  "body": "  The span of any subset of a vector space is a subspace.    Let be the subset and be the elements of . Using Lemma , we need to check that is closed under linear combinations. Let     then     Since this shows that is in , then is a subspace.   "
+  "body": "  The span of any subset of a vector space is a subspace.    Let be the subset and be the elements of . Using , we need to check that is closed under linear combinations. Let     then     Since this shows that is in , then is a subspace.   "
 },
 {
-  "id": "sect-subspaces-3-8",
+  "id": "sect-subspaces-4-8",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-8",
+  "url": "sect-subspaces.html#sect-subspaces-4-8",
   "type": "Example",
-  "number": "3.2.12",
+  "number": "4.2.12",
   "title": "",
   "body": "  Show that the following vectors span :       Because the vector can be written , then these vectors span .   "
 },
 {
-  "id": "sect-subspaces-3-9",
+  "id": "sect-subspaces-4-9",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-9",
+  "url": "sect-subspaces.html#sect-subspaces-4-9",
   "type": "Example",
-  "number": "3.2.13",
+  "number": "4.2.13",
   "title": "",
   "body": "  Does span ?    To determine this, we will try write a general polynomial in ,     as a linear combination of the set of vectors or     and equating coefficients,     There's no solution to this because can't simultaneously equal and , so does not span .   "
 },
 {
-  "id": "sect-subspaces-4-2-2",
+  "id": "sect-subspaces-5-2-2",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-2-2",
+  "url": "sect-subspaces.html#sect-subspaces-5-2-2",
   "type": "Definition",
-  "number": "3.2.14",
+  "number": "4.2.14",
   "title": "",
   "body": "  The basis of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.   "
 },
 {
-  "id": "sect-subspaces-4-2-4",
+  "id": "sect-subspaces-5-2-4",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-2-4",
+  "url": "sect-subspaces.html#sect-subspaces-5-2-4",
   "type": "Example",
-  "number": "3.2.15",
+  "number": "4.2.15",
   "title": "",
   "body": " We showed in that the set     spans and since the second is not a multiple of the first, they are linearly independent. Therefore the tuple     form a basis for .  "
 },
 {
-  "id": "sect-subspaces-4-2-5",
+  "id": "sect-subspaces-5-2-5",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-2-5",
+  "url": "sect-subspaces.html#sect-subspaces-5-2-5",
   "type": "Example",
-  "number": "3.2.16",
+  "number": "4.2.16",
   "title": "",
   "body": " The tuple of vectors     is a different basis of because of the order of vectors. The fact that they span and are linearly independent do not depend on the order.  "
 },
 {
-  "id": "sect-subspaces-4-2-6",
+  "id": "sect-subspaces-5-2-6",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-2-6",
+  "url": "sect-subspaces.html#sect-subspaces-5-2-6",
   "type": "Example",
-  "number": "3.2.17",
+  "number": "4.2.17",
   "title": "",
   "body": "  There are many bases of a vector space. For example,     also spans and are linearly independent.   "
 },
 {
-  "id": "sect-subspaces-4-2-7",
+  "id": "sect-subspaces-5-2-7",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-2-7",
+  "url": "sect-subspaces.html#sect-subspaces-5-2-7",
   "type": "Example",
-  "number": "3.2.18",
+  "number": "4.2.18",
   "title": "",
   "body": "  Does     form a basis of ?    These three vectors are not linearly independent. Although one can show this in general, note that     and since they are not linearly independent, then they cannot form a basis of .   "
 },
 {
-  "id": "sect-subspaces-4-2-9",
+  "id": "sect-subspaces-5-2-9",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-2-9",
+  "url": "sect-subspaces.html#sect-subspaces-5-2-9",
   "type": "Definition",
-  "number": "3.2.19",
+  "number": "4.2.19",
   "title": "",
   "body": "  The tuple     is called the standard basis or natural basis of . The vectors in the basis are called .   "
 },
 {
-  "id": "sect-subspaces-4-2-10",
+  "id": "sect-subspaces-5-2-10",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-2-10",
+  "url": "sect-subspaces.html#sect-subspaces-5-2-10",
   "type": "Remark",
-  "number": "3.2.20",
+  "number": "4.2.20",
   "title": "",
   "body": " The natural basis of is .  "
 },
 {
-  "id": "sect-subspaces-4-2-12",
+  "id": "sect-subspaces-5-2-12",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-2-12",
+  "url": "sect-subspaces.html#sect-subspaces-5-2-12",
   "type": "Definition",
-  "number": "3.2.21",
+  "number": "4.2.21",
   "title": "",
   "body": "  In a vector space with basis , the representation of a vector with respect to the basis is the column vector of the coefficients used to express as a linear combination of the basis vectors:     where and      "
 },
 {
-  "id": "sect-subspaces-4-2-13",
+  "id": "sect-subspaces-5-2-13",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-2-13",
+  "url": "sect-subspaces.html#sect-subspaces-5-2-13",
   "type": "Example",
-  "number": "3.2.22",
+  "number": "4.2.22",
   "title": "",
   "body": " Consider the space , the space of quadratic functions. Let be a basis of and . To find the representation, we need to find and such that     by equating coefficients this is same as solving the linear system:     resulting in , therefore     If instead the basis is given as , then     which shows that , therefore     "
 },
 {
-  "id": "sect-subspaces-4-3-3",
+  "id": "sect-subspaces-5-3-3",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-3-3",
+  "url": "sect-subspaces.html#sect-subspaces-5-3-3",
   "type": "Example",
-  "number": "3.2.23",
+  "number": "4.2.23",
   "title": "",
   "body": "  Find the Representation of the vector     in the natural basis       We seek the vector such that     which is just that and so the representation of the vector in the basis is     which is just the original vector.   "
 },
@@ -2354,97 +2867,106 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-subspaces.html#ex-vect-rep-matrix",
   "type": "Example",
-  "number": "3.2.24",
+  "number": "4.2.24",
   "title": "",
   "body": "  Find       Formally, one needs to find and such that     but since the nice structure of the basis and , so      "
 },
 {
-  "id": "sect-subspaces-5-5",
+  "id": "sect-subspaces-6-5",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-5",
+  "url": "sect-subspaces.html#sect-subspaces-6-5",
   "type": "Definition",
-  "number": "3.2.25",
+  "number": "4.2.25",
   "title": "",
   "body": "  A vector space is finite dimensional if it has a basis with only finitely-many vectors.   "
 },
 {
-  "id": "sect-subspaces-5-6",
+  "id": "sect-subspaces-6-6",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-6",
+  "url": "sect-subspaces.html#sect-subspaces-6-6",
   "type": "Theorem",
-  "number": "3.2.26",
+  "number": "4.2.26",
   "title": "",
   "body": "  In any finite-dimensional vector space, all of the bases have the same number of elements.   "
 },
 {
-  "id": "sect-subspaces-5-8",
+  "id": "sect-subspaces-6-8",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-8",
+  "url": "sect-subspaces.html#sect-subspaces-6-8",
   "type": "Definition",
-  "number": "3.2.27",
+  "number": "4.2.27",
   "title": "",
   "body": "  The dimension of a finite dimensional vector space is the number of vectors in any of its bases.   "
 },
 {
-  "id": "sect-subspaces-5-9",
+  "id": "sect-subspaces-6-9",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-9",
+  "url": "sect-subspaces.html#sect-subspaces-6-9",
   "type": "Example",
-  "number": "3.2.28",
+  "number": "4.2.28",
   "title": "",
-  "body": "     The dimension of is . Although there are many bases, consider , the natural basis, which has elements.    The dimension of is . The natural basis of is with elements.    The dimension of , the vector space of all 2 by 2 matrices is 4. A natural basis for this is: and since there are 4 elements, the dimension is 4.    The dimension of .      "
+  "body": "     The dimension of is . Although there are many bases, consider , the natural basis, which has elements.    The dimension of is . The natural basis of is with elements.    The dimension of , the vector space of all 2 by 2 matrices is 4. A natural basis for this is: and since there are 4 elements, the dimension is 4.    The dimension of . There is a natural basis that is similar to the previous example.      "
 },
 {
   "id": "sect-inner-product",
   "level": "1",
   "url": "sect-inner-product.html",
   "type": "Section",
-  "number": "3.3",
+  "number": "4.3",
   "title": "Inner Product Spaces",
-  "body": " Inner Product Spaces   In , we examined the dot product between two vectors. Recall that we can write the dot product between two vectors and in is     We used the dot product for finding the angle between two vectors and we'll show that there are many other applications that the dot product later in the text. In this section, we extend that to any vector space and call this an inner product space.    The vector space is called an inner product space if for every pair of vectors and in there is a unique number , called the inner product of and such that for all and in and then the following properties are satisfied:           .     and equals 0 if and only if .         Show that is an inner product space with     and   .    First, the set is a vector space. Next, we need to show that the three properties are satisfied for .      since the transpose of a number is itself using the properties of transposes in . so the first property is satisfied.            which satisfies . The only time that this quantity equals 0, is when or .       The next example shows that the notion of an inner product is not limited to the dot product of vectors in .    Show that on the interval is a inner product space with     for any .    We have seen above that is a vector space and limiting this to the interval does not change that fact. We need to show that the inner product defined as an integral satisfies the three properties of inner products.          Let also be in and .          and this is greater than or equal or zero and can be shown that equals 0 if and only if .         Vector Norms and distance    Let be an element of an inner product space. The norm of the vector is given by       Note: if then the vector norm is the length of the vector.    The distance between vectors and denoted and is defined as       Note: if and are in , then the distance function is the standard distance function where the vectors are considered to be points.    The distance if and only if .     Let , then By definition, this is only zero if , therefore .   If , then .    Except for the example of the inner product as an integral, all of the other discussion in this section has been about vectors in , and this is mainly because it is the canonical vector and inner product space and some of the interpretations of length of vectors don't make a lot of sense when talking about polynomials or other functions.  However, distance does have some interpretation with functions. can be used to show when two functions are equal (at least on the interval of the integration), but can also be useful to determine when they are close to equal (when the integrals are close to one another). This will be useful in future chapters.    Angles between vectors  If and are vectors in then we saw in that   and thus the angle between the vectors can be found.  This notion generalizes to any vectors in an inner product space, . Most helpful, two vectors meet at a right angle if and it is said that if this holds then and are orthogonal. The next section talks about how an entire set of vectors can be orthogonal .    Orthonormal sets of vectors    Let each be elements of an inner product space, . The set is called an orthonormal set if     and     If only the first condition holds, the set is called orthogonal .      Show that     is an orthonormal set where each vector is an element of .    We need to show that the three inner products between the vectors are zero     and that the norms of each vector is 1.     Note: this set of vectors is also a basis for .      Show that     form an orthogonal set on with the inner product taken to be the definite integral on .    Note: the following integrals will come up in the next few chapters a number of times and the technique shown below is helpful for such integrals. This also shows that even though in most cases in this text so far, that using complex numbers helps out tremendously.  Recall that     and using this we find the integrals of all pairs of functions on      and as it can be seen that all term made with the substitution cancel with terms made with the substitution .  The other two inner products are similar. In fact it can be shown (and we will later) that     if .    We saw the following theorem applied to vectors in in . It was a consequence of the triangle inequality. We again generalize this to the inner product.   Cauchy-Swartz Inequality   If and are elements of an inner product space then       If , then the inequality is satisfied. Assume and define     By definition of the inner product,     Using properties of the inner product,     Multiply through by      This can be rearranged to get:     and taking the square root, you get the desired result.    The Cauchy-Swartz inequality has numerous uses (which is not unexpected for a theorem named after such famous mathematicians). One such is to show that the angle between two vectors in and actually in any inner product space is defined.  Recall that above in this section, the angle between two vectors was defined as the angle that satisfies     and solving for the inner product,     and using the Cauchy-Swartz Inequality,     which results in     which is satisfied for all .    The Gram-Schmidt Orthogonalization Process  We saw above that an orthonormal set of vectors has the property that any two different vectors in the set are orthogonal (inner product of zero) and have norm of one. Often, if we have a set of vectors (say a basis), they aren't orthonormal, but it is advantageous to have another set that is. The Gram-Schmidt algorithm creates an orthonormal set of vectors from a set of linearly independent vectors.  We first see the idea from a pair of vectors in the following example.    Find a orthonormal set of vectors that span the same set as , where       There are many ways of doing this, but the following will always work. First, let's start by finding a unit vector in the same direction as . We denote this as and this can be found by dividing by its length:     Next, we will form a new vector which is a linear combination of and and has the property that it is orthogonal to      and we can take without loss of generality. with     and solving for ,     and since is a unit vector     So     Now since is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is       If there are more than two vectors in the set, then the process is similar in that iteratively, one creates a new vector that is orthogonal to all previous vectors and then normalizes each one.   The Gram-Schmidt Orthogonalization algorithm is the following. Consider a set of vectors which is the basis for some vector space.     Let .    Let     Let .    And so on with      The resulting set of vectors are orthogonal. If the set also needs to be orthonormal, for each vector divide through by its length.    Proof of Gram-Schmidt Orthogonalization  To prove Gram-Schmidt orthogonalization works, we will prove that is orthogonal to for all . We will show this by induction. First show that is orthogonal to :     Now assume that is orthogonal to all other 's or for . Now we will prove that , given by Gram-Schmidt is orthogonal to all other 's. For all ,     The only term that is not apparantly nonzero in the sum is when      Therefore is orthogonal to all other 's and thus the basis consisting of form an orthonormal set.     Find a orthogonal set of vectors than spans the same subspace as     Let and be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.                     And the set is now orthogonal (check it).  Note: there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.    Although the example shown here uses vectors in , Gram-Schmidt can be done on any set of vectors from an inner product space. This is very common for polynomials and will show an example with this next. Also, in , we will also show this with trigonometric functions.    Use Gram-Schmidt orthogonalization to find a orthogonal set that spans , the set of all cubic functions on the interval with inner product       To begin, we need a set of vectors (polynomials) on the set and we can take the standard basis . Call these and we'll use Gram-Schmidt to find a set that is orthogonal.  It is very helpful to recall that is an odd function if is odd. Also if is odd.   and since is odd, the integral in the numerator is 0, so and     and is odd, so the first integral is 0 and also ,     and the integrals in the numerators of the 2nd and 4th terms are 0 due to the functions being odd, so     There an orthogonal set of cubic polynomials that span is     and these are the first four Legendre Polynomials. Also, they are a basis of .     "
+  "body": " Inner Product Spaces     Extend the idea of an inner product to vectors other than .    Extend the idea of length of a vector or distance between two vectors.    Extend the idea of the angle between two vectors.    Determine whether two vectors are orthogonal and define a orthogonal and orthonormal set of vectors.    Find a orthogonal set of vectors using the Gram-Schmidt process.      In , we examined the dot product between two vectors in Recall that this dot product between two vectors and is     We used the dot product for finding the angle between two vectors and we'll show that there are many other applications that the dot product later in the text. In this section, we extend that to any vector space and call this an inner product space.    The vector space is called an inner product space if for every pair of vectors and in there is a unique number , called the inner product of and such that for all and in and then the following properties are satisfied:           .     and equals 0 if and only if .         Show that is an inner product space with     and   , which is an alternative way of writing .    First, the set is a vector space. Next, we need to show that the three properties are satisfied for .      since the transpose of a number is itself using the properties of transposes in . so the first property is satisfied.            which satisfies . The only time that this quantity equals 0, is when or .       The next example shows that the notion of an inner product is not limited to the dot product of vectors in .    Show that on the interval is a inner product space with     for any .    We have seen above that is a vector space and limiting this to the interval does not change that fact. We need to show that the inner product defined as an integral satisfies the three properties of inner products.          Let also be in and .          and this is greater than or equal or zero and can be shown that equals 0 if and only if .         Vector Norms and distance  The notion of the length of a vector in was examined in . We extend this idea to any vector in an inner product space with the following.    Let be an element of an inner product space. The norm of the vector is given by       Note: if then the vector norm is the length of the vector.    The distance between vectors and denoted and is defined as       Note: if and are in , then the distance function is the standard distance function where the vectors are considered to be points.    The distance if and only if .     Let , then By definition, this is only zero if , therefore .   If , then .    Except for the example of the inner product as an integral, all of the other discussion in this section has been about vectors in , and this is mainly because it is the canonical vector and inner product space and some of the interpretations of length of vectors don't make a lot of sense when talking about polynomials or other functions.  However, distance does have some interpretation with functions. can be used to show when two functions are equal (at least on the interval of the integration), but can also be useful to determine when they are close to equal (when the integrals are close to one another). This will be useful in future chapters.    Angles between vectors  If and are vectors in then we saw in that   and thus the angle between the vectors can be found.  This notion generalizes to any vectors in an inner product space, . Most helpful, two vectors meet at a right angle if and it is said that if this holds then and are orthogonal. The next section talks about how an entire set of vectors can be orthogonal .    Orthonormal sets of vectors   A finite set of orthogonal\/orthonormal vectors   Let each be elements of an inner product space, . The set is called an orthonormal set if     and     If only the first condition holds, the set is called orthogonal .      Show that     is an orthonormal set where each vector is an element of .    We need to show that the three inner products between the vectors are zero     and that the norms of each vector is 1.     Note: this set of vectors is also a basis for .      Show that     form an orthogonal set on with the inner product taken to be the definite integral on .    Note: the following integrals will come up in the next few chapters a number of times and the technique shown below is helpful for such integrals. This also shows that even though in most cases in this text so far, that using complex numbers helps out tremendously.  Recall that     and using this we find the integrals of all pairs of functions on      and as it can be seen that all term made with the substitution cancel with terms made with the substitution .  The other two inner products are similar. In fact it can be shown (and we will later) that     if .    Similar to vectors in , we can take a vector that doesn't have norm 1 by dividing the vector through by its length. That is, if is a vector then has length 1.  The next example shows how to take an orthogonal set and make an orthonormal set of vectors.    In , we showed that the vectors is an orthogonal set on . Use to create an orthonormal set.    We need to find for , but we can do this in general with     We saw the following theorem applied to vectors in in . It was a consequence of the triangle inequality. We again generalize this to the inner product.   Cauchy-Swartz Inequality   If and are elements of an inner product space then       If , then the inequality is satisfied. Assume and define     By definition of the inner product,     Using properties of the inner product,     Multiply through by      This can be rearranged to get:     and taking the square root, you get the desired result.    The Cauchy-Swartz inequality has numerous uses (which is not unexpected for a theorem named after such famous mathematicians). One such is to show that the angle between two vectors in and actually in any inner product space is defined.  Recall that above in this section, the angle between two vectors was defined as the angle that satisfies     and solving for the inner product,     and using the Cauchy-Swartz Inequality,     which results in     which is satisfied for all .    The Gram-Schmidt Orthogonalization Process  We saw above that an orthonormal set of vectors has the property that any two different vectors in the set are orthogonal (inner product of zero) and have norm of one. Often, if we have a set of vectors (say a basis), they aren't orthonormal, but it is advantageous to have another set that is. The Gram-Schmidt algorithm creates an orthonormal set of vectors from a set of linearly independent vectors.  We first see the idea from a pair of vectors in the following example.    Find a orthonormal set of vectors that span the same set as , where       There are many ways of doing this, but the following will always work. First, let's start by finding a unit vector in the same direction as . We denote this as and this can be found by dividing by its length:     Next, we will form a new vector which is a linear combination of and and has the property that it is orthogonal to      and we can take without loss of generality. with     and solving for ,     and since is a unit vector     So     Now since is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is       If there are more than two vectors in the set, then the process is similar in that iteratively, one creates a new vector that is orthogonal to all previous vectors and then normalizes each one.   The Gram-Schmidt Orthogonalization algorithm is the following. Consider a set of vectors which is the basis for some vector space.     Let .    Let     Let .    And so on with      The resulting set of vectors are orthogonal. If the set also needs to be orthonormal, for each vector divide through by its length.    Proof of Gram-Schmidt Orthogonalization  To prove Gram-Schmidt orthogonalization works, we will prove that is orthogonal to for all . We will show this by induction. First show that is orthogonal to :     Now assume that is orthogonal to all other 's or for . Now we will prove that , given by Gram-Schmidt is orthogonal to all other 's. For all ,     The only term that is not apparently nonzero in the sum is when      Therefore is orthogonal to all other 's and thus the basis consisting of form an orthonormal set.     Find a orthogonal set of vectors than spans the same subspace as     Let and be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.                     And the set is now orthogonal (check it).  Note: there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.    Although the example shown here uses vectors in , Gram-Schmidt can be done on any set of vectors from an inner product space. This is very common for polynomials and will show an example with this next. Also, in , we will also show this with trigonometric functions.    Use Gram-Schmidt orthogonalization to find a orthogonal set that spans , the set of all cubic functions on the interval with inner product       To begin, we need a set of vectors (polynomials) on the set and we can take the standard basis . Call these and we'll use Gram-Schmidt to find a set that is orthogonal.  It is very helpful to recall that is an odd function if is odd. Also if is odd.   and since is odd, the integral in the numerator is 0, so and     and is odd, so the first integral is 0 and also ,     and the integrals in the numerators of the 2nd and 4th terms are 0 due to the functions being odd, so     There an orthogonal set of cubic polynomials that span is     and these are the first four Legendre Polynomials. Also, they are a basis of .      Orthogonal infinite sets of functions   defines a finite set of vectors that are orthogonal or orthonormal. This can be extended to an infinite set of vectors with the following:    An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .    In the next couple of examples, we examine a couple of the most important orthogonal and orthonormal sets of functions.    Show that for form an orthogonal set on .    In this case, we will expand on and use the handy alternative definition of the sine function. Find the inner product if ,     where is used on the last step above.      Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore also equals 0 for . For simpler notation let   First, we will show that for all .     since each integral is zero from . Next, we will show that for all such that .     because again each integral is zero from . Also,     Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from .     and the integrals of the first and third terms are zero from .     This shows that the set of functions given above is an orthonormal set of functions.     "
 },
 {
-  "id": "sect-inner-product-2-4",
+  "id": "sect-inner-product-2",
   "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-2-4",
-  "type": "Definition",
-  "number": "3.3.1",
+  "url": "sect-inner-product.html#sect-inner-product-2",
+  "type": "Objectives",
+  "number": "4.3",
   "title": "",
-  "body": "  The vector space is called an inner product space if for every pair of vectors and in there is a unique number , called the inner product of and such that for all and in and then the following properties are satisfied:           .     and equals 0 if and only if .      "
-},
-{
-  "id": "sect-inner-product-2-5",
-  "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-2-5",
-  "type": "Example",
-  "number": "3.3.2",
-  "title": "",
-  "body": "  Show that is an inner product space with     and   .    First, the set is a vector space. Next, we need to show that the three properties are satisfied for .      since the transpose of a number is itself using the properties of transposes in . so the first property is satisfied.            which satisfies . The only time that this quantity equals 0, is when or .      "
-},
-{
-  "id": "sect-inner-product-2-7",
-  "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-2-7",
-  "type": "Example",
-  "number": "3.3.3",
-  "title": "",
-  "body": "  Show that on the interval is a inner product space with     for any .    We have seen above that is a vector space and limiting this to the interval does not change that fact. We need to show that the inner product defined as an integral satisfies the three properties of inner products.          Let also be in and .          and this is greater than or equal or zero and can be shown that equals 0 if and only if .      "
-},
-{
-  "id": "sect-inner-product-3-2",
-  "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-3-2",
-  "type": "Definition",
-  "number": "3.3.4",
-  "title": "",
-  "body": "  Let be an element of an inner product space. The norm of the vector is given by      "
+  "body": "   Extend the idea of an inner product to vectors other than .    Extend the idea of length of a vector or distance between two vectors.    Extend the idea of the angle between two vectors.    Determine whether two vectors are orthogonal and define a orthogonal and orthonormal set of vectors.    Find a orthogonal set of vectors using the Gram-Schmidt process.    "
 },
 {
   "id": "sect-inner-product-3-4",
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-3-4",
   "type": "Definition",
-  "number": "3.3.5",
+  "number": "4.3.1",
+  "title": "",
+  "body": "  The vector space is called an inner product space if for every pair of vectors and in there is a unique number , called the inner product of and such that for all and in and then the following properties are satisfied:           .     and equals 0 if and only if .      "
+},
+{
+  "id": "sect-inner-product-3-5",
+  "level": "2",
+  "url": "sect-inner-product.html#sect-inner-product-3-5",
+  "type": "Example",
+  "number": "4.3.2",
+  "title": "",
+  "body": "  Show that is an inner product space with     and   , which is an alternative way of writing .    First, the set is a vector space. Next, we need to show that the three properties are satisfied for .      since the transpose of a number is itself using the properties of transposes in . so the first property is satisfied.            which satisfies . The only time that this quantity equals 0, is when or .      "
+},
+{
+  "id": "sect-inner-product-3-7",
+  "level": "2",
+  "url": "sect-inner-product.html#sect-inner-product-3-7",
+  "type": "Example",
+  "number": "4.3.3",
+  "title": "",
+  "body": "  Show that on the interval is a inner product space with     for any .    We have seen above that is a vector space and limiting this to the interval does not change that fact. We need to show that the inner product defined as an integral satisfies the three properties of inner products.          Let also be in and .          and this is greater than or equal or zero and can be shown that equals 0 if and only if .      "
+},
+{
+  "id": "sect-inner-product-4-3",
+  "level": "2",
+  "url": "sect-inner-product.html#sect-inner-product-4-3",
+  "type": "Definition",
+  "number": "4.3.4",
+  "title": "",
+  "body": "  Let be an element of an inner product space. The norm of the vector is given by      "
+},
+{
+  "id": "sect-inner-product-4-5",
+  "level": "2",
+  "url": "sect-inner-product.html#sect-inner-product-4-5",
+  "type": "Definition",
+  "number": "4.3.5",
   "title": "",
   "body": "  The distance between vectors and denoted and is defined as      "
 },
@@ -2453,25 +2975,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#lem-distance-zero",
   "type": "Lemma",
-  "number": "3.3.6",
+  "number": "4.3.6",
   "title": "",
   "body": "  The distance if and only if .     Let , then By definition, this is only zero if , therefore .   If , then .   "
 },
 {
-  "id": "sect-inner-product-5-2",
+  "id": "def-finite-set-orthogonal",
   "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-5-2",
+  "url": "sect-inner-product.html#def-finite-set-orthogonal",
   "type": "Definition",
-  "number": "3.3.7",
-  "title": "",
-  "body": "  Let each be elements of an inner product space, . The set is called an orthonormal set if     and     If only the first condition holds, the set is called orthogonal .   "
+  "number": "4.3.7",
+  "title": "A finite set of orthogonal\/orthonormal vectors.",
+  "body": " A finite set of orthogonal\/orthonormal vectors   Let each be elements of an inner product space, . The set is called an orthonormal set if     and     If only the first condition holds, the set is called orthogonal .   "
 },
 {
-  "id": "sect-inner-product-5-3",
+  "id": "sect-inner-product-6-3",
   "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-5-3",
+  "url": "sect-inner-product.html#sect-inner-product-6-3",
   "type": "Example",
-  "number": "3.3.8",
+  "number": "4.3.8",
   "title": "",
   "body": "  Show that     is an orthonormal set where each vector is an element of .    We need to show that the three inner products between the vectors are zero     and that the norms of each vector is 1.     Note: this set of vectors is also a basis for .   "
 },
@@ -2480,61 +3002,70 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#ex-orthog-set",
   "type": "Example",
-  "number": "3.3.9",
+  "number": "4.3.9",
   "title": "",
   "body": "  Show that     form an orthogonal set on with the inner product taken to be the definite integral on .    Note: the following integrals will come up in the next few chapters a number of times and the technique shown below is helpful for such integrals. This also shows that even though in most cases in this text so far, that using complex numbers helps out tremendously.  Recall that     and using this we find the integrals of all pairs of functions on      and as it can be seen that all term made with the substitution cancel with terms made with the substitution .  The other two inner products are similar. In fact it can be shown (and we will later) that     if .   "
+},
+{
+  "id": "sect-inner-product-6-7",
+  "level": "2",
+  "url": "sect-inner-product.html#sect-inner-product-6-7",
+  "type": "Example",
+  "number": "4.3.10",
+  "title": "",
+  "body": "  In , we showed that the vectors is an orthogonal set on . Use to create an orthonormal set.    We need to find for , but we can do this in general with    "
 },
 {
   "id": "thm-cauchy-swartz",
   "level": "2",
   "url": "sect-inner-product.html#thm-cauchy-swartz",
   "type": "Theorem",
-  "number": "3.3.10",
+  "number": "4.3.11",
   "title": "Cauchy-Swartz Inequality.",
   "body": " Cauchy-Swartz Inequality   If and are elements of an inner product space then       If , then the inequality is satisfied. Assume and define     By definition of the inner product,     Using properties of the inner product,     Multiply through by      This can be rearranged to get:     and taking the square root, you get the desired result.   "
 },
 {
-  "id": "sect-inner-product-6-2",
+  "id": "sect-inner-product-7-2",
   "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-6-2",
+  "url": "sect-inner-product.html#sect-inner-product-7-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Gram-Schmidt "
 },
 {
-  "id": "sect-inner-product-6-4",
+  "id": "sect-inner-product-7-4",
   "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-6-4",
+  "url": "sect-inner-product.html#sect-inner-product-7-4",
   "type": "Example",
-  "number": "3.3.11",
+  "number": "4.3.12",
   "title": "",
   "body": "  Find a orthonormal set of vectors that span the same set as , where       There are many ways of doing this, but the following will always work. First, let's start by finding a unit vector in the same direction as . We denote this as and this can be found by dividing by its length:     Next, we will form a new vector which is a linear combination of and and has the property that it is orthogonal to      and we can take without loss of generality. with     and solving for ,     and since is a unit vector     So     Now since is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is      "
 },
 {
-  "id": "sect-inner-product-6-6",
+  "id": "sect-inner-product-7-6",
   "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-6-6",
+  "url": "sect-inner-product.html#sect-inner-product-7-6",
   "type": "Remark",
-  "number": "3.3.12",
+  "number": "4.3.13",
   "title": "",
   "body": " The Gram-Schmidt Orthogonalization algorithm is the following. Consider a set of vectors which is the basis for some vector space.     Let .    Let     Let .    And so on with      The resulting set of vectors are orthogonal. If the set also needs to be orthonormal, for each vector divide through by its length.  "
 },
 {
-  "id": "sect-inner-product-6-7",
+  "id": "sect-inner-product-7-7",
   "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-6-7",
+  "url": "sect-inner-product.html#sect-inner-product-7-7",
   "type": "Proof",
-  "number": "3.3.4.1",
+  "number": "4.3.4.1",
   "title": "Proof of Gram-Schmidt Orthogonalization.",
-  "body": " Proof of Gram-Schmidt Orthogonalization  To prove Gram-Schmidt orthogonalization works, we will prove that is orthogonal to for all . We will show this by induction. First show that is orthogonal to :     Now assume that is orthogonal to all other 's or for . Now we will prove that , given by Gram-Schmidt is orthogonal to all other 's. For all ,     The only term that is not apparantly nonzero in the sum is when      Therefore is orthogonal to all other 's and thus the basis consisting of form an orthonormal set.  "
+  "body": " Proof of Gram-Schmidt Orthogonalization  To prove Gram-Schmidt orthogonalization works, we will prove that is orthogonal to for all . We will show this by induction. First show that is orthogonal to :     Now assume that is orthogonal to all other 's or for . Now we will prove that , given by Gram-Schmidt is orthogonal to all other 's. For all ,     The only term that is not apparently nonzero in the sum is when      Therefore is orthogonal to all other 's and thus the basis consisting of form an orthonormal set.  "
 },
 {
-  "id": "sect-inner-product-6-8",
+  "id": "sect-inner-product-7-8",
   "level": "2",
-  "url": "sect-inner-product.html#sect-inner-product-6-8",
+  "url": "sect-inner-product.html#sect-inner-product-7-8",
   "type": "Example",
-  "number": "3.3.13",
+  "number": "4.3.14",
   "title": "",
   "body": "  Find a orthogonal set of vectors than spans the same subspace as     Let and be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.                     And the set is now orthogonal (check it).  Note: there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.   "
 },
@@ -2543,16 +3074,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#example-gram-schmidt-p3",
   "type": "Example",
-  "number": "3.3.14",
+  "number": "4.3.15",
   "title": "",
   "body": "  Use Gram-Schmidt orthogonalization to find a orthogonal set that spans , the set of all cubic functions on the interval with inner product       To begin, we need a set of vectors (polynomials) on the set and we can take the standard basis . Call these and we'll use Gram-Schmidt to find a set that is orthogonal.  It is very helpful to recall that is an odd function if is odd. Also if is odd.   and since is odd, the integral in the numerator is 0, so and     and is odd, so the first integral is 0 and also ,     and the integrals in the numerators of the 2nd and 4th terms are 0 due to the functions being odd, so     There an orthogonal set of cubic polynomials that span is     and these are the first four Legendre Polynomials. Also, they are a basis of .   "
+},
+{
+  "id": "sect-inner-product-8-3",
+  "level": "2",
+  "url": "sect-inner-product.html#sect-inner-product-8-3",
+  "type": "Definition",
+  "number": "4.3.16",
+  "title": "",
+  "body": "  An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .   "
+},
+{
+  "id": "sect-inner-product-8-5",
+  "level": "2",
+  "url": "sect-inner-product.html#sect-inner-product-8-5",
+  "type": "Example",
+  "number": "4.3.17",
+  "title": "",
+  "body": "  Show that for form an orthogonal set on .    In this case, we will expand on and use the handy alternative definition of the sine function. Find the inner product if ,     where is used on the last step above.   "
+},
+{
+  "id": "ex-trig-ortho-set",
+  "level": "2",
+  "url": "sect-inner-product.html#ex-trig-ortho-set",
+  "type": "Example",
+  "number": "4.3.18",
+  "title": "",
+  "body": "  Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore also equals 0 for . For simpler notation let   First, we will show that for all .     since each integral is zero from . Next, we will show that for all such that .     because again each integral is zero from . Also,     Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from .     and the integrals of the first and third terms are zero from .     This shows that the set of functions given above is an orthonormal set of functions.   "
 },
 {
   "id": "sect-linear-transformations",
   "level": "1",
   "url": "sect-linear-transformations.html",
   "type": "Section",
-  "number": "3.4",
+  "number": "4.4",
   "title": "Linear Transformations",
   "body": " Linear Transformations   This section discusses linear transformations. In short, such a transformation will map vectors to vectors in a linear way. The definition of a linear transformation (or linear map) is the following:   Linear Transformation   Let and be vector spaces. A linear transformation or linear map  from to is a function that assigns to each vector a unique vector and that satisfies for each and in and each scalar ,     These are also called homomorphisms and the notation explaining that a map goes from to is .   Reflection Map   The reflection of any vector in across the horizontal axis is a linear map. Specifically this is given as     and geometrically you can see this as:   Mapping a vector over the -axis      Show that this is a linear transformation.    Specifically, we need to show that defined above satisfies and . Let     and   , then     so is satisfied. Next,     so is satisfied.    A very important linear map in is the rotational map that takes any vector in the plane and rotates it a given angle. The next example, derives this map.   Rotational Map in   Let be a vector in . Let the function take the vector and rotate it by radians in the counterclockwise direction. Call the new vector    Diagram of the rotational map      Derive the formula for the rotational map.    Let and since is the rotated version of it has the same length, therefore . The values can be written in terms of , the angle that the vector makes with the positive horizontal axis, and the angle between the vectors as follows.     and note that these can be written:     This is a linear transformation (as we will explain later) and is called a rotational transformation .     Linear Scale Map   Consider the map that scales any vector in the plane by a factor of given by     which can be visualized in the following diagram where :   Scaling Map      where every vector under the map results in a new vector that is twice as long as the original. In general, the scale will scale the vector by a factor of and recall that if , then the direction changes. Show that this is a linear map.    Again, we show that and are satisfied. Let and be elements of .     so is satisfied and     so is satisfied so is a linear map.      If a transformation map is written as a matrix or , then is a linear transformation.    This is a consequence of matrix operations.     Note that the rotational transformation that was defined in is easily shown to be a linear transformation because from , any transformation shown as a matrix, is a linear transformation. The next theorem shows the counter direction to , that is that any linear transformation can be written as a matrix.    Let be a linear transformation. Then there exists a unique by matrix such that     We won't prove this here, but instead will motivate this below. In short, if is a linear transformation, then the matrix corresponding to the linear transformation is called the transformation matrix .    Finding the Matrix Form of a Linear Transformation  The theorem above shows that any linear transformation, can be written in matrix form. This section explains how to find it. Let be a basis of and be a basis of . Any vector in can be written or in other words . Applying the map to is and since it is a linear map Next, we write the transformation in terms of the basis vectors of or Substituting into results in and letting be the matrix with entries then or in other words, the matrix performs the map on the coefficients. Equation also shows how the matrix can be created from the linear map. That equation can also be thought of as a representation of the basis vectors or where is the th column of . The following summarizes how to find the matrix.   If is the matrix representation of the map , then the th column of is the vector , the map applied to the th basis vector of written in terms of the basis of .   We now show many examples on how to apply this.    The matrix representation of the reflection map from given by     where the representation will be in terms of the standard basis vectors.    In this case, we need to determine how the standard basis vectors map under the reflection. Thus     and     Because we are using the standard basis vectors, the representations of these vectors are themselves therefore,     and just to verify,       This next example shows how to contruct the transformation matrix for the scale map.    Find the matrix representation of the scale map in .    We need to map the basis vectors and to determine the columns of the matrix representation.     so the matrix representation is       And the next example shows that a common matrix operation, the trace is a linear map.    Let      which is the trace of a 2 by 2 matrix. Show that the trace is a linear map and find the matrix representation of the trace.    First, to prove that the trace is a linear map, we need to show that it satisfies and . Let     Then     Similarly,     Next, we want to find the matrix representation of the trace. To do this, we need to determine how the map affects the basis of the vector space , which is     and since   The matrix representation is Note that it may be surprising that the matrix representation is just a row vector, however, recall that the trace maps from a matrix that can be represented as a column vector of length 4 to the reals, so the matrix representation should be a matrix.    To verify the above results, recall that from that the representation of a matrix is the unfolded matrix or in the case, that where is the natural basis of . So the matrix trace can be written as    "
 },
@@ -2561,7 +3119,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#def-linear-trans",
   "type": "Definition",
-  "number": "3.4.1",
+  "number": "4.4.1",
   "title": "Linear Transformation.",
   "body": " Linear Transformation   Let and be vector spaces. A linear transformation or linear map  from to is a function that assigns to each vector a unique vector and that satisfies for each and in and each scalar ,    "
 },
@@ -2579,7 +3137,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#ex-reflect-map",
   "type": "Example",
-  "number": "3.4.2",
+  "number": "4.4.2",
   "title": "Reflection Map.",
   "body": " Reflection Map   The reflection of any vector in across the horizontal axis is a linear map. Specifically this is given as     and geometrically you can see this as:   Mapping a vector over the -axis      Show that this is a linear transformation.    Specifically, we need to show that defined above satisfies and . Let     and   , then     so is satisfied. Next,     so is satisfied.   "
 },
@@ -2588,7 +3146,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#ex-rotational-trans",
   "type": "Example",
-  "number": "3.4.4",
+  "number": "4.4.4",
   "title": "Rotational Map in <span class=\"process-math\">\\(\\mathbb{R}^2\\)<\/span>.",
   "body": " Rotational Map in   Let be a vector in . Let the function take the vector and rotate it by radians in the counterclockwise direction. Call the new vector    Diagram of the rotational map      Derive the formula for the rotational map.    Let and since is the rotated version of it has the same length, therefore . The values can be written in terms of , the angle that the vector makes with the positive horizontal axis, and the angle between the vectors as follows.     and note that these can be written:     This is a linear transformation (as we will explain later) and is called a rotational transformation .   "
 },
@@ -2597,7 +3155,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#ex-scale-map",
   "type": "Example",
-  "number": "3.4.6",
+  "number": "4.4.6",
   "title": "Linear Scale Map.",
   "body": " Linear Scale Map   Consider the map that scales any vector in the plane by a factor of given by     which can be visualized in the following diagram where :   Scaling Map      where every vector under the map results in a new vector that is twice as long as the original. In general, the scale will scale the vector by a factor of and recall that if , then the direction changes. Show that this is a linear map.    Again, we show that and are satisfied. Let and be elements of .     so is satisfied and     so is satisfied so is a linear map.   "
 },
@@ -2606,7 +3164,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#thm-matrix-linear-trans",
   "type": "Theorem",
-  "number": "3.4.8",
+  "number": "4.4.8",
   "title": "",
   "body": "  If a transformation map is written as a matrix or , then is a linear transformation.    This is a consequence of matrix operations.    "
 },
@@ -2615,7 +3173,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#thm-linear-trans-matrix",
   "type": "Theorem",
-  "number": "3.4.9",
+  "number": "4.4.9",
   "title": "",
   "body": "  Let be a linear transformation. Then there exists a unique by matrix such that    "
 },
@@ -2633,7 +3191,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#sect-linear-transformations-3-3",
   "type": "Remark",
-  "number": "3.4.10",
+  "number": "4.4.10",
   "title": "",
   "body": " If is the matrix representation of the map , then the th column of is the vector , the map applied to the th basis vector of written in terms of the basis of .  "
 },
@@ -2642,7 +3200,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#sect-linear-transformations-3-5",
   "type": "Example",
-  "number": "3.4.11",
+  "number": "4.4.11",
   "title": "",
   "body": "  The matrix representation of the reflection map from given by     where the representation will be in terms of the standard basis vectors.    In this case, we need to determine how the standard basis vectors map under the reflection. Thus     and     Because we are using the standard basis vectors, the representations of these vectors are themselves therefore,     and just to verify,      "
 },
@@ -2651,7 +3209,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#ex-scale-map-matrix-rep",
   "type": "Example",
-  "number": "3.4.12",
+  "number": "4.4.12",
   "title": "",
   "body": "  Find the matrix representation of the scale map in .    We need to map the basis vectors and to determine the columns of the matrix representation.     so the matrix representation is      "
 },
@@ -2660,7 +3218,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#sect-linear-transformations-3-9",
   "type": "Example",
-  "number": "3.4.13",
+  "number": "4.4.13",
   "title": "",
   "body": "  Let      which is the trace of a 2 by 2 matrix. Show that the trace is a linear map and find the matrix representation of the trace.    First, to prove that the trace is a linear map, we need to show that it satisfies and . Let     Then     Similarly,     Next, we want to find the matrix representation of the trace. To do this, we need to determine how the map affects the basis of the vector space , which is     and since   The matrix representation is Note that it may be surprising that the matrix representation is just a row vector, however, recall that the trace maps from a matrix that can be represented as a column vector of length 4 to the reals, so the matrix representation should be a matrix.   "
 },
@@ -2669,16 +3227,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-projection-maps.html",
   "type": "Section",
-  "number": "3.5",
+  "number": "4.5",
   "title": "Projection Maps",
-  "body": " Projection Maps   There is a class of linear transformations that are very important and have a nice geometric interpretation called projection maps. Let's look at an example in the -plane. Consider the point as shown below.   Projecting a point onto the -axis.      If the point (or the vector) is projected onto the -axis, then the result is the point found by taking the -component of the point. In term of the vector, this is .  We now look at projecting a vector onto a line (or a vector ). We will derive this in the -plane, however the result will work for any vector space.   Projecting a vector onto another vector.      Let and be two vectors in as shown above. We seek the projection of onto and denote this as . The projection is a vector that is in the same direction as . The length will be explained below.  Any vector can be split into two parts, a vector in a direction parallel to and a vector which satisfies .     where .  Take the inner product of both sides of ( ) with the vector      and solving for ,     Therefore the projection vector     and if needed the vector is     Although we derived this projection in , there is nothing about the projection formula to indicate it's confined to . In fact, as we will see, the projection mapping is a linear transformation and applies to vectors in an inner product space.   The projection of any vector onto a vector is given by and the vector perpendicular to that satisfies is given by    The example below finds the projection of vectors in .    Find the projection of onto the vector .    Since        Given a nonzero vector and a vector both in , the projection map in ( ) is a linear transformation.    We need to prove the two properties of linear transformations in .     and       The example shown so far for projections have been onto a vector (which can be thought of as the line through the origin with that direction), but in general, one can project onto any linear space (more technically, any inner product space). Before showing the general projection, let's consider the projection of a vector onto a plane. The following example shows this.    Find the projection of vector onto plane given by .    First, let's find two vectors in the plane, called , that form an orthogonal basis (we will see why it's helpful to have an orthogonal basis later). Recall that a normal vector to the plane is given by the vector . Two vector that are normal to it is and . (Note: these are two points in the plane). To form an orthonormal basis, we need to perform Gramm-Schmidt. and to make the second vector nicer, we'll multiply by . An orthogonal set in the plane is To consider how to project the vector into the plane we will write where is orthogonal to both and and we can write So we next take the inner product of with both and . Therefore So in the case of projecting a vector onto a plane, , So the vector is the projection of the vector onto the plane .      Using Projections to solve Least-Squares Problems  A useful problem is to find the minimum distance between a point and line. For example consider the point and the line as shown in the figure below.   Line and a point      If we want to minimize the distance from the point to the line , we often minimize the square Recall that the point that minimizes a function is the same point that to minimizes the square of the function. The reason for doing this it it gets rid of the square root and makes calculations easier to do. of the distance from the point to the line or  and using techniques from calculus, this function is minimized when . Looking at the plot, the -value is and the vector from to is perpendicular to the vector in the direction of as shown below:   Find a point on a line that minimizes distance      In light of projections, we can reframe this problem. We are seeking the point on closest to . This can be found by projecting the vector to the line or and in this case, with and , which is the same result as from Calculus.    Projecting onto a Vector Space  We again generalize from projecting onto a single vector or set of vectors to a general vector space, . First, to make things easier, we will use an orthogonal basis for , call it, .  Recall that a projection onto a vector is found by writing the original vector, , where is in or Finding the projection is analogous to finding the constants . Take the inner product of ( ) with , the th basis vector of or since is chosen to be orthogonal to the vector space and since the basis of is orthogonal, Therefore and thus we can make the following statement about projecting any element onto a subspace:   Let be an element in a vector space and be an orthogonal basis of a subspace . The projection of onto can be written: where Note: if the basis of is also orthonormal, then .     Find the projection of , an element of onto     First, we need a orthogonal basis of the subspace and we found this above in . These are the first four Legendre polynomials (scaled to eliminate fractions) or     Next, find all of the values of for      Similarly, it can be shown that     The projection then is the sum     where is the th Legendre polynomial as in ( ). A plot of this is   Find a projection of onto       which looks quite sine-like. Notice that if we plot the absolute difference between the function and the projection that we get    Difference between and its projection.      This plot shows that except for near the ends of the interval, the projection (or an approximation is within 1 decimal places.)    This last example shows the power of projections. If we are using functions as elements of vector spaces, then a projection of a function onto a vector space (using the span of a vector space), is the closest function in the vector space to the original function. In , we will do this with trigonometric function and is called Fourier Series.    "
+  "body": " Projection Maps   There is a class of linear transformations that are very important and have a nice geometric interpretation called projection maps. Let's look at an example in the -plane. Consider the point as shown below.   Projecting a point onto the -axis.      If the point (or the vector) is projected onto the -axis, then the result is the point found by taking the -component of the point. In term of the vector, this is .  We now look at projecting a vector onto a line (or a vector ). We will derive this in the -plane, however the result will work for any vector space.   Projecting a vector onto another vector.      Let and be two vectors in as shown above. We seek the projection of onto and denote this as . The projection is a vector that is in the same direction as . The length will be explained below.  Any vector can be split into two parts, a vector in a direction parallel to and a vector which satisfies .     where .  Take the inner product of both sides of ( ) with the vector      and solving for ,     Therefore the projection vector     and if needed the vector is     Although we derived this projection in , there is nothing about the projection formula to indicate it's confined to . In fact, as we will see, the projection mapping is a linear transformation and applies to vectors in an inner product space.   The projection of any vector onto a vector is given by and the vector perpendicular to that satisfies is given by    The example below finds the projection of vectors in .    Find the projection of onto the vector .    Since        Given a nonzero vector and a vector both in , the projection map in ( ) is a linear transformation.    We need to prove the two properties of linear transformations in .     and       The example shown so far for projections have been onto a vector (which can be thought of as the line through the origin with that direction), but in general, one can project onto any linear space (more technically, any inner product space). Before showing the general projection, let's consider the projection of a vector onto a plane. The following example shows this.    Find the projection of vector onto plane given by .    First, let's find two vectors in the plane, called , that form an orthogonal basis (we will see why it's helpful to have an orthogonal basis later). Recall that a normal vector to the plane is given by the vector . Two vector that are normal to it is and . (Note: these are two points in the plane). To form an orthonormal basis, we need to perform Gramm-Schmidt. and to make the second vector nicer, we'll multiply by . An orthogonal set in the plane is To consider how to project the vector into the plane we will write where is orthogonal to both and and we can write So we next take the inner product of with both and . Therefore So in the case of projecting a vector onto a plane, , So the vector is the projection of the vector onto the plane .      Using Projections to solve Least-Squares Problems  A useful problem is to find the minimum distance between a point and line. For example consider the point and the line as shown in the figure below.   Line and a point      If we want to minimize the distance from the point to the line , we often minimize the square Recall that the point that minimizes a function is the same point that to minimizes the square of the function. The reason for doing this it it gets rid of the square root and makes calculations easier to do. of the distance from the point to the line or  and using techniques from calculus, this function is minimized when . Looking at the plot, the -value is and the vector from to is perpendicular to the vector in the direction of as shown below:   Find a point on a line that minimizes distance      In light of projections, we can reframe this problem. We are seeking the point on closest to . This can be found by projecting the vector to the line or and in this case, with and , which is the same result as from Calculus.    Projecting onto a Vector Space  We again generalize from projecting onto a single vector or set of vectors to a general vector space, . First, to make things easier, we will use an orthogonal basis for , call it, .  Recall that a projection onto a vector is found by writing the original vector, , where is in or Finding the projection is analogous to finding the constants . Take the inner product of ( ) with , the th basis vector of or since is chosen to be orthogonal to the vector space and since the basis of is orthogonal, Therefore and thus we can make the following statement about projecting any element onto a subspace:   Let be an element in a vector space and be an orthogonal basis of a subspace . The projection of onto can be written: where Note: if the basis of is also orthonormal, then .     Find the projection of , an element of onto     First, we need a orthogonal basis of the subspace and we found this above in . These are the first four Legendre polynomials (scaled to eliminate fractions) or     Next, find all of the values of for      Similarly, it can be shown that     The projection then is the sum     where is the th Legendre polynomial as in . A plot of this is   Find a projection of onto       which looks quite sine-like. Notice that if we plot the absolute difference between the function and the projection that we get    Difference between and its projection.      This plot shows that except for near the ends of the interval, the projection (or an approximation is within 1 decimal places.)    This last example shows the power of projections. If we are using functions as elements of vector spaces, then a projection of a function onto a vector space (using the span of a vector space), is the closest function in the vector space to the original function. In , we will do this with trigonometric function and is called Fourier Series.    "
 },
 {
   "id": "sect-projection-maps-2-2",
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-2",
   "type": "Figure",
-  "number": "3.5.1",
+  "number": "4.5.1",
   "title": "",
   "body": " Projecting a point onto the -axis.     "
 },
@@ -2687,7 +3245,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-5",
   "type": "Figure",
-  "number": "3.5.2",
+  "number": "4.5.2",
   "title": "",
   "body": " Projecting a vector onto another vector.     "
 },
@@ -2696,7 +3254,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-19",
   "type": "Remark",
-  "number": "3.5.3",
+  "number": "4.5.3",
   "title": "",
   "body": " The projection of any vector onto a vector is given by and the vector perpendicular to that satisfies is given by   "
 },
@@ -2705,7 +3263,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-21",
   "type": "Example",
-  "number": "3.5.4",
+  "number": "4.5.4",
   "title": "",
   "body": "  Find the projection of onto the vector .    Since     "
 },
@@ -2714,7 +3272,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#thm-proj-map",
   "type": "Theorem",
-  "number": "3.5.5",
+  "number": "4.5.5",
   "title": "",
   "body": "  Given a nonzero vector and a vector both in , the projection map in ( ) is a linear transformation.    We need to prove the two properties of linear transformations in .     and      "
 },
@@ -2723,7 +3281,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-24",
   "type": "Example",
-  "number": "3.5.6",
+  "number": "4.5.6",
   "title": "",
   "body": "  Find the projection of vector onto plane given by .    First, let's find two vectors in the plane, called , that form an orthogonal basis (we will see why it's helpful to have an orthogonal basis later). Recall that a normal vector to the plane is given by the vector . Two vector that are normal to it is and . (Note: these are two points in the plane). To form an orthonormal basis, we need to perform Gramm-Schmidt. and to make the second vector nicer, we'll multiply by . An orthogonal set in the plane is To consider how to project the vector into the plane we will write where is orthogonal to both and and we can write So we next take the inner product of with both and . Therefore So in the case of projecting a vector onto a plane, , So the vector is the projection of the vector onto the plane .   "
 },
@@ -2732,7 +3290,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-3-3",
   "type": "Figure",
-  "number": "3.5.7",
+  "number": "4.5.7",
   "title": "",
   "body": " Line and a point     "
 },
@@ -2741,7 +3299,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-3-5",
   "type": "Figure",
-  "number": "3.5.8",
+  "number": "4.5.8",
   "title": "",
   "body": " Find a point on a line that minimizes distance     "
 },
@@ -2750,7 +3308,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-4-4",
   "type": "Remark",
-  "number": "3.5.9",
+  "number": "4.5.9",
   "title": "",
   "body": " Let be an element in a vector space and be an orthogonal basis of a subspace . The projection of onto can be written: where Note: if the basis of is also orthonormal, then .  "
 },
@@ -2759,25 +3317,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-4-5",
   "type": "Example",
-  "number": "3.5.10",
+  "number": "4.5.10",
   "title": "",
-  "body": "  Find the projection of , an element of onto     First, we need a orthogonal basis of the subspace and we found this above in . These are the first four Legendre polynomials (scaled to eliminate fractions) or     Next, find all of the values of for      Similarly, it can be shown that     The projection then is the sum     where is the th Legendre polynomial as in ( ). A plot of this is   Find a projection of onto       which looks quite sine-like. Notice that if we plot the absolute difference between the function and the projection that we get    Difference between and its projection.      This plot shows that except for near the ends of the interval, the projection (or an approximation is within 1 decimal places.)   "
+  "body": "  Find the projection of , an element of onto     First, we need a orthogonal basis of the subspace and we found this above in . These are the first four Legendre polynomials (scaled to eliminate fractions) or     Next, find all of the values of for      Similarly, it can be shown that     The projection then is the sum     where is the th Legendre polynomial as in . A plot of this is   Find a projection of onto       which looks quite sine-like. Notice that if we plot the absolute difference between the function and the projection that we get    Difference between and its projection.      This plot shows that except for near the ends of the interval, the projection (or an approximation is within 1 decimal places.)   "
 },
 {
   "id": "sect-eigenvalues",
   "level": "1",
   "url": "sect-eigenvalues.html",
   "type": "Section",
-  "number": "4.1",
+  "number": "5.1",
   "title": "Eigenvalues and Eigenvectors",
-  "body": " Eigenvalues and Eigenvectors     Define an eigenvalue and eigenvector of a square matrix.    Find the characteristics equation for a square matrix and find it's roots.    Find the eigenvectors of a matrix from its corresponding eigenvalue.    Know the possible sets of eigenvalue-eigenvector pairs for a real matrix.        For a square matrix , an eigenvalue  with related eigenvector  satisfy     as long as is not the zero vector.    Recall that the matrix operation is a linear transformation on , that is, it take a vector to another vector. Thus the eigenvector of a matrix is a vector such that results in a vector in the same direction as . The eigenvalue is the scalar transformation associated with this.    Show that is a eigenvector of       We need to show that this satisfies for some scalar . Since     and since this matrix is 7 times the vector , this proves that is an eigenvector. The scale number 7 is the eigenvalue.      Finding Eigenvalues and Eigenvectors  We will first find the eigenvalues of a given matrix. Start with the eigenvector equation:     and we have transformed this into a homogeneous matrix equation. As stated in the definition of the eigenvector, it cannot be the zero vector, and by , the only solution where is nonzero is when     This equation is called the characteristic equation . This equation is a polynomial of degree , the size of the matrix.  To find an eigenvector associated with the eigenvalue, solve     for , that is find the basis of the null space of the matrix .  Note: as we will see in all of the examples in this section that the null space of has at least dimension 1 and that the reduced echelon form of has at least one row of zeros, indicating that the rank of is less than . The reason for this is because of . This is helpful for detecting errors in finding eigenvalues\/eigenvectors.    Find all eigenvalues and eigenvectors of       First, solve ,     so .  Next, we need to find an eigenvector for each eigenvalue. When ,     To solve this matrix equation, we'll use gaussian elimination on the augmented matrix:     The first row of the matrix corresponds to so the null space of is     The eigenvector(s) associated with is the basis of this space or     And to find the eigenvector associated with , solve     and use Gaussian Elimination to reduce     The null space of is     so the eigenvector associated with is the basis of this space or     Overall, there are two eigenvalues and two related eigenvectors they are       This example showed that this matrix has two real eigenvalues and two corresponding eigenvectors. Also, although it seemed that these eigenvectors may be unique, we'll show that is also a eigenvector of the matrix in .     which shows directly that is an eigenvector with corresponding eigenvalue 7. Does this mean that there are other eigenvectors? Yes. The following lemma shows this.    If is an eigenvector of with corresponding eigenvalue , then is also an eigenvector of with corresponding eigenvalue if .    Since is an eigenvector of with corresponding eigenvalue , then . Multiplying this by results in     which shows the result. Also note, that cannot be zero, because is the zero vector, which is not an eigenvector.    This next example shows another possible solution set for eigenvalues-eigenvectors.    Find the eigenvalues and eigenvectors of       The eigenvalues are found by solving the characteristic equation     And solving has the single root . To find the associated eigenvector, we solve for the null space of      which has the only equation or which shows that the null space is     and the eigenvector is .    And this next example has only one eigenvalue however has two linearly independent eigenvectors.    Find the eigenvalues and eigenvectors of       This has the characteristic equation or the single root . To find the eigenvectors we find the null space of or     and any vector in is in the null space. We can write down the space using the standard basis vectors     so and are both eigenvectors associated with . In fact, since any vector in is in the span of these two eigenvectors, then any vector in is an eigenvector.    There are other possibilities of eigenvalues and eigenvectors of matrices. The following has complex eigenvalues.    Find the eigenvalues and eigenvectors of       To find the eigenvalues, we find     or , which has the solutions .  To find the eigenvectors, we find the null space associated with each of the two eigenvalues.        Find the null space of :   where is used     and the top equation says , so the null space is     so the eigenvector is .       Find the null space of :     and the top equation says , so the null space is     so the eigenvector is .       Notice in the last example that there where complex conjugate pairs of eigenvalues and associated eigenvectors. This always occurs with a real matrix . The following theorem summarizes this.    Let be a real matrix. If is an complex eigenvalue with corresponding eigenvector, , then the complex conjugate of denoted is also an eigenvalue with corresponding complex conjuate eigenvector .    If , is an eigenvalue-eigenvector pair of , then     And taking the complex conjugate of this equation.     where because is a real matrix. This shows that , is an eigenvalue-eigenvector pair of .    The result of this theorem will save work if you have a real matrix and find a complex eigenvalue. shows that the eigenvalue-eigenvector pairs are and . The above theorem shows that and is another eigenvalue-eigenvector pair. The next example has real eigenvalue and eigenvector, but has a different feature than .   Eigenvalue\/Eigenvectors of a real matrix  The follow is a list of possible eigenvalue-eigenvectors for a real real matrix.     2 real eigenvalues, 2 linearly independent eigenvectors    1 real eigenvalue, 2 linearly independent eigenvectors    1 real eigenvalue, 1 eigenvector.    2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).        Eigenvalues and Eigenvectors of matrices  Finding the eigenvalues and eigenvectors for matrices larger than goes through the same steps. It is just a bit more complicated and we will show two examples of these.    Find the eigenvalues and eigenvectors of the 3 by 3 matrix       To find the eigenvalues, we solve the characteristic equation or expanding across the first row to find the determinant and we solve     which has roots . To find the corresponding eigenvectors, we solve for the null space of for each            and other that a factor of 3, this is in reduced row echelon form. The top two equations are     and the null space is     And we could take as an eigenvector, however, from , a scalar multiple of an eigenvector is also an eigenvector, so multiplying by 3 results in .        and the top two equations are and so the null space can be written   so the eigenvectors is .          and the top two equations are , so the null space is     Therefore the eigenvector is      In summary, for this matrix, there are three real eigenvalues and each has a corresponding eigenvector. These are         Find the eigenvalues and eigenvectors of       First, we solve for the eigenvectors by solving ,     and this is 0, when and . Next, find the eigenvectors. The eigenvectors with are found by finding the null space of :     and since the only equation is , both and are free variables and the solution space (therefore the null space) can be written:     This shows that the vectors     are both eigenvectors associated with . The eigenvectors associated with is found by seeking the null space of :     These equations are     so the solution set (and the null space) is     so the eigenvector associated with is     In summary, for this matrix, there are two real eigenvalues. The first has two corresponding eigenvectors and the second has a single corresponding eigenvector. These are        Eigenvalue\/Eigenvectors of a real matrix  The follow is a list of possible eigenvalue-eigenvectors for a real real matrix.     3 real eigenvalues, 3 linearly independent eigenvectors    2 real eigenvalues, one with one correspoding eigenvector, the other with two corresponding eigenvectors.    1 real eigenvalue, 3 linearly indpendent eigenvectors.    1 real eigenvalue with corresponding real eigenvector and 2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).       "
+  "body": " Eigenvalues and Eigenvectors     Define an eigenvalue and eigenvector of a square matrix.    Find the characteristics equation for a square matrix and find it's roots.    Find the eigenvectors of a matrix from its corresponding eigenvalue.    Know the possible sets of eigenvalue-eigenvector pairs for a real matrix.        For a square matrix , an eigenvalue  with corresponding eigenvector  satisfy     if is not the zero vector.    Recall that the matrix operation is a linear transformation on , that is, it take a vector to another vector. Thus the eigenvector of a matrix is a vector such that results in a vector in the same direction as . The eigenvalue is the scalar transformation associated with this.    Show that is a eigenvector of       We need to show that this satisfies for some scalar . Since     and since this matrix is 7 times the vector , this proves that is an eigenvector. The scale number 7 is the eigenvalue.      Finding Eigenvalues and Eigenvectors  We will first find the eigenvalues of a given matrix. Start with the eigenvector equation:     and we have transformed this into a homogeneous matrix equation. As stated in the definition of the eigenvector, it cannot be the zero vector, and by , the only solution where is nonzero is when     This equation is called the characteristic equation . This equation is a polynomial of degree , the size of the matrix.  To find an eigenvector associated with the eigenvalue, solve     for , that is find the basis of the null space of the matrix .  Note: as we will see in all of the examples in this section that the null space of has at least dimension 1 and that the reduced echelon form of has at least one row of zeros, indicating that the rank of is less than . The reason for this is because of . This is helpful for detecting errors in finding eigenvalues\/eigenvectors.    Find all eigenvalues and eigenvectors of       First, solve ,     so .  Next, we need to find an eigenvector for each eigenvalue. When ,     To solve this matrix equation, we'll use Gaussian Elimination on the augmented matrix:     The first row of the matrix corresponds to so the null space of is     The eigenvector(s) associated with is the basis of this space or     And to find the eigenvector associated with , solve     and use Gaussian Elimination to reduce     The null space of is     so the eigenvector associated with is the basis of this space or     Overall, there are two eigenvalues and two related eigenvectors they are       This example showed that this matrix has two real eigenvalues and two corresponding eigenvectors. Also, although it seemed that these eigenvectors may be unique, we'll show that is also a eigenvector of the matrix in .     which shows directly that is an eigenvector with corresponding eigenvalue 7. Does this mean that there are other eigenvectors? Yes. The following lemma shows this.    If is an eigenvector of with corresponding eigenvalue , then is also an eigenvector of with corresponding eigenvalue if .    Since is an eigenvector of with corresponding eigenvalue , then . Multiplying this by results in     which shows the result. Also note, that cannot be zero, because is the zero vector, which is not an eigenvector.    This next example shows another possible solution set for eigenvalues-eigenvectors.    Find the eigenvalues and eigenvectors of       The eigenvalues are found by solving the characteristic equation     And solving has the single root . To find the associated eigenvector, we solve for the null space of      which has the only equation or which shows that the null space is     and the eigenvector is .    And this next example has only one eigenvalue however has two linearly independent eigenvectors.    Find the eigenvalues and eigenvectors of       This has the characteristic equation or the single root . To find the eigenvectors we find the null space of or     and any vector in is in the null space, which can be written using the standard basis vectors     so and are both eigenvectors associated with . In fact, since any vector in is in the span of these two eigenvectors, then any vector in is an eigenvector.    There are other possibilities of eigenvalues and eigenvectors of matrices. The following has complex eigenvalues.    Find the eigenvalues and eigenvectors of       To find the eigenvalues, we find     or , which has the solutions .  To find the eigenvectors, we find the null space associated with each of the two eigenvalues.        Find the null space of :   where is used     and the top equation says , so the null space is     so the eigenvector is .       Find the null space of :     and the top equation says , so the null space is     so the eigenvector is .       Notice in the last example that there where complex conjugate pairs of eigenvalues and associated eigenvectors. This always occurs with a real matrix . The following theorem summarizes this.    Let be a real matrix. If is an complex eigenvalue with corresponding eigenvector, , then the complex conjugate of denoted is also an eigenvalue with corresponding complex conjuate eigenvector .    If , is an eigenvalue-eigenvector pair of , then     And taking the complex conjugate of this equation.     where because is a real matrix. This shows that , is an eigenvalue-eigenvector pair of .    The result of this theorem will save work if you have a real matrix and find a complex eigenvalue. shows that the eigenvalue-eigenvector pairs are and . The above theorem shows that and is another eigenvalue-eigenvector pair.   Eigenvalue\/Eigenvectors of a real matrix  The follow is a list of possible eigenvalue-eigenvectors for a real real matrix.     2 real eigenvalues, 2 linearly independent eigenvectors    1 real eigenvalue, 2 linearly independent eigenvectors    1 real eigenvalue, 1 eigenvector.    2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).        Eigenvalues and Eigenvectors of matrices  Finding the eigenvalues and eigenvectors for matrices larger than goes through the same steps. It is just a bit more complicated and we will show two examples of these.    Find the eigenvalues and eigenvectors of the 3 by 3 matrix       To find the eigenvalues, we solve the characteristic equation or expanding across the first row to find the determinant and we solve     which has roots . To find the corresponding eigenvectors, we solve for the null space of for each            and other that a factor of 3, this is in reduced row echelon form. The top two equations are     and the null space is     And we could take as an eigenvector, however, from , a scalar multiple of an eigenvector is also an eigenvector, so multiplying by 3 results in .        and the top two equations are and so the null space can be written   so the eigenvector is .          and the top two equations are , so the null space is     Therefore the eigenvector is      In summary, for this matrix, there are three real eigenvalues and each has a corresponding eigenvector. These are         Find the eigenvalues and eigenvectors of       First, we solve for the eigenvectors by solving ,     and this is 0, when and . Next, find the eigenvectors. The eigenvectors with are found by finding the null space of :     and since the only equation is , both and are free variables and the solution space (therefore the null space) can be written:     This shows that the vectors     are both eigenvectors associated with . The eigenvectors associated with is found by seeking the null space of :     These equations are     so the solution set (and the null space) is     so the eigenvector associated with is     In summary, for this matrix, there are two real eigenvalues. The first has two corresponding eigenvectors and the second has a single corresponding eigenvector. These are        Eigenvalue\/Eigenvectors of a real matrix  The follow is a list of possible eigenvalue-eigenvectors for a real real matrix.     3 real eigenvalues, 3 linearly independent eigenvectors    2 real eigenvalues, one with one correspoding eigenvector, the other with two corresponding eigenvectors.    1 real eigenvalue, 3 linearly indpendent eigenvectors.    1 real eigenvalue with corresponding real eigenvector and 2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).       "
 },
 {
   "id": "sect-eigenvalues-2",
   "level": "2",
   "url": "sect-eigenvalues.html#sect-eigenvalues-2",
   "type": "Objectives",
-  "number": "4.1",
+  "number": "5.1",
   "title": "",
   "body": "   Define an eigenvalue and eigenvector of a square matrix.    Find the characteristics equation for a square matrix and find it's roots.    Find the eigenvectors of a matrix from its corresponding eigenvalue.    Know the possible sets of eigenvalue-eigenvector pairs for a real matrix.    "
 },
@@ -2786,16 +3344,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-eigenvalues.html#sect-eigenvalues-3-1",
   "type": "Definition",
-  "number": "4.1.1",
+  "number": "5.1.1",
   "title": "",
-  "body": "  For a square matrix , an eigenvalue  with related eigenvector  satisfy     as long as is not the zero vector.   "
+  "body": "  For a square matrix , an eigenvalue  with corresponding eigenvector  satisfy     if is not the zero vector.   "
 },
 {
   "id": "sect-eigenvalues-3-3",
   "level": "2",
   "url": "sect-eigenvalues.html#sect-eigenvalues-3-3",
   "type": "Example",
-  "number": "4.1.2",
+  "number": "5.1.2",
   "title": "",
   "body": "  Show that is a eigenvector of       We need to show that this satisfies for some scalar . Since     and since this matrix is 7 times the vector , this proves that is an eigenvector. The scale number 7 is the eigenvalue.   "
 },
@@ -2813,16 +3371,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-eigenvalues.html#ex-eigs-real1",
   "type": "Example",
-  "number": "4.1.3",
+  "number": "5.1.3",
   "title": "",
-  "body": "  Find all eigenvalues and eigenvectors of       First, solve ,     so .  Next, we need to find an eigenvector for each eigenvalue. When ,     To solve this matrix equation, we'll use gaussian elimination on the augmented matrix:     The first row of the matrix corresponds to so the null space of is     The eigenvector(s) associated with is the basis of this space or     And to find the eigenvector associated with , solve     and use Gaussian Elimination to reduce     The null space of is     so the eigenvector associated with is the basis of this space or     Overall, there are two eigenvalues and two related eigenvectors they are      "
+  "body": "  Find all eigenvalues and eigenvectors of       First, solve ,     so .  Next, we need to find an eigenvector for each eigenvalue. When ,     To solve this matrix equation, we'll use Gaussian Elimination on the augmented matrix:     The first row of the matrix corresponds to so the null space of is     The eigenvector(s) associated with is the basis of this space or     And to find the eigenvector associated with , solve     and use Gaussian Elimination to reduce     The null space of is     so the eigenvector associated with is the basis of this space or     Overall, there are two eigenvalues and two related eigenvectors they are      "
 },
 {
   "id": "lem-eigenvector-scale",
   "level": "2",
   "url": "sect-eigenvalues.html#lem-eigenvector-scale",
   "type": "Lemma",
-  "number": "4.1.4",
+  "number": "5.1.4",
   "title": "",
   "body": "  If is an eigenvector of with corresponding eigenvalue , then is also an eigenvector of with corresponding eigenvalue if .    Since is an eigenvector of with corresponding eigenvalue , then . Multiplying this by results in     which shows the result. Also note, that cannot be zero, because is the zero vector, which is not an eigenvector.   "
 },
@@ -2831,7 +3389,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors-17",
   "type": "Example",
-  "number": "4.1.5",
+  "number": "5.1.5",
   "title": "",
   "body": "  Find the eigenvalues and eigenvectors of       The eigenvalues are found by solving the characteristic equation     And solving has the single root . To find the associated eigenvector, we solve for the null space of      which has the only equation or which shows that the null space is     and the eigenvector is .   "
 },
@@ -2840,16 +3398,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-eigenvalues.html#ex-eigs-scale2",
   "type": "Example",
-  "number": "4.1.6",
+  "number": "5.1.6",
   "title": "",
-  "body": "  Find the eigenvalues and eigenvectors of       This has the characteristic equation or the single root . To find the eigenvectors we find the null space of or     and any vector in is in the null space. We can write down the space using the standard basis vectors     so and are both eigenvectors associated with . In fact, since any vector in is in the span of these two eigenvectors, then any vector in is an eigenvector.   "
+  "body": "  Find the eigenvalues and eigenvectors of       This has the characteristic equation or the single root . To find the eigenvectors we find the null space of or     and any vector in is in the null space, which can be written using the standard basis vectors     so and are both eigenvectors associated with . In fact, since any vector in is in the span of these two eigenvectors, then any vector in is an eigenvector.   "
 },
 {
   "id": "ex-eigs-complex",
   "level": "2",
   "url": "sect-eigenvalues.html#ex-eigs-complex",
   "type": "Example",
-  "number": "4.1.7",
+  "number": "5.1.7",
   "title": "",
   "body": "  Find the eigenvalues and eigenvectors of       To find the eigenvalues, we find     or , which has the solutions .  To find the eigenvectors, we find the null space associated with each of the two eigenvalues.        Find the null space of :   where is used     and the top equation says , so the null space is     so the eigenvector is .       Find the null space of :     and the top equation says , so the null space is     so the eigenvector is .      "
 },
@@ -2858,7 +3416,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors-23",
   "type": "Theorem",
-  "number": "4.1.8",
+  "number": "5.1.8",
   "title": "",
   "body": "  Let be a real matrix. If is an complex eigenvalue with corresponding eigenvector, , then the complex conjugate of denoted is also an eigenvalue with corresponding complex conjuate eigenvector .    If , is an eigenvalue-eigenvector pair of , then     And taking the complex conjugate of this equation.     where because is a real matrix. This shows that , is an eigenvalue-eigenvector pair of .   "
 },
@@ -2867,7 +3425,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors-25",
   "type": "Note",
-  "number": "4.1.9",
+  "number": "5.1.9",
   "title": "Eigenvalue\/Eigenvectors of a <span class=\"process-math\">\\(2\\times 2\\)<\/span> real matrix.",
   "body": " Eigenvalue\/Eigenvectors of a real matrix  The follow is a list of possible eigenvalue-eigenvectors for a real real matrix.     2 real eigenvalues, 2 linearly independent eigenvectors    1 real eigenvalue, 2 linearly independent eigenvectors    1 real eigenvalue, 1 eigenvector.    2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).     "
 },
@@ -2876,16 +3434,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-eigenvalues.html#ex-eigs-3by3",
   "type": "Example",
-  "number": "4.1.10",
+  "number": "5.1.10",
   "title": "",
-  "body": "  Find the eigenvalues and eigenvectors of the 3 by 3 matrix       To find the eigenvalues, we solve the characteristic equation or expanding across the first row to find the determinant and we solve     which has roots . To find the corresponding eigenvectors, we solve for the null space of for each            and other that a factor of 3, this is in reduced row echelon form. The top two equations are     and the null space is     And we could take as an eigenvector, however, from , a scalar multiple of an eigenvector is also an eigenvector, so multiplying by 3 results in .        and the top two equations are and so the null space can be written   so the eigenvectors is .          and the top two equations are , so the null space is     Therefore the eigenvector is      In summary, for this matrix, there are three real eigenvalues and each has a corresponding eigenvector. These are      "
+  "body": "  Find the eigenvalues and eigenvectors of the 3 by 3 matrix       To find the eigenvalues, we solve the characteristic equation or expanding across the first row to find the determinant and we solve     which has roots . To find the corresponding eigenvectors, we solve for the null space of for each            and other that a factor of 3, this is in reduced row echelon form. The top two equations are     and the null space is     And we could take as an eigenvector, however, from , a scalar multiple of an eigenvector is also an eigenvector, so multiplying by 3 results in .        and the top two equations are and so the null space can be written   so the eigenvector is .          and the top two equations are , so the null space is     Therefore the eigenvector is      In summary, for this matrix, there are three real eigenvalues and each has a corresponding eigenvector. These are      "
 },
 {
   "id": "sect-eigen-3by3-4",
   "level": "2",
   "url": "sect-eigenvalues.html#sect-eigen-3by3-4",
   "type": "Example",
-  "number": "4.1.11",
+  "number": "5.1.11",
   "title": "",
   "body": "  Find the eigenvalues and eigenvectors of       First, we solve for the eigenvectors by solving ,     and this is 0, when and . Next, find the eigenvectors. The eigenvectors with are found by finding the null space of :     and since the only equation is , both and are free variables and the solution space (therefore the null space) can be written:     This shows that the vectors     are both eigenvectors associated with . The eigenvectors associated with is found by seeking the null space of :     These equations are     so the solution set (and the null space) is     so the eigenvector associated with is     In summary, for this matrix, there are two real eigenvalues. The first has two corresponding eigenvectors and the second has a single corresponding eigenvector. These are      "
 },
@@ -2894,7 +3452,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-eigenvalues.html#sect-eigen-3by3-5",
   "type": "Note",
-  "number": "4.1.12",
+  "number": "5.1.12",
   "title": "Eigenvalue\/Eigenvectors of a <span class=\"process-math\">\\(3\\times 3\\)<\/span> real matrix.",
   "body": " Eigenvalue\/Eigenvectors of a real matrix  The follow is a list of possible eigenvalue-eigenvectors for a real real matrix.     3 real eigenvalues, 3 linearly independent eigenvectors    2 real eigenvalues, one with one correspoding eigenvector, the other with two corresponding eigenvectors.    1 real eigenvalue, 3 linearly indpendent eigenvectors.    1 real eigenvalue with corresponding real eigenvector and 2 complex eigenvalues (complex conjugates) and 2 linearly indepedent eigenvectors (complex conjugates).     "
 },
@@ -2903,16 +3461,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-linear-maps-eigen.html",
   "type": "Section",
-  "number": "4.2",
+  "number": "5.2",
   "title": "Eigenvalues and Eigenvectors of Linear Transformations",
-  "body": " Eigenvalues and Eigenvectors of Linear Transformations     The definition of the eigenvalues and eigenvector of a linear transformation.    Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.    Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the transformation.     Recall that in section that the eigenvalues and eigenvectors of a square matrix was found. We will examine how we can find eigenvalues and eigenvectors of a linear map. The definition of these are extensions of what we saw for matrices.    Let be a linear map and be a finite dimensional vector space. The nonzero vector is an eigenvector with associated eigenvalue if       There are a few ways to find and . In this section, we'll only see some examples that are relatively simple to see as well as finding the matrix representation of the map. In addition, this section only shows examples from finite dimensional vector spaces, however, in general, there is no restriction.  For the remainder of this chapter we will see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and derivative maps. We first see an example of scaling a vector in .    Find the eigenvalues and eigenvectors of the scale map from .    Recall that the scale map is given by     To find the eigenvalues and eigenvectors of , we seek an and a such that     but since , then and any is an eigenvector.  Alternatively, we can write down the matrix associated with the map. This was done in and is     The eigenvalues and eigenvectors of this was found in for a particular , but generalizing that, one can see that will be the only eigenvector of with eigenvectors and .  In this case, since there are two eigenvectors associated with , any linear combination of the two eigenvectors is also an eigenvector, and since and span , any vector in is an eigenvector.    The next example shows the eigenvalues of the linear map associated with a derivative.    The set     is a subspace of all functions on . A basis for this subspace is . In addition, the differential operation is a linear transformation. What are the eigenvalues and eigenvectors of ?    There are two ways of looking at this. Since , this means that is an eigenvector with corresponding eigenvalue 1. Similarly, since , this also means that is an eigenvector with eigenvalue .  Alternatively, this can be done by first finding the matrix representation of the differential operator or     Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or and . One can also find that the corresponding eigenvectors are     These two vectors can be translated back to the functional forms and , the same as we found above. These two functions which are in are functions that stay the same in the subspace up to a scalar constant.      Consider the differential map which maps cubic polynomials to other cubic polynomials.     Find the eigenvalues of this matrix and interpret.    First, we find     and setting it to zero, thus is the only eigenvalue. To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:     and the solution to the null space is     This vector is the representation of the cubic polynomial , a constant. Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.    This last example of this involves matrices and the rotation of a matrix.    Find the eigenvalues and eigenvectors of the linear map that rotates a 2 by 2 matrix 90 clockwise. That is such that       One can show that if we consider the vector representation in the basis:     that     and the map can be represented by the matrix as     We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are     To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, is the matrix     and if that matrix is rotated, you get it back and the eigenvalue is 1. The second eigenvector can be written as the matrix     and if you rotate this matrix, you get the matrix     which is the above matrix multiplied by the eigenvalue . In other words:     The other two work in a similar manner, however complex numbers are needed.    "
+  "body": " Eigenvalues and Eigenvectors of Linear Transformations     The definition of the eigenvalues and eigenvector of a linear transformation.    Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.    Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the transformation.     Recall that in section that the eigenvalues and eigenvectors of a square matrix was found. We will examine how we can find eigenvalues and eigenvectors of a linear map. The definition of these are extensions of what we saw for matrices.    Let be a linear map and be a finite dimensional vector space. The nonzero vector is an eigenvector with associated eigenvalue if       There are a few ways to find and . In this section, we'll only see some examples that are relatively simple to see as well as finding the matrix representation of the map. In addition, this section only shows examples from finite dimensional vector spaces, however, in general, there is no restriction.  For the remainder of this chapter we will see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and derivative maps. We first see an example of scaling a vector in .    Find the eigenvalues and eigenvectors of the scale map from .    Recall that the scale map is given by     To find the eigenvalues and eigenvectors of , we seek an and a such that     but since , then and any is any vector.  Alternatively, we can write down the matrix associated with the map. This was done in and is     The eigenvalues and eigenvectors of this was found in for a particular , but generalizing that, one can see that will be the only eigenvector of with eigenvectors and .  In this case, since there are two eigenvectors associated with , any linear combination of the two eigenvectors is also an eigenvector, and since and span , any vector in is an eigenvector.    The next example shows the eigenvalues of the linear map associated with a derivative.    The set     is a subspace of all functions on . A basis for this subspace is . In addition, the differential operation is a linear transformation. What are the eigenvalues and eigenvectors of ?    There are two ways of looking at this. Since , this means that is an eigenvector with corresponding eigenvalue 1. Similarly, since , this also means that is an eigenvector with eigenvalue .  Alternatively, this can be done by first finding the matrix representation of the differential operator or     Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or and . One can also find that the corresponding eigenvectors are     These two vectors can be translated back to the functional forms and , the same as we found above. These two functions which are in are functions that stay the same in the subspace up to a scalar constant.      Consider the differential map which maps cubic polynomials to other cubic polynomials.     Find the eigenvalues of this matrix and interpret.    First, we find     and setting it to zero, thus is the only eigenvalue. To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:     and the solution to the null space is     This vector is the representation of the cubic polynomial , a constant. Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.    This last example of this involves matrices and the rotation of a matrix.    Find the eigenvalues and eigenvectors of the linear map that rotates a 2 by 2 matrix 90 clockwise. That is such that       One can show that if we consider the vector representation in the basis:     that     and the map can be represented by the matrix as     We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are     To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, is the matrix     and if that matrix is rotated, you get it back and the eigenvalue is 1. The second eigenvector can be written as the matrix     and if you rotate this matrix, you get the matrix     which is the above matrix multiplied by the eigenvalue . In other words:     The other two work in a similar manner, however complex numbers are needed.    "
 },
 {
   "id": "sect-linear-maps-eigen-2",
   "level": "2",
   "url": "sect-linear-maps-eigen.html#sect-linear-maps-eigen-2",
   "type": "Objectives",
-  "number": "4.2",
+  "number": "5.2",
   "title": "",
   "body": "   The definition of the eigenvalues and eigenvector of a linear transformation.    Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.    Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the transformation.    "
 },
@@ -2921,7 +3479,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-maps-eigen.html#sect-linear-maps-eigen-4",
   "type": "Definition",
-  "number": "4.2.1",
+  "number": "5.2.1",
   "title": "",
   "body": "  Let be a linear map and be a finite dimensional vector space. The nonzero vector is an eigenvector with associated eigenvalue if      "
 },
@@ -2930,16 +3488,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-maps-eigen.html#sect-linear-maps-eigen-7",
   "type": "Example",
-  "number": "4.2.2",
+  "number": "5.2.2",
   "title": "",
-  "body": "  Find the eigenvalues and eigenvectors of the scale map from .    Recall that the scale map is given by     To find the eigenvalues and eigenvectors of , we seek an and a such that     but since , then and any is an eigenvector.  Alternatively, we can write down the matrix associated with the map. This was done in and is     The eigenvalues and eigenvectors of this was found in for a particular , but generalizing that, one can see that will be the only eigenvector of with eigenvectors and .  In this case, since there are two eigenvectors associated with , any linear combination of the two eigenvectors is also an eigenvector, and since and span , any vector in is an eigenvector.   "
+  "body": "  Find the eigenvalues and eigenvectors of the scale map from .    Recall that the scale map is given by     To find the eigenvalues and eigenvectors of , we seek an and a such that     but since , then and any is any vector.  Alternatively, we can write down the matrix associated with the map. This was done in and is     The eigenvalues and eigenvectors of this was found in for a particular , but generalizing that, one can see that will be the only eigenvector of with eigenvectors and .  In this case, since there are two eigenvectors associated with , any linear combination of the two eigenvectors is also an eigenvector, and since and span , any vector in is an eigenvector.   "
 },
 {
   "id": "sect-linear-maps-eigen-9",
   "level": "2",
   "url": "sect-linear-maps-eigen.html#sect-linear-maps-eigen-9",
   "type": "Example",
-  "number": "4.2.3",
+  "number": "5.2.3",
   "title": "",
   "body": "  The set     is a subspace of all functions on . A basis for this subspace is . In addition, the differential operation is a linear transformation. What are the eigenvalues and eigenvectors of ?    There are two ways of looking at this. Since , this means that is an eigenvector with corresponding eigenvalue 1. Similarly, since , this also means that is an eigenvector with eigenvalue .  Alternatively, this can be done by first finding the matrix representation of the differential operator or     Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or and . One can also find that the corresponding eigenvectors are     These two vectors can be translated back to the functional forms and , the same as we found above. These two functions which are in are functions that stay the same in the subspace up to a scalar constant.   "
 },
@@ -2948,7 +3506,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-maps-eigen.html#sect-linear-maps-eigen-10",
   "type": "Example",
-  "number": "4.2.4",
+  "number": "5.2.4",
   "title": "",
   "body": "  Consider the differential map which maps cubic polynomials to other cubic polynomials.     Find the eigenvalues of this matrix and interpret.    First, we find     and setting it to zero, thus is the only eigenvalue. To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:     and the solution to the null space is     This vector is the representation of the cubic polynomial , a constant. Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.   "
 },
@@ -2957,7 +3515,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-maps-eigen.html#sect-linear-maps-eigen-12",
   "type": "Example",
-  "number": "4.2.5",
+  "number": "5.2.5",
   "title": "",
   "body": "  Find the eigenvalues and eigenvectors of the linear map that rotates a 2 by 2 matrix 90 clockwise. That is such that       One can show that if we consider the vector representation in the basis:     that     and the map can be represented by the matrix as     We now find the eigenvalues and eigenvectors of this. The eigenvalue-eigenvector pairs are     To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents. For example, is the matrix     and if that matrix is rotated, you get it back and the eigenvalue is 1. The second eigenvector can be written as the matrix     and if you rotate this matrix, you get the matrix     which is the above matrix multiplied by the eigenvalue . In other words:     The other two work in a similar manner, however complex numbers are needed.   "
 },
@@ -2966,52 +3524,52 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-sym-matrix-quad-form.html",
   "type": "Section",
-  "number": "4.3",
+  "number": "5.3",
   "title": "Symmetric and Orthogonal Matrices and Quadratic Forms",
-  "body": " Symmetric and Orthogonal Matrices and Quadratic Forms     A square matrix is said to be symmetric if .      The eigenvalues of a symmetric matrix are real.    Let be an eigenvalue of with corresponding eigenvector .     Right multiply by     Take the complex conjugate of the eigenvector equation above:     left mulitply by     so , hence it is real.      The eigenvectors of a symmetric matrix are orthogonal.      A square matrix is said to be orthogonal if     for all . If in addition that for all then the matrix is also said to be orthonormal .      If is a orthonormal matrix, then .      Orthogonal Transformations    Let be a linear transformation from to . If is an orthonormal matrix, then the linear transformation is said to be an orthogonal transformation .      Show that the rotational transformation given in section 7.10 is an orthogonal transformation.    Show that     satisfies .      A quadratic form is a polynomial function in such that       Note that a quadratic form can have squared terms and products between only two variables.    The following are examples of quadratic forms.                And the following are not:      .     .       A quadratic form can be written as     for some symmetric matrix and .    Find the matrix for the quadratic forms above:       And for the second quadratic form:         Principle Axes of Quadratic Forms  For the quadratic form:    if can be written:     and since is symmetric then the eigenvectors form an orthonormal basis so .     where . Example of ellipse\/contour plot.   "
-},
-{
-  "id": "sect-sym-matrix-quad-form-2-1",
-  "level": "2",
-  "url": "sect-sym-matrix-quad-form.html#sect-sym-matrix-quad-form-2-1",
-  "type": "Definition",
-  "number": "4.3.1",
-  "title": "",
-  "body": "  A square matrix is said to be symmetric if .   "
+  "body": " Symmetric and Orthogonal Matrices and Quadratic Forms    This section needs a lot of work     A square matrix is said to be symmetric if .      The eigenvalues of a symmetric matrix are real.    Let be an eigenvalue of with corresponding eigenvector .     Left multiply by     Take the complex conjugate of the eigenvector equation above:     left mulitply by     so , hence it is real.      The eigenvectors of a symmetric matrix are orthogonal.      A square matrix is said to be orthogonal if     for all . If in addition that for all then the matrix is also said to be orthonormal .      If is a orthonormal matrix, then .      Orthogonal Transformations    Let be a linear transformation from to . If is an orthonormal matrix, then the linear transformation is said to be an orthogonal transformation .      Show that the rotational transformation given in section 7.10 is an orthogonal transformation.    Show that     satisfies .      A quadratic form is a polynomial function in such that       Note that a quadratic form can have squared terms and products between only two variables.    The following are examples of quadratic forms.                And the following are not:      .     .       A quadratic form can be written as     for some symmetric matrix and .    Find the matrix for the quadratic forms above:       And for the second quadratic form:         Principle Axes of Quadratic Forms  For the quadratic form:    if can be written:     and since is symmetric then the eigenvectors form an orthonormal basis so .     where . Example of ellipse\/contour plot.   "
 },
 {
   "id": "sect-sym-matrix-quad-form-2-2",
   "level": "2",
   "url": "sect-sym-matrix-quad-form.html#sect-sym-matrix-quad-form-2-2",
-  "type": "Theorem",
-  "number": "4.3.2",
+  "type": "Definition",
+  "number": "5.3.1",
   "title": "",
-  "body": "  The eigenvalues of a symmetric matrix are real.    Let be an eigenvalue of with corresponding eigenvector .     Right multiply by     Take the complex conjugate of the eigenvector equation above:     left mulitply by     so , hence it is real.   "
+  "body": "  A square matrix is said to be symmetric if .   "
 },
 {
   "id": "sect-sym-matrix-quad-form-2-3",
   "level": "2",
   "url": "sect-sym-matrix-quad-form.html#sect-sym-matrix-quad-form-2-3",
   "type": "Theorem",
-  "number": "4.3.3",
+  "number": "5.3.2",
   "title": "",
-  "body": "  The eigenvectors of a symmetric matrix are orthogonal.   "
+  "body": "  The eigenvalues of a symmetric matrix are real.    Let be an eigenvalue of with corresponding eigenvector .     Left multiply by     Take the complex conjugate of the eigenvector equation above:     left mulitply by     so , hence it is real.   "
 },
 {
   "id": "sect-sym-matrix-quad-form-2-4",
   "level": "2",
   "url": "sect-sym-matrix-quad-form.html#sect-sym-matrix-quad-form-2-4",
-  "type": "Definition",
-  "number": "4.3.4",
+  "type": "Theorem",
+  "number": "5.3.3",
   "title": "",
-  "body": "  A square matrix is said to be orthogonal if     for all . If in addition that for all then the matrix is also said to be orthonormal .   "
+  "body": "  The eigenvectors of a symmetric matrix are orthogonal.   "
 },
 {
   "id": "sect-sym-matrix-quad-form-2-5",
   "level": "2",
   "url": "sect-sym-matrix-quad-form.html#sect-sym-matrix-quad-form-2-5",
+  "type": "Definition",
+  "number": "5.3.4",
+  "title": "",
+  "body": "  A square matrix is said to be orthogonal if     for all . If in addition that for all then the matrix is also said to be orthonormal .   "
+},
+{
+  "id": "sect-sym-matrix-quad-form-2-6",
+  "level": "2",
+  "url": "sect-sym-matrix-quad-form.html#sect-sym-matrix-quad-form-2-6",
   "type": "Theorem",
-  "number": "4.3.5",
+  "number": "5.3.5",
   "title": "",
   "body": "  If is a orthonormal matrix, then .   "
 },
@@ -3020,7 +3578,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-sym-matrix-quad-form.html#sect-orthogonal-transformations-2",
   "type": "Definition",
-  "number": "4.3.6",
+  "number": "5.3.6",
   "title": "",
   "body": "  Let be a linear transformation from to . If is an orthonormal matrix, then the linear transformation is said to be an orthogonal transformation .   "
 },
@@ -3029,7 +3587,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-sym-matrix-quad-form.html#sect-orthogonal-transformations-3",
   "type": "Example",
-  "number": "4.3.7",
+  "number": "5.3.7",
   "title": "",
   "body": "  Show that the rotational transformation given in section 7.10 is an orthogonal transformation.    Show that     satisfies .   "
 },
@@ -3038,7 +3596,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-sym-matrix-quad-form.html#sect-orthogonal-transformations-4",
   "type": "Definition",
-  "number": "4.3.8",
+  "number": "5.3.8",
   "title": "",
   "body": "  A quadratic form is a polynomial function in such that      "
 },
@@ -3047,7 +3605,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-sym-matrix-quad-form.html#sect-orthogonal-transformations-6",
   "type": "Example",
-  "number": "4.3.9",
+  "number": "5.3.9",
   "title": "",
   "body": "  The following are examples of quadratic forms.                And the following are not:      .     .      "
 },
@@ -3056,7 +3614,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-sym-matrix-quad-form.html#sect-orthogonal-transformations-10",
   "type": "Example",
-  "number": "4.3.10",
+  "number": "5.3.10",
   "title": "",
   "body": "  Find the matrix for the quadratic forms above:       And for the second quadratic form:      "
 },
@@ -3065,7 +3623,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-applications-eigen.html",
   "type": "Section",
-  "number": "4.4",
+  "number": "5.4",
   "title": "Applications of Eigenvalues and Eigenvectors",
   "body": " Applications of Eigenvalues and Eigenvectors   We will develop a simple model of population growth in this section and show an example where eigenvalues and eigenvectors play an important role.  Consider a population of a single species, perhaps a bacteria, which varies over time. Let be the population at the th time unit (day, month, year, \\ldots). A simple model will be that the population at the next time will be proportional to the current population, thus .  If the number of bacteria starting is 50, then and the population doubles every time unit, so , then     and so on. In general     From this model, the population increases without bound if , drops to zero if and if , .    Leslie Population Models  The previous model actually works well for species like single-celled organisms, however, more advanced species will require a more complicated model. Consider a species, like some type of bird, that has two stages of life: juvenile and adult. We will also assume that the population of males and females are equal. The juvenile female cannot reproduce and the adult female can. Let and be the population of the juveniles and adults females at stage . A simple model for growth is     where at each stage the fraction of the juveniles survive to adulthood, and the population of the adults will produce a factor juveniles. Finally, the fraction of the adults survive one time unit. This linear system can be written as the matrix equation     where     As a specific example, let's consider     The first line means that for every adult female, two juvenile females are produced. The second line means that 0.3 (30 percent) of the juveniles survive to adulthood and at each stage 0.5 (50 percent) of the adults survive to the next stage.  Let's see what happens to this population for some initial condition. Let's say that we have 10 female adults and 0 juvenile adults. Then     In general,      Table of population values    year                   0  0  10  10  0      1  20  5  25  4.00  2.50    2  10  8  18  1.18  0.74    3  17  7  24  2.34  1.31    4  14  8  22  1.66  0.96    5  17  8  25  2.00  1.13         10  22  12  34  1.87  1.06    11  24  12  36  1.88  1.07    12  25  13  38  1.88  1.06     We'd like to explain what is going on here. As we will show, the eigenvalues are important. The characteristic equation is     which has the solutions     The eigenvectors are     Assume that and are the eigenvalues of and and are the eigenvectors. If and are linearly independent, then we can write     for some real numbers and . Let's use the matrix equations above to find ,     similarly,     Now assume that and factor out from the equation above:     as increases the ratio goes to zero, so       Second-Order Differential Equations Systems  Consider a mass-spring system:   Find a point on a line that minimizes distance      where and are the positions of the masses and relative to the unstretched spring positions and and are the spring constants of the two springs. The mass spring system above can be modeled using the 2nd order system of differential equations.     This can be written in matrix form as     with     where is the mass matrix and is called the stiffness matrix, which can take other forms depending on the connectedness of the spring system. Since is nonsingular, we can find and write the system above as:     where .    Solutions of   Let be an eigenvector of , with eigenvalue , then is a solution.     if , then the and the solution is:     If is an eigenvalue of with corresponding eigenvector , then the part of the solution associate with this is:       If the matrix has distinct negative eigenvalues with associated real eigenvectors, then a general solution to     is given by     where and arbitrary constants. If is an eigenvalue of with corresponding eigenvector , then the part of the solution associate with this is:         Consider the mass-spring system above with , , , and , then the mass matrix and stiffness matrix are:     resulting in the system:     The eigenvalues and eigenvectors are:     Therefore the solution is:     Next, let's find the values of the 's and 's if and when or     and . First use the initial value in ( ),     and this is true when and . To find and , differentiate ( ),     and evaluate it at      or and . The solution with the given initial condition,     The value of and , the position of the two masses are the first and second components. A plot of these two are:   Solution of a second-order differential equation.         "
 },
@@ -3074,7 +3632,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-applications-eigen.html#sect-leslie-models-15",
   "type": "Table",
-  "number": "4.4.1",
+  "number": "5.4.1",
   "title": "Table of population values",
   "body": " Table of population values    year                   0  0  10  10  0      1  20  5  25  4.00  2.50    2  10  8  18  1.18  0.74    3  17  7  24  2.34  1.31    4  14  8  22  1.66  0.96    5  17  8  25  2.00  1.13         10  22  12  34  1.87  1.06    11  24  12  36  1.88  1.07    12  25  13  38  1.88  1.06    "
 },
@@ -3083,7 +3641,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-applications-eigen.html#sect-second-order-de-3",
   "type": "Figure",
-  "number": "4.4.2",
+  "number": "5.4.2",
   "title": "",
   "body": " Find a point on a line that minimizes distance     "
 },
@@ -3092,7 +3650,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-applications-eigen.html#sect-solutions-of-second-order-de-8",
   "type": "Theorem",
-  "number": "4.4.3",
+  "number": "5.4.3",
   "title": "",
   "body": "  If the matrix has distinct negative eigenvalues with associated real eigenvectors, then a general solution to     is given by     where and arbitrary constants. If is an eigenvalue of with corresponding eigenvector , then the part of the solution associate with this is:      "
 },
@@ -3101,189 +3659,27 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-applications-eigen.html#sect-solutions-of-second-order-de-9",
   "type": "Example",
-  "number": "4.4.4",
+  "number": "5.4.4",
   "title": "",
   "body": "  Consider the mass-spring system above with , , , and , then the mass matrix and stiffness matrix are:     resulting in the system:     The eigenvalues and eigenvectors are:     Therefore the solution is:     Next, let's find the values of the 's and 's if and when or     and . First use the initial value in ( ),     and this is true when and . To find and , differentiate ( ),     and evaluate it at      or and . The solution with the given initial condition,     The value of and , the position of the two masses are the first and second components. A plot of these two are:   Solution of a second-order differential equation.       "
-},
-{
-  "id": "ch-matrix-factoring-3",
-  "level": "1",
-  "url": "ch-matrix-factoring-3.html",
-  "type": "Section",
-  "number": "5.1",
-  "title": "Matrix Properties and Operations",
-  "body": " Matrix Properties and Operations   Although we have spent some time with matrices earlier in the text, we summarize these and they will be important throughout this chapter.    The Matrix Transpose  Let be an by matrix. The matrix transpose of is denoted and     or in other words, the th row of the transpose is the th column of .    If     then       The matrix is the matrix flipped over the diagonal.    Properties of the matrix transpose   The following are properties of the transpose. Let be an by matrix (unless more restricted as noted).      . That is, the transpose of the transpose is the original matrix back.     . This is one of the properties of linearity.     .     . And this is the other linearly property.     If, in addition, the matrix is square, then      .    The eigenvalues of are the same as the eigenvalues of . Also, the characteristic polynomial of and are the same.          Symmetric Matrices   We have seen throughout this book examples where a matrix is symmetric in some sense. However, there is a precise definition.    A matrix is symmetric if it is square and if .      The following matrix is symmetric,     and the following is not     since it is not square.    Notice that a symmetric matrix has the property that it symmetric over the main diagonal (running from the upper left to lower right).    Eigenvalues of Symmetric Matrices  If we follow the techniques in , we can find the eigenvalues and eigenvectors of     then the eigenvalues are and the corresponding eigenvectors are     which are both real eigenvalues and eigenvectors. This fact is (as shown in the next lemma) that the matrix is symmetric.    Let be a real symmetric matrix. The eigenvalues and eigenvectors of are real.     Let be an eigenvalue of with corresponding eigenvector , then     If we left-multiply ( ) by ,     and left-multiply ( ) by to get:     and since is symmetric, and then solving for      and since ( ) is the same as ( ), then so the eigenvalue is real.  Since the eigenvalue of a symmetric matrix is real and the matrix is real, then the eigenvectors are also real.   The fact that symmetric matrices have real eigenvalues with be used later in this section.     Orthogonal Matrices  An orthogonal matrix , is a square matrix that satisfies .  The properties include:     The columns of are orthogonal unit vectors.    The rows of are orthogonal unit vectors.    The inverse of is its transpose or .    The determinant of is or . This can be found by     So the determinant is or .       The following are examples of 2 by 2 orthogonal matrices:     And the following are 3 by 3 orthogonal matrices:     The matrix on the right is an example of a permutation matrix. Every permutation matrix is an orthogonal matrix.      Upper- and Lower-Triangular Matrices   An upper triangle matrix is a matrix (not-necessarily square) such that all elements below the diagonal are 0. A lower triangular matrix is a matrix such that all elements above the diagonal are 0. More precisely,    A upper-triangular matrix is an by matrix , such that if . A lower triangular matrix is an by matrix such that if .      The matrix below is a lower triangular matrix and is an upper triangular matrix:       Hopefully that it's clear that a matrix in echelon form defined in Definition is also upper triangular.    Back Substitution  An advantage to having an upper- or lower-triangular matrix is that solving the matrix is quite straightforward. In the case of a upper-triangular matrix, the steps that solve is called back substitution . We will show the steps in an example.    If     solve .    To illustrate back substitution, we write out the matrix equation as the corresponding equations:     and solving the 3rd equation above, . This is then substituted into the 2nd equation to get:     and solving leads to . And then lastly, and are substituted into the first equation to get:     and solving this leads to . Thus the solution to is       In general, back substitution works the same way.   To solve the matrix equation , where is an by , non-singular, upper-triangular matrix, first     and assume that are known. Then,     and it is important that the steps are performed in reverse order. This technique is called back substitution .     Forward Substitution  Similar to back substitution, if a matrix is in lower-diagonal form, then the matrix equation can be solved in a straightforward manner. We first look at an example:    Solve if       We first write down the equations that correspond to these:     Solving the first equation is . Then substitute this into the second equation to get:     which has the solution . Lastly, we substitute these into the last equation to get:     which has the solution . Thus the solution to the matrix equation is       Notice in this example, we solved the unknown's in the vector in order. This is because of the structure of the lower-triangular matrix and hence why this technique is called forward substitution .   To solve the matrix equation , where is an by , nonsingular, lower-triangular matrix, first,     and then assume that are known. Then     and note that in this case, the steps are performed in order. This technique is called forward substitution .     "
-},
-{
-  "id": "sect-matrix-transpose-5",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#sect-matrix-transpose-5",
-  "type": "Example",
-  "number": "5.1.1",
-  "title": "",
-  "body": "  If     then      "
-},
-{
-  "id": "thm-matrix-transpose",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#thm-matrix-transpose",
-  "type": "Theorem",
-  "number": "5.1.2",
-  "title": "Properties of the matrix transpose.",
-  "body": " Properties of the matrix transpose   The following are properties of the transpose. Let be an by matrix (unless more restricted as noted).      . That is, the transpose of the transpose is the original matrix back.     . This is one of the properties of linearity.     .     . And this is the other linearly property.     If, in addition, the matrix is square, then      .    The eigenvalues of are the same as the eigenvalues of . Also, the characteristic polynomial of and are the same.      "
-},
-{
-  "id": "set-sym-matrices-2-2",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#set-sym-matrices-2-2",
-  "type": "Definition",
-  "number": "5.1.3",
-  "title": "",
-  "body": "  A matrix is symmetric if it is square and if .   "
-},
-{
-  "id": "set-sym-matrices-2-3",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#set-sym-matrices-2-3",
-  "type": "Example",
-  "number": "5.1.4",
-  "title": "",
-  "body": "  The following matrix is symmetric,     and the following is not     since it is not square.   "
-},
-{
-  "id": "set-sym-matrices-3-7",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#set-sym-matrices-3-7",
-  "type": "Lemma",
-  "number": "5.1.5",
-  "title": "",
-  "body": "  Let be a real symmetric matrix. The eigenvalues and eigenvectors of are real.   "
-},
-{
-  "id": "set-sym-matrices-3-8",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#set-sym-matrices-3-8",
-  "type": "Proof",
-  "number": "5.1.2.1.1",
-  "title": "",
-  "body": " Let be an eigenvalue of with corresponding eigenvector , then     If we left-multiply ( ) by ,     and left-multiply ( ) by to get:     and since is symmetric, and then solving for      and since ( ) is the same as ( ), then so the eigenvalue is real.  Since the eigenvalue of a symmetric matrix is real and the matrix is real, then the eigenvectors are also real.  "
-},
-{
-  "id": "ch-matrix-factoring-3-5-2",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-5-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "orthogonal matrix "
-},
-{
-  "id": "ch-matrix-factoring-3-5-5",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-5-5",
-  "type": "Example",
-  "number": "5.1.6",
-  "title": "",
-  "body": "  The following are examples of 2 by 2 orthogonal matrices:     And the following are 3 by 3 orthogonal matrices:     The matrix on the right is an example of a permutation matrix. Every permutation matrix is an orthogonal matrix.   "
-},
-{
-  "id": "ch-matrix-factoring-3-6-2-1",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "upper triangle matrix lower triangular matrix "
-},
-{
-  "id": "ch-matrix-factoring-3-6-2-2",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-2-2",
-  "type": "Definition",
-  "number": "5.1.7",
-  "title": "",
-  "body": "  A upper-triangular matrix is an by matrix , such that if . A lower triangular matrix is an by matrix such that if .   "
-},
-{
-  "id": "ch-matrix-factoring-3-6-2-3",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-2-3",
-  "type": "Example",
-  "number": "5.1.8",
-  "title": "",
-  "body": "  The matrix below is a lower triangular matrix and is an upper triangular matrix:      "
-},
-{
-  "id": "ch-matrix-factoring-3-6-3-2",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-3-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "back substitution "
-},
-{
-  "id": "ch-matrix-factoring-3-6-3-3",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-3-3",
-  "type": "Example",
-  "number": "5.1.9",
-  "title": "",
-  "body": "  If     solve .    To illustrate back substitution, we write out the matrix equation as the corresponding equations:     and solving the 3rd equation above, . This is then substituted into the 2nd equation to get:     and solving leads to . And then lastly, and are substituted into the first equation to get:     and solving this leads to . Thus the solution to is      "
-},
-{
-  "id": "ch-matrix-factoring-3-6-3-5",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-3-5",
-  "type": "Remark",
-  "number": "5.1.10",
-  "title": "",
-  "body": " To solve the matrix equation , where is an by , non-singular, upper-triangular matrix, first     and assume that are known. Then,     and it is important that the steps are performed in reverse order. This technique is called back substitution .  "
-},
-{
-  "id": "ch-matrix-factoring-3-6-4-3",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-4-3",
-  "type": "Example",
-  "number": "5.1.11",
-  "title": "",
-  "body": "  Solve if       We first write down the equations that correspond to these:     Solving the first equation is . Then substitute this into the second equation to get:     which has the solution . Lastly, we substitute these into the last equation to get:     which has the solution . Thus the solution to the matrix equation is      "
-},
-{
-  "id": "ch-matrix-factoring-3-6-4-4",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-4-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "forward substitution "
-},
-{
-  "id": "ch-matrix-factoring-3-6-4-5",
-  "level": "2",
-  "url": "ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-4-5",
-  "type": "Remark",
-  "number": "5.1.12",
-  "title": "",
-  "body": " To solve the matrix equation , where is an by , nonsingular, lower-triangular matrix, first,     and then assume that are known. Then     and note that in this case, the steps are performed in order. This technique is called forward substitution .  "
 },
 {
   "id": "sect-lu-factorization",
   "level": "1",
   "url": "sect-lu-factorization.html",
   "type": "Section",
-  "number": "5.2",
+  "number": "6.1",
   "title": "LU Factorization",
-  "body": " LU Factorization     Find the -factorization of a matrix  Determine when an -factorization does not exist.  Use a factorization to solve a linear system.  Use a factorization to find an inverse matrix.      Let be a square matrix. We seek to write , where is a lower triangular matrix and is an upper triangular matrix. The reason for doing such a factorization is often to solve for multiple right hand sides.  Recall that an upper triangle matrix is a matrix (not-necessarily square) such that all elements below the diagonal are 0. A lower triangular matrix is a matrix such that all elements above the diagonal are 0. More precisely,  The following example shows that there is a lower-triangular matrix and an upper triangular matrix whose product is the original matrix . Later we will show where this arises.    Let     Show that     Using standard matrix multiplication:       This is nice, but the goal of LU factorization is to take any matrix and find matrices and . We first, show how to do this for a 3 by 3 matrix and then extend it.    Do All Matrices have an -factorization?  We first ask the question whether or not all matrices have a factorization and we will see that not all do not. We can try to factor     by writing down two matrices as follows.     and then multiplying the two matrices on the right to get     Notice that the upper right and lower left corners are and . However, the upper left leads to , so either or , which results in a contradiction.    If a matrix can be row-reduced without any row swaps, then there exists matrices and such that .      LU fatorization and elementary matrices  We will see that knowing the elementary matrices related to reducing a matrix will lead naturally to its factorization. Consider the following example:     We will row-reduce using elementary row operations. Since the first step would be , then     Next, we elimnate the in the lower left corner with     And the next step is to perform , so     and since this is an upper triangular matrix, then note that we have the situation that and mutliplying through by would result in . Since is the product of lower triangular elementary matrices, then the inverse is the product of these matrices, itself a lower triangular matrix.  More specifically, since     then     where the property from is used. This results in     which is the matrix . Therefore, we can write      Finding the LU factorization  Consider a matrix which we desire to write as for lower triangular matrix and upper triangular matrix . If can be row reduced to an upper matrix , with the series of elementary matrices then      Also the example given above was a square matrix, this does not have to be the case. Consider the next example.    Find the -decomposition of       We will perform row operations on to get to row-reduced form     And this shows that the product of the elementary matrices would reduce the matrix to row-reduced form. Thus the lower triangular matrix is       Note that since elementary matrices are square, and is the product of the elementary matrices that is also square. For a general matrix, is a matrix and is a matrix.    Generalization of LU Decomposition  As we saw above in not all matrices have an LU decomposition. However, if we generalize this a bit, then we can.  Additionally, an square matrix can be written as , where is a lower-diagonal, is upper-diagonal and is a permutation matrix.    Find the factorization for       If we perform row operations on as follows     And since the first step was a permutation matrix, then     and then can be used to find as     The matrix is given above, then is the matrix in and is given in . The matrix factorization thus is         Solving linear systems using LU Decomposition  The main application of LU decomposition is that of solving linear systems. Consider the matrix equation and assume that (that is the needed permutation matrix is ).     Solve for .    Then solve for .     First, this works, because if , then       Solve the system using -decomposition for       Recall that in the -factorizations of the matrix was found and is     To use this to solve , first we solve via forward substitution.     So the solution to is . Next, we solve by back substitution,     So the solution is       You can see from the example above that once the matrix factored that it is relatively simple to find the solutions to and and there are relatively few computations to perform.  In fact, this is true in general. In that if one actually finds the factorization of and then solves this in the manner show that about 1\/2 of the operations are done then solving directly, say by reducing the matrix to reduced row echelon form.    Inverting a Matrix  The same idea can be use to find inverse of by repeated solving by repeating this for the columns of the identity matrix. The example below shows this without all of the details of finding the factorization:    Find the inverse of the matrix in ,     using the LU-decomposition.    Following the steps above, the LU decomposition is     and we will solve , where is the th column of the 3 by 3 identity matrix.  Solving by solving or     then solve for or     Repeating this for , first solving or     then solve for or     and lastly, solve or     and solving results in     The inverse matrix is then the matrix with as the columns or        "
+  "body": " LU Factorization     Find the -factorization of a matrix    Determine when an -factorization does not exist.    Use a factorization to solve a linear system.    Use a factorization to find an inverse matrix.      Let be a square matrix. We seek to write , where is a lower triangular matrix and is an upper triangular matrix. The reason for doing such a factorization is often to solve for multiple right hand sides.  Recall that an upper triangle matrix is a matrix (not-necessarily square) such that all elements below the diagonal are 0. A lower triangular matrix is a matrix such that all elements above the diagonal are 0. These were introducted in .  The following example shows that there is a lower-triangular matrix and an upper triangular matrix whose product is the original matrix . Later we will show where this arises.    Let     Show that     Using standard matrix multiplication:       This is nice, but the goal of LU factorization is to take any matrix and find matrices and . We first, show how to do this for a 3 by 3 matrix and then extend it.    LU factorization and elementary matrices  We will see that knowing the elementary matrices related to reducing a matrix will lead naturally to its factorization. Consider the following example:     We will row-reduce using elementary row operations. Since the first step would be , then     Next, we eliminate the in the lower left corner with     And the next step is to perform , so     and since this is an upper triangular matrix, then note that we have the situation that and multiplying through by would result in . Since is the product of lower triangular elementary matrices, then the inverse is the product of these matrices, itself a lower triangular matrix.  More specifically, since     then     where the property from is used. This results in     which is the matrix . Therefore, we can write      Finding the LU factorization  Consider a matrix which we desire to write as for lower triangular matrix and upper triangular matrix . If can be row reduced to an upper matrix , with the series of elementary matrices then      Also the example given above was a square matrix, this does not have to be the case. Consider the next example.    Find the -decomposition of       We will perform row operations on to get to row-reduced form     And this shows that the product of the elementary matrices would reduce the matrix to row-reduced form. Thus the lower triangular matrix is       Note that since elementary matrices are square, and is the product of the elementary matrices that is also square. For a general matrix, is a matrix and is a matrix.    Do All Matrices have an -factorization?  We first ask the question whether or not all matrices have a factorization and we will see that not all do not. We can try to factor     by writing the matrix as the product of a lower triangular matrix and an upper triangular matrix:     and then multiplying the two matrices on the right to get     Notice that the upper right and lower left corners are and . However, the upper left leads to , so either or , which results in a contradiction.  However, we can state a theorem that gives a sufficient condition for the existence of an -factorization.    If a matrix can be row-reduced without any row swaps, then there exists matrices and such that .      Generalization of LU Decomposition  As we saw above in not all matrices have an LU decomposition. However, if we generalize this a bit, then we can.  Additionally, an square matrix can be written as , where is a lower-diagonal, is upper-diagonal and is a permutation matrix.    Find the factorization for       If we perform row operations on as follows     And since the first step was a permutation matrix, then     and then can be used to find as     The matrix is given above, then is the matrix in and is given in . The matrix factorization thus is         Solving linear systems using LU Decomposition  The main application of LU decomposition is that of solving linear systems. Consider the matrix equation and assume that (that is the needed permutation matrix is ).     Solve for .    Then solve for .     First, this works, because if , then       Solve the system using -decomposition for       Recall that in the -factorizations of the matrix was found and is     To use this to solve , first we solve via forward substitution.     So the solution to is . Next, we solve by back substitution,     So the solution is       You can see from the example above that once the matrix factored that it is relatively simple to find the solutions to and and there are relatively few computations to perform.  In fact, this is true in general. In that if one actually finds the factorization of and then solves this in the manner show that about 1\/2 of the operations are done then solving directly, say by reducing the matrix to reduced row echelon form.    Inverting a Matrix  The same idea can be use to find inverse of by repeated solving by repeating this for the columns of the identity matrix. The example below shows this without all of the details of finding the factorization:    Find the inverse of the matrix in ,     using the LU-decomposition.    Following the steps above, the LU decomposition is     and we will solve , where is the th column of the 3 by 3 identity matrix.  Solving by solving or     then solve for or     Repeating this for , first solving or     then solve for or     and lastly, solve or     and solving results in     The inverse matrix is then the matrix with as the columns or        "
 },
 {
   "id": "sect-lu-factorization-2",
   "level": "2",
   "url": "sect-lu-factorization.html#sect-lu-factorization-2",
   "type": "Objectives",
-  "number": "5.2",
+  "number": "6.1",
   "title": "",
-  "body": "   Find the -factorization of a matrix  Determine when an -factorization does not exist.  Use a factorization to solve a linear system.  Use a factorization to find an inverse matrix.    "
+  "body": "   Find the -factorization of a matrix    Determine when an -factorization does not exist.    Use a factorization to solve a linear system.    Use a factorization to find an inverse matrix.    "
 },
 {
   "id": "sect-lu-factorization-3-2",
@@ -3299,25 +3695,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-lu-factorization.html#sect-lu-factorization-3-4",
   "type": "Example",
-  "number": "5.2.1",
+  "number": "6.1.1",
   "title": "",
   "body": "  Let     Show that     Using standard matrix multiplication:      "
-},
-{
-  "id": "sect-not-lu-9",
-  "level": "2",
-  "url": "sect-lu-factorization.html#sect-not-lu-9",
-  "type": "Theorem",
-  "number": "5.2.2",
-  "title": "",
-  "body": "  If a matrix can be row-reduced without any row swaps, then there exists matrices and such that .   "
 },
 {
   "id": "sect-lu-fact-example-19",
   "level": "2",
   "url": "sect-lu-factorization.html#sect-lu-fact-example-19",
   "type": "Remark",
-  "number": "5.2.3",
+  "number": "6.1.2",
   "title": "Finding the LU factorization.",
   "body": " Finding the LU factorization  Consider a matrix which we desire to write as for lower triangular matrix and upper triangular matrix . If can be row reduced to an upper matrix , with the series of elementary matrices then     "
 },
@@ -3326,16 +3713,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-lu-factorization.html#sect-lu-fact-example-21",
   "type": "Example",
-  "number": "5.2.4",
+  "number": "6.1.3",
   "title": "",
   "body": "  Find the -decomposition of       We will perform row operations on to get to row-reduced form     And this shows that the product of the elementary matrices would reduce the matrix to row-reduced form. Thus the lower triangular matrix is      "
+},
+{
+  "id": "sect-not-lu-10",
+  "level": "2",
+  "url": "sect-lu-factorization.html#sect-not-lu-10",
+  "type": "Theorem",
+  "number": "6.1.4",
+  "title": "",
+  "body": "  If a matrix can be row-reduced without any row swaps, then there exists matrices and such that .   "
 },
 {
   "id": "sect-lu-factorization-6-4",
   "level": "2",
   "url": "sect-lu-factorization.html#sect-lu-factorization-6-4",
   "type": "Example",
-  "number": "5.2.5",
+  "number": "6.1.5",
   "title": "",
   "body": "  Find the factorization for       If we perform row operations on as follows     And since the first step was a permutation matrix, then     and then can be used to find as     The matrix is given above, then is the matrix in and is given in . The matrix factorization thus is      "
 },
@@ -3344,7 +3740,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-lu-factorization.html#sect-lu-factorization-7-6",
   "type": "Example",
-  "number": "5.2.6",
+  "number": "6.1.6",
   "title": "",
   "body": "  Solve the system using -decomposition for       Recall that in the -factorizations of the matrix was found and is     To use this to solve , first we solve via forward substitution.     So the solution to is . Next, we solve by back substitution,     So the solution is      "
 },
@@ -3353,439 +3749,187 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-lu-factorization.html#sect-lu-factorization-8-3",
   "type": "Example",
-  "number": "5.2.7",
+  "number": "6.1.7",
   "title": "",
   "body": "  Find the inverse of the matrix in ,     using the LU-decomposition.    Following the steps above, the LU decomposition is     and we will solve , where is the th column of the 3 by 3 identity matrix.  Solving by solving or     then solve for or     Repeating this for , first solving or     then solve for or     and lastly, solve or     and solving results in     The inverse matrix is then the matrix with as the columns or      "
 },
 {
-  "id": "ch-matrix-factoring-5",
+  "id": "ch-matrix-factoring-4",
   "level": "1",
-  "url": "ch-matrix-factoring-5.html",
+  "url": "ch-matrix-factoring-4.html",
   "type": "Section",
-  "number": "5.3",
+  "number": "6.2",
   "title": "Diagonalization of Matrices",
   "body": " Diagonalization of Matrices   Consider a matrix . There are many application where the power of the matrix, is helpful. One such cases is at the end of this this chapter. One way to approach this is that the th power is just the matrix product with itself times or     and this can be extended to any positive integer power. However, finding the 50th power may not be practical.  To make this an easier task, let's assume that we can write in the form:     where is a diagonal matrix and is invertible. If this is possible, then     and is easy to find because it is a diagonal matrix.  If it's possible to factor as in ( ), then we call a matrix diagonalizable. Here's a formal definition.    An by matrix is said to be diagonalizable if it can be written     where is a diagonal matrix and is invertible.    Before explaining how starting with a matrix , we can find matrices and , let's look at one that is factored in this way.    Let     Show that .    First, recall that     and     then     which shows in this particular example that .      An by matrix is diagonalizable if and only if it has linearly independent eigenvectors. The matrix is a matrix of the eigenvectors and the matrix is the diagonal matrix of eigenvalues.    Thus we want to show that     since is invertible. Let     where is the eigenvector associated with the eigenvalue .         Is the matrix     diagonalizable? If so, find and .    To check this, we need to find the eigenvalues and eigenvectors. First, find the eigenvalues by solving or or and The associated eigenvectors are     (The steps to find these aren't shown, but follow the steps in section ). Since there are 2 linearly independent eigenvectors, this vector is diagonalizable and         Is the matrix     diagonalizable? If so, find and .    From example , we found that has eigenvalues . It also has eigenvectors , and . Therefore the matrices:     satisfy       Powers of Diagonalizable Matrices  One main reason for writing a matrix in diagonalizable form is that powers of the matrix are easy to compute. Note that if , then     and by induction:     Note that raising the diagonal matrix to a power is a simple process .    Use the fact that is diagonalizable to find       From , can be written with     Then, can be written         Similar Matrices    Two by matrices and are said to be similar if there exists an invertible matrix such that         If and are similar by matrices, then the following are identical for the two matrices:     Rank    Determinant    Trace         If and are similar by matrices, then and have the same characteristic equation and therefore have the same eigenvalues.    Let satisfy the characteristic equation     Since and are similar, then ,     so the characteristic equation is identical, thus the eigenvalues are the same.    Note: The eigenvectors are in general not the same in and .    Show that     are similar matrices with       First, using the formula for the inverse of a matrix,     and         Similar and Diagonalizable Matrices  It appears that there is a connection to similar and diagonalizable matrices through at least their near identical formulas. Notice that and are similar if there exists an invertible matrix such that     and is diagonalizable if there exists a such that     for a diagonal matrix . Similarly is diagonalizable if there exists an invertible such that     for diagonal matrix . We know that the matrices and exist if there are linearly independent eigenvectors, but how do you find ? Solving for in and in ,     Also, since the eigenvalues of and are the same, we can rearrange the eigenvectors of and to the same order thus without loss of generality, and   thus let       Above we showed that the matrices     are similar. Use the above discussion to find such that .    Briefly, we need to diagonalize both and . In example , we found that the eigenvalues of are and with associated eigenvectors and . Using the techniques of section , the eigenvalues of are and with associated eigenvectors and . Letting and be the matrices associated with and and , those associated with , let     and     and using ,     And although this is not the same as , this matrix is the negative of the inverse of that matrix in .     "
 },
 {
-  "id": "ch-matrix-factoring-5-2-10",
+  "id": "ch-matrix-factoring-4-2-10",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-10",
+  "url": "ch-matrix-factoring-4.html#ch-matrix-factoring-4-2-10",
   "type": "Definition",
-  "number": "5.3.1",
+  "number": "6.2.1",
   "title": "",
   "body": "  An by matrix is said to be diagonalizable if it can be written     where is a diagonal matrix and is invertible.   "
 },
 {
-  "id": "ch-matrix-factoring-5-2-12",
+  "id": "ch-matrix-factoring-4-2-12",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-12",
+  "url": "ch-matrix-factoring-4.html#ch-matrix-factoring-4-2-12",
   "type": "Example",
-  "number": "5.3.2",
+  "number": "6.2.2",
   "title": "",
   "body": "  Let     Show that .    First, recall that     and     then     which shows in this particular example that .   "
 },
 {
-  "id": "ch-matrix-factoring-5-2-13",
+  "id": "ch-matrix-factoring-4-2-13",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-13",
+  "url": "ch-matrix-factoring-4.html#ch-matrix-factoring-4-2-13",
   "type": "Theorem",
-  "number": "5.3.3",
+  "number": "6.2.3",
   "title": "",
   "body": "  An by matrix is diagonalizable if and only if it has linearly independent eigenvectors. The matrix is a matrix of the eigenvectors and the matrix is the diagonal matrix of eigenvalues.    Thus we want to show that     since is invertible. Let     where is the eigenvector associated with the eigenvalue .      "
 },
 {
   "id": "ex-diag-2by2",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ex-diag-2by2",
+  "url": "ch-matrix-factoring-4.html#ex-diag-2by2",
   "type": "Example",
-  "number": "5.3.4",
+  "number": "6.2.4",
   "title": "",
   "body": "  Is the matrix     diagonalizable? If so, find and .    To check this, we need to find the eigenvalues and eigenvectors. First, find the eigenvalues by solving or or and The associated eigenvectors are     (The steps to find these aren't shown, but follow the steps in section ). Since there are 2 linearly independent eigenvectors, this vector is diagonalizable and      "
 },
 {
-  "id": "ch-matrix-factoring-5-2-15",
+  "id": "ch-matrix-factoring-4-2-15",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-15",
+  "url": "ch-matrix-factoring-4.html#ch-matrix-factoring-4-2-15",
   "type": "Example",
-  "number": "5.3.5",
+  "number": "6.2.5",
   "title": "",
   "body": "  Is the matrix     diagonalizable? If so, find and .    From example , we found that has eigenvalues . It also has eigenvectors , and . Therefore the matrices:     satisfy    "
 },
 {
-  "id": "ch-matrix-factoring-5-3-7",
+  "id": "ch-matrix-factoring-4-3-7",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-3-7",
+  "url": "ch-matrix-factoring-4.html#ch-matrix-factoring-4-3-7",
   "type": "Example",
-  "number": "5.3.6",
+  "number": "6.2.6",
   "title": "",
   "body": "  Use the fact that is diagonalizable to find       From , can be written with     Then, can be written      "
 },
 {
-  "id": "ch-matrix-factoring-5-4-2",
+  "id": "ch-matrix-factoring-4-4-2",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-4-2",
+  "url": "ch-matrix-factoring-4.html#ch-matrix-factoring-4-4-2",
   "type": "Definition",
-  "number": "5.3.7",
+  "number": "6.2.7",
   "title": "",
   "body": "  Two by matrices and are said to be similar if there exists an invertible matrix such that      "
 },
 {
-  "id": "ch-matrix-factoring-5-4-3",
+  "id": "ch-matrix-factoring-4-4-3",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-4-3",
+  "url": "ch-matrix-factoring-4.html#ch-matrix-factoring-4-4-3",
   "type": "Theorem",
-  "number": "5.3.8",
+  "number": "6.2.8",
   "title": "",
   "body": "  If and are similar by matrices, then the following are identical for the two matrices:     Rank    Determinant    Trace      "
 },
 {
-  "id": "ch-matrix-factoring-5-4-4",
+  "id": "ch-matrix-factoring-4-4-4",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-4-4",
+  "url": "ch-matrix-factoring-4.html#ch-matrix-factoring-4-4-4",
   "type": "Theorem",
-  "number": "5.3.9",
+  "number": "6.2.9",
   "title": "",
   "body": "  If and are similar by matrices, then and have the same characteristic equation and therefore have the same eigenvalues.    Let satisfy the characteristic equation     Since and are similar, then ,     so the characteristic equation is identical, thus the eigenvalues are the same.   "
 },
 {
   "id": "ex-sim-matrices",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ex-sim-matrices",
+  "url": "ch-matrix-factoring-4.html#ex-sim-matrices",
   "type": "Example",
-  "number": "5.3.10",
+  "number": "6.2.10",
   "title": "",
   "body": "  Show that     are similar matrices with       First, using the formula for the inverse of a matrix,     and      "
 },
 {
-  "id": "ch-matrix-factoring-5-5-13",
+  "id": "ch-matrix-factoring-4-5-13",
   "level": "2",
-  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-5-13",
+  "url": "ch-matrix-factoring-4.html#ch-matrix-factoring-4-5-13",
   "type": "Example",
-  "number": "5.3.11",
+  "number": "6.2.11",
   "title": "",
   "body": "  Above we showed that the matrices     are similar. Use the above discussion to find such that .    Briefly, we need to diagonalize both and . In example , we found that the eigenvalues of are and with associated eigenvectors and . Using the techniques of section , the eigenvalues of are and with associated eigenvectors and . Letting and be the matrices associated with and and , those associated with , let     and     and using ,     And although this is not the same as , this matrix is the negative of the inverse of that matrix in .   "
 },
 {
-  "id": "ch-matrix-factoring-6",
+  "id": "ch-matrix-factoring-5",
   "level": "1",
-  "url": "ch-matrix-factoring-6.html",
+  "url": "ch-matrix-factoring-5.html",
   "type": "Section",
-  "number": "5.4",
+  "number": "6.3",
   "title": "Singular Value Decomposition",
-  "body": " Singular Value Decomposition   The singular value decomposition, also known as the SVD, is yet another way to factor a matrix. In short, a matrix can be written , where and are orthogonal matrices and is a diagonal matrix. These can be thought of as a rotation, followed by a scaling, followed by another rotation. It has numerous applications as we will see at the end of this section.  We will show that it is possible to factor any by matrix in this form and also determine how to find the matrices , and . Consider a real by matrix . We will consider , an by matrix, , an by matrix and a by matrix.   Singular Value Decomposition   Let be a general by matrix. The matrix can be written:     where and are square orthogonal matrices of size and respectively and is an by diagonal matrix. The columns of are the eigenvectors of and the columns of are the eigenvectors of .    The general proof is not presented here. Instead, assume that the matrix can be factored as in the Singular Value Decomposition, then     The astute reader will notice that shows that the matrices and are similar and thus have the same eigenvalues. Recall also that will be the eigenvectors of . These properties are used to actually find and . Also, if you can find either or , then finding the other is easier by solving ( ). If we know , then     and recall that since is an orthogonal matrix that . This is now left-multiplied by in case the original matrix is not square, then is not square and the inverse is not defined.     where the third property of was used. Similarly, if one solves for :     where is used on the 3rd step since is an orthogonal matrix.  Two examples of finding the SVD are presented below. The first is for a square matrix and the second is for a non-square matrix. We first start with the SVD of a 2 by 2 matrix with the following example.    Find and of the SVD for the matrix       As explained above, the columns of are the eigenvectors of and     The eigenvalues are found by     with solutions . If , then the solution to     is . And if , then the solution to     is . Thus the columns of are the two eigenvectors scaled to be unit vectors,     The singular values in the matrix are the square roots of the eigenvalues of and the matrix is     To find the matrix , we will use ( ). Since     and     then using ,     It can be checked that indeed .    The next example finds the SVD of a 2 by 3 matrix, showing how to handle a non-square matrix.    Find the SVD of the matrix       In this example, we will first find the columns of by the eigenvectors of . Generally, if the original matrix is not square, one should select the larger matrix between and .     and the eigenvalues of is found by     which has the solutions . Thus the singular values result in     and recall that this matrix is always the same size as the original matrix, . Also, you will get zero eigenvalues whenever the matrix is not square. The corresponding eigenvectors are     And the matrix with the columns above scaled to make them unit vectors is     To find , we will use ( ) and note that     and now using ( )     and it can be checked that .    It is noted that the above two examples result in fairly nice matrices and . This very rarely happens. In addition, as the size of the matrices grow, the eigenvalues generally cannot be found exactly. Therefore for matrices of sizes larger than 3 by 3, numerical techniques are used to find the factors.    The geometry of the SVD  This section will explain in geometric terms what the SVD generates for an example that can be plotted in 2D. First, let's consider 100 points that are scattered around the origin and perhaps they look like the following:   Some Random Points      the matrix is a 2 by 100 matrix with each column the and value of each point, we can perform an SVD of this. The results for and the 2 diagonal elements of (denoted and ) are     where these have been done using software (not by hand). If we plot the two vectors in the columns of with relative sizes of those found in , you see in the plot above that the larger vector points in the direction of stretch of the points and the second vector is orthogonal. The relative lengths are the relative stretches of the points. The geometry of the columns in the matrix is more difficult to understand in this situation because each of the vectors are length 100. If the original matrix had 3 rows, then each column is a point in 3 dimensions. The 3 columns in would again show the stretching of the points in 3 orthogonal directions with the stretching factor in the matrix.    Finding a best-fit line and plane using SVD  You might notice from above that perhaps we can use the SVD to find a line to a set of points and this is true. We will use a simpler example to show how this work and how it is similar to other fitting techniques. We can also use a similar technique to find the best-fit plane through points in 3 dimensions. We first start with a simple example of points in the plan. Consider the points (1,2), (2,2), (3,5), (6,7). We wish to fit a line that best fits the points.   Best fit points      First, we will find the center of these points by just finding the average of the and values.     We now generate a new data set where each and value is adjusted by the means above. The new data set is . We then use these values to find     As above, the singular values in and the matrix will be most important. As above, the matrix have the eigenvectors of with the eigenvalues as the diagonal elements of .     Again, using software, the diagonal elements of , labelled and and the matrix is     The prominent eigenvector is the one corresponding to the larger singular value (the first one), so the eigenvalue to use is the first column of . The slope of the line will be the -component over the -component (rise over run) or     Lastly, to find the line, we will use the point-slope form with the average values (or center point) of :     and the following is a plot of the data and the line:   Best fit line using SVD      And as a comparison, if we use least-squares to find the line, the result is     The reason for the difference is because each method minimizes something different. The least-squares line is the one that minimizes the vertical distance between the data and the line. The SVD best-fit line produces a line that minimizes the square of the orthogonal distance to all the points.   "
+  "body": " Singular Value Decomposition   The singular value decomposition, also known as the SVD, is yet another way to factor a matrix. In short, a matrix can be written , where and are orthogonal matrices and is a diagonal matrix. These can be thought of as a rotation, followed by a scaling, followed by another rotation. It has numerous applications as we will see at the end of this section.  We will show that it is possible to factor any by matrix in this form and also determine how to find the matrices , and . Consider a real by matrix . We will consider , an by matrix, , an by matrix and a by matrix.   Singular Value Decomposition   Let be a general by matrix. The matrix can be written:     where and are square orthogonal matrices of size and respectively and is an by diagonal matrix. The columns of are the eigenvectors of and the columns of are the eigenvectors of .    The general proof is not presented here. Instead, assume that the matrix can be factored as in the Singular Value Decomposition, then     The astute reader will notice that shows that the matrices and are similar and thus have the same eigenvalues. Recall also that will be the eigenvectors of . These properties are used to actually find and . Also, if you can find either or , then finding the other is easier by solving . If we know , then     and recall that since is an orthogonal matrix that . This is now left-multiplied by in case the original matrix is not square, then is not square and the inverse is not defined.     where the fourth property of was used. Similarly, if one solves for :     where is used on the 3rd step since is an orthogonal matrix.  Two examples of finding the SVD are presented below. The first is for a square matrix and the second is for a non-square matrix. We first start with the SVD of a 2 by 2 matrix with the following example.    Find and of the SVD for the matrix       As explained above, the columns of are the eigenvectors of and     The eigenvalues are found by     with solutions . If , then the solution to     is . And if , then the solution to     is . Thus the columns of are the two eigenvectors scaled to be unit vectors,     The singular values in the matrix are the square roots of the eigenvalues of and the matrix is     To find the matrix , we will use ( ). Since     and     then using ,     It can be checked that indeed .    The next example finds the SVD of a 2 by 3 matrix, showing how to handle a non-square matrix.    Find the SVD of the matrix       In this example, we will first find the columns of by the eigenvectors of . Generally, if the original matrix is not square, one should select the larger matrix between and .     and the eigenvalues of is found by     which has the solutions . Thus the singular values result in     and recall that this matrix is always the same size as the original matrix, . Also, you will get zero eigenvalues whenever the matrix is not square. The corresponding eigenvectors are     And the matrix with the columns above scaled to make them unit vectors is     To find , we will use ( ) and note that     and now using ( )     and it can be checked that .    It is noted that the above two examples result in fairly nice matrices and . This very rarely happens. In addition, as the size of the matrices grow, the eigenvalues generally cannot be found exactly. Therefore for matrices of sizes larger than 3 by 3, numerical techniques are used to find the factors.    The geometry of the SVD  This section will explain in geometric terms what the SVD generates for an example that can be plotted in 2D. First, let's consider 100 points that are scattered around the origin and perhaps they look like the following:   Some Random Points      the matrix is a 2 by 100 matrix with each column the and value of each point, we can perform an SVD of this. The results for and the 2 diagonal elements of (denoted and ) are     where these have been done using software (not by hand). If we plot the two vectors in the columns of with relative sizes of those found in , you see in the plot above that the larger vector points in the direction of stretch of the points and the second vector is orthogonal. The relative lengths are the relative stretches of the points. The geometry of the columns in the matrix is more difficult to understand in this situation because each of the vectors are length 100. If the original matrix had 3 rows, then each column is a point in 3 dimensions. The 3 columns in would again show the stretching of the points in 3 orthogonal directions with the stretching factor in the matrix.    Finding a best-fit line and plane using SVD  You might notice from above that perhaps we can use the SVD to find a line to a set of points and this is true. We will use a simpler example to show how this work and how it is similar to other fitting techniques. We can also use a similar technique to find the best-fit plane through points in 3 dimensions. We first start with a simple example of points in the plan. Consider the points (1,2), (2,2), (3,5), (6,7). We wish to fit a line that best fits the points.   Best fit points      First, we will find the center of these points by just finding the average of the and values.     We now generate a new data set where each and value is adjusted by the means above. The new data set is . We then use these values to find     As above, the singular values in and the matrix will be most important. As above, the matrix have the eigenvectors of with the eigenvalues as the diagonal elements of .     Again, using software, the diagonal elements of , labelled and and the matrix is     The prominent eigenvector is the one corresponding to the larger singular value (the first one), so the eigenvalue to use is the first column of . The slope of the line will be the -component over the -component (rise over run) or     Lastly, to find the line, we will use the point-slope form with the average values (or center point) of :     and the following is a plot of the data and the line:   Best fit line using SVD      And as a comparison, if we use least-squares to find the line, the result is     The reason for the difference is because each method minimizes something different. The least-squares line is the one that minimizes the vertical distance between the data and the line. The SVD best-fit line produces a line that minimizes the square of the orthogonal distance to all the points.   "
 },
 {
   "id": "thm-svd",
   "level": "2",
-  "url": "ch-matrix-factoring-6.html#thm-svd",
+  "url": "ch-matrix-factoring-5.html#thm-svd",
   "type": "Theorem",
-  "number": "5.4.1",
+  "number": "6.3.1",
   "title": "Singular Value Decomposition.",
   "body": " Singular Value Decomposition   Let be a general by matrix. The matrix can be written:     where and are square orthogonal matrices of size and respectively and is an by diagonal matrix. The columns of are the eigenvectors of and the columns of are the eigenvectors of .   "
 },
 {
   "id": "ex-svd-2by2",
   "level": "2",
-  "url": "ch-matrix-factoring-6.html#ex-svd-2by2",
+  "url": "ch-matrix-factoring-5.html#ex-svd-2by2",
   "type": "Example",
-  "number": "5.4.2",
+  "number": "6.3.2",
   "title": "",
   "body": "  Find and of the SVD for the matrix       As explained above, the columns of are the eigenvectors of and     The eigenvalues are found by     with solutions . If , then the solution to     is . And if , then the solution to     is . Thus the columns of are the two eigenvectors scaled to be unit vectors,     The singular values in the matrix are the square roots of the eigenvalues of and the matrix is     To find the matrix , we will use ( ). Since     and     then using ,     It can be checked that indeed .   "
 },
 {
-  "id": "ch-matrix-factoring-6-2-16",
+  "id": "ch-matrix-factoring-5-2-16",
   "level": "2",
-  "url": "ch-matrix-factoring-6.html#ch-matrix-factoring-6-2-16",
+  "url": "ch-matrix-factoring-5.html#ch-matrix-factoring-5-2-16",
   "type": "Example",
-  "number": "5.4.3",
+  "number": "6.3.3",
   "title": "",
   "body": "  Find the SVD of the matrix       In this example, we will first find the columns of by the eigenvectors of . Generally, if the original matrix is not square, one should select the larger matrix between and .     and the eigenvalues of is found by     which has the solutions . Thus the singular values result in     and recall that this matrix is always the same size as the original matrix, . Also, you will get zero eigenvalues whenever the matrix is not square. The corresponding eigenvectors are     And the matrix with the columns above scaled to make them unit vectors is     To find , we will use ( ) and note that     and now using ( )     and it can be checked that .   "
 },
 {
   "id": "fig-random-points",
   "level": "2",
-  "url": "ch-matrix-factoring-6.html#fig-random-points",
+  "url": "ch-matrix-factoring-5.html#fig-random-points",
   "type": "Figure",
-  "number": "5.4.4",
+  "number": "6.3.4",
   "title": "",
   "body": " Some Random Points     "
 },
 {
   "id": "fig-best-fit-points-svd",
   "level": "2",
-  "url": "ch-matrix-factoring-6.html#fig-best-fit-points-svd",
+  "url": "ch-matrix-factoring-5.html#fig-best-fit-points-svd",
   "type": "Figure",
-  "number": "5.4.5",
+  "number": "6.3.5",
   "title": "",
   "body": " Best fit points     "
 },
 {
   "id": "fig-points-and-line",
   "level": "2",
-  "url": "ch-matrix-factoring-6.html#fig-points-and-line",
+  "url": "ch-matrix-factoring-5.html#fig-points-and-line",
   "type": "Figure",
-  "number": "5.4.6",
+  "number": "6.3.6",
   "title": "",
   "body": " Best fit line using SVD     "
-},
-{
-  "id": "sect-funct-props",
-  "level": "1",
-  "url": "sect-funct-props.html",
-  "type": "Section",
-  "number": "6.1",
-  "title": "Properties of Functions",
-  "body": " Properties of Functions     The definition of a periodic function.    Defintions of one-sided limits and deriviatives as well as piecewise continuous functions.    Definition of even and odd functions and properties of even and odd functions.    The technique of tabular integration.    The defintiion of inner products of functions.      In , we reviewed inner product spaces and saw orthonormal sets of vectors (both in as well as polynomials). In this section, we will examine another set of functions, sines and cosines that are orthogonal. First, let's see a short review of periodic functions.    Periodic Functions    A function is periodic with period if     for all . The smallest value of for which this true is called the period of the function.      Show that is periodic with period .       where the sum of angles sine formula is used.      What is the period of the function ?    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .    The periodic functions that we will mostly be using in this text are the sine and cosine function. We review here a few convenient identities with these functions and the complex exponential. From Euler's formula,     we can then write sine and cosine in terms of      Euler's formula also leads to the following:   The Most Interesting Equation in Mathematics      and this is often called the most interesting equation in mathematics because it arguably contains the 5 most important mathematical constants: 0, 1, , , .    If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds. If ,     because from , but this is raised to an even power so       One-Side Limits and Derivatives; Piecewise Continuous Functions  As we will see, the notion of a piecewise continuous function is a function that is continuous on subintervals. However, there are some technical details that we need before a formal definition.    A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.    If one is talking about either a left- or right-handed limit, these are typically called one-sided limits. Also, an example of these will be shown below.    A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.    If one is talking about either a left- or right-handed derivative, these are typically called one-sided derivatives. An example of these will be shown below.    A function is piecewise continuous on an interval if is continuous on all except for a finite number of points . In addition for all , and exist.      The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise continuous function.      In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.      Find both the left- and right-handed derivatives of the function defined in at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is       Show that is not a piecewise continuous function on .    The function on is not continuous at . Also     and since the one-sided limits are not finite, then is not piecewise continuous on .      Odd and Even Functions    A function is an odd function if for all in its domain.    Note: recall that an odd function is symmetric about the origin, meaning that if the graph of is rotated a half circle about the origin, that one gets the graph back.    A function is an even function if for all in its domain.    Recall that an even function is symmetric about the -axis. This means that if the graph is reflected over the -axis that one gets the same graph upon the reflection.    Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:     The following functions are even: .       The following theorem is helpful for finding whether or not products of functions are odd or even.      The product of two odd functions is even.    The product of two even functions is even.    The product of an even and an odd function is odd.        The derivative of an even function is odd. The derivative of an odd function is even.    Let be an even function, then for all .     by the chain rule. And the proof that the derivative of an odd function is similar.    And as a corollary, antiderivatives work in the same way.       Let be an odd function. Any antiderivative of is even.    Let be an even function and be its antiderivative. The antiderivative such that is odd.         Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.      Tabular Integration  A very handy formula for many integrations in this section is called tabular integration , which is just a recursive version of integration by parts that works well for integrals of a certain type. Before we show this, recall that the integration by parts formula is     and integration by parts is helpful for rewriting one integral (on the left) in terms of a second integral (on the right) and generally it is used to create a simpler integral. The next example shows a standard integration done with integration by parts.    Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get       This example shows that in order to integrate with the by parts formula, one must replace one integral with another. In more difficult examples, this may need to be done multiple times until the resulting integral is able to be done without by parts. This is the case when tabular integration is useful.   The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.   This is best seen with a couple of examples.    Find     using tabular integration.    First, we will build the table:   Tabular integration of       Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.    And the following is an example that is similar as we will see below:    Find     using tabular integration.    First, we will build the table:   Tabular integration of .      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.         Inner Products of Functions  As we saw in , the inner product of two functions can be defined using the integral. In this section, we consider functions that are piecewise continuous on and     In the standard way, the norm of is defined as       An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .    In the next couple of examples, we examine a couple of the most important orthogonal and orthonormal sets of functions.    Show that for form an orthogonal set on .    In this case, we will expand on and use the handy alternative definition of the sine function. Find the inner product if ,     where is used on the last step above.      Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore also equals 0 for . For simpler notation let   First, we will show that for all .     since each integral is zero from . Next, we will show that for all such that .     because again each integral is zero from Lemma . Also,     Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from Lemma .     and the integrals of the first and third terms are zero from Lemma .     This shows that the set of functions given above is an orthonormal set of functions.     "
-},
-{
-  "id": "sect-funct-props-2",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-2",
-  "type": "Objectives",
-  "number": "6.1",
-  "title": "",
-  "body": "   The definition of a periodic function.    Defintions of one-sided limits and deriviatives as well as piecewise continuous functions.    Definition of even and odd functions and properties of even and odd functions.    The technique of tabular integration.    The defintiion of inner products of functions.    "
-},
-{
-  "id": "sect-funct-props-4-2",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-4-2",
-  "type": "Definition",
-  "number": "6.1.1",
-  "title": "",
-  "body": "  A function is periodic with period if     for all . The smallest value of for which this true is called the period of the function.   "
-},
-{
-  "id": "sect-funct-props-4-3",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-4-3",
-  "type": "Example",
-  "number": "6.1.2",
-  "title": "",
-  "body": "  Show that is periodic with period .       where the sum of angles sine formula is used.   "
-},
-{
-  "id": "sect-funct-props-4-4",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-4-4",
-  "type": "Example",
-  "number": "6.1.3",
-  "title": "",
-  "body": "  What is the period of the function ?    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .   "
-},
-{
-  "id": "sect-funct-props-4-10",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-4-10",
-  "type": "Remark",
-  "number": "6.1.4",
-  "title": "The Most Interesting Equation in Mathematics.",
-  "body": " The Most Interesting Equation in Mathematics     "
-},
-{
-  "id": "lem-int-complex-exp",
-  "level": "2",
-  "url": "sect-funct-props.html#lem-int-complex-exp",
-  "type": "Lemma",
-  "number": "6.1.5",
-  "title": "",
-  "body": "  If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds. If ,     because from , but this is raised to an even power so    "
-},
-{
-  "id": "sect-funct-props-5-3",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-5-3",
-  "type": "Definition",
-  "number": "6.1.6",
-  "title": "",
-  "body": "  A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.   "
-},
-{
-  "id": "sect-funct-props-5-5",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-5-5",
-  "type": "Definition",
-  "number": "6.1.7",
-  "title": "",
-  "body": "  A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.   "
-},
-{
-  "id": "sect-funct-props-5-7",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-5-7",
-  "type": "Definition",
-  "number": "6.1.8",
-  "title": "",
-  "body": "  A function is piecewise continuous on an interval if is continuous on all except for a finite number of points . In addition for all , and exist.   "
-},
-{
-  "id": "ex-piecewise-cont-function",
-  "level": "2",
-  "url": "sect-funct-props.html#ex-piecewise-cont-function",
-  "type": "Example",
-  "number": "6.1.9",
-  "title": "",
-  "body": "  The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise continuous function.      In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.   "
-},
-{
-  "id": "sect-funct-props-5-9",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-5-9",
-  "type": "Example",
-  "number": "6.1.11",
-  "title": "",
-  "body": "  Find both the left- and right-handed derivatives of the function defined in at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is    "
-},
-{
-  "id": "sect-funct-props-5-10",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-5-10",
-  "type": "Example",
-  "number": "6.1.12",
-  "title": "",
-  "body": "  Show that is not a piecewise continuous function on .    The function on is not continuous at . Also     and since the one-sided limits are not finite, then is not piecewise continuous on .   "
-},
-{
-  "id": "sect-even-odd-functions-2",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-even-odd-functions-2",
-  "type": "Definition",
-  "number": "6.1.13",
-  "title": "",
-  "body": "  A function is an odd function if for all in its domain.   "
-},
-{
-  "id": "sect-even-odd-functions-4",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-even-odd-functions-4",
-  "type": "Definition",
-  "number": "6.1.14",
-  "title": "",
-  "body": "  A function is an even function if for all in its domain.   "
-},
-{
-  "id": "sect-even-odd-functions-6",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-even-odd-functions-6",
-  "type": "Example",
-  "number": "6.1.15",
-  "title": "",
-  "body": "  Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:     The following functions are even: .      "
-},
-{
-  "id": "sect-even-odd-functions-8",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-even-odd-functions-8",
-  "type": "Theorem",
-  "number": "6.1.16",
-  "title": "",
-  "body": "    The product of two odd functions is even.    The product of two even functions is even.    The product of an even and an odd function is odd.     "
-},
-{
-  "id": "sect-even-odd-functions-9",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-even-odd-functions-9",
-  "type": "Lemma",
-  "number": "6.1.17",
-  "title": "",
-  "body": "  The derivative of an even function is odd. The derivative of an odd function is even.    Let be an even function, then for all .     by the chain rule. And the proof that the derivative of an odd function is similar.   "
-},
-{
-  "id": "sect-even-odd-functions-11",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-even-odd-functions-11",
-  "type": "Corollary",
-  "number": "6.1.18",
-  "title": "",
-  "body": "     Let be an odd function. Any antiderivative of is even.    Let be an even function and be its antiderivative. The antiderivative such that is odd.      "
-},
-{
-  "id": "thm-even-odd-integrals",
-  "level": "2",
-  "url": "sect-funct-props.html#thm-even-odd-integrals",
-  "type": "Theorem",
-  "number": "6.1.19",
-  "title": "",
-  "body": "  Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.   "
-},
-{
-  "id": "sect-funct-props-7-2",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-7-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "tabular integration "
-},
-{
-  "id": "sect-funct-props-7-5",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-7-5",
-  "type": "Example",
-  "number": "6.1.20",
-  "title": "",
-  "body": "  Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get      "
-},
-{
-  "id": "sect-funct-props-7-7",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-7-7",
-  "type": "Remark",
-  "number": "6.1.21",
-  "title": "",
-  "body": " The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.  "
-},
-{
-  "id": "sect-funct-props-7-9",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-7-9",
-  "type": "Example",
-  "number": "6.1.22",
-  "title": "",
-  "body": "  Find     using tabular integration.    First, we will build the table:   Tabular integration of       Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.   "
-},
-{
-  "id": "sect-funct-props-7-11",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-7-11",
-  "type": "Example",
-  "number": "6.1.24",
-  "title": "",
-  "body": "  Find     using tabular integration.    First, we will build the table:   Tabular integration of .      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.      "
-},
-{
-  "id": "sect-funct-props-8-6",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-8-6",
-  "type": "Definition",
-  "number": "6.1.26",
-  "title": "",
-  "body": "  An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .   "
-},
-{
-  "id": "sect-funct-props-8-8",
-  "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-8-8",
-  "type": "Example",
-  "number": "6.1.27",
-  "title": "",
-  "body": "  Show that for form an orthogonal set on .    In this case, we will expand on and use the handy alternative definition of the sine function. Find the inner product if ,     where is used on the last step above.   "
-},
-{
-  "id": "ex-trig-ortho-set",
-  "level": "2",
-  "url": "sect-funct-props.html#ex-trig-ortho-set",
-  "type": "Example",
-  "number": "6.1.28",
-  "title": "",
-  "body": "  Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore also equals 0 for . For simpler notation let   First, we will show that for all .     since each integral is zero from . Next, we will show that for all such that .     because again each integral is zero from Lemma . Also,     Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from Lemma .     and the integrals of the first and third terms are zero from Lemma .     This shows that the set of functions given above is an orthonormal set of functions.   "
 },
 {
   "id": "sect-fourier-series",
   "level": "1",
   "url": "sect-fourier-series.html",
   "type": "Section",
-  "number": "6.2",
+  "number": "7.1",
   "title": "Fourier Series",
   "body": " Fourier Series     A Fourier Series is a infinite series of sines and cosines.    A periodic function of period can be written as a Fourier Series.    A Fourier Series converges everywhere to either the function or the midpoint of the left and right hand limits.    There is a form of the Fourier Series which is periodic of period for any positive value and any periodic function can be written in this form of the Fourier Series.      An infinite series of the form:     is called the trigonometric series .  The trigonometric series is periodic with period at most . Consider the terms and , which each have period . All other functions have period , which are also periodic with period , but their fundamental period is .    Let be periodic of period and be piecewise continuous in . Suppose can be written as a trigonometric series. Then it is called a Fourier Series for . The constants and are called the Fourier Coefficients of and are given by the Euler formulas:       In this section, we're going to write periodic functions as Fourier Series. This is possible due to the following theorem.    Let be a continuous function that is periodic with period . Then can be written as a trigonometric series or       Take the inner product of with each element in the set from . We will start with the constant function and use .     and solving for ,     Next, take the inner product of ( ) with .     All of the inner products on the right side are zero except when . Canceling a , the result is     or solving for ,     Lastly, take the inner product of with .     All of the inner products on the right side are zero except when . Canceling a , the result is     and solving for ,       Notice again that the statement in requires to be periodic with period . This is a fairly strict requirement that we will relax over the rest of this section, however, one way to get a periodic function is to start with a function that is defined on and extend it periodically such that . We do this in the following example.    Find the Fourier coefficients and the Fourier series for the periodic extension square wave:     and define to be its periodic extension of period . That is if is outside of , then apply or until . This function looks like:   Graph of the periodic square wave.        To begin with, we find all of the coefficients:           So the Fourier Series can be written:       The above series also shows an interesting result that you should have seen in the series chapter of Calculus. If we let , then and from the definition of the square wave and substituting this into the Fourier series, we get:     or multiplying both sides by      which shows that some infinite sums have closed form values. This particular series is usually found using the Taylor Series of and evaluating it a 1.    Find the Fourier series of the period sawtooth wave:   Plot of the sawtooth wave        Let be the sawtooth wave defined in the picture above. We can write it as a piecewise function as     and extending it periodically.  Then using the formulas in -- and we will take advantage of the fact that is an even function.        where is used and since is even and the product of even functions is even. Also this is a good example to use tabular integration.   tabular integration of .      and then using the table to find     Lastly,     but this is a product of a even and an odd function, which is odd and integrating an odd function over a symmetric interval is 0. Therefore the Fourier series is         Convergence of a Sum of a Fourier Series  Since Fourier series are infinite series, it is important to consider if it converges. As we will see, Fourier series will generally converge, to what value will depend on . Consider the Fourier series in . If we let     we would need to test the convergence of every value of . In this case, this can be done by using the direct comparison test to the series to which converges, so the series converges for all .  This doesn't work for all series and the other difficulty is that we don't know what it converges to. Fortunately, the following theorem gives a very nice result.    Let be periodic with period and piecewise continuous in the interval . Let be the Fourier series of and     In other words, the Fourier series converges to the average of the left- and right-hand limits of .      Show that the Fourier series of the square wave function above converges to 0 when .    Note that average of the left- and right-handed limits of the square wave function at is , so using the theorem above, the function converges to 0 when .  Alternatively, we can evaluate the Fourier series of the square wave function directly. Evaluating the Fourier series at is     which is consistent with that above.      Fourier Series of Functions of Period  We saw that the Fourier series above applied only to functions that were periodic with period . This section covers functions with arbitrary periodicity, which we will call period . If we let , and substitute this into , then     and then it can be shown in a similar manner to that above that -- can be written as     The series is called the Fourier series of period with the corresponding Fourier coefficients.    Find the Fourier Series of the periodic extension (of period 2) of for as shown in the graph below:   A plot of a periodic sawtooth wave on .        To find the Fourier series, we first need to find the Fourier coefficients, by evaluating the integrals in ( )--( ),     The Fourier Series of the function is        "
 },
@@ -3794,7 +3938,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-fourier-series.html#sect-fourier-series-2",
   "type": "Objectives",
-  "number": "6.2",
+  "number": "7.1",
   "title": "",
   "body": "   A Fourier Series is a infinite series of sines and cosines.    A periodic function of period can be written as a Fourier Series.    A Fourier Series converges everywhere to either the function or the midpoint of the left and right hand limits.    There is a form of the Fourier Series which is periodic of period for any positive value and any periodic function can be written in this form of the Fourier Series.    "
 },
@@ -3812,7 +3956,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-fourier-series.html#sect-fourier-series-3-5",
   "type": "Definition",
-  "number": "6.2.1",
+  "number": "7.1.1",
   "title": "",
   "body": "  Let be periodic of period and be piecewise continuous in . Suppose can be written as a trigonometric series. Then it is called a Fourier Series for . The constants and are called the Fourier Coefficients of and are given by the Euler formulas:      "
 },
@@ -3821,7 +3965,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-fourier-series.html#thm-fourier-series",
   "type": "Theorem",
-  "number": "6.2.2",
+  "number": "7.1.2",
   "title": "",
   "body": "  Let be a continuous function that is periodic with period . Then can be written as a trigonometric series or       Take the inner product of with each element in the set from . We will start with the constant function and use .     and solving for ,     Next, take the inner product of ( ) with .     All of the inner products on the right side are zero except when . Canceling a , the result is     or solving for ,     Lastly, take the inner product of with .     All of the inner products on the right side are zero except when . Canceling a , the result is     and solving for ,      "
 },
@@ -3830,7 +3974,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-fourier-series.html#ex-FS-square-wave",
   "type": "Example",
-  "number": "6.2.3",
+  "number": "7.1.3",
   "title": "",
   "body": "  Find the Fourier coefficients and the Fourier series for the periodic extension square wave:     and define to be its periodic extension of period . That is if is outside of , then apply or until . This function looks like:   Graph of the periodic square wave.        To begin with, we find all of the coefficients:           So the Fourier Series can be written:      "
 },
@@ -3839,7 +3983,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-fourier-series.html#ex-FS-sawtooth",
   "type": "Example",
-  "number": "6.2.5",
+  "number": "7.1.5",
   "title": "",
   "body": "  Find the Fourier series of the period sawtooth wave:   Plot of the sawtooth wave        Let be the sawtooth wave defined in the picture above. We can write it as a piecewise function as     and extending it periodically.  Then using the formulas in -- and we will take advantage of the fact that is an even function.        where is used and since is even and the product of even functions is even. Also this is a good example to use tabular integration.   tabular integration of .      and then using the table to find     Lastly,     but this is a product of a even and an odd function, which is odd and integrating an odd function over a symmetric interval is 0. Therefore the Fourier series is      "
 },
@@ -3848,7 +3992,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-fourier-series.html#sect-fourier-series-4-6",
   "type": "Theorem",
-  "number": "6.2.8",
+  "number": "7.1.8",
   "title": "",
   "body": "  Let be periodic with period and piecewise continuous in the interval . Let be the Fourier series of and     In other words, the Fourier series converges to the average of the left- and right-hand limits of .   "
 },
@@ -3857,7 +4001,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-fourier-series.html#sect-fourier-series-4-7",
   "type": "Example",
-  "number": "6.2.9",
+  "number": "7.1.9",
   "title": "",
   "body": "  Show that the Fourier series of the square wave function above converges to 0 when .    Note that average of the left- and right-handed limits of the square wave function at is , so using the theorem above, the function converges to 0 when .  Alternatively, we can evaluate the Fourier series of the square wave function directly. Evaluating the Fourier series at is     which is consistent with that above.   "
 },
@@ -3866,7 +4010,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-fourier-series.html#ex-FS-x",
   "type": "Example",
-  "number": "6.2.10",
+  "number": "7.1.10",
   "title": "",
   "body": "  Find the Fourier Series of the periodic extension (of period 2) of for as shown in the graph below:   A plot of a periodic sawtooth wave on .        To find the Fourier series, we first need to find the Fourier coefficients, by evaluating the integrals in ( )--( ),     The Fourier Series of the function is      "
 },
@@ -3875,7 +4019,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-even-odd.html",
   "type": "Section",
-  "number": "6.3",
+  "number": "7.2",
   "title": "Even and Odd Functions; Half-Range Expansions",
   "body": " Even and Odd Functions; Half-Range Expansions     Any function on a interval can be extended as either an odd or even periodic function of period .    The Fourier Series of an odd periodic extension (or any odd function) can be written as a Fourier Sine Series, consisting of only sine terms.    The Fourier Series of an even periodic extension (or any even function) can be written as a Fourier Cosine Series, consisting of only cosine terms.      We saw above that the periodic extension of on in resulted in a odd function and that only the sine terms of the Fourier Series was left. That is, all of the Fourier coefficients for the cosine terms were 0. In this section, we use this idea to produce only even and odd extensions which results in only sine expansions or cosine expansions.  To begin, let's clearly define an even- and odd-periodic extension.    Let be defined on for some .     The even periodic extension of is defined as       The odd periodic extension of is defined as            Graph the even- and odd-periodic extension of     defined on .    For the even extension, we first graph the function on , then make the even extension of it on . The original function is shown below as a solid line and the even extension is dashed.   The even extension of       and then we produce the period extension of period 2.   The even extension of       To find the odd extension, flip the original function on around the origin to get:   Odd extension of       Then extend the function on in a periodic way.   Periodic version of the odd extension of .          The Fourier Sine and Cosine Series  We now address the Fourier series of the even- and odd-periodic extensions of on . As in , there are no cosine terms and the Fourier series of the odd periodic extension of can be written     and this is often called the Fourier sine series .  Similarly, the Fourier series of the even periodic extension of is     and is called the Fourier cosine series .    Find the Fourier Cosine Series of for .    For this, we need to find the coefficients in ( ) and ( ),     and use ( ) to find         Find the odd periodic extension of on . A graph of this is:   Graph of odd extension of on         For this, we need to find from ( ),     and then use this in ( )        "
 },
@@ -3884,7 +4028,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-even-odd.html#sect-even-odd-2",
   "type": "Objectives",
-  "number": "6.3",
+  "number": "7.2",
   "title": "",
   "body": "   Any function on a interval can be extended as either an odd or even periodic function of period .    The Fourier Series of an odd periodic extension (or any odd function) can be written as a Fourier Sine Series, consisting of only sine terms.    The Fourier Series of an even periodic extension (or any even function) can be written as a Fourier Cosine Series, consisting of only cosine terms.    "
 },
@@ -3893,7 +4037,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-even-odd.html#sect-even-odd-3-3",
   "type": "Definition",
-  "number": "6.3.1",
+  "number": "7.2.1",
   "title": "",
   "body": "  Let be defined on for some .     The even periodic extension of is defined as       The odd periodic extension of is defined as         "
 },
@@ -3902,7 +4046,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-even-odd.html#sect-even-odd-3-4",
   "type": "Example",
-  "number": "6.3.2",
+  "number": "7.2.2",
   "title": "",
   "body": "  Graph the even- and odd-periodic extension of     defined on .    For the even extension, we first graph the function on , then make the even extension of it on . The original function is shown below as a solid line and the even extension is dashed.   The even extension of       and then we produce the period extension of period 2.   The even extension of       To find the odd extension, flip the original function on around the origin to get:   Odd extension of       Then extend the function on in a periodic way.   Periodic version of the odd extension of .       "
 },
@@ -3929,7 +4073,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-even-odd.html#sect-even-odd-4-8",
   "type": "Example",
-  "number": "6.3.7",
+  "number": "7.2.7",
   "title": "",
   "body": "  Find the Fourier Cosine Series of for .    For this, we need to find the coefficients in ( ) and ( ),     and use ( ) to find      "
 },
@@ -3938,7 +4082,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-even-odd.html#sect-even-odd-4-9",
   "type": "Example",
-  "number": "6.3.8",
+  "number": "7.2.8",
   "title": "",
   "body": "  Find the odd periodic extension of on . A graph of this is:   Graph of odd extension of on         For this, we need to find from ( ),     and then use this in ( )      "
 },
@@ -3947,7 +4091,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-trig-poly.html",
   "type": "Section",
-  "number": "6.4",
+  "number": "7.3",
   "title": "Approximation by Trigonometric Polynomials",
   "body": " Approximation by Trigonometric Polynomials     A Fourier series with only finite nubmer of terms is called a Trigonometric Polynomial.     The Trigonometric polynomial for a given is the best approximation to a periodic function in the sum of squares error sense. The Fourier Coefficients seen previous result in this trigonometric polynomila.    Bessel's Inequality give a bound on the sum of squares of the Fourier Coefficients.    Parseval's Theorem shows that the sum of squares of coefficients is proportional to the definite integral of the square of the function.      Consider a periodic function of period on the interval . The th partial sum of the Fourier Series of is denoted ,     where and are the Fourier Coefficients as before. The function is also called the Trigonometric Polynomial of degree .  Let's ask a question about approximation. Consider a function of the form:     What is the best approximate for a trigonometric polynomial to another function . That is, what coefficients can be chosen ?  To answer this question, we will need to know what error we are taking about. Typically the error will be some function of the two functions, called that outputs a number. We would like the error to have the following properties:   one such function that we know is the function norm or square of it:     To find the minimum of this, we will take the derivatives of with respect to and and solve for where the derivative is 0.     or     Similarly take the derivative with respect to :     Note that unless and      And similarly it can be shown that     Note that the coefficients and in , and are the Fourier Coefficients, seen in    Let be a piecewise continuous function on , and     The values of and that minimize (or ) is     that is they are the Fourier Coefficients.     In Example , the Fourier series of the sawtooth function was found the Fourier Coefficients are:     Graph the sawtooth function and , the 9th degree trigonometric polynomial.     Plot of the sawtooth wave and it's 9th degree trigonometric approximation.      and the two plots are indistinguishable on this scale.      In , the Fourier series of the square wave function was found and the Fourier Coefficients are:     Graph the square wave function and , the th degree trigonometric polynomial.     Graph of the square wave function and the th degree trigonometric polynomial.      And in contrast to the previous example, the trigonometric polynomial and the original function are quite different. This is mainly due to the discontinuities in the original function.    We will explore this example in a bit more detail after seeing some important theorems.    Theorems Related to Fourier Series    The quantity on the interval is the minimum if and only if the coefficients of in (2) ar the Fourier coefficients of . This minimum value is        Bessel's Inequality   Let and be the fourier coefficients related to the function on . Then        Parseval's Theorem   Let and be the fourier coefficients related to the function on . Then       There are two important consequences of this theorem:     If the integral on the right side is finite, then the series on the left converges. Functions in which the right side is finite are piecewise continuous functions.    The error, in ( ) goes to zero. That is Fourier Series converge to (using the square error).       Calculate for the function:     and extended periodically and let .    The Fourier Series of this function is     or and                  5  0.00372    10  0.000832    25  0.0000482    50       100       250       500       1000          A consequence of Parseval's Theorem is that for piecewise continuous functions, the Fourier Series converges as . So in light of the plot in Example , that it would appear that the plot of would approach the square wave as . However the plots of and are shown below (with on top):   A square wave?????       The Trigonmetric Polynomials of degree of the square wave function from above.      And despite the larger value of , does not appear to be approaching the square wave function. The difference is pronounced near the discontinuities in the function. This is called \\emph{Gibbs Phenomena} and it can be shown in this situation that the local max near in fact grows without bound as , despite the fact that .    Why is finite Fourier Series called a Polynomial?  You may be scratching your head about why the sum of sines and cosines is called a polynomial. You do recall correctly that polynomials are generally of the form     that is a linear combination of powers of .  However, you may also recall some trigonmetric identities. For example,     And a more complicated set of identities lead to     Note that in these examples, functions of the form and can be written in terms (for ) of products and powers of and . This continues for larger values of as well.  If you continue with similar identities, you can show that the trigonometric polynomial of the form     Can be written as the powers of and . This explains why this is called a polynomial.   "
 },
@@ -3956,7 +4100,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#sec-trig-poly-2",
   "type": "Objectives",
-  "number": "6.4",
+  "number": "7.3",
   "title": "",
   "body": "   A Fourier series with only finite nubmer of terms is called a Trigonometric Polynomial.     The Trigonometric polynomial for a given is the best approximation to a periodic function in the sum of squares error sense. The Fourier Coefficients seen previous result in this trigonometric polynomila.    Bessel's Inequality give a bound on the sum of squares of the Fourier Coefficients.    Parseval's Theorem shows that the sum of squares of coefficients is proportional to the definite integral of the square of the function.    "
 },
@@ -3974,7 +4118,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#sec-trig-poly-3-21",
   "type": "Remark",
-  "number": "6.4.1",
+  "number": "7.3.1",
   "title": "",
   "body": " Let be a piecewise continuous function on , and     The values of and that minimize (or ) is     that is they are the Fourier Coefficients.  "
 },
@@ -3983,7 +4127,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#sec-trig-poly-3-22",
   "type": "Example",
-  "number": "6.4.2",
+  "number": "7.3.2",
   "title": "",
   "body": "  In Example , the Fourier series of the sawtooth function was found the Fourier Coefficients are:     Graph the sawtooth function and , the 9th degree trigonometric polynomial.     Plot of the sawtooth wave and it's 9th degree trigonometric approximation.      and the two plots are indistinguishable on this scale.   "
 },
@@ -3992,7 +4136,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#ex-plot-square-wave",
   "type": "Example",
-  "number": "6.4.4",
+  "number": "7.3.4",
   "title": "",
   "body": "  In , the Fourier series of the square wave function was found and the Fourier Coefficients are:     Graph the square wave function and , the th degree trigonometric polynomial.     Graph of the square wave function and the th degree trigonometric polynomial.      And in contrast to the previous example, the trigonometric polynomial and the original function are quite different. This is mainly due to the discontinuities in the original function.   "
 },
@@ -4001,7 +4145,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#sec-trig-poly-4-2",
   "type": "Theorem",
-  "number": "6.4.6",
+  "number": "7.3.6",
   "title": "",
   "body": "  The quantity on the interval is the minimum if and only if the coefficients of in (2) ar the Fourier coefficients of . This minimum value is      "
 },
@@ -4010,7 +4154,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#thm-bessels-inequality",
   "type": "Theorem",
-  "number": "6.4.7",
+  "number": "7.3.7",
   "title": "Bessel’s Inequality.",
   "body": " Bessel's Inequality   Let and be the fourier coefficients related to the function on . Then      "
 },
@@ -4019,7 +4163,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#thm-parsevals-theorem",
   "type": "Theorem",
-  "number": "6.4.8",
+  "number": "7.3.8",
   "title": "Parseval’s Theorem.",
   "body": " Parseval's Theorem   Let and be the fourier coefficients related to the function on . Then      "
 },
@@ -4028,7 +4172,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#sec-trig-poly-4-7",
   "type": "Example",
-  "number": "6.4.9",
+  "number": "7.3.9",
   "title": "",
   "body": "  Calculate for the function:     and extended periodically and let .    The Fourier Series of this function is     or and                  5  0.00372    10  0.000832    25  0.0000482    50       100       250       500       1000         "
 },
@@ -4037,7 +4181,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#sec-trig-poly-4-9",
   "type": "Figure",
-  "number": "6.4.11",
+  "number": "7.3.11",
   "title": "",
   "body": " A square wave?????     "
 },
@@ -4046,7 +4190,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-trig-poly.html#sec-trig-poly-4-10",
   "type": "Figure",
-  "number": "6.4.12",
+  "number": "7.3.12",
   "title": "",
   "body": " The Trigonmetric Polynomials of degree of the square wave function from above.     "
 },
@@ -4055,7 +4199,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-part-deriv-diff-eqns.html",
   "type": "Section",
-  "number": "7.1",
+  "number": "8.1",
   "title": "Partial Derivatives and Differential Equations",
   "body": "Partial Derivatives and Differential Equations     A partial derivative of with respect to is the derivative of with respect to keeping the other variables constant. Technically         If , Find and .    To find consider a constant, so     similarly to find consider a constant,         Higher-Order Partial Derivatives  As with ordinary derivatives, we can have higher-order partial derivatives. That is we define the 2nd order partial derivative of with respect to as     that is it is the partial derivative of the partial derivative. Since ordinary derivatives involve only functions of one variable, the mixed derivative is a new concept. If is a function of and or , then we can have the partial derivative of with respect to or with respect to . We write these as       Find all second-order derivatives of       First, let's find the two first derivatives:     And then there are four 2nd-order derivatives:       You probably noticed that the two derivatives involving both and resulted in the same results. This is true for most functions as is shown in the next theorem:   Clairaut's Theorem   If is a real valued function with continuous second derivatives at the point , then     In other words, partial derivatives commute.      Notation for Partial Derivatives  In terms of notation, it's often common to use a subscript as a derivative. For example can be used instead of or instead of . This can also be extended to higher order derivatives as the following shows:     and note that the order on the variables switch between the two notations. This generally isn't a problem because of Clairaut's Theorem says that the derivative is independent of the order taken on the derivatives.    Differential Equations    The following are related definitions.     A differential equation is an equation that contains derivatives.    If the differential equation has partial derivatives, then the equation is called a partial differential equation .    If the differential equation has standard or ordinary derivatives, then the equation is called a ordinary differential equation.     The order of the differential equation is the highest degree of any derivative.    If the equation is linear in , the dependent variable and its derivatives, then the equation is linear , if not, it is nonlinear .    Lastly, a linear differential equation is called homogeneous if the only nonzero terms in the equation contain the dependent variable. If a differential equation is not homogeneous, then it is called nonhomogeneous .         The following are ordinary differential equations.           .          .     Equations 1,2, and 4 are linear and 3 is nonlinear. Note that even though is not a linear function, in order for a differential equation to be linear, it needs only be linear in its dependent variables (in all of these examples, is dependent). Equations 1 and 2 are nonhomogeneous and equation 4 is homogeneous. Also, the first three are first-order equations and the 4th equation is 2nd order. The following are partial differential equations:           .          .     And the first and fourth equations are linear with the other two being nonlinear. The first and second equations above are first order, the 3rd equation is 2nd order and the fourth is a third-order PDE.     "
 },
@@ -4064,7 +4208,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-2-1",
   "type": "Definition",
-  "number": "7.1.1",
+  "number": "8.1.1",
   "title": "",
   "body": "  A partial derivative of with respect to is the derivative of with respect to keeping the other variables constant. Technically      "
 },
@@ -4073,7 +4217,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-2-2",
   "type": "Example",
-  "number": "7.1.2",
+  "number": "8.1.2",
   "title": "",
   "body": "  If , Find and .    To find consider a constant, so     similarly to find consider a constant,      "
 },
@@ -4082,7 +4226,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3-6",
   "type": "Example",
-  "number": "7.1.3",
+  "number": "8.1.3",
   "title": "",
   "body": "  Find all second-order derivatives of       First, let's find the two first derivatives:     And then there are four 2nd-order derivatives:      "
 },
@@ -4091,7 +4235,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3-8",
   "type": "Theorem",
-  "number": "7.1.4",
+  "number": "8.1.4",
   "title": "Clairaut’s Theorem.",
   "body": " Clairaut's Theorem   If is a real valued function with continuous second derivatives at the point , then     In other words, partial derivatives commute.   "
 },
@@ -4100,7 +4244,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5-2",
   "type": "Definition",
-  "number": "7.1.5",
+  "number": "8.1.5",
   "title": "",
   "body": "  The following are related definitions.     A differential equation is an equation that contains derivatives.    If the differential equation has partial derivatives, then the equation is called a partial differential equation .    If the differential equation has standard or ordinary derivatives, then the equation is called a ordinary differential equation.     The order of the differential equation is the highest degree of any derivative.    If the equation is linear in , the dependent variable and its derivatives, then the equation is linear , if not, it is nonlinear .    Lastly, a linear differential equation is called homogeneous if the only nonzero terms in the equation contain the dependent variable. If a differential equation is not homogeneous, then it is called nonhomogeneous .      "
 },
@@ -4109,7 +4253,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5-3",
   "type": "Example",
-  "number": "7.1.6",
+  "number": "8.1.6",
   "title": "",
   "body": "  The following are ordinary differential equations.           .          .     Equations 1,2, and 4 are linear and 3 is nonlinear. Note that even though is not a linear function, in order for a differential equation to be linear, it needs only be linear in its dependent variables (in all of these examples, is dependent). Equations 1 and 2 are nonhomogeneous and equation 4 is homogeneous. Also, the first three are first-order equations and the 4th equation is 2nd order. The following are partial differential equations:           .          .     And the first and fourth equations are linear with the other two being nonlinear. The first and second equations above are first order, the 3rd equation is 2nd order and the fourth is a third-order PDE.   "
 },
@@ -4118,7 +4262,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-modeling-pdes.html",
   "type": "Section",
-  "number": "7.2",
+  "number": "8.2",
   "title": "Modeling with PDEs",
   "body": " Modeling with PDEs   In this section, we show where two important differential equations arise based on modeling the physical situation. The first will be the heat transport or heat equation and the second will be the wave equation by modeling the motion of a taut string. In both situations we will only show this for motion in one-dimension although similar PDEs model more complex behavior.    The Heat Equation  In this section, we will derive the transport of heat in a solid bar. In short, heat moves in a substance from a warmer region to a cooler region and if we know the direction of motion and the rate then we can understand heat flow.  We will consider a bar of length with fixed density , constant cross sectional area and insulated sides. This derivation will result in flow only in the direction of the length of the bar. The shape of the cross section and material in the bar does not matter but we will show a cylindrical bar.   A cylindrical bar which conducts heat.      The small segment of rod has heat flux entering in the left side and has heat flux exiting the right side. The temperature is on the left and on the right.   The heat flux through a slice of thickness of the bar.      Next, we consider the amount of heat in the segment. The heat is proportional to the mass of the segment ( ) and the temperature. The proportionality constant, is called the specific heat. The amount of heat in this small segment is:     The temporal change in heat of this element is the derivative with respect to and the only quantity that depends on time is the temperature :     and is equal to the total amount of heat entering from the two ends or     Divide both sides of this equation by and take the limit ,     The relationship between the heat flux, and the temperature is called Fourier's Law , and states that the heat transferred across unit area is proportional to the temperature gradient or     where is the proportionality constant called the thermal conductivity and the negative sign is due to the fact that heat flows from hot to cold (in a negative direction). Substituting Fourier's Law into results in     and assuming that is a constant,     rearranging we get     where is called the thermal diffusivity.   The one-dimensional heat equation is     and is typically solved for a given initial condition and with boundary conditions. We will see some examples of this in .     Wave Equation: Modeling a Taut String  Next, we turn to modeling the motion of a taut string fixed on both ends. A common example of this is a guitar string. We look at a small part of the string that has been displaced vertically from rest:   A small section of a taut string. The vectors and are the force vectors on the string, the variable is the vertical displacement of the string from rest position.      where be the vertical position of the string at position and time and the tension at and are the force vectors and . To determine an equation that describes the motion of the string, we need to balance the horizontal a vertical forces. We can write the two force vectors and in terms of the horizontal and vertical components where the subscripts in this case are the components as shown in the figure below.   The force vectors from are written in terms of the component vectors.      And recall that using Newton's 2nd law of motion the sum of the forces on a object is equal to the mass of the object times its acceleration in that direction or . There is no horizontal motion of the string, so the horizontal acceleration is zero and therefore:     and solving for      Next, we examine the vertical forces. The main difference is that there is a vertical acceleration which is the 2nd derivative of the position with respect to .     where the mass of the short piece is the mass density of the string and is the horizontal length of the piece. Substituting into the equation above,     and dividing through by      The tangent of the angles are the slopes of the function at and respectively, or at and therefore the above can be written     Divide by and let be the horizontal tension in the string     take the limit as      The parameter plays an important role in the solution, and we'll define , so the equation can be written:   Typically, is called the wave equation or since there is once one spatial variable, the one-dimensional wave equation .    Important Second-Order PDEs  The following is a list of other important second-order partial differential equations. Some of these are two-dimensions versions of the wave and heat equations derived above.     The remainder of this chapter covers solution techniques of these and other partial differential equations.   "
 },
@@ -4136,7 +4280,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-modeling-pdes.html#fig-heat-eqn",
   "type": "Figure",
-  "number": "7.2.1",
+  "number": "8.2.1",
   "title": "",
   "body": " A cylindrical bar which conducts heat.     "
 },
@@ -4145,7 +4289,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-modeling-pdes.html#fig-heat-eqn2",
   "type": "Figure",
-  "number": "7.2.2",
+  "number": "8.2.2",
   "title": "",
   "body": " The heat flux through a slice of thickness of the bar.     "
 },
@@ -4163,7 +4307,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-modeling-pdes.html#sect-modeling-pdes-3-24",
   "type": "Remark",
-  "number": "7.2.3",
+  "number": "8.2.3",
   "title": "",
   "body": " The one-dimensional heat equation is     and is typically solved for a given initial condition and with boundary conditions. We will see some examples of this in .  "
 },
@@ -4172,7 +4316,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-modeling-pdes.html#fig-wave-eqn",
   "type": "Figure",
-  "number": "7.2.4",
+  "number": "8.2.4",
   "title": "",
   "body": " A small section of a taut string. The vectors and are the force vectors on the string, the variable is the vertical displacement of the string from rest position.     "
 },
@@ -4181,7 +4325,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-modeling-pdes.html#sect-modeling-pdes-4-5",
   "type": "Figure",
-  "number": "7.2.5",
+  "number": "8.2.5",
   "title": "",
   "body": " The force vectors from are written in terms of the component vectors.     "
 },
@@ -4199,7 +4343,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-linear-ode.html",
   "type": "Section",
-  "number": "7.3",
+  "number": "8.3",
   "title": "Linear ordinary differential equations",
   "body": " Linear ordinary differential equations   As discussed in section , a differential equation is ordinary if the derivatives are ordinary. Additionally, it is linear if it is linear in its dependent variable and derivatives of the dependent variable. We investigate the solution of some classes of linear ordinary differential equations in this section. Let's assume that is the dependent variable and is the independent variable. The most general th order ordinary linear differential equation as the form:     In the most general terms, this differential equation is very difficult to solve despite being linear. However, there are cases when this has nice solutions. For the most part, we'll look at such equations in this section.    Second-order Constant-Coefficient Homogeneous differential equations  The most important ordinary differential equations that arise from solving the wave and heat equation are 2nd-order constant coefficient homogeneous differential equations. If in , then it is called homogeneous and if the coefficients of the terms and its derivatives are not dependent on , then the equation is constant-coefficient. A general 2nd-order ODE with these characteristics can be written:     where are real constants. To solve these, if we let and substitute this into the ODE,   and since is never 0   is called the characteristic equation related to the ODE. In general, there are two solutions to this equation, and . The general solution to the equation will thus be       Find the general solution to       The characteristic equation is     which has solutions and . The general solution thus is       To find the values of and in the example above or any other differential equation, additional information must be given. This is analogous to using a point to find the integration constant from an indefinite integral. The information is generally framed in the language of initial conditions and initial value problems as defined below.    A differential equation has initial conditions if at some point , then , are known, where is the order of the differential equation. The differential equation together with the initial conditions is known as a initial value problem .    The next example shows how to fully solve an initial value problem:    Find the solution to the initial value problem       To solve the initial value problem we first solve the differential equation, and this was done in And the general solution is     Since the initial conditions include knowing the derivative, we will need     and then we will substitute into and into      and the solution to this is and . Therefore the solution to the initial value problem is       There are many general types of solutions to second-order constant coefficient differential equations. The following lemma shows the possible solutions.    Consider the general 2nd-order constant-coefficient linear homogeneous differential equation,     where and are real constants. Let and be the roots of the characteristic equation.     If and are real and distinct, then the general solution to is       If is the only real root of the characteristic equation then the general solution to is       If the roots of the characteristic equation are pure imaginary, that is and , then the solution to is       and if the roots of the characteristic equation are complex conjugates, that is and , then the solution to is          First, recall that the characteristic equation of is     We will prove each statement in order.     The derivatives of are     and substituting these into ,     rearranging     and since and are roots of the characteristic equation, then both terms in parentheses are zero and       The derivatives of are     where the product rule has been used. In this case, recall also that since is the only real root, that from the quadratic formula with the discriminant . Substituting into      where the term with factor and the term with factor are each 0, because is a root of the characteristic equation. Lastly, the term with factor is 0 because as stated about .    Note that since the roots are pure imaginary, then then in and therefore and satisfy and since , then . The derivatives of are     and then substituting into with ,     since .    In this case, since the roots are complex conjugates, we can write and . The characteristic equation can be written:     which implies that and . The derivatives of are     and substituting them into ,     And using and , the right hand side of is 0, therefore is a solution.         Find the general solution to .    The characteristic equation is     Since the roots are pure imaginary, the general solution is       The characteristic equation for this next example has complex roots.    Find the solution to .    The characteristic equation for this differential equation is     and since this can't be factored, we'll use the quadratic equation to solve this:     Using , the general solution is         Solutions Differential Equations as Vector Spaces  We studied vector spaces in section and a common example of a vector space that is not is that of functions. It can be shown that the set related to the differential equation in      is a vector space or a subspace of , the vector space of all functions with continuous 2nd derivatives. The basis of the subspace are the two solutions of the differential equation or . Note that the general solution to the differential equation is the linear combination of the basis vectors or the span of the two solutions.   "
 },
@@ -4217,7 +4361,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-ode.html#ex-solution-DE-image",
   "type": "Example",
-  "number": "7.3.1",
+  "number": "8.3.1",
   "title": "",
   "body": "  Find the general solution to       The characteristic equation is     which has solutions and . The general solution thus is      "
 },
@@ -4226,7 +4370,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-ode.html#sect-linear-ode-3-10",
   "type": "Definition",
-  "number": "7.3.2",
+  "number": "8.3.2",
   "title": "",
   "body": "  A differential equation has initial conditions if at some point , then , are known, where is the order of the differential equation. The differential equation together with the initial conditions is known as a initial value problem .   "
 },
@@ -4235,7 +4379,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-ode.html#sect-linear-ode-3-12",
   "type": "Example",
-  "number": "7.3.3",
+  "number": "8.3.3",
   "title": "",
   "body": "  Find the solution to the initial value problem       To solve the initial value problem we first solve the differential equation, and this was done in And the general solution is     Since the initial conditions include knowing the derivative, we will need     and then we will substitute into and into      and the solution to this is and . Therefore the solution to the initial value problem is      "
 },
@@ -4244,7 +4388,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-ode.html#lem-soln-2nd-order-DE-homo",
   "type": "Lemma",
-  "number": "7.3.4",
+  "number": "8.3.4",
   "title": "",
   "body": "  Consider the general 2nd-order constant-coefficient linear homogeneous differential equation,     where and are real constants. Let and be the roots of the characteristic equation.     If and are real and distinct, then the general solution to is       If is the only real root of the characteristic equation then the general solution to is       If the roots of the characteristic equation are pure imaginary, that is and , then the solution to is       and if the roots of the characteristic equation are complex conjugates, that is and , then the solution to is          First, recall that the characteristic equation of is     We will prove each statement in order.     The derivatives of are     and substituting these into ,     rearranging     and since and are roots of the characteristic equation, then both terms in parentheses are zero and       The derivatives of are     where the product rule has been used. In this case, recall also that since is the only real root, that from the quadratic formula with the discriminant . Substituting into      where the term with factor and the term with factor are each 0, because is a root of the characteristic equation. Lastly, the term with factor is 0 because as stated about .    Note that since the roots are pure imaginary, then then in and therefore and satisfy and since , then . The derivatives of are     and then substituting into with ,     since .    In this case, since the roots are complex conjugates, we can write and . The characteristic equation can be written:     which implies that and . The derivatives of are     and substituting them into ,     And using and , the right hand side of is 0, therefore is a solution.      "
 },
@@ -4253,7 +4397,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-ode.html#sect-linear-ode-3-15",
   "type": "Example",
-  "number": "7.3.5",
+  "number": "8.3.5",
   "title": "",
   "body": "  Find the general solution to .    The characteristic equation is     Since the roots are pure imaginary, the general solution is      "
 },
@@ -4262,7 +4406,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-ode.html#sect-linear-ode-3-17",
   "type": "Example",
-  "number": "7.3.6",
+  "number": "8.3.6",
   "title": "",
   "body": "  Find the solution to .    The characteristic equation for this differential equation is     and since this can't be factored, we'll use the quadratic equation to solve this:     Using , the general solution is      "
 },
@@ -4271,7 +4415,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "ch-pde-6.html",
   "type": "Section",
-  "number": "7.4",
+  "number": "8.4",
   "title": "Sturm-Liouville Problems",
   "body": " Sturm-Liouville Problems  We now turn to a class of differential equations that arise in solving partial differential equations. This class is called Sturm-Liouville problems and they satisfy boundary conditions instead of the initial conditions that we saw in the previous section.    Consider the differential equation     for , , and . The differential equation is also subject to the boundary conditions:     such that both and cannot be zero as well as both and . The differential equation with these boundary conditions are called a Sturm-Liouville Problem . The solution is called an eigenfunction of the problem and the values of are called the eigenvalues .    The following example shows how to solve a Sturm-Liouville problem, that is, find the eigenvalues and eigenfunctions of the problem.    Find the eigenvalue and eigenfunctions of the Sturm-Liouville problem:       First note that and also and , which satisfies the conditions on the boundaries. The characteristic equation for this problem is:     which has the solutions . The form of the equation depends on . If , we get:     if , then the solution is     and if , then we get     Next, we apply the boundary conditions on all three solutions. Recall that . If , substituting the boundary conditions into ,     so the only solution to is the trivial solution . If , then substituting the boundary conditions into results in     From the first equation, and substituting this into the 2nd equation      is a solution, the second term is never zero and the third term is only zero if , which is not true or , which is also not true, since this case is . Therefore again, the only solution to is the trivial solution. If then substituting the boundary conditions into results in     the second states that either , again the trivial solution or     which occurs if for . Or     We now check which values of result in valid values of . When , we get again, which violates and for both plus and minus the same number, we get the same eigenvalue, so we will discard the negative values of and just include The eigenvalues of this problem are those in for and the eigenfunctions of this problem are:       It may have appears that we were lucky that there was a solution to the Sturm-Liouville problem in the above example. However, this is not the case and any Sturm-Liouville problem has a solution as the following theorem shows.    Let and be any eigenvalue and eigenfunction of the Sturm-Liouville problem.     The eigenvalue is real.    There are an infinite number of eigenvalues that can be ordered and for each eigenvalue, there is only one eigenfunction.    Eigenfunctions and with satisfy .    Let and be piecewise continuous functions on . If     then the series:     converges to if is continuous at and to the value if is discontinuous at for each point in .         Let on . Find the series expansion listed in the theorem corresponding to the Sturm-Liouville problem .       which is the Fourier sine series.      Find the solution of the Sturm-Liouville problem       Since this the same differential equation as in , we note that when , there was no solution and the same is true here. In the case of , the solution is     and the derivative is needed as well,     and then applying the boundary condition , implies that , however, is not determined and is a solution. Next, we turn to , with the solution,     and again, we need the derivative,     Applying the boundary condition, , results in     which implies that . Applying the boundary condition results in     and if , this results in the trivial solution, cannot be zero, however     when or . The eigenvalues and eigenfunctions of this problem then are and , and       There are other Sturm-Liouville problems that arise commonly and we will see others later in this chapter and solve them as they arise. We will use these solutions that we just found in solving the PDEs that we derived above.  "
 },
@@ -4280,7 +4424,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-pde-6.html#ch-pde-6-3",
   "type": "Definition",
-  "number": "7.4.1",
+  "number": "8.4.1",
   "title": "",
   "body": "  Consider the differential equation     for , , and . The differential equation is also subject to the boundary conditions:     such that both and cannot be zero as well as both and . The differential equation with these boundary conditions are called a Sturm-Liouville Problem . The solution is called an eigenfunction of the problem and the values of are called the eigenvalues .   "
 },
@@ -4289,7 +4433,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-pde-6.html#ex-sturm-liouville",
   "type": "Example",
-  "number": "7.4.2",
+  "number": "8.4.2",
   "title": "",
   "body": "  Find the eigenvalue and eigenfunctions of the Sturm-Liouville problem:       First note that and also and , which satisfies the conditions on the boundaries. The characteristic equation for this problem is:     which has the solutions . The form of the equation depends on . If , we get:     if , then the solution is     and if , then we get     Next, we apply the boundary conditions on all three solutions. Recall that . If , substituting the boundary conditions into ,     so the only solution to is the trivial solution . If , then substituting the boundary conditions into results in     From the first equation, and substituting this into the 2nd equation      is a solution, the second term is never zero and the third term is only zero if , which is not true or , which is also not true, since this case is . Therefore again, the only solution to is the trivial solution. If then substituting the boundary conditions into results in     the second states that either , again the trivial solution or     which occurs if for . Or     We now check which values of result in valid values of . When , we get again, which violates and for both plus and minus the same number, we get the same eigenvalue, so we will discard the negative values of and just include The eigenvalues of this problem are those in for and the eigenfunctions of this problem are:      "
 },
@@ -4298,7 +4442,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-pde-6.html#thm-sturm-liouville",
   "type": "Theorem",
-  "number": "7.4.3",
+  "number": "8.4.3",
   "title": "",
   "body": "  Let and be any eigenvalue and eigenfunction of the Sturm-Liouville problem.     The eigenvalue is real.    There are an infinite number of eigenvalues that can be ordered and for each eigenvalue, there is only one eigenfunction.    Eigenfunctions and with satisfy .    Let and be piecewise continuous functions on . If     then the series:     converges to if is continuous at and to the value if is discontinuous at for each point in .      "
 },
@@ -4307,7 +4451,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-pde-6.html#ch-pde-6-8",
   "type": "Example",
-  "number": "7.4.4",
+  "number": "8.4.4",
   "title": "",
   "body": "  Let on . Find the series expansion listed in the theorem corresponding to the Sturm-Liouville problem .       which is the Fourier sine series.   "
 },
@@ -4316,7 +4460,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-pde-6.html#ex-sturm-liouville-2",
   "type": "Example",
-  "number": "7.4.5",
+  "number": "8.4.5",
   "title": "",
   "body": "  Find the solution of the Sturm-Liouville problem       Since this the same differential equation as in , we note that when , there was no solution and the same is true here. In the case of , the solution is     and the derivative is needed as well,     and then applying the boundary condition , implies that , however, is not determined and is a solution. Next, we turn to , with the solution,     and again, we need the derivative,     Applying the boundary condition, , results in     which implies that . Applying the boundary condition results in     and if , this results in the trivial solution, cannot be zero, however     when or . The eigenvalues and eigenfunctions of this problem then are and , and      "
 },
@@ -4325,7 +4469,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-1d-heat-eqn.html",
   "type": "Section",
-  "number": "7.5",
+  "number": "8.5",
   "title": "Solution to the 1D Heat Equation",
   "body": " Solution to the 1D Heat Equation  In this section we will investigate solving the 1D heat equation     with boundary conditions:     indicating that the end are insulated and the initial condition is:     As with the wave equation, we use the technique of separation of variables. That is let to get:     since the left side only depends on and the right side only depends on , it must be that these must both equal only a constant, (call it ) therefore we get the two equations:     or   The boundary conditions for the second equation becomes:     This is a Sturm-Liouville problem that we saw in which has the solution:     if and and is also a solution. The solution to can be found by letting and substituting in     or     therefore the solution is     A solution to the equation is     and using the principle of superposition the general solution to the PDE with given boundary conditions is:     Next, the initial condition is:     and the coefficients can be found by the Sturm-Liouville theorem to get:       Find the solution to the heat equation given above if the initial condition is:       In this case, we need to find and :     So the solution to the PDE is:     To get a feeling for the solution, the following is a plot when , for .   A bar      The plot shows the temperature distribution for the initial case and subsequent times. The temperature evens out as time increases and in the limit the temperature would be 1 throughout, which is the average initial temperature.    "
 },
@@ -4334,7 +4478,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-1d-heat-eqn.html#sect-1d-heat-eqn-31",
   "type": "Example",
-  "number": "7.5.1",
+  "number": "8.5.1",
   "title": "",
   "body": "  Find the solution to the heat equation given above if the initial condition is:       In this case, we need to find and :     So the solution to the PDE is:     To get a feeling for the solution, the following is a plot when , for .   A bar      The plot shows the temperature distribution for the initial case and subsequent times. The temperature evens out as time increases and in the limit the temperature would be 1 throughout, which is the average initial temperature.   "
 },
@@ -4343,7 +4487,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-2d-heat-eqn.html",
   "type": "Section",
-  "number": "7.6",
+  "number": "8.6",
   "title": "Heat Equation in two spatial dimensions",
   "body": " Heat Equation in two spatial dimensions  The Heat equation in two spatial dimensions can be written:     In this case, let's say that we have the following boundary conditions:     which means that along the edge , the temperature is 0 and the other three edges are insulated. In addition, assume that the initial condition is     In this section, we will examine how to solve this problem using the separation of variables. Since there are 3 variables, let's assume that the solution can be written:     and substituting this into the heat equation, we get:     dividing through by      Since is only a function of , is only a function of and is only a function of , the only option for allowing the above to be true is to assume that     The boundary condition can also be written in terms of and as . Thus, in this case, we have two Sturm-Liouville problems,     The solution to the first is     and     The solution to the second is   and     Next, then we need to solve     which has the solution     Then put the solutions together:     and the solution that satisfies the boundary conditions is:     Finally, we apply the initial condition.     which results in the generalized Fourier Series:       Find the full solution if and       We only need to find      So the solution is     where and .    "
 },
@@ -4352,7 +4496,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-2d-heat-eqn.html#sect-2d-heat-eqn-37",
   "type": "Example",
-  "number": "7.6.1",
+  "number": "8.6.1",
   "title": "",
   "body": "  Find the full solution if and       We only need to find      So the solution is     where and .   "
 },
@@ -4361,7 +4505,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-bessel-eqn.html",
   "type": "Section",
-  "number": "7.7",
+  "number": "8.7",
   "title": "Bessel’s equation and Bessel Functions",
   "body": " Bessel's equation and Bessel Functions   Bessel's equation is     A solution can be obtained by a power series solution and represented as     where is the gamma function, a generalized factorial. The function is called the Bessel Function of the first kind . We are often interested in solutions of in which is an integer. If this is the case, then and are two linearly independent solutions. The power series representation in this case is       Propeties of  The following is a plot of (solid line) and (dashed line) on . Each of the Bessel functions have osciallatory behavior with decay and an infinite number of roots for . Also note that the roots of are between the roots of .   A plot of the bessel functions and on .      Using , it can be shown that     In addition, using the power series representation, one can show that the other solution of can be written:     However for , has a term which means that it is undefined at , which is generally why it not relevant as we will show later. There are a number of identities that are useful for understanding Bessel functions. Two of these are shown in the follow lemma.    Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.    In addition, there are another two identities for Bessel functions that are often called recurrence relationships.    Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .    These properties can now be used to find higher order Bessel functions, the derivatives of Bessel functions as well as the closed form of some integrals as shown in the next three examples.    Use the identities in and to find in terms of and .    Let in or     use again with or which can be written        The above technique can be used to find where is an integer in terms of and , showing the importance of the first two Bessel functions. The next example shows how to calculate the derivatives of the first two Bessel functions.    Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by          Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get         Roots of the Bessel functions  There is not an analytic way to find the roots of any of the bessel functions, so we will resort to numerical approximation. Many Computer Algebra Systems and scientific computing languages have bessel functions built in and roots can be found with techniques such as Newton's method or bisection.  In general, the th root of is between and , so the following Maple code will find the first 50.     The first ten values are: .   "
 },
@@ -4379,7 +4523,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#fig-bessel",
   "type": "Figure",
-  "number": "7.7.1",
+  "number": "8.7.1",
   "title": "",
   "body": " A plot of the bessel functions and on .     "
 },
@@ -4388,7 +4532,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#lem-bessel-identities",
   "type": "Lemma",
-  "number": "7.7.2",
+  "number": "8.7.2",
   "title": "",
   "body": "  Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.   "
 },
@@ -4397,7 +4541,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#lem-bessel-recurrence",
   "type": "Lemma",
-  "number": "7.7.3",
+  "number": "8.7.3",
   "title": "",
   "body": "  Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .   "
 },
@@ -4406,7 +4550,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#ex-bessel-J3",
   "type": "Example",
-  "number": "7.7.4",
+  "number": "8.7.4",
   "title": "",
   "body": "  Use the identities in and to find in terms of and .    Let in or     use again with or which can be written       "
 },
@@ -4415,7 +4559,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#sec-bessel-eqn-3-15",
   "type": "Example",
-  "number": "7.7.5",
+  "number": "8.7.5",
   "title": "",
   "body": "  Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by       "
 },
@@ -4424,7 +4568,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#sec-bessel-eqn-3-16",
   "type": "Example",
-  "number": "7.7.6",
+  "number": "8.7.6",
   "title": "",
   "body": "  Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get      "
 },
@@ -4433,7 +4577,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-heat-circular.html",
   "type": "Section",
-  "number": "7.8",
+  "number": "8.8",
   "title": "The Heat Equation in a Circular Region",
   "body": " The Heat Equation in a Circular Region   Next, we examine how to solve the heat equation in a circular region: as shown in the following figure.   A circular region where a point is written in polar coordinates.      Instead of solving the equation in cartesian coordinates, we look to write the heat equation in \\emph{polar coordinates}. A point in polar coordinates is labelled where     or written as and in terms of and ,     To convert the heat equation to polar coordinates, we need to write the right hand side of ( ) or     in terms of and . This is basically an exercise in using the chain rule with multiple independent variables. We start by finding the first partial derivatives of with respect to and .     and differentiating again, we get:     and similarly,     To complete this, we need to find      as well as and .     So now we write      Thus the heat equation in polar coordinates is     Before solving this equation in general, we will examine a simpler equation that is related.    Rotationally Symmetric Solutions  The general case is a bit hard to deal with, so we first start with a rotationally symmetric solution , which means that there is no dependence. Thus the term and the heat equation becomes:     To solve this using separation of variables, let and substitution into the PDE:     As before, the only way that the left hand side can equal the right hand side is if each side only depends on a constant or     The boundary conditions become and is finite, so we get the Sturm-Liouville problem:     This is a difficult problem to solve in that letting does not work. There are techniques to solve this, but let's use Maple to get:     where and are bessel functions.    Solving the Sturm-Liouville Problem  If we apply the first ``boundary'' condition that must be finite, we take that since is not finite at . The next boundary condition is or     and let be the th root of . so     are the eigenvalues of the problem with eigenfunctions:     Next, the solution to     is     The full solution is     Lastly, using the initial condition, we get:     which is a Fourier-type series with       Find the solution using the initial condition and let .    Again, we need only to find the Fourier Coefficients. The first three are:     So the solution is         General Circular Heat Equation  To solve this (as we have seen before) we will use separation of variables. Let :     Assume that     and then the right hand side becomes:     mulitply through by and rearrange       Sturm-Liouville Problems from the heat equation  The first Sturm-Liouville problem is:     and as well as . If , then . No solution of this exists that satsifies the boundary conditions. If , then . To satisfy the boundary conditions . If , then .     which is satisfied when , for . The derivative of is     The second boundary condition:     which is satisfied. Thus     each satisfy the boundary condition. The next differential equation is     The solution of this is     and the boundary conditions are is finite and . The condition at sets and the other condition:     results in     where is the th root of . Thus the eigenvalue is     and the eigenfunction is     The last DE is     of which the solution is:        and using the principle of superposition the full solution is:     Finding the coefficients. In this case we use the initial condition that     and substituting into the solution:     The coefficients are:       Solve the equation above when . Use and .    Again, we just need to compute the coefficients above. Use can either use Maple or make a symmetry argument to see that     So the solution is        "
 },
@@ -4442,7 +4586,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-heat-circular.html#sect-heat-circular-2-2",
   "type": "Figure",
-  "number": "7.8.1",
+  "number": "8.8.1",
   "title": "",
   "body": " A circular region where a point is written in polar coordinates.     "
 },
@@ -4451,7 +4595,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-heat-circular.html#sect-heat-circular-4-18",
   "type": "Example",
-  "number": "7.8.2",
+  "number": "8.8.2",
   "title": "",
   "body": "  Find the solution using the initial condition and let .    Again, we need only to find the Fourier Coefficients. The first three are:     So the solution is      "
 },
@@ -4460,7 +4604,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-heat-circular.html#sect-heat-circular-6-37",
   "type": "Example",
-  "number": "7.8.3",
+  "number": "8.8.3",
   "title": "",
   "body": "  Solve the equation above when . Use and .    Again, we just need to compute the coefficients above. Use can either use Maple or make a symmetry argument to see that     So the solution is      "
 },

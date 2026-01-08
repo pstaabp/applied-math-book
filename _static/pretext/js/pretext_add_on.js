@@ -594,13 +594,6 @@ window.addEventListener("load",function(event) {
 });
 
 
-// What purpose does this serve?
-function urlattribute() {
-        var this_urlstub = window.location.hostname;
-        document.body.setAttribute("data-urlstub", this_urlstub);
-}
-
-
 // The new method for creating pages and adjusting workspace //
 
 // This is used multiple places to set height of workspace divs to their author-provided heights
@@ -614,6 +607,7 @@ function setInitialWorkspaceHeights() {
 
 // If a printout (worksheet or handout) includes authored pages, we only need to put content before the first page and after the last page into the first and last pages, respectively.
 function adjustPrintoutPages() {
+    console.log("*** Adjusting printout pages.");
     const printout = document.querySelector('section.worksheet, section.handout');
     if (!printout) {
         console.warn("No printout found, exiting adjustPrintoutPages.");
@@ -647,6 +641,7 @@ function adjustPrintoutPages() {
 
 // This is the main function we will call then a printout does not come from the XSL with pages already defined (for now, the XSL will keep the <page> behavior as an option).
 function createPrintoutPages(margins) {
+    console.log("*** Creating printout pages with margins:", margins);
 
     // Assumptions: needs to work for both letter (8.5in x 11in) and a4 (210mm x 297mm) paper sizes.  We will work in pixels (96/in): those are 816px x 1056px and 794px x 1122.5px respectively (1 inch = 96 px, 1 cm = 37.8 px).  We assume that the printing interface of the browser will do the right thing with these.
 
@@ -744,9 +739,18 @@ function createPrintoutPages(margins) {
 }
 
 
-    // We look at each page and adjust the heights of the workspaces to fit it nicely into the page.
-    // The width and height of the page will now depend on the letter or a4 setting.
+// We look at each page and adjust the heights of the workspaces to fit it nicely into the page.
+// The width and height of the page will now depend on the letter or a4 setting.
 function adjustWorkspaceToFitPage({paperSize, margins}) {
+    console.log("*** Adjusting workspace to fit page size:", paperSize, "with margins:", margins);
+
+    // Toggle off workspace highlight if it is on, so it doesn't interfere with resizing
+    const highlightWorkspaceCheckbox = document.getElementById("highlight-workspace-checkbox");
+    const wasHighlighted = highlightWorkspaceCheckbox && highlightWorkspaceCheckbox.checked;
+    if (wasHighlighted) {
+        toggleWorkspaceHighlight(false);
+    }
+
     let paperWidth, paperHeight;
     if (paperSize === 'a4' || document.body.classList.contains('a4')) {
         console.log("Setting page size to A4");
@@ -796,6 +800,11 @@ function adjustWorkspaceToFitPage({paperSize, margins}) {
         page.style.width = "";
     });
     console.log("Set page sizes to content area of paper size.");
+
+    // Reset the highlight workspace checkbox state
+    if (wasHighlighted) {
+        toggleWorkspaceHighlight(true);
+    }
 }
 
 // Helper functions for calculating heights and workspace sizes
@@ -855,6 +864,7 @@ function getElemWorkspaceHeight(elem) {
 
 // Functions for finding the optimal page breaks
 function findPageBreaks(rows, pageHeight) {
+    console.log("*** Finding page breaks for", rows.length, "rows with page height:", pageHeight);
     // An array for the page breaks.  The nth element will be the index of the last row on page n.
     let pageBreaks = [];
     // An array for the minimum cost possible for rows i to the end.
@@ -901,7 +911,9 @@ function findPageBreaks(rows, pageHeight) {
     return pageBreaks;
 }
 
+// Function to set CSS variables and @page rules for page geometry.  This will be called whenever the paper size or margins change (in practice, only when page size changes, since margins are fixed for now).
 function setPageGeometryCSS({paperSize, margins}) {
+    console.log("*** Setting page geometry CSS for paper size:", paperSize, "with margins:", margins);
     // Remove any existing geometry CSS to avoid duplicates
     const existingStyle = document.getElementById("page-geometry-css");
     if (existingStyle) {
@@ -948,7 +960,6 @@ function toggleWorkspaceHighlight(isChecked) {
                 original.classList.add('original-workspace');
                 const originalHeight = workspace.getAttribute('data-space') || '0px';
                 original.setAttribute('title', 'Author-specified workspace height (' + originalHeight + ')');
-                console.log("setting original workspace height for", workspace);
                 // Use the data-space attribute for height of original workspace
                 original.style.height = originalHeight;
                 // insert original div before the workspace content
@@ -964,55 +975,24 @@ function toggleWorkspaceHighlight(isChecked) {
         }
     } else {
         document.body.classList.remove("highlight-workspace");
+        // Remove the original workspace divs.  We don't want to keep these in, as they interfere with changing page sizes and workspace heights.
+        document.querySelectorAll('.workspace-container').forEach(container => {
+            const workspace = container.querySelector('.workspace');
+            // Move the workspace out of the container
+            container.parentNode.insertBefore(workspace, container);
+            // Remove the container
+            container.remove();
+        });
     }
 }
 
-// Printout print preview and page setup
-window.addEventListener("load",function(event) {
-  // We condition on the existence of the papersize radio buttons, which only appear in the printout print preview.
-  if (document.querySelector('input[name="papersize"]')) {
-    // First, get the margins for pages to be passed around as needed.
-    const marginList = document.querySelector('section.worksheet, section.handout').getAttribute('data-margins').split(' ');
-    // Convert margin values to pixels if they are not already numbers
-    function toPixels(value) {
-        if (typeof value === "number") return value;
-        if (typeof value !== "string") return 0;
-        value = value.trim();
-        if (value.endsWith("px")) {
-            return parseFloat(value);
-        } else if (value.endsWith("in")) {
-            return Math.floor(parseFloat(value) * 96);
-        } else if (value.endsWith("cm")) {
-            return Math.floor(parseFloat(value) * 37.8);
-        } else if (value.endsWith("mm")) {
-            return Math.floor(parseFloat(value) * 3.78);
-        } else if (value.endsWith("pt")) {
-            return Math.floor(parseFloat(value) * (96 / 72));
-        } else {
-            // fallback: try to parse as px
-            return parseFloat(value) || 0;
-        }
-    }
-    const margins = {
-        top: toPixels(marginList[0] || "0.75in"), // Default to 0.75in if not specified
-        right: toPixels(marginList[1] || "0.75in"),
-        bottom: toPixels(marginList[2] || "0.75in"),
-        left: toPixels(marginList[3] || "0.75in")
-    }
-    // Get the papersize from localStorage or set it based on user's geographic region
+function getPaperSize() {
     let paperSize = localStorage.getItem("papersize");
     if (paperSize) {
-      const radio = document.querySelector(`input[name="papersize"][value="${paperSize}"]`);
-      if (radio) {
-        radio.checked = true;
-      }
-      // Set the papersize class on body
-      document.body.classList.remove("a4", "letter");
-      document.body.classList.add(paperSize);
-      setPageGeometryCSS({paperSize: paperSize, margins: margins});
+      return paperSize;
     } else {
-      // Try to set papersize based on user's geographic region
-      // Default to 'letter' for North and South America, 'a4' elsewhere
+        // Try to set papersize based on user's geographic region
+        // Default to 'letter' for North and South America, 'a4' elsewhere
         try {
           fetch('https://ipapi.co/json/')
             .then(response => response.json())
@@ -1037,69 +1017,197 @@ window.addEventListener("load",function(event) {
           const radio = document.querySelector(`input[name="papersize"][value="letter"]`);
           if (radio) radio.checked = true;
         }
-      //NB: the default papersize is set to 'letter' in the body class list.
     }
-    const papersizeRadios = document.querySelectorAll('input[name="papersize"]');
-    papersizeRadios.forEach(radio => {
-      radio.addEventListener('change', function() {
-        if (this.checked) {
-          document.body.classList.remove("a4", "letter");
-          document.body.classList.add(this.value);
-          localStorage.setItem("papersize", this.value);
-          console.log("Setting papersize to", this.value);
+    return paperSize || "letter";
+}
 
-          // If the "highlight workspace" checkbox was already checked, then we should restart the process by reloading the page.  Specifically, we run into issues when there are .workspace-container divs already present.
-          if (document.querySelector(".workspace-container")) {
-            console.log("Reloading page to apply new papersize with workspace highlight enabled.");
-            window.location.reload();
-            return;
-          } else {
-            // Otherwise, we can just adjust the workspace heights to fit the new paper size.
-            console.log("Adjusting workspace heights to fit new papersize.");
-            adjustWorkspaceToFitPage({paperSize: this.value, margins: margins});
-            setPageGeometryCSS({paperSize: this.value, margins: margins});
-          }
-        }
-      });
-    });
+// Function to load the printout section and switch to print stylesheet.  This will run whenever a user clicks on a print preview link (which adds ?printpreview=sectionID to the URL).
+async function loadPrintout(printableSectionID) {
 
-    // Open all details elements (knowls) on the page
-    var born_hidden_knowls = document.querySelectorAll('details');
-    console.log("born_hidden_knowls", born_hidden_knowls);
-    born_hidden_knowls.forEach(function(detail) {
-        detail.open = true;
-    });
-    // If the printout has authored pages, there will be at least one .onepage element.
-    if (document.querySelector('.onepage')) {
-        adjustPrintoutPages();
-        /* not the right way:  need to figure out what this needs to wait for */
-        //window.setTimeout(adjustPrintoutPages, 1000);
-    } else {
-        createPrintoutPages(margins);
-    }
-    // After pages are set up, we adjust the workspace heights to fit the page (based on the paper size).
-    adjustWorkspaceToFitPage({paperSize: paperSize, margins: margins});
-
-    console.log("finished adjusting workspace");
-
-
-    // Get the 'highlight workspace' checkbox state from localStorage or set it to false by default
-    const highlightWorkspaceCheckbox = document.getElementById("highlight-workspace-checkbox");
-    if (highlightWorkspaceCheckbox) {
-        highlightWorkspaceCheckbox.checked = localStorage.getItem("highlightWorkspace") === "true";
-        highlightWorkspaceCheckbox.addEventListener("change", function() {
-            localStorage.setItem("highlightWorkspace", this.checked);
-            toggleWorkspaceHighlight(this.checked);
+    // Switch to print-worksheet.css for print preview
+    const themeStylesheetLink = document.querySelector('link[rel="stylesheet"][href*="theme"]');
+    // get the href of the theme stylesheet link
+    const themeStylesheetHref = themeStylesheetLink ? themeStylesheetLink.getAttribute('href') : null;
+    if (themeStylesheetHref) {
+        // replace 'theme.css' with 'print-worksheet.css' in the href
+        const printStylesheetHref = themeStylesheetHref.replace(/theme.*\.css/, 'print-worksheet.css');
+        // update the href of the theme stylesheet link
+        themeStylesheetLink.setAttribute('href', printStylesheetHref);
+        // Wait for the new stylesheet to load.  This is important to ensure the styles are applied before the calling function tries to compute workspace sizes.
+        await new Promise((resolve) => {
+            themeStylesheetLink.addEventListener('load', resolve, { once: true });
         });
-        // Initial toggle to apply the highlight class if checked
-        toggleWorkspaceHighlight(highlightWorkspaceCheckbox.checked);
     }
 
+    // Find the section with this ID
+    const printableSection = document.getElementById(printableSectionID);
+    if (!printableSection) {
+        console.error("No section found with ID:", printableSectionID);
+        return;
+    }
+    // Remove any existing sections from .ptx-content and add only the printable section
+    const ptxContent = document.querySelector('.ptx-content');
+    const existingSections = ptxContent.querySelectorAll(':scope > section');
+    existingSections.forEach(sec => ptxContent.removeChild(sec));
+    ptxContent.appendChild(printableSection);
+}
 
+// Function to redo solutions details to divs with summary as title
+function rewriteSolutions() {
+    var born_hidden_knowls = document.querySelectorAll('.worksheet details, .handout details');
+    born_hidden_knowls.forEach(function(detail) {
+        const summary = detail.querySelector('summary');
+        const content = detail.innerHTML.replace(summary.outerHTML, '');
+        const div = document.createElement('div');
+        div.classList = detail.classList;
+        if (summary) {
+            const title = document.createElement('h5');
+            title.innerHTML = summary.innerHTML;
+            div.appendChild(title);
+        }
+        const body = document.createElement('div');
+        body.innerHTML = content;
+        div.appendChild(body);
+        detail.parentNode.replaceChild(div, detail);
+    });
+}
 
-        // Not sure why this is here:
-      window.setTimeout(urlattribute, 1500);
-  }
+// Utility to convert various CSS length units to pixels
+function toPixels(value) {
+    if (typeof value === "number") return value;
+    if (typeof value !== "string") return 0;
+    value = value.trim();
+    if (value.endsWith("px")) {
+        return parseFloat(value);
+    } else if (value.endsWith("in")) {
+        return Math.floor(parseFloat(value) * 96);
+    } else if (value.endsWith("cm")) {
+        return Math.floor(parseFloat(value) * 37.8);
+    } else if (value.endsWith("mm")) {
+        return Math.floor(parseFloat(value) * 3.78);
+    } else if (value.endsWith("pt")) {
+        return Math.floor(parseFloat(value) * (96 / 72));
+    } else {
+        // fallback: try to parse as px
+        return parseFloat(value) || 0;
+    }
+}
+
+// Event listener for page load to handle print preview setup
+window.addEventListener("DOMContentLoaded", async function(event) {
+    const urlParams = new URLSearchParams(window.location.search);
+    // We condition on the existence of the papersize radio buttons, which only appear in the printout print preview.
+    if (urlParams.has("printpreview")) {
+        const printableSectionID = urlParams.get("printpreview");
+        await loadPrintout(printableSectionID);
+
+        // First, get the margins for pages to be passed around as needed.
+        const marginList = document.querySelector('section.worksheet, section.handout').getAttribute('data-margins').split(' ');
+        // Convert margin values to pixels if they are not already numbers
+        const margins = {
+            top: toPixels(marginList[0] || "0.75in"), // Default to 0.75in if not specified
+            right: toPixels(marginList[1] || "0.75in"),
+            bottom: toPixels(marginList[2] || "0.75in"),
+            left: toPixels(marginList[3] || "0.75in")
+        }
+
+        // Transform all solutions details elements to divs with the summary as a title
+        rewriteSolutions();
+
+        // Get the papersize from localStorage or set it based on user's geographic region.  This will always return a value (defaulting to 'letter' if all else fails).
+        let paperSize = getPaperSize();
+        if (paperSize) {
+        const radio = document.querySelector(`input[name="papersize"][value="${paperSize}"]`);
+        if (radio) {
+            radio.checked = true;
+        }
+        // Set the papersize class on body
+        document.body.classList.remove("a4", "letter");
+        document.body.classList.add(paperSize);
+        setPageGeometryCSS({paperSize: paperSize, margins: margins});
+        } else {
+            console.warning("Bug: paperSize should always have a value here.");
+        }
+        // Add event listeners to the papersize radio buttons to handle changes
+        const papersizeRadios = document.querySelectorAll('input[name="papersize"]');
+        papersizeRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    document.body.classList.remove("a4", "letter");
+                    document.body.classList.add(this.value);
+                    localStorage.setItem("papersize", this.value);
+                    setPageGeometryCSS({paperSize: this.value, margins: margins});
+                    adjustWorkspaceToFitPage({paperSize: this.value, margins: margins});
+                }
+            });
+        });
+
+        // Add event listeners to the hide hints/answers/solutions checkboxes
+        for (const solutionType of ["hint", "answer", "solution"]) {
+            const checkbox = document.getElementById(`hide-${solutionType}-checkbox`);
+            if (checkbox) {
+                const storageKey = `hide-${solutionType}`;
+                // by default, hide answer and solution divs
+                if (solutionType === "answer" || solutionType === "solution") {
+                    if (!localStorage.getItem(storageKey)) {
+                        checkbox.checked = true;
+                        localStorage.setItem(storageKey, "true");
+                    }
+                }
+                // Now adjust based on local storage
+                // set visibility based on current checkbox state
+                checkbox.checked = localStorage.getItem(storageKey) === "true";
+                document.querySelectorAll(`div.${solutionType}`).forEach(elem => {
+                    // add hidden to class list
+                    if (checkbox.checked) {
+                        elem.classList.add("hidden");
+                    } else {
+                        elem.classList.remove("hidden");
+                    }
+                });
+                // Add event listener to toggle visibility
+                checkbox.addEventListener("change", function() {
+                    localStorage.setItem(storageKey, this.checked);
+                    // toggle visibility of solution divs
+                    document.querySelectorAll(`div.${solutionType}`).forEach(elem => {
+                        if (checkbox.checked) {
+                            elem.classList.add("hidden");
+                        } else {
+                            elem.classList.remove("hidden");
+                        }
+                        //adjustPrintoutPages();
+                        adjustWorkspaceToFitPage({paperSize: paperSize, margins: margins});
+                    });
+                });
+            }
+        }
+
+        // Finally, with everything set up, we create or adjust the printout pages as needed.
+
+        // If the printout has authored pages, there will be at least one .onepage element.
+        if (document.querySelector('.onepage')) {
+            adjustPrintoutPages();
+        } else {
+            createPrintoutPages(margins);
+        }
+        // After pages are set up, we adjust the workspace heights to fit the page (based on the paper size).
+        adjustWorkspaceToFitPage({paperSize: paperSize, margins: margins});
+
+        // Get the 'highlight workspace' checkbox state from localStorage or set it to false by default
+        // NB we need to do this after the adjustment of workspace heights so that the additional original workspace divs don't throw off the calculations when the page is reloaded.
+        const highlightWorkspaceCheckbox = document.getElementById("highlight-workspace-checkbox");
+        if (highlightWorkspaceCheckbox) {
+            highlightWorkspaceCheckbox.checked = localStorage.getItem("highlightWorkspace") === "true";
+            highlightWorkspaceCheckbox.addEventListener("change", function() {
+                localStorage.setItem("highlightWorkspace", this.checked);
+                toggleWorkspaceHighlight(this.checked);
+            });
+            // Initial toggle to apply the highlight class if checked
+            toggleWorkspaceHighlight(highlightWorkspaceCheckbox.checked);
+        }
+
+        console.log("finished adjusting workspace");
+    }
 });
 
 

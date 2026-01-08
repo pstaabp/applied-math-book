@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.7';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c2757fc695bc848c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -129,9 +129,14 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-matrix-factoring-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrix-factoring.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-matrix-factoring-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-matrix-factoring.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrix-factoring.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-matrix-factoring-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\mnr}{mnr}
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\adj}{adj}
+\newcommand{\real}[1]{\operatorname{Re}(#1)}
+\newcommand{\imag}[1]{\operatorname{Im}(#1)}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -140,7 +145,13 @@ eBookConfig.enable_chatcodes =  false;
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Linear Systems</span></a></div>
 <ul class="structural toc-item-list">
@@ -208,6 +219,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-vectors" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Vectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-matrix-definition-5" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Matrix, Vector and Scalar Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-triangular-matrices" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Diagonal and Triangular Matrices</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -263,213 +275,213 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Basic Properties of the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-det-elem-matrices" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Determinants of Elementary Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Gauss’ Method for Calculating Determinants</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-8" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-minors-cofactors" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Minors and Cofactors of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Geometry of Determinants</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9-3" class="internal"><span class="codenumber">2.8.6.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10-3" class="internal"><span class="codenumber">2.8.7.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Other Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-11" class="internal"><span class="codenumber">2.8.8</span> <span class="title">Other Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-adjugate-matrices" class="internal"><span class="codenumber">2.8.9</span> <span class="title">Adjugate Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-cramers-rule" class="internal"><span class="codenumber">2.8.10</span> <span class="title">Cramer’s Rule</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">3</span> <span class="title">Vector and Inner Product Spaces</span></a></div>
+<div class="toc-title-box"><a href="ch-functions-calculus.html" class="internal"><span class="codenumber">3</span> <span class="title">Functions and Calculus of Functions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-vector-spaces.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Spaces</span></a></div>
+<div class="toc-title-box"><a href="sect-complex-numbers.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Complex Numbers</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-4" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Examples of Vector Spaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-5" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Is every set a vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-complex-basics" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Basics of Complex Numbers and the Complex Plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-arithmetic-complex" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Arithmetic with Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-polar-form-complex" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Polar Form of Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sec-roots-of-unity" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Roots of unity</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-subspaces.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Span and Basis of a Subspace</span></a></div>
+<div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-3" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Span of a set of vectors</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4" class="internal"><span class="codenumber">3.2.2</span> <span class="title">The Basis and Dimension of a Vector Space</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4-3" class="internal"><span class="codenumber">3.2.2.1</span> <span class="title">Representations in the natural basis</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Dimension</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-6" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Bases of Subspaces</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-inner-product.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Inner Product Spaces</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-3" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Angles between vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">3.3.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Linear Transformations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Projection Maps</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-complex-exponential" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Complex Exponential</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Periodic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">3.2.3</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Odd and Even Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Tabular Integration</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-eigenvalues-eigenvectors.html" class="internal"><span class="codenumber">4</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector and Inner Product Spaces</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-eigenvalues.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<div class="toc-title-box"><a href="sect-vector-spaces.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Vector Spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Finding Eigenvalues and Eigenvectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Symmetric and Orthogonal Matrices and Quadratic Forms</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-orthogonal-transformations" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Orthogonal Transformations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-quad-forms" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Principle Axes of Quadratic Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-4" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Examples of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-5" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Is every set a vector space?</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-applications-eigen.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
+<div class="toc-title-box"><a href="sect-subspaces.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Span and Basis of a Subspace</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Span of a set of vectors</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5" class="internal"><span class="codenumber">4.2.2</span> <span class="title">The Basis and Dimension of a Vector Space</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5-3" class="internal"><span class="codenumber">4.2.2.1</span> <span class="title">Representations in the natural basis</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-6" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-7" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Bases of Subspaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-inner-product.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Inner Product Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Angles between vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-7" class="internal"><span class="codenumber">4.3.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-8" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Orthogonal infinite sets of functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Projection Maps</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-eigenvalues-eigenvectors.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-eigenvalues.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Finding Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Symmetric and Orthogonal Matrices and Quadratic Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-orthogonal-transformations" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Orthogonal Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-quad-forms" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Principle Axes of Quadratic Forms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-applications-eigen.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-matrix-factoring.html" class="internal"><span class="codenumber">5</span> <span class="title">Matrix Factoring</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-factoring.html" class="internal"><span class="codenumber">6</span> <span class="title">Matrix Factoring</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-matrix-factoring-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Matrix Properties and Operations</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#sect-matrix-transpose" class="internal"><span class="codenumber">5.1.1</span> <span class="title">The Matrix Transpose</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="ch-matrix-factoring-3.html#set-sym-matrices" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Symmetric Matrices</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#set-sym-matrices-3" class="internal"><span class="codenumber">5.1.2.1</span> <span class="title">Eigenvalues of Symmetric Matrices</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-5" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Orthogonal Matrices</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-6" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Upper- and Lower-Triangular Matrices</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-3" class="internal"><span class="codenumber">5.1.4.1</span> <span class="title">Back Substitution</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-matrix-factoring-3.html#ch-matrix-factoring-3-6-4" class="internal"><span class="codenumber">5.1.4.2</span> <span class="title">Forward Substitution</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="sect-lu-factorization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">LU Factorization</span></a></div>
+<div class="toc-title-box"><a href="sect-lu-factorization.html" class="internal"><span class="codenumber">6.1</span> <span class="title">LU Factorization</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">5.2.2</span> <span class="title">LU fatorization and elementary matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">6.1.1</span> <span class="title">LU factorization and elementary matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-matrix-factoring-5.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Diagonalization of Matrices</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-factoring-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Diagonalization of Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-3" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Powers of Diagonalizable Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-4" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Similar Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-5" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Similar and Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Powers of Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Similar Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Similar and Diagonalizable Matrices</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-matrix-factoring-6.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Singular Value Decomposition</span></a></div>
+<div class="toc-title-box"><a href="ch-matrix-factoring-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Singular Value Decomposition</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-6.html#ch-matrix-factoring-6-3" class="internal"><span class="codenumber">5.4.1</span> <span class="title">The geometry of the SVD</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-6.html#ch-matrix-factoring-6-4" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Finding a best-fit line and plane using SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-3" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The geometry of the SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-4" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Finding a best-fit line and plane using SVD</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-fourier-series.html" class="internal"><span class="codenumber">6</span> <span class="title">Fourier Series</span></a></div>
+<div class="toc-title-box"><a href="ch-fourier-series.html" class="internal"><span class="codenumber">7</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Properties of Functions</span></a></div>
+<div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-4" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Periodic Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">6.1.2</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Odd and Even Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Tabular Integration</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inner Products of Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Fourier Series</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
+<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">7</span> <span class="title">Partial Differential Equations</span></a></div>
+<div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">8</span> <span class="title">Partial Differential Equations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Partial Derivatives and Differential Equations</span></a></div>
+<div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Partial Derivatives and Differential Equations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Differential Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Differential Equations</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-modeling-pdes.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Modeling with PDEs</span></a></div>
+<div class="toc-title-box"><a href="sect-modeling-pdes.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Modeling with PDEs</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Heat Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Wave Equation: Modeling a Taut String</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-5" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-3" class="internal"><span class="codenumber">8.2.1</span> <span class="title">The Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-4" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Wave Equation: Modeling a Taut String</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-5" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-linear-ode.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Linear ordinary differential equations</span></a></div>
+<div class="toc-title-box"><a href="sect-linear-ode.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Linear ordinary differential equations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-3" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Second-order Constant-Coefficient Homogeneous differential equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-4" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Solutions Differential Equations as Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-3" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Second-order Constant-Coefficient Homogeneous differential equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-4" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Solutions Differential Equations as Vector Spaces</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pde-6.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pde-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">8.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">8.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">7.8</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">8.8</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">7.8.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">7.8.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">7.8.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">7.8.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">8.8.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">8.8.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">8.8.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">8.8.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -477,45 +489,44 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-lu-factorization"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">LU Factorization</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">LU Factorization</span>
 </h2>
 <article class="objectives goal-like" id="sect-lu-factorization-2"><h3 class="heading"><span class="type">Objectives</span></h3>
-<ul class="disc" id="sect-lu-factorization-2-1"><li id="sect-lu-factorization-2-1-1">
+<ul class="disc" id="sect-lu-factorization-2-1">
+<li id="sect-lu-factorization-2-1-1">
 <div class="para" id="sect-lu-factorization-2-1-1-1">Find the <span class="process-math">\(LU\)</span>-factorization of a matrix<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-lu-factorization-2-1-1-2">Determine when an <span class="process-math">\(LU\)</span>-factorization does not exist.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-lu-factorization-2-1-1-3">Use a <span class="process-math">\(LU\)</span> factorization to solve a linear system.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-2-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-lu-factorization-2-1-1-4">Use a <span class="process-math">\(LU\)</span> factorization to find an inverse matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-2-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
 <div class="autopermalink" data-description="Objective"><a href="#sect-lu-factorization-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
-</li></ul>
-<div class="autopermalink" data-description="Objectives 5.2"><a href="#sect-lu-factorization-2" title="Copy heading and permalink for Objectives 5.2" aria-label="Copy heading and permalink for Objectives 5.2">🔗</a></div></article><section class="introduction" id="sect-lu-factorization-3"><div class="para" id="sect-lu-factorization-3-1">Let <span class="process-math">\(A\)</span> be a square matrix. We seek to write <span class="process-math">\(A=LU\text{,}\)</span> where <span class="process-math">\(L\)</span> is a lower triangular matrix and <span class="process-math">\(U\)</span> is an upper triangular matrix. The reason for doing such a factorization is often to solve <span class="process-math">\(A\boldsymbol{x}=\boldsymbol{b}\)</span> for multiple right hand sides.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</li>
+<li id="sect-lu-factorization-2-1-2">
+<div class="para" id="sect-lu-factorization-2-1-2-1">Determine when an <span class="process-math">\(LU\)</span>-factorization does not exist.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-lu-factorization-3-2">Recall that an <dfn class="terminology">upper triangle matrix</dfn> is a matrix (not-necessarily square) such that all elements below the diagonal are 0. A <dfn class="terminology">lower triangular matrix</dfn> is a matrix such that all elements above the diagonal are 0. More precisely,<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-lu-factorization-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sect-lu-factorization-2-1-3">
+<div class="para" id="sect-lu-factorization-2-1-3-1">Use a <span class="process-math">\(LU\)</span> factorization to solve a linear system.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-lu-factorization-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sect-lu-factorization-2-1-4">
+<div class="para" id="sect-lu-factorization-2-1-4-1">Use a <span class="process-math">\(LU\)</span> factorization to find an inverse matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sect-lu-factorization-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Objectives 6.1"><a href="#sect-lu-factorization-2" title="Copy heading and permalink for Objectives 6.1" aria-label="Copy heading and permalink for Objectives 6.1">🔗</a></div></article><section class="introduction" id="sect-lu-factorization-3"><div class="para" id="sect-lu-factorization-3-1">Let <span class="process-math">\(A\)</span> be a square matrix. We seek to write <span class="process-math">\(A=LU\text{,}\)</span> where <span class="process-math">\(L\)</span> is a lower triangular matrix and <span class="process-math">\(U\)</span> is an upper triangular matrix. The reason for doing such a factorization is often to solve <span class="process-math">\(A\boldsymbol{x}=\boldsymbol{b}\)</span> for multiple right hand sides.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-lu-factorization-3-2">Recall that an <dfn class="terminology">upper triangle matrix</dfn> is a matrix (not-necessarily square) such that all elements below the diagonal are 0. A <dfn class="terminology">lower triangular matrix</dfn> is a matrix such that all elements above the diagonal are 0. These were introducted in <a href="sect-matrix-definition.html#sect-triangular-matrices" class="internal" title="Subsection 2.1.4: Diagonal and Triangular Matrices">Subsection 2.1.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-lu-factorization-3-3">The following example shows that there is a lower-triangular matrix <span class="process-math">\(L\)</span> and an upper triangular matrix <span class="process-math">\(U\)</span> whose product is the original matrix <span class="process-math">\(A\text{.}\)</span> Later we will show where this arises.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sect-lu-factorization-3-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-lu-factorization-3-4-1-1">Let<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-lu-factorization-3-4-1-2">
 <div class="displaymath process-math" id="sect-lu-factorization-3-4-1-2-1">
 \begin{align*}
-L \amp= \begin{bmatrix}
-1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1
-\end{bmatrix}
-\amp U \amp = \begin{bmatrix}
-3 \amp -2 \amp 1 \\
-0 \amp 4 \amp 2 \\
-0 \amp 0 \amp 1
-\end{bmatrix} \amp
-A \amp= \begin{bmatrix}
-3 \amp -2 \amp 1 \\
-6 \amp 0 \amp 4 \\
--6 \amp -8 \amp -7 \\
-\end{bmatrix}
+L \amp= \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1 \end{bmatrix} \amp U \amp = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix} \amp A \amp= \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -527,77 +538,24 @@ A \amp= \begin{bmatrix}
 <div class="para logical" id="sect-lu-factorization-3-4-2-2">
 <div class="displaymath process-math" id="sect-lu-factorization-3-4-2-2-1">
 \begin{align*}
-A \amp = \begin{bmatrix}
-1(3)+0(0)+0(0) \amp 1(-2) +0(4)+0(0) \amp 1(1)+0(2)+0(1) \\
-2(3)+1(0)+0(0) \amp 2(-2)+1(4)+0(0) \amp 2(1)+1(2)+0(1) \\
--2(3)-3(0)+1(0) \amp -2(-2)-3(4)+1(0)\amp-2(1)-3(2)+1(1)
-\end{bmatrix} \\
-\amp \begin{bmatrix}
-3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7
-\end{bmatrix}
+A \amp = \begin{bmatrix} 1(3)+0(0)+0(0) \amp 1(-2) +0(4)+0(0) \amp 1(1)+0(2)+0(1) \\ 2(3)+1(0)+0(0) \amp 2(-2)+1(4)+0(0) \amp 2(1)+1(2)+0(1) \\ -2(3)-3(0)+1(0) \amp -2(-2)-3(4)+1(0)\amp-2(1)-3(2)+1(1) \end{bmatrix} \\
+\amp = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \end{bmatrix}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 5.2.1.1"><a href="#sect-lu-factorization-3-4-2" title="Copy heading and permalink for Solution 5.2.1.1" aria-label="Copy heading and permalink for Solution 5.2.1.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 6.1.1.1"><a href="#sect-lu-factorization-3-4-2" title="Copy heading and permalink for Solution 6.1.1.1" aria-label="Copy heading and permalink for Solution 6.1.1.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 5.2.1"><a href="#sect-lu-factorization-3-4" title="Copy heading and permalink for Example 5.2.1" aria-label="Copy heading and permalink for Example 5.2.1">🔗</a></div></article></details><div class="para" id="sect-lu-factorization-3-5">This is nice, but the goal of LU factorization is to take any matrix <span class="process-math">\(A\)</span> and find matrices <span class="process-math">\(L\)</span> and <span class="process-math">\(U\text{.}\)</span> We first, show how to do this for a 3 by 3 matrix and then extend it.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><section class="subsection" id="sect-not-lu"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span>
-</h3>
-<div class="para" id="sect-not-lu-2">We first ask the question whether or not all matrices have a factorization and we will see that not all do not. We can try to factor<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-not-lu-3">
-<div class="displaymath process-math" id="sect-not-lu-3-1">
-\begin{equation*}
-\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-not-lu-4">by writing down two matrices as follows.<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-not-lu-5">
-<div class="displaymath process-math" id="sect-not-lu-5-1">
-\begin{equation*}
-\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix} =
-\begin{bmatrix} a \amp 0 \\ b \amp c \end{bmatrix}
-\begin{bmatrix} x \amp y \\ 0 \amp z \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-not-lu-6">and then multiplying the two matrices on the right to get<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-not-lu-7">
-<div class="displaymath process-math" id="sect-not-lu-7-1">
-\begin{equation*}
-\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix} =
-\begin{bmatrix} ax \amp ay \\ bx \amp by + cz \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-not-lu-8">Notice that the upper right and lower left corners are <span class="process-math">\(ay=1\)</span> and <span class="process-math">\(bx=1\text{.}\)</span> However, the upper left leads to <span class="process-math">\(ax=0\text{,}\)</span> so either <span class="process-math">\(a=0\)</span> or <span class="process-math">\(x=0\text{,}\)</span> which results in a contradiction.<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="theorem theorem-like" id="sect-not-lu-9"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sect-not-lu-9-1-1">If a matrix <span class="process-math">\(A\)</span> can be row-reduced without any row swaps, then there exists matrices <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> such that <span class="process-math">\(A=LU\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 5.2.2"><a href="#sect-not-lu-9" title="Copy heading and permalink for Theorem 5.2.2" aria-label="Copy heading and permalink for Theorem 5.2.2">🔗</a></div></article><div class="autopermalink" data-description="Subsection 5.2.1: Do All Matrices have an LU-factorization?"><a href="#sect-not-lu" title="Copy heading and permalink for Subsection 5.2.1: Do All Matrices have an LU-factorization?" aria-label="Copy heading and permalink for Subsection 5.2.1: Do All Matrices have an LU-factorization?">🔗</a></div></section><section class="subsection" id="sect-lu-fact-example"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">LU fatorization and elementary matrices</span>
+<div class="autopermalink" data-description="Example 6.1.1"><a href="#sect-lu-factorization-3-4" title="Copy heading and permalink for Example 6.1.1" aria-label="Copy heading and permalink for Example 6.1.1">🔗</a></div></article></details><div class="para" id="sect-lu-factorization-3-5">This is nice, but the goal of LU factorization is to take any matrix <span class="process-math">\(A\)</span> and find matrices <span class="process-math">\(L\)</span> and <span class="process-math">\(U\text{.}\)</span> We first, show how to do this for a 3 by 3 matrix and then extend it.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="sect-lu-fact-example"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">LU factorization and elementary matrices</span>
 </h3>
 <div class="para" id="sect-lu-fact-example-2">We will see that knowing the elementary matrices related to reducing a matrix will lead naturally to its <span class="process-math">\(LU\)</span> factorization. Consider the following example:<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-lu-fact-example-3">
 <div class="displaymath process-math" id="sect-lu-fact-example-3-1">
 \begin{equation*}
-A = \begin{bmatrix}
-3 \amp -2 \amp 1 \\
-6 \amp 0 \amp 4 \\
--6 \amp -8 \amp -7 \\
-\end{bmatrix}
+A = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -607,47 +565,17 @@ A = \begin{bmatrix}
 <div class="para logical" id="sect-lu-fact-example-5">
 <div class="displaymath process-math" id="sect-lu-fact-example-5-1">
 \begin{equation*}
-E_{-2R_1+R_2} A =
-\begin{bmatrix}
-1 \amp 0 \amp 0 \\
--2 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1
-\end{bmatrix}
-\begin{bmatrix}
-3 \amp -2 \amp 1 \\
-6 \amp 0 \amp 4 \\
--6 \amp -8 \amp -7 \\
-\end{bmatrix}
-= \begin{bmatrix}
-3 \amp -2 \amp 1 \\
-0 \amp 4 \amp  2 \\
--6 \amp -8 \amp -7 \\
-\end{bmatrix}
+E_{-2R_1+R_2} A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ -2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix} = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp  2 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-lu-fact-example-6">Next, we elimnate the <span class="process-math">\(-6\)</span> in the lower left corner with<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-lu-fact-example-6">Next, we eliminate the <span class="process-math">\(-6\)</span> in the lower left corner with<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-lu-fact-example-7">
 <div class="displaymath process-math" id="sect-lu-fact-example-7-1">
 \begin{equation*}
-E_{2R_1+R_3}E_{-2R_1+R_2} A =
-\begin{bmatrix}
-1 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-2 \amp 0 \amp 1
-\end{bmatrix}
-\begin{bmatrix}
-3 \amp -2 \amp 1 \\
-0 \amp 4 \amp  2 \\
--6 \amp -8 \amp -7 \\
-\end{bmatrix}
-= \begin{bmatrix}
-3 \amp -2 \amp 1 \\
-0 \amp 4 \amp 2 \\
-0 \amp -12 \amp -5
-\end{bmatrix}
+E_{2R_1+R_3}E_{-2R_1+R_2} A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp  2 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix} = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp -12 \amp -5 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -657,27 +585,12 @@ E_{2R_1+R_3}E_{-2R_1+R_2} A =
 <div class="para logical" id="sect-lu-fact-example-9">
 <div class="displaymath process-math" id="sect-lu-fact-example-9-1">
 \begin{equation*}
-E_{3R_2+R_3} E_{2R_1+R_3}E_{-2R_1+R_2} A =
-\begin{bmatrix}
-1 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 3 \amp 1
-\end{bmatrix}
-\begin{bmatrix}
-3 \amp -2 \amp 1 \\
-0 \amp 4 \amp 2 \\
-0 \amp -12 \amp -5
-\end{bmatrix}
-= \begin{bmatrix}
-3 \amp -2 \amp 1 \\
-0 \amp 4 \amp 2 \\
-0 \amp 0 \amp -5
-\end{bmatrix}
+E_{3R_2+R_3} E_{2R_1+R_3}E_{-2R_1+R_2} A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 3 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp -12 \amp -5 \end{bmatrix} = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp 0 \amp -5 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-lu-fact-example-10">and since this is an upper triangular matrix, then note that we have the situation that <span class="process-math">\(B A = U\)</span> and mutliplying through by <span class="process-math">\(B^{-1}\)</span> would result in <span class="process-math">\(A= B^{-1} U\text{.}\)</span> Since <span class="process-math">\(B\)</span> is the product of lower triangular elementary matrices, then the inverse is the product of these matrices, itself a lower triangular matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-lu-fact-example-10">and since this is an upper triangular matrix, then note that we have the situation that <span class="process-math">\(B A = U\)</span> and multiplying through by <span class="process-math">\(B^{-1}\)</span> would result in <span class="process-math">\(A= B^{-1} U\text{.}\)</span> Since <span class="process-math">\(B\)</span> is the product of lower triangular elementary matrices, then the inverse is the product of these matrices, itself a lower triangular matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-lu-fact-example-11">More specifically, since<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -704,12 +617,8 @@ B^{-1} = E_{2R_1 + R_2} E_{-2R_1+R_3} E_{-3R_2 + R_3}
 <div class="para logical" id="sect-lu-fact-example-16">
 <div class="displaymath process-math" id="sect-lu-fact-example-16-1">
 \begin{align*}
-B^{-1} \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
-\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ -2 \amp 0 \amp 1 \end{bmatrix}
-\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -3 \amp 1 \end{bmatrix} \\
-\amp = \begin{bmatrix}
-1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1
-\end{bmatrix} 
+B^{-1} \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ -2 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -3 \amp 1 \end{bmatrix} \\
+\amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1 \end{bmatrix} 
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -719,25 +628,13 @@ B^{-1} \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \am
 <div class="para logical" id="sect-lu-fact-example-18">
 <div class="displaymath process-math" id="sect-lu-fact-example-18-1">
 \begin{equation*}
-\begin{bmatrix}
-3 \amp -2 \amp 1 \\
-6 \amp 0 \amp 4 \\
--6 \amp -8 \amp -7 \\
-\end{bmatrix} =
-\begin{bmatrix}
-1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1
-\end{bmatrix}
-\begin{bmatrix}
-3 \amp -2 \amp 1 \\
-0 \amp 4 \amp 0 \\
-0 \amp 0 \amp -5
-\end{bmatrix}
+\begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 0 \\ 0 \amp 0 \amp -5 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="remark remark-like" id="sect-lu-fact-example-19"><h4 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding the LU factorization.</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding the LU factorization.</span>
 </h4>
 <div class="para" id="sect-lu-fact-example-19-2">Consider a matrix <span class="process-math">\(A\)</span> which we desire to write as <span class="process-math">\(A=LU\)</span> for lower triangular matrix <span class="process-math">\(L\)</span> and upper triangular matrix <span class="process-math">\(U\text{.}\)</span> If <span class="process-math">\(A\)</span> can be row reduced to an upper matrix <span class="process-math">\(U\text{,}\)</span> with the series of elementary matrices <span class="process-math">\(E_1, E_2, \ldots E_k\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -749,18 +646,15 @@ L = E_k^{-1}, E_{k-1}^{-1} \cdots E_2^{-1} E_1^{-1}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-19-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 5.2.3: Finding the LU factorization"><a href="#sect-lu-fact-example-19" title="Copy heading and permalink for Remark 5.2.3: Finding the LU factorization" aria-label="Copy heading and permalink for Remark 5.2.3: Finding the LU factorization">🔗</a></div></article><div class="para" id="sect-lu-fact-example-20">Also the example given above was a square matrix, this does not have to be the case. Consider the next example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 6.1.2: Finding the LU factorization"><a href="#sect-lu-fact-example-19" title="Copy heading and permalink for Remark 6.1.2: Finding the LU factorization" aria-label="Copy heading and permalink for Remark 6.1.2: Finding the LU factorization">🔗</a></div></article><div class="para" id="sect-lu-fact-example-20">Also the example given above was a square matrix, this does not have to be the case. Consider the next example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sect-lu-fact-example-21" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-lu-fact-example-21-1-1">Find the <span class="process-math">\(LU\)</span>-decomposition of<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-lu-fact-example-21-1-2">
 <div class="displaymath process-math" id="sect-lu-fact-example-21-1-2-1">
 \begin{equation*}
-A =  \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
-2 \amp 4 \amp -1 \amp 0 \\
-0 \amp 1 \amp 0 \amp 7
-\end{bmatrix}
+A =  \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\ 2 \amp 4 \amp -1 \amp 0 \\ 0 \amp 1 \amp 0 \amp 7 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-21-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -771,21 +665,9 @@ A =  \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
 <div class="para logical" id="sect-lu-fact-example-21-2-2">
 <div class="displaymath process-math" id="sect-lu-fact-example-21-2-2-1">
 \begin{align*}
--2R_1+R_2 \to R_2 \amp \qquad
-\begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
-0 \amp -2 \amp -1 \amp 12 \\
-0 \amp 1 \amp 0 \amp 7
-\end{bmatrix}\\
--\frac{1}{2} R_2 \to R_2 \amp \qquad
-\begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
-0 \amp 1 \amp 1/2 \amp -6 \\
-0 \amp 1 \amp 0 \amp 7
-\end{bmatrix}\\
--R_2 + R_3 \to R_3 \amp \qquad
-\begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
-0 \amp 1 \amp 1/2 \amp -6 \\
-0 \amp 0 \amp -1/2 \amp 13
-\end{bmatrix} 
+-2R_1+R_2 \to R_2 \amp \qquad \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\ 0 \amp -2 \amp -1 \amp 12 \\ 0 \amp 1 \amp 0 \amp 7 \end{bmatrix} \\
+-\frac{1}{2} R_2 \to R_2 \amp \qquad \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\ 0 \amp 1 \amp 1/2 \amp -6 \\ 0 \amp 1 \amp 0 \amp 7 \end{bmatrix} \\
+-R_2 + R_3 \to R_3 \amp \qquad \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\ 0 \amp 1 \amp 1/2 \amp -6 \\ 0 \amp 0 \amp -1/2 \amp 13 \end{bmatrix} 
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-21-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -797,29 +679,67 @@ A =  \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
 \begin{align*}
 L \amp = E^{-1}_{-R_2+R_3} E^{-1}_{(-1/2)R_2} E^{-1}_{-2R_1+R2} \\
 \amp = E_{R_2+R_3} E_{-2 R_2} E_{2R_1+R_2} \\
-\amp =
-\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 1 \amp 1 \end{bmatrix}
-\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -2 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
-\begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}\\
-\amp =
-\begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp -2 \amp 0 \\ 0 \amp 1 \amp 1 \end{bmatrix}
+\amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 1 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -2 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \\
+\amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp -2 \amp 0 \\ 0 \amp 1 \amp 1 \end{bmatrix} 
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-21-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 5.2.4.1"><a href="#sect-lu-fact-example-21-2" title="Copy heading and permalink for Solution 5.2.4.1" aria-label="Copy heading and permalink for Solution 5.2.4.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 6.1.3.1"><a href="#sect-lu-fact-example-21-2" title="Copy heading and permalink for Solution 6.1.3.1" aria-label="Copy heading and permalink for Solution 6.1.3.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 5.2.4"><a href="#sect-lu-fact-example-21" title="Copy heading and permalink for Example 5.2.4" aria-label="Copy heading and permalink for Example 5.2.4">🔗</a></div></article></details><div class="para" id="sect-lu-fact-example-22">Note that since elementary matrices are square, and <span class="process-math">\(L\)</span> is the product of the elementary matrices that <span class="process-math">\(L\)</span> is also square. For a general <span class="process-math">\(m \times n\)</span> matrix, <span class="process-math">\(L\)</span> is a <span class="process-math">\(m \times m\)</span> matrix and <span class="process-math">\(U\)</span> is a <span class="process-math">\(m \times n\)</span> matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 6.1.3"><a href="#sect-lu-fact-example-21" title="Copy heading and permalink for Example 6.1.3" aria-label="Copy heading and permalink for Example 6.1.3">🔗</a></div></article></details><div class="para" id="sect-lu-fact-example-22">Note that since elementary matrices are square, and <span class="process-math">\(L\)</span> is the product of the elementary matrices that <span class="process-math">\(L\)</span> is also square. For a general <span class="process-math">\(m \times n\)</span> matrix, <span class="process-math">\(L\)</span> is a <span class="process-math">\(m \times m\)</span> matrix and <span class="process-math">\(U\)</span> is a <span class="process-math">\(m \times n\)</span> matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-fact-example-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 5.2.2: LU fatorization and elementary matrices"><a href="#sect-lu-fact-example" title="Copy heading and permalink for Subsection 5.2.2: LU fatorization and elementary matrices" aria-label="Copy heading and permalink for Subsection 5.2.2: LU fatorization and elementary matrices">🔗</a></div></section><section class="subsection" id="sect-lu-factorization-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Generalization of LU Decomposition</span>
+<div class="autopermalink" data-description="Subsection 6.1.1: LU factorization and elementary matrices"><a href="#sect-lu-fact-example" title="Copy heading and permalink for Subsection 6.1.1: LU factorization and elementary matrices" aria-label="Copy heading and permalink for Subsection 6.1.1: LU factorization and elementary matrices">🔗</a></div></section><section class="subsection" id="sect-not-lu"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span>
 </h3>
-<div class="para" id="sect-lu-factorization-6-2">As we saw above in <a href="sect-lu-factorization.html#sect-not-lu" class="internal" title="Subsection 5.2.1: Do All Matrices have an LU-factorization?">Subsection 5.2.1</a> not all matrices have an LU decomposition. However, if we generalize this a bit, then we can.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-not-lu-2">We first ask the question whether or not all matrices have a factorization and we will see that not all do not. We can try to factor<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-not-lu-3">
+<div class="displaymath process-math" id="sect-not-lu-3-1">
+\begin{equation*}
+\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-not-lu-4">by writing the matrix as the product of a lower triangular matrix and an upper triangular matrix:<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-not-lu-5">
+<div class="displaymath process-math" id="sect-not-lu-5-1">
+\begin{equation*}
+\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix} = \begin{bmatrix} a \amp 0 \\ b \amp c \end{bmatrix} \begin{bmatrix} x \amp y \\ 0 \amp z \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-not-lu-6">and then multiplying the two matrices on the right to get<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-not-lu-7">
+<div class="displaymath process-math" id="sect-not-lu-7-1">
+\begin{equation*}
+\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix} = \begin{bmatrix} ax \amp ay \\ bx \amp by + cz \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-not-lu-8">Notice that the upper right and lower left corners are <span class="process-math">\(ay=1\)</span> and <span class="process-math">\(bx=1\text{.}\)</span> However, the upper left leads to <span class="process-math">\(ax=0\text{,}\)</span> so either <span class="process-math">\(a=0\)</span> or <span class="process-math">\(x=0\text{,}\)</span> which results in a contradiction.<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-not-lu-9">However, we can state a theorem that gives a sufficient condition for the existence of an <span class="process-math">\(LU\)</span>-factorization.<div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="sect-not-lu-10"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sect-not-lu-10-1-1">If a matrix <span class="process-math">\(A\)</span> can be row-reduced without any row swaps, then there exists matrices <span class="process-math">\(L\)</span> and <span class="process-math">\(U\)</span> such that <span class="process-math">\(A=LU\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-not-lu-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.1.4"><a href="#sect-not-lu-10" title="Copy heading and permalink for Theorem 6.1.4" aria-label="Copy heading and permalink for Theorem 6.1.4">🔗</a></div></article><div class="autopermalink" data-description="Subsection 6.1.2: Do All Matrices have an LU-factorization?"><a href="#sect-not-lu" title="Copy heading and permalink for Subsection 6.1.2: Do All Matrices have an LU-factorization?" aria-label="Copy heading and permalink for Subsection 6.1.2: Do All Matrices have an LU-factorization?">🔗</a></div></section><section class="subsection" id="sect-lu-factorization-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Generalization of LU Decomposition</span>
+</h3>
+<div class="para" id="sect-lu-factorization-6-2">As we saw above in <a href="sect-lu-factorization.html#sect-not-lu" class="internal" title="Subsection 6.1.2: Do All Matrices have an LU-factorization?">Subsection 6.1.2</a> not all matrices have an LU decomposition. However, if we generalize this a bit, then we can.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-lu-factorization-6-3">Additionally, an square matrix <span class="process-math">\(A\)</span> can be written as <span class="process-math">\(PA=LU\text{,}\)</span> where <span class="process-math">\(L\)</span> is a lower-diagonal, <span class="process-math">\(U\)</span> is upper-diagonal and <span class="process-math">\(P\)</span> is a permutation matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sect-lu-factorization-6-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-lu-factorization-6-4-1-1">Find the factorization <span class="process-math">\(PA=LU\)</span> for<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-lu-factorization-6-4-1-2">
 <div class="displaymath process-math" id="sect-lu-factorization-6-4-1-2-1">
@@ -835,12 +755,9 @@ A = \begin{bmatrix} 0 \amp 2 \amp 1 \\ 1 \amp 4 \amp 0 \\ 2 \amp 0 \amp -3 \end{
 <div class="para logical" id="sect-lu-factorization-6-4-2-2">
 <div class="displaymath process-math" id="sect-lu-factorization-6-4-2-2-1">
 \begin{align}
-R_1 \leftrightarrow R_2 \amp \qquad
-\begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 2 \amp 0 \amp -3 \end{bmatrix} \notag\\
--2 R_1 + R_3 \to R_3 \amp \qquad
-\begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 0 \amp -8 \amp -3 \end{bmatrix} \notag\\
-4R_2 + R_3 \to R_3 \amp \qquad
-\begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix} \tag{5.2.1}
+R_1 \leftrightarrow R_2 \amp \qquad \begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 2 \amp 0 \amp -3 \end{bmatrix} \notag\\
+-2 R_1 + R_3 \to R_3 \amp \qquad \begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 0 \amp -8 \amp -3 \end{bmatrix} \notag\\
+4R_2 + R_3 \to R_3 \amp \qquad \begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix} \tag{6.1.1}
 \end{align}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -850,8 +767,7 @@ R_1 \leftrightarrow R_2 \amp \qquad
 <div class="para logical" id="sect-lu-factorization-6-4-2-4">
 <div class="displaymath process-math" id="ex-lu-p">
 \begin{equation}
-P = E_{1 \leftrightarrow 2}
-= \begin{bmatrix} 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1\end{bmatrix}\tag{5.2.2}
+P = E_{1 \leftrightarrow 2} = \begin{bmatrix} 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1\end{bmatrix}\tag{6.1.2}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -862,14 +778,13 @@ P = E_{1 \leftrightarrow 2}
 <div class="displaymath process-math" id="sect-lu-factorization-6-4-2-6-1">
 \begin{align*}
 L \amp = E^{-1}_{4R_2+R_3} E^{-1}_{-2R_1+R_3} = E_{-4R_2+R_3}E_{2R_1+R_3} \\
-\amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -4 \amp 1 \end{bmatrix}
-\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 1 \end{bmatrix}\\
+\amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -4 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 1 \end{bmatrix} \\
 \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp -4 \amp 1 \end{bmatrix} 
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-4-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-lu-factorization-6-4-2-7">The matrix <span class="process-math">\(L\)</span> is given above, then <span class="process-math">\(U\)</span> is the matrix in <a href="sect-lu-factorization.html#sect-lu-factorization-6-4-2-2-1" class="xref" data-knowl="./knowl/xref/lu-ex-u.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.2.1">(5.2.1)</a> and <span class="process-math">\(P\)</span> is given in <a href="sect-lu-factorization.html#ex-lu-p" class="xref" data-knowl="./knowl/xref/ex-lu-p.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.2.2">(5.2.2)</a>. The matrix factorization thus is<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-4-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-lu-factorization-6-4-2-7">The matrix <span class="process-math">\(L\)</span> is given above, then <span class="process-math">\(U\)</span> is the matrix in <a href="sect-lu-factorization.html#sect-lu-factorization-6-4-2-2-1" class="xref" data-knowl="./knowl/xref/lu-ex-u.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.1">(6.1.1)</a> and <span class="process-math">\(P\)</span> is given in <a href="sect-lu-factorization.html#ex-lu-p" class="xref" data-knowl="./knowl/xref/ex-lu-p.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.2">(6.1.2)</a>. The matrix factorization thus is<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-4-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-lu-factorization-6-4-2-8">
 <div class="displaymath process-math" id="sect-lu-factorization-6-4-2-8-1">
@@ -879,10 +794,10 @@ PA=LU
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-6-4-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 5.2.5.1"><a href="#sect-lu-factorization-6-4-2" title="Copy heading and permalink for Solution 5.2.5.1" aria-label="Copy heading and permalink for Solution 5.2.5.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 6.1.5.1"><a href="#sect-lu-factorization-6-4-2" title="Copy heading and permalink for Solution 6.1.5.1" aria-label="Copy heading and permalink for Solution 6.1.5.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 5.2.5"><a href="#sect-lu-factorization-6-4" title="Copy heading and permalink for Example 5.2.5" aria-label="Copy heading and permalink for Example 5.2.5">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 5.2.3: Generalization of LU Decomposition"><a href="#sect-lu-factorization-6" title="Copy heading and permalink for Subsection 5.2.3: Generalization of LU Decomposition" aria-label="Copy heading and permalink for Subsection 5.2.3: Generalization of LU Decomposition">🔗</a></div></section><section class="subsection" id="sect-lu-factorization-7"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving linear systems using LU Decomposition</span>
+<div class="autopermalink" data-description="Example 6.1.5"><a href="#sect-lu-factorization-6-4" title="Copy heading and permalink for Example 6.1.5" aria-label="Copy heading and permalink for Example 6.1.5">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 6.1.3: Generalization of LU Decomposition"><a href="#sect-lu-factorization-6" title="Copy heading and permalink for Subsection 6.1.3: Generalization of LU Decomposition" aria-label="Copy heading and permalink for Subsection 6.1.3: Generalization of LU Decomposition">🔗</a></div></section><section class="subsection" id="sect-lu-factorization-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving linear systems using LU Decomposition</span>
 </h3>
 <div class="para" id="sect-lu-factorization-7-2">The main application of LU decomposition is that of solving linear systems. Consider the matrix equation <span class="process-math">\(A\boldsymbol{x} = \boldsymbol{b}\)</span> and assume that <span class="process-math">\(A=LU\)</span> (that is the needed permutation matrix is <span class="process-math">\(P=I\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -914,38 +829,23 @@ A \boldsymbol{x} \amp = \boldsymbol{b}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sect-lu-factorization-7-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-lu-factorization-7-6-1-1">Solve the system <span class="process-math">\(A\boldsymbol{x}=\boldsymbol{b}\)</span> using <span class="process-math">\(LU\)</span>-decomposition for<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-lu-factorization-7-6-1-2">
 <div class="displaymath process-math" id="sect-lu-factorization-7-6-1-2-1">
 \begin{align*}
-A \amp = \begin{bmatrix}
-3 \amp -2 \amp 1 \\
-6 \amp 0 \amp 4 \\
--6 \amp -8 \amp -7 \\
-\end{bmatrix} \amp \boldsymbol{b} \amp = \begin{bmatrix}
-14 \\22 \\ -9
-\end{bmatrix}
+A \amp = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix} \amp \boldsymbol{b} \amp = \begin{bmatrix} 14 \\22 \\ -9 \end{bmatrix}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="sect-lu-factorization-7-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-lu-factorization-7-6-2-1">Recall that in <a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal" title="Subsection 5.2.2: LU fatorization and elementary matrices">Subsection 5.2.2</a> the <span class="process-math">\(LU\)</span>-factorizations of the matrix <span class="process-math">\(A\)</span> was found and is<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-lu-factorization-7-6-2-1">Recall that in <a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal" title="Subsection 6.1.1: LU factorization and elementary matrices">Subsection 6.1.1</a> the <span class="process-math">\(LU\)</span>-factorizations of the matrix <span class="process-math">\(A\)</span> was found and is<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-lu-factorization-7-6-2-2">
 <div class="displaymath process-math" id="sect-lu-factorization-7-6-2-2-1">
 \begin{align*}
-L \amp = \begin{bmatrix}
-1 \amp 0 \amp 0 \\
-2 \amp 1 \amp 0 \\
--2 \amp -3 \amp 1
-\end{bmatrix}
-\amp U \amp = \begin{bmatrix}
-3 \amp -2 \amp 1 \\
-0 \amp 4 \amp 2 \\
-0 \amp 0 \amp 1
-\end{bmatrix}
+L \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1 \end{bmatrix} \amp U \amp = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -990,34 +890,29 @@ x_1 \amp = 3
 <div class="para logical" id="sect-lu-factorization-7-6-2-8">
 <div class="displaymath process-math" id="sect-lu-factorization-7-6-2-8-1">
 \begin{equation*}
-\boldsymbol{x} = \begin{bmatrix}
-1 \\ -2 \\ 3
-\end{bmatrix}
+\boldsymbol{x} = \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-6-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 5.2.6.1"><a href="#sect-lu-factorization-7-6-2" title="Copy heading and permalink for Solution 5.2.6.1" aria-label="Copy heading and permalink for Solution 5.2.6.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 6.1.6.1"><a href="#sect-lu-factorization-7-6-2" title="Copy heading and permalink for Solution 6.1.6.1" aria-label="Copy heading and permalink for Solution 6.1.6.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 5.2.6"><a href="#sect-lu-factorization-7-6" title="Copy heading and permalink for Example 5.2.6" aria-label="Copy heading and permalink for Example 5.2.6">🔗</a></div></article></details><div class="para" id="sect-lu-factorization-7-7">You can see from the example above that once the matrix <span class="process-math">\(A\)</span> factored that it is relatively simple to find the solutions to <span class="process-math">\(L\boldsymbol{y}=\boldsymbol{b}\)</span> and <span class="process-math">\(A\boldsymbol{x}=\boldsymbol{y}\)</span> and there are relatively few computations to perform.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 6.1.6"><a href="#sect-lu-factorization-7-6" title="Copy heading and permalink for Example 6.1.6" aria-label="Copy heading and permalink for Example 6.1.6">🔗</a></div></article></details><div class="para" id="sect-lu-factorization-7-7">You can see from the example above that once the matrix <span class="process-math">\(A\)</span> factored that it is relatively simple to find the solutions to <span class="process-math">\(L\boldsymbol{y}=\boldsymbol{b}\)</span> and <span class="process-math">\(A\boldsymbol{x}=\boldsymbol{y}\)</span> and there are relatively few computations to perform.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-lu-factorization-7-8">In fact, this is true in general. In that if one actually finds the factorization of <span class="process-math">\(A\)</span> and then solves this in the manner show that about 1/2 of the operations are done then solving <span class="process-math">\(A\boldsymbol{x}=\boldsymbol{b}\)</span> directly, say by reducing the matrix to reduced row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 5.2.4: Solving linear systems using LU Decomposition"><a href="#sect-lu-factorization-7" title="Copy heading and permalink for Subsection 5.2.4: Solving linear systems using LU Decomposition" aria-label="Copy heading and permalink for Subsection 5.2.4: Solving linear systems using LU Decomposition">🔗</a></div></section><section class="subsection" id="sect-lu-factorization-8"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverting a Matrix</span>
+<div class="autopermalink" data-description="Subsection 6.1.4: Solving linear systems using LU Decomposition"><a href="#sect-lu-factorization-7" title="Copy heading and permalink for Subsection 6.1.4: Solving linear systems using LU Decomposition" aria-label="Copy heading and permalink for Subsection 6.1.4: Solving linear systems using LU Decomposition">🔗</a></div></section><section class="subsection" id="sect-lu-factorization-8"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverting a Matrix</span>
 </h3>
-<div class="para" id="sect-lu-factorization-8-2">The same idea can be use to find inverse of <span class="process-math">\(A\)</span> by repeated solving <span class="process-math">\(LU\boldsymbol{x} =
-\boldsymbol{b}\)</span> by repeating this for <span class="process-math">\(\boldsymbol{b}\)</span> the columns of the identity matrix. The example below shows this without all of the details of finding the factorization:<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-lu-factorization-8-2">The same idea can be use to find inverse of <span class="process-math">\(A\)</span> by repeated solving <span class="process-math">\(LU\boldsymbol{x} = \boldsymbol{b}\)</span> by repeating this for <span class="process-math">\(\boldsymbol{b}\)</span> the columns of the identity matrix. The example below shows this without all of the details of finding the factorization:<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="sect-lu-factorization-8-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-lu-factorization-8-3-1-1">Find the inverse of the matrix in <a href="sect-matrix-inverse.html#ex-3by3-matrix-inverse" class="xref" data-knowl="./knowl/xref/ex-3by3-matrix-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.13">Example 2.3.13</a>,<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-lu-factorization-8-3-1-2">
 <div class="displaymath process-math" id="sect-lu-factorization-8-3-1-2-1">
 \begin{equation*}
-A = \begin{bmatrix}
-3 \amp 3 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5
-\end{bmatrix}
+A = \begin{bmatrix} 3 \amp 3 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1029,14 +924,7 @@ A = \begin{bmatrix}
 <div class="para logical" id="sect-lu-factorization-8-3-2-2">
 <div class="displaymath process-math" id="sect-lu-factorization-8-3-2-2-1">
 \begin{align*}
-L \amp = \begin{bmatrix}
-1 \amp 0 \amp 0 \\ 2/3 \amp 1 \amp 0 \\
-0 \amp -2 \amp 1
-\end{bmatrix} \amp U \amp = \begin{bmatrix}
-3 \amp 3 \amp -1 \\
-0 \amp -1 \amp -7/3 \\
-0 \amp 0 \amp 1/3
-\end{bmatrix}
+L \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2/3 \amp 1 \amp 0 \\ 0 \amp -2 \amp 1 \end{bmatrix} \amp U \amp = \begin{bmatrix} 3 \amp 3 \amp -1 \\ 0 \amp -1 \amp -7/3 \\ 0 \amp 0 \amp 1/3 \end{bmatrix}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1048,9 +936,7 @@ L \amp = \begin{bmatrix}
 <div class="para logical" id="sect-lu-factorization-8-3-2-5">
 <div class="displaymath process-math" id="sect-lu-factorization-8-3-2-5-1">
 \begin{equation*}
-\boldsymbol{y_1} = \begin{bmatrix}
-1 \\ -2/3 \\ -4/3
-\end{bmatrix}
+\boldsymbol{y_1} = \begin{bmatrix} 1 \\ -2/3 \\ -4/3 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1060,22 +946,17 @@ L \amp = \begin{bmatrix}
 <div class="para logical" id="sect-lu-factorization-8-3-2-7">
 <div class="displaymath process-math" id="sect-lu-factorization-8-3-2-7-1">
 \begin{equation*}
-\boldsymbol{x}_1 = \begin{bmatrix}
--11 \\ 10 \\ -4
-\end{bmatrix}
+\boldsymbol{x}_1 = \begin{bmatrix} -11 \\ 10 \\ -4 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-lu-factorization-8-3-2-8">Repeating this for <span class="process-math">\(\boldsymbol{b}=\boldsymbol{e}_2\text{,}\)</span> first solving <span class="process-math">\(L\boldsymbol{y}_2 =
-(0,1,0)^{\intercal}\)</span> or<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-lu-factorization-8-3-2-8">Repeating this for <span class="process-math">\(\boldsymbol{b}=\boldsymbol{e}_2\text{,}\)</span> first solving <span class="process-math">\(L\boldsymbol{y}_2 = (0,1,0)^{\intercal}\)</span> or<div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-lu-factorization-8-3-2-9">
 <div class="displaymath process-math" id="sect-lu-factorization-8-3-2-9-1">
 \begin{equation*}
-\boldsymbol{y}_2 = \begin{bmatrix}
-0 \\ 1 \\ 2
-\end{bmatrix}
+\boldsymbol{y}_2 = \begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1085,9 +966,7 @@ L \amp = \begin{bmatrix}
 <div class="para logical" id="sect-lu-factorization-8-3-2-11">
 <div class="displaymath process-math" id="sect-lu-factorization-8-3-2-11-1">
 \begin{equation*}
-\boldsymbol{x}_2 = \begin{bmatrix}
-17 \\ -15 \\ 6
-\end{bmatrix}
+\boldsymbol{x}_2 = \begin{bmatrix} 17 \\ -15 \\ 6 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1097,9 +976,7 @@ L \amp = \begin{bmatrix}
 <div class="para logical" id="sect-lu-factorization-8-3-2-13">
 <div class="displaymath process-math" id="sect-lu-factorization-8-3-2-13-1">
 \begin{equation*}
-\boldsymbol{y}_3 = \begin{bmatrix}
-0 \\ 0 \\ 1
-\end{bmatrix}
+\boldsymbol{y}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1109,9 +986,7 @@ L \amp = \begin{bmatrix}
 <div class="para logical" id="sect-lu-factorization-8-3-2-15">
 <div class="displaymath process-math" id="sect-lu-factorization-8-3-2-15-1">
 \begin{equation*}
-\boldsymbol{x}_3 = \begin{bmatrix}
-8 \\ -7 \\ 3
-\end{bmatrix}
+\boldsymbol{x}_3 = \begin{bmatrix} 8 \\ -7 \\ 3 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1121,20 +996,16 @@ L \amp = \begin{bmatrix}
 <div class="para logical" id="sect-lu-factorization-8-3-2-17">
 <div class="displaymath process-math" id="sect-lu-factorization-8-3-2-17-1">
 \begin{equation*}
-A^{-1} = \begin{bmatrix}
--11 \amp 17 \amp 8 \\
-10 \amp -15 \amp -7 \\
--4 \amp 6 \amp 3
-\end{bmatrix}
+A^{-1} = \begin{bmatrix} -11 \amp 17 \amp 8 \\ 10 \amp -15 \amp -7 \\ -4 \amp 6 \amp 3 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-lu-factorization-8-3-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 5.2.7.1"><a href="#sect-lu-factorization-8-3-2" title="Copy heading and permalink for Solution 5.2.7.1" aria-label="Copy heading and permalink for Solution 5.2.7.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 6.1.7.1"><a href="#sect-lu-factorization-8-3-2" title="Copy heading and permalink for Solution 6.1.7.1" aria-label="Copy heading and permalink for Solution 6.1.7.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 5.2.7"><a href="#sect-lu-factorization-8-3" title="Copy heading and permalink for Example 5.2.7" aria-label="Copy heading and permalink for Example 5.2.7">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 5.2.5: Inverting a Matrix"><a href="#sect-lu-factorization-8" title="Copy heading and permalink for Subsection 5.2.5: Inverting a Matrix" aria-label="Copy heading and permalink for Subsection 5.2.5: Inverting a Matrix">🔗</a></div></section><div class="autopermalink" data-description="Section 5.2: LU Factorization"><a href="#sect-lu-factorization" title="Copy heading and permalink for Section 5.2: LU Factorization" aria-label="Copy heading and permalink for Section 5.2: LU Factorization">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 6.1.7"><a href="#sect-lu-factorization-8-3" title="Copy heading and permalink for Example 6.1.7" aria-label="Copy heading and permalink for Example 6.1.7">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 6.1.5: Inverting a Matrix"><a href="#sect-lu-factorization-8" title="Copy heading and permalink for Subsection 6.1.5: Inverting a Matrix" aria-label="Copy heading and permalink for Subsection 6.1.5: Inverting a Matrix">🔗</a></div></section><div class="autopermalink" data-description="Section 6.1: LU Factorization"><a href="#sect-lu-factorization" title="Copy heading and permalink for Section 6.1: LU Factorization" aria-label="Copy heading and permalink for Section 6.1: LU Factorization">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="ch-matrix-factoring-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-matrix-factoring-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-matrix-factoring.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-matrix-factoring-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
