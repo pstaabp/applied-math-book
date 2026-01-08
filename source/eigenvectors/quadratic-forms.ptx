@@ -4,9 +4,12 @@
   <title>Symmetric and Orthogonal Matrices and Quadratic Forms</title>
 
   <introduction>
+    <p>
+    <alert>This section needs a lot of work</alert> </p>
+
     <definition>
       <statement>
-        <p> A square matrix <m>A</m> is said to be <term>symmetric</term> if <m>A=A^T</m>. </p>
+        <p> A square matrix <m>A</m> is said to be <term>symmetric</term> if <m>A=A^{\intercal}</m>. </p>
       </statement>
 
     </definition>
@@ -27,11 +30,11 @@
             A \boldsymbol{v} = \lambda \boldsymbol{v}
           </me>
         </p>
-        <p> Right multiply by <m>\boldsymbol{v}^T</m></p>
+        <p> Left multiply by <m>\boldsymbol{v}^{\intercal}</m></p>
 
         <p>
           <me>
-            \boldsymbol{v}^T A \boldsymbol{v} = \lambda \boldsymbol{v}^T \boldsymbol{v}
+            \boldsymbol{v}^{\intercal} A \boldsymbol{v} = \lambda \boldsymbol{v}^{\intercal} \boldsymbol{v}
           </me>
         </p>
 
@@ -39,20 +42,20 @@
 
         <p>
           <md>
-            <mrow>\overline{\boldsymbol{v}}^T A^T \amp = \overline{\lambda} \overline {\boldsymbol{v}}^T </mrow>
-            <mrow>\overline{\boldsymbol{v}}^T A \amp = \overline{\lambda} \overline {\boldsymbol{v}}^T</mrow>
+            <mrow>\overline{\boldsymbol{v}}^{\intercal} A^{\intercal} \amp = \overline{\lambda} \overline {\boldsymbol{v}}^{\intercal} </mrow>
+            <mrow>\overline{\boldsymbol{v}}^{\intercal} A \amp = \overline{\lambda} \overline {\boldsymbol{v}}^{\intercal}</mrow>
           </md>
         </p>
         <p>left mulitply by <m>\boldsymbol{v}</m></p>
         <p>
           <md>
-            <mrow>\overline{\boldsymbol{v}}^T A \boldsymbol{v} \amp = \overline{\lambda} \overline{\boldsymbol{v}}^T
+            <mrow>\overline{\boldsymbol{v}}^{\intercal} A \boldsymbol{v} \amp = \overline{\lambda} \overline{\boldsymbol{v}}^{\intercal}
               \boldsymbol{v} </mrow>
-            <mrow>\overline{\boldsymbol{v}}^T \lambda \boldsymbol{v} \amp = \overline{\lambda}
-              \overline{\boldsymbol{v}}^T
+            <mrow>\overline{\boldsymbol{v}}^{\intercal} \lambda \boldsymbol{v} \amp = \overline{\lambda}
+              \overline{\boldsymbol{v}}^{\intercal}
               \boldsymbol{v} </mrow>
-            <mrow>\lambda \overline{\boldsymbol{v}}^T \boldsymbol{v} \amp = \overline{\lambda}
-              \overline{\boldsymbol{v}}^T
+            <mrow>\lambda \overline{\boldsymbol{v}}^{\intercal} \boldsymbol{v} \amp = \overline{\lambda}
+              \overline{\boldsymbol{v}}^{\intercal}
               \boldsymbol{v}</mrow>
           </md>
         </p>
@@ -77,18 +80,18 @@
 
         <p>
           <me>
-            \boldsymbol{q}_i^T \boldsymbol{q}_j = 0
+            \boldsymbol{q}_i^{\intercal} \boldsymbol{q}_j = 0
           </me>
         </p>
 
-        <p>for all <m>i \neq j</m>. If in addition that <m>\boldsymbol{q}_i^T\boldsymbol{q}_i = 1</m> for all <m>i</m>
+        <p>for all <m>i \neq j</m>. If in addition that <m>\boldsymbol{q}_i^{\intercal}\boldsymbol{q}_i = 1</m> for all <m>i</m>
           then the matrix is also said to be <term>orthonormal</term>. </p>
       </statement>
     </definition>
 
     <theorem>
       <statement>
-        <p> If <m>Q</m> is a orthonormal matrix, then <m>Q^T = Q^{-1}</m>. </p>
+        <p> If <m>Q</m> is a orthonormal matrix, then <m>Q^{\intercal} = Q^{-1}</m>. </p>
       </statement>
     </theorem>
   </introduction>
@@ -123,7 +126,7 @@
           </me>
         </p>
 
-        <p> satisfies <m>Q^T = Q^{-1}</m>.</p>
+        <p> satisfies <m>Q^{\intercal} = Q^{-1}</m>.</p>
       </solution>
     </example>
 
@@ -185,11 +188,11 @@
 
     <p>
       <me>
-        q(\boldsymbol{x}) = \boldsymbol{x}^T A \boldsymbol{x}
+        q(\boldsymbol{x}) = \boldsymbol{x}^{\intercal} A \boldsymbol{x}
 </me>
     </p>
 
-    <p>for some symmetric matrix <m>A</m> and <m>\boldsymbol{x}=[x_1\;\;x_2 \;\; \cdots \;\; x_n]^T</m>.</p>
+    <p>for some symmetric matrix <m>A</m> and <m>\boldsymbol{x}=[x_1\;\;x_2 \;\; \cdots \;\; x_n]^{\intercal}</m>.</p>
 
     <example>
       <statement>
@@ -205,7 +208,7 @@
               \end{bmatrix}
             </mrow>
             <mrow>
-              \boldsymbol{x}^T A \boldsymbol{x} \amp = [x_1 \;\; x_2] \begin{bmatrix}
+              \boldsymbol{x}^{\intercal} A \boldsymbol{x} \amp = [x_1 \;\; x_2] \begin{bmatrix}
               4 \amp2 \\
               2 \amp 7
               \end{bmatrix} \begin{bmatrix}
@@ -245,7 +248,7 @@
     <p>For the quadratic form:</p>
 
     <p><me>
-        q(\boldsymbol{x}) = \boldsymbol{x}^T A \boldsymbol{x}
+        q(\boldsymbol{x}) = \boldsymbol{x}^{\intercal} A \boldsymbol{x}
 </me>
 </p>
 
@@ -253,19 +256,19 @@
 
 <p>
   <me>
-      q(\boldsymbol{x}) = \boldsymbol{x}^T P D P^{-1} \boldsymbol{x}
+      q(\boldsymbol{x}) = \boldsymbol{x}^{\intercal} P D P^{-1} \boldsymbol{x}
   </me>
 </p>
       <p>and since <m>A</m> is symmetric then the eigenvectors form an
-        orthonormal basis so <m>P^{-1} = P^T</m>.
+        orthonormal basis so <m>P^{-1} = P^{\intercal}</m>.
         </p>
     <p>
       <me>
-         q(\boldsymbol{x}) =\boldsymbol{y}^T D \boldsymbol{y}
+         q(\boldsymbol{x}) =\boldsymbol{y}^{\intercal} D \boldsymbol{y}
         </me>
       </p>
 
       <p>
-        where <m>\boldsymbol{y}= P^T \boldsymbol{x}</m>. Example of ellipse/contour plot. </p>
+        where <m>\boldsymbol{y}= P^{\intercal} \boldsymbol{x}</m>. Example of ellipse/contour plot. </p>
   </subsection>
 </section>

@@ -475,7 +475,7 @@
 		<example>
 			<statement>
 				<p>
-					Find the projection of <m>\sin \pi x</m>, an element of <m>{\cal C}^{(0)}</m> onto <m>{\cal P}_5[-1,1]</m>
+					Find the projection of <m>\sin \pi x</m>, an element of <m>{\cal C}^{(0)}</m> onto <m>{\cal P}_3[-1,1]</m>
 				</p>
 			</statement>
 
@@ -524,7 +524,7 @@
 				</p>
 
 				<p>
-					where <m>P_k</m> is the <m>k</m>th Legendre polynomial as in (<xref ref="eq-legendre-poly" />).
+					where <m>P_k</m> is the <m>k</m>th Legendre polynomial as in <xref ref="eq-legendre-poly" />.
 					A plot of this is
 				</p>
 

@@ -11,13 +11,14 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-linear-systems.ptx" />
-    <xi:include href="./ch-matrices.ptx" />
-    <xi:include href="./ch-vector-spaces.ptx" />
-    <xi:include href="./ch-eigenvectors.ptx" />
-    <xi:include href="./ch-matrix-factoring.ptx" />
-    <xi:include href="./ch-fourier-series.ptx" />
-    <xi:include href="./ch-pde.ptx" />
+    <xi:include href="./linear-systems/ch-linear-systems.ptx" />
+    <xi:include href="./matrices/ch-matrices.ptx" />
+    <xi:include href="./functions-calculus/ch-functions.ptx" />
+    <xi:include href="./vector-spaces/ch-vector-spaces.ptx" />
+    <xi:include href="./eigenvectors/ch-eigenvectors.ptx" />
+    <xi:include href="./matrix-factoring/ch-matrix-factoring.ptx" />
+    <xi:include href="./fourier-series/ch-fourier-series.ptx" />
+    <xi:include href="./pde/ch-pde.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

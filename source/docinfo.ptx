@@ -20,7 +20,11 @@
   <!-- it defines. -->
   <macros> \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
 \DeclareMathOperator{\sgn}{sgn}
-
+\DeclareMathOperator{\mnr}{mnr}
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\adj}{adj}
+\newcommand{\real}[1]{\operatorname{Re}(#1)}
+\newcommand{\imag}[1]{\operatorname{Im}(#1)}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->

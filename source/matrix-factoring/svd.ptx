@@ -63,7 +63,7 @@
 			Recall also that <m>U</m> will be the eigenvectors of <m>AA^{\intercal}</m>.
 			These properties are used to actually find <m>U</m> and <m>\Sigma</m>.
 			Also, if you can find either <m>U</m> or <m>V</m>, then finding the other is easier by
-			solving (<xref ref="eq-SVD-decomp" />).
+			solving <xref ref="eq-SVD-decomp" />.
 			If we know <m>V</m>, then
 		</p>
 
@@ -90,7 +90,7 @@
 		</p>
 
 		<p>
-			where the third property of <xref ref="thm-matrix-transpose" /> was used.
+			where the fourth property of <xref ref="lem-matrix-transpose" /> was used.
 			Similarly, if one solves for <m>U</m>:
 		</p>
 
@@ -510,7 +510,7 @@
 			<image width="75%" xml:id="plot-best-fit-points-svd">
 				<latex-image>
 				<![CDATA[
-				\begin{tikzpicture}[scale=0.8]
+				\begin{tikzpicture}[scale=1.2]
 				\draw[->] (-2,0) -- (7,0) node [above right] {$x$};
 				\draw[->] (0,-2) -- (0,7) node [above right] {$y$};
 				\foreach \x in {-1,1,2,...,6} {\draw (\x,0.15) -- (\x,-0.15) node [below] {$\x$};}
@@ -607,7 +607,7 @@
 			<image width="75%" xml:id="plot-points-and-line">
 				<latex-image>
 				<![CDATA[
-				\begin{tikzpicture}[scale=0.8]
+				\begin{tikzpicture}[scale=1.2]
 				\draw[->] (-2,0) -- (7,0) node [above right] {$x$};
 				\draw[->] (0,-2) -- (0,7) node [above right] {$y$};
 				\foreach \x in {-1,1,2,...,6} {\draw (\x,0.15) -- (\x,-0.15) node [below] {$\x$};}

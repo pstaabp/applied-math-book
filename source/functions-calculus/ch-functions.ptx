@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-functions-calculus" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Functions and Calculus of Functions</title>
+  
+  <introduction>
+  <p>
+    In this chapter, we review some basics of complex numbers, functions and calculus of functions that we will need later in the course.
+  </p>
+  </introduction>
+
+<xi:include href="./complex-numbers.ptx" />  
+<xi:include href="./function-properties.ptx" />
+
+</chapter>

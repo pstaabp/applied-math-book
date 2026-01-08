@@ -14,12 +14,12 @@
 </introduction>
 
 	<!-- include sections -->
-	<xi:include href="pde/partial-derivatives.ptx" />
-	<xi:include href="pde/modeling-pdes.ptx" />
-	<xi:include href="pde/linear-ode.ptx" />
-	<xi:include href="pde/sturm-liouville-probs.ptx" />
-	<xi:include href="pde/heat-eqn-1d.ptx" />
-	<xi:include href="pde/heat-eqn-2d.ptx" />
-	<xi:include href="pde/bessel.ptx" />
-	<xi:include href="pde/heat-circular.ptx" />
+	<xi:include href="./partial-derivatives.ptx" />
+	<xi:include href="./modeling-pdes.ptx" />
+	<xi:include href="./linear-ode.ptx" />
+	<xi:include href="./sturm-liouville-probs.ptx" />
+	<xi:include href="./heat-eqn-1d.ptx" />
+	<xi:include href="./heat-eqn-2d.ptx" />
+	<xi:include href="./bessel.ptx" />
+	<xi:include href="./heat-circular.ptx" />
 </chapter>

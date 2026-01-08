@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<preface xml:id="preface">
+  <paragraphs>
+    <title>To the Student</title>
+    <p>
+      This is a textbook that I have developed starting around 2010 for students in the <em>Applied Mathematics</em> class at Fitchburg State University.  I got my Ph.D. in Applied Mathematics and there was some core material that I felt was needed for such a course and at the time did not find an appropriate text for the course. 
+    </p>
+    <p>
+      In 2024, I adapted the book from a solely <latex /> book to one written in <pretext /> and since then I have been refining it. 
+    </p>
+    <p>
+      First, if you are reading this, kudos to you. I have to admit that I don't always read the preface to a book.  If you are reading this, then I think you may already have a deeper belief in understanding than someone who is just interested in the answer.  I (and I believe most authors) decide to write a book and spend a lot of time thinking about it and editing to give the material in the book a context.  I want to spend a bit of time discussing this in this preface. 
+    </p>
+    <p>
+      Why have a textbook in the age of Artificial Intelligence?  I think this is a great question.  I feel that a textbook is very grounding and gives structure to a class.  
+    </p>
+  </paragraphs>
+
+  </preface>

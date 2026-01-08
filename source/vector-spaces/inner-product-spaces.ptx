@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sect-inner-product">
 	<title>Inner Product Spaces</title>
+
+	<objectives>
+		<ul>
+			<li>
+				<p>
+					Extend the idea of an <term>inner product</term> to vectors other than <m>\mathbb{R}^n</m>.
+				</p>
+			</li>
+			<li>
+				<p>
+					Extend the idea of length of a vector or distance between two vectors. 
+				</p>
+			</li>
+			<li>
+				<p>
+					Extend the idea of the angle between two vectors. 
+				</p>
+			</li>
+			<li>
+				<p>
+					Determine whether two vectors are orthogonal and define a orthogonal and orthonormal set of vectors. 
+				</p>
+			</li>
+			<li>
+				<p>
+					Find a orthogonal set of vectors using the <term>Gram-Schmidt</term> process.
+				</p>
+			</li>
+		</ul>
+	</objectives>
+	
 	<introduction>
 		<p>
 			In <xref ref="sect-length-angles" />, we examined the dot product between two
-			vectors.
-			Recall that we can write the dot product between two vectors <m>\boldsymbol{u}</m> and <m>
-			\boldsymbol{v}</m> in <m>\mathbb{R}^n</m> is
+			vectors in <m>\mathbb{R}^n</m>
+			Recall that this dot product between two vectors <m>\boldsymbol{u}</m> and <m>
+			\boldsymbol{v}</m> is
 		</p>
 
 		<p>
-			<me>
+			<men xml:id="eq-dot-product-rn">
 				\boldsymbol{u} \cdot \boldsymbol{v} = u_1v_1 + u_2v_2 + \cdots +u_nv_n
-			</me>
+			</men>
 		</p>
 
 		<p>
@@ -81,7 +112,7 @@
 				</p>
 
 				<p>
-					<m>\langle \boldsymbol{u}, \boldsymbol{v} \rangle = \boldsymbol{u}^{\intercal}\boldsymbol{v}</m>.
+					<m>\langle \boldsymbol{u}, \boldsymbol{v} \rangle = \boldsymbol{u}^{\intercal}\boldsymbol{v}</m>, which is an alternative  way of writing <xref ref="eq-dot-product-rn"/>.
 				</p>
 			</statement>
 
@@ -223,6 +254,9 @@
 
 	<subsection>
 		<title>Vector Norms and distance</title>
+		<p>
+			The notion of the length of a vector in <m>\mathbb{R}^n</m> was examined in <xref ref="sect-length-angles"/>. We extend this idea to any vector in an inner product space with the following. 
+		</p>
 		<definition>
 			<statement>
 				<p>
@@ -328,7 +362,8 @@
 
 	<subsection>
 		<title>Orthonormal sets of vectors</title>
-		<definition>
+		<definition xml:id="def-finite-set-orthogonal">
+			<title>A finite set of orthogonal/orthonormal vectors</title>
 			<statement>
 				<p>
 					Let <m>\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\}</m> each be elements of an inner
@@ -470,7 +505,7 @@
 					<md>
 						<mrow>\langle \sin x, \sin 2x \rangle \amp = \int_{-\pi}^{\pi} \sin x \sin 2x \, dx
 						= \int_{-\pi}^{\pi} \frac{e^{ix} - e^{-ix}}{2i} \frac{e^{2ix} - e^{-2ix}}{2i}\,dx </mrow>
-						<mrow>\amp = \frac{1}{-4} \int_0^{\pi} (e^{3ix} -e^{ix} -e^{-ix} + e^{-3ix} ) \, dx </mrow>
+						<mrow>\amp = \frac{1}{-4} \int_\{-\pi}^{\pi} (e^{3ix} -e^{ix} -e^{-ix} + e^{-3ix} ) \, dx </mrow>
 						<mrow>\amp = -\frac{1}{4} \biggl( \frac{e^{3ix}}{3i} - \frac{e^{ix}}{i} -
 						\frac{e^{-ix}}{-i} + \frac{e^{-3ix}}{-3i} \biggr) \biggr\vert_{-\pi}^{\pi} </mrow>
 						<mrow>\amp = -\frac{1}{4} \biggl( \frac{e^{3i\pi}}{3i} - \frac{e^{i\pi}}{i} -
@@ -499,6 +534,36 @@
 
 				<p>
 					if <m>k \neq \ell</m>.
+				</p>
+			</solution>
+		</example>
+
+		<p>
+			Similar to vectors in <m>\mathbb{R}^n</m>, we can take a vector that doesn't have norm 1 by dividing the vector through by its length.  That is, if <m>\boldsymbol{u}</m> is a vector then 
+			<men xml:id="eq-normalize-vector">\hat{\boldsymbol{u}} = \frac{\boldsymbol{u}}{||\boldsymbol{u}||}</men>
+			has length 1. 
+		</p>
+		<p>
+			The next example shows how to take an orthogonal set and make an orthonormal set of vectors.  
+		</p>
+
+		<example>
+			<statement>
+				<p>
+					In <xref ref="ex-orthog-set"/>, we showed that the vectors <m>\{ \sin x, \sin 2x, \sin 3x\}</m> is an orthogonal set on <m>[-\pi,\pi]</m>.  Use <xref ref="eq-normalize-vector"/> to create an orthonormal set. 
+				</p>
+			</statement>
+			<solution>
+				<p>
+					We need to find <m>\langle \sin kx, \sin kx\rangle</m> for <m>k=1,2,3</m>, but we can do this in general with 
+					<me>
+						\begin{aligned}
+							\langle \sin kx, \sin kx\rangle \amp = -\frac{1}{4} \int_{-\pi}^{\pi} \left(e^{ikx} - e^{-ikx} \right)^2 \, dx \\
+							\amp = -\frac{1}{4} \int_{-\pi}^{\pi} \left(e^{2ikx} -2 + e^{-2ikx}\right) \, dx \\ 
+							\amp = -\frac{1}{4} \int_{-\pi}^{\pi} e^{2ikx} \,dx + \frac{1}{2} \int_{-\pi}{\pi} \, dx - \frac{1}{4} \int_{-\pi}^{\pi} e^{-2ikx} \,dx \\
+							\amp = -\frac{1}{8ik} e^{2ikx} \biggr\vert_{-\pi}^{\pi}  + \pi + -\frac{1}{8ik} e^{2ikx} \biggr\vert_{-\pi}^{\pi}
+						\end{aligned}
+					</me>
 				</p>
 			</solution>
 		</example>
@@ -901,7 +966,7 @@
 			</p>
 
 			<p>
-				The only term that is not apparantly nonzero in the sum is when <m>i=j</m>
+				The only term that is not apparently nonzero in the sum is when <m>i=j</m>
 			</p>
 
 			<p>
@@ -1110,4 +1175,164 @@
 			</solution>
 		</example>
 	</subsection>
+
+
+  <subsection>
+    <title>Orthogonal infinite sets of functions</title>
+
+		<p>
+			<xref ref="def-finite-set-orthogonal"/> defines a finite set of vectors that are orthogonal or orthonormal.  This can be extended to an infinite set of vectors with the following: 
+		</p>
+
+    <definition>
+      <statement>
+        <p>
+          An infinite set of continuous function <m>\{f_1,f_2, \ldots\}</m> is said to be <term>orthogonal on <m>[a,b]</m></term> if <m>\langle f_n, f_m \rangle =0</m> for all <m>n,m</m>, <m>n \neq m</m>.
+          If in addition, <m>||f_n||=1</m> for all <m>n</m>, the set is said to be <term> orthonormal</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      In the next couple of examples, we examine a couple of the most important orthogonal and orthonormal sets of functions.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Show that <m>f_n(x) = \sin nx</m> for <m>n=1,2,3,\ldots</m> form an orthogonal set on <m> [-\pi,\pi]</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          In this case, we will expand on <xref ref="ex-orthog-set" /> and use the handy alternative definition of the sine function.
+          Find the inner product if <m>n \neq m</m> ,
+        </p>
+
+        <p>
+          <md>
+            <mrow>\langle f_n, f_m \rangle \amp = \int_{-\pi}^{\pi} \sin nx \sin mx \, dx </mrow>
+            <mrow>\amp = \int_{-\pi}^{\pi} \frac{e^{i n x} - e^{-i n x}}{2i}\frac{e^{i mx} - e^{-i m x}}{2i} \, dx </mrow>
+            <mrow>\amp = -\frac{1}{4} \int_{-\pi}^{\pi} \bigl( e^{i(m+n)x} - e^{i(m-n) x}- e^{i(n-m) x} + e^{-i(m+n) x} \bigr) \, dx</mrow>
+            <mrow>\amp = 0</mrow>
+          </md>
+        </p>
+
+        <p>
+          where <xref ref="lem-int-complex-exp" /> is used on the last step above.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-trig-ortho-set">
+      <statement>
+        <p>
+          Show that the set of functions
+        </p>
+
+        <p>
+          <me>
+            \biggl\{ \frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{\pi}} \cos x , \frac{1}{\sqrt{\pi}} \sin x, \frac{1}{\sqrt{\pi}} \cos 2x, \frac{1}{\sqrt{\pi}} \sin 2x, \ldots \biggr\}
+          </me>
+        </p>
+
+        <p>
+          for an orthonormal set on <m>[-\pi,\pi]</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We showed above that <m>\langle \sin mx, \sin nx \rangle=0</m> for all <m>m,n</m> when <m>m \neq n</m>.
+          Therefore <m>\langle (\sin mx)/\sqrt{\pi}, (\sin nx)/\sqrt{\pi} \rangle</m> also equals 0 for <m>m \neq n</m>.
+          For simpler notation let
+          <md>
+            <mrow>s_n(x) \amp = \frac{1}{\sqrt{\pi}}\sin n x, \qquad \text{for $n \gt 0$} </mrow>
+            <mrow>c_n(x) \amp = \begin{cases} \frac{1}{\sqrt{2\pi}} \amp n = 0, \\ \frac{1}{\sqrt{\pi}} \cos nx \amp n \gt 0, \end{cases}</mrow>
+          </md>
+        </p>
+
+        <p>
+          First, we will show that <m>\langle s_m (x), c_n(x) \rangle=0</m> for all <m>n, m \gt 0</m> .
+        </p>
+
+        <p>
+          <md>
+            <mrow>\langle s_m (x), c_n (x) \rangle \amp = \biggl\langle \frac{1}{\sqrt{\pi}}\sin mx, \frac{1}{\sqrt{\pi}}\cos nx \biggr\rangle </mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \sin mx \cos nx \,dx </mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \frac{e^{imx} - e^{-imx}}{2i} \frac{e^{inx}+e^{-inx}}{2} \, dx </mrow>
+            <mrow>\amp = \frac{1}{4i\pi} \int_{-\pi}^{\pi} \bigl( e^{i(m+n)x}-e^{i(n-m)x}+e^{i(m-n)x}-e^{-i(m+n)x} \bigr) \, dx \\ \amp = 0</mrow>
+          </md>
+        </p>
+
+        <p>
+          since each integral is zero from <xref ref="lem-int-complex-exp" />.
+          Next, we will show that <m>\langle c_m(x), c_n(x) \rangle = 0</m> for all <m>n,m >0</m> such that <m>n \neq m</m>.
+        </p>
+
+        <p>
+          <md>
+            <mrow>\langle c_m (x), c_n (x) \rangle \amp =\biggl\langle \frac{1}{\sqrt{\pi}}\cos mx, \frac{1}{\sqrt{\pi}}\cos nx \biggr\rangle</mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \cos mx \cos nx \,dx</mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \frac{e^{imx} + e^{-imx}}{2} \frac{e^{inx}+e^{-inx}}{2} \, dx</mrow>
+            <mrow>\amp = \frac{1}{4\pi} \int_{-\pi}^{\pi} \bigl( e^{i(m+n)x} +e^{i(n-m)x}+e^{i(m-n)x}+e^{-i(m+n)x} \bigr) \, dx </mrow>
+            <mrow>\amp= 0</mrow>
+          </md>
+        </p>
+
+        <p>
+          because again each integral is zero from  <xref ref="lem-int-complex-exp" />.
+          Also,
+        </p>
+
+        <p>
+          <md>
+            <mrow>\langle c_m, c_0 \rangle \amp = \int_{-\pi}^{\pi} \frac{1}{\sqrt{2\pi}} \cos mx \, dx</mrow>
+            <mrow> \amp = -\frac{1}{m\sqrt{2\pi}} \sin mx \biggr|_{-\pi}^{\pi} = 0  </mrow>
+          </md>
+        </p>
+
+        <p>
+          Lastly, we need to show that the norm of each of the functions is 1.
+        </p>
+
+        <p>
+          <md>
+            <mrow>\langle c_0, c_0 \rangle \amp = \int_{-\pi}^{\pi} \biggl(\frac{1}{\sqrt{2\pi}} \biggr)^2 \, dx = \int_{-\pi}^{\pi} \frac{1}{2\pi} \, dx = 1 ,</mrow>
+            <mrow>\langle c_n, c_n \rangle \amp =\frac{1}{\pi} \int_{-\pi}^{\pi} \cos^2 nx \, dx </mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \biggl( \frac{e^{inx} + e^{-inx}}{2} \biggr)^2 \, dx </mrow>
+            <mrow>\amp = \frac{1}{4\pi} \int_{-\pi}^{\pi} \bigl( e^{2inx} + 2 + e^{-2inx} \bigr) \, dx</mrow>
+          </md>
+        </p>
+
+        <p>
+          and the integrals of the first and third terms are zero from  <xref ref="lem-int-complex-exp" />.
+        </p>
+
+        <p>
+          <md>
+            <mrow>\amp = \frac{1}{4\pi} \int_{-\pi}^{\pi} 2 \, dx = 1 </mrow>
+            <mrow>\langle s_n, s_n \rangle \amp =\frac{1}{\pi} \int_{-\pi}^{\pi} \sin^2 nx \, dx </mrow>
+            <mrow>\amp = \frac{1}{\pi} \int_{-\pi}^{\pi} \biggl( \frac{e^{inx} - e^{-inx}}{2i} \biggr)^2 \, dx </mrow>
+            <mrow>\amp = \frac{1}{(2i)^2\pi} \int_{-\pi}^{\pi} \bigl( e^{2inx} - 2 + e^{-2inx} \bigr) \, dx</mrow>
+          </md>
+        </p>
+
+        <p>
+          and the integrals of the first and third terms are zero from  <xref ref="lem-int-complex-exp" />.
+        </p>
+
+        <p>
+          <md>
+            <mrow>\amp = \frac{1}{-4\pi} \int_{-\pi}^{\pi} -2 \, dx = 1 </mrow>
+          </md>
+        </p>
+
+        <p>
+          This shows that the set of functions given above is an orthonormal set of functions.
+        </p>
+      </solution>
+    </example>
+  </subsection>
 </section>

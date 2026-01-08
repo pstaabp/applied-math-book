@@ -18,9 +18,9 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="vector-spaces/vector-spaces.ptx" />
-  <xi:include href="vector-spaces/subspaces.ptx" />
-  <xi:include href="vector-spaces/inner-product-spaces.ptx" />
-  <xi:include href="vector-spaces/linear-transformations.ptx" />
-  <xi:include href="vector-spaces/projection-maps.ptx" />
+  <xi:include href="./vector-spaces.ptx" />
+  <xi:include href="./subspaces.ptx" />
+  <xi:include href="./inner-product-spaces.ptx" />
+  <xi:include href="./linear-transformations.ptx" />
+  <xi:include href="./projection-maps.ptx" />
 </chapter>

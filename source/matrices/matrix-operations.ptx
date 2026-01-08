@@ -978,7 +978,7 @@
       We will see that transposes play a big role in linear algebra.
     </p>
 
-    <lemma>
+    <lemma xml:id="lem-matrix-transpose">
       <title>Properties of Transposes</title>
 
       <statement>

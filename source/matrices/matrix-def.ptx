@@ -16,6 +16,11 @@
           Learning some notation around matrices and vectors.
         </p>
       </li>
+      <li>
+        <p>
+          Definitions of upper and lower triangular matrices. 
+        </p>
+      </li>
     </ul>
   </objectives>
 
@@ -131,5 +136,116 @@
         We will see later in this chapter that we can simply write a row vector as a transformation of a column vector.
       </p>
     </remark>
+  </subsection>
+  <subsection xml:id="sect-triangular-matrices">
+    <title>Diagonal and Triangular Matrices </title>
+    <p>
+      As we will see throughout this chapter, there are many important forms of matrices and in this section we see diagonal and triangular matrices.  
+    </p>
+    <definition xml:id="def-diagonal-matrix">
+      <statement>
+        <p>
+          A matrix with only non-zero entries are on the main diagonal<fn>Recall that the main diagonal is the one where the row number equals the column number, or more informally the diagonal from upper left to lower right.</fn> is called a <term>diagonal matrix</term>.  Using the subscript notation, <m>A</m> is diagonal if <m>a_{ij} =0</m> for all <m>i,j</m> where <m>i \neq j</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The following show examples of diagonal matrices.
+    </p>
+    <example>
+      <statement>
+        <p>
+          These matrices are diagonal matrices. 
+          <me>
+            \begin{aligned}
+            \amp\begin{bmatrix}
+2 \amp 0 \amp 0 \\
+0 \amp -1 \amp 0 \\
+0 \amp 0 \amp 5
+\end{bmatrix} \amp\amp \begin{bmatrix}
+5 \amp 0 \\
+0 \amp 2/3 \\
+0 \amp 0 \\
+0 \amp 0
+\end{bmatrix} \amp\amp \begin{bmatrix}
+-9 \amp 0 \amp 0 \\
+0 \amp 4 \amp 0
+\end{bmatrix}
+            \end{aligned}
+          </me>
+        </p>
+      </statement>
+    </example>
+    <p>
+      Another class of matrices are triangular.  These are matrices with all zeros above or below the diagonal. 
+    </p>
+    <definition xml:id="def-diagonal-triangular-matrix">
+      <statement>
+        <p>
+          An <term>upper-triangular matrix</term> is a matrix where all entries below the main diagonal is 0 or <m>A</m>  is upper-triangular if <m>a_{ij}=0</m> if <m>i\gt j</m>. 
+        </p>
+        <p>
+          A <term>lower-triangular matrix</term> is a matrix where all entries above the main diagonal is 0 or <m>A</m>  is lower-triangular if <m>a_{ij}=0</m> if <m>i\lt j</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      And here are some examples.
+    </p>
+    <example>
+      <statement>
+        <p>
+           The following are upper-triangular matrices. 
+           <me>
+            \begin{aligned}
+            \amp \begin{bmatrix}
+            -1 \amp 2 \amp 0 \amp 4 \\
+            0 \amp 4 \amp -5 \amp 3 \\
+            0 \amp 0 \amp 1 \amp -2
+            \end{bmatrix}
+            \amp \amp 
+            \begin{bmatrix}
+            5 \amp 3 \amp 4 \\
+            0 \amp -2 \amp 11 \\
+            0 \amp 0 \amp 3 \\
+            0 \amp 0 \amp 0 
+            \end{bmatrix}
+            \amp \amp 
+            \begin{bmatrix}
+            6 \amp 4 \amp 0 \amp 3 \\
+            0 \amp -2 \amp 1 \amp 5 \\
+            0 \amp 0 \amp 4 \amp 3 \\
+            0 \amp 0 \amp 0 \amp -4 
+            \end{bmatrix}
+            \end{aligned}
+           </me>
+        </p>
+        <p>
+          The following are lower-triangular matrices. 
+          <me>
+            \begin{aligned}
+            \amp \begin{bmatrix}
+            3 \amp 0 \amp 0 \\
+            -1 \amp 2 \amp 0 \\
+            4 \amp 5 \amp -2
+            \end{bmatrix}
+            \amp \amp 
+            \begin{bmatrix}
+            7 \amp 0 \amp 0 \amp 0 \\
+            2 \amp -3 \amp 0 \amp 0 \\
+            1 \amp 4 \amp 5 \amp 0 
+            \end{bmatrix}
+            \amp \amp 
+            \begin{bmatrix}
+            1 \amp 0 \amp 0 \amp 0 \\
+            -2 \amp 3 \amp 0 \amp 0 \\
+            4 \amp -1 \amp 2 \amp 0 \\
+            5 \amp 3 \amp -2 \amp 6 
+            \end{bmatrix}
+            \end{aligned}
+          </me> 
+        </p>
+      </statement>
+    </example>
   </subsection>
 </section>

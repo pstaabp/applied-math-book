@@ -88,6 +88,11 @@
     </p>
 
     <p>
+      The matrix inverse of a <m>2 \times 2</m> matrix was found in <xref ref="eq-def-2by2-inverse"/>.
+      Notice that the expression <m>ad-bc</m> appeared in the formula as well.
+    </p>
+
+    <p>
       This section expands the definition to other matrix sizes and lists other properties of the determinant.
     </p>
   </introduction>
@@ -159,6 +164,21 @@
       where recall that the 2nd term has the permutation <m>\sigma(1)=2, \sigma(2)=1</m>.
       This is identical to the <m>2 \times 2</m> example above.
     </p>
+
+    <note>
+      <title>The Determinant of a <m>2 \times 2</m> matrix </title>
+
+      <p>
+        As you learn linear algebra, <m>2 \times 2</m> matrices arise often and it is helpful to know (maybe even memorize) the determinant formula above.
+        That is:
+      </p>
+
+      <p>
+        <men xml:id="eq-det-2by2">
+          \left(\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}\right) = ad-bc
+        </men>
+      </p>
+    </note>
 
     <p>
       It may seem like now that we have the definition in <xref ref="def-det"/>, we can calculate the determinant of any square matrix.
@@ -538,7 +558,8 @@
       </proof>
     </lemma>
   </subsection>
-  
+
+
   <subsection>
     <title>Gauss' Method for Calculating Determinants</title>
 
@@ -640,8 +661,8 @@
   </subsection>
 
 
-  <subsection>
-    <title>Expansion Method for finding the Determinant</title>
+  <subsection xml:id="subsec-minors-cofactors">
+    <title>Minors and Cofactors of a Matrix</title>
 
     <p>
       Although Gauss' method is a very robust and in general efficient method for finding determinants, a method called the Laplace Expansion method can be quite helpful at times as well.
@@ -651,54 +672,106 @@
     <definition>
       <statement>
         <p>
-          For any <m>n\times n</m> matrix <m>T</m> , the <m>(n - 1)\times(n - 1)</m> matrix formed by deleting row <m>i</m> and column <m>j</m> of <m>T</m> is the <term><m>i,j</m> minor of <m> T</m></term>.
-          The <term><m>i,j</m> cofactor <m>T_{i,j}</m></term> of <m>T</m> is <m> (-1)^{i+j}</m> times the determinant of the <m>i, j</m> minor of <m>T</m> and denoted <m>(-1)^{i+j} |T_{i,j}|</m>.
+          For any <m>n\times n</m> matrix <m>A</m> , the <m>(n - 1)\times(n - 1)</m> matrix formed by deleting row <m>i</m> and column <m>j</m> of <m>A</m> is the <term><m>i,j</m> minor of <m> T</m></term>.
+          It is denoted <m>\mnr_{ij}(A)</m> The <term><m>i,j</m> cofactor <m>A_{ij}</m></term> of <m>T</m> is
+          <me>
+            \cof_{ij}(A) = (-1)^{i+j}|\mnr_{ij}(A)|
+          </me>
+          The cofactor matrix or <m>\cof(A)</m> is the matrix of cofactors.
+          Thus
+          <me>
+            C = \cof(A) = \left[ \cof_{ij}(A)\right]
+          </me>
         </p>
       </statement>
     </definition>
 
-    <example>
-      <statement>
-        <p>
-          Find the <m>T_{1,1}</m> and <m>T_{2,3}</m> minors and cofactors of the matrix
-        </p>
+    <p>
+      Before moving on, let's find some minors, cofactors and the cofactor matrix of a <m>3 \times 3</m> matrix.
+      Note that since the determinant is needed for these, note that we use the determinant formula for the <m>2 \times 2</m> matrix in <xref ref="eq-det-2by2"/>.
+    </p>
 
+    <example xml:id="ex-minor-cofactors">
+      <introduction>
         <p>
+          Let
           <me>
-            T = \begin{bmatrix} 1 \amp 2 \amp 3 \\ 4 \amp 5 \amp 6 \\ 7 \amp 8 \amp 9 \end{bmatrix}
+            A = \begin{bmatrix} -1 \amp   2 \amp  -1 \\ 4 \amp   1 \amp  -1 \\ 2 \amp  -2 \amp   1 \end{bmatrix}
           </me>
         </p>
-      </statement>
+      </introduction>
 
-      <solution>
-        <p>
-          Recall that <m>T_{i,j}</m> minor is found by removing the <m>i</m>th row and <m>j</m>th column or
-        </p>
 
-        <p>
-          <md>
-            <mrow>T_{1,1} \amp = \begin{bmatrix} 5 \amp 6 \\ 8 \amp 9 \end{bmatrix} \amp T_{2,3} \amp = \begin{bmatrix} 1 \amp 2 \\ 7 \amp 8 \end{bmatrix}</mrow>
-          </md>
-        </p>
+      <task>
+        <statement>
+          <p>
+            Find <m>\mnr_{1,2}(A)</m> and <m>\mnr_{3,3}(A)</m>
+          </p>
+        </statement>
 
-        <p>
-          and the cofactors are the determinants of each of these matrices times <m>(-1)^{i+j}</m> or
-        </p>
+        <solution>
+          <p>
+            Recall that <m>\mnr_{1,2}(A)</m> minor is found by removing the <m>i</m>th row and <m>j</m>th column or
+          </p>
 
-        <p>
-          <md>
-            <mrow>(-1)^{1+1} |T_{1,1}| \amp= (1) (45-24) = 21 </mrow>
-            <mrow>(-1)^{2+3} |T_{2,3}| \amp = (-1) (8-14) = 6</mrow>
-          </md>
-        </p>
-      </solution>
+          <p>
+            <md>
+              <mrow>\mnr_{1,2}(A) \amp = \begin{bmatrix} 4 \amp -1 \\ 2 \amp 1 \end{bmatrix} \amp \mnr_{3,3}(A) \amp = \begin{bmatrix} -1 \amp 2 \\ 4 \amp 1 \end{bmatrix}</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Find <m>\cof_{1,2}(A)</m> and <m>\cof_{3,3}(A)</m>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Note that the minors are above and the cofactors are the determinants of these with a factor of <m>(-1)^{i+j}</m>
+            <me>
+              \begin{aligned} \cof_{1,2}(A) \amp = (-1)^{1+2} |\mnr_{1,2}(A)| = (-1) (4(1)-(2)(-1)) = -6 \\ \cof_{3,3}(A) \amp = (-1)^{3+3} |\mnr_{3,3}(A)| = ((-1)(1)-(4)(2)) = -9 \end{aligned}
+            </me>
+          </p>
+        </solution>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Find the cofactor matrix of <m>A</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            If we continue finding the remainders of the minors and cofactors, then
+            <me>
+              C = \begin{bmatrix} -1 \amp -6 \amp -10 \\  0 \amp  1 \amp   2 \\ -1 \amp -5 \amp  -9 \end{bmatrix}
+            </me>
+          </p>
+        </solution>
+      </task>
     </example>
+
+    <p>
+    </p>
+  </subsection>
+
+
+  <subsection>
+    <title>Expansion Method for finding the Determinant</title>
 
     <p>
       Now that we have the prerequisites, the following is the Laplace Expansion method for finding a determinant.
     </p>
 
-    <theorem>
+    <theorem xml:id="thm-laplace-expansion-det">
       <title>Laplace Expansion of Determinants</title>
 
       <statement>
@@ -709,7 +782,7 @@
 
         <p>
           <me>
-            |T| = t_{i,1} T_{i,1} + t_{i,2} T_{i,2} + \cdots + t_{i,n} T_{i,n}
+            |A| = a_{i,1} \cof_{i,1}(A) + a_{i,2} \cof_{i,2}(A) + \cdots + a_{i,n} \cof_{i,n}(A)
           </me>
         </p>
 
@@ -719,7 +792,7 @@
 
         <p>
           <me>
-            |T| = t_{1,j} T_{1,j} + t_{2,j} T_{2,j} + \cdots + t_{n,j} T_{n,j}
+            |A| = a_{1,j} \cof_{1,j}(A) + a_{2,j} \cof_{2,j}(A) + \cdots + a_{n,j} \cof_{n,j}(A)
           </me>
         </p>
 
@@ -785,6 +858,11 @@
         </p>
       </solution>
     </example>
+
+    <p>
+      We have now seen a few different approaches to calculating a determinant.
+      When there are many tools to entering a matrix to find the result, perhaps these are less useful, but understanding these different approaches leads to understanding matrices and the relationships between various aspects of them in a deeper manner.
+    </p>
   </subsection>
 
 
@@ -1127,6 +1205,339 @@
 
     <p>
       The proof of this is left to the reader, but it follows from other lemmas in this section.
+    </p>
+  </subsection>
+
+
+  <subsection xml:id="subsec-adjugate-matrices">
+    <title>Adjugate Matrices</title>
+
+    <p>
+      Another matrix that is related to the inverse (as we will see below) is the <term>adjugate matrix</term>.
+      In short, this is the transpose of the cofactor matrix, which was presented in <xref ref="subsec-minors-cofactors"/>.
+      Let's look at another example.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Find the cofactor matrix and the adjugate matrix if
+          <me>
+            A = \begin{bmatrix} -1 \amp  2 \amp  -1 \\ 4 \amp  1 \amp  -1 \\ 2 \amp -2 \amp   1 \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          In this case, we find the cofactor of each of the element of <m>A</m>.
+          The result is
+          <me>
+            \cof(A) = \begin{bmatrix} -1 \amp -6 \amp -10 \\ 0 \amp  1 \amp   2 \\ -1 \amp -5 \amp  -9 \end{bmatrix}
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      You might be wondering what the adjugate is for and that is an excellent question.
+      First of all, it satisfies the following lemma, which we will see is quite useful.
+    </p>
+
+    <lemma xml:id="lem-adjugate-times-transpose">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix.
+          Then
+          <me>
+            A \adj(A) = \det(A) I
+          </me>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          Let <m>C = \adj(A)</m> and let <m>B = A C^{\intercal}</m>.
+          Note that <m>b_{ij}</m> is the product of the <m>i</m>th row of <m>A</m> times the <m>j</m>th column of <m>C^{\intercal}</m>, or the <m>j</m>th row of <m>C</m>.
+        </p>
+
+        <p>
+          Consider first <m>b_{ii}</m>.
+          This is
+          <me>
+            b_{ii} = a_{i1} C_{i1} + \cdots a_{ii} C_{ii} + \cdots a_{in} C_{in}
+          </me>
+          which is <m>\det(A)</m> by <xref ref="thm-laplace-expansion-det"/>, the Laplace Expansion method of finding determinants.
+        </p>
+
+        <p>
+          For <m>b_{ij}</m> where <m>i \neq j</m>,
+          <me>
+            b_{ij} = a_{i1} C_{j1} + \cdots a_{ji} C_{ji} + \cdots a_{jn} C_{jn}.
+          </me>
+        </p>
+
+        <p>
+          This is the determinant of a matrix where row <m>j</m> has been replaced by a copy of row <m>i</m>.
+          Since this matrix has two identical rows, then by <xref ref="lem-det-matrix-identical-rows"/>, this determinant is 0.
+          Thus <m>B</m> is a diagonal matrix with <m>\det(A)</m> on each entry on the diagonal or
+          <me>
+            B = \det(A) I,
+          </me>
+          and the result is shown.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      Before moving on, let's do an example with the adjugate to show the results of this lemma.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Use the matrix in <xref ref="ex-minor-cofactors"/> or
+          <me>
+            A = \begin{bmatrix} -1 \amp   2 \amp  -1 \\ 4 \amp   1 \amp  -1 \\ 2 \amp  -2 \amp   1 \end{bmatrix}
+          </me>
+          to verify <m>A\adj(A) = \det(A) I</m>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The last part of <xref ref="ex-minor-cofactors"/> found the cofactor matrix or
+          <me>
+            C = \begin{bmatrix} -1 \amp -6 \amp -10 \\  0 \amp  1 \amp   2 \\ -1 \amp -5 \amp  -9 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          The product of these is
+          <me>
+            AC = \begin{bmatrix} -1 \amp 0 \amp 0 \\ 0 \amp -1 \amp 0 \\ 0 \amp 0 \amp -1 \end{bmatrix}
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Notice that the definition of the adjugate or the statement in <xref ref="lem-adjugate-times-transpose"/> says nothing about if <m>A</m> needs to be invertible.
+      The following example shows that if <m>A</m> has determinant 0, that <m>A \adj(A)</m> is the zero matrix.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Consider the matrix
+          <me>
+            A = \begin{bmatrix} -2 \amp  -2 \amp  0 \amp  1 \\ -1 \amp   0 \amp  1 \amp -2 \\ 2 \amp   2 \amp  0 \amp -1 \\ 0 \amp   2 \amp  0 \amp  2 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          Find <m>\adj(A)</m> and show that <m>A \adj(A) = Z</m>, the zero matrix.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The cofactor matrix is
+          <me>
+            C = \cof(A) = \begin{bmatrix} -6 \amp 4 \amp -14 \amp -4 \\ 0 \amp 0 \amp   0 \amp  0 \\ -6 \amp 4 \amp -14 \amp -4 \\ 0 \amp 0 \amp   0 \amp  0 \end{bmatrix}
+          </me>
+          and the product is the matrix of all zeros.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The result of the adjugate in <xref ref="lem-adjugate-times-transpose"/> isn't that helpful, however the following shows a way to find the inverse.
+    </p>
+
+    <lemma xml:id="lem-adj-inverse">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix.
+          If <m>A</m> is invertible then,
+          <me>
+            A^{-1} = \frac{1}{\det(A)} \adj(A)
+          </me>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          Note that <m>A</m> is invertible then <m>\det(A)</m>,
+          <me>
+            \begin{aligned} A^{-1} \amp = \frac{1}{\det(A)} \adj(A), \qquad \qquad \text{Multiply on the left by $A$} \\ A A^{-1} \amp =  A \frac{1}{\det(A)} \adj(A), \\ I \amp = \frac{1}{\det(A)} A \adj(A), \\ \det(A) I \amp = A \adj(A).
+            \end{aligned}
+          </me>
+          Which is <xref ref="lem-adjugate-times-transpose"/>.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      Let's see that this formula results in the inverse by using <xref ref="lem-adj-inverse"/> to solve <xref ref="ex-3by3-matrix-inverse"/>.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Using <xref ref="lem-adj-inverse"/> to find the inverse of
+          <me>
+            A = \begin{bmatrix} 3 \amp 3 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5 \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          First, the cofactor matrix is
+          <me>
+            \cof(A) = \begin{bmatrix} 11 \amp -10 \amp  4 \\ -17 \amp  15 \amp -6 \\ -8 \amp   7 \amp -3 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          Note: this takes a lot of work (there are nine <m>2 \times 2</m> determinants).
+          Next, we take the determinant of <m>A</m>.
+          Again this is not shown, but <m>\det(A) = -1</m>.
+          The inverse therefore is
+          <me>
+            \begin{aligned} A^{-1} \amp = \frac{1}{\det(A)} \adj(A) = (-1) \begin{bmatrix} 11 \amp -17 \amp -8 \\ -10 \amp 15 \amp 7 \\ 4 \amp -6 \amp -3 \end{bmatrix} \\ \amp = \begin{bmatrix} -11 \amp 17 \amp 8 \\ 10 \amp -15 \amp -7 \\ -4 \amp 6 \amp 3 \end{bmatrix} \end{aligned}
+          </me>
+        </p>
+
+        <p>
+          This is the same result that was found in <xref ref="ex-3by3-matrix-inverse"/>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The last lemma presented here relates determinants to inverse matrices.
+      At the top of the section, we noted where the notion of the determinant might arise and we will formalize this here.
+    </p>
+
+    <lemma xml:id="lem-inverse-matrix-determinant">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix.
+          The matrix is invertible if and only if <m>\det(A) \neq 0</m>.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          First, the forward direction: If <m>\det(A) \neq 0</m>, then from <xref ref="lem-adj-inverse"/>, then <m>A^{-1}</m> can be found.
+        </p>
+
+        <p>
+          Next, the revsere direction:  If <m>\det(A) = 0 </m>, we will use proof by contradiction and assume that <m>A^{-1}</m> exists that is
+          <me>
+            A A^{-1} = I
+          </me>
+        </p>
+
+        <p>
+          If we take the determinant of both sides then
+          <me>
+            \begin{aligned} \det(A A^{-1}) \amp = \det(I) \\ \det(A) \det(A^{-1}) \amp = 1 \\ \end{aligned}
+          </me>
+          Now, use <m>\det(A)=0</m> and the above becomes
+          <me>
+            0 \cdot \det(A^{-1}) = 1
+          </me>
+          which is a contradiction, therefore the assumption that <m>A</m> has a inverse is false.
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+
+
+  <subsection xml:id="subsec-cramers-rule">
+    <title>Cramer's Rule</title>
+
+    <p>
+      This is an optional section that is an interesting use of the determinant.
+      <term>Cramer's Rule</term> is a method for solving the standard matrix equation
+      <me>
+        A \boldsymbol{x} = \boldsymbol{b}
+      </me>
+      if <m>A</m> is an invertible <m>n \times n</m> matrix.
+    </p>
+
+    <p>
+      Let <m>A_j</m> be the matrix <m>A</m> with the <m>j</m>th column of <m>A</m> is replaced with the vector <m>\boldsymbol{b}</m>.
+      Then
+      <me>
+        \boldsymbol{x} = \frac{\det(A_j)}{\det(A)}
+      </me>
+    </p>
+
+    <p>
+      Before looking at why this works, let's redo <xref ref="ex-solve-3by3"/> using Cramer's rule.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Find the solution to <m>A\boldsymbol{x} = \boldsymbol{b}</m> if
+          <me>
+            A = \begin{bmatrix} 4 \amp 0 \amp -1 \\ 1 \amp 3 \amp 2 \\ 0 \amp 3 \amp 5 \end{bmatrix} \qquad \qquad \boldsymbol{b} = \begin{bmatrix} 0 \\ 3 \\ 14 \end{bmatrix}
+          </me>
+          using Cramer's rule.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          First, we create the matrices <m>A_1, A_2</m> and <m>A_3</m> which replaces the first, second and third vectors with <m>\boldsymbol{b}</m>
+        </p>
+
+        <p>
+          <me>
+            \begin{aligned} A_1  \amp = \begin{bmatrix} 0 \amp 0 \amp -1 \\ 3 \amp 3 \amp 2 \\ 14 \amp 3 \amp 5 \end{bmatrix} \\ A_2 \amp = \begin{bmatrix} 4 \amp 0 \amp -1 \\ 1 \amp 3 \amp 2 \\ 0 \amp 14 \amp 5 \end{bmatrix} \\ A_3 \amp = \begin{bmatrix} 4 \amp 0 \amp 0 \\ 1 \amp 3 \amp 3 \\ 0 \amp 3 \amp 14 \end{bmatrix} \end{aligned}
+          </me>
+        </p>
+
+        <p>
+          Next, we find the deterimants of these matrix as well as <m>A</m>
+          <me>
+            \begin{aligned} \det(A) \amp = 33 \amp \det(A_1) \amp = 33 \amp \det(A_2) \amp = -66 \amp \det(A_3) \amp = 132 \end{aligned}
+          </me>
+        </p>
+
+        <p>
+          Next, we find the solution with
+          <me>
+            \begin{aligned} x_1 \amp = \frac{\det(A_1)}{\det(A)} = \frac{33}{33} = 1 \\ x_2 \amp = \frac{\det(A_2)}{\det(A)} = \frac{-66}{33} = -2 \\ x_3 \amp = \frac{\det(A_3)}{\det(A)} = \frac{132}{33} = 4 \end{aligned}
+          </me>
+          and this is the same solution that we found in <xref ref="ex-solve-3by3"/>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Cramer's rule seems like a nice approach to solving linear systems, however, it is computationally intensive.
+      For this (small) 3 by 3 example, 4 determinants need to be computed.
+      If done by hand, there are a lot calculations to do.
+      For larger systems, this can be untenable even if software is used.
+      Row operations are generally the method to use to do in fewer steps.
+    </p>
+
+    <p>
+      Also, if <m>A</m> is not square then this method cannot be used.
+      However, it is nice to have an alternative method for solving some linear systems. 
+    </p>
+
+    <p>
+      Justification for why Cramer's Rule works?????
     </p>
   </subsection>
 </section>

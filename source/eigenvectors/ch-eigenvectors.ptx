@@ -14,8 +14,8 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="eigenvectors/eigenvalues-eigenvectors.ptx" />
-  <xi:include href="eigenvectors/linear-maps.ptx" />
-  <xi:include href="eigenvectors/quadratic-forms.ptx" />
-  <xi:include href="eigenvectors/applications.ptx" />
+  <xi:include href="./eigenvalues-eigenvectors.ptx" />
+  <xi:include href="./linear-maps.ptx" />
+  <xi:include href="./quadratic-forms.ptx" />
+  <xi:include href="./applications.ptx" />
 </chapter>

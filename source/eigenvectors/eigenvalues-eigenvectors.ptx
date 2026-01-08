@@ -33,7 +33,7 @@
 		<definition>
 			<statement>
 				<p>
-					For a square matrix <m>A</m>, an <term>eigenvalue</term> <m>\lambda</m> with related <term>
+					For a square matrix <m>A</m>, an <term>eigenvalue</term> <m>\lambda</m> with corresponding <term>
 					eigenvector</term> <m>\boldsymbol{v}</m> satisfy
 				</p>
 
@@ -44,7 +44,7 @@
 				</p>
 
 				<p>
-					as long as <m>\boldsymbol{v}</m> is not the zero vector.
+					if <m>\boldsymbol{v}</m> is not the zero vector.
 				</p>
 			</statement>
 		</definition>
@@ -219,14 +219,14 @@
 				</p>
 
 				<p>
-					To solve this matrix equation, we'll use gaussian elimination on the augmented matrix:
+					To solve this matrix equation, we'll use Gaussian Elimination on the augmented matrix:
 				</p>
 
 				<p>
 					<md>
 						<mrow>\amp \qquad \left[\begin{array}{rr|r}
 						2 \amp 4 \\
-						2 \amp 4 0
+						2 \amp 4
 						\end{array}\right] </mrow>
 						<mrow>-R_1 + R_2 \rightarrow R_2 \amp \qquad
 						\left[\begin{array}{rr|r}
@@ -518,8 +518,7 @@
 				</p>
 
 				<p>
-					and any vector in <m>\mathbb{R}^2</m> is in the null space.
-					We can write down the space
+					and any vector in <m>\mathbb{R}^2</m> is in the null space, which can be written
 					using the standard basis vectors
 				</p>
 
@@ -740,8 +739,6 @@
 			The above theorem shows that <m>\lambda_2=\overline{\lambda_1}= -2i</m> and
 			<m>\boldsymbol{v}_2=\overline{\boldsymbol{v}_1} = [i \; \; 1]^{\intercal}</m> is another
 			eigenvalue-eigenvector pair.
-			The next example has real eigenvalue and eigenvector, but has a
-			different feature than <xref ref="ex-eigs-real1" />.
 		</p>
 
 		<note>
@@ -820,7 +817,9 @@
 						\end{vmatrix} = (1-\lambda) \begin{vmatrix}
 						-2 - \lambda \amp 6 \\ 1 \amp 3-\lambda
 						\end{vmatrix} </mrow>
-						<mrow>\amp=(1-\lambda)( (-2-\lambda)(3-\lambda) -6) =0</mrow>
+						<mrow>\amp=(1-\lambda)( (-2-\lambda)(3-\lambda) -6) </mrow>
+						<mrow> \amp = (1-\lambda) (\lambda^2-\lambda-12) </mrow>
+						<mrow> \amp = (1-\lambda)(\lambda-4)(\lambda+3) = 0 </mrow>
 					</md>
 				</p>
 
@@ -959,7 +958,7 @@
 							</p>
 
 							<p>
-								so the eigenvectors is <m>[0\;\;1\;\;1]^{\intercal}</m>.
+								so the eigenvector is <m>[0\;\;1\;\;1]^{\intercal}</m>.
 							</p>
 						</li>
 

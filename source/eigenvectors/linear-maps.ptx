@@ -1,449 +1,337 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <section xml:id="sect-linear-maps-eigen">
-	<title>Eigenvalues and Eigenvectors of Linear Transformations</title>
-	<objectives>
-		<ul>
-			<li>
-				<p>
-					The definition of the eigenvalues and eigenvector of a linear transformation.
-				</p>
-			</li>
+  <title>Eigenvalues and Eigenvectors of Linear Transformations</title>
 
-			<li>
-				<p>
-					Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.
-				</p>
-			</li>
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          The definition of the eigenvalues and eigenvector of a linear transformation.
+        </p>
+      </li>
 
-			<li>
-				<p>
-					Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the
-					transformation.
-				</p>
-			</li>
-		</ul>
-	</objectives>
+      <li>
+        <p>
+          Examples of eigenvalues-eigenvectors of linear transformations using knowledge of the transformation.
+        </p>
+      </li>
 
-	<p>
-		Recall that in section <xref ref="sect-eigenvalues" /> that the eigenvalues and
-		eigenvectors of a square matrix was found.
-		We will examine how we can find eigenvalues and eigenvectors of a linear map.
-		The definition of these are extensions of what we saw for matrices.
-	</p>
+      <li>
+        <p>
+          Examples of eigenvalues-eigenvectors of linear transformations using the representation matrix of the transformation.
+        </p>
+      </li>
+    </ul>
+  </objectives>
 
-	<definition>
-		<statement>
-			<p>
-				Let <m>T:V \rightarrow V</m> be a linear map and <m>V</m> be a finite dimensional vector space.
-				The nonzero vector <m>\boldsymbol{x}</m> is an <term>eigenvector</term> with associated
-				<term>eigenvalue</term> if
-			</p>
+  <p>
+    Recall that in section <xref ref="sect-eigenvalues" /> that the eigenvalues and eigenvectors of a square matrix was found.
+    We will examine how we can find eigenvalues and eigenvectors of a linear map.
+    The definition of these are extensions of what we saw for matrices.
+  </p>
 
-			<p>
-				<me>
-					T(\boldsymbol{x}) = \lambda \boldsymbol{x}.
-				</me>
-			</p>
-		</statement>
-	</definition>
+  <definition>
+    <statement>
+      <p>
+        Let <m>T:V \rightarrow V</m> be a linear map and <m>V</m> be a finite dimensional vector space.
+        The nonzero vector <m>\boldsymbol{x}</m> is an <term>eigenvector</term> with associated <term>eigenvalue</term> if
+      </p>
 
-	<p>
-		There are a few ways to find <m>\boldsymbol{x}</m> and <m>\lambda</m>.
-		In this section, we'll only see
-		some examples that are relatively simple to see as well as finding the matrix representation of
-		the map.
-		In addition, this section only shows examples from finite dimensional vector spaces,
-		however, in general, there is no restriction.
-	</p>
+      <p>
+        <me>
+          T(\boldsymbol{x}) = \lambda \boldsymbol{x}.
+        </me>
+      </p>
+    </statement>
+  </definition>
 
-	<p>
-		For the remainder of this chapter we will
-		see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and
-		derivative maps.
-		We first see an example of scaling a vector in <m>\mathbb{R}^2</m>.
-	</p>
+  <p>
+    There are a few ways to find <m>\boldsymbol{x}</m> and <m>\lambda</m>.
+    In this section, we'll only see some examples that are relatively simple to see as well as finding the matrix representation of the map.
+    In addition, this section only shows examples from finite dimensional vector spaces, however, in general, there is no restriction.
+  </p>
 
-	<example>
-		<statement>
-			<p>
-				Find the eigenvalues and eigenvectors of the scale map <m>S</m> from <xref
-				ref="ex-scale-map" />.
-			</p>
-		</statement>
+  <p>
+    For the remainder of this chapter we will see examples of eigenvalues and eigenvectors of linear maps, including rotations, scales and derivative maps.
+    We first see an example of scaling a vector in <m>\mathbb{R}^2</m>.
+  </p>
 
-		<solution>
-			<p>
-				Recall that the scale map <m>S: \mathbb{R}^2 \rightarrow \mathbb{R}^2</m> is given by
-			</p>
+  <example>
+    <statement>
+      <p>
+        Find the eigenvalues and eigenvectors of the scale map <m>S</m> from <xref ref="ex-scale-map" />.
+      </p>
+    </statement>
 
-			<p>
-				<me>
-					S(\boldsymbol{x}) = k \boldsymbol{x}
-				</me>
-			</p>
+    <solution>
+      <p>
+        Recall that the scale map <m>S: \mathbb{R}^2 \rightarrow \mathbb{R}^2</m> is given by
+      </p>
 
-			<p>
-				To find the eigenvalues and eigenvectors of <m>S</m>, we seek an <m>\boldsymbol{x}</m> and a <m>
-				\lambda</m> such that
-			</p>
+      <p>
+        <me>
+          S(\boldsymbol{x}) = k \boldsymbol{x}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					S(\boldsymbol{x})=\lambda \boldsymbol{x}
-				</me>
-			</p>
+      <p>
+        To find the eigenvalues and eigenvectors of <m>S</m>, we seek an <m>\boldsymbol{x}</m> and a <m> \lambda</m> such that
+      </p>
 
-			<p>
-				but since <m>S(\boldsymbol{x})=k \boldsymbol{x}</m>, then <m>\lambda =k</m> and any <m>\boldsymbol{x}</m> is an
-				eigenvector.
-			</p>
+      <p>
+        <me>
+          S(\boldsymbol{x})=\lambda \boldsymbol{x}
+        </me>
+      </p>
 
-			<p>
-				Alternatively, we can write down the matrix <m>A_S</m> associated with the map.
-				This was
-				done in <xref ref="ex-scale-map-matrix-rep" /> and is
-			</p>
+      <p>
+        but since <m>S(\boldsymbol{x})=k \boldsymbol{x}</m>, then <m>\lambda =k</m> and any <m>\boldsymbol{x}</m> is any vector.
+      </p>
 
-			<p>
-				<me>
-					A_S = \begin{bmatrix}
-					k \amp 0 \\ 0 \amp k
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        Alternatively, we can write down the matrix <m>A_S</m> associated with the map.
+        This was done in <xref ref="ex-scale-map-matrix-rep" /> and is
+      </p>
 
-			<p>
-				The eigenvalues and eigenvectors of this was found in <xref ref="ex-eigs-scale2" /> for a
-				particular <m>k</m>, but generalizing that, one can see that <m>\lambda=k</m> will be the only
-				eigenvector of <m>A_S</m> with eigenvectors <m>[1\;\;0]^{\intercal}</m> and <m>
-				[0\;\;1]^{\intercal}</m>.
-			</p>
+      <p>
+        <me>
+          A_S = \begin{bmatrix} k \amp 0 \\ 0 \amp k \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				In this case, since there are two eigenvectors associated with <m>\lambda=k</m>, any linear
-				combination of the two eigenvectors is also an eigenvector, and since <m>[1\;\;0]^{\intercal}</m>
-				and <m>[0\;\;1]^{\intercal}</m> span <m>\mathbb{R}^2</m>, any vector in <m>\mathbb{R}^2</m> is an
-				eigenvector.
-			</p>
-		</solution>
-	</example>
+      <p>
+        The eigenvalues and eigenvectors of this was found in <xref ref="ex-eigs-scale2" /> for a particular <m>k</m>, but generalizing that, one can see that <m>\lambda=k</m> will be the only eigenvector of <m>A_S</m> with eigenvectors <m>[1\;\;0]^{\intercal}</m> and <m> [0\;\;1]^{\intercal}</m>.
+      </p>
 
-	<p>
-		The next example shows the eigenvalues of the linear map associated with a derivative.
-	</p>
+      <p>
+        In this case, since there are two eigenvectors associated with <m>\lambda=k</m>, any linear combination of the two eigenvectors is also an eigenvector, and since <m>[1\;\;0]^{\intercal}</m> and <m>[0\;\;1]^{\intercal}</m> span <m>\mathbb{R}^2</m>, any vector in <m>\mathbb{R}^2</m> is an eigenvector.
+      </p>
+    </solution>
+  </example>
 
-	<example>
-		<statement>
-			<p>
-				The set
-			</p>
+  <p>
+    The next example shows the eigenvalues of the linear map associated with a derivative.
+  </p>
 
-			<p>
-				<me>
-					V = \{ ae^{x} + b e^{-x} \; | \; a,b \in \mathbb{R} \}
-				</me>
-			</p>
+  <example>
+    <statement>
+      <p>
+        The set
+      </p>
 
-			<p>
-				is a subspace of all functions on <m>\mathbb{R}</m>.
-				A basis for this subspace is <m>
-				(e^x,e^{-x})</m>.
-				In addition, the differential operation <m>D:V \rightarrow V</m> is a linear
-				transformation.
-				What are the eigenvalues and eigenvectors of <m>D</m>?
-			</p>
-		</statement>
+      <p>
+        <me>
+          V = \{ ae^{x} + b e^{-x} \; | \; a,b \in \mathbb{R} \}
+        </me>
+      </p>
 
-		<solution>
-			<p>
-				There are two ways of looking at this.
-				Since <m>e^{x} \mapsto e^x</m>, this means that <m>
-				e^x</m> is an eigenvector with corresponding eigenvalue 1.
-				Similarly, since <m>e^{-x} \mapsto
-				-e^{-x}</m>, this also means that <m>e^{-x}</m> is an eigenvector with eigenvalue <m>-1</m>.
-			</p>
+      <p>
+        is a subspace of all functions on <m>\mathbb{R}</m>.
+        A basis for this subspace is <m> (e^x,e^{-x})</m>.
+        In addition, the differential operation <m>D:V \rightarrow V</m> is a linear transformation.
+        What are the eigenvalues and eigenvectors of <m>D</m>?
+      </p>
+    </statement>
 
-			<p>
-				Alternatively, this can be done by first finding the matrix representation
-				of the differential operator or
-			</p>
+    <solution>
+      <p>
+        There are two ways of looking at this.
+        Since <m>e^{x} \mapsto e^x</m>, this means that <m> e^x</m> is an eigenvector with corresponding eigenvalue 1.
+        Similarly, since <m>e^{-x} \mapsto -e^{-x}</m>, this also means that <m>e^{-x}</m> is an eigenvector with eigenvalue <m>-1</m>.
+      </p>
 
-			<p>
-				<me>
-					A_D = \begin{bmatrix}
-					1 \amp 0 \\
-					0 \amp -1
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        Alternatively, this can be done by first finding the matrix representation of the differential operator or
+      </p>
 
-			<p>
-				Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or <m>
-				\lambda_1=1</m> and <m>\lambda_2=-1</m>.
-				One can also find that the corresponding eigenvectors are
-			</p>
+      <p>
+        <me>
+          A_D = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<md>
-					<mrow>
-					\boldsymbol{v}_1 \amp = \begin{bmatrix}
-					1 \\ 0
-					\end{bmatrix} \amp \boldsymbol{v}_2 \amp = \begin{bmatrix}
-					0 \\ 1
-					\end{bmatrix}
-					</mrow>
-				</md>
-			</p>
+      <p>
+        Recall that in the case of diagonal matrices, the eigenvalues are on the diagonal or <m> \lambda_1=1</m> and <m>\lambda_2=-1</m>.
+        One can also find that the corresponding eigenvectors are
+      </p>
 
-			<p>
-				These two vectors can be translated back to the functional forms <m>e^{x}</m> and <m>
-				e^{-x} </m>, the same as we found above.
-				These two functions which are in <m>V</m> are functions
-				that stay the same in the subspace <m>V</m> up to a scalar constant.
-			</p>
-		</solution>
-	</example>
+      <p>
+        <md>
+          <mrow> \boldsymbol{v}_1 \amp = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \amp \boldsymbol{v}_2 \amp = \begin{bmatrix} 0 \\ 1 \end{bmatrix} </mrow>
+        </md>
+      </p>
 
-	<example>
-		<statement>
-			<p>
-				Consider the differential map <m>D: \mathcal{P}_3 \rightarrow \mathcal{P}_3</m> which maps cubic
-				polynomials to other cubic polynomials.
-			</p>
+      <p>
+        These two vectors can be translated back to the functional forms <m>e^{x}</m> and <m> e^{-x} </m>, the same as we found above.
+        These two functions which are in <m>V</m> are functions that stay the same in the subspace <m>V</m> up to a scalar constant.
+      </p>
+    </solution>
+  </example>
 
-			<p>
-				<me>
-					A = \begin{bmatrix}
-					0 \amp 1 \amp 0 \amp 0 \\
-					0 \amp 0 \amp 2 \amp 0 \\
-					0 \amp 0 \amp 0 \amp 3 \\
-					0 \amp 0 \amp 0 \amp 0
-					\end{bmatrix}
-				</me>
-			</p>
+  <example>
+    <statement>
+      <p>
+        Consider the differential map <m>D: \mathcal{P}_3 \rightarrow \mathcal{P}_3</m> which maps cubic polynomials to other cubic polynomials.
+      </p>
 
-			<p>
-				Find the eigenvalues of this matrix and interpret.
-			</p>
-		</statement>
+      <p>
+        <me>
+          A = \begin{bmatrix} 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 0 \amp 3 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix}
+        </me>
+      </p>
 
-		<solution>
-			<p>
-				First, we find
-			</p>
+      <p>
+        Find the eigenvalues of this matrix and interpret.
+      </p>
+    </statement>
 
-			<p>
-				<me>
-					|A-\lambda I| = \begin{vmatrix}
-					-\lambda \amp 1 \amp 0 \amp 0 \\
-					0 \amp -\lambda \amp 2 \amp 0 \\
-					0 \amp 0 \amp -\lambda \amp 3 \\
-					0 \amp 0 \amp 0 \amp -\lambda
-					\end{vmatrix} = (-\lambda)^4
-				</me>
-			</p>
+    <solution>
+      <p>
+        First, we find
+      </p>
 
-			<p>
-				and setting it to zero, thus <m>\lambda=0</m> is the only eigenvalue.
-				To find the eigenvectors, we
-				find the null space of the original matrix, which after scaling the second and third row, the
-				matrix is the reduced row echelon form:
-			</p>
+      <p>
+        <me>
+          |A-\lambda I| = \begin{vmatrix} -\lambda \amp 1 \amp 0 \amp 0 \\ 0 \amp -\lambda \amp 2 \amp 0 \\ 0 \amp 0 \amp -\lambda \amp 3 \\ 0 \amp 0 \amp 0 \amp -\lambda \end{vmatrix} = (-\lambda)^4
+        </me>
+      </p>
 
-			<p>
-				<me>
-					\begin{bmatrix}
-					0 \amp 1 \amp 0 \amp 0 \\
-					0 \amp 0 \amp 1 \amp 0 \\
-					0 \amp 0 \amp 0 \amp 1 \\
-					0 \amp 0 \amp 0 \amp 0
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        and setting it to zero, thus <m>\lambda=0</m> is the only eigenvalue.
+        To find the eigenvectors, we find the null space of the original matrix, which after scaling the second and third row, the matrix is the reduced row echelon form:
+      </p>
 
-			<p>
-				and the solution to the null space is
-			</p>
+      <p>
+        <me>
+          \begin{bmatrix} 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					\left\{ \begin{bmatrix}
-					1 \\ 0 \\ 0 \\ 0
-					\end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
-				</me>
-			</p>
+      <p>
+        and the solution to the null space is
+      </p>
 
-			<p>
-				This vector is the representation of the cubic polynomial <m>p(x)=c</m>,
-				a constant.
-				Thus, the
-				only vector that remains the same under differentiation is the constant
-				polynomial with eigenvalue
-				0.
-			</p>
-		</solution>
-	</example>
+      <p>
+        <me>
+          \left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} s \; | \; s \in \mathbb{R} \right\}
+        </me>
+      </p>
 
-	<p>
-		This last example of this involves matrices and the rotation of a matrix.
-	</p>
+      <p>
+        This vector is the representation of the cubic polynomial <m>p(x)=c</m>, a constant.
+        Thus, the only vector that remains the same under differentiation is the constant polynomial with eigenvalue 0.
+      </p>
+    </solution>
+  </example>
 
-	<example>
-		<statement>
-			<p>
-				Find the eigenvalues and eigenvectors of the linear map  that
-				rotates a 2 by 2 matrix 90<m>^{\circ}</m> clockwise.
-				That is
-				<m>R: \mathcal{M}_{2 \times 2} \rightarrow \mathcal{M}_{2\times 2}</m> such that
-			</p>
+  <p>
+    This last example of this involves matrices and the rotation of a matrix.
+  </p>
 
-			<p>
-				<me>
-					\begin{bmatrix}
-					a \amp b \\
-					c \amp d
-					\end{bmatrix} \mapsto \begin{bmatrix}
-					c \amp a \\ d\amp b
-					\end{bmatrix}
-				</me>
-			</p>
-		</statement>
+  <example>
+    <statement>
+      <p>
+        Find the eigenvalues and eigenvectors of the linear map  that rotates a 2 by 2 matrix 90<m>^{\circ}</m> clockwise.
+        That is <m>R: \mathcal{M}_{2 \times 2} \rightarrow \mathcal{M}_{2\times 2}</m> such that
+      </p>
 
-		<solution>
-			<p>
-				One can show that if we consider the vector representation in the basis:
-			</p>
+      <p>
+        <me>
+          \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} \mapsto \begin{bmatrix} c \amp a \\ d\amp b \end{bmatrix}
+        </me>
+      </p>
+    </statement>
 
-			<p>
-				<me>
-					B  = \biggl( \begin{bmatrix}
-					1 \amp0 \\ 0 \amp 0
-					\end{bmatrix}, \begin{bmatrix}
-					0 \amp1 \\ 0 \amp 0
-					\end{bmatrix}, \begin{bmatrix}
-					0 \amp0 \\ 1 \amp 0
-					\end{bmatrix}, \begin{bmatrix}
-					0 \amp0 \\ 0 \amp 1
-					\end{bmatrix} \biggr)
-				</me>
-			</p>
+    <solution>
+      <p>
+        One can show that if we consider the vector representation in the basis:
+      </p>
 
-			<p>
-				that
-			</p>
+      <p>
+        <me>
+          B  = \biggl( \begin{bmatrix} 1 \amp0 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp1 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp0 \\ 1 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp0 \\ 0 \amp 1 \end{bmatrix} \biggr)
+        </me>
+      </p>
 
-			<p>
-				<me>
-					\text{Rep}_B \biggl( \begin{bmatrix}
-					a \amp b \\ c \amp d
-					\end{bmatrix} \biggr) = \begin{bmatrix}
-					a \\ b \\ c \\ d
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        that
+      </p>
 
-			<p>
-				and the map <m>R</m> can be represented by the matrix as
-			</p>
+      <p>
+        <me>
+          \text{Rep}_B \biggl( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} \biggr) = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					A_R = \begin{bmatrix}
-					0 \amp 1 \amp 0 \amp 0 \\
-					0 \amp 0 \amp 0 \amp 1 \\
-					1 \amp 0 \amp 0 \amp 0 \\
-					0 \amp 0 \amp 1 \amp 0
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        and the map <m>R</m> can be represented by the matrix as
+      </p>
 
-			<p>
-				We now find the eigenvalues and eigenvectors of this.
-				The
-				eigenvalue-eigenvector pairs are
-			</p>
+      <p>
+        <me>
+          A_R = \begin{bmatrix} 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \\ 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<md>
-					<mrow>
-					\lambda_1 \amp = 1 \amp \boldsymbol{v}_1 \amp = \begin{bmatrix}
-					1 \\ 1 \\ 1 \\1
-					\end{bmatrix} \amp
-					\lambda_2 \amp = -1 \amp \boldsymbol{v}_2 \amp = \begin{bmatrix}
-					1 \\ -1 \\ -1 \\ 1
-					\end{bmatrix}, </mrow>
-					<mrow>
-					\lambda_3 \amp = i \amp \boldsymbol{v}_3 \amp = \begin{bmatrix}
-					1 \\ -i \\ i \\ -1
-					\end{bmatrix} \amp
-					\lambda_4 \amp = -i \amp \boldsymbol{v}_4 \amp = \begin{bmatrix}
-					1 \\ i \\ -i \\ -1
-					\end{bmatrix}</mrow>
-				</md>
-			</p>
+      <p>
+        We now find the eigenvalues and eigenvectors of this.
+        The eigenvalue-eigenvector pairs are
+      </p>
 
-			<p>
-				To translate this back to the map that rotates the matrix, we translate
-				each of the eigenvectors
-				to the matrix that it represents.
-				For example, <m>\boldsymbol{v}_1</m> is the matrix
-			</p>
+      <p>
+        <md>
+          <mrow> \lambda_1 \amp = 1 \amp \boldsymbol{v}_1 \amp = \begin{bmatrix} 1 \\ 1 \\ 1 \\1 \end{bmatrix} \amp \lambda_2 \amp = -1 \amp \boldsymbol{v}_2 \amp = \begin{bmatrix} 1 \\ -1 \\ -1 \\ 1 \end{bmatrix}, </mrow>
+          <mrow> \lambda_3 \amp = i \amp \boldsymbol{v}_3 \amp = \begin{bmatrix} 1 \\ -i \\ i \\ -1 \end{bmatrix} \amp \lambda_4 \amp = -i \amp \boldsymbol{v}_4 \amp = \begin{bmatrix} 1 \\ i \\ -i \\ -1 \end{bmatrix}</mrow>
+        </md>
+      </p>
 
-			<p>
-				<me>
-					\begin{bmatrix}
-					1 \amp 1 \\ 1 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        To translate this back to the map that rotates the matrix, we translate each of the eigenvectors to the matrix that it represents.
+        For example, <m>\boldsymbol{v}_1</m> is the matrix
+      </p>
 
-			<p>
-				and if that matrix is
-				rotated, you get it back and the eigenvalue is 1.
-				The second eigenvector can be written as the
-				matrix
-			</p>
+      <p>
+        <me>
+          \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					\begin{bmatrix}
-					1 \amp -1 \\ -1 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        and if that matrix is rotated, you get it back and the eigenvalue is 1.
+        The second eigenvector can be written as the matrix
+      </p>
 
-			<p>
-				and if you rotate this
-				matrix, you get the matrix
-			</p>
+      <p>
+        <me>
+          \begin{bmatrix} 1 \amp -1 \\ -1 \amp 1 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					\begin{bmatrix}
-					-1\amp 1 \\ 1 \amp -1
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        and if you rotate this matrix, you get the matrix
+      </p>
 
-			<p>
-				which is the above matrix multiplied by the eigenvalue <m>\lambda_2=-1</m>.
-				In other words:
-			</p>
+      <p>
+        <me>
+          \begin{bmatrix} -1\amp 1 \\ 1 \amp -1 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					R\left(
-					\begin{bmatrix}
-					1 \amp -1 \\ -1 \amp 1
-					\end{bmatrix} \right)  = - \begin{bmatrix}
-					1 \amp -1 \\ -1 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        which is the above matrix multiplied by the eigenvalue <m>\lambda_2=-1</m>.
+        In other words:
+      </p>
 
-			<p>
-				The other two work in a similar manner, however complex numbers are needed.
-			</p>
-		</solution>
-	</example>
+      <p>
+        <me>
+          R\left( \begin{bmatrix} 1 \amp -1 \\ -1 \amp 1 \end{bmatrix} \right)  = - \begin{bmatrix} 1 \amp -1 \\ -1 \amp 1 \end{bmatrix}
+        </me>
+      </p>
+
+      <p>
+        The other two work in a similar manner, however complex numbers are needed.
+      </p>
+    </solution>
+  </example>
 </section>

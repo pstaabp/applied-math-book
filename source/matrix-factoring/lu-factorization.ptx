@@ -1,1129 +1,860 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <section xml:id="sect-lu-factorization">
-	<title>LU Factorization</title>
-	<objectives>
+  <title>LU Factorization</title>
 
-			<ul>
-				<li>
-					<p>
-					Find the <m>LU</m>-factorization of a matrix
-					</p>
-					<p>
-						Determine when an <m>LU</m>-factorization does not exist.
-					</p>
-					<p>Use a <m>LU</m> factorization to solve a linear system.</p>
-					<p>Use a <m>LU</m> factorization to find an inverse matrix.
-					</p>
-				</li>
-			</ul>
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Find the <m>LU</m>-factorization of a matrix
+        </p>
+      </li>
 
-	</objectives>
-	<introduction>
+      <li>
+        <p>
+          Determine when an <m>LU</m>-factorization does not exist.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Use a <m>LU</m> factorization to solve a linear system.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Use a <m>LU</m> factorization to find an inverse matrix.
+        </p>
+      </li>
+    </ul>
+  </objectives>
+
+  <introduction>
+    <p>
+      Let <m>A</m> be a square matrix.
+      We seek to write <m>A=LU</m>, where <m>L</m> is a lower triangular matrix and <m>U</m> is an upper triangular matrix.
+      The reason for doing such a factorization is often to solve <m>A\boldsymbol{x}=\boldsymbol{b}</m> for multiple right hand sides.
+    </p>
+
+    <p>
+      Recall that an <term>upper triangle matrix</term> is a matrix (not-necessarily square) such that all elements below the diagonal are 0.
+      A <term>lower triangular matrix</term> is a matrix such that all elements above the diagonal are 0.
+      These were introducted in <xref ref="sect-triangular-matrices"/>. 
+    </p>
+
+    <p>
+      The following example shows that there is a lower-triangular matrix <m>L</m> and an upper triangular matrix <m>U</m> whose product is the original matrix <m>A</m>.
+      Later we will show where this arises.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Let
+        </p>
+
+        <p>
+          <md>
+            <mrow>L \amp= \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1 \end{bmatrix} \amp U \amp = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix} \amp A \amp= \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix}</mrow>
+          </md>
+        </p>
+
+        <p>
+          Show that <m>A=LU</m>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Using standard matrix multiplication:
+        </p>
+
+        <p>
+          <md>
+            <mrow>A \amp = \begin{bmatrix} 1(3)+0(0)+0(0) \amp 1(-2) +0(4)+0(0) \amp 1(1)+0(2)+0(1) \\ 2(3)+1(0)+0(0) \amp 2(-2)+1(4)+0(0) \amp 2(1)+1(2)+0(1) \\ -2(3)-3(0)+1(0) \amp -2(-2)-3(4)+1(0)\amp-2(1)-3(2)+1(1) \end{bmatrix} </mrow>
+            <mrow>\amp = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \end{bmatrix}</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      This is nice, but the goal of LU factorization is to take any matrix <m>A</m> and find matrices <m>L</m> and <m>U</m>.
+      We first, show how to do this for a 3 by 3 matrix and then extend it.
+    </p>
+  </introduction>
+
+
+
+
+
+  <subsection xml:id="sect-lu-fact-example">
+    <title>LU factorization and elementary matrices</title>
+
+    <p>
+      We will see that knowing the elementary matrices related to reducing a matrix will lead naturally to its <m>LU</m> factorization.
+      Consider the following example:
+    </p>
+
+    <p>
+      <me>
+        A = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix}
+      </me>
+    </p>
+
+    <p>
+      We will row-reduce <m>A</m> using elementary row operations.
+      Since the first step would be <m>-2R_1+R_2</m>, then
+    </p>
+
+    <p>
+      <me>
+        E_{-2R_1+R_2} A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ -2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix} = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp  2 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix}
+      </me>
+    </p>
+
+    <p>
+      Next, we eliminate the <m>-6</m> in the lower left corner with
+    </p>
+
+    <p>
+      <me>
+        E_{2R_1+R_3}E_{-2R_1+R_2} A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp  2 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix} = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp -12 \amp -5 \end{bmatrix}
+      </me>
+    </p>
+
+    <p>
+      And the next step is to perform <m>3R_2+R_3</m>, so
+    </p>
+
+    <p>
+      <me>
+        E_{3R_2+R_3} E_{2R_1+R_3}E_{-2R_1+R_2} A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 3 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp -12 \amp -5 \end{bmatrix} = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp 0 \amp -5 \end{bmatrix}
+      </me>
+    </p>
+
+    <p>
+      and since this is an upper triangular matrix, then note that we have the situation that <m>B A = U</m> and multiplying through by <m>B^{-1}</m> would result in <m> A= B^{-1} U</m>.
+      Since <m>B</m> is the product of lower triangular elementary matrices, then the inverse is the product of these matrices, itself a lower triangular matrix.
+    </p>
+
+    <p>
+      More specifically, since
+    </p>
+
+    <p>
+      <me>
+        B = E_{3R_2+R_3} E_{2R_1+R_3}E_{-2R_1+R_2}
+      </me>
+    </p>
+
+    <p>
+      then
+    </p>
+
+    <p>
+      <me>
+        B^{-1} = E_{2R_1 + R_2} E_{-2R_1+R_3} E_{-3R_2 + R_3}
+      </me>
+    </p>
+
+    <p>
+      where the property <m>(E_1 E_2)^{-1} = E_2^{-1} E_1^{-1} </m> from <xref ref="thm-matrix-inverse" /> is used.
+      This results in
+    </p>
+
+    <p>
+      <md>
+        <mrow> B^{-1} \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ -2 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -3 \amp 1 \end{bmatrix} </mrow>
+        <mrow> \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1 \end{bmatrix} </mrow>
+      </md>
+    </p>
+
+    <p>
+      which is the matrix <m>L</m>.
+      Therefore, we can write
+    </p>
+
+    <p>
+      <me>
+        \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 0 \\ 0 \amp 0 \amp -5 \end{bmatrix}
+      </me>
+    </p>
+
+    <remark>
+      <title>Finding the LU factorization</title>
+
+      <p>
+        Consider a matrix <m>A</m> which we desire to write as <m>A=LU</m> for lower triangular matrix <m>L</m> and upper triangular matrix <m>U</m>.
+        If <m>A</m> can be row reduced to an upper matrix <m>U</m>, with the series of elementary matrices <m>E_1, E_2, \ldots E_k</m> then
+      </p>
+
+      <p>
+        <me>
+          L = E_k^{-1}, E_{k-1}^{-1} \cdots E_2^{-1} E_1^{-1}
+        </me>
+      </p>
+    </remark>
+
+    <p>
+      Also the example given above was a square matrix, this does not have to be the case.
+      Consider the next example.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Find the <m>LU</m>-decomposition of
+        </p>
+
+        <p>
+          <me>
+            A =  \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\ 2 \amp 4 \amp -1 \amp 0 \\ 0 \amp 1 \amp 0 \amp 7 \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We will perform row operations on <m>A</m> to get to row-reduced form
+        </p>
+
+        <p>
+          <md>
+            <mrow>-2R_1+R_2 \to R_2 \amp \qquad \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\ 0 \amp -2 \amp -1 \amp 12 \\ 0 \amp 1 \amp 0 \amp 7 \end{bmatrix} </mrow>
+            <mrow> -\frac{1}{2} R_2 \to R_2 \amp \qquad \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\ 0 \amp 1 \amp 1/2 \amp -6 \\ 0 \amp 1 \amp 0 \amp 7 \end{bmatrix} </mrow>
+            <mrow>-R_2 + R_3 \to R_3 \amp \qquad \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\ 0 \amp 1 \amp 1/2 \amp -6 \\ 0 \amp 0 \amp -1/2 \amp 13 \end{bmatrix} </mrow>
+          </md>
+        </p>
+
+        <p>
+          And this shows that the product of the elementary matrices <m>E_{-2R_1+R_2}, E_{(-1/2)R_2}, E_{-R_2+R_3}</m> would reduce the matrix <m>A</m> to row-reduced form.
+          Thus the lower triangular matrix is
+        </p>
+
+        <p>
+          <md>
+            <mrow> L \amp = E^{-1}_{-R_2+R_3} E^{-1}_{(-1/2)R_2} E^{-1}_{-2R_1+R2} </mrow>
+            <mrow> \amp = E_{R_2+R_3} E_{-2 R_2} E_{2R_1+R_2} </mrow>
+            <mrow> \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 1 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -2 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} </mrow>
+            <mrow> \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp -2 \amp 0 \\ 0 \amp 1 \amp 1 \end{bmatrix} </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Note that since elementary matrices are square, and <m>L</m> is the product of the elementary matrices that <m>L</m> is also square.
+      For a general <m> m \times n</m> matrix, <m>L</m> is a <m>m \times m</m> matrix and <m>U</m> is a <m> m \times n</m> matrix.
+    </p>
+  </subsection>
+
+	  <subsection xml:id="sect-not-lu">
+    <title>Do All Matrices have an <m>LU</m>-factorization?</title>
+
+    <p>
+      We first ask the question whether or not all matrices have a factorization and we will see that not all do not.
+      We can try to factor
+    </p>
+
+    <p>
+      <me>
+        \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+      </me>
+    </p>
+
+    <p>
+      by writing the matrix as the product of a lower triangular matrix and an upper triangular matrix:
+    </p>
+
+    <p>
+      <me>
+        \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix} = \begin{bmatrix} a \amp 0 \\ b \amp c \end{bmatrix} \begin{bmatrix} x \amp y \\ 0 \amp z \end{bmatrix}
+      </me>
+    </p>
+
+    <p>
+      and then multiplying the two matrices on the right to get
+    </p>
+
+    <p>
+      <me>
+        \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix} = \begin{bmatrix} ax \amp ay \\ bx \amp by + cz \end{bmatrix}
+      </me>
+    </p>
+
+    <p>
+      Notice that the upper right and lower left corners are <m>ay=1</m> and <m>bx=1</m>.
+      However, the upper left leads to <m>ax=0</m>, so either <m>a=0</m> or <m>x=0</m>, which results in a contradiction.
+    </p>
 		<p>
-			Let <m>A</m> be a square matrix.
-			We seek to write <m>A=LU</m>, where <m>L</m> is a lower
-			triangular matrix and <m>U</m> is an upper triangular matrix.
-			The reason for doing such a
-			factorization is often to solve <m>A\boldsymbol{x}=\boldsymbol{b}</m> for multiple right hand sides.
+			However, we can state a theorem that gives a sufficient condition for the existence of an <m>LU</m>-factorization.
 		</p>
 
-		<p>
-			Recall that an <term>upper triangle matrix</term> is a matrix
-			(not-necessarily square) such that all elements below the diagonal are 0.
-			A <term>lower triangular matrix</term> is a matrix such that all elements above the diagonal are 0.
-			More precisely,
-		</p>
-
-		<p>
-			The following example shows that there is a lower-triangular matrix <m>L</m> and an upper
-			triangular matrix <m>U</m> whose product is the original matrix <m>A</m>.
-			Later we will show where this arises.
-		</p>
-
-		<example>
-			<statement>
-				<p>
-					Let
-				</p>
-
-				<p>
-					<md>
-						<mrow>L \amp= \begin{bmatrix}
-							1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1
-							\end{bmatrix}
-							\amp U \amp = \begin{bmatrix}
-							3 \amp -2 \amp 1 \\
-							0 \amp 4 \amp 2 \\
-							0 \amp 0 \amp 1
-							\end{bmatrix} \amp
-						A \amp= \begin{bmatrix}
-						3 \amp -2 \amp 1 \\
-						6 \amp 0 \amp 4 \\
-						-6 \amp -8 \amp -7 \\
-						\end{bmatrix}</mrow>
-					</md>
-				</p>
-
-				<p>
-					Show that <m>A=LU</m>
-				</p>
-			</statement>
-			<solution>
-
-				<p>
-					Using standard matrix multiplication:
-				</p>
-
-				<p>
-					<md>
-						<mrow>A \amp = \begin{bmatrix}
-						1(3)+0(0)+0(0) \amp 1(-2) +0(4)+0(0) \amp 1(1)+0(2)+0(1) \\
-						2(3)+1(0)+0(0) \amp 2(-2)+1(4)+0(0) \amp 2(1)+1(2)+0(1) \\
-						-2(3)-3(0)+1(0) \amp -2(-2)-3(4)+1(0)\amp-2(1)-3(2)+1(1)
-						\end{bmatrix} </mrow>
-						<mrow>\amp \begin{bmatrix}
-						3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7
-						\end{bmatrix}</mrow>
-					</md>
-				</p>
-			</solution>
-		</example>
-
-		<p>
-			This is nice, but the goal of LU factorization is to take any matrix <m>A</m> and find
-			matrices <m>L</m> and <m>U</m>.
-			We first, show how to do this for a 3 by 3 matrix and then
-			extend it.
-		</p>
-	</introduction>
-
-	<subsection xml:id="sect-not-lu">
-		<title>Do All Matrices have an <m>LU</m>-factorization?</title>
-		<p>
-			We first ask the question whether or not all matrices have a factorization and we will see that not all do not.
-			We can try to factor
-		</p>
-
-		<p>
-			<me>
-				\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
-			</me>
-		</p>
-
-		<p>
-			by writing down two matrices as follows.
-		</p>
-
-		<p>
-			<me>
-				\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix} =
-				\begin{bmatrix} a \amp 0 \\ b \amp c \end{bmatrix}
-				\begin{bmatrix} x \amp y \\ 0 \amp z \end{bmatrix}
-			</me>
-		</p>
-
-		<p>
-			and then multiplying the two matrices on the right to get
-		</p>
-
-		<p>
-			<me>
-				\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix} =
-				\begin{bmatrix} ax \amp ay \\ bx \amp by + cz \end{bmatrix}
-			</me>
-		</p>
-
-		<p>
-			Notice that the upper right and lower left corners are <m>ay=1</m> and
-			<m>bx=1</m>.
-			However, the upper left leads to <m>ax=0</m>, so either <m>a=0</m> or
-			<m>x=0</m>, which results in a contradiction.
-		</p>
-
-		<theorem>
-			<statement>
-				<p>
-					If a matrix <m>A</m> can be row-reduced without any row swaps, then there exists matrices
-					<m>L</m> and <m>U</m> such that <m>A=LU</m>.
-				</p>
-			</statement>
-		</theorem>
-	</subsection>
-
-	<subsection xml:id="sect-lu-fact-example">
-		<title>LU fatorization and elementary matrices</title>
-		<p>
-			We will see that knowing the elementary matrices related to reducing a matrix will lead
-			naturally to its <m>LU</m> factorization.
-			Consider the following example:
-		</p>
-
-		<p>
-			<me>
-				A = \begin{bmatrix}
-				3 \amp -2 \amp 1 \\
-				6 \amp 0 \amp 4 \\
-				-6 \amp -8 \amp -7 \\
-				\end{bmatrix}
-			</me>
-		</p>
-
-		<p>
-			We will row-reduce <m>A</m> using elementary row operations.
-			Since the first step would be
-			<m>-2R_1+R_2</m>, then
-		</p>
-
-		<p>
-			<me>
-				E_{-2R_1+R_2} A =
-				\begin{bmatrix}
-				1 \amp 0 \amp 0 \\
-				-2 \amp 1 \amp 0 \\
-				0 \amp 0 \amp 1
-				\end{bmatrix}
-				\begin{bmatrix}
-				3 \amp -2 \amp 1 \\
-				6 \amp 0 \amp 4 \\
-				-6 \amp -8 \amp -7 \\
-				\end{bmatrix}
-				= \begin{bmatrix}
-				3 \amp -2 \amp 1 \\
-				0 \amp 4 \amp  2 \\
-				-6 \amp -8 \amp -7 \\
-				\end{bmatrix}
-			</me>
-		</p>
-
-		<p>
-			Next, we elimnate the <m>-6</m> in the lower left corner with
-		</p>
-
-		<p>
-			<me>
-				E_{2R_1+R_3}E_{-2R_1+R_2} A =
-				\begin{bmatrix}
-				1 \amp 0 \amp 0 \\
-				0 \amp 1 \amp 0 \\
-				2 \amp 0 \amp 1
-				\end{bmatrix}
-				\begin{bmatrix}
-				3 \amp -2 \amp 1 \\
-				0 \amp 4 \amp  2 \\
-				-6 \amp -8 \amp -7 \\
-				\end{bmatrix}
-				= \begin{bmatrix}
-				3 \amp -2 \amp 1 \\
-				0 \amp 4 \amp 2 \\
-				0 \amp -12 \amp -5
-				\end{bmatrix}
-			</me>
-		</p>
-
-		<p>
-			And the next step is to perform <m>3R_2+R_3</m>, so
-		</p>
-
-		<p>
-			<me>
-				E_{3R_2+R_3} E_{2R_1+R_3}E_{-2R_1+R_2} A =
-				\begin{bmatrix}
-				1 \amp 0 \amp 0 \\
-				0 \amp 1 \amp 0 \\
-				0 \amp 3 \amp 1
-				\end{bmatrix}
-				\begin{bmatrix}
-				3 \amp -2 \amp 1 \\
-				0 \amp 4 \amp 2 \\
-				0 \amp -12 \amp -5
-				\end{bmatrix}
-				= \begin{bmatrix}
-				3 \amp -2 \amp 1 \\
-				0 \amp 4 \amp 2 \\
-				0 \amp 0 \amp -5
-				\end{bmatrix}
-			</me>
-		</p>
-
-		<p>
-			and since this is an upper triangular matrix, then note that we have the situation that
-			<m>B A = U</m> and mutliplying through by <m>B^{-1}</m> would result in <m> A= B^{-1} U</m>.
-			Since
-			<m>B</m> is the product of lower triangular elementary matrices, then the inverse is
-			the product of these matrices, itself a lower triangular matrix.
-		</p>
-
-		<p>
-			More specifically, since
-		</p>
-
-		<p>
-			<me>
-				B = E_{3R_2+R_3} E_{2R_1+R_3}E_{-2R_1+R_2}
-			</me>
-		</p>
-
-		<p>
-			then
-		</p>
-
-		<p>
-			<me>
-				B^{-1} = E_{2R_1 + R_2} E_{-2R_1+R_3} E_{-3R_2 + R_3}
-			</me>
-		</p>
-
-		<p>
-			where the property <m>(E_1 E_2)^{-1} = E_2^{-1} E_1^{-1} </m> from <xref ref="thm-matrix-inverse" />
-			is used.
-			This results in
-		</p>
-
-		<p>
-			<md>
-				<mrow> B^{-1} \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
-				\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ -2 \amp 0 \amp 1 \end{bmatrix}
-				\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -3 \amp 1 \end{bmatrix} </mrow>
-				<mrow> \amp = \begin{bmatrix}
-				1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1
-				\end{bmatrix} </mrow>
-			</md>
-		</p>
-
-		<p>
-			which is the matrix <m>L</m>.
-			Therefore, we can write
-		</p>
-
-		<p>
-			<me>
-				\begin{bmatrix}
-				3 \amp -2 \amp 1 \\
-				6 \amp 0 \amp 4 \\
-				-6 \amp -8 \amp -7 \\
-				\end{bmatrix} =
-				\begin{bmatrix}
-				1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1
-				\end{bmatrix}
-				\begin{bmatrix}
-				3 \amp -2 \amp 1 \\
-				0 \amp 4 \amp 0 \\
-				0 \amp 0 \amp -5
-				\end{bmatrix}
-			</me>
-		</p>
-
-		<remark>
-			<title>Finding the LU factorization</title>
-			<p>
-				Consider a matrix <m>A</m> which we desire to write as <m>A=LU</m> for lower
-				triangular matrix <m>L</m> and upper triangular matrix <m>U</m>.
-				If <m>A</m> can be row reduced
-				to an upper matrix <m>U</m>, with the series of elementary matrices <m>E_1, E_2, \ldots E_k</m>
-				then
-			</p>
-
-			<p>
-				<me>
-					L = E_k^{-1}, E_{k-1}^{-1} \cdots E_2^{-1} E_1^{-1}
-				</me>
-			</p>
-		</remark>
-
-		<p>
-			Also the example given above was a square matrix, this does not have to be the case.
-			Consider
-			the next example.
-		</p>
-
-		<example>
-			<statement>
-				<p>
-					Find the <m>LU</m>-decomposition of
-				</p>
-
-				<p>
-					<me>
-						A =  \begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
-						2 \amp 4 \amp -1 \amp 0 \\
-						0 \amp 1 \amp 0 \amp 7
-						\end{bmatrix}
-					</me>
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					We will perform row operations on <m>A</m> to get to row-reduced form
-				</p>
-
-				<p>
-					<md>
-						<mrow>-2R_1+R_2 \to R_2 \amp \qquad
-						\begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
-						0 \amp -2 \amp -1 \amp 12 \\
-						0 \amp 1 \amp 0 \amp 7
-						\end{bmatrix}
-						</mrow>
-						<mrow> -\frac{1}{2} R_2 \to R_2 \amp \qquad
-						\begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
-						0 \amp 1 \amp 1/2 \amp -6 \\
-						0 \amp 1 \amp 0 \amp 7
-						\end{bmatrix}
-						</mrow>
-						<mrow>-R_2 + R_3 \to R_3 \amp \qquad
-						\begin{bmatrix} 1 \amp 3 \amp 0 \amp -6 \\
-						0 \amp 1 \amp 1/2 \amp -6 \\
-						0 \amp 0 \amp -1/2 \amp 13
-						\end{bmatrix} </mrow>
-					</md>
-				</p>
-
-				<p>
-					And this shows that the product of the elementary matrices
-					<m>E_{-2R_1+R_2}, E_{(-1/2)R_2}, E_{-R_2+R_3}</m>
-					would reduce the matrix <m>A</m> to row-reduced form.
-					Thus the lower triangular matrix is
-				</p>
-
-				<p>
-					<md>
-						<mrow> L \amp = E^{-1}_{-R_2+R_3} E^{-1}_{(-1/2)R_2} E^{-1}_{-2R_1+R2} </mrow>
-						<mrow> \amp = E_{R_2+R_3} E_{-2 R_2} E_{2R_1+R_2} </mrow>
-						<mrow> \amp =
-						\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 1 \amp 1 \end{bmatrix}
-						\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -2 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
-						\begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
-						</mrow>
-						<mrow> \amp =
-						\begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp -2 \amp 0 \\ 0 \amp 1 \amp 1 \end{bmatrix}
-						</mrow>
-					</md>
-				</p>
-			</solution>
-		</example>
-
-		<p>
-			Note that since elementary matrices are square, and <m>L</m> is the product of the elementary
-			matrices that <m>L</m> is also square.
-			For a general <m> m \times n</m> matrix, <m>L</m> is a
-			<m>m \times m</m> matrix and <m>U</m> is a <m> m \times n</m> matrix.
-		</p>
-	</subsection>
-
-	<subsection>
-		<title>Generalization of LU Decomposition</title>
-		<p>
-			As we saw above in <xref ref="sect-not-lu"/> not all matrices have an LU decomposition.
-			However, if we
-			generalize this a bit, then we can.
-		</p>
-
-		<p>
-			Additionally, an square matrix <m>A</m> can be written as <m>PA=LU</m>, where <m>L</m> is a
-			lower-diagonal, <m>U</m> is upper-diagonal and <m>P</m> is a permutation matrix.
-		</p>
-
-		<example>
-			<statement>
-				<p>
-					Find the factorization <m>PA=LU</m> for
-				</p>
-
-				<p>
-					<me>
-						A = \begin{bmatrix} 0 \amp 2 \amp 1 \\ 1 \amp 4 \amp 0 \\ 2 \amp 0 \amp -3 \end{bmatrix}
-					</me>
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					If we perform row operations on <m>A</m> as follows
-				</p>
-
-				<p>
-					<md>
-						<mrow>R_1 \leftrightarrow R_2 \amp \qquad
-						\begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 2 \amp 0 \amp -3 \end{bmatrix} </mrow>
-						<mrow> -2 R_1 + R_3 \to R_3 \amp \qquad
-						\begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 0 \amp -8 \amp -3 \end{bmatrix} </mrow>
-						<mrow number="yes" xml:id="lu-ex-u"> 4R_2 + R_3 \to R_3 \amp \qquad
-						\begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix} </mrow>
-					</md>
-				</p>
-
-				<p>
-					And since the first step was a permutation matrix, then
-				</p>
-
-				<p>
-					<men xml:id="ex-lu-p">
-						P = E_{1 \leftrightarrow 2}
-						= \begin{bmatrix} 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1\end{bmatrix}
-					</men>
-				</p>
-
-				<p>
-					and then <m> E_{-2R_1+R_3}, E_{4R_2+R_3}</m> can be used to find <m>L</m> as
-				</p>
-
-				<p>
-					<md>
-						<mrow> L \amp = E^{-1}_{4R_2+R_3} E^{-1}_{-2R_1+R_3} = E_{-4R_2+R_3}E_{2R_1+R_3} </mrow>
-						<mrow> \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -4 \amp 1 \end{bmatrix}
-						\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 1 \end{bmatrix}
-						</mrow>
-						<mrow> \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp -4 \amp 1 \end{bmatrix} </mrow>
-					</md>
-				</p>
-
-				<p>
-					The matrix <m>L</m> is given above, then <m>U</m> is the matrix in <xref ref="lu-ex-u" /> and
-					<m>P</m> is given in <xref ref="ex-lu-p" />.
-					The matrix factorization thus is
-				</p>
-
-				<p>
-					<me>
-						PA=LU
-					</me>
-				</p>
-			</solution>
-		</example>
-	</subsection>
-
-	<subsection>
-		<title>Solving linear systems using LU Decomposition</title>
-		<p>
-			The main application of LU decomposition is that of solving linear systems.
-			Consider the
-			matrix equation <m>A\boldsymbol{x} = \boldsymbol{b}</m> and assume that <m>A=LU</m> (that is the needed
-			permutation matrix is <m>P=I</m>).
-		</p>
-
-		<p>
-			<ol>
-				<li>
-					<p>
-						Solve <m>L\boldsymbol{y} = \boldsymbol{b}</m> for <m>\boldsymbol{y}</m>.
-					</p>
-				</li>
-
-				<li>
-					<p>
-						Then solve <m>U\boldsymbol{x} = \boldsymbol{y}</m> for <m>\boldsymbol{x}</m>.
-					</p>
-				</li>
-			</ol>
-		</p>
-
-		<p>
-			First, this works, because if <m>\boldsymbol{y} = U\boldsymbol{x}</m>, then
-		</p>
-
-		<p>
-			<md>
-				<mrow>L\boldsymbol{y} \amp = \boldsymbol{b} </mrow>
-				<mrow>L U\boldsymbol{x} \amp = \boldsymbol{b} </mrow>
-				<mrow>A \boldsymbol{x} \amp = \boldsymbol{b}</mrow>
-			</md>
-		</p>
-
-		<example>
-			<statement>
-				<p>
-					Solve the system <m>A\boldsymbol{x}=\boldsymbol{b}</m> using <m>LU</m>-decomposition for
-				</p>
-
-				<p>
-					<md>
-						<mrow>A \amp = \begin{bmatrix}
-						3 \amp -2 \amp 1 \\
-						6 \amp 0 \amp 4 \\
-						-6 \amp -8 \amp -7 \\
-						\end{bmatrix} \amp \boldsymbol{b} \amp = \begin{bmatrix}
-						14 \\22 \\ -9
-						\end{bmatrix}</mrow>
-					</md>
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					Recall that in <xref ref="sect-lu-fact-example" /> the <m>LU</m>-factorizations of the
-					matrix <m>A</m> was found and is
-				</p>
-
-				<p>
-					<md>
-						<mrow>L \amp = \begin{bmatrix}
-						1 \amp 0 \amp 0 \\
-						2 \amp 1 \amp 0 \\
-						-2 \amp -3 \amp 1
-						\end{bmatrix}
-						\amp U \amp = \begin{bmatrix}
-						3 \amp -2 \amp 1 \\
-						0 \amp 4 \amp 2 \\
-						0 \amp 0 \amp 1
-						\end{bmatrix}</mrow>
-					</md>
-				</p>
-
-				<p>
-					To use this to solve <m>A\boldsymbol{x}=\boldsymbol{b}</m>, first we solve <m>L \boldsymbol{y} = \boldsymbol{b}</m>
-					via forward substitution.
-				</p>
-
-				<p>
-					<md>
-						<mrow>y_1 \amp = 14 </mrow>
-						<mrow>2y_1 + y_2 \amp = 22 </mrow>
-						<mrow>\text{so}\qquad\qquad\amp</mrow>
-						<mrow>y_2 \amp = 22-2y_1 = 22-28 =-6 </mrow>
-						<mrow>\text{and the last equation is}\qquad\qquad\amp</mrow>
-						<mrow>-2 y_1 -3y_2 + y_3 \amp = -9 </mrow>
-						<mrow>\text{or}\qquad\qquad\amp</mrow>
-						<mrow>y_3 \amp = -9 + 2(14)+3(-6) = 1</mrow>
-					</md>
-				</p>
-
-				<p>
-					So the solution to <m>L\boldsymbol{y}=\boldsymbol{b}</m> is <m>\boldsymbol{y}=[14,-6,1]^{\intercal}</m>.
-					Next, we solve <m>U\boldsymbol{x}=\boldsymbol{y}</m> by back substitution,
-				</p>
-
-				<p>
-					<md>
-						<mrow>x_3 \amp = 1 </mrow>
-						<mrow>4 x_2 + 2 x_3 \amp = -6 </mrow>
-						<mrow>\amp \qquad \qquad \text{or}</mrow>
-						<mrow>x_2 \amp = (-6 -2 (1))/4 = -2 </mrow>
-						<mrow>\amp \qquad \qquad \text{and the first equation is}</mrow>
-						<mrow>3 x_1 -2x_2+x_3 \amp = 14 </mrow>
-						<mrow>\amp \qquad \qquad \text{or}</mrow>
-						<mrow>3x_1 \amp = 14+2(-2)-x_3 = 9</mrow>
-						<mrow>x_1 \amp = 3</mrow>
-					</md>
-				</p>
-
-				<p>
-					So the solution is
-				</p>
-
-				<p>
-					<me>
-						\boldsymbol{x} = \begin{bmatrix}
-						1 \\ -2 \\ 3
-						\end{bmatrix}
-					</me>
-				</p>
-			</solution>
-		</example>
-
-		<p>
-			You can see from the example above that once the matrix <m>A</m> factored that it is
-			relatively simple to find the solutions to <m>L\boldsymbol{y}=\boldsymbol{b}</m> and <m>A\boldsymbol{x}=\boldsymbol{y}</m>
-			and there are relatively few computations to perform.
-		</p>
-
-		<p>
-			In fact, this is true in general.
-			In that if one actually finds the factorization of <m>A</m>
-			and then solves this in the manner show that about 1/2 of the operations are done then
-			solving <m>A\boldsymbol{x}=\boldsymbol{b}</m> directly, say by reducing the matrix to reduced row echelon
-			form.
-		</p>
-	</subsection>
-
-	<subsection>
-		<title>Inverting a Matrix</title>
-		<p>
-			The same idea can be use to find inverse of <m>A</m> by repeated solving <m>LU\boldsymbol{x} =
-			\boldsymbol{b}</m> by repeating this for <m>\boldsymbol{b}</m> the columns of the identity matrix.
-			The
-			example below shows this without all of the details of finding the factorization:
-		</p>
-
-		<example>
-			<statement>
-				<p>
-					Find the inverse of the matrix in <xref ref="ex-3by3-matrix-inverse" />,
-				</p>
-
-				<p>
-					<me>
-						A = \begin{bmatrix}
-						3 \amp 3 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5
-						\end{bmatrix}
-					</me>
-				</p>
-
-				<p>
-					using the LU-decomposition.
-				</p>
-			</statement>
-
-			<solution>
-				<p>
-					Following the steps above, the LU decomposition is
-				</p>
-
-				<p>
-					<md>
-						<mrow>L \amp = \begin{bmatrix}
-						1 \amp 0 \amp 0 \\ 2/3 \amp 1 \amp 0 \\
-						0 \amp -2 \amp 1
-						\end{bmatrix} \amp U \amp = \begin{bmatrix}
-						3 \amp 3 \amp -1 \\
-						0 \amp -1 \amp -7/3 \\
-						0 \amp 0 \amp 1/3
-						\end{bmatrix}</mrow>
-					</md>
-				</p>
-
-				<p>
-					and we will solve <m>A\boldsymbol{x}=LU\boldsymbol{x}=\boldsymbol{e}_j</m>, where <m>\boldsymbol{e}_j</m> is the <m>
-					j</m>th column of the 3 by 3 identity matrix.
-				</p>
-
-				<p>
-					Solving <m>LU\boldsymbol{x} = \boldsymbol{e}_1</m> by solving <m>L\boldsymbol{y}_1 = (1,0,0)^{\intercal}</m>
-					or
-				</p>
-
-				<p>
-					<me>
-						\boldsymbol{y_1} = \begin{bmatrix}
-						1 \\ -2/3 \\ -4/3
-						\end{bmatrix}
-					</me>
-				</p>
-
-				<p>
-					then solve <m>U\boldsymbol{x}_1 = \boldsymbol{y}_1</m> for <m>\boldsymbol{x}_1</m> or
-				</p>
-
-				<p>
-					<me>
-						\boldsymbol{x}_1 = \begin{bmatrix}
-						-11 \\ 10 \\ -4
-						\end{bmatrix}
-					</me>
-				</p>
-
-				<p>
-					Repeating this for <m>\boldsymbol{b}=\boldsymbol{e}_2</m>, first solving <m>L\boldsymbol{y}_2 =
-					(0,1,0)^{\intercal}</m> or
-				</p>
-
-				<p>
-					<me>
-						\boldsymbol{y}_2 = \begin{bmatrix}
-						0 \\ 1 \\ 2
-						\end{bmatrix}
-					</me>
-				</p>
-
-				<p>
-					then solve <m>U\boldsymbol{x}_2 = \boldsymbol{y}_2</m> for <m>\boldsymbol{x}_2</m> or
-				</p>
-
-				<p>
-					<me>
-						\boldsymbol{x}_2 = \begin{bmatrix}
-						17 \\ -15 \\ 6
-						\end{bmatrix}
-					</me>
-				</p>
-
-				<p>
-					and lastly, solve <m>L\boldsymbol{y}_3 = (0,0,1)^{\intercal}</m> or
-				</p>
-
-				<p>
-					<me>
-						\boldsymbol{y}_3 = \begin{bmatrix}
-						0 \\ 0 \\ 1
-						\end{bmatrix}
-					</me>
-				</p>
-
-				<p>
-					and solving <m>U\boldsymbol{x}_3 = \boldsymbol{y}_3</m> results in
-				</p>
-
-				<p>
-					<me>
-						\boldsymbol{x}_3 = \begin{bmatrix}
-						8 \\ -7 \\ 3
-						\end{bmatrix}
-					</me>
-				</p>
-
-				<p>
-					The inverse matrix is then the matrix with <m>\boldsymbol{x}_j</m> as the columns or
-				</p>
-
-				<p>
-					<me>
-						A^{-1} = \begin{bmatrix}
-						-11 \amp 17 \amp 8 \\
-						10 \amp -15 \amp -7 \\
-						-4 \amp 6 \amp 3
-						\end{bmatrix}
-					</me>
-				</p>
-			</solution>
-		</example>
-	</subsection>
+    <theorem>
+      <statement>
+        <p>
+          If a matrix <m>A</m> can be row-reduced without any row swaps, then there exists matrices <m>L</m> and <m>U</m> such that <m>A=LU</m>.
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+
+
+  <subsection>
+    <title>Generalization of LU Decomposition</title>
+
+    <p>
+      As we saw above in <xref ref="sect-not-lu"/> not all matrices have an LU decomposition.
+      However, if we generalize this a bit, then we can.
+    </p>
+
+    <p>
+      Additionally, an square matrix <m>A</m> can be written as <m>PA=LU</m>, where <m>L</m> is a lower-diagonal, <m>U</m> is upper-diagonal and <m>P</m> is a permutation matrix.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Find the factorization <m>PA=LU</m> for
+        </p>
+
+        <p>
+          <me>
+            A = \begin{bmatrix} 0 \amp 2 \amp 1 \\ 1 \amp 4 \amp 0 \\ 2 \amp 0 \amp -3 \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          If we perform row operations on <m>A</m> as follows
+        </p>
+
+        <p>
+          <md>
+            <mrow>R_1 \leftrightarrow R_2 \amp \qquad \begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 2 \amp 0 \amp -3 \end{bmatrix} </mrow>
+            <mrow> -2 R_1 + R_3 \to R_3 \amp \qquad \begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 0 \amp -8 \amp -3 \end{bmatrix} </mrow>
+            <mrow number="yes" xml:id="lu-ex-u"> 4R_2 + R_3 \to R_3 \amp \qquad \begin{bmatrix}  1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix} </mrow>
+          </md>
+        </p>
+
+        <p>
+          And since the first step was a permutation matrix, then
+        </p>
+
+        <p>
+          <men xml:id="ex-lu-p">
+            P = E_{1 \leftrightarrow 2} = \begin{bmatrix} 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1\end{bmatrix}
+          </men>
+        </p>
+
+        <p>
+          and then <m> E_{-2R_1+R_3}, E_{4R_2+R_3}</m> can be used to find <m>L</m> as
+        </p>
+
+        <p>
+          <md>
+            <mrow> L \amp = E^{-1}_{4R_2+R_3} E^{-1}_{-2R_1+R_3} = E_{-4R_2+R_3}E_{2R_1+R_3} </mrow>
+            <mrow> \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -4 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 1 \end{bmatrix} </mrow>
+            <mrow> \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp -4 \amp 1 \end{bmatrix} </mrow>
+          </md>
+        </p>
+
+        <p>
+          The matrix <m>L</m> is given above, then <m>U</m> is the matrix in <xref ref="lu-ex-u" /> and <m>P</m> is given in <xref ref="ex-lu-p" />.
+          The matrix factorization thus is
+        </p>
+
+        <p>
+          <me>
+            PA=LU
+          </me>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+
+  <subsection>
+    <title>Solving linear systems using LU Decomposition</title>
+
+    <p>
+      The main application of LU decomposition is that of solving linear systems.
+      Consider the matrix equation <m>A\boldsymbol{x} = \boldsymbol{b}</m> and assume that <m>A=LU</m> (that is the needed permutation matrix is <m>P=I</m>).
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            Solve <m>L\boldsymbol{y} = \boldsymbol{b}</m> for <m>\boldsymbol{y}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Then solve <m>U\boldsymbol{x} = \boldsymbol{y}</m> for <m>\boldsymbol{x}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      First, this works, because if <m>\boldsymbol{y} = U\boldsymbol{x}</m>, then
+    </p>
+
+    <p>
+      <md>
+        <mrow>L\boldsymbol{y} \amp = \boldsymbol{b} </mrow>
+        <mrow>L U\boldsymbol{x} \amp = \boldsymbol{b} </mrow>
+        <mrow>A \boldsymbol{x} \amp = \boldsymbol{b}</mrow>
+      </md>
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Solve the system <m>A\boldsymbol{x}=\boldsymbol{b}</m> using <m>LU</m>-decomposition for
+        </p>
+
+        <p>
+          <md>
+            <mrow>A \amp = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix} \amp \boldsymbol{b} \amp = \begin{bmatrix} 14 \\22 \\ -9 \end{bmatrix}</mrow>
+          </md>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Recall that in <xref ref="sect-lu-fact-example" /> the <m>LU</m>-factorizations of the matrix <m>A</m> was found and is
+        </p>
+
+        <p>
+          <md>
+            <mrow>L \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1 \end{bmatrix} \amp U \amp = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}</mrow>
+          </md>
+        </p>
+
+        <p>
+          To use this to solve <m>A\boldsymbol{x}=\boldsymbol{b}</m>, first we solve <m>L \boldsymbol{y} = \boldsymbol{b}</m> via forward substitution.
+        </p>
+
+        <p>
+          <md>
+            <mrow>y_1 \amp = 14 </mrow>
+            <mrow>2y_1 + y_2 \amp = 22 </mrow>
+            <mrow>\text{so}\qquad\qquad\amp</mrow>
+            <mrow>y_2 \amp = 22-2y_1 = 22-28 =-6 </mrow>
+            <mrow>\text{and the last equation is}\qquad\qquad\amp</mrow>
+            <mrow>-2 y_1 -3y_2 + y_3 \amp = -9 </mrow>
+            <mrow>\text{or}\qquad\qquad\amp</mrow>
+            <mrow>y_3 \amp = -9 + 2(14)+3(-6) = 1</mrow>
+          </md>
+        </p>
+
+        <p>
+          So the solution to <m>L\boldsymbol{y}=\boldsymbol{b}</m> is <m>\boldsymbol{y}=[14,-6,1]^{\intercal}</m>.
+          Next, we solve <m>U\boldsymbol{x}=\boldsymbol{y}</m> by back substitution,
+        </p>
+
+        <p>
+          <md>
+            <mrow>x_3 \amp = 1 </mrow>
+            <mrow>4 x_2 + 2 x_3 \amp = -6 </mrow>
+            <mrow>\amp \qquad \qquad \text{or}</mrow>
+            <mrow>x_2 \amp = (-6 -2 (1))/4 = -2 </mrow>
+            <mrow>\amp \qquad \qquad \text{and the first equation is}</mrow>
+            <mrow>3 x_1 -2x_2+x_3 \amp = 14 </mrow>
+            <mrow>\amp \qquad \qquad \text{or}</mrow>
+            <mrow>3x_1 \amp = 14+2(-2)-x_3 = 9</mrow>
+            <mrow>x_1 \amp = 3</mrow>
+          </md>
+        </p>
+
+        <p>
+          So the solution is
+        </p>
+
+        <p>
+          <me>
+            \boldsymbol{x} = \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      You can see from the example above that once the matrix <m>A</m> factored that it is relatively simple to find the solutions to <m>L\boldsymbol{y}=\boldsymbol{b}</m> and <m>A\boldsymbol{x}=\boldsymbol{y}</m> and there are relatively few computations to perform.
+    </p>
+
+    <p>
+      In fact, this is true in general.
+      In that if one actually finds the factorization of <m>A</m> and then solves this in the manner show that about 1/2 of the operations are done then solving <m>A\boldsymbol{x}=\boldsymbol{b}</m> directly, say by reducing the matrix to reduced row echelon form.
+    </p>
+  </subsection>
+
+
+  <subsection>
+    <title>Inverting a Matrix</title>
+
+    <p>
+      The same idea can be use to find inverse of <m>A</m> by repeated solving <m>LU\boldsymbol{x} = \boldsymbol{b}</m> by repeating this for <m>\boldsymbol{b}</m> the columns of the identity matrix.
+      The example below shows this without all of the details of finding the factorization:
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Find the inverse of the matrix in <xref ref="ex-3by3-matrix-inverse" />,
+        </p>
+
+        <p>
+          <me>
+            A = \begin{bmatrix} 3 \amp 3 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          using the LU-decomposition.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Following the steps above, the LU decomposition is
+        </p>
+
+        <p>
+          <md>
+            <mrow>L \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2/3 \amp 1 \amp 0 \\ 0 \amp -2 \amp 1 \end{bmatrix} \amp U \amp = \begin{bmatrix} 3 \amp 3 \amp -1 \\ 0 \amp -1 \amp -7/3 \\ 0 \amp 0 \amp 1/3 \end{bmatrix}</mrow>
+          </md>
+        </p>
+
+        <p>
+          and we will solve <m>A\boldsymbol{x}=LU\boldsymbol{x}=\boldsymbol{e}_j</m>, where <m>\boldsymbol{e}_j</m> is the <m> j</m>th column of the 3 by 3 identity matrix.
+        </p>
+
+        <p>
+          Solving <m>LU\boldsymbol{x} = \boldsymbol{e}_1</m> by solving <m>L\boldsymbol{y}_1 = (1,0,0)^{\intercal}</m> or
+        </p>
+
+        <p>
+          <me>
+            \boldsymbol{y_1} = \begin{bmatrix} 1 \\ -2/3 \\ -4/3 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          then solve <m>U\boldsymbol{x}_1 = \boldsymbol{y}_1</m> for <m>\boldsymbol{x}_1</m> or
+        </p>
+
+        <p>
+          <me>
+            \boldsymbol{x}_1 = \begin{bmatrix} -11 \\ 10 \\ -4 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          Repeating this for <m>\boldsymbol{b}=\boldsymbol{e}_2</m>, first solving <m>L\boldsymbol{y}_2 = (0,1,0)^{\intercal}</m> or
+        </p>
+
+        <p>
+          <me>
+            \boldsymbol{y}_2 = \begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          then solve <m>U\boldsymbol{x}_2 = \boldsymbol{y}_2</m> for <m>\boldsymbol{x}_2</m> or
+        </p>
+
+        <p>
+          <me>
+            \boldsymbol{x}_2 = \begin{bmatrix} 17 \\ -15 \\ 6 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          and lastly, solve <m>L\boldsymbol{y}_3 = (0,0,1)^{\intercal}</m> or
+        </p>
+
+        <p>
+          <me>
+            \boldsymbol{y}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          and solving <m>U\boldsymbol{x}_3 = \boldsymbol{y}_3</m> results in
+        </p>
+
+        <p>
+          <me>
+            \boldsymbol{x}_3 = \begin{bmatrix} 8 \\ -7 \\ 3 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          The inverse matrix is then the matrix with <m>\boldsymbol{x}_j</m> as the columns or
+        </p>
+
+        <p>
+          <me>
+            A^{-1} = \begin{bmatrix} -11 \amp 17 \amp 8 \\ 10 \amp -15 \amp -7 \\ -4 \amp 6 \amp 3 \end{bmatrix}
+          </me>
+        </p>
+      </solution>
+    </example>
+  </subsection>
 </section>
 <!--
 <subsection>
-	<title>LU factorization of a 3 by 3 matrix</title>
-	<p>
-		Consider a general 3 by 3 matrix
-	</p>
+  <title>LU factorization of a 3 by 3 matrix</title>
 
-	<p>
-		<me>
-			A = \begin{bmatrix}
-			a_{11} \amp a_{12} \amp a_{13} \\
-			a_{21} \amp a_{22} \amp a_{23} \\
-			a_{31} \amp a_{32} \amp a_{33}
-			\end{bmatrix}
-		</me>
-	</p>
+  <p>
+    Consider a general 3 by 3 matrix
+  </p>
 
-	<p>
-		It is interesting to note that if we define
-	</p>
+  <p>
+    <me>
+      A = \begin{bmatrix} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{bmatrix}
+    </me>
+  </p>
 
-	<p>
-		<me>
-			B_{21} = \begin{bmatrix}
-			1 \amp 0 \amp 0 \\[4pt]
-			-\frac{a_{21}}{a_{11}} \amp 1 \amp 0 \\[4pt]
-			0 \amp 0 \amp 1
-			\end{bmatrix}
-		</me>
-	</p>
+  <p>
+    It is interesting to note that if we define
+  </p>
 
-	<p>
-		then
-	</p>
+  <p>
+    <me>
+      B_{21} = \begin{bmatrix} 1 \amp 0 \amp 0 \\[4pt] -\frac{a_{21}}{a_{11}} \amp 1 \amp 0 \\[4pt] 0 \amp 0 \amp 1 \end{bmatrix}
+    </me>
+  </p>
 
-	<p>
-		<me>
-			B_{21} A = \begin{bmatrix}
-			a_{11} \amp a_{12} \amp a_{13} \\[4pt]
-			0 \amp a_{22} - \frac{a_{12}a_{21}}{a_{11}} \amp a_{23}- \frac{a_{13}a_{21}}{a_{11}} \\[4pt]
-			a_{31} \amp a_{32} \amp a_{33}
-			\end{bmatrix}
-		</me>
-	</p>
+  <p>
+    then
+  </p>
 
-	<p>
-		And if
-	</p>
+  <p>
+    <me>
+      B_{21} A = \begin{bmatrix} a_{11} \amp a_{12} \amp a_{13} \\[4pt] 0 \amp a_{22} - \frac{a_{12}a_{21}}{a_{11}} \amp a_{23}- \frac{a_{13}a_{21}}{a_{11}} \\[4pt] a_{31} \amp a_{32} \amp a_{33} \end{bmatrix}
+    </me>
+  </p>
 
-	<p>
-		<me>
-			B_{31} = \begin{bmatrix}
-			1 \amp 0 \amp 0 \\[4pt]
-			0 \amp 1 \amp 0 \\[4pt]
-			-\frac{a_{31}}{a_{11}} \amp 0 \amp 1
-			\end{bmatrix}
-		</me>
-	</p>
+  <p>
+    And if
+  </p>
 
-	<p>
-		then
-	</p>
+  <p>
+    <me>
+      B_{31} = \begin{bmatrix} 1 \amp 0 \amp 0 \\[4pt] 0 \amp 1 \amp 0 \\[4pt] -\frac{a_{31}}{a_{11}} \amp 0 \amp 1 \end{bmatrix}
+    </me>
+  </p>
 
-	<p>
-		<me>
-			B_{31} B_{21} A =
-			\begin{bmatrix}
-			a_{11} \amp a_{12} \amp a_{13} \\[4pt]
-			0 \amp a_{22} - \frac{a_{12}a_{21}}{a_{11}} \amp a_{23}- \frac{a_{13}a_{21}}{a_{11}} \\[4pt]
-			0 \amp a_{32} - \frac{a_{12}a_{31}}{a_{11}} \amp a_{33} - \frac{a_{31}a_{31}}{a_{11}}
-			\end{bmatrix}
-		</me>
-	</p>
+  <p>
+    then
+  </p>
 
-	<p>
-		If we define this matrix as <m>A^{(1)}</m> and then repeat the steps.
-	</p>
+  <p>
+    <me>
+      B_{31} B_{21} A = \begin{bmatrix} a_{11} \amp a_{12} \amp a_{13} \\[4pt] 0 \amp a_{22} - \frac{a_{12}a_{21}}{a_{11}} \amp a_{23}- \frac{a_{13}a_{21}}{a_{11}} \\[4pt] 0 \amp a_{32} - \frac{a_{12}a_{31}}{a_{11}} \amp a_{33} - \frac{a_{31}a_{31}}{a_{11}} \end{bmatrix}
+    </me>
+  </p>
 
-	<p>
-		<me>
-			B_{32} = \begin{bmatrix}
-			1 \amp 0 \amp 0 \\
-			0 \amp 1 \amp 0 \\[2pt]
-			0 \amp -\frac{a^{(1)}_{32}}{a^{(1)}_{22}} \amp 1
-			\end{bmatrix}
-		</me>
-	</p>
+  <p>
+    If we define this matrix as <m>A^{(1)}</m> and then repeat the steps.
+  </p>
 
-	<p>
-		and then
-	</p>
+  <p>
+    <me>
+      B_{32} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\[2pt] 0 \amp -\frac{a^{(1)}_{32}}{a^{(1)}_{22}} \amp 1 \end{bmatrix}
+    </me>
+  </p>
 
-	<p>
-		<me>
-			B_{32} A^{(1)} =
-			\begin{bmatrix}
-			a^{(1)}_{11} \amp a^{(1)}_{21} \amp a^{(1)}_{21} \\[3pt]
-			0 \amp a^{(1)}_{22} \amp a^{(1)}_{23} \\[3pt]
-			0 \amp 0 \amp a^{(1)}_{33} - \frac{a^{(1)}_{23}a^{(1)}_{32}}{a^{(1)}_{22}}
-			\end{bmatrix}
-		</me>
-	</p>
+  <p>
+    and then
+  </p>
 
-	<p>
-		Notice that this matrix is an upper triangular matrix.
-		We let <m>U=B_{32}A^{(1}) =
-		B_{32}B_{31}B_{21} A</m>.
-	</p>
+  <p>
+    <me>
+      B_{32} A^{(1)} = \begin{bmatrix} a^{(1)}_{11} \amp a^{(1)}_{21} \amp a^{(1)}_{21} \\[3pt] 0 \amp a^{(1)}_{22} \amp a^{(1)}_{23} \\[3pt] 0 \amp 0 \amp a^{(1)}_{33} - \frac{a^{(1)}_{23}a^{(1)}_{32}}{a^{(1)}_{22}} \end{bmatrix}
+    </me>
+  </p>
 
-	<p>
-		If <m>U</m> has non zeros along its diagonal, then it is invertible and
-	</p>
+  <p>
+    Notice that this matrix is an upper triangular matrix.
+    We let <m>U=B_{32}A^{(1}) = B_{32}B_{31}B_{21} A</m>.
+  </p>
 
-	<p>
-		<md>
-			<mrow>A \amp = LU</mrow>
-			<mrow>\amp \qquad \qquad \text{multiply through on the right by $U^{-1}$}</mrow>
-			<mrow>A U^{-1} \amp = L</mrow>
-		</md>
-	</p>
+  <p>
+    If <m>U</m> has non zeros along its diagonal, then it is invertible and
+  </p>
 
-	<example xml:id="ex-lu-decomp">
-		<statement>
-			<p>
-				Use the steps above to find matrices <m>L</m> and <m>U</m> such that <m>A=LU</m> for
-			</p>
+  <p>
+    <md>
+      <mrow>A \amp = LU</mrow>
+      <mrow>\amp \qquad \qquad \text{multiply through on the right by $U^{-1}$}</mrow>
+      <mrow>A U^{-1} \amp = L</mrow>
+    </md>
+  </p>
 
-			<p>
-				<me>
-					A = \begin{bmatrix}
-					3 \amp -2 \amp 1 \\
-					6 \amp 0 \amp 4 \\
-					-6 \amp -8 \amp -7 \\
-					\end{bmatrix}
-				</me>
-			</p>
-		</statement>
+  <example xml:id="ex-lu-decomp">
+    <statement>
+      <p>
+        Use the steps above to find matrices <m>L</m> and <m>U</m> such that <m>A=LU</m> for
+      </p>
 
-		<solution>
-			<p>
-				As above,
-			</p>
+      <p>
+        <me>
+          A = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \\ \end{bmatrix}
+        </me>
+      </p>
+    </statement>
 
-			<p>
-				<me>
-					B_{21} = \begin{bmatrix}
-					1 \amp 0 \amp 0 \\ -\frac{6}{3} \amp 1 \amp 0 \\
-					0 \amp 0 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+    <solution>
+      <p>
+        As above,
+      </p>
 
-			<p>
-				And
-			</p>
+      <p>
+        <me>
+          B_{21} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ -\frac{6}{3} \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					B_{21} A = \begin{bmatrix}
-					3 \amp -2 \amp 1 \\
-					0 \amp 4 \amp 2 \\
-					-6 \amp -8 \amp -7
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        And
+      </p>
 
-			<p>
-				And if
-			</p>
+      <p>
+        <me>
+          B_{21} A = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ -6 \amp -8 \amp -7 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					B_{31} = \begin{bmatrix}
-					1 \amp 0 \amp 0 \\
-					0 \amp 1 \amp 0 \\
-					-\frac{-6}{3} \amp 0 \amp 1
-					\end{bmatrix} = \begin{bmatrix}
-					1 \amp 0 \amp 0 \\
-					0 \amp 1 \amp 0 \\
-					2 \amp 0 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        And if
+      </p>
 
-			<p>
-				and
-			</p>
+      <p>
+        <me>
+          B_{31} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ -\frac{-6}{3} \amp 0 \amp 1 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 1 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					B_{31} B_{21} A =
-					\begin{bmatrix}
-					3 \amp -2 \amp 1 \\
-					0 \amp 4 \amp 2 \\
-					0 \amp -12 \amp -5
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        and
+      </p>
 
-			<p>
-				And we will call this matrix <m>A^{(1)}</m>.
-			</p>
+      <p>
+        <me>
+          B_{31} B_{21} A = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp -12 \amp -5 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					B_{32}  = \begin{bmatrix}
-					1 \amp 0 \amp 0 \\
-					0 \amp 1 \amp 0 \\
-					0 \amp -\frac{-12}{4} \amp 1 \\
-					\end{bmatrix}
-					= \begin{bmatrix}
-					1 \amp 0 \amp 0 \\
-					0 \amp 1 \amp 0 \\
-					0 \amp 3 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        And we will call this matrix <m>A^{(1)}</m>.
+      </p>
 
-			<p>
-				<me>
-					B_{32} A^{(1)} = \begin{bmatrix}
-					3 \amp -2 \amp 1 \\
-					0 \amp 4 \amp 2 \\
-					0 \amp 0 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
+      <p>
+        <me>
+          B_{32}  = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -\frac{-12}{4} \amp 1 \\ \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 3 \amp 1 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				and we will call this <m>U</m>.
-				And <m>L</m> is found by
-			</p>
+      <p>
+        <me>
+          B_{32} A^{(1)} = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp 4 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+        </me>
+      </p>
 
-			<p>
-				<me>
-					L = A U^{-1} = \begin{bmatrix}
-					3 \amp -2 \amp 1 \\
-					6 \amp 0 \amp 4 \\
-					-6 \amp -8 \amp -7
-					\end{bmatrix} \begin{bmatrix}
-					1/3 \amp 1/6 \amp -2/3 \\
-					0 \amp 1/4 \amp -1/2 \\
-					0 \amp 0 \amp 1
-					\end{bmatrix} = \begin{bmatrix}
-					1 \amp 0 \amp 0 \\
-					2 \amp 1 \amp 0 \\
-					-2 \amp -3 \amp 1
-					\end{bmatrix}
-				</me>
-			</p>
-		</solution>
-	</example>
+      <p>
+        and we will call this <m>U</m>.
+        And <m>L</m> is found by
+      </p>
+
+      <p>
+        <me>
+          L = A U^{-1} = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \end{bmatrix} \begin{bmatrix} 1/3 \amp 1/6 \amp -2/3 \\ 0 \amp 1/4 \amp -1/2 \\ 0 \amp 0 \amp 1 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -3 \amp 1 \end{bmatrix}
+        </me>
+      </p>
+    </solution>
+  </example>
 </subsection>
--->
-<!--
+--> <!--
 <title>Extending LU factorization to invertible matrices</title>
+
 <introduction>
-	<p>
-		The 3 by 3 example above can be extended to larger square matrices.
-		For a matrix <m>
-		A=\{a_{i,j}\}</m>, if we define
-	</p>
+  <p>
+    The 3 by 3 example above can be extended to larger square matrices.
+    For a matrix <m> A=\{a_{i,j}\}</m>, if we define
+  </p>
 
-	<p>
-		<md>
-			<mrow>B^{(1)} \amp = \begin{bmatrix}
-			1 \amp 0 \amp 0 \amp 0 \amp \cdots \amp 0 \\
-			-a_{21}/a_{11} \amp 1\amp 0 \amp 0 \amp \cdots \amp 0 \\
-			-a_{31}/a_{11} \amp 0 \amp 1 \amp 0 \amp \cdots \amp 0 \\
-			\vdots \amp 0 \amp 0 \amp 1 \amp \ddots \amp \vdots \\
-			-a_{n1}/a_{11} \amp 0 \amp \cdots \amp \amp \amp 1
-			\end{bmatrix}</mrow>
-			<mrow>\amp \qquad \qquad \text{and define}</mrow>
-			<mrow>A^{(1)} \amp = B^{(1)} A</mrow>
-		</md>
-	</p>
+  <p>
+    <md>
+      <mrow>B^{(1)} \amp = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp \cdots \amp 0 \\ -a_{21}/a_{11} \amp 1\amp 0 \amp 0 \amp \cdots \amp 0 \\ -a_{31}/a_{11} \amp 0 \amp 1 \amp 0 \amp \cdots \amp 0 \\ \vdots \amp 0 \amp 0 \amp 1 \amp \ddots \amp \vdots \\ -a_{n1}/a_{11} \amp 0 \amp \cdots \amp \amp \amp 1 \end{bmatrix}</mrow>
+      <mrow>\amp \qquad \qquad \text{and define}</mrow>
+      <mrow>A^{(1)} \amp = B^{(1)} A</mrow>
+    </md>
+  </p>
 
-	<p>
-		will satisfy
-	</p>
+  <p>
+    will satisfy
+  </p>
 
-	<p>
-		<me>
-			a^{(1)}_{i1} = \begin{cases} a_{11} \amp i=1 \\
-			0 \amp i>1
-			\end{cases}
-		</me>
-	</p>
+  <p>
+    <me>
+      a^{(1)}_{i1} = \begin{cases} a_{11} \amp i=1 \\ 0 \amp i>1 \end{cases}
+    </me>
+  </p>
 
-	<p>
-		If this process is continued with
-	</p>
+  <p>
+    If this process is continued with
+  </p>
 
-	<p>
-		<me>
-			B^{(k)} = \begin{bmatrix}
-			1 \amp 0 \amp 0 \amp 0 \amp \cdots \amp \amp \amp 0 \\
-			0 \amp 1 \amp 0 \amp 0 \amp \cdots \amp \amp \amp 0 \\
-			0 \amp 0 \amp \ddots \\
-			0 \amp 0 \amp 0 \amp 1 \amp 0 \amp \cdots \amp \amp \vdots \\
-			0 \amp 0 \amp 0 \amp -a^{(k-1)}_{k+1,k}/a^{(k-1)}_{k,k} \amp 1 \amp 0 \\
-			0 \amp 0 \amp 0 \amp -a^{(k-1)}_{k+2,k}/a^{(k-1)}_{k,k} \amp 0 \amp 1 \amp 0 \\
-			0 \amp 0 \amp 0 \amp \vdots \amp 0 \amp 0 \amp \ddots \amp 0 \\
-			0 \amp 0 \amp 0 \amp -a^{(k-1)}_{n,k}/a^{(k-1)}_{k,k} \amp 0 \amp \cdots \amp 0 \amp 1 \\
-			\end{bmatrix}
-		</me>
-	</p>
+  <p>
+    <me>
+      B^{(k)} = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp \cdots \amp \amp \amp 0 \\ 0 \amp 1 \amp 0 \amp 0 \amp \cdots \amp \amp \amp 0 \\ 0 \amp 0 \amp \ddots \\ 0 \amp 0 \amp 0 \amp 1 \amp 0 \amp \cdots \amp \amp \vdots \\ 0 \amp 0 \amp 0 \amp -a^{(k-1)}_{k+1,k}/a^{(k-1)}_{k,k} \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp -a^{(k-1)}_{k+2,k}/a^{(k-1)}_{k,k} \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp \vdots \amp 0 \amp 0 \amp \ddots \amp 0 \\ 0 \amp 0 \amp 0 \amp -a^{(k-1)}_{n,k}/a^{(k-1)}_{k,k} \amp 0 \amp \cdots \amp 0 \amp 1 \\ \end{bmatrix}
+    </me>
+  </p>
 
-	<p>
-		and define
-	</p>
+  <p>
+    and define
+  </p>
 
-	<p>
-		<me>
-			A^{(k)} = B^{(k)} B^{(k-1)}
-		</me>
-	</p>
+  <p>
+    <me>
+      A^{(k)} = B^{(k)} B^{(k-1)}
+    </me>
+  </p>
 
-	<p>
-		and this will have nonzero elements on the diagonal and zeros below it through column <m>
-		k+1</m>.
-		If this is continued up to <m>A^{(n-1)}</m>, then
-	</p>
+  <p>
+    and this will have nonzero elements on the diagonal and zeros below it through column <m> k+1</m>.
+    If this is continued up to <m>A^{(n-1)}</m>, then
+  </p>
 
-	<p>
-		<me>
-			U = A^{(n-1)} = B^{(n-1)}B^{(n-2)} \cdots B^{(1)} A
-		</me>
-	</p>
+  <p>
+    <me>
+      U = A^{(n-1)} = B^{(n-1)}B^{(n-2)} \cdots B^{(1)} A
+    </me>
+  </p>
 
-	<p>
-		is an upper diagonal matrix and as before let <m>L = U^{-1} A</m>.
-	</p>
+  <p>
+    is an upper diagonal matrix and as before let <m>L = U^{-1} A</m>.
+  </p>
 </introduction>
 
 <subsubsection>
-	<title>Further Details</title>
-	<p>
-		A keen eye will notice some possible problems with the above formulation for the <m>LU</m>
-		factorization.
-		If any of the terms <m>a^{(k)}_{k,k} = 0</m>, then the matrix <m>B^{(k)}</m>
-		is not defined.
-		There are examples of invertible matrices that do not have an LU
-		factorization, however, what can be done is to find a permutation matrix <m>P</m> such that <m>
-		LUP=A</m>.
-		Details of this are not provided here.
-	</p>
+  <title>Further Details</title>
+
+  <p>
+    A keen eye will notice some possible problems with the above formulation for the <m>LU</m> factorization.
+    If any of the terms <m>a^{(k)}_{k,k} = 0</m>, then the matrix <m>B^{(k)}</m> is not defined.
+    There are examples of invertible matrices that do not have an LU factorization, however, what can be done is to find a permutation matrix <m>P</m> such that <m> LUP=A</m>.
+    Details of this are not provided here.
+  </p>
 </subsubsection>
 -->

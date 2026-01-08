@@ -632,7 +632,7 @@
 			</statement>
 		</definition>
 
-		<example>
+		<example xml:id="ex-solve-3by3">
 			<statement>
 				<p>
 					Solve

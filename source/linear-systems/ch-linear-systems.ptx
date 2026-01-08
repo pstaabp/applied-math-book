@@ -9,10 +9,10 @@
 		</p>
 	</introduction>
 	<!-- include sections -->
-	<xi:include href="linear-systems/linear-systems.ptx" />
-	<xi:include href="linear-systems/elementary-row-operations.ptx" />
-	<xi:include href="linear-systems/gaussian-elimination.ptx" />
-	<xi:include href="linear-systems/vectors-as-solutions.ptx" />
-	<xi:include href="linear-systems/homo-nonhomo.ptx" />
-	<xi:include href="linear-systems/linear-geometry.ptx" />
+	<xi:include href="./linear-systems.ptx" />
+	<xi:include href="./elementary-row-operations.ptx" />
+	<xi:include href="./gaussian-elimination.ptx" />
+	<xi:include href="./vectors-as-solutions.ptx" />
+	<xi:include href="./homo-nonhomo.ptx" />
+	<xi:include href="./linear-geometry.ptx" />
 </chapter>

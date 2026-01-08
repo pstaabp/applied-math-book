@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Matrices and Matrix Operations</title>
+	<introduction>
+		<p>
+			We first saw matrices in <xref ref="sect-matrices" /> in relationship with linear systems.
+			In this chapter we investigate matrices as rectangular grids of numbers.
+		</p>
+	</introduction>
+	<xi:include href="./matrix-def.ptx" />
+	<xi:include href="./matrix-operations.ptx" />
+	<xi:include href="./matrix-inverse.ptx" />
+	<xi:include href="./elementary-matrices.ptx" />
+	<xi:include href="./linear-combinations.ptx" />
+	<xi:include href="./linear-independence.ptx" />
+	<xi:include href="./row-col-space.ptx" />
+	<xi:include href="./determinants.ptx" />
+	<xi:include href="./summary-basics.ptx" />
+</chapter>

@@ -1,0 +1,483 @@
+<section xml:id="sect-complex-numbers">
+  <title>Complex Numbers</title>
+
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          Understand the basics of a complex number and the complex plane. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Perform arithmetic with complex numbers. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Convert between the standard and polar forms of a complex number. 
+        </p>
+
+      </li>
+      <li>
+        <p>
+          Using the Polar Form for multiplication of complex numbers, as well as powers and roots. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the roots of unity.
+        </p>
+      </li>
+    </ul>
+  </objectives>
+  
+
+  <introduction>
+    <p>
+      The mathematics of complex numbers all arise from defining the imaginary unit <m>i</m> to be <m>\sqrt{-1}</m>.
+      In this section and continuing in the next few are how this fact can generate interesting results
+    </p>
+  </introduction>
+
+
+  <subsection xml:id="sect-complex-basics">
+    <title>Basics of Complex Numbers and the Complex Plane</title>
+
+    <p>
+      With the imaginary unit <m>i = \sqrt{-1}</m>, we can build up a complex number like <m>2 + 3i</m>.
+      Any complex number <m>z</m> can be simplified with real number arithmetic to a number <m>a + bi </m>.
+    </p>
+
+    <definition xml:id="def-complex-number">
+      <statement>
+        <p>
+          A <term>complex number</term> is a number of the form <m>z=a+bi</m>, where <m>a</m> and <m>b</m> are real numbers and <m>i=\sqrt{-1}</m>.
+        </p>
+
+        <p>
+          The <term>real part</term> of <m>z</m> is <m>a</m> and can be written <m>\real{z}</m>.
+          The imaginary part of <m>z</m> is <m>b</m> and is written <m>\imag{z}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      A visual of a complex number can be helpful.
+      The complex plane.
+      In this plane, the horizontal axis is the real part of the number and the vertical axis is the imaginary part.
+      So the complex number <m>2 + 3i</m> would be plotted at the point <m>(2,3)</m> in this plane.
+    </p>
+
+    <figure xml:id="fig-complex-plane">
+      <caption>The complex plane with sample complex numbers plotted.</caption>
+      <image width="50%">
+        <shortdescription>
+        </shortdescription>
+        <latex-image>
+          <![CDATA[ 
+          \begin{tikzpicture}
+            \draw[->] (-5,0) -- (5,0);
+            \foreach \x in {-4,...,-1,1,2,...,4} \draw (\x,0.1) -- (\x,-0.1) node [below] {$ \x $};
+            \draw[->] (0,-5) -- (0,5);
+            \foreach \y in {-4,...,-1,1,2,...,4} \draw (0.1,\y) -- (-0.1,\y) node [left] {$ \y $};
+            \fill(2,3) circle (2pt) node [above right] {$ 2+3i $};
+            \fill(-3,1) circle (2pt) node [above left] {$ -3+i $};
+            \fill(0,-3) circle (2pt) node [above right] {$ -3i $};
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      Another important concept in complex numbers is that of the <term>complex conjugate</term> of a number <m>z</m>.
+      If we use <m>z = a+bi</m>, then the complex conjugate is <m>\bar{z} = a-bi</m>, which is simply found by changing the sign of the imaginary part of the number.
+    </p>
+  </subsection>
+
+
+  <subsection xml:id="sect-arithmetic-complex">
+    <title>Arithmetic with Complex Numbers</title>
+
+    <p>
+      All of the standard operations go through as expected where the final result is often written in the form <m>a+bi</m>.
+      If we let
+      <me>
+        z_1=x_1+i y_1 \qquad z_2 = x_2 + i y_2
+      </me>
+      then
+      <me>
+        \begin{aligned} z_1 + z_2 \amp = (x_1+x_2) + i(y_1+y_2)\\ z_1 - z_2 \amp = (x_1-x_2) + i(y_1-y_2) \\ z_1 z_2 \amp = (x_1+iy_1)(x_2+iy_2) \\ \amp = (x_1x_2+iy_1x_2+ix_1y_2+i^{2}y_1y_2)\\ \amp = (x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1) \end{aligned}
+      </me>
+    </p>
+
+    <p>
+      Before finishing with division of complex numbers, if a number <m>z=a+bi</m> is multiplied by its complex conjugate, then
+      <me>
+        \begin{aligned} z \bar{z} = (a+bi)(a-bi) = a^2 +abi - abi - i^2 b^2 = a^2+b^2 \end{aligned}
+      </me>
+      where it is important to note that <m>z\bar{z}</m> is a real number.
+    </p>
+
+    <p>
+      Also, if we have <m>1/z_1</m>, then we can write this as
+      <me>
+        \dfrac{1}{z_1} = \dfrac{1}{x_1+iy_1}
+      </me>
+      multiply top and bottom by <m>\overline{z_1}</m>, the complex conjugate of the number.
+      <me>
+        \begin{aligned} \dfrac{1}{z_1} = \dfrac{1}{z_1}\dfrac{\overline{z_1}}{\overline{z_1}} \amp = \dfrac{1}{x_1+iy_1} \dfrac{x_1-iy_1}{x_1-iy_1} \ \amp= \dfrac{x_1-iy_1}{x_1^{2}+y_1^{2}} \end{aligned}
+      </me>
+      and in a similar manner:
+      <me>
+        \begin{aligned} \dfrac{z_1}{z_2} \amp = \dfrac{x_1+iy_1}{x_2+iy_2} \\ \amp = \dfrac{x_1+iy_1}{x_2+iy_2} \dfrac{x_2-iy_2}{x_2-iy_2} \\ \amp = \dfrac{x_1x_2+y_1y_2+i(y_1x_2-y_2x_1)}{x_2^{2}+y_2^{2}} \end{aligned}
+      </me>
+    </p>
+
+    <p>
+      An integer power of a number is found by successive multiplications.
+      For example,
+      <me>
+        z_1^{2} = (x_1+iy_1)(x_1+iy_1)=x_1^{2}-y_1^{2}+2x_1y_1 i
+      </me>
+      but we will also see an alternative way to do this below.
+    </p>
+
+    <p>
+      There is one other operation that is quite helpful and that is the absolute value.
+      Although you might wonder how to apply the absolute value to a complex number (do we ensure that the signs on each part is positive).
+      Before that, we can interpret the absolute value of a real as if the number is plotted on the number line, then it is the distance from the origin (or <m>x=0</m>).
+      For example <m>|5|=5</m> is five units from the origin and <m>|-7|=7</m> is seven units from the origin.
+    </p>
+
+    <p>
+      So in that spirit, we define the absolute value of a complex number as the distance from the origin.
+      For <m>z_1= x_1+iy_1</m>, this is
+      <me>
+        |z_1| = \sqrt{x_1^2+y_1^2}
+      </me>
+    </p>
+    <observation>
+    <title>Arithmetic of Complex Numbers</title>
+
+    <p>
+      In summary, the following are basic arithmetic operations of complex numbers.
+      If
+      <me>
+        z_1=x_1+i y_1 \qquad z_2 = x_2 + i y_2
+      </me>
+      then
+      <me>
+        \begin{aligned} \bar{z_1} \amp = x_1 - i y_1 \\ z_1 + z_2 \amp = (x_1+x_2) + i(y_1+y_2)\\ z_1 - z_2 \amp = (x_1-x_2) + i(y_1-y_2) \\ z_1 z_2 \amp =(x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1) \\ \frac{z_1}{z_2} \amp = \dfrac{x_1x_2+y_1y_2+i(y_1x_2-y_2x_1)}{x_2^{2}+y_2^{2}} \\ |z_1| \amp = \sqrt{z_1 \bar{z}_1} = \sqrt{x_1^2+y_1^2} \end{aligned}
+      </me>
+    </p>
+    </observation>
+
+    <p>
+      Addition and subtraction of complex numbers have additional geometric meaning.
+      Let's look at a particular example.
+      Let <m>z_1 = -1 + 2i</m>, <m>z_2 = 3 + 2i</m>.
+      If we draw these in the complex plane along with vectors of each starting at the origin, then:
+    </p>
+
+    <figure xml:id="fig-addition-subtraction-complex">
+      <caption>Examples of Addition and Subtraction in the complex plane</caption>
+      <image width="60%">
+        <shortdescription>
+        </shortdescription>
+        <latex-image>
+            <![CDATA[ 
+            \begin{tikzpicture}
+            \draw[->] (-5,0) -- (5,0);
+        \foreach \x in {-4,...,-1,1,2,...,4} \draw (\x,0.1) -- (\x,-0.1) node [below] {$ \x $};
+        \draw[->] (0,-5) -- (0,5);
+        \foreach \y in {-4,...,-1,1,2,...,4} \draw (0.1,\y) -- (-0.1,\y) node [left] {$ \y $};
+        \draw[->,very thick] (0,0) -- (-1,2) node [midway, below left] {$ z_1 $};
+        \draw[->,very thick] (0,0) -- (3,2) node [midway, below right] {$ z_2 $};
+        \draw[->,very thick] (0,0) -- (2,4) node [midway, below right] {$ z_1+z_2 $};
+        \draw[->,very thick] (0,0) -- (-4,0) node [above] {$ z_1-z_2 $};
+            \end{tikzpicture}
+            ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      Notice that these are just vector addition and subtraction.
+    </p>
+  </subsection>
+
+
+  <subsection xml:id="sect-polar-form-complex">
+    <title>Polar Form of Complex Numbers</title>
+
+    <p>
+      Another important form of a complex number is called the <em>polar form</em>.
+      If we find <m>r</m>, the distance from the origin to the point <m>(x,y)</m> and <m>\theta</m>, the counterclockwise angle between the positive <m>x</m> axis and the line segment as shown in the next figure.
+    </p>
+
+    <figure xml:id="fig-polar-form-complex">
+      <caption></caption>
+      <image width="60%">
+        <shortdescription>
+        </shortdescription>
+        <latex-image>
+          <![CDATA[ 
+          \begin{tikzpicture}
+          \draw[->] (-5,0) -- (5,0);
+          \foreach \x in {-4,...,-1,1,2,...,4} \draw (\x,0.1) -- (\x,-0.1) node [below] {$\x$};
+          \draw[->] (0,-5) -- (0,5);
+          \foreach \y in {-4,...,-1,1,2,...,4} \draw (0.1,\y) -- (-0.1,\y) node [left] {$\y$};
+          \draw[thick] (0,0) -- (3,0) -- (3,4) -- cycle; 
+          \draw (1.5,2) node [above left] {$r$};
+          \draw (1.5,0) node [above] {$x$};
+          \draw (3,2) node [right] {$y$};
+          \draw (0.5, 0) arc (0:53.13:0.5);
+          \draw  (0.7,0.4) node {$\theta$};
+          \fill (3,4) circle (2pt) node [above right] {$z$};
+          \end{tikzpicture}
+          ]]>
+        </latex-image>
+      </image>
+    </figure>
+
+    <lemma xml:id="lem-polar-form-complex">
+      <statement>
+        <p>
+          Let <m>z = x + iy</m> be a complex number.
+          <m>z</m> can be written in the form
+          <me>
+            z = |z| e^{i\theta}
+          </me>
+          where <m>\theta = \arg(z)</m> is the counterclockwise angle between the line segment from <m>O</m> to the complex number and the positive real axis as shown in <xref ref="fig-polar-form-complex"/>.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          Let
+          <me>
+            \begin{aligned} z \amp = x + i y \\ \amp = r \cos \theta + i r \sin \theta \\ \amp = r (\cos theta + i \sin \theta) \\ \amp = |z| e^{i \theta} \end{aligned}
+          </me>
+          where will show that <m>e^{i \theta} = \cos \theta + i \sin \theta</m> in SECTION ????.
+        </p>
+      </proof>
+    </lemma>
+
+
+    <paragraphs>
+      <title>Multiplication of Complex Numbers in Polar Form </title>
+
+      <p>
+        Multiplication of complex numbers have a nice form and geometric interpretation if they are written in polar form.
+        If we write
+        <me>
+          z_1 = r_1 e^{i \theta_1} \qquad z_2 = r_2 e^{i \theta_2}
+        </me>
+        then
+        <me>
+          \begin{aligned} z_1 z_2 \amp = |z_1| e^{i \theta_1} |z_2| e^{i \theta_2} \\ \amp = |z_1|\,| z_2| e^{i(\theta_1+\theta_2)} \end{aligned}
+        </me>
+        or in other words, the product of two complex numbers is found by multiplying the distances and the angle is the sum.
+      </p>
+
+      <example>
+        <statement>
+          <p>
+            Find the the product of <m>z_1 = 1+i</m> and <m>z_2 = 2i</m> using the form above.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            First, we write the two complex numbers in polar form.
+            That is
+            <me>
+              z_1 = \sqrt{2} e^{i\pi/4} \qquad z_2 = 2 e^{i\pi/2}
+            </me>
+            Then the product is
+            <me>
+              \begin{aligned} z_1z_2 \amp = r_1 r_2 e^{i(\theta_1+\theta_2)} \\ \amp = 2\sqrt{2} e^{i 3\pi/4} \end{aligned}
+            </me>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        Note that if written in <m>a+bi</m> form using 
+        <me>
+          \begin{aligned}
+            z_1z_2 \amp = 2\sqrt{2}\left(\cos (3\pi/4) + i \sin (3\pi/4)\right) \\
+            \amp = 2 \sqrt{2} \left( -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2}\right) \\
+            \amp = -2 + 2 i 
+          \end{aligned}
+        </me>
+      </p>
+      <p>
+        This can also be found by multiplying the two numbers directly. 
+      </p>
+      
+    </paragraphs>
+
+
+    <paragraphs>
+      <title>Powers and Roots of Complex Numbers in Polar Form</title>
+
+      <p>
+        The polar form of a complex number is also helpful for powers and roots.  First, writing a number in polar form and then raising that to the power <m>n</m> results in 
+        <me>
+          z^n = (|z| e^{i\theta})^n = |z|^n e^{in \theta}
+        </me>
+      </p>
+      <p>
+        For example, if <m>z=1+i=\sqrt{2}e^{i\pi/4}</m>, then powers of <m>z</m> can be written as
+        <me>
+          z^{n} = (\sqrt{2})^{n} e^{i n \pi/4}
+        </me>
+      </p>
+      <p>
+        If <m>n=6</m>, then 
+        <me>z^6 = (\sqrt{2})^6 e^{i 6 \pi/4} = 8 e^{i 3\pi/2}.</me>
+        This can then be converted back to the standard form as 
+        <me>z^6 = 8 (\cos (3\pi/2) + i \sin(3\pi/2)) = 8 (0 + i (-1)) = -8i</me>
+      </p>
+      <p>
+        A plot of the powers have some interesting properties.  Consider the first 6 powers of <m>z=1+i</m>
+      </p>
+      <figure xml:id="fig-powers-polar-form">
+        <caption></caption>
+        <image width="75%">
+          <shortdescription></shortdescription>
+          <latex-image>
+            <![CDATA[ 
+            \begin{tikzpicture}
+              \draw[->] (-9,0) -- (9,0);
+              \foreach \x in {-8,...,-1,1,2,...,8} \draw (\x,0.1) -- (\x,-0.1) node [below] {$\x$};
+              \draw[->] (0,-9) -- (0,5);
+              \foreach \y in {-8,...,-1,1,2,...,4} \draw (0.1,\y) -- (-0.1,\y) node [left] {$\y$};
+              \fill(1,1) circle(2pt);
+              \draw[thin] (0,0) -- (1,1);
+              \fill(0,2) circle(2pt);
+              \fill(-2,2) circle(2pt);
+              \draw[thin] (0,0) -- (-2,2);
+              \fill(-4,0) circle(2pt);
+              \fill(-4,-4) circle(2pt);
+              \draw[thin] (0,0) -- (-4,-4);
+              \fill(0,-8) circle(2pt);
+              ]]>
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+
+      <p>
+        This can be interpreted as raising the distance to the <m>n\text{th}</m> power and rotating the angle <m>n</m> times around.
+        For example, the plot about actually shows the number and its 2nd and 3rd power.
+      </p>
+
+      <p>
+        If the power is a fraction, we can interpret the same way.
+        For example, the square root of <m>z</m> can be written:
+        <me>
+          \sqrt{z}  = \sqrt{r e^{i\theta}} = \sqrt{r} e^{i\theta/2}
+        </me>
+      </p>
+
+      <p>
+        What this means is that to find the square root of a complex number, you take the square root of the distance and then return the number with angle half of the input.
+      </p>
+
+      <example>
+        <statement>
+          <p>
+            Find the square root of <m>z=-1+\sqrt{3}i</m>.
+            Note that <m>|z|=\sqrt{1^{2}+(-\sqrt{3})^{2}}= \sqrt{4}=2</m> and that the angle (argument) is <m>2\pi/3</m>.
+            The resultant would have distance <m>\sqrt{2}</m> and the angle would be <m>\pi/3</m> so
+            <me>
+              \sqrt{z} = \sqrt{2}e^{i\pi/3}
+            </me>
+          </p>
+        </statement>
+      </example>
+    </paragraphs>
+  </subsection>
+
+
+  <subsection xml:id="sec-roots-of-unity">
+    <title>Roots of unity</title>
+
+    <p>
+      An interesting function to study in complex numbers is <m>f(z)=z^{n}-1</m> for positive integers <m>n</m>.
+      When <m>n=2</m>, we get the function <m>x^{2}-1</m> which isn't that interesting, but not bad.
+      Note that the roots of this are <m>x=\pm 1</m>.
+      Let's look at the solution to <m>f(z)=z^{3}-1</m>.
+    </p>
+
+    <p>
+      A good way to do this is to recall that we can write <m>z</m> in its polar form or
+      <me>
+        z=re^{i\theta}
+      </me>
+      and then we want to solve
+      <me>
+        z^{3}-1 = r^{3} e^{3i\theta}-1
+      </me>
+      Since we can write <m>1=1e^{0 i}</m>, then
+      <me>
+        r^{3} e^{3i\theta} = e^{0i}
+      </me>
+      results in <m>r^{3}=1</m> or <m>r=1</m> and <m>\theta=0</m>.
+      This is the number <m>z_1=1</m> and we know that <m>1^{3}-1=0</m>.
+      What else?
+    </p>
+
+    <p>
+      We can also write <m>1=e^{2\pi i}</m> so
+      <me>
+        3i \theta = 2\pi i
+      </me>
+      or <m>\theta=2\pi/3</m>, so another root of <m>f</m> is
+      <me>
+        z_2=e^{2\pi/3 i}
+      </me>
+    </p>
+
+    <p>
+      and lastly, we can also write <m>1=e^{4\pi i}</m> so another root when <m>\theta=4\pi/3</m> or the number
+      <me>
+        z_3=e^{4\pi/3}
+      </me>
+    </p>
+
+    <p>
+      These points are on the unit circle and equally spaced with <m>z=1</m> a root.
+      This is true in general for functions of the form <m>f(z)=z^{n}-1</m>, which will have the roots on the unit circle equally spaced <m>2\pi/n</m> radians apart from each other.
+    </p>
+
+    <p>
+      The solutions in the complex plane to the equation <m>f(z)=z^n-1</m> are called the <em>roots of unity</em>.
+      We will use the technique above to find the solution.
+    </p>
+
+    <p>
+      First, recall that the fundamental theorem of algebra states that there are exactly <m>n</m> complex solutions to a degree <m>n</m> polynomial (including multiplicities), so we expect <m>n</m> solutions to this.
+      <me>
+        \begin{aligned} z^n \amp = 1 \\ \amp = e^{2k\pi i} \qquad \text{for $k=0,1,2,\ldots,n-1$} \\ z \amp = e^{(2\pi k)/n i} = \cos \left(\frac{2k\pi}{n}\right) + i \sin \left(\frac{2k\pi}{n}\right) \end{aligned}
+      </me>
+      And these values are on the unit circle, one of which is <m>z=1+0i</m> and the others are equally spaced around the circle.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          If <m>n=3</m>, then the values are
+          <me>
+            \begin{aligned} z  \amp = 1+0i, \cos(2\pi/3) + i \sin (2\pi/3), \cos(4 \pi/3) + i \sin (4\pi/3) \\\ \amp = 1+0i, -\frac{1}{2} + i\frac{\sqrt{3}}{2}, -\frac{1}{2} - i\frac{\sqrt{3}}{2} \end{aligned}
+          </me>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>
