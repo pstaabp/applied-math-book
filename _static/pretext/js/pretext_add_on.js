@@ -15,13 +15,6 @@
 console.log("thisbrowser.userAgent", window.navigator.userAgent);
 */
 
-var minivers = "0";
-if (typeof miniversion !== 'undefined') {
-  console.log("typeof miniversion", typeof miniversion, "dddd", typeof miniversion == 'undefined');
-  minivers = miniversion.toString();
-}
-console.log("               minivers", minivers);
-
 /* scrollbar width from https://stackoverflow.com/questions/13382516/getting-scroll-bar-width-using-javascript */
 function getScrollbarWidth() {
     var outer = document.createElement("div");
@@ -289,22 +282,8 @@ function updateURLParameter(url, param, paramVal){
   return baseURL + "?" + newAdditionalURL + rows_txt;
 }
 
-function WWiframeReseed(iframe, seed) {
-  var this_problem = document.getElementsByName(iframe)[0];
-  var this_problem_url = this_problem.src;
-  if (seed === undefined){seed = Number(this_problem.getAttribute('data-seed')) + 80 + 84 + 88;}
-  this_problem.setAttribute('data-seed', seed);
-  this_problem_url = updateURLParameter(this_problem_url, "problemSeed", seed);
-  this_problem.src = this_problem_url;
-}
-
 function process_workspace() {
     console.log("processing workspace");
-// next does not work, because the cursor does back to the beginning
-// so:  need to handle the cursor
-//    the_text = document.activeElement.innerHTML;
-//    the_text = the_text.replace(/(^|\s)\$([^\$]+)\$(\s|$|[.,!?;:])/g, "\1\\(\2\\)\3")
-//    document.activeElement.innerHTML = the_text
     MathJax.typesetPromise();
 }
 /* for the GeoGebra calculator */
@@ -352,17 +331,8 @@ window.addEventListener("load",function(event) {
                  ggbscript.id = "create_ggb_calc";
                  ggbscript.innerHTML = "ggbApp.inject('geogebra-calculator')";
                  document.body.appendChild(ggbscript);
-//                 setTimeout( function() {
-//                     $("#calculator-toggle").focus();
-//                     var inputfield = $("input.gwt-SuggestBox.TextField")[0];
-//                     console.log("inputfield", inputfield);
-//                     inputfield.focus();
-//                 }, 4000);
              } else {
                  pretext_geogebra_calculator_onload();
-//                 var inputfield = $("input.gwt-SuggestBox.TextField")[0];
-//                 console.log("inputfield", inputfield);
-//                 inputfield.focus();
              }
          } else {
              $('#calculator-container').css('display', 'none');
@@ -373,16 +343,6 @@ window.addEventListener("load",function(event) {
      });
 });
 
-
-/*
-window.addEventListener("load",function(event) {
-//    setTimeout( function() {
-       console.log("changein play color");
-       $('figure > div.onclick > svg > path').attr('fill', '#0000aa');
-       $('path').attr('fill', '#0000aa')
-//    }, 5000)
-});
-*/
 
 window.addEventListener("load",function(event) {
     document.onkeyup = function(event)
@@ -402,14 +362,6 @@ window.addEventListener("load",function(event) {
                     console.log("staying in the sage cell", parent_sage_cell, document.activeElement)
                     just_hit_escape = true;
                     setTimeout(function(){ just_hit_escape = false }, 1000);
-     //           console.log("parent_sage_cell", parent_sage_cell);
-     //           if ($(parent_sage_cell).hasClass('sagecell_editor')) {
-     //              console.log("I am trapped in a sage cell", $(document.activeElement).closest(".sagecell_editor"));
-     //              console.log($(document.activeElement));
-     //              var this_sage_cell = $(document.activeElement).closest(".sagecell_editor");
-     //              this_sage_cell.next().focus;
-     //           }
-     //           else
                 } else
                 if(knowl_focus_stack.length > 0 ) {
                    most_recently_opened = knowl_focus_stack.pop();
@@ -426,144 +378,6 @@ window.addEventListener("load",function(event) {
 },
 false);
 
-// a hack for hosted tracking
-
-window.addEventListener("load",function(event) {
-       if($('body').attr('id') == "judson-AATA") {
-           console.log("            found AATA");
-           console.log(" looking for id");
-           if (typeof eBookConfig !== 'undefined') {
-             if(eBookConfig['username']) {
-                aa_id = "run" + eBookConfig['username'];
-                ut_id = eBookConfig['username'];
-             console.log(" done looking for id", ut_id);
-var newscript = document.createElement('script');
-  newscript.type = 'text/javascript';
-  newscript.async = true;
-  newscript.src = 'https://pretextbook.org/js/' + '0.13' + '/' + 'trails' + '.js';
-  var allscripts = document.getElementsByTagName('script');
-  var s = allscripts[allscripts.length - 1];
-  console.log('s',s);
-  console.log("adding a script", newscript);
-  s.parentNode.insertBefore(newscript, s.nextSibling);
-  trail = true;
-             console.log(" done adding script");
-             } else {
-             console.log(" did not find username");
-             }
-           }  else {
-             console.log(" did not find eBookConfig")
-           }
-       }
-});
-
-function loadResource(type, file) {
-  /* type should be js or css */
-  if (typeof js_version === 'undefined') { js_version = '0.2' }
-  if (typeof css_version === 'undefined') { css_version = '0.6' }
-  var newresource, allresources, s;
-  var linktype = "script";
-  if (type == "css") { linktype = "link" }
-  newresource = document.createElement(linktype);
-
-  if (type == "css") {
-      newresource.type = 'text/css';
-      newresource.rel = 'stylesheet';
-      newresource.href = 'https://pretextbook.org/css/' + css_version + '/' + file + '.css';
-      newresource.href += '?minivers=' + minivers;
-  } else if (type == "js") {
-      newresource.type = 'text/javascript';
-//  newscript.async = true;
-      newresource.src = 'https://pretextbook.org/js/' + js_version + '/' + file + '.js';
-      newresource.src += '?minivers=' + minivers;
-  } else {
-      console.log("unknown resource type", type, "for", file);
-      return
-  }
-
-  allresources = document.getElementsByTagName(linktype);
-  s = allresources[allresources.length - 1];
-  console.log('s',s);
-  console.log("adding a resource", newresource);
-  s.parentNode.insertBefore(newresource, s.nextSibling);
-}
-
-
-window.addEventListener("load",function(event) {
-       if(false && $('body').attr('id') == "pretext-SA") {
-           console.log("            found DMOI");
-           if (typeof uname === "undefined") { uname = "" }
-           console.log("aaaa", uname, "  uname");
-           if(uname == "editor") {
-                loadResource('js', 'edit');
-           } else {
-                console.log("not enabling editing")
-           }
- /*       } else if ($('body').attr('id') == "pugetsound-SW") { */
-        } else if (false && window.location.href.includes("soundwriting.pugetsound")) {
-/* a bunch of temporary exploration for a Sound Writing survey */
-            console.log("please take our survey");
-            console.log(window.location.href);
-            console.log(window.location.href.includes("soundwriting.pugetsound"));
-
-            loadResource("js", "login");
-            loadResource("css", "features");
-            setTimeout( loadResource("js", "survey"), 1000);  /* I know: sloppy */
-
-  //      } else if ((typeof online_editable !== 'undefined') &&  online_editable) {
-        } else if (false && $('body').attr('id') == "pretext-SA") {
-            loadResource('css', 'features');
-            loadResource('js', 'login')
-            loadResource('js', 'edit');
-        } else {
-            var this_source_txt;
-            var source_url = window.location.href;
-            source_url = source_url.replace(/(#|\?).*/, "");
-            source_url = source_url.replace(/html$/, "ptx");
-            if (typeof sourceeditable !== 'undefined') {
-              fetch(source_url).then(
-                  function(u){ return u.text();}
-                ).then(
-                  function(text){
-                      this_source_txt = text;
-                      if (this_source_txt.includes("404 Not")) {
-                          console.log("Editing not enabled: source unavailable")
-                      } else {
-                        loadResource('css', 'features');
-                        loadResource('css', 'edit');
-                        loadResource('js', 'login')
-                        loadResource('js', 'edit');
-                      }
-                  }
-                );
-              } else {
-                   console.log("Source file unavailable: editing not possible")
-              }
-        }
-
-});
-
-// this is to open every knowl on a page
-// (this code is not actually used anywhere)
-window.addEventListener("load",function(event) {
-   if($('body').hasClass("braillesample")) {
-       var knowl_id_counterX = 0;
-       console.log("            found braillesample");
-       var all_knowls = $('[data-knowl]');
-       console.log("found", all_knowls.length, "knowls");
-       console.log("which are", all_knowls);
-       for (var j=1; j < all_knowls.length; ++j) {
-           console.log(j, "un-knowling", all_knowls[j]);
-           console.log("attr", $(all_knowls[j]).attr("data-knowl"));
-           $knowl = $(all_knowls[j]);
-           if(!$knowl.attr("data-knowl-uid")) {
-              $knowl.attr("data-knowl-uid", knowl_id_counterX);
-              knowl_id_counterX++;
-            }
-            knowl_click_handler($knowl);
-          // knowl_click_handler($(all_knowls[j]))
-       }
-}});
 
 // when the anchor is a knowl, open it
 window.addEventListener("load",function(event) {
@@ -674,16 +488,6 @@ function createPrintoutPages(margins) {
                 printout.insertBefore(tasks[i], child.nextSibling);
             }
         // Skipping separate treatment of exercisegroups for now.
-        //} else if (child.classList.contains('exercisegroup')) {
-        //    for (const subChild of child.children) {
-        //        if (subChild.classList.contains('exercisegroup-exercises')){
-        //            for (const row of subChild.children){
-        //                rows.push(row);
-        //            }
-        //        } else {
-        //            rows.push(child);
-        //        }
-        //    }
         } else {
             rows.push(child);
         }
@@ -736,6 +540,77 @@ function createPrintoutPages(margins) {
             printout.removeChild(child);
         }
     }
+}
+
+// Add headers and footers to all pages in a printout.  Start with this set to be hidden by default; a toggle later will show/hide them.
+function addHeadersAndFootersToPrintout() {
+    const printout = document.querySelector('section.worksheet, section.handout');
+    if (!printout) {
+        console.warn("No printout found, exiting addHeadersAndFootersToPrintout.");
+        return;
+    }
+    const pages = printout.querySelectorAll('.onepage');
+    // Loop through pages and add header and footer divs
+    pages.forEach((page, index) => {
+        const isFirstPage = index === 0;
+        // Add header
+        const headerDiv = document.createElement('div');
+        headerDiv.classList.add(isFirstPage ? 'first-page-header' : 'running-header', 'hidden');
+        headerDiv.innerHTML = `<div class="header-left" contenteditable="true"></div><div class="header-center" contenteditable="true"></div><div class="header-right" contenteditable="true"></div>`;
+        page.insertBefore(headerDiv, page.firstChild);
+        // Add footer
+        const footerDiv = document.createElement('div');
+        footerDiv.classList.add(isFirstPage ? 'first-page-footer' : 'running-footer', 'hidden');
+        footerDiv.innerHTML = `<div class="footer-left" contenteditable="true"></div><div class="footer-center" contenteditable="true"></div><div class="footer-right" contenteditable="true"></div>`;
+        page.appendChild(footerDiv);
+    });
+    // Add content based on local storage if available, otherwise from data-attributes on the printout
+    const headerFooterKeys = ['header-first-left', 'header-first-center', 'header-first-right', 'footer-first-left', 'footer-first-center', 'footer-first-right', 'header-running-left', 'header-running-center', 'header-running-right', 'footer-running-left', 'footer-running-center', 'footer-running-right'];
+    const headerFooterContent = {};
+    headerFooterKeys.forEach(key => {
+        headerFooterContent[key] = localStorage.getItem(key) || printout.getAttribute(`data-${key}`) || '';
+    });
+    // First page header and footer
+    document.querySelector('.first-page-header').querySelector('.header-left').innerHTML = headerFooterContent['header-first-left'];
+    document.querySelector('.first-page-header').querySelector('.header-center').innerHTML = headerFooterContent['header-first-center'];
+    document.querySelector('.first-page-header').querySelector('.header-right').innerHTML = headerFooterContent['header-first-right'];
+    document.querySelector('.first-page-footer').querySelector('.footer-left').innerHTML = headerFooterContent['footer-first-left'];
+    document.querySelector('.first-page-footer').querySelector('.footer-center').innerHTML = headerFooterContent['footer-first-center'];
+    document.querySelector('.first-page-footer').querySelector('.footer-right').innerHTML = headerFooterContent['footer-first-right'];
+    // Running headers and footers
+    document.querySelectorAll('.running-header').forEach(headerDiv => {
+        headerDiv.querySelector('.header-left').innerHTML = headerFooterContent['header-running-left'];
+        headerDiv.querySelector('.header-center').innerHTML = headerFooterContent['header-running-center'];
+        headerDiv.querySelector('.header-right').innerHTML = headerFooterContent['header-running-right'];
+    });
+    document.querySelectorAll('.running-footer').forEach(footerDiv => {
+        footerDiv.querySelector('.footer-left').innerHTML = headerFooterContent['footer-running-left'];
+        footerDiv.querySelector('.footer-center').innerHTML = headerFooterContent['footer-running-center'];
+        footerDiv.querySelector('.footer-right').innerHTML = headerFooterContent['footer-running-right'];
+    });
+    // Add event listeners to update local storage when content is edited
+    headerFooterKeys.forEach(key => {
+        const selectorMap = {
+            'header-first-left': '.first-page-header .header-left',
+            'header-first-center': '.first-page-header .header-center',
+            'header-first-right': '.first-page-header .header-right',
+            'footer-first-left': '.first-page-footer .footer-left',
+            'footer-first-center': '.first-page-footer .footer-center',
+            'footer-first-right': '.first-page-footer .footer-right',
+            'header-running-left': '.running-header .header-left',
+            'header-running-center': '.running-header .header-center',
+            'header-running-right': '.running-header .header-right',
+            'footer-running-left': '.running-footer .footer-left',
+            'footer-running-center': '.running-footer .footer-center',
+            'footer-running-right': '.running-footer .footer-right'
+        };
+        const elements = document.querySelectorAll(selectorMap[key]);
+        elements.forEach(elem => {
+            elem.addEventListener('input', () => {
+                localStorage.setItem(key, elem.innerHTML);
+            });
+        });
+    });
 }
 
 
@@ -1190,6 +1065,40 @@ window.addEventListener("DOMContentLoaded", async function(event) {
         } else {
             createPrintoutPages(margins);
         }
+
+        // Add headers and footers to all pages in the printout
+        addHeadersAndFootersToPrintout();
+
+        // Add event listeners to the print header/footer checkboxes
+        for (const hf of ["first-page-header", "running-header", "first-page-footer", "running-footer"]) {
+            const checkbox = document.getElementById(`print-${hf}-checkbox`);
+            if (checkbox) {
+                // set visibility based on current checkbox state
+                checkbox.checked = localStorage.getItem(`print-${hf}`) === "true";
+                document.querySelectorAll(`.${hf}`).forEach(elem => {
+                    // add hidden to class list
+                    if (checkbox.checked) {
+                        elem.classList.remove("hidden");
+                    } else {
+                        elem.classList.add("hidden");
+                    }
+                });
+                // Add event listener to toggle visibility
+                checkbox.addEventListener("change", function() {
+                    localStorage.setItem(`print-${hf}`, this.checked);
+                    // toggle visibility of header/footer divs
+                    document.querySelectorAll(`.${hf}`).forEach(elem => {
+                        if (checkbox.checked) {
+                            elem.classList.remove("hidden");
+                        } else {
+                            elem.classList.add("hidden");
+                        }
+                        adjustWorkspaceToFitPage({paperSize: paperSize, margins: margins});
+                    });
+                });
+            }
+        }
+
         // After pages are set up, we adjust the workspace heights to fit the page (based on the paper size).
         adjustWorkspaceToFitPage({paperSize: paperSize, margins: margins});
 

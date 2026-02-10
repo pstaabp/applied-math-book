@@ -2212,7 +2212,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Complex Numbers",
-  "body": " Complex Numbers     Understand the basics of a complex number and the complex plane.    Perform arithmetic with complex numbers.    Convert between the standard and polar forms of a complex number.    Using the Polar Form for multiplication of complex numbers, as well as powers and roots.    Find the roots of unity.      The mathematics of complex numbers all arise from defining the imaginary unit to be . In this section and continuing in the next few are how this fact can generate interesting results    Basics of Complex Numbers and the Complex Plane  With the imaginary unit , we can build up a complex number like . Any complex number can be simplified with real number arithmetic to a number .    A complex number is a number of the form , where and are real numbers and .  The real part of is and can be written . The imaginary part of is and is written .    A visual of a complex number can be helpful. The complex plane. In this plane, the horizontal axis is the real part of the number and the vertical axis is the imaginary part. So the complex number would be plotted at the point in this plane.   The complex plane with sample complex numbers plotted.        Another important concept in complex numbers is that of the complex conjugate of a number . If we use , then the complex conjugate is , which is simply found by changing the sign of the imaginary part of the number.    Arithmetic with Complex Numbers  All of the standard operations go through as expected where the final result is often written in the form . If we let then   Before finishing with division of complex numbers, if a number is multiplied by its complex conjugate, then where it is important to note that is a real number.  Also, if we have , then we can write this as multiply top and bottom by , the complex conjugate of the number. and in a similar manner:   An integer power of a number is found by successive multiplications. For example, but we will also see an alternative way to do this below.  There is one other operation that is quite helpful and that is the absolute value. Although you might wonder how to apply the absolute value to a complex number (do we ensure that the signs on each part is positive). Before that, we can interpret the absolute value of a real as if the number is plotted on the number line, then it is the distance from the origin (or ). For example is five units from the origin and is seven units from the origin.  So in that spirit, we define the absolute value of a complex number as the distance from the origin. For , this is    Arithmetic of Complex Numbers  In summary, the following are basic arithmetic operations of complex numbers. If then    Addition and subtraction of complex numbers have additional geometric meaning. Let's look at a particular example. Let , . If we draw these in the complex plane along with vectors of each starting at the origin, then:   Examples of Addition and Subtraction in the complex plane        Notice that these are just vector addition and subtraction.    Polar Form of Complex Numbers  Another important form of a complex number is called the polar form . If we find , the distance from the origin to the point and , the counterclockwise angle between the positive axis and the line segment as shown in the next figure.            Let be a complex number. can be written in the form where is the counterclockwise angle between the line segment from to the complex number and the positive real axis as shown in .    Let where will show that in SECTION ????.     Multiplication of Complex Numbers in Polar Form  Multiplication of complex numbers have a nice form and geometric interpretation if they are written in polar form. If we write then or in other words, the product of two complex numbers is found by multiplying the distances and the angle is the sum.    Find the the product of and using the form above.    First, we write the two complex numbers in polar form. That is Then the product is     Note that if written in form using   This can also be found by multiplying the two numbers directly.    Powers and Roots of Complex Numbers in Polar Form  The polar form of a complex number is also helpful for powers and roots. First, writing a number in polar form and then raising that to the power results in   For example, if , then powers of can be written as   If , then This can then be converted back to the standard form as   A plot of the powers have some interesting properties. Consider the first 6 powers of          This can be interpreted as raising the distance to the power and rotating the angle times around. For example, the plot about actually shows the number and its 2nd and 3rd power.  If the power is a fraction, we can interpret the same way. For example, the square root of can be written:   What this means is that to find the square root of a complex number, you take the square root of the distance and then return the number with angle half of the input.    Find the square root of . Note that and that the angle (argument) is . The resultant would have distance and the angle would be so        Roots of unity  An interesting function to study in complex numbers is for positive integers . When , we get the function which isn't that interesting, but not bad. Note that the roots of this are . Let's look at the solution to .  A good way to do this is to recall that we can write in its polar form or and then we want to solve Since we can write , then results in or and . This is the number and we know that . What else?  We can also write so or , so another root of is   and lastly, we can also write so another root when or the number   These points are on the unit circle and equally spaced with a root. This is true in general for functions of the form , which will have the roots on the unit circle equally spaced radians apart from each other.  The solutions in the complex plane to the equation are called the roots of unity . We will use the technique above to find the solution.  First, recall that the fundamental theorem of algebra states that there are exactly complex solutions to a degree polynomial (including multiplicities), so we expect solutions to this. And these values are on the unit circle, one of which is and the others are equally spaced around the circle.    If , then the values are      "
+  "body": " Complex Numbers     Understand the basics of a complex number and the complex plane.    Perform arithmetic with complex numbers.    Convert between the standard and polar forms of a complex number.    Using the Polar Form for multiplication of complex numbers, as well as powers and roots.    Find the roots of unity.      The mathematics of complex numbers all arise from defining the imaginary unit to be . In this section and continuing in the next few are how this fact can generate interesting results    Basics of Complex Numbers and the Complex Plane  With the imaginary unit , we can build up a complex number like . Any complex number can be simplified with real number arithmetic to a number .    A complex number is a number of the form , where and are real numbers and .  The real part of is and can be written . The imaginary part of is and is written .    A visual of a complex number can be helpful. The complex plane. In this plane, the horizontal axis is the real part of the number and the vertical axis is the imaginary part. So the complex number would be plotted at the point in this plane.   The complex plane with sample complex numbers plotted.        Another important concept in complex numbers is that of the complex conjugate of a number . If we use , then the complex conjugate is , which is simply found by changing the sign of the imaginary part of the number.    Arithmetic with Complex Numbers  All of the standard operations go through as expected where the final result is often written in the form . If we let then   Before finishing with division of complex numbers, if a number is multiplied by its complex conjugate, then where it is important to note that is a real number.  Also, if we have , then we can write this as multiply top and bottom by , the complex conjugate of the number. and in a similar manner:   An integer power of a number is found by successive multiplications. For example, but we will also see an alternative way to do this below.  There is one other operation that is quite helpful and that is the absolute value. Although you might wonder how to apply the absolute value to a complex number (do we ensure that the signs on each part is positive). Before that, we can interpret the absolute value of a real as if the number is plotted on the number line, then it is the distance from the origin (or ). For example is five units from the origin and is seven units from the origin.  So in that spirit, we define the absolute value of a complex number as the distance from the origin. For , this is    Arithmetic of Complex Numbers  In summary, the following are basic arithmetic operations of complex numbers. If then    Addition and subtraction of complex numbers have additional geometric meaning. Let's look at a particular example. Let , . If we draw these in the complex plane along with vectors of each starting at the origin, then:   Examples of Addition and Subtraction in the complex plane        Notice that these are just vector addition and subtraction.    Polar Form of Complex Numbers  Another important form of a complex number is called the polar form . If we find , the distance from the origin to the point and , the counterclockwise angle between the positive axis and the line segment as shown in the next figure.            Let be a complex number. can be written in the form where is the counterclockwise angle between the line segment from to the complex number and the positive real axis as shown in .    Let where will show that in SECTION ????.     Multiplication of Complex Numbers in Polar Form  Multiplication of complex numbers have a nice form and geometric interpretation if they are written in polar form. If we write then or in other words, the product of two complex numbers is found by multiplying the distances and the angle is the sum.    Find the the product of and using the form above.    First, we write the two complex numbers in polar form. That is Then the product is   Note that if written in form using   This can also be found by multiplying the two numbers directly.      Powers and Roots of Complex Numbers in Polar Form  The polar form of a complex number is also helpful for powers and roots. First, writing a number in polar form and then raising that to the power results in   For example, if , then powers of can be written as   If , then This can then be converted back to the standard form as   A plot of the powers have some interesting properties. Consider the first 6 powers of           This can be interpreted as raising the distance to the power and rotating the angle times around. For example, the plot about actually shows the number and its 2nd and 3rd power.  If the power is a fraction, we can interpret the same way. For example, the square root of can be written:   What this means is that to find the square root of a complex number, you take the square root of the distance and then return the number with angle half of the input.    Find the square root of . Note that and that the angle (argument) is . The resultant would have distance and the angle would be so        Roots of unity  An interesting function to study in complex numbers is for positive integers . When , we get the function which isn't that interesting, but not bad. Note that the roots of this are . Let's look at the solution to .  A good way to do this is to recall that we can write in its polar form or and then we want to solve Since we can write , then results in or and . This is the number and we know that . What else?  We can also write so or , so another root of is   and lastly, we can also write so another root when or the number   These points are on the unit circle and equally spaced with a root. This is true in general for functions of the form , which will have the roots on the unit circle equally spaced radians apart from each other.  The solutions in the complex plane to the equation are called the roots of unity . We will use the technique above to find the solution.  First, recall that the fundamental theorem of algebra states that there are exactly complex solutions to a degree polynomial (including multiplicities), so we expect solutions to this. And these values are on the unit circle, one of which is and the others are equally spaced around the circle.    If , then the values are      "
 },
 {
   "id": "sect-complex-numbers-2",
@@ -2293,7 +2293,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.1.7",
   "title": "",
-  "body": "  Find the the product of and using the form above.    First, we write the two complex numbers in polar form. That is Then the product is    "
+  "body": "  Find the the product of and using the form above.    First, we write the two complex numbers in polar form. That is Then the product is   Note that if written in form using   This can also be found by multiplying the two numbers directly.   "
 },
 {
   "id": "fig-powers-polar-form",
@@ -2302,7 +2302,7 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "3.1.8",
   "title": "",
-  "body": "      "
+  "body": "       "
 },
 {
   "id": "sect-polar-form-complex-6-10",
@@ -2329,7 +2329,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Properties of Functions",
-  "body": " Properties of Functions     The definition of a periodic function.    Definitions of one-sided limits and derivatives as well as piecewise continuous functions.    Definition of even and odd functions and properties of even and odd functions.    The technique of tabular integration.    The definitions of inner products of functions.      In , we reviewed inner product spaces and saw orthonormal sets of vectors (both in as well as polynomials). In this section, we will examine another set of functions, sines and cosines that are orthogonal. First, let's see a short review of periodic functions.    The Complex Exponential  In section , we used the equation   This equation, known as Euler's Formula isn't obvious. We'll spend this section deriving it. First, we need to recall the Maclaurin Series This is often covered in the infinite series section of Calculus. See APEX Calculus for an open-source version or other Calculus texts for details on series. of and .     Expanding using the above Maclaurin series, where has been used to reduce powers of and then the result is split into terms with and without a factor of .  Euler's formula also leads to the following:   The Most Interesting Equation in Mathematics      and this is often called the most interesting equation in mathematics because it arguably contains the 5 most important mathematical constants: 0, 1, , , .    Periodic Functions    A function is periodic with period if     for all . The smallest value of for which this true is called the period of the function.      Show that is periodic with period .       where the sum of angles sine formula is used.      What is the period of the function ?    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .    The periodic functions that we will mostly be using in this text are the sine and cosine function. We review here a few convenient identities with these functions and the complex exponential. From Euler's formula,     we can then write sine and cosine in terms of        If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds. If ,     because from , but this is raised to an even power so       One-Side Limits and Derivatives; Piecewise Continuous Functions  As we will see, the notion of a piecewise continuous function is a function that is continuous on subintervals. However, there are some technical details that we need before a formal definition.    A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.    If one is talking about either a left- or right-handed limit, these are typically called one-sided limits. Also, an example of these will be shown below.    A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.    If one is talking about either a left- or right-handed derivative, these are typically called one-sided derivatives. An example of these will be shown below.    A function is piecewise continuous on an interval if is continuous on all except for a finite number of points . In addition for all , and exist.      The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise continuous function.      In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.      Find both the left- and right-handed derivatives of the function defined in at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is       Show that is not a piecewise continuous function on .    The function on is not continuous at . Also     and since the one-sided limits are not finite, then is not piecewise continuous on .      Odd and Even Functions    A function is an odd function if for all in its domain.    Note: recall that an odd function is symmetric about the origin, meaning that if the graph of is rotated a half circle about the origin, that one gets the graph back.    A function is an even function if for all in its domain.    Recall that an even function is symmetric about the -axis. This means that if the graph is reflected over the -axis that one gets the same graph upon the reflection.    Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:     The following functions are even: .       The following theorem is helpful for finding whether or not products of functions are odd or even.      The product of two odd functions is even.    The product of two even functions is even.    The product of an even and an odd function is odd.        The derivative of an even function is odd. The derivative of an odd function is even.    Let be an even function, then for all .     by the chain rule. And the proof that the derivative of an odd function is similar.    And as a corollary, antiderivatives work in the same way.       Let be an odd function. Any antiderivative of is even.    Let be an even function and be its antiderivative. The antiderivative such that is odd.         Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.      Tabular Integration  A very handy formula for many integrations in this section is called tabular integration , which is just a recursive version of integration by parts that works well for integrals of a certain type. Before we show this, recall that the integration by parts formula is     and integration by parts is helpful for rewriting one integral (on the left) in terms of a second integral (on the right) and generally it is used to create a simpler integral. The next example shows a standard integration done with integration by parts.    Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get       This example shows that in order to integrate with the by parts formula, one must replace one integral with another. In more difficult examples, this may need to be done multiple times until the resulting integral is able to be done without by parts. This is the case when tabular integration is useful.   The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.   This is best seen with a couple of examples.    Find     using tabular integration.    First, we will build the table:   Tabular integration of       Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.    And the following is an example that is similar as we will see below:    Find     using tabular integration.    First, we will build the table:   Tabular integration of .      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.        "
+  "body": " Properties of Functions     The definition of a periodic function.    Definitions of one-sided limits and derivatives as well as piecewise continuous functions.    Definition of even and odd functions and properties of even and odd functions.    The technique of tabular integration.    The definitions of inner products of functions.      In , we reviewed inner product spaces and saw orthonormal sets of vectors (both in as well as polynomials). In this section, we will examine another set of functions, sines and cosines that are orthogonal. First, let's see a short review of periodic functions.    The Complex Exponential  In section , we used the equation   This equation, known as Euler's Formula isn't obvious. We'll spend this section deriving it. First, we need to recall the Maclaurin Series This is often covered in the infinite series section of Calculus. See APEX Calculus for an open-source version or other Calculus texts for details on series. of and .     Expanding using the above Maclaurin series, where has been used to reduce powers of and then the result is split into terms with and without a factor of .  Euler's formula also leads to the following:   The Most Interesting Equation in Mathematics      and this is often called the most interesting equation in mathematics because it arguably contains the 5 most important mathematical constants: 0, 1, , , .    Other Properties of the Complex Exponential  You might ask yourself about why the complex exponential function is important or helpful in other part of mathematics, especially since this isn't a book on complex analysis. This section provides some insight into why you might want to learn this.  First of all, since we have the complex exponential form in , if we look at as a function of , then as     Periodic Functions    A function is periodic with period if     for all . The smallest value of for which this true is called the period of the function.      Show that is periodic with period .       where the sum of angles sine formula is used.      What is the period of the function ?    We know that the period of is also the same as or . If we let , then has period since it is the smallest value of such that for all . The function would then had period , since .    The periodic functions that we will mostly be using in this text are the sine and cosine function. We review here a few convenient identities with these functions and the complex exponential. From Euler's formula,     we can then write sine and cosine in terms of        If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds. If ,     because from , but this is raised to an even power so       One-Side Limits and Derivatives; Piecewise Continuous Functions  As we will see, the notion of a piecewise continuous function is a function that is continuous on subintervals. However, there are some technical details that we need before a formal definition.    A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.    If one is talking about either a left- or right-handed limit, these are typically called one-sided limits. Also, an example of these will be shown below.    A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.    If one is talking about either a left- or right-handed derivative, these are typically called one-sided derivatives. An example of these will be shown below.    A function is piecewise continuous on an interval if is continuous on all except for a finite number of points . In addition for all , and exist.      The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise continuous function.      In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.      Find both the left- and right-handed derivatives of the function defined in at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is       Show that is not a piecewise continuous function on .    The function on is not continuous at . Also     and since the one-sided limits are not finite, then is not piecewise continuous on .      Odd and Even Functions    A function is an odd function if for all in its domain.    Note: recall that an odd function is symmetric about the origin, meaning that if the graph of is rotated a half circle about the origin, that one gets the graph back.    A function is an even function if for all in its domain.    Recall that an even function is symmetric about the -axis. This means that if the graph is reflected over the -axis that one gets the same graph upon the reflection.    Here's a list of a few functions that are odd or even (without showing details):     The following functions are odd:     The following functions are even: .       The following theorem is helpful for finding whether or not products of functions are odd or even.      The product of two odd functions is even.    The product of two even functions is even.    The product of an even and an odd function is odd.        The derivative of an even function is odd. The derivative of an odd function is even.    Let be an even function, then for all .     by the chain rule. And the proof that the derivative of an odd function is similar.    And as a corollary, antiderivatives work in the same way.       Let be an odd function. Any antiderivative of is even.    Let be an even function and be its antiderivative. The antiderivative such that is odd.         Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.      Tabular Integration  A very handy formula for many integrations in this section is called tabular integration , which is just a recursive version of integration by parts that works well for integrals of a certain type. Before we show this, recall that the integration by parts formula is     and integration by parts is helpful for rewriting one integral (on the left) in terms of a second integral (on the right) and generally it is used to create a simpler integral. The next example shows a standard integration done with integration by parts.    Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get       This example shows that in order to integrate with the by parts formula, one must replace one integral with another. In more difficult examples, this may need to be done multiple times until the resulting integral is able to be done without by parts. This is the case when tabular integration is useful.   The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.   This is best seen with a couple of examples.    Find     using tabular integration.    First, we will build the table:   Tabular integration of       Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.    And the following is an example that is similar as we will see below:    Find     using tabular integration.    First, we will build the table:   Tabular integration of .      and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.        "
 },
 {
   "id": "sect-funct-props-2",
@@ -2359,27 +2359,27 @@ var ptx_lunr_docs = [
   "body": " The Most Interesting Equation in Mathematics     "
 },
 {
-  "id": "sect-funct-props-5-2",
+  "id": "sect-funct-props-6-2",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-5-2",
+  "url": "sect-funct-props.html#sect-funct-props-6-2",
   "type": "Definition",
   "number": "3.2.2",
   "title": "",
   "body": "  A function is periodic with period if     for all . The smallest value of for which this true is called the period of the function.   "
 },
 {
-  "id": "sect-funct-props-5-3",
+  "id": "sect-funct-props-6-3",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-5-3",
+  "url": "sect-funct-props.html#sect-funct-props-6-3",
   "type": "Example",
   "number": "3.2.3",
   "title": "",
   "body": "  Show that is periodic with period .       where the sum of angles sine formula is used.   "
 },
 {
-  "id": "sect-funct-props-5-4",
+  "id": "sect-funct-props-6-4",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-5-4",
+  "url": "sect-funct-props.html#sect-funct-props-6-4",
   "type": "Example",
   "number": "3.2.4",
   "title": "",
@@ -2395,27 +2395,27 @@ var ptx_lunr_docs = [
   "body": "  If , and then       If , then the integral is of the constant function 1 over a interval of length , so the lemma holds. If ,     because from , but this is raised to an even power so    "
 },
 {
-  "id": "sect-funct-props-6-3",
+  "id": "sect-funct-props-7-3",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-3",
+  "url": "sect-funct-props.html#sect-funct-props-7-3",
   "type": "Definition",
   "number": "3.2.6",
   "title": "",
   "body": "  A function has a left-hand limit at if     exists. In addition, a function has a right-hand limit at if     exists.   "
 },
 {
-  "id": "sect-funct-props-6-5",
+  "id": "sect-funct-props-7-5",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-5",
+  "url": "sect-funct-props.html#sect-funct-props-7-5",
   "type": "Definition",
   "number": "3.2.7",
   "title": "",
   "body": "  A function has a left-hand derivative at if     exists. Similarly, a function has a right-hand derivative at if     exists.   "
 },
 {
-  "id": "sect-funct-props-6-7",
+  "id": "sect-funct-props-7-7",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-7",
+  "url": "sect-funct-props.html#sect-funct-props-7-7",
   "type": "Definition",
   "number": "3.2.8",
   "title": "",
@@ -2431,18 +2431,18 @@ var ptx_lunr_docs = [
   "body": "  The following function is piecewise continuous on      Also, the graph of piecewise functions are helpful. These are found by finding the graphs of on each given interval. The graph of is shown below.   Graph of a piecewise continuous function.      In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get     And since the function is continuous at all points except at 0 and 1\/2, but the one-sided limits are finite here, then the function is piecewise continuous.   "
 },
 {
-  "id": "sect-funct-props-6-9",
+  "id": "sect-funct-props-7-9",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-9",
+  "url": "sect-funct-props.html#sect-funct-props-7-9",
   "type": "Example",
   "number": "3.2.11",
   "title": "",
   "body": "  Find both the left- and right-handed derivatives of the function defined in at and .    First, consider the derivative of the function     where the equality parts of the derivative have been removed (and explained later).  Since     then the left-handed derivative at 0 is 0, the right-handed derivative of at 1, the left-handed derivative at 1\/2 is 1 and the right-handed derivative of at 1\/2 is    "
 },
 {
-  "id": "sect-funct-props-6-10",
+  "id": "sect-funct-props-7-10",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-6-10",
+  "url": "sect-funct-props.html#sect-funct-props-7-10",
   "type": "Example",
   "number": "3.2.12",
   "title": "",
@@ -2512,45 +2512,45 @@ var ptx_lunr_docs = [
   "body": "  Let be a piecewise continuous function on the interval for .     If is an odd function then       If is an even function then          First, examine the first statement. Let be an antiderivative of , an odd function. The function can be written as where is an even function.     since is even. The proof of the second statement is similar.   "
 },
 {
-  "id": "sect-funct-props-8-2",
+  "id": "sect-funct-props-9-2",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-8-2",
+  "url": "sect-funct-props.html#sect-funct-props-9-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "tabular integration "
 },
 {
-  "id": "sect-funct-props-8-5",
+  "id": "sect-funct-props-9-5",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-8-5",
+  "url": "sect-funct-props.html#sect-funct-props-9-5",
   "type": "Example",
   "number": "3.2.20",
   "title": "",
   "body": "  Find       In this case, we'll let and , finding the differential results in and finding an antiderivative of results in , so using integration by parts to get      "
 },
 {
-  "id": "sect-funct-props-8-7",
+  "id": "sect-funct-props-9-7",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-8-7",
+  "url": "sect-funct-props.html#sect-funct-props-9-7",
   "type": "Remark",
   "number": "3.2.21",
   "title": "",
   "body": " The technique of tabular integration applied to     where there exists an such that , that is eventually the derivative of is 0. Creates a table of three columns with     The function and its derivatives until you reach zero.    The signs and , starting with and alternating signs.    The function and its antiderivatives.     For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.  "
 },
 {
-  "id": "sect-funct-props-8-9",
+  "id": "sect-funct-props-9-9",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-8-9",
+  "url": "sect-funct-props.html#sect-funct-props-9-9",
   "type": "Example",
   "number": "3.2.22",
   "title": "",
   "body": "  Find     using tabular integration.    First, we will build the table:   Tabular integration of       Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.     and don't forget the for an indefinite integral.   "
 },
 {
-  "id": "sect-funct-props-8-11",
+  "id": "sect-funct-props-9-11",
   "level": "2",
-  "url": "sect-funct-props.html#sect-funct-props-8-11",
+  "url": "sect-funct-props.html#sect-funct-props-9-11",
   "type": "Example",
   "number": "3.2.24",
   "title": "",
@@ -2635,7 +2635,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "The Span and Basis of a Subspace",
-  "body": " The Span and Basis of a Subspace    Define a subspace of a vector space.  Show that a subset is a subspace.  Define the span of a set of vectors in a vector space.  Show that a set of vectors spans a subspace.  Define the basis of a vector space.  Find the representation of a vector with respect to a basis.     In , we saw the span of vectors in . We now extend this example to the span of any subspace. In addition, the notion of a basis of the subspace is introduced.  Recall that it is important to understand if a set of vectors is a span of a set or space, because we are able to take a linear combination of the vectors to get any other vector in the set. Since we have extended the notion of a vector space, the span will play the same role.    Let be a subset of a vector space . If is also a vector space, then is a subspace .    The next three examples show that we have already seen subspaces because we know subsets of known vector spaces that are vector spaces themselves.    We showed in that the set of all lines in that pass through the origin is a vector space. Since the set is a subset of , it is a subspace of as well.      Show that is a subspace of .    Since is itself a vector space and a subset of , then is a subspace.      Recall that the set is the set of all quadratic functions.  The set of all linear functions is itself a vector space as well as a subset of , therefore is a subspace of .  In addition, the set is a vector space as well as a subset of , therefore it is a subspace.    The above examples show that there are many already known subspaces. There are many cases though that aren't evident or to show it is a subspace, we would need to prove all 10 properties that it is a vector space. The next lemma, however, shows that isn't the case.    Let be a nonempty subset of a vector space , under the inherited operations of vector addition and scalar multiplication. If for all and ,     then is a subspace.    This means that if is a subset of , a vector space, to prove that is a subspace, we only need to check if .  Since is a subspace of , properties (2), (3), (5) and (7)-(10) of hold for . Thus we only need to prove closure under addition and scalar multiplication as well as the existence of the identity element.  Property 1: Because , let , thus .  Property 4: If and , then this shows that , so there is an identity element.  Property 6: Because , let , thus .    We will use this definition to prove that certain sets are subspaces.    Show that     (that is, all vectors on a line of slope ) is a subspace of .    We will use . Let     be elements of . That is and . Then     which is an element of because the second component is times the first one. Thus is a subspace of .      Show using that     the set of all diagonal matrices is a subspace of , the vector space of all matrices.    In this case, if we show that for any two matrices     and scalars that is in the set.     which is a diagonal matrix, therefore in , thus this is a subspace.    In , we explored the null space of a matrix. In the next lemma, we show that any null space is a subspace.    Let be an by matrix. The null space of is a subspace of .    We will use to solve this. Let both and be in the null space of . This means that and . We need to show that is in the null space of .     Vectors in the null space are vectors of length , so the null space is a subset of and since is in the null space of , then the null space is a subspace of .    This is an important result that we will see in eigenvalues in the next chapter.    The Span of a set of vectors  We saw in the span of a set of vectors in . We now generalize this to any vector space.    The span of a nonempty subset of a vector space is the set of all linear combinations of the vectors in . That is,       To show that a subset of vectors span a subspace , we need to show that any vector in can be written as a linear combination of the spanning vectors.    Show that the set spans .    In this case, we need show that a general polynomial in can be written as a linear combination of elements of the given set. That is     and if there is a solution for the 's, then that shows the the set spans . To find the solution, use the technique of equating coefficients. Write down the coefficients for the constant terms, terms and terms respectively.     This has a solution and , which means that a linear combination of the three vectors can form any quadratic function, thus the given set spans .      The span of any subset of a vector space is a subspace.    Let be the subset and be the elements of . Using , we need to check that is closed under linear combinations. Let     then     Since this shows that is in , then is a subspace.    This lemma allows us to talk about a vector space in terms of the vectors that span it. For example, instead of thinking of ,we think of the span of (in this case, it may not be more helpful, but other cases it is).    Show that the following vectors span :       Because the vector can be written , then these vectors span .      Does span ?    To determine this, we will try write a general polynomial in ,     as a linear combination of the set of vectors or     and equating coefficients,     There's no solution to this because can't simultaneously equal and , so does not span .      The Basis and Dimension of a Vector Space   In the previous section, we saw that there some correspondence between a vector space and a set of spanning vectors. In this section, we formalize this relationship.    The basis of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.    Note: the basis will be a tuple of vectors because the order of the vectors will be important. We will denote the tuple with parentheses, .   We showed in that the set     spans and since the second is not a multiple of the first, they are linearly independent. Therefore the tuple     form a basis for .    The tuple of vectors     is a different basis of because of the order of vectors. The fact that they span and are linearly independent do not depend on the order.     There are many bases of a vector space. For example,     also spans and are linearly independent.      Does     form a basis of ?    These three vectors are not linearly independent. Although one can show this in general, note that     and since they are not linearly independent, then they cannot form a basis of .    Although there are lots of different bases for a given subspace, there are some that are more useful than others. There is a basis for more subspaces called a standard basis.    The tuple     is called the standard basis or natural basis of . The vectors in the basis are called .     The natural basis of is .   We saw bases of vector spaces (or subspaces) at the beginning of this course without knowing that they were vector spaces. For example, in , we solved a linear system. It's associated homogeneous system is The solution (which is a subspace of ) can be written as If we let and be the two vectors above, then form a basis of the solution space. Since there are only two vectors and they are not constant multiples of each other, it's easy to see that they are linearly independent. Also because of the form of the solution set, you can also see that that span the space.    In a vector space with basis , the representation of a vector with respect to the basis is the column vector of the coefficients used to express as a linear combination of the basis vectors:     where and        Consider the space , the space of quadratic functions. Let be a basis of and . To find the representation, we need to find and such that     by equating coefficients this is same as solving the linear system:     resulting in , therefore     If instead the basis is given as , then     which shows that , therefore        Representations in the natural basis  As we saw above, finding representations in a basis requires solving another linear system. However, representations in the natural basis are simple calculations. If we used the natural basis for the quadratic example above, then are just the coefficients of terms of the vector . The following example shows that the representation of a vector in is what we expect, itself.    Find the Representation of the vector     in the natural basis       We seek the vector such that     which is just that and so the representation of the vector in the basis is     which is just the original vector.    The last example in this section uses matrices. The natural basis for is       Find       Formally, one needs to find and such that     but since the nice structure of the basis and , so       One can generalize to show that and this shows that matrices (which are vectors in the formal sense of vector spaces) can be represented by vectors by reshaping the matrix as a vector.     Dimension  We have been talking about a few big topics in this chapter. One of those is the spanning set of a vector space. We noted that many different sets can span a vector space. This brought in the notation of linear independence and a basis. However for a vector space there can be many different bases.  Although we did introduce a natural basis, this works well for some spaces, like and , however what is the natural basis for a solution of homogeneous linear system.  Perhaps if two people argue over the basis of a vector space, one thing they will agree on is the number of vectors in a basis as we will see. We noted earlier that disregarding extra vectors is generally a good thing to result in a basis, but there is a unique thing about bases and that is the number of vectors in any basis.    A vector space is finite dimensional if it has a basis with only finitely-many vectors.      In any finite-dimensional vector space, all of the bases have the same number of elements.    Because of this theorem, we define the dimension in following manner.    The dimension of a finite dimensional vector space is the number of vectors in any of its bases.         The dimension of is . Although there are many bases, consider , the natural basis, which has elements.    The dimension of is . The natural basis of is with elements.    The dimension of , the vector space of all 2 by 2 matrices is 4. A natural basis for this is: and since there are 4 elements, the dimension is 4.    The dimension of . There is a natural basis that is similar to the previous example.         Bases of Subspaces  There were a number of important ideas in this section, so a summary is necessary. The basis of a space or subspace is useful for writing down elements in the space. That is, if we know the basis, then we know what's in the space. Additionally, the representation of an element are the coefficients in terms of the basis.  This means that any vector in a finite-dimensional vector space can be represented as a vector and as we will see this will be helpful in that we can use many of the nice techniques from and to help. We will start to see that since we can write any polynomial as a vector, that many operations that we do to polynomials (such as multiplication, differentiation, and integration) can be done using matrices and vectors.   "
+  "body": " The Span and Basis of a Subspace    Define a subspace of a vector space.  Show that a subset is a subspace.  Define the span of a set of vectors in a vector space.  Show that a set of vectors spans a subspace.  Define the basis of a vector space.  Find the representation of a vector with respect to a basis.     In , we saw the span of vectors in . We now extend this example to the span of any subspace. In addition, the notion of a basis of the subspace is introduced.    Linear Independence  In , the linear independence of vectors in were defined and many examples shown. We extend this notion to vectors in a general vector space.    Let be a set of vectors in a vectors space . The set is linear independent if for , the equation implies that . If not, then the set is linearly dependent .      Show that the set     is linearly independent in .    To show this, we need to show that if     then . Note that the zero on the right hand side is the zero polynomial. Thus, equating coefficients, we get the system     which has the only solution of , thus the set is linearly independent.      Are the matrices in the set linearly independent or dependent in ?    To determine this, we need to solve   The solution of this is by equating terms or the system:   This system has the unique solution , thus the set is linearly independent.      Subspaces  Recall that it is important to understand if a set of vectors is a span of a set or space, because we are able to take a linear combination of the vectors to get any other vector in the set. Since we have extended the notion of a vector space, the span will play the same role.    Let be a subset of a vector space . If is also a vector space, then is a subspace .    The next three examples show that we have already seen subspaces because we know subsets of known vector spaces that are vector spaces themselves.    We showed in that the set of all lines in that pass through the origin is a vector space. Since the set is a subset of , it is a subspace of as well.      Show that is a subspace of .    Since is itself a vector space and a subset of , then is a subspace.      Recall that the set is the set of all quadratic functions.  The set of all linear functions is itself a vector space as well as a subset of , therefore is a subspace of .  In addition, the set is a vector space as well as a subset of , therefore it is a subspace.    The above examples show that there are many already known subspaces. There are many cases though that aren't evident or to show it is a subspace, we would need to prove all 10 properties that it is a vector space. The next lemma, however, shows that isn't the case.    Let be a nonempty subset of a vector space , under the inherited operations of vector addition and scalar multiplication. If for all and ,     then is a subspace.    This means that if is a subset of , a vector space, to prove that is a subspace, we only need to check if .  Since is a subspace of , properties (2), (3), (5) and (7)-(10) of hold for . Thus we only need to prove closure under addition and scalar multiplication as well as the existence of the identity element.  Property 1: Because , let , thus .  Property 4: If and , then this shows that , so there is an identity element.  Property 6: Because , let , thus .    We will use this definition to prove that certain sets are subspaces.    Show that     (that is, all vectors on a line of slope ) is a subspace of .    We will use . Let     be elements of . That is and . Then     which is an element of because the second component is times the first one. Thus is a subspace of .      Show using that     the set of all diagonal matrices is a subspace of , the vector space of all matrices.    In this case, if we show that for any two matrices     and scalars that is in the set.     which is a diagonal matrix, therefore in , thus this is a subspace.    In , we explored the null space of a matrix. In the next lemma, we show that any null space is a subspace.    Let be an by matrix. The null space of is a subspace of .    We will use to solve this. Let both and be in the null space of . This means that and . We need to show that is in the null space of .     Vectors in the null space are vectors of length , so the null space is a subset of and since is in the null space of , then the null space is a subspace of .    This is an important result that we will see in eigenvalues in the next chapter.    The Span of a set of vectors  We saw in the span of a set of vectors in . We now generalize this to any vector space.    The span of a nonempty subset of a vector space is the set of all linear combinations of the vectors in . That is,       To show that a subset of vectors span a subspace , we need to show that any vector in can be written as a linear combination of the spanning vectors.    Show that the set spans .    In this case, we need show that a general polynomial in can be written as a linear combination of elements of the given set. That is     and if there is a solution for the 's, then that shows the the set spans . To find the solution, use the technique of equating coefficients. Write down the coefficients for the constant terms, terms and terms respectively.     This has a solution and , which means that a linear combination of the three vectors can form any quadratic function, thus the given set spans .      The span of any subset of a vector space is a subspace.    Let be the subset and be the elements of . Using , we need to check that is closed under linear combinations. Let     then     Since this shows that is in , then is a subspace.    This lemma allows us to talk about a vector space in terms of the vectors that span it. For example, instead of thinking of ,we think of the span of (in this case, it may not be more helpful, but other cases it is).    Show that the following vectors span :       Because the vector can be written , then these vectors span .      Does span ?    To determine this, we will try write a general polynomial in ,     as a linear combination of the set of vectors or     and equating coefficients,     There's no solution to this because can't simultaneously equal and , so does not span .     "
 },
 {
   "id": "sect-subspaces-2",
@@ -2647,38 +2647,65 @@ var ptx_lunr_docs = [
   "body": "  Define a subspace of a vector space.  Show that a subset is a subspace.  Define the span of a set of vectors in a vector space.  Show that a set of vectors spans a subspace.  Define the basis of a vector space.  Find the representation of a vector with respect to a basis.   "
 },
 {
-  "id": "sect-subspaces-3-3",
+  "id": "def-abstract-linear-independence",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-3",
+  "url": "sect-subspaces.html#def-abstract-linear-independence",
   "type": "Definition",
   "number": "4.2.1",
+  "title": "",
+  "body": "  Let be a set of vectors in a vectors space . The set is linear independent if for , the equation implies that . If not, then the set is linearly dependent .   "
+},
+{
+  "id": "ex-abstract-linear-independence",
+  "level": "2",
+  "url": "sect-subspaces.html#ex-abstract-linear-independence",
+  "type": "Example",
+  "number": "4.2.2",
+  "title": "",
+  "body": "  Show that the set     is linearly independent in .    To show this, we need to show that if     then . Note that the zero on the right hand side is the zero polynomial. Thus, equating coefficients, we get the system     which has the only solution of , thus the set is linearly independent.   "
+},
+{
+  "id": "subsec-abstract-linear-independence-5",
+  "level": "2",
+  "url": "sect-subspaces.html#subsec-abstract-linear-independence-5",
+  "type": "Example",
+  "number": "4.2.3",
+  "title": "",
+  "body": "  Are the matrices in the set linearly independent or dependent in ?    To determine this, we need to solve   The solution of this is by equating terms or the system:   This system has the unique solution , thus the set is linearly independent.   "
+},
+{
+  "id": "subsec-subspaces-3",
+  "level": "2",
+  "url": "sect-subspaces.html#subsec-subspaces-3",
+  "type": "Definition",
+  "number": "4.2.4",
   "title": "",
   "body": "  Let be a subset of a vector space . If is also a vector space, then is a subspace .   "
 },
 {
-  "id": "sect-subspaces-3-5",
+  "id": "subsec-subspaces-5",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-5",
+  "url": "sect-subspaces.html#subsec-subspaces-5",
   "type": "Example",
-  "number": "4.2.2",
+  "number": "4.2.5",
   "title": "",
   "body": "  We showed in that the set of all lines in that pass through the origin is a vector space. Since the set is a subset of , it is a subspace of as well.   "
 },
 {
-  "id": "sect-subspaces-3-6",
+  "id": "subsec-subspaces-6",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-6",
+  "url": "sect-subspaces.html#subsec-subspaces-6",
   "type": "Example",
-  "number": "4.2.3",
+  "number": "4.2.6",
   "title": "",
   "body": "  Show that is a subspace of .    Since is itself a vector space and a subset of , then is a subspace.   "
 },
 {
-  "id": "sect-subspaces-3-7",
+  "id": "subsec-subspaces-7",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-7",
+  "url": "sect-subspaces.html#subsec-subspaces-7",
   "type": "Example",
-  "number": "4.2.4",
+  "number": "4.2.7",
   "title": "",
   "body": "  Recall that the set is the set of all quadratic functions.  The set of all linear functions is itself a vector space as well as a subset of , therefore is a subspace of .  In addition, the set is a vector space as well as a subset of , therefore it is a subspace.   "
 },
@@ -2687,16 +2714,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-subspaces.html#lemma-subspace",
   "type": "Lemma",
-  "number": "4.2.5",
+  "number": "4.2.8",
   "title": "",
   "body": "  Let be a nonempty subset of a vector space , under the inherited operations of vector addition and scalar multiplication. If for all and ,     then is a subspace.    This means that if is a subset of , a vector space, to prove that is a subspace, we only need to check if .  Since is a subspace of , properties (2), (3), (5) and (7)-(10) of hold for . Thus we only need to prove closure under addition and scalar multiplication as well as the existence of the identity element.  Property 1: Because , let , thus .  Property 4: If and , then this shows that , so there is an identity element.  Property 6: Because , let , thus .   "
 },
 {
-  "id": "sect-subspaces-3-11",
+  "id": "subsec-subspaces-11",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-11",
+  "url": "sect-subspaces.html#subsec-subspaces-11",
   "type": "Example",
-  "number": "4.2.6",
+  "number": "4.2.9",
   "title": "",
   "body": "  Show that     (that is, all vectors on a line of slope ) is a subspace of .    We will use . Let     be elements of . That is and . Then     which is an element of because the second component is times the first one. Thus is a subspace of .   "
 },
@@ -2705,205 +2732,214 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-subspaces.html#eq-example-diag-matrix",
   "type": "Example",
-  "number": "4.2.7",
+  "number": "4.2.10",
   "title": "",
   "body": "  Show using that     the set of all diagonal matrices is a subspace of , the vector space of all matrices.    In this case, if we show that for any two matrices     and scalars that is in the set.     which is a diagonal matrix, therefore in , thus this is a subspace.   "
 },
 {
-  "id": "sect-subspaces-3-13",
+  "id": "subsec-subspaces-13",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-13",
+  "url": "sect-subspaces.html#subsec-subspaces-13",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "null space "
 },
 {
-  "id": "sect-subspaces-3-14",
+  "id": "subsec-subspaces-14",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-3-14",
+  "url": "sect-subspaces.html#subsec-subspaces-14",
   "type": "Lemma",
-  "number": "4.2.8",
+  "number": "4.2.11",
   "title": "",
   "body": "  Let be an by matrix. The null space of is a subspace of .    We will use to solve this. Let both and be in the null space of . This means that and . We need to show that is in the null space of .     Vectors in the null space are vectors of length , so the null space is a subset of and since is in the null space of , then the null space is a subspace of .   "
 },
 {
-  "id": "sect-subspaces-4-3",
+  "id": "sect-subspaces-6-3",
   "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-3",
+  "url": "sect-subspaces.html#sect-subspaces-6-3",
   "type": "Definition",
-  "number": "4.2.9",
-  "title": "",
-  "body": "  The span of a nonempty subset of a vector space is the set of all linear combinations of the vectors in . That is,      "
-},
-{
-  "id": "sect-subspaces-4-5",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-5",
-  "type": "Example",
-  "number": "4.2.10",
-  "title": "",
-  "body": "  Show that the set spans .    In this case, we need show that a general polynomial in can be written as a linear combination of elements of the given set. That is     and if there is a solution for the 's, then that shows the the set spans . To find the solution, use the technique of equating coefficients. Write down the coefficients for the constant terms, terms and terms respectively.     This has a solution and , which means that a linear combination of the three vectors can form any quadratic function, thus the given set spans .   "
-},
-{
-  "id": "sect-subspaces-4-6",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-6",
-  "type": "Lemma",
-  "number": "4.2.11",
-  "title": "",
-  "body": "  The span of any subset of a vector space is a subspace.    Let be the subset and be the elements of . Using , we need to check that is closed under linear combinations. Let     then     Since this shows that is in , then is a subspace.   "
-},
-{
-  "id": "sect-subspaces-4-8",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-8",
-  "type": "Example",
   "number": "4.2.12",
   "title": "",
-  "body": "  Show that the following vectors span :       Because the vector can be written , then these vectors span .   "
-},
-{
-  "id": "sect-subspaces-4-9",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-4-9",
-  "type": "Example",
-  "number": "4.2.13",
-  "title": "",
-  "body": "  Does span ?    To determine this, we will try write a general polynomial in ,     as a linear combination of the set of vectors or     and equating coefficients,     There's no solution to this because can't simultaneously equal and , so does not span .   "
-},
-{
-  "id": "sect-subspaces-5-2-2",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-2-2",
-  "type": "Definition",
-  "number": "4.2.14",
-  "title": "",
-  "body": "  The basis of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.   "
-},
-{
-  "id": "sect-subspaces-5-2-4",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-2-4",
-  "type": "Example",
-  "number": "4.2.15",
-  "title": "",
-  "body": " We showed in that the set     spans and since the second is not a multiple of the first, they are linearly independent. Therefore the tuple     form a basis for .  "
-},
-{
-  "id": "sect-subspaces-5-2-5",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-2-5",
-  "type": "Example",
-  "number": "4.2.16",
-  "title": "",
-  "body": " The tuple of vectors     is a different basis of because of the order of vectors. The fact that they span and are linearly independent do not depend on the order.  "
-},
-{
-  "id": "sect-subspaces-5-2-6",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-2-6",
-  "type": "Example",
-  "number": "4.2.17",
-  "title": "",
-  "body": "  There are many bases of a vector space. For example,     also spans and are linearly independent.   "
-},
-{
-  "id": "sect-subspaces-5-2-7",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-2-7",
-  "type": "Example",
-  "number": "4.2.18",
-  "title": "",
-  "body": "  Does     form a basis of ?    These three vectors are not linearly independent. Although one can show this in general, note that     and since they are not linearly independent, then they cannot form a basis of .   "
-},
-{
-  "id": "sect-subspaces-5-2-9",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-2-9",
-  "type": "Definition",
-  "number": "4.2.19",
-  "title": "",
-  "body": "  The tuple     is called the standard basis or natural basis of . The vectors in the basis are called .   "
-},
-{
-  "id": "sect-subspaces-5-2-10",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-2-10",
-  "type": "Remark",
-  "number": "4.2.20",
-  "title": "",
-  "body": " The natural basis of is .  "
-},
-{
-  "id": "sect-subspaces-5-2-12",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-2-12",
-  "type": "Definition",
-  "number": "4.2.21",
-  "title": "",
-  "body": "  In a vector space with basis , the representation of a vector with respect to the basis is the column vector of the coefficients used to express as a linear combination of the basis vectors:     where and      "
-},
-{
-  "id": "sect-subspaces-5-2-13",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-2-13",
-  "type": "Example",
-  "number": "4.2.22",
-  "title": "",
-  "body": " Consider the space , the space of quadratic functions. Let be a basis of and . To find the representation, we need to find and such that     by equating coefficients this is same as solving the linear system:     resulting in , therefore     If instead the basis is given as , then     which shows that , therefore     "
-},
-{
-  "id": "sect-subspaces-5-3-3",
-  "level": "2",
-  "url": "sect-subspaces.html#sect-subspaces-5-3-3",
-  "type": "Example",
-  "number": "4.2.23",
-  "title": "",
-  "body": "  Find the Representation of the vector     in the natural basis       We seek the vector such that     which is just that and so the representation of the vector in the basis is     which is just the original vector.   "
-},
-{
-  "id": "ex-vect-rep-matrix",
-  "level": "2",
-  "url": "sect-subspaces.html#ex-vect-rep-matrix",
-  "type": "Example",
-  "number": "4.2.24",
-  "title": "",
-  "body": "  Find       Formally, one needs to find and such that     but since the nice structure of the basis and , so      "
+  "body": "  The span of a nonempty subset of a vector space is the set of all linear combinations of the vectors in . That is,      "
 },
 {
   "id": "sect-subspaces-6-5",
   "level": "2",
   "url": "sect-subspaces.html#sect-subspaces-6-5",
-  "type": "Definition",
-  "number": "4.2.25",
+  "type": "Example",
+  "number": "4.2.13",
   "title": "",
-  "body": "  A vector space is finite dimensional if it has a basis with only finitely-many vectors.   "
+  "body": "  Show that the set spans .    In this case, we need show that a general polynomial in can be written as a linear combination of elements of the given set. That is     and if there is a solution for the 's, then that shows the the set spans . To find the solution, use the technique of equating coefficients. Write down the coefficients for the constant terms, terms and terms respectively.     This has a solution and , which means that a linear combination of the three vectors can form any quadratic function, thus the given set spans .   "
 },
 {
   "id": "sect-subspaces-6-6",
   "level": "2",
   "url": "sect-subspaces.html#sect-subspaces-6-6",
-  "type": "Theorem",
-  "number": "4.2.26",
+  "type": "Lemma",
+  "number": "4.2.14",
   "title": "",
-  "body": "  In any finite-dimensional vector space, all of the bases have the same number of elements.   "
+  "body": "  The span of any subset of a vector space is a subspace.    Let be the subset and be the elements of . Using , we need to check that is closed under linear combinations. Let     then     Since this shows that is in , then is a subspace.   "
 },
 {
   "id": "sect-subspaces-6-8",
   "level": "2",
   "url": "sect-subspaces.html#sect-subspaces-6-8",
-  "type": "Definition",
-  "number": "4.2.27",
+  "type": "Example",
+  "number": "4.2.15",
   "title": "",
-  "body": "  The dimension of a finite dimensional vector space is the number of vectors in any of its bases.   "
+  "body": "  Show that the following vectors span :       Because the vector can be written , then these vectors span .   "
 },
 {
   "id": "sect-subspaces-6-9",
   "level": "2",
   "url": "sect-subspaces.html#sect-subspaces-6-9",
   "type": "Example",
-  "number": "4.2.28",
+  "number": "4.2.16",
+  "title": "",
+  "body": "  Does span ?    To determine this, we will try write a general polynomial in ,     as a linear combination of the set of vectors or     and equating coefficients,     There's no solution to this because can't simultaneously equal and , so does not span .   "
+},
+{
+  "id": "sec-basis-vector-space",
+  "level": "1",
+  "url": "sec-basis-vector-space.html",
+  "type": "Section",
+  "number": "4.3",
+  "title": "Basis of a Vector Space",
+  "body": " Basis of a Vector Space   From the previous two sections, we have good feeling for what a vector space is. Basically it is a set of vectors (vectors in , polynomials, matrices, other functions) with addition and scalar multiplication and other properties. However, how can one write elements in the vector space.  In this section, we examine a basis of a vector space as well as a representation using that basis.    The Basis and Dimension of a Vector Space   In the previous section, we saw that there some correspondence between a vector space and a set of spanning vectors. In this section, we formalize this relationship.    The basis of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.    Note: the basis will be a tuple of vectors because the order of the vectors will be important. We will denote the tuple with parentheses, .   We showed in that the set     spans and since the second is not a multiple of the first, they are linearly independent. Therefore the tuple     form a basis for .    The tuple of vectors     is a different basis of because of the order of vectors. The fact that they span and are linearly independent do not depend on the order.     There are many bases of a vector space. For example,     also spans and are linearly independent.      Does     form a basis of ?    These three vectors are not linearly independent. Although one can show this in general, note that     and since they are not linearly independent, then they cannot form a basis of .    Although there are lots of different bases for a given subspace, there are some that are more useful than others. There is a basis for more subspaces called a standard basis.    The tuple     is called the standard basis or natural basis of . The vectors in the basis are called .     The natural basis of is .   We saw bases of vector spaces (or subspaces) at the beginning of this course without knowing that they were vector spaces. For example, in , we solved a linear system. It's associated homogeneous system is The solution (which is a subspace of ) can be written as If we let and be the two vectors above, then form a basis of the solution space. Since there are only two vectors and they are not constant multiples of each other, it's easy to see that they are linearly independent. Also because of the form of the solution set, you can also see that that span the space.    In a vector space with basis , the representation of a vector with respect to the basis is the column vector of the coefficients used to express as a linear combination of the basis vectors:     where and        Consider the space , the space of quadratic functions. Let be a basis of and . To find the representation, we need to find and such that     by equating coefficients this is same as solving the linear system:     resulting in , therefore     If instead the basis is given as , then     which shows that , therefore        Representations in the natural basis  As we saw above, finding representations in a basis requires solving another linear system. However, representations in the natural basis are simple calculations. If we used the natural basis for the quadratic example above, then are just the coefficients of terms of the vector . The following example shows that the representation of a vector in is what we expect, itself.    Find the Representation of the vector     in the natural basis       We seek the vector such that     which is just that and so the representation of the vector in the basis is     which is just the original vector.    The last example in this section uses matrices. The natural basis for is       Find       Formally, one needs to find and such that     but since the nice structure of the basis and , so       One can generalize to show that and this shows that matrices (which are vectors in the formal sense of vector spaces) can be represented by vectors by reshaping the matrix as a vector.     Dimension  We have been talking about a few big topics in this chapter. One of those is the spanning set of a vector space. We noted that many different sets can span a vector space. This brought in the notation of linear independence and a basis. However for a vector space there can be many different bases.  Although we did introduce a natural basis, this works well for some spaces, like and , however what is the natural basis for a solution of homogeneous linear system.  Perhaps if two people argue over the basis of a vector space, one thing they will agree on is the number of vectors in a basis as we will see. We noted earlier that disregarding extra vectors is generally a good thing to result in a basis, but there is a unique thing about bases and that is the number of vectors in any basis.    A vector space is finite dimensional if it has a basis with only finitely-many vectors.      In any finite-dimensional vector space, all of the bases have the same number of elements.    Because of this theorem, we define the dimension in following manner.    The dimension of a finite dimensional vector space is the number of vectors in any of its bases.         The dimension of is . Although there are many bases, consider , the natural basis, which has elements.    The dimension of is . The natural basis of is with elements.    The dimension of , the vector space of all 2 by 2 matrices is 4. A natural basis for this is: and since there are 4 elements, the dimension is 4.    The dimension of . There is a natural basis that is similar to the previous example.         Bases of Subspaces  There were a number of important ideas in this section, so a summary is necessary. The basis of a space or subspace is useful for writing down elements in the space. That is, if we know the basis, then we know what's in the space. Additionally, the representation of an element are the coefficients in terms of the basis.  This means that any vector in a finite-dimensional vector space can be represented as a vector and as we will see this will be helpful in that we can use many of the nice techniques from and to help. We will start to see that since we can write any polynomial as a vector, that many operations that we do to polynomials (such as multiplication, differentiation, and integration) can be done using matrices and vectors.   "
+},
+{
+  "id": "sec-basis-vector-space-3-2-2",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-2-2",
+  "type": "Definition",
+  "number": "4.3.1",
+  "title": "",
+  "body": "  The basis of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.   "
+},
+{
+  "id": "sec-basis-vector-space-3-2-4",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-2-4",
+  "type": "Example",
+  "number": "4.3.2",
+  "title": "",
+  "body": " We showed in that the set     spans and since the second is not a multiple of the first, they are linearly independent. Therefore the tuple     form a basis for .  "
+},
+{
+  "id": "sec-basis-vector-space-3-2-5",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-2-5",
+  "type": "Example",
+  "number": "4.3.3",
+  "title": "",
+  "body": " The tuple of vectors     is a different basis of because of the order of vectors. The fact that they span and are linearly independent do not depend on the order.  "
+},
+{
+  "id": "sec-basis-vector-space-3-2-6",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-2-6",
+  "type": "Example",
+  "number": "4.3.4",
+  "title": "",
+  "body": "  There are many bases of a vector space. For example,     also spans and are linearly independent.   "
+},
+{
+  "id": "sec-basis-vector-space-3-2-7",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-2-7",
+  "type": "Example",
+  "number": "4.3.5",
+  "title": "",
+  "body": "  Does     form a basis of ?    These three vectors are not linearly independent. Although one can show this in general, note that     and since they are not linearly independent, then they cannot form a basis of .   "
+},
+{
+  "id": "sec-basis-vector-space-3-2-9",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-2-9",
+  "type": "Definition",
+  "number": "4.3.6",
+  "title": "",
+  "body": "  The tuple     is called the standard basis or natural basis of . The vectors in the basis are called .   "
+},
+{
+  "id": "sec-basis-vector-space-3-2-10",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-2-10",
+  "type": "Remark",
+  "number": "4.3.7",
+  "title": "",
+  "body": " The natural basis of is .  "
+},
+{
+  "id": "sec-basis-vector-space-3-2-12",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-2-12",
+  "type": "Definition",
+  "number": "4.3.8",
+  "title": "",
+  "body": "  In a vector space with basis , the representation of a vector with respect to the basis is the column vector of the coefficients used to express as a linear combination of the basis vectors:     where and      "
+},
+{
+  "id": "sec-basis-vector-space-3-2-13",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-2-13",
+  "type": "Example",
+  "number": "4.3.9",
+  "title": "",
+  "body": " Consider the space , the space of quadratic functions. Let be a basis of and . To find the representation, we need to find and such that     by equating coefficients this is same as solving the linear system:     resulting in , therefore     If instead the basis is given as , then     which shows that , therefore     "
+},
+{
+  "id": "sec-basis-vector-space-3-3-3",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-3-3-3",
+  "type": "Example",
+  "number": "4.3.10",
+  "title": "",
+  "body": "  Find the Representation of the vector     in the natural basis       We seek the vector such that     which is just that and so the representation of the vector in the basis is     which is just the original vector.   "
+},
+{
+  "id": "ex-vector-rep-matrix",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#ex-vector-rep-matrix",
+  "type": "Example",
+  "number": "4.3.11",
+  "title": "",
+  "body": "  Find       Formally, one needs to find and such that     but since the nice structure of the basis and , so      "
+},
+{
+  "id": "sec-basis-vector-space-4-5",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-4-5",
+  "type": "Definition",
+  "number": "4.3.12",
+  "title": "",
+  "body": "  A vector space is finite dimensional if it has a basis with only finitely-many vectors.   "
+},
+{
+  "id": "sec-basis-vector-space-4-6",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-4-6",
+  "type": "Theorem",
+  "number": "4.3.13",
+  "title": "",
+  "body": "  In any finite-dimensional vector space, all of the bases have the same number of elements.   "
+},
+{
+  "id": "sec-basis-vector-space-4-8",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-4-8",
+  "type": "Definition",
+  "number": "4.3.14",
+  "title": "",
+  "body": "  The dimension of a finite dimensional vector space is the number of vectors in any of its bases.   "
+},
+{
+  "id": "sec-basis-vector-space-4-9",
+  "level": "2",
+  "url": "sec-basis-vector-space.html#sec-basis-vector-space-4-9",
+  "type": "Example",
+  "number": "4.3.15",
   "title": "",
   "body": "     The dimension of is . Although there are many bases, consider , the natural basis, which has elements.    The dimension of is . The natural basis of is with elements.    The dimension of , the vector space of all 2 by 2 matrices is 4. A natural basis for this is: and since there are 4 elements, the dimension is 4.    The dimension of . There is a natural basis that is similar to the previous example.      "
 },
@@ -2912,16 +2948,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-inner-product.html",
   "type": "Section",
-  "number": "4.3",
+  "number": "4.4",
   "title": "Inner Product Spaces",
-  "body": " Inner Product Spaces     Extend the idea of an inner product to vectors other than .    Extend the idea of length of a vector or distance between two vectors.    Extend the idea of the angle between two vectors.    Determine whether two vectors are orthogonal and define a orthogonal and orthonormal set of vectors.    Find a orthogonal set of vectors using the Gram-Schmidt process.      In , we examined the dot product between two vectors in Recall that this dot product between two vectors and is     We used the dot product for finding the angle between two vectors and we'll show that there are many other applications that the dot product later in the text. In this section, we extend that to any vector space and call this an inner product space.    The vector space is called an inner product space if for every pair of vectors and in there is a unique number , called the inner product of and such that for all and in and then the following properties are satisfied:           .     and equals 0 if and only if .         Show that is an inner product space with     and   , which is an alternative way of writing .    First, the set is a vector space. Next, we need to show that the three properties are satisfied for .      since the transpose of a number is itself using the properties of transposes in . so the first property is satisfied.            which satisfies . The only time that this quantity equals 0, is when or .       The next example shows that the notion of an inner product is not limited to the dot product of vectors in .    Show that on the interval is a inner product space with     for any .    We have seen above that is a vector space and limiting this to the interval does not change that fact. We need to show that the inner product defined as an integral satisfies the three properties of inner products.          Let also be in and .          and this is greater than or equal or zero and can be shown that equals 0 if and only if .         Vector Norms and distance  The notion of the length of a vector in was examined in . We extend this idea to any vector in an inner product space with the following.    Let be an element of an inner product space. The norm of the vector is given by       Note: if then the vector norm is the length of the vector.    The distance between vectors and denoted and is defined as       Note: if and are in , then the distance function is the standard distance function where the vectors are considered to be points.    The distance if and only if .     Let , then By definition, this is only zero if , therefore .   If , then .    Except for the example of the inner product as an integral, all of the other discussion in this section has been about vectors in , and this is mainly because it is the canonical vector and inner product space and some of the interpretations of length of vectors don't make a lot of sense when talking about polynomials or other functions.  However, distance does have some interpretation with functions. can be used to show when two functions are equal (at least on the interval of the integration), but can also be useful to determine when they are close to equal (when the integrals are close to one another). This will be useful in future chapters.    Angles between vectors  If and are vectors in then we saw in that   and thus the angle between the vectors can be found.  This notion generalizes to any vectors in an inner product space, . Most helpful, two vectors meet at a right angle if and it is said that if this holds then and are orthogonal. The next section talks about how an entire set of vectors can be orthogonal .    Orthonormal sets of vectors   A finite set of orthogonal\/orthonormal vectors   Let each be elements of an inner product space, . The set is called an orthonormal set if     and     If only the first condition holds, the set is called orthogonal .      Show that     is an orthonormal set where each vector is an element of .    We need to show that the three inner products between the vectors are zero     and that the norms of each vector is 1.     Note: this set of vectors is also a basis for .      Show that     form an orthogonal set on with the inner product taken to be the definite integral on .    Note: the following integrals will come up in the next few chapters a number of times and the technique shown below is helpful for such integrals. This also shows that even though in most cases in this text so far, that using complex numbers helps out tremendously.  Recall that     and using this we find the integrals of all pairs of functions on      and as it can be seen that all term made with the substitution cancel with terms made with the substitution .  The other two inner products are similar. In fact it can be shown (and we will later) that     if .    Similar to vectors in , we can take a vector that doesn't have norm 1 by dividing the vector through by its length. That is, if is a vector then has length 1.  The next example shows how to take an orthogonal set and make an orthonormal set of vectors.    In , we showed that the vectors is an orthogonal set on . Use to create an orthonormal set.    We need to find for , but we can do this in general with     We saw the following theorem applied to vectors in in . It was a consequence of the triangle inequality. We again generalize this to the inner product.   Cauchy-Swartz Inequality   If and are elements of an inner product space then       If , then the inequality is satisfied. Assume and define     By definition of the inner product,     Using properties of the inner product,     Multiply through by      This can be rearranged to get:     and taking the square root, you get the desired result.    The Cauchy-Swartz inequality has numerous uses (which is not unexpected for a theorem named after such famous mathematicians). One such is to show that the angle between two vectors in and actually in any inner product space is defined.  Recall that above in this section, the angle between two vectors was defined as the angle that satisfies     and solving for the inner product,     and using the Cauchy-Swartz Inequality,     which results in     which is satisfied for all .    The Gram-Schmidt Orthogonalization Process  We saw above that an orthonormal set of vectors has the property that any two different vectors in the set are orthogonal (inner product of zero) and have norm of one. Often, if we have a set of vectors (say a basis), they aren't orthonormal, but it is advantageous to have another set that is. The Gram-Schmidt algorithm creates an orthonormal set of vectors from a set of linearly independent vectors.  We first see the idea from a pair of vectors in the following example.    Find a orthonormal set of vectors that span the same set as , where       There are many ways of doing this, but the following will always work. First, let's start by finding a unit vector in the same direction as . We denote this as and this can be found by dividing by its length:     Next, we will form a new vector which is a linear combination of and and has the property that it is orthogonal to      and we can take without loss of generality. with     and solving for ,     and since is a unit vector     So     Now since is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is       If there are more than two vectors in the set, then the process is similar in that iteratively, one creates a new vector that is orthogonal to all previous vectors and then normalizes each one.   The Gram-Schmidt Orthogonalization algorithm is the following. Consider a set of vectors which is the basis for some vector space.     Let .    Let     Let .    And so on with      The resulting set of vectors are orthogonal. If the set also needs to be orthonormal, for each vector divide through by its length.    Proof of Gram-Schmidt Orthogonalization  To prove Gram-Schmidt orthogonalization works, we will prove that is orthogonal to for all . We will show this by induction. First show that is orthogonal to :     Now assume that is orthogonal to all other 's or for . Now we will prove that , given by Gram-Schmidt is orthogonal to all other 's. For all ,     The only term that is not apparently nonzero in the sum is when      Therefore is orthogonal to all other 's and thus the basis consisting of form an orthonormal set.     Find a orthogonal set of vectors than spans the same subspace as     Let and be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.                     And the set is now orthogonal (check it).  Note: there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.    Although the example shown here uses vectors in , Gram-Schmidt can be done on any set of vectors from an inner product space. This is very common for polynomials and will show an example with this next. Also, in , we will also show this with trigonometric functions.    Use Gram-Schmidt orthogonalization to find a orthogonal set that spans , the set of all cubic functions on the interval with inner product       To begin, we need a set of vectors (polynomials) on the set and we can take the standard basis . Call these and we'll use Gram-Schmidt to find a set that is orthogonal.  It is very helpful to recall that is an odd function if is odd. Also if is odd.   and since is odd, the integral in the numerator is 0, so and     and is odd, so the first integral is 0 and also ,     and the integrals in the numerators of the 2nd and 4th terms are 0 due to the functions being odd, so     There an orthogonal set of cubic polynomials that span is     and these are the first four Legendre Polynomials. Also, they are a basis of .      Orthogonal infinite sets of functions   defines a finite set of vectors that are orthogonal or orthonormal. This can be extended to an infinite set of vectors with the following:    An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .    In the next couple of examples, we examine a couple of the most important orthogonal and orthonormal sets of functions.    Show that for form an orthogonal set on .    In this case, we will expand on and use the handy alternative definition of the sine function. Find the inner product if ,     where is used on the last step above.      Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore also equals 0 for . For simpler notation let   First, we will show that for all .     since each integral is zero from . Next, we will show that for all such that .     because again each integral is zero from . Also,     Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from .     and the integrals of the first and third terms are zero from .     This shows that the set of functions given above is an orthonormal set of functions.     "
+  "body": " Inner Product Spaces     Extend the idea of an inner product to vectors other than .    Extend the idea of length of a vector or distance between two vectors.    Extend the idea of the angle between two vectors.    Determine whether two vectors are orthogonal and define a orthogonal and orthonormal set of vectors.    Find a orthogonal set of vectors using the Gram-Schmidt process.      In , we examined the dot product between two vectors in Recall that this dot product between two vectors and is     We used the dot product for finding the angle between two vectors and we'll show that there are many other applications that the dot product later in the text. In this section, we extend that to any vector space and call this an inner product space.    The vector space is called an inner product space if for every pair of vectors and in there is a unique number , called the inner product of and such that for all and in and then the following properties are satisfied:           .     and equals 0 if and only if .         Show that is an inner product space with     and   , which is an alternative way of writing .    First, the set is a vector space. Next, we need to show that the three properties are satisfied for .      since the transpose of a number is itself using the properties of transposes in . so the first property is satisfied.            which satisfies . The only time that this quantity equals 0, is when or .       The next example shows that the notion of an inner product is not limited to the dot product of vectors in .    Show that on the interval is a inner product space with     for any .    We have seen above that is a vector space and limiting this to the interval does not change that fact. We need to show that the inner product defined as an integral satisfies the three properties of inner products.          Let also be in and .          and this is greater than or equal or zero and can be shown that equals 0 if and only if .         Vector Norms and distance  The notion of the length of a vector in was examined in . We extend this idea to any vector in an inner product space with the following.    Let be an element of an inner product space. The norm of the vector is given by       Note: if then the vector norm is the length of the vector.    The distance between vectors and denoted and is defined as       Note: if and are in , then the distance function is the standard distance function where the vectors are considered to be points.    The distance if and only if .     Let , then By definition, this is only zero if , therefore .   If , then .    Except for the example of the inner product as an integral, all of the other discussion in this section has been about vectors in , and this is mainly because it is the canonical vector and inner product space and some of the interpretations of length of vectors don't make a lot of sense when talking about polynomials or other functions.  However, distance does have some interpretation with functions. can be used to show when two functions are equal (at least on the interval of the integration), but can also be useful to determine when they are close to equal (when the integrals are close to one another). This will be useful in future chapters.    Angles between vectors  If and are vectors in then we saw in that   and thus the angle between the vectors can be found.  This notion generalizes to any vectors in an inner product space, . Most helpful, two vectors meet at a right angle if and it is said that if this holds then and are orthogonal. The next section talks about how an entire set of vectors can be orthogonal .    Orthonormal sets of vectors   A finite set of orthogonal\/orthonormal vectors   Let each be elements of an inner product space, . The set is called an orthonormal set if     and     If only the first condition holds, the set is called orthogonal .      Show that     is an orthonormal set where each vector is an element of .    We need to show that the three inner products between the vectors are zero     and that the norms of each vector is 1.     Note: this set of vectors is also a basis for .      Show that     form an orthogonal set on with the inner product taken to be the definite integral on .    Note: the following integrals will come up in the next few chapters a number of times and the technique shown below is helpful for such integrals. This also shows that even though in most cases in this text so far, that using complex numbers helps out tremendously.  Recall that     and using this we find the integrals of all pairs of functions on      and as it can be seen that all term made with the substitution cancel with terms made with the substitution .  The other two inner products are similar. In fact it can be shown (and we will later) that     if .    Similar to vectors in , we can take a vector that doesn't have norm 1 by dividing the vector through by its length. That is, if is a vector then has length 1.  The next example shows how to take an orthogonal set and make an orthonormal set of vectors.    In , we showed that the vectors is an orthogonal set on . Use to create an orthonormal set.    We need to find for , but we can do this in general with     We saw the following theorem applied to vectors in in . It was a consequence of the triangle inequality. We again generalize this to the inner product.   Cauchy-Schwartz Inequality   If and are elements of an inner product space then       If , then the inequality is satisfied. Assume and define     By definition of the inner product,     Using properties of the inner product,     Multiply through by      This can be rearranged to get:     and taking the square root, you get the desired result.    The Cauchy-Schwartz inequality has numerous uses (which is not unexpected for a theorem named after such famous mathematicians). One such is to show that the angle between two vectors in and actually in any inner product space is defined.  Recall that above in this section, the angle between two vectors was defined as the angle that satisfies     and solving for the inner product,     and using the Cauchy-Schwartz Inequality,     which results in     which is satisfied for all .    The Gram-Schmidt Orthogonalization Process  We saw above that an orthonormal set of vectors has the property that any two different vectors in the set are orthogonal (inner product of zero) and have norm of one. Often, if we have a set of vectors (say a basis), they aren't orthonormal, but it is advantageous to have another set that is. The Gram-Schmidt algorithm creates an orthonormal set of vectors from a set of linearly independent vectors.  We first see the idea from a pair of vectors in the following example.    Find a orthonormal set of vectors that span the same set as , where       There are many ways of doing this, but the following will always work. First, let's start by finding a unit vector in the same direction as . We denote this as and this can be found by dividing by its length:     Next, we will form a new vector which is a linear combination of and and has the property that it is orthogonal to      and we can take without loss of generality. with     and solving for ,     and since is a unit vector     So     Now since is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is       If there are more than two vectors in the set, then the process is similar in that iteratively, one creates a new vector that is orthogonal to all previous vectors and then normalizes each one.   The Gram-Schmidt Orthogonalization algorithm is the following. Consider a set of vectors which is the basis for some vector space.     Let .    Let     Let .    And so on with      The resulting set of vectors are orthogonal. If the set also needs to be orthonormal, for each vector divide through by its length.    Proof of Gram-Schmidt Orthogonalization  To prove Gram-Schmidt orthogonalization works, we will prove that is orthogonal to for all . We will show this by induction. First show that is orthogonal to :     Now assume that is orthogonal to all other 's or for . Now we will prove that , given by Gram-Schmidt is orthogonal to all other 's. For all ,     The only term that is not apparently nonzero in the sum is when      Therefore is orthogonal to all other 's and thus the basis consisting of form an orthonormal set.     Find a orthogonal set of vectors than spans the same subspace as     Let and be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.                     And the set is now orthogonal (check it).  Note: there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.    Although the example shown here uses vectors in , Gram-Schmidt can be done on any set of vectors from an inner product space. This is very common for polynomials and will show an example with this next. Also, in , we will also show this with trigonometric functions.    Use Gram-Schmidt orthogonalization to find a orthogonal set that spans , the set of all cubic functions on the interval with inner product       To begin, we need a set of vectors (polynomials) on the set and we can take the standard basis . Call these and we'll use Gram-Schmidt to find a set that is orthogonal.  It is very helpful to recall that is an odd function if is odd. Also if is odd.   and since is odd, the integral in the numerator is 0, so and     and is odd, so the first integral is 0 and also ,     and the integrals in the numerators of the 2nd and 4th terms are 0 due to the functions being odd, so     There an orthogonal set of cubic polynomials that span is     and these are the first four Legendre Polynomials. Also, they are a basis of .      Orthogonal infinite sets of functions   defines a finite set of vectors that are orthogonal or orthonormal. This can be extended to an infinite set of vectors with the following:    An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .    In the next couple of examples, we examine a couple of the most important orthogonal and orthonormal sets of functions.    Show that for form an orthogonal set on .    In this case, we will expand on and use the handy alternative definition of the sine function. Find the inner product if ,     where is used on the last step above.      Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore also equals 0 for . For simpler notation let   First, we will show that for all .     since each integral is zero from . Next, we will show that for all such that .     because again each integral is zero from . Also,     Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from .     and the integrals of the first and third terms are zero from .     This shows that the set of functions given above is an orthonormal set of functions.     "
 },
 {
   "id": "sect-inner-product-2",
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-2",
   "type": "Objectives",
-  "number": "4.3",
+  "number": "4.4",
   "title": "",
   "body": "   Extend the idea of an inner product to vectors other than .    Extend the idea of length of a vector or distance between two vectors.    Extend the idea of the angle between two vectors.    Determine whether two vectors are orthogonal and define a orthogonal and orthonormal set of vectors.    Find a orthogonal set of vectors using the Gram-Schmidt process.    "
 },
@@ -2930,7 +2966,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-3-4",
   "type": "Definition",
-  "number": "4.3.1",
+  "number": "4.4.1",
   "title": "",
   "body": "  The vector space is called an inner product space if for every pair of vectors and in there is a unique number , called the inner product of and such that for all and in and then the following properties are satisfied:           .     and equals 0 if and only if .      "
 },
@@ -2939,7 +2975,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-3-5",
   "type": "Example",
-  "number": "4.3.2",
+  "number": "4.4.2",
   "title": "",
   "body": "  Show that is an inner product space with     and   , which is an alternative way of writing .    First, the set is a vector space. Next, we need to show that the three properties are satisfied for .      since the transpose of a number is itself using the properties of transposes in . so the first property is satisfied.            which satisfies . The only time that this quantity equals 0, is when or .      "
 },
@@ -2948,7 +2984,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-3-7",
   "type": "Example",
-  "number": "4.3.3",
+  "number": "4.4.3",
   "title": "",
   "body": "  Show that on the interval is a inner product space with     for any .    We have seen above that is a vector space and limiting this to the interval does not change that fact. We need to show that the inner product defined as an integral satisfies the three properties of inner products.          Let also be in and .          and this is greater than or equal or zero and can be shown that equals 0 if and only if .      "
 },
@@ -2957,7 +2993,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-4-3",
   "type": "Definition",
-  "number": "4.3.4",
+  "number": "4.4.4",
   "title": "",
   "body": "  Let be an element of an inner product space. The norm of the vector is given by      "
 },
@@ -2966,7 +3002,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-4-5",
   "type": "Definition",
-  "number": "4.3.5",
+  "number": "4.4.5",
   "title": "",
   "body": "  The distance between vectors and denoted and is defined as      "
 },
@@ -2975,7 +3011,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#lem-distance-zero",
   "type": "Lemma",
-  "number": "4.3.6",
+  "number": "4.4.6",
   "title": "",
   "body": "  The distance if and only if .     Let , then By definition, this is only zero if , therefore .   If , then .   "
 },
@@ -2984,7 +3020,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#def-finite-set-orthogonal",
   "type": "Definition",
-  "number": "4.3.7",
+  "number": "4.4.7",
   "title": "A finite set of orthogonal\/orthonormal vectors.",
   "body": " A finite set of orthogonal\/orthonormal vectors   Let each be elements of an inner product space, . The set is called an orthonormal set if     and     If only the first condition holds, the set is called orthogonal .   "
 },
@@ -2993,16 +3029,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-6-3",
   "type": "Example",
-  "number": "4.3.8",
+  "number": "4.4.8",
   "title": "",
   "body": "  Show that     is an orthonormal set where each vector is an element of .    We need to show that the three inner products between the vectors are zero     and that the norms of each vector is 1.     Note: this set of vectors is also a basis for .   "
 },
 {
-  "id": "ex-orthog-set",
+  "id": "ex-orthogonal-set",
   "level": "2",
-  "url": "sect-inner-product.html#ex-orthog-set",
+  "url": "sect-inner-product.html#ex-orthogonal-set",
   "type": "Example",
-  "number": "4.3.9",
+  "number": "4.4.9",
   "title": "",
   "body": "  Show that     form an orthogonal set on with the inner product taken to be the definite integral on .    Note: the following integrals will come up in the next few chapters a number of times and the technique shown below is helpful for such integrals. This also shows that even though in most cases in this text so far, that using complex numbers helps out tremendously.  Recall that     and using this we find the integrals of all pairs of functions on      and as it can be seen that all term made with the substitution cancel with terms made with the substitution .  The other two inner products are similar. In fact it can be shown (and we will later) that     if .   "
 },
@@ -3011,18 +3047,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-6-7",
   "type": "Example",
-  "number": "4.3.10",
+  "number": "4.4.10",
   "title": "",
   "body": "  In , we showed that the vectors is an orthogonal set on . Use to create an orthonormal set.    We need to find for , but we can do this in general with    "
 },
 {
-  "id": "thm-cauchy-swartz",
+  "id": "thm-cauchy-schwartz",
   "level": "2",
-  "url": "sect-inner-product.html#thm-cauchy-swartz",
+  "url": "sect-inner-product.html#thm-cauchy-schwartz",
   "type": "Theorem",
-  "number": "4.3.11",
-  "title": "Cauchy-Swartz Inequality.",
-  "body": " Cauchy-Swartz Inequality   If and are elements of an inner product space then       If , then the inequality is satisfied. Assume and define     By definition of the inner product,     Using properties of the inner product,     Multiply through by      This can be rearranged to get:     and taking the square root, you get the desired result.   "
+  "number": "4.4.11",
+  "title": "Cauchy-Schwartz Inequality.",
+  "body": " Cauchy-Schwartz Inequality   If and are elements of an inner product space then       If , then the inequality is satisfied. Assume and define     By definition of the inner product,     Using properties of the inner product,     Multiply through by      This can be rearranged to get:     and taking the square root, you get the desired result.   "
 },
 {
   "id": "sect-inner-product-7-2",
@@ -3038,7 +3074,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-7-4",
   "type": "Example",
-  "number": "4.3.12",
+  "number": "4.4.12",
   "title": "",
   "body": "  Find a orthonormal set of vectors that span the same set as , where       There are many ways of doing this, but the following will always work. First, let's start by finding a unit vector in the same direction as . We denote this as and this can be found by dividing by its length:     Next, we will form a new vector which is a linear combination of and and has the property that it is orthogonal to      and we can take without loss of generality. with     and solving for ,     and since is a unit vector     So     Now since is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is      "
 },
@@ -3047,7 +3083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-7-6",
   "type": "Remark",
-  "number": "4.3.13",
+  "number": "4.4.13",
   "title": "",
   "body": " The Gram-Schmidt Orthogonalization algorithm is the following. Consider a set of vectors which is the basis for some vector space.     Let .    Let     Let .    And so on with      The resulting set of vectors are orthogonal. If the set also needs to be orthonormal, for each vector divide through by its length.  "
 },
@@ -3056,7 +3092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-7-7",
   "type": "Proof",
-  "number": "4.3.4.1",
+  "number": "4.4.4.1",
   "title": "Proof of Gram-Schmidt Orthogonalization.",
   "body": " Proof of Gram-Schmidt Orthogonalization  To prove Gram-Schmidt orthogonalization works, we will prove that is orthogonal to for all . We will show this by induction. First show that is orthogonal to :     Now assume that is orthogonal to all other 's or for . Now we will prove that , given by Gram-Schmidt is orthogonal to all other 's. For all ,     The only term that is not apparently nonzero in the sum is when      Therefore is orthogonal to all other 's and thus the basis consisting of form an orthonormal set.  "
 },
@@ -3065,7 +3101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-7-8",
   "type": "Example",
-  "number": "4.3.14",
+  "number": "4.4.14",
   "title": "",
   "body": "  Find a orthogonal set of vectors than spans the same subspace as     Let and be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.                     And the set is now orthogonal (check it).  Note: there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.   "
 },
@@ -3074,7 +3110,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#example-gram-schmidt-p3",
   "type": "Example",
-  "number": "4.3.15",
+  "number": "4.4.15",
   "title": "",
   "body": "  Use Gram-Schmidt orthogonalization to find a orthogonal set that spans , the set of all cubic functions on the interval with inner product       To begin, we need a set of vectors (polynomials) on the set and we can take the standard basis . Call these and we'll use Gram-Schmidt to find a set that is orthogonal.  It is very helpful to recall that is an odd function if is odd. Also if is odd.   and since is odd, the integral in the numerator is 0, so and     and is odd, so the first integral is 0 and also ,     and the integrals in the numerators of the 2nd and 4th terms are 0 due to the functions being odd, so     There an orthogonal set of cubic polynomials that span is     and these are the first four Legendre Polynomials. Also, they are a basis of .   "
 },
@@ -3083,7 +3119,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-8-3",
   "type": "Definition",
-  "number": "4.3.16",
+  "number": "4.4.16",
   "title": "",
   "body": "  An infinite set of continuous function is said to be orthogonal on if for all , . If in addition, for all , the set is said to be orthonormal .   "
 },
@@ -3092,7 +3128,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#sect-inner-product-8-5",
   "type": "Example",
-  "number": "4.3.17",
+  "number": "4.4.17",
   "title": "",
   "body": "  Show that for form an orthogonal set on .    In this case, we will expand on and use the handy alternative definition of the sine function. Find the inner product if ,     where is used on the last step above.   "
 },
@@ -3101,7 +3137,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-inner-product.html#ex-trig-ortho-set",
   "type": "Example",
-  "number": "4.3.18",
+  "number": "4.4.18",
   "title": "",
   "body": "  Show that the set of functions     for an orthonormal set on .    We showed above that for all when . Therefore also equals 0 for . For simpler notation let   First, we will show that for all .     since each integral is zero from . Next, we will show that for all such that .     because again each integral is zero from . Also,     Lastly, we need to show that the norm of each of the functions is 1.     and the integrals of the first and third terms are zero from .     and the integrals of the first and third terms are zero from .     This shows that the set of functions given above is an orthonormal set of functions.   "
 },
@@ -3110,7 +3146,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-linear-transformations.html",
   "type": "Section",
-  "number": "4.4",
+  "number": "4.5",
   "title": "Linear Transformations",
   "body": " Linear Transformations   This section discusses linear transformations. In short, such a transformation will map vectors to vectors in a linear way. The definition of a linear transformation (or linear map) is the following:   Linear Transformation   Let and be vector spaces. A linear transformation or linear map  from to is a function that assigns to each vector a unique vector and that satisfies for each and in and each scalar ,     These are also called homomorphisms and the notation explaining that a map goes from to is .   Reflection Map   The reflection of any vector in across the horizontal axis is a linear map. Specifically this is given as     and geometrically you can see this as:   Mapping a vector over the -axis      Show that this is a linear transformation.    Specifically, we need to show that defined above satisfies and . Let     and   , then     so is satisfied. Next,     so is satisfied.    A very important linear map in is the rotational map that takes any vector in the plane and rotates it a given angle. The next example, derives this map.   Rotational Map in   Let be a vector in . Let the function take the vector and rotate it by radians in the counterclockwise direction. Call the new vector    Diagram of the rotational map      Derive the formula for the rotational map.    Let and since is the rotated version of it has the same length, therefore . The values can be written in terms of , the angle that the vector makes with the positive horizontal axis, and the angle between the vectors as follows.     and note that these can be written:     This is a linear transformation (as we will explain later) and is called a rotational transformation .     Linear Scale Map   Consider the map that scales any vector in the plane by a factor of given by     which can be visualized in the following diagram where :   Scaling Map      where every vector under the map results in a new vector that is twice as long as the original. In general, the scale will scale the vector by a factor of and recall that if , then the direction changes. Show that this is a linear map.    Again, we show that and are satisfied. Let and be elements of .     so is satisfied and     so is satisfied so is a linear map.      If a transformation map is written as a matrix or , then is a linear transformation.    This is a consequence of matrix operations.     Note that the rotational transformation that was defined in is easily shown to be a linear transformation because from , any transformation shown as a matrix, is a linear transformation. The next theorem shows the counter direction to , that is that any linear transformation can be written as a matrix.    Let be a linear transformation. Then there exists a unique by matrix such that     We won't prove this here, but instead will motivate this below. In short, if is a linear transformation, then the matrix corresponding to the linear transformation is called the transformation matrix .    Finding the Matrix Form of a Linear Transformation  The theorem above shows that any linear transformation, can be written in matrix form. This section explains how to find it. Let be a basis of and be a basis of . Any vector in can be written or in other words . Applying the map to is and since it is a linear map Next, we write the transformation in terms of the basis vectors of or Substituting into results in and letting be the matrix with entries then or in other words, the matrix performs the map on the coefficients. Equation also shows how the matrix can be created from the linear map. That equation can also be thought of as a representation of the basis vectors or where is the th column of . The following summarizes how to find the matrix.   If is the matrix representation of the map , then the th column of is the vector , the map applied to the th basis vector of written in terms of the basis of .   We now show many examples on how to apply this.    The matrix representation of the reflection map from given by     where the representation will be in terms of the standard basis vectors.    In this case, we need to determine how the standard basis vectors map under the reflection. Thus     and     Because we are using the standard basis vectors, the representations of these vectors are themselves therefore,     and just to verify,       This next example shows how to contruct the transformation matrix for the scale map.    Find the matrix representation of the scale map in .    We need to map the basis vectors and to determine the columns of the matrix representation.     so the matrix representation is       And the next example shows that a common matrix operation, the trace is a linear map.    Let      which is the trace of a 2 by 2 matrix. Show that the trace is a linear map and find the matrix representation of the trace.    First, to prove that the trace is a linear map, we need to show that it satisfies and . Let     Then     Similarly,     Next, we want to find the matrix representation of the trace. To do this, we need to determine how the map affects the basis of the vector space , which is     and since   The matrix representation is Note that it may be surprising that the matrix representation is just a row vector, however, recall that the trace maps from a matrix that can be represented as a column vector of length 4 to the reals, so the matrix representation should be a matrix.    To verify the above results, recall that from that the representation of a matrix is the unfolded matrix or in the case, that where is the natural basis of . So the matrix trace can be written as    "
 },
@@ -3119,7 +3155,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#def-linear-trans",
   "type": "Definition",
-  "number": "4.4.1",
+  "number": "4.5.1",
   "title": "Linear Transformation.",
   "body": " Linear Transformation   Let and be vector spaces. A linear transformation or linear map  from to is a function that assigns to each vector a unique vector and that satisfies for each and in and each scalar ,    "
 },
@@ -3137,7 +3173,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#ex-reflect-map",
   "type": "Example",
-  "number": "4.4.2",
+  "number": "4.5.2",
   "title": "Reflection Map.",
   "body": " Reflection Map   The reflection of any vector in across the horizontal axis is a linear map. Specifically this is given as     and geometrically you can see this as:   Mapping a vector over the -axis      Show that this is a linear transformation.    Specifically, we need to show that defined above satisfies and . Let     and   , then     so is satisfied. Next,     so is satisfied.   "
 },
@@ -3146,7 +3182,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#ex-rotational-trans",
   "type": "Example",
-  "number": "4.4.4",
+  "number": "4.5.4",
   "title": "Rotational Map in <span class=\"process-math\">\\(\\mathbb{R}^2\\)<\/span>.",
   "body": " Rotational Map in   Let be a vector in . Let the function take the vector and rotate it by radians in the counterclockwise direction. Call the new vector    Diagram of the rotational map      Derive the formula for the rotational map.    Let and since is the rotated version of it has the same length, therefore . The values can be written in terms of , the angle that the vector makes with the positive horizontal axis, and the angle between the vectors as follows.     and note that these can be written:     This is a linear transformation (as we will explain later) and is called a rotational transformation .   "
 },
@@ -3155,7 +3191,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#ex-scale-map",
   "type": "Example",
-  "number": "4.4.6",
+  "number": "4.5.6",
   "title": "Linear Scale Map.",
   "body": " Linear Scale Map   Consider the map that scales any vector in the plane by a factor of given by     which can be visualized in the following diagram where :   Scaling Map      where every vector under the map results in a new vector that is twice as long as the original. In general, the scale will scale the vector by a factor of and recall that if , then the direction changes. Show that this is a linear map.    Again, we show that and are satisfied. Let and be elements of .     so is satisfied and     so is satisfied so is a linear map.   "
 },
@@ -3164,7 +3200,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#thm-matrix-linear-trans",
   "type": "Theorem",
-  "number": "4.4.8",
+  "number": "4.5.8",
   "title": "",
   "body": "  If a transformation map is written as a matrix or , then is a linear transformation.    This is a consequence of matrix operations.    "
 },
@@ -3173,7 +3209,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#thm-linear-trans-matrix",
   "type": "Theorem",
-  "number": "4.4.9",
+  "number": "4.5.9",
   "title": "",
   "body": "  Let be a linear transformation. Then there exists a unique by matrix such that    "
 },
@@ -3191,7 +3227,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#sect-linear-transformations-3-3",
   "type": "Remark",
-  "number": "4.4.10",
+  "number": "4.5.10",
   "title": "",
   "body": " If is the matrix representation of the map , then the th column of is the vector , the map applied to the th basis vector of written in terms of the basis of .  "
 },
@@ -3200,7 +3236,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#sect-linear-transformations-3-5",
   "type": "Example",
-  "number": "4.4.11",
+  "number": "4.5.11",
   "title": "",
   "body": "  The matrix representation of the reflection map from given by     where the representation will be in terms of the standard basis vectors.    In this case, we need to determine how the standard basis vectors map under the reflection. Thus     and     Because we are using the standard basis vectors, the representations of these vectors are themselves therefore,     and just to verify,      "
 },
@@ -3209,7 +3245,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#ex-scale-map-matrix-rep",
   "type": "Example",
-  "number": "4.4.12",
+  "number": "4.5.12",
   "title": "",
   "body": "  Find the matrix representation of the scale map in .    We need to map the basis vectors and to determine the columns of the matrix representation.     so the matrix representation is      "
 },
@@ -3218,7 +3254,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-linear-transformations.html#sect-linear-transformations-3-9",
   "type": "Example",
-  "number": "4.4.13",
+  "number": "4.5.13",
   "title": "",
   "body": "  Let      which is the trace of a 2 by 2 matrix. Show that the trace is a linear map and find the matrix representation of the trace.    First, to prove that the trace is a linear map, we need to show that it satisfies and . Let     Then     Similarly,     Next, we want to find the matrix representation of the trace. To do this, we need to determine how the map affects the basis of the vector space , which is     and since   The matrix representation is Note that it may be surprising that the matrix representation is just a row vector, however, recall that the trace maps from a matrix that can be represented as a column vector of length 4 to the reals, so the matrix representation should be a matrix.   "
 },
@@ -3227,7 +3263,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-projection-maps.html",
   "type": "Section",
-  "number": "4.5",
+  "number": "4.6",
   "title": "Projection Maps",
   "body": " Projection Maps   There is a class of linear transformations that are very important and have a nice geometric interpretation called projection maps. Let's look at an example in the -plane. Consider the point as shown below.   Projecting a point onto the -axis.      If the point (or the vector) is projected onto the -axis, then the result is the point found by taking the -component of the point. In term of the vector, this is .  We now look at projecting a vector onto a line (or a vector ). We will derive this in the -plane, however the result will work for any vector space.   Projecting a vector onto another vector.      Let and be two vectors in as shown above. We seek the projection of onto and denote this as . The projection is a vector that is in the same direction as . The length will be explained below.  Any vector can be split into two parts, a vector in a direction parallel to and a vector which satisfies .     where .  Take the inner product of both sides of ( ) with the vector      and solving for ,     Therefore the projection vector     and if needed the vector is     Although we derived this projection in , there is nothing about the projection formula to indicate it's confined to . In fact, as we will see, the projection mapping is a linear transformation and applies to vectors in an inner product space.   The projection of any vector onto a vector is given by and the vector perpendicular to that satisfies is given by    The example below finds the projection of vectors in .    Find the projection of onto the vector .    Since        Given a nonzero vector and a vector both in , the projection map in ( ) is a linear transformation.    We need to prove the two properties of linear transformations in .     and       The example shown so far for projections have been onto a vector (which can be thought of as the line through the origin with that direction), but in general, one can project onto any linear space (more technically, any inner product space). Before showing the general projection, let's consider the projection of a vector onto a plane. The following example shows this.    Find the projection of vector onto plane given by .    First, let's find two vectors in the plane, called , that form an orthogonal basis (we will see why it's helpful to have an orthogonal basis later). Recall that a normal vector to the plane is given by the vector . Two vector that are normal to it is and . (Note: these are two points in the plane). To form an orthonormal basis, we need to perform Gramm-Schmidt. and to make the second vector nicer, we'll multiply by . An orthogonal set in the plane is To consider how to project the vector into the plane we will write where is orthogonal to both and and we can write So we next take the inner product of with both and . Therefore So in the case of projecting a vector onto a plane, , So the vector is the projection of the vector onto the plane .      Using Projections to solve Least-Squares Problems  A useful problem is to find the minimum distance between a point and line. For example consider the point and the line as shown in the figure below.   Line and a point      If we want to minimize the distance from the point to the line , we often minimize the square Recall that the point that minimizes a function is the same point that to minimizes the square of the function. The reason for doing this it it gets rid of the square root and makes calculations easier to do. of the distance from the point to the line or  and using techniques from calculus, this function is minimized when . Looking at the plot, the -value is and the vector from to is perpendicular to the vector in the direction of as shown below:   Find a point on a line that minimizes distance      In light of projections, we can reframe this problem. We are seeking the point on closest to . This can be found by projecting the vector to the line or and in this case, with and , which is the same result as from Calculus.    Projecting onto a Vector Space  We again generalize from projecting onto a single vector or set of vectors to a general vector space, . First, to make things easier, we will use an orthogonal basis for , call it, .  Recall that a projection onto a vector is found by writing the original vector, , where is in or Finding the projection is analogous to finding the constants . Take the inner product of ( ) with , the th basis vector of or since is chosen to be orthogonal to the vector space and since the basis of is orthogonal, Therefore and thus we can make the following statement about projecting any element onto a subspace:   Let be an element in a vector space and be an orthogonal basis of a subspace . The projection of onto can be written: where Note: if the basis of is also orthonormal, then .     Find the projection of , an element of onto     First, we need a orthogonal basis of the subspace and we found this above in . These are the first four Legendre polynomials (scaled to eliminate fractions) or     Next, find all of the values of for      Similarly, it can be shown that     The projection then is the sum     where is the th Legendre polynomial as in . A plot of this is   Find a projection of onto       which looks quite sine-like. Notice that if we plot the absolute difference between the function and the projection that we get    Difference between and its projection.      This plot shows that except for near the ends of the interval, the projection (or an approximation is within 1 decimal places.)    This last example shows the power of projections. If we are using functions as elements of vector spaces, then a projection of a function onto a vector space (using the span of a vector space), is the closest function in the vector space to the original function. In , we will do this with trigonometric function and is called Fourier Series.    "
 },
@@ -3236,7 +3272,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-2",
   "type": "Figure",
-  "number": "4.5.1",
+  "number": "4.6.1",
   "title": "",
   "body": " Projecting a point onto the -axis.     "
 },
@@ -3245,7 +3281,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-5",
   "type": "Figure",
-  "number": "4.5.2",
+  "number": "4.6.2",
   "title": "",
   "body": " Projecting a vector onto another vector.     "
 },
@@ -3254,7 +3290,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-19",
   "type": "Remark",
-  "number": "4.5.3",
+  "number": "4.6.3",
   "title": "",
   "body": " The projection of any vector onto a vector is given by and the vector perpendicular to that satisfies is given by   "
 },
@@ -3263,7 +3299,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-21",
   "type": "Example",
-  "number": "4.5.4",
+  "number": "4.6.4",
   "title": "",
   "body": "  Find the projection of onto the vector .    Since     "
 },
@@ -3272,7 +3308,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#thm-proj-map",
   "type": "Theorem",
-  "number": "4.5.5",
+  "number": "4.6.5",
   "title": "",
   "body": "  Given a nonzero vector and a vector both in , the projection map in ( ) is a linear transformation.    We need to prove the two properties of linear transformations in .     and      "
 },
@@ -3281,7 +3317,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-2-24",
   "type": "Example",
-  "number": "4.5.6",
+  "number": "4.6.6",
   "title": "",
   "body": "  Find the projection of vector onto plane given by .    First, let's find two vectors in the plane, called , that form an orthogonal basis (we will see why it's helpful to have an orthogonal basis later). Recall that a normal vector to the plane is given by the vector . Two vector that are normal to it is and . (Note: these are two points in the plane). To form an orthonormal basis, we need to perform Gramm-Schmidt. and to make the second vector nicer, we'll multiply by . An orthogonal set in the plane is To consider how to project the vector into the plane we will write where is orthogonal to both and and we can write So we next take the inner product of with both and . Therefore So in the case of projecting a vector onto a plane, , So the vector is the projection of the vector onto the plane .   "
 },
@@ -3290,7 +3326,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-3-3",
   "type": "Figure",
-  "number": "4.5.7",
+  "number": "4.6.7",
   "title": "",
   "body": " Line and a point     "
 },
@@ -3299,7 +3335,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-3-5",
   "type": "Figure",
-  "number": "4.5.8",
+  "number": "4.6.8",
   "title": "",
   "body": " Find a point on a line that minimizes distance     "
 },
@@ -3308,7 +3344,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-4-4",
   "type": "Remark",
-  "number": "4.5.9",
+  "number": "4.6.9",
   "title": "",
   "body": " Let be an element in a vector space and be an orthogonal basis of a subspace . The projection of onto can be written: where Note: if the basis of is also orthonormal, then .  "
 },
@@ -3317,7 +3353,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-projection-maps.html#sect-projection-maps-4-5",
   "type": "Example",
-  "number": "4.5.10",
+  "number": "4.6.10",
   "title": "",
   "body": "  Find the projection of , an element of onto     First, we need a orthogonal basis of the subspace and we found this above in . These are the first four Legendre polynomials (scaled to eliminate fractions) or     Next, find all of the values of for      Similarly, it can be shown that     The projection then is the sum     where is the th Legendre polynomial as in . A plot of this is   Find a projection of onto       which looks quite sine-like. Notice that if we plot the absolute difference between the function and the projection that we get    Difference between and its projection.      This plot shows that except for near the ends of the interval, the projection (or an approximation is within 1 decimal places.)   "
 },

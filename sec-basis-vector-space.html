@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Basis of a Vector Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Applied Mathematics">
+<meta property="book:author" content="Peter Staab">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.13';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.0d5f811896ddeac1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="applied-mathematics-staab.html"><span class="title">Applied Mathematics</span></a></h1>
+<p class="byline">Peter Staab</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-vector-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-inner-product.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\mnr}{mnr}
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\adj}{adj}
+\newcommand{\real}[1]{\operatorname{Re}(#1)}
+\newcommand{\imag}[1]{\operatorname{Im}(#1)}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Linear Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Linear Systems</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-elementary-row-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Row Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elementary-row-operations.html#sect-gauss-method" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Gauss’s Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elementary-row-operations.html#sect-matrices" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elementary-row-operations.html#sect-elementary-row-operations-5" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Matrices and Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elementary-row-operations.html#sect-row-operations-and-matrices" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Row Operations and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elementary-row-operations.html#sect-geom-lin-sys-2var" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Geometry of Linear Systems of 2 variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-gaussian-elimination.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms and Gaussian Elimination</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-gaussian-elimination.html#subsect-echelon-form" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Row-Echelon and Reduced Row-Echelon Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-gaussian-elimination.html#sect-gaussian-elimination-4" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Solving Linear Systems with Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-gaussian-elimination.html#sect-gaussian-elimination-5" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Linear Systems and Reduced Row-Echelon Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-gaussian-elimination.html#subsect-describe-solutions" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Describing the Solution Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-gaussian-elimination.html#sect-gaussian-elimination-7" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Row Equivalence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-gaussian-elimination.html#sect-gaussian-elimination-8" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Echelon Form and Linear Combinations of Rows</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-vectors-as-solutions.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vectors as Solutions of Linear Solutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vectors-as-solutions.html#sect-vectors-as-solutions-3" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Vectors as Solutions of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vectors-as-solutions.html#sect-vectors-as-solutions-4" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Addition and Scalar Multiplication of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vectors-as-solutions.html#sect-vectors-as-solutions-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Writing Solutions in Vector Form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-homo-non-homo.html" class="internal"><span class="codenumber">1.5</span> <span class="title">General <span class="process-math">\(=\)</span> Homogeneous <span class="process-math">\(+\)</span> Nonhomogeneous</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homo-non-homo.html#subsect-nonhomo-system" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Non-homogeneous Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homo-non-homo.html#sect-solving-homogeneous-linear-systems" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Solving homogeneous Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homo-non-homo.html#sec-homo-non-homo-5" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Singular and Nonsingular Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-linear-geometry.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Geometry of <span class="process-math">\(n\)</span>-space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-2" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Scalar Multiplication of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-3" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Vector Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-4" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Geometry of Addition and Scalar Multiplication in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-5" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Lines in Vector form in <span class="process-math">\(\mathbb{R}^2\)</span> and <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-planes-r3" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Planes in <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-linear-geometry-7" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Geometry of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-length-angles" class="internal"><span class="codenumber">1.6.7</span> <span class="title">Length and Angle Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-angles-of-vectors" class="internal"><span class="codenumber">1.6.8</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-angles-vectors" class="internal"><span class="codenumber">1.6.9</span> <span class="title">Angles of vectors in <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-geometry.html#sect-dot-prod-props" class="internal"><span class="codenumber">1.6.10</span> <span class="title">Properties of The Dot Product</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-matrices.html" class="internal"><span class="codenumber">2</span> <span class="title">Matrices and Matrix Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-matrix-definition.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Matrix and Vector Definition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-vectors" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-matrix-definition-5" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Matrix, Vector and Scalar Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-definition.html#sect-triangular-matrices" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Diagonal and Triangular Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-matrix-operations.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Matrix Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-operations-3" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Addition and Subtraction of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-operations-4" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Scalar Multiplication of Vectors and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#section-reexamining-linear-systems" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Reexamining Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-vector-product" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Matrix-Vector Product</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-matrix-product" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Matrix-Matrix Product</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-matrix-product-3" class="internal"><span class="codenumber">2.2.5.1</span> <span class="title">Size Restrictions on Matrices</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-matrix-product-alt" class="internal"><span class="codenumber">2.2.5.2</span> <span class="title">Alternative Form of the Matrix-Matrix Product</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-matrix-product-props" class="internal"><span class="codenumber">2.2.5.3</span> <span class="title">Properties of Matrix-Matrix Products</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-transpose" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Transpose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-operations.html#sect-matrix-operations-9" class="internal"><span class="codenumber">2.2.7</span> <span class="title">Reexamination of the Dot Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-matrix-inverse.html" class="internal"><span class="codenumber">2.3</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-3" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Identity Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Solving a simple linear equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-6" class="internal"><span class="codenumber">2.3.4</span> <span class="title">The Matrix Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-7" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Solving <span class="process-math">\(A\boldsymbol{u}=\boldsymbol{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-8" class="internal"><span class="codenumber">2.3.6</span> <span class="title">the Gauss-Jordan Method for Calculating Inverses</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-matrix-inverse.html#sect-matrix-inverse-9" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Properties of the Inverse Matrix</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-elem-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Elementary Matrices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-elem-matrices.html#subsec-product-elem-matrices" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Matrices as Products of Elementary Matrices</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-comb-span.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Combinations and the Span of a Set of Vectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-independence.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear Independence</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-row-col-space-rank.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Row Space, Column Space and Rank of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-4" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Row Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-5" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Column Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-6" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Null Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-row-col-space-rank.html#sect-row-col-space-rank-7" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Relationship between the Rank and Nullity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-det.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Determinants of Square Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-defintion-determinant" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-5" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Basic Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-det-elem-matrices" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Determinants of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-7" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Gauss’ Method for Calculating Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-minors-cofactors" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Minors and Cofactors of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-9" class="internal"><span class="codenumber">2.8.6</span> <span class="title">Expansion Method for finding the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sect-det.html#sect-det-10" class="internal"><span class="codenumber">2.8.7</span> <span class="title">Geometry of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-10-3" class="internal"><span class="codenumber">2.8.7.1</span> <span class="title">Transformation of the Vectors and the size of the Parallelogram</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#sect-det-11" class="internal"><span class="codenumber">2.8.8</span> <span class="title">Other Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-adjugate-matrices" class="internal"><span class="codenumber">2.8.9</span> <span class="title">Adjugate Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-det.html#subsec-cramers-rule" class="internal"><span class="codenumber">2.8.10</span> <span class="title">Cramer’s Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-algebra-summary.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Summary of the basics of linear algebra</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions-calculus.html" class="internal"><span class="codenumber">3</span> <span class="title">Functions and Calculus of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-complex-numbers.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-complex-basics" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Basics of Complex Numbers and the Complex Plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-arithmetic-complex" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Arithmetic with Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sect-polar-form-complex" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Polar Form of Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-complex-numbers.html#sec-roots-of-unity" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Roots of unity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-complex-exponential" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Complex Exponential</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#subsec-more-complex-exponential" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Other Properties of the Complex Exponential</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Periodic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">3.2.4</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Odd and Even Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-9" class="internal"><span class="codenumber">3.2.6</span> <span class="title">Tabular Integration</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector and Inner Product Spaces</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-vector-spaces.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-4" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Examples of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-vector-spaces.html#sect-vector-spaces-5" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Is every set a vector space?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-subspaces.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Span and Basis of a Subspace</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#subsec-abstract-linear-independence" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Linear Independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#subsec-subspaces" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-6" class="internal"><span class="codenumber">4.2.3</span> <span class="title">The Span of a set of vectors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-basis-vector-space.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Basis of a Vector Space</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-basis-vector-space.html#sec-basis-vector-space-3" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The Basis and Dimension of a Vector Space</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-basis-vector-space.html#sec-basis-vector-space-3-3" class="internal"><span class="codenumber">4.3.1.1</span> <span class="title">Representations in the natural basis</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-vector-space.html#sec-basis-vector-space-4" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-vector-space.html#sec-basis-vector-space-5" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Bases of Subspaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-inner-product.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Inner Product Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Angles between vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-7" class="internal"><span class="codenumber">4.4.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-8" class="internal"><span class="codenumber">4.4.5</span> <span class="title">Orthogonal infinite sets of functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Projection Maps</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-eigenvalues-eigenvectors.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-eigenvalues.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-finding-eigenvalues-eigenvectors" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Finding Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-eigenvalues.html#sect-eigen-3by3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Eigenvalues and Eigenvectors of <span class="process-math">\(3 \times 3\)</span> matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Symmetric and Orthogonal Matrices and Quadratic Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-orthogonal-transformations" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Orthogonal Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-quad-forms" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Principle Axes of Quadratic Forms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-applications-eigen.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-leslie-models" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Leslie Population Models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-second-order-de" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Second-Order Differential Equations Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-applications-eigen.html#sect-solutions-of-second-order-de" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Solutions of <span class="process-math">\(\boldsymbol{x}''= A\boldsymbol{x}\)</span></span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-matrix-factoring.html" class="internal"><span class="codenumber">6</span> <span class="title">Matrix Factoring</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-lu-factorization.html" class="internal"><span class="codenumber">6.1</span> <span class="title">LU Factorization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">6.1.1</span> <span class="title">LU factorization and elementary matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-matrix-factoring-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Diagonalization of Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Powers of Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Similar Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Similar and Diagonalizable Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-matrix-factoring-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-3" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The geometry of the SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-4" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Finding a best-fit line and plane using SVD</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-fourier-series.html" class="internal"><span class="codenumber">7</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-fourier-series.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-4" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Convergence of a Sum of a Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-fourier-series.html#sect-fourier-series-5" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-even-odd.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Even and Odd Functions; Half-Range Expansions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-even-odd.html#sect-even-odd-4" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Fourier Sine and Cosine Series</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-trig-poly.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Approximation by Trigonometric Polynomials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#sec-trig-poly-4" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Theorems Related to Fourier Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-trig-poly.html#subsec-trig-poly" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Why is finite Fourier Series called a Polynomial?</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">8</span> <span class="title">Partial Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Partial Derivatives and Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-3" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Higher-Order Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-4" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Notation for Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-part-deriv-diff-eqns.html#sect-part-deriv-diff-eqns-5" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Differential Equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-modeling-pdes.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Modeling with PDEs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-3" class="internal"><span class="codenumber">8.2.1</span> <span class="title">The Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-4" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Wave Equation: Modeling a Taut String</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-modeling-pdes.html#sect-modeling-pdes-5" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Important Second-Order PDEs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-linear-ode.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Linear ordinary differential equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-3" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Second-order Constant-Coefficient Homogeneous differential equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-ode.html#sect-linear-ode-4" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Solutions Differential Equations as Vector Spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pde-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">8.7.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">8.7.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">8.8</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">8.8.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">8.8.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">8.8.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">8.8.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-basis-vector-space"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basis of a Vector Space</span>
+</h2>
+<section class="introduction" id="sec-basis-vector-space-2"><div class="para" id="sec-basis-vector-space-2-1">From the previous two sections, we have good feeling for what a vector space is.  Basically it is a set of vectors (vectors in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> polynomials, matrices, other functions) with addition and scalar multiplication and other properties.  However, how can one write elements in the vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-2-2">In this section, we examine a basis of a vector space as well as a representation using that basis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="sec-basis-vector-space-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Basis and Dimension of a Vector Space</span>
+</h3>
+<section class="introduction" id="sec-basis-vector-space-3-2"><div class="para" id="sec-basis-vector-space-3-2-1">In the previous section, we saw that there some correspondence between a vector space and a set of spanning vectors. In this section, we formalize this relationship.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-basis-vector-space-3-2-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-basis-vector-space-3-2-2-1-1">The <dfn class="terminology">basis</dfn> of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.3.1"><a href="#sec-basis-vector-space-3-2-2" title="Copy heading and permalink for Definition 4.3.1" aria-label="Copy heading and permalink for Definition 4.3.1">🔗</a></div></article><div class="para" id="sec-basis-vector-space-3-2-3">Note: the basis will be a tuple of vectors because the order of the vectors will be important. We will denote the tuple with parentheses, <span class="process-math">\(( \boldsymbol{s}_1, \boldsymbol{s}_2, \ldots )\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-basis-vector-space-3-2-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-basis-vector-space-3-2-4-1">We showed in <a href="sect-linear-comb-span.html#ex-span-2" class="xref" data-knowl="./knowl/xref/ex-span-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.5.3">Example 2.5.3</a> that the set<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-2-4-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-4-2-1">
+\begin{equation*}
+\left\{ \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\1 \end{bmatrix} \right\}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-2-4-3">spans <span class="process-math">\(\mathbb{R}^2\)</span> and since the second is not a multiple of the first, they are linearly independent. Therefore the tuple<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-2-4-4">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-4-4-1">
+\begin{equation*}
+\left( \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\1 \end{bmatrix} \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-2-4-5">form a basis for <span class="process-math">\(\mathbb{R}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.3.2"><a href="#sec-basis-vector-space-3-2-4" title="Copy heading and permalink for Example 4.3.2" aria-label="Copy heading and permalink for Example 4.3.2">🔗</a></div></article></details><details id="sec-basis-vector-space-3-2-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-basis-vector-space-3-2-5-1">The tuple of vectors<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-2-5-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-5-2-1">
+\begin{equation*}
+\left( \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\0 \end{bmatrix} \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-2-5-3">is a different basis of <span class="process-math">\(\mathbb{R}^2\)</span> because of the order of vectors. The fact that they span <span class="process-math">\(\mathbb{R}^2\)</span> and are linearly independent do not depend on the order.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.3.3"><a href="#sec-basis-vector-space-3-2-5" title="Copy heading and permalink for Example 4.3.3" aria-label="Copy heading and permalink for Example 4.3.3">🔗</a></div></article></details><details id="sec-basis-vector-space-3-2-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-basis-vector-space-3-2-6-1-1">There are many bases of a vector space. For example,<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-basis-vector-space-3-2-6-1-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-6-1-2-1">
+\begin{equation*}
+\left( \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\1 \end{bmatrix} \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-basis-vector-space-3-2-6-1-3">also spans <span class="process-math">\(\mathbb{R}^2\)</span> and are linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-6-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.3.4"><a href="#sec-basis-vector-space-3-2-6" title="Copy heading and permalink for Example 4.3.4" aria-label="Copy heading and permalink for Example 4.3.4">🔗</a></div></article></details><details id="sec-basis-vector-space-3-2-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-basis-vector-space-3-2-7-1-1">Does<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-basis-vector-space-3-2-7-1-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-7-1-2-1">
+\begin{equation*}
+\left( \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\1 \end{bmatrix}, \begin{bmatrix} 2 \\ 3 \end{bmatrix} \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-7-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-basis-vector-space-3-2-7-1-3">form a basis of <span class="process-math">\(\mathbb{R}^2\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-7-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-basis-vector-space-3-2-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec-basis-vector-space-3-2-7-2-1">These three vectors are not linearly independent. Although one can show this in general, note that<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-2-7-2-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-7-2-2-1">
+\begin{equation*}
+\begin{bmatrix} 2 \\ 3 \end{bmatrix} = 3 \begin{bmatrix} 1 \\ 1 \end{bmatrix} - \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-2-7-2-3">and since they are not linearly independent, then they cannot form a basis of <span class="process-math">\(\mathbb{R}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-7-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.5.1"><a href="#sec-basis-vector-space-3-2-7-2" title="Copy heading and permalink for Solution 4.3.5.1" aria-label="Copy heading and permalink for Solution 4.3.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.3.5"><a href="#sec-basis-vector-space-3-2-7" title="Copy heading and permalink for Example 4.3.5" aria-label="Copy heading and permalink for Example 4.3.5">🔗</a></div></article></details><div class="para" id="sec-basis-vector-space-3-2-8">Although there are lots of different bases for a given subspace, there are some that are more useful than others. There is a basis for more subspaces called a standard basis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-basis-vector-space-3-2-9"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-basis-vector-space-3-2-9-1-1">The tuple<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-basis-vector-space-3-2-9-1-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-9-1-2-1">
+\begin{equation*}
+{\cal E}_n = \left( \begin{bmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \cdots \begin{bmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix} \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-9-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-basis-vector-space-3-2-9-1-3">is called the <dfn class="terminology">standard basis</dfn> or <dfn class="terminology">natural basis</dfn> of <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> The vectors in the basis are called <span class="process-math">\(\boldsymbol{e}_1, \boldsymbol{e}_2, \ldots\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.3.6"><a href="#sec-basis-vector-space-3-2-9" title="Copy heading and permalink for Definition 4.3.6" aria-label="Copy heading and permalink for Definition 4.3.6">🔗</a></div></article><article class="remark remark-like" id="sec-basis-vector-space-3-2-10"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-basis-vector-space-3-2-10-1">The natural basis of <span class="process-math">\({\cal P}_3\)</span> is <span class="process-math">\(( 1, x, x^2, x^3 )\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.3.7"><a href="#sec-basis-vector-space-3-2-10" title="Copy heading and permalink for Remark 4.3.7" aria-label="Copy heading and permalink for Remark 4.3.7">🔗</a></div></article><div class="para logical" id="sec-basis-vector-space-3-2-11">
+<div class="para">We saw bases of vector spaces (or subspaces) at the beginning of this course without knowing that they were vector spaces. For example, in <a href="sect-vectors-as-solutions.html#ex-large-linear-solution" class="xref" data-knowl="./knowl/xref/ex-large-linear-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.5">Example 1.4.5</a>, we solved a linear system. It’s associated homogeneous system is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-large-linear-solution.html" id="sec-basis-vector-space-3-2-11-2">
+\begin{align*}
+x_2 + 3x_3 -9 x_4 + 11 x_5 \amp = 0, \\
+2x_3 \phantom{-9x_4} + 4x_5 \amp = 0, \\
+3x_5 \amp = 0,
+\end{align*}
+</div>
+<div class="para">The solution (which is a subspace of <span class="process-math">\(\mathbb{R}^5\)</span>) can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-large-linear-solution.html" id="sec-basis-vector-space-3-2-11-4">
+\begin{equation*}
+\left\{\begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \\ 0 \end{bmatrix} t + \begin{bmatrix} 0 \\ 9 \\ 0 \\ 1 \\ 0 \end{bmatrix} s \; | \; t, s \in \mathbb{R}, \right\}
+\end{equation*}
+</div>
+<div class="para">If we let <span class="process-math">\(\boldsymbol{v}_1\)</span> and <span class="process-math">\(\boldsymbol{v}_2\)</span> be the two vectors above, then <span class="process-math">\((\boldsymbol{v}_1, \boldsymbol{v}_2)\)</span> form a basis of the solution space. Since there are only two vectors and they are not constant multiples of each other, it’s easy to see that they are linearly independent. Also because of the form of the solution set, you can also see that that span the space.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-basis-vector-space-3-2-12"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-basis-vector-space-3-2-12-1-1">In a vector space with basis <span class="process-math">\(B\text{,}\)</span> the <dfn class="terminology">representation of a vector <span class="process-math">\(\boldsymbol{v}\)</span> with respect to the basis <span class="process-math">\(B\)</span></dfn> is the column vector of the coefficients used to express <span class="process-math">\(\boldsymbol{v}\)</span> as a linear combination of the basis vectors:<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-basis-vector-space-3-2-12-1-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-12-1-2-1">
+\begin{equation*}
+\text{Rep}_B (\boldsymbol{v}) = \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-12-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-basis-vector-space-3-2-12-1-3">where <span class="process-math">\(B=( \boldsymbol{\beta}_1, \boldsymbol{\beta}_2, \ldots , \boldsymbol{\beta}_n )\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-12-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-basis-vector-space-3-2-12-1-4">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-12-1-4-1">
+\begin{equation*}
+\boldsymbol{v} = c_1 \boldsymbol{\beta}_1 + c_2 \boldsymbol{\beta}_2 + \cdots + c_n \boldsymbol{\beta}_n
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-12-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.3.8"><a href="#sec-basis-vector-space-3-2-12" title="Copy heading and permalink for Definition 4.3.8" aria-label="Copy heading and permalink for Definition 4.3.8">🔗</a></div></article><details id="sec-basis-vector-space-3-2-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-basis-vector-space-3-2-13-1">Consider the space <span class="process-math">\({\cal P}_2\text{,}\)</span> the space of quadratic functions. Let <span class="process-math">\(B=( 1, 1+x,1+x+x^2, )\)</span> be a basis of <span class="process-math">\({\cal P}_2\)</span> and <span class="process-math">\(\boldsymbol{v} = 2x+x^2\text{.}\)</span> To find the representation, we need to find <span class="process-math">\(c_1, c_2\)</span> and <span class="process-math">\(c_3\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-2-13-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-13-2-1">
+\begin{equation*}
+c_1 \cdot 1 + c_2 \cdot (1+x) + c_3 \cdot (1+x+x^2)  = 2x+x^2
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-2-13-3">by equating coefficients this is same as solving the linear system:<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-2-13-4">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-13-4-1">
+\begin{align*}
+c_1 + c_2 + c_3 \amp = 0 \\
+c_2 + c_3 \amp = 2 \\
+c_3  \amp = 1
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-2-13-5">resulting in <span class="process-math">\(c_1=-2, c_2=1, c_3=1\text{,}\)</span> therefore<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-2-13-6">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-13-6-1">
+\begin{equation*}
+\text{Rep}_B (\boldsymbol{v}) = \begin{bmatrix} -2 \\ 1 \\ 1 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-2-13-7">If instead the basis is given as <span class="process-math">\(D=( 2,2x,x^2 )\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-2-13-8">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-13-8-1">
+\begin{equation*}
+c_1 \cdot 2 + c_2 \cdot (2x) + c_3 \cdot (x^2)  = 2x+x^2
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-2-13-9">which shows that <span class="process-math">\(c_1=0, c_2 =1, c_3 = 1\text{,}\)</span> therefore<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-2-13-10">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-2-13-10-1">
+\begin{equation*}
+\text{Rep}_D (\boldsymbol{v}) = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-2-13-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.3.9"><a href="#sec-basis-vector-space-3-2-13" title="Copy heading and permalink for Example 4.3.9" aria-label="Copy heading and permalink for Example 4.3.9">🔗</a></div></article></details></section><section class="subsubsection" id="sec-basis-vector-space-3-3"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Representations in the natural basis</span>
+</h4>
+<div class="para logical" id="sec-basis-vector-space-3-3-2">
+<div class="para">As we saw above, finding representations in a basis requires solving another linear system. However, representations in the natural basis are simple calculations. If we used the natural basis <span class="process-math">\(E=( 1, x, x^2 )\)</span> for the quadratic example above, then</div>
+<div class="displaymath process-math" id="sec-basis-vector-space-3-3-2-2">
+\begin{equation*}
+\text{Rep}_E (\boldsymbol{v})  = \begin{bmatrix} 0 \\ 2 \\ 1 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">are just the coefficients of <span class="process-math">\(x^n\)</span> terms of the vector <span class="process-math">\(2x+x^2\text{.}\)</span> The following example shows that the representation of a vector in <span class="process-math">\(\mathbb{R}^3\)</span> is what we expect, itself.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-basis-vector-space-3-3-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h5></summary><article class="example example-like knowl__content"><div class="para" id="sec-basis-vector-space-3-3-3-1-1">Find the Representation of the vector<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-basis-vector-space-3-3-3-1-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-3-3-1-2-1">
+\begin{equation*}
+\boldsymbol{v} = \begin{bmatrix} -3 \\ 2\\ 4 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-basis-vector-space-3-3-3-1-3">in the natural basis<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-basis-vector-space-3-3-3-1-4">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-3-3-1-4-1">
+\begin{equation*}
+{\cal E}_3  = \left( \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-3-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-basis-vector-space-3-3-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec-basis-vector-space-3-3-3-2-1">We seek the vector <span class="process-math">\(\boldsymbol{c}  = [c_1, c_2, c_3]^{\intercal}\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-3-3-2-2">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-3-3-2-2-1">
+\begin{equation*}
+c_1 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + c_3 \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -3 \\ 2 \\ 4 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-3-3-2-3">which is just that <span class="process-math">\(c_1=-3, c_2=2,\)</span> and <span class="process-math">\(c_3=4\)</span> so the representation of the vector in the basis <span class="process-math">\({\cal E}_3\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-3-3-2-4">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-3-3-2-4-1">
+\begin{equation*}
+\text{Rep}_{\cal E} (\boldsymbol{v})  = \begin{bmatrix} -3 \\ 2 \\ 4 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-3-3-3-2-5">which is just the original vector.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-3-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.10.1"><a href="#sec-basis-vector-space-3-3-3-2" title="Copy heading and permalink for Solution 4.3.10.1" aria-label="Copy heading and permalink for Solution 4.3.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.3.10"><a href="#sec-basis-vector-space-3-3-3" title="Copy heading and permalink for Example 4.3.10" aria-label="Copy heading and permalink for Example 4.3.10">🔗</a></div></article></details><div class="para" id="sec-basis-vector-space-3-3-4">The last example in this section uses matrices. The natural basis for <span class="process-math">\(\mathcal{M}_{2 \times 2}\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-basis-vector-space-3-3-5">
+<div class="displaymath process-math" id="sec-basis-vector-space-3-3-5-1">
+\begin{equation*}
+B = \left( \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-vector-rep-matrix" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h5></summary><article class="example example-like knowl__content"><div class="para" id="ex-vector-rep-matrix-1-1">Find<div class="autopermalink" data-description="Paragraph"><a href="#ex-vector-rep-matrix-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-vector-rep-matrix-1-2">
+<div class="displaymath process-math" id="ex-vector-rep-matrix-1-2-1">
+\begin{equation*}
+\text{Rep}_B \left( \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-vector-rep-matrix-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-vector-rep-matrix-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-vector-rep-matrix-2-1">Formally, one needs to find <span class="process-math">\(c_1, c_2, c_3\)</span> and <span class="process-math">\(c_4\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#ex-vector-rep-matrix-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-vector-rep-matrix-2-2">
+<div class="displaymath process-math" id="ex-vector-rep-matrix-2-2-1">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = c_1 \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix} + c_3 \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix} + c_4 \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-vector-rep-matrix-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-vector-rep-matrix-2-3">but since the nice structure of the basis <span class="process-math">\(c_1=1,c_2=2,c_3=3,\)</span> and <span class="process-math">\(c_4=4\text{,}\)</span> so<div class="autopermalink" data-description="Paragraph"><a href="#ex-vector-rep-matrix-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-vector-rep-matrix-2-4">
+<div class="displaymath process-math" id="ex-vector-rep-matrix-2-4-1">
+\begin{equation*}
+\text{Rep}_B \left( \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} \right) = \begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-vector-rep-matrix-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.11.1"><a href="#ex-vector-rep-matrix-2" title="Copy heading and permalink for Solution 4.3.11.1" aria-label="Copy heading and permalink for Solution 4.3.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.3.11"><a href="#ex-vector-rep-matrix" title="Copy heading and permalink for Example 4.3.11" aria-label="Copy heading and permalink for Example 4.3.11">🔗</a></div></article></details><div class="para logical" id="sec-basis-vector-space-3-3-7">
+<div class="para">One can generalize to show that</div>
+<div class="displaymath process-math" id="sec-basis-vector-space-3-3-7-1">
+\begin{equation*}
+\text{Rep}_B \left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} \right) = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">and this shows that matrices (which are vectors in the formal sense of vector spaces) can be represented by vectors by reshaping the matrix as a vector.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-3-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsubsection 4.3.1.1: Representations in the natural basis"><a href="#sec-basis-vector-space-3-3" title="Copy heading and permalink for Subsubsection 4.3.1.1: Representations in the natural basis" aria-label="Copy heading and permalink for Subsubsection 4.3.1.1: Representations in the natural basis">🔗</a></div></section><div class="autopermalink" data-description="Subsection 4.3.1: The Basis and Dimension of a Vector Space"><a href="#sec-basis-vector-space-3" title="Copy heading and permalink for Subsection 4.3.1: The Basis and Dimension of a Vector Space" aria-label="Copy heading and permalink for Subsection 4.3.1: The Basis and Dimension of a Vector Space">🔗</a></div></section><section class="subsection" id="sec-basis-vector-space-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dimension</span>
+</h3>
+<div class="para" id="sec-basis-vector-space-4-2">We have been talking about a few big topics in this chapter. One of those is the spanning set of a vector space. We noted that many different sets can span a vector space. This brought in the notation of linear independence and a basis. However for a vector space there can be many different bases.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-4-3">Although we did introduce a natural basis, this works well for some spaces, like <span class="process-math">\({\cal P}_2\)</span> and <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> however what is the natural basis for a solution of homogeneous linear system.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-4-4">Perhaps if two people argue over the basis of a vector space, one thing they will agree on is the number of vectors in a basis as we will see. We noted earlier that disregarding extra vectors is generally a good thing to result in a basis, but there is a unique thing about bases and that is the number of vectors in any basis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-basis-vector-space-4-5"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-basis-vector-space-4-5-1-1">A vector space is <dfn class="terminology">finite dimensional</dfn> if it has a basis with only finitely-many vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.3.12"><a href="#sec-basis-vector-space-4-5" title="Copy heading and permalink for Definition 4.3.12" aria-label="Copy heading and permalink for Definition 4.3.12">🔗</a></div></article><article class="theorem theorem-like" id="sec-basis-vector-space-4-6"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-basis-vector-space-4-6-1-1">In any finite-dimensional vector space, all of the bases have the same number of elements.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.3.13"><a href="#sec-basis-vector-space-4-6" title="Copy heading and permalink for Theorem 4.3.13" aria-label="Copy heading and permalink for Theorem 4.3.13">🔗</a></div></article><div class="para" id="sec-basis-vector-space-4-7">Because of this theorem, we define the dimension in following manner.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-basis-vector-space-4-8"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-basis-vector-space-4-8-1-1">The <dfn class="terminology">dimension</dfn> of a finite dimensional vector space is the number of vectors in any of its bases.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.3.14"><a href="#sec-basis-vector-space-4-8" title="Copy heading and permalink for Definition 4.3.14" aria-label="Copy heading and permalink for Definition 4.3.14">🔗</a></div></article><details id="sec-basis-vector-space-4-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-basis-vector-space-4-9-1-1">
+<ul class="disc" id="sec-basis-vector-space-4-9-1-1-1">
+<li id="sec-basis-vector-space-4-9-1-1-1-1">
+<div class="para" id="sec-basis-vector-space-4-9-1-1-1-1-1">The dimension of <span class="process-math">\(\mathbb{R}^n\)</span> is <span class="process-math">\(n\text{.}\)</span> Although there are many bases, consider <span class="process-math">\(\mathcal{E}_n\text{,}\)</span> the natural basis, which has <span class="process-math">\(n\)</span> elements.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-9-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basis-vector-space-4-9-1-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-basis-vector-space-4-9-1-1-1-2">
+<div class="para" id="sec-basis-vector-space-4-9-1-1-1-2-1">The dimension of <span class="process-math">\({\cal P}_n\)</span> is <span class="process-math">\(n+1\text{.}\)</span> The natural basis of <span class="process-math">\(\mathcal{P}_n\)</span> is <span class="process-math">\((1,x,x^2, \ldots, x^n)\)</span> with <span class="process-math">\(n+1\)</span> elements.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-9-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basis-vector-space-4-9-1-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-basis-vector-space-4-9-1-1-1-3">
+<div class="para logical" id="sec-basis-vector-space-4-9-1-1-1-3-1">
+<div class="para">The dimension of <span class="process-math">\({\cal M}_{2 \times 2}\text{,}\)</span> the vector space of all 2 by 2 matrices is 4. A natural basis for this is:</div>
+<div class="displaymath process-math" id="sec-basis-vector-space-4-9-1-1-1-3-1-2">
+\begin{equation*}
+\left( \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)
+\end{equation*}
+</div>
+<div class="para">and since there are 4 elements, the dimension is 4.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-9-1-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basis-vector-space-4-9-1-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-basis-vector-space-4-9-1-1-1-4">
+<div class="para" id="sec-basis-vector-space-4-9-1-1-1-4-1">The dimension of <span class="process-math">\(\mathcal{M}_{m \times n} = mn\text{.}\)</span> There is a natural basis that is similar to the previous example.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-9-1-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basis-vector-space-4-9-1-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-4-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.3.15"><a href="#sec-basis-vector-space-4-9" title="Copy heading and permalink for Example 4.3.15" aria-label="Copy heading and permalink for Example 4.3.15">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.3.2: Dimension"><a href="#sec-basis-vector-space-4" title="Copy heading and permalink for Subsection 4.3.2: Dimension" aria-label="Copy heading and permalink for Subsection 4.3.2: Dimension">🔗</a></div></section><section class="subsection" id="sec-basis-vector-space-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bases of Subspaces</span>
+</h3>
+<div class="para" id="sec-basis-vector-space-5-2">There were a number of important ideas in this section, so a summary is necessary. The basis of a space or subspace is useful for writing down elements in the space. That is, if we know the basis, then we know what’s in the space. Additionally, the representation of an element are the coefficients in terms of the basis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-basis-vector-space-5-3">This means that any vector in a finite-dimensional vector space can be represented as a vector and as we will see this will be helpful in that we can use many of the nice techniques from <a href="ch-linear-systems.html" class="internal" title="Chapter 1: Solving Linear Systems">Chapter 1</a> and <a href="ch-matrices.html" class="internal" title="Chapter 2: Matrices and Matrix Operations">Chapter 2</a> to help. We will start to see that since we can write any polynomial as a vector, that many operations that we do to polynomials (such as  multiplication, differentiation, and integration) can be done using matrices and vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basis-vector-space-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 4.3.3: Bases of Subspaces"><a href="#sec-basis-vector-space-5" title="Copy heading and permalink for Subsection 4.3.3: Bases of Subspaces" aria-label="Copy heading and permalink for Subsection 4.3.3: Bases of Subspaces">🔗</a></div></section><div class="autopermalink" data-description="Section 4.3: Basis of a Vector Space"><a href="#sec-basis-vector-space" title="Copy heading and permalink for Section 4.3: Basis of a Vector Space" aria-label="Copy heading and permalink for Section 4.3: Basis of a Vector Space">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sect-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-inner-product.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

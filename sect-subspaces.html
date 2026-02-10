@@ -62,7 +62,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "_static/pretext/js/lib"
+      "pretext": "_static/pretext/js"
     }
   },
   "startup": {
@@ -79,7 +79,7 @@ window.MathJax = {
 <meta property="og:type" content="book">
 <meta property="book:title" content="Applied Mathematics">
 <meta property="book:author" content="Peter Staab">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -101,16 +101,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.7';
+eBookConfig.runestone_version = '7.11.13';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c2757fc695bc848c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.0d5f811896ddeac1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -129,7 +129,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-vector-spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-vector-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-inner-product.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-vector-spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-vector-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-basis-vector-space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\( \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} 
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\mnr}{mnr}
@@ -305,10 +305,11 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sect-funct-props.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of Functions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-complex-exponential" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The Complex Exponential</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-5" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Periodic Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">3.2.3</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Odd and Even Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-8" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Tabular Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#subsec-more-complex-exponential" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Other Properties of the Complex Exponential</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-6" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Periodic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-7" class="internal"><span class="codenumber">3.2.4</span> <span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-even-odd-functions" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Odd and Even Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-funct-props.html#sect-funct-props-9" class="internal"><span class="codenumber">3.2.6</span> <span class="title">Tabular Integration</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -326,34 +327,41 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sect-subspaces.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Span and Basis of a Subspace</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-4" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Span of a set of vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#subsec-abstract-linear-independence" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Linear Independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#subsec-subspaces" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-6" class="internal"><span class="codenumber">4.2.3</span> <span class="title">The Span of a set of vectors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basis-vector-space.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Basis of a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5" class="internal"><span class="codenumber">4.2.2</span> <span class="title">The Basis and Dimension of a Vector Space</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-5-3" class="internal"><span class="codenumber">4.2.2.1</span> <span class="title">Representations in the natural basis</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-basis-vector-space.html#sec-basis-vector-space-3" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The Basis and Dimension of a Vector Space</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-basis-vector-space.html#sec-basis-vector-space-3-3" class="internal"><span class="codenumber">4.3.1.1</span> <span class="title">Representations in the natural basis</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-6" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Dimension</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-subspaces.html#sect-subspaces-7" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Bases of Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-vector-space.html#sec-basis-vector-space-4" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-vector-space.html#sec-basis-vector-space-5" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Bases of Subspaces</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-inner-product.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Inner Product Spaces</span></a></div>
+<div class="toc-title-box"><a href="sect-inner-product.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Inner Product Spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Angles between vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-7" class="internal"><span class="codenumber">4.3.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-8" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Orthogonal infinite sets of functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Angles between vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-7" class="internal"><span class="codenumber">4.4.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-8" class="internal"><span class="codenumber">4.4.5</span> <span class="title">Orthogonal infinite sets of functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Linear Transformations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Projection Maps</span></a></div>
+<div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Projection Maps</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -519,48 +527,154 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 <div class="autopermalink" data-description="Objectives 4.2"><a href="#sect-subspaces-2" title="Copy heading and permalink for Objectives 4.2" aria-label="Copy heading and permalink for Objectives 4.2">🔗</a></div></article><section class="introduction" id="sect-subspaces-3"><div class="para" id="sect-subspaces-3-1">In <a href="sect-linear-comb-span.html" class="internal" title="Section 2.5: Linear Combinations and the Span of a Set of Vectors">Section 2.5</a>, we saw the span of vectors in <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> We now extend this example to the span of any subspace. In addition, the notion of a basis  of the subspace is introduced.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-3-2">Recall that it is important to understand if a set of vectors is a span of a set or space, because we are able to take a linear combination of the vectors to get any other vector in the set. Since we have extended the notion of a vector space, the span will play the same role.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="definition definition-like" id="sect-subspaces-3-3"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</div></section><section class="subsection" id="subsec-abstract-linear-independence"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear Independence</span>
 </h3>
-<div class="para" id="sect-subspaces-3-3-1-1">Let <span class="process-math">\(U\)</span> be a subset of a vector space <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(U\)</span> is also a vector space, then <span class="process-math">\(U\)</span> is a <dfn class="terminology">subspace</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-abstract-linear-independence-2">In <a href="sect-linear-independence.html" class="internal" title="Section 2.6: Linear Independence">Section 2.6</a>, the linear independence of vectors in <span class="process-math">\(\mathbb{R}^n\)</span> were defined and many examples shown. We extend this notion to vectors in a general vector space.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-abstract-linear-independence-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.2.1"><a href="#sect-subspaces-3-3" title="Copy heading and permalink for Definition 4.2.1" aria-label="Copy heading and permalink for Definition 4.2.1">🔗</a></div></article><div class="para" id="sect-subspaces-3-4">The next three examples show that we have already seen subspaces because we know subsets of known vector spaces that are vector spaces themselves.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="definition definition-like" id="def-abstract-linear-independence"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="def-abstract-linear-independence-1-1">Let <span class="process-math">\(S = \left\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots \boldsymbol{v}_n\right\}\)</span> be a set of vectors in a vectors space <span class="process-math">\(V\text{.}\)</span> The set <span class="process-math">\(S\)</span> is <dfn class="terminology">linear independent</dfn> if for <span class="process-math">\(c_1, c_2, \ldots, c_n \in \mathbb{R}\text{,}\)</span> the equation <span class="process-math">\(c_1 \boldsymbol{v}_1 + c_2 \boldsymbol{v}_2 + \cdots + c_n \boldsymbol{v}_n = 0\)</span> implies that <span class="process-math">\(c_1 = c_2 = \cdots = c_n = 0\text{.}\)</span> If not, then the set is <dfn class="terminology">linearly dependent</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-abstract-linear-independence-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-subspaces-3-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 4.2.1"><a href="#def-abstract-linear-independence" title="Copy heading and permalink for Definition 4.2.1" aria-label="Copy heading and permalink for Definition 4.2.1">🔗</a></div></article><details id="ex-abstract-linear-independence" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-3-5-1-1">We showed in  <a href="sect-vector-spaces.html#ex-lines-through-origin-vector-space" class="xref" data-knowl="./knowl/xref/ex-lines-through-origin-vector-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.3">Example 4.1.3</a> that the set of all lines in <span class="process-math">\(\mathbb{R}^2\)</span> that pass through the origin is a vector space. Since the set is a subset of <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> it is a subspace of <span class="process-math">\(\mathbb{R}^2\)</span> as well.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-abstract-linear-independence-1-1">Show that the set<div class="autopermalink" data-description="Paragraph"><a href="#ex-abstract-linear-independence-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-abstract-linear-independence-1-2">
+<div class="displaymath process-math" id="ex-abstract-linear-independence-1-2-1">
+\begin{equation*}
+S = \left\{ 1, x, x^2 \right\}
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Example 4.2.2"><a href="#sect-subspaces-3-5" title="Copy heading and permalink for Example 4.2.2" aria-label="Copy heading and permalink for Example 4.2.2">🔗</a></div></article></details><details id="sect-subspaces-3-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-3-6-1-1">Show that <span class="process-math">\(\mathbb{R}^2\)</span> is a subspace of <span class="process-math">\(\mathbb{R}^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-abstract-linear-independence-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-abstract-linear-independence-1-3">is linearly independent in <span class="process-math">\({\cal P}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-abstract-linear-independence-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-subspaces-3-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-subspaces-3-6-2-1">Since <span class="process-math">\(\mathbb{R}^2\)</span> is itself a vector space and a subset of <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> then <span class="process-math">\(\mathbb{R}^2\)</span> is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="ex-abstract-linear-independence-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-abstract-linear-independence-2-1">To show this, we need to show that if<div class="autopermalink" data-description="Paragraph"><a href="#ex-abstract-linear-independence-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.2.3.1"><a href="#sect-subspaces-3-6-2" title="Copy heading and permalink for Solution 4.2.3.1" aria-label="Copy heading and permalink for Solution 4.2.3.1">🔗</a></div>
+<div class="para logical" id="ex-abstract-linear-independence-2-2">
+<div class="displaymath process-math" id="ex-abstract-linear-independence-2-2-1">
+\begin{equation*}
+c_1 (1) + c_2 (x) + c_3 (x^2) = 0
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-abstract-linear-independence-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-abstract-linear-independence-2-3">then <span class="process-math">\(c_1 = c_2 = c_3 = 0\text{.}\)</span> Note that the zero on the right hand side is the zero polynomial. Thus, equating coefficients, we get the system<div class="autopermalink" data-description="Paragraph"><a href="#ex-abstract-linear-independence-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-abstract-linear-independence-2-4">
+<div class="displaymath process-math" id="ex-abstract-linear-independence-2-4-1">
+\begin{align*}
+c_1 \amp = 0 \\
+c_2 \amp = 0 \\
+c_3 \amp = 0
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-abstract-linear-independence-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-abstract-linear-independence-2-5">which has the only solution of <span class="process-math">\(c_1 = c_2 = c_3 = 0\text{,}\)</span> thus the set is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#ex-abstract-linear-independence-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.2.1"><a href="#ex-abstract-linear-independence-2" title="Copy heading and permalink for Solution 4.2.2.1" aria-label="Copy heading and permalink for Solution 4.2.2.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.2.3"><a href="#sect-subspaces-3-6" title="Copy heading and permalink for Example 4.2.3" aria-label="Copy heading and permalink for Example 4.2.3">🔗</a></div></article></details><details id="sect-subspaces-3-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sect-subspaces-3-7-1-1">
+<div class="autopermalink" data-description="Example 4.2.2"><a href="#ex-abstract-linear-independence" title="Copy heading and permalink for Example 4.2.2" aria-label="Copy heading and permalink for Example 4.2.2">🔗</a></div></article></details><details id="subsec-abstract-linear-independence-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-abstract-linear-independence-5-1-1">
+<div class="para">Are the matrices in the set</div>
+<div class="displaymath process-math" id="subsec-abstract-linear-independence-5-1-1-1">
+\begin{equation*}
+\left\{ \begin{bmatrix}
+1 \amp 1 \\ 1 \amp 1 
+\end{bmatrix}, \begin{bmatrix}
+1 \amp -1 \\ 1 \amp -1 
+\end{bmatrix}, \begin{bmatrix}
+2 \amp 2 \\ -2 \amp -2 
+\end{bmatrix} \right\}
+\end{equation*}
+</div>
+<div class="para">linearly independent or dependent in <span class="process-math">\({\cal M}_{2 \times 2}\text{?}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-abstract-linear-independence-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="subsec-abstract-linear-independence-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-abstract-linear-independence-5-2-1">
+<div class="para">To determine this, we need to solve</div>
+<div class="displaymath process-math" id="subsec-abstract-linear-independence-5-2-1-1">
+\begin{equation*}
+c_1 \begin{bmatrix}
+1 \amp 1 \\ 1 \amp 1 
+\end{bmatrix} + c_2  \begin{bmatrix}
+1 \amp -1 \\ 1 \amp -1 
+\end{bmatrix} + c_3 \begin{bmatrix}
+2 \amp 2 \\ -2 \amp -2 
+\end{bmatrix} = \begin{bmatrix}
+0 \amp 0 \\ 0 \amp 0 
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-abstract-linear-independence-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-abstract-linear-independence-5-2-2">
+<div class="para">The solution of this is by equating terms or the system:</div>
+<div class="displaymath process-math" id="subsec-abstract-linear-independence-5-2-2-1">
+\begin{equation*}
+\begin{aligned}
+c_1 + c_2 + 2c_3 \amp = 0 \\
+c_1 - c_2 + 2c_3 \amp = 0 \\
+c_1 + c_2 - 2c_3 \amp = 0 \\
+c_1 - c_2 - 2c_3 \amp = 0
+\end{aligned}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-abstract-linear-independence-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-abstract-linear-independence-5-2-3">This system has the unique solution <span class="process-math">\(c_1 = c_2 = c_3 = 0\text{,}\)</span> thus the set is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-abstract-linear-independence-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.3.1"><a href="#subsec-abstract-linear-independence-5-2" title="Copy heading and permalink for Solution 4.2.3.1" aria-label="Copy heading and permalink for Solution 4.2.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.2.3"><a href="#subsec-abstract-linear-independence-5" title="Copy heading and permalink for Example 4.2.3" aria-label="Copy heading and permalink for Example 4.2.3">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.2.1: Linear Independence"><a href="#subsec-abstract-linear-independence" title="Copy heading and permalink for Subsection 4.2.1: Linear Independence" aria-label="Copy heading and permalink for Subsection 4.2.1: Linear Independence">🔗</a></div></section><section class="subsection" id="subsec-subspaces"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Subspaces</span>
+</h3>
+<div class="para" id="subsec-subspaces-2">Recall that it is important to understand if a set of vectors is a span of a set or space, because we are able to take a linear combination of the vectors to get any other vector in the set. Since we have extended the notion of a vector space, the span will play the same role.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="subsec-subspaces-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsec-subspaces-3-1-1">Let <span class="process-math">\(U\)</span> be a subset of a vector space <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(U\)</span> is also a vector space, then <span class="process-math">\(U\)</span> is a <dfn class="terminology">subspace</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.2.4"><a href="#subsec-subspaces-3" title="Copy heading and permalink for Definition 4.2.4" aria-label="Copy heading and permalink for Definition 4.2.4">🔗</a></div></article><div class="para" id="subsec-subspaces-4">The next three examples show that we have already seen subspaces because we know subsets of known vector spaces that are vector spaces themselves.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-subspaces-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-subspaces-5-1-1">We showed in  <a href="sect-vector-spaces.html#ex-lines-through-origin-vector-space" class="xref" data-knowl="./knowl/xref/ex-lines-through-origin-vector-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.3">Example 4.1.3</a> that the set of all lines in <span class="process-math">\(\mathbb{R}^2\)</span> that pass through the origin is a vector space. Since the set is a subset of <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> it is a subspace of <span class="process-math">\(\mathbb{R}^2\)</span> as well.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.2.5"><a href="#subsec-subspaces-5" title="Copy heading and permalink for Example 4.2.5" aria-label="Copy heading and permalink for Example 4.2.5">🔗</a></div></article></details><details id="subsec-subspaces-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-subspaces-6-1-1">Show that <span class="process-math">\(\mathbb{R}^2\)</span> is a subspace of <span class="process-math">\(\mathbb{R}^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="subsec-subspaces-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-subspaces-6-2-1">Since <span class="process-math">\(\mathbb{R}^2\)</span> is itself a vector space and a subset of <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> then <span class="process-math">\(\mathbb{R}^2\)</span> is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.6.1"><a href="#subsec-subspaces-6-2" title="Copy heading and permalink for Solution 4.2.6.1" aria-label="Copy heading and permalink for Solution 4.2.6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.2.6"><a href="#subsec-subspaces-6" title="Copy heading and permalink for Example 4.2.6" aria-label="Copy heading and permalink for Example 4.2.6">🔗</a></div></article></details><details id="subsec-subspaces-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-subspaces-7-1-1">
 <div class="para">Recall that the set</div>
-<div class="displaymath process-math" id="sect-subspaces-3-7-1-1-1">
+<div class="displaymath process-math" id="subsec-subspaces-7-1-1-1">
 \begin{equation*}
 {\cal P}_2=\{ a_0 + a_1 x + a_2 x^2\; | \; a_0, a_1, a_2 \in \mathbb{R} \}
 \end{equation*}
 </div>
 <div class="para">is the set of all quadratic functions.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-subspaces-3-7-1-2">The set <span class="process-math">\({\cal P}_1 = \{a_0 + a_1 x \; | \; a_0, a_1 \in \mathbb{R} \}\)</span> of all linear functions is itself a vector space as well as a subset of <span class="process-math">\({\cal P}_2\text{,}\)</span> therefore <span class="process-math">\({\cal P}_1\)</span> is a subspace of <span class="process-math">\({\cal P}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-7-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-subspaces-3-7-1-3">In addition, the set <span class="process-math">\(\{ a x^2\; | \; a \in \mathbb{R}\}\)</span> is a vector space as well as a subset of <span class="process-math">\({\cal P}_2\text{,}\)</span> therefore it is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-7-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-subspaces-7-1-2">The set <span class="process-math">\({\cal P}_1 = \{a_0 + a_1 x \; | \; a_0, a_1 \in \mathbb{R} \}\)</span> of all linear functions is itself a vector space as well as a subset of <span class="process-math">\({\cal P}_2\text{,}\)</span> therefore <span class="process-math">\({\cal P}_1\)</span> is a subspace of <span class="process-math">\({\cal P}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-7-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-subspaces-7-1-3">In addition, the set <span class="process-math">\(\{ a x^2\; | \; a \in \mathbb{R}\}\)</span> is a vector space as well as a subset of <span class="process-math">\({\cal P}_2\text{,}\)</span> therefore it is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-7-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 4.2.4"><a href="#sect-subspaces-3-7" title="Copy heading and permalink for Example 4.2.4" aria-label="Copy heading and permalink for Example 4.2.4">🔗</a></div></article></details><div class="para" id="sect-subspaces-3-8">The above examples show that there are many already known subspaces. There are many cases though that aren’t evident or to show it is a subspace, we would need to prove all 10 properties that it is a vector space. The next lemma, however, shows that isn’t the case.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.2.7"><a href="#subsec-subspaces-7" title="Copy heading and permalink for Example 4.2.7" aria-label="Copy heading and permalink for Example 4.2.7">🔗</a></div></article></details><div class="para" id="subsec-subspaces-8">The above examples show that there are many already known subspaces. There are many cases though that aren’t evident or to show it is a subspace, we would need to prove all 10 properties that it is a vector space. The next lemma, however, shows that isn’t the case.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="lemma theorem-like" id="lemma-subspace"><h3 class="heading">
-<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
+<article class="lemma theorem-like" id="lemma-subspace"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
 <div class="para" id="lemma-subspace-1-1">Let <span class="process-math">\(S\)</span> be a nonempty subset <span class="process-math">\(S\)</span> of a vector space <span class="process-math">\(V\text{,}\)</span> under the inherited operations of vector addition and scalar multiplication. If for all <span class="process-math">\(\boldsymbol{s}_1, \boldsymbol{s}_2 \in S\)</span> and <span class="process-math">\(r_1, r_2 \in \mathbb{R}\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lemma-subspace-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="lemma-subspace-1-2">
 <div class="displaymath process-math" id="lemma-subspace-1-2-1">
@@ -571,7 +685,7 @@ r_1 \boldsymbol{s}_1 + r_2 \boldsymbol{s}_2 \in S
 <div class="autopermalink" data-description="Paragraph"><a href="#lemma-subspace-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="lemma-subspace-1-3">then <span class="process-math">\(S\)</span> is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#lemma-subspace-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 4.2.5"><a href="#lemma-subspace" title="Copy heading and permalink for Lemma 4.2.5" aria-label="Copy heading and permalink for Lemma 4.2.5">🔗</a></div></article><details id="lemma-subspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="lemma-subspace-2-1">This means that if <span class="process-math">\(S\)</span> is a subset of <span class="process-math">\(V\text{,}\)</span> a vector space, to prove that <span class="process-math">\(S\)</span> is a subspace, we only need to check if <span class="process-math">\(r_1 \boldsymbol{s}_1 + r_2 \boldsymbol{s}_2 \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lemma-subspace-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 4.2.8"><a href="#lemma-subspace" title="Copy heading and permalink for Lemma 4.2.8" aria-label="Copy heading and permalink for Lemma 4.2.8">🔗</a></div></article><details id="lemma-subspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lemma-subspace-2-1">This means that if <span class="process-math">\(S\)</span> is a subset of <span class="process-math">\(V\text{,}\)</span> a vector space, to prove that <span class="process-math">\(S\)</span> is a subspace, we only need to check if <span class="process-math">\(r_1 \boldsymbol{s}_1 + r_2 \boldsymbol{s}_2 \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lemma-subspace-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="lemma-subspace-2-2">Since <span class="process-math">\(S\)</span> is a subspace of <span class="process-math">\(V\text{,}\)</span> properties (2), (3), (5) and (7)-(10) of <a href="sect-vector-spaces.html#def-vector-space" class="xref" data-knowl="./knowl/xref/def-vector-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.1.1: Vector Space">Definition 4.1.1</a> hold for <span class="process-math">\(S\text{.}\)</span> Thus we only need to prove closure under addition and scalar multiplication as well as the existence of the identity element.<div class="autopermalink" data-description="Paragraph"><a href="#lemma-subspace-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -581,49 +695,49 @@ r_1 \boldsymbol{s}_1 + r_2 \boldsymbol{s}_2 \in S
 </div>
 <div class="para" id="lemma-subspace-2-5">Property 6: Because <span class="process-math">\(r_1 \boldsymbol{s}_1 + r_2 \boldsymbol{s}_2 \in S\text{,}\)</span> let <span class="process-math">\(r_2=0\text{,}\)</span> thus <span class="process-math">\(r_1 \boldsymbol{s}_1 \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lemma-subspace-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.2.5.1"><a href="#lemma-subspace-2" title="Copy heading and permalink for Proof 4.2.5.1" aria-label="Copy heading and permalink for Proof 4.2.5.1">🔗</a></div></article></details><div class="para" id="sect-subspaces-3-10">We will use this definition to prove that certain sets are subspaces.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 4.2.8.1"><a href="#lemma-subspace-2" title="Copy heading and permalink for Proof 4.2.8.1" aria-label="Copy heading and permalink for Proof 4.2.8.1">🔗</a></div></article></details><div class="para" id="subsec-subspaces-10">We will use this definition to prove that certain sets are subspaces.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-subspaces-3-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-3-11-1-1">Show that<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-3-11-1-2">
-<div class="displaymath process-math" id="sect-subspaces-3-11-1-2-1">
+<details id="subsec-subspaces-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-subspaces-11-1-1">Show that<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="subsec-subspaces-11-1-2">
+<div class="displaymath process-math" id="subsec-subspaces-11-1-2-1">
 \begin{equation*}
 V = \left\{ \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} \; | \; v_2 = k v_1 \right\}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-11-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-subspaces-3-11-1-3">(that is, all vectors on a line of slope <span class="process-math">\(k\)</span>) is a subspace of <span class="process-math">\(\mathbb{R}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-11-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-11-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-subspaces-11-1-3">(that is, all vectors on a line of slope <span class="process-math">\(k\)</span>) is a subspace of <span class="process-math">\(\mathbb{R}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-11-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-subspaces-3-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-subspaces-3-11-2-1">We will use <a href="sect-subspaces.html#lemma-subspace" class="xref" data-knowl="./knowl/xref/lemma-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.5">Lemma 4.2.5</a>. Let<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="subsec-subspaces-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-subspaces-11-2-1">We will use <a href="sect-subspaces.html#lemma-subspace" class="xref" data-knowl="./knowl/xref/lemma-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.8">Lemma 4.2.8</a>. Let<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-3-11-2-2">
-<div class="displaymath process-math" id="sect-subspaces-3-11-2-2-1">
+<div class="para logical" id="subsec-subspaces-11-2-2">
+<div class="displaymath process-math" id="subsec-subspaces-11-2-2-1">
 \begin{align*}
 \boldsymbol{u} \amp = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} \amp \boldsymbol{v} \amp = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-11-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-11-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-3-11-2-3">be elements of <span class="process-math">\(V\text{.}\)</span> That is <span class="process-math">\(v_2 = k v_1\)</span> and <span class="process-math">\(u_2 = ku_1\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-11-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-subspaces-11-2-3">be elements of <span class="process-math">\(V\text{.}\)</span> That is <span class="process-math">\(v_2 = k v_1\)</span> and <span class="process-math">\(u_2 = ku_1\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-11-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-3-11-2-4">
-<div class="displaymath process-math" id="sect-subspaces-3-11-2-4-1">
+<div class="para logical" id="subsec-subspaces-11-2-4">
+<div class="displaymath process-math" id="subsec-subspaces-11-2-4-1">
 \begin{align*}
 r_1 \boldsymbol{u} + r_2 \boldsymbol{v} \amp = r_1 \begin{bmatrix} u_1 \\ k u_1 \end{bmatrix} + r_2 \begin{bmatrix} v_1 \\ k v_1 \end{bmatrix} =  \begin{bmatrix} r_1 u_1 + r_2 v_1 \\ r_1 k u_1 + r_2 k v_1 \end{bmatrix} \\
 \amp = \begin{bmatrix} r_1 u_1 + r_2 v_1 \\ k (r_1 u_1 + r_2 v_1) \end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-11-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-11-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-3-11-2-5">which is an element of <span class="process-math">\(V\)</span> because the second component is <span class="process-math">\(k\)</span> times the first one. Thus <span class="process-math">\(V\)</span> is a subspace of <span class="process-math">\(\mathbb{R}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-11-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-subspaces-11-2-5">which is an element of <span class="process-math">\(V\)</span> because the second component is <span class="process-math">\(k\)</span> times the first one. Thus <span class="process-math">\(V\)</span> is a subspace of <span class="process-math">\(\mathbb{R}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-11-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.2.6.1"><a href="#sect-subspaces-3-11-2" title="Copy heading and permalink for Solution 4.2.6.1" aria-label="Copy heading and permalink for Solution 4.2.6.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.2.9.1"><a href="#subsec-subspaces-11-2" title="Copy heading and permalink for Solution 4.2.9.1" aria-label="Copy heading and permalink for Solution 4.2.9.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.2.6"><a href="#sect-subspaces-3-11" title="Copy heading and permalink for Example 4.2.6" aria-label="Copy heading and permalink for Example 4.2.6">🔗</a></div></article></details><details id="eq-example-diag-matrix" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="eq-example-diag-matrix-1-1">Show using <a href="sect-subspaces.html#lemma-subspace" class="xref" data-knowl="./knowl/xref/lemma-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.5">Lemma 4.2.5</a> that<div class="autopermalink" data-description="Paragraph"><a href="#eq-example-diag-matrix-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.2.9"><a href="#subsec-subspaces-11" title="Copy heading and permalink for Example 4.2.9" aria-label="Copy heading and permalink for Example 4.2.9">🔗</a></div></article></details><details id="eq-example-diag-matrix" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="eq-example-diag-matrix-1-1">Show using <a href="sect-subspaces.html#lemma-subspace" class="xref" data-knowl="./knowl/xref/lemma-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.8">Lemma 4.2.8</a> that<div class="autopermalink" data-description="Paragraph"><a href="#eq-example-diag-matrix-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eq-example-diag-matrix-1-2">
 <div class="displaymath process-math" id="eq-example-diag-matrix-1-2-1">
 \begin{equation*}
@@ -657,550 +771,171 @@ r_1 A + r_2 B \amp = r_1 \begin{bmatrix} a_1 \amp 0 \\ 0 \amp b_1 \end{bmatrix}+
 </div>
 <div class="para" id="eq-example-diag-matrix-2-5">which is a diagonal matrix, therefore in <span class="process-math">\(V\text{,}\)</span> thus this is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#eq-example-diag-matrix-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.2.7.1"><a href="#eq-example-diag-matrix-2" title="Copy heading and permalink for Solution 4.2.7.1" aria-label="Copy heading and permalink for Solution 4.2.7.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.2.10.1"><a href="#eq-example-diag-matrix-2" title="Copy heading and permalink for Solution 4.2.10.1" aria-label="Copy heading and permalink for Solution 4.2.10.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.2.7"><a href="#eq-example-diag-matrix" title="Copy heading and permalink for Example 4.2.7" aria-label="Copy heading and permalink for Example 4.2.7">🔗</a></div></article></details><div class="para" id="sect-subspaces-3-13">In <a href="sect-row-col-space-rank.html" class="internal" title="Section 2.7: Row Space, Column Space and Rank of a Matrix">Section 2.7</a>, we explored the <dfn class="terminology">null space</dfn> of a matrix. In the next lemma, we show that any null space is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.2.10"><a href="#eq-example-diag-matrix" title="Copy heading and permalink for Example 4.2.10" aria-label="Copy heading and permalink for Example 4.2.10">🔗</a></div></article></details><div class="para" id="subsec-subspaces-13">In <a href="sect-row-col-space-rank.html" class="internal" title="Section 2.7: Row Space, Column Space and Rank of a Matrix">Section 2.7</a>, we explored the <dfn class="terminology">null space</dfn> of a matrix. In the next lemma, we show that any null space is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="lemma theorem-like" id="sect-subspaces-3-14"><h3 class="heading">
-<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="sect-subspaces-3-14-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrix. The null space of <span class="process-math">\(A\)</span> is a subspace of <span class="process-math">\(\mathbb{R}^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="lemma theorem-like" id="subsec-subspaces-14"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsec-subspaces-14-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\)</span> by <span class="process-math">\(n\)</span> matrix. The null space of <span class="process-math">\(A\)</span> is a subspace of <span class="process-math">\(\mathbb{R}^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 4.2.8"><a href="#sect-subspaces-3-14" title="Copy heading and permalink for Lemma 4.2.8" aria-label="Copy heading and permalink for Lemma 4.2.8">🔗</a></div></article><details id="sect-subspaces-3-14-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-subspaces-3-14-2-1">We will use <a href="sect-subspaces.html#lemma-subspace" class="xref" data-knowl="./knowl/xref/lemma-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.5">Lemma 4.2.5</a> to solve this. Let both <span class="process-math">\(\boldsymbol{x}\)</span> and <span class="process-math">\(\boldsymbol{y}\)</span> be in the null space of <span class="process-math">\(A\text{.}\)</span> This means that <span class="process-math">\(A\boldsymbol{x}=\boldsymbol{0}\)</span> and <span class="process-math">\(A\boldsymbol{y}=\boldsymbol{0}\text{.}\)</span> We need to show that <span class="process-math">\(r_1 \boldsymbol{x} + r_2 \boldsymbol{y}\)</span> is in the null space of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 4.2.11"><a href="#subsec-subspaces-14" title="Copy heading and permalink for Lemma 4.2.11" aria-label="Copy heading and permalink for Lemma 4.2.11">🔗</a></div></article><details id="subsec-subspaces-14-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-subspaces-14-2-1">We will use <a href="sect-subspaces.html#lemma-subspace" class="xref" data-knowl="./knowl/xref/lemma-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.8">Lemma 4.2.8</a> to solve this. Let both <span class="process-math">\(\boldsymbol{x}\)</span> and <span class="process-math">\(\boldsymbol{y}\)</span> be in the null space of <span class="process-math">\(A\text{.}\)</span> This means that <span class="process-math">\(A\boldsymbol{x}=\boldsymbol{0}\)</span> and <span class="process-math">\(A\boldsymbol{y}=\boldsymbol{0}\text{.}\)</span> We need to show that <span class="process-math">\(r_1 \boldsymbol{x} + r_2 \boldsymbol{y}\)</span> is in the null space of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-3-14-2-2">
-<div class="displaymath process-math" id="sect-subspaces-3-14-2-2-1">
+<div class="para logical" id="subsec-subspaces-14-2-2">
+<div class="displaymath process-math" id="subsec-subspaces-14-2-2-1">
 \begin{align*}
 A(r_1 \boldsymbol{x} + r_2 \boldsymbol{y}) \amp = r_1 A\boldsymbol{x} + r_2 A\boldsymbol{y} \\
 \amp = r_1 (\boldsymbol{0}) + r_2 (\boldsymbol{0}) = \boldsymbol{0}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-14-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-14-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-3-14-2-3">Vectors in the null space are vectors of length <span class="process-math">\(n\text{,}\)</span> so the null space is a subset of <span class="process-math">\(\mathbb{R}^n\)</span> and since  <span class="process-math">\(r_1 \boldsymbol{x} + r_2 \boldsymbol{y}\)</span> is in the null space of <span class="process-math">\(A\text{,}\)</span> then the null space is a subspace of <span class="process-math">\(\mathbb{R}^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-14-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-subspaces-14-2-3">Vectors in the null space are vectors of length <span class="process-math">\(n\text{,}\)</span> so the null space is a subset of <span class="process-math">\(\mathbb{R}^n\)</span> and since  <span class="process-math">\(r_1 \boldsymbol{x} + r_2 \boldsymbol{y}\)</span> is in the null space of <span class="process-math">\(A\text{,}\)</span> then the null space is a subspace of <span class="process-math">\(\mathbb{R}^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-14-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.2.8.1"><a href="#sect-subspaces-3-14-2" title="Copy heading and permalink for Proof 4.2.8.1" aria-label="Copy heading and permalink for Proof 4.2.8.1">🔗</a></div></article></details><div class="para" id="sect-subspaces-3-15">This is an important result that we will see in eigenvalues in the next chapter.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-3-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><section class="subsection" id="sect-subspaces-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Span of a set of vectors</span>
+<div class="autopermalink" data-description="Proof 4.2.11.1"><a href="#subsec-subspaces-14-2" title="Copy heading and permalink for Proof 4.2.11.1" aria-label="Copy heading and permalink for Proof 4.2.11.1">🔗</a></div></article></details><div class="para" id="subsec-subspaces-15">This is an important result that we will see in eigenvalues in the next chapter.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subspaces-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 4.2.2: Subspaces"><a href="#subsec-subspaces" title="Copy heading and permalink for Subsection 4.2.2: Subspaces" aria-label="Copy heading and permalink for Subsection 4.2.2: Subspaces">🔗</a></div></section><section class="subsection" id="sect-subspaces-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Span of a set of vectors</span>
 </h3>
-<div class="para" id="sect-subspaces-4-2">We saw in  <a href="sect-linear-comb-span.html" class="internal" title="Section 2.5: Linear Combinations and the Span of a Set of Vectors">Section 2.5</a> the span of a set of vectors in <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> We now generalize this to any vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-subspaces-6-2">We saw in  <a href="sect-linear-comb-span.html" class="internal" title="Section 2.5: Linear Combinations and the Span of a Set of Vectors">Section 2.5</a> the span of a set of vectors in <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> We now generalize this to any vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="definition definition-like" id="sect-subspaces-4-3"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="definition definition-like" id="sect-subspaces-6-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-subspaces-4-3-1-1">The <dfn class="terminology">span</dfn> of a nonempty subset <span class="process-math">\(S=\{\boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n\}\)</span> of a vector space is the set of all linear combinations of the vectors in <span class="process-math">\(S\text{.}\)</span> That is,<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-4-3-1-2">
-<div class="displaymath process-math" id="sect-subspaces-4-3-1-2-1">
+<div class="para" id="sect-subspaces-6-3-1-1">The <dfn class="terminology">span</dfn> of a nonempty subset <span class="process-math">\(S=\{\boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n\}\)</span> of a vector space is the set of all linear combinations of the vectors in <span class="process-math">\(S\text{.}\)</span> That is,<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-subspaces-6-3-1-2">
+<div class="displaymath process-math" id="sect-subspaces-6-3-1-2-1">
 \begin{equation*}
 \text{span}(S) = \{ c_1 \boldsymbol{s}_1 + c_2 \boldsymbol{s}_2 + \cdots + c_n \boldsymbol{s}_n\; | \; \text{$c_1, c_2, \ldots, c_n \in \mathbb{R}, \boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n \in S$} \}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.2.9"><a href="#sect-subspaces-4-3" title="Copy heading and permalink for Definition 4.2.9" aria-label="Copy heading and permalink for Definition 4.2.9">🔗</a></div></article><div class="para" id="sect-subspaces-4-4">To show that a subset of vectors span a subspace <span class="process-math">\(S\text{,}\)</span> we need to show that any vector in <span class="process-math">\(S\)</span> can be written as a linear combination of the spanning vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 4.2.12"><a href="#sect-subspaces-6-3" title="Copy heading and permalink for Definition 4.2.12" aria-label="Copy heading and permalink for Definition 4.2.12">🔗</a></div></article><div class="para" id="sect-subspaces-6-4">To show that a subset of vectors span a subspace <span class="process-math">\(S\text{,}\)</span> we need to show that any vector in <span class="process-math">\(S\)</span> can be written as a linear combination of the spanning vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-subspaces-4-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-4-5-1-1">Show that the set <span class="process-math">\(\{2+x,1,x+x^2\}\)</span> spans <span class="process-math">\(\mathcal{P}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<details id="sect-subspaces-6-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-6-5-1-1">Show that the set <span class="process-math">\(\{2+x,1,x+x^2\}\)</span> spans <span class="process-math">\(\mathcal{P}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-subspaces-4-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-subspaces-4-5-2-1">In this case, we need show that a general polynomial in <span class="process-math">\(\mathcal{P}_2\)</span> can be written as a linear combination of elements of the given set. That is<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="sect-subspaces-6-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-subspaces-6-5-2-1">In this case, we need show that a general polynomial in <span class="process-math">\(\mathcal{P}_2\)</span> can be written as a linear combination of elements of the given set. That is<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-4-5-2-2">
-<div class="displaymath process-math" id="sect-subspaces-4-5-2-2-1">
+<div class="para logical" id="sect-subspaces-6-5-2-2">
+<div class="displaymath process-math" id="sect-subspaces-6-5-2-2-1">
 \begin{equation*}
 c_1 (2+x) + c_2 (1) + c_3 (x+x^2) = a_0 + a_1 x + a_2 x^2
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-4-5-2-3">and if there is a solution for the <span class="process-math">\(c\)</span>’s, then that shows the the set spans <span class="process-math">\(\mathcal{P}_2\text{.}\)</span> To find the solution, use the technique of equating coefficients. Write down the coefficients for the constant terms, <span class="process-math">\(x\)</span> terms and <span class="process-math">\(x^2\)</span> terms respectively.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-subspaces-6-5-2-3">and if there is a solution for the <span class="process-math">\(c\)</span>’s, then that shows the the set spans <span class="process-math">\(\mathcal{P}_2\text{.}\)</span> To find the solution, use the technique of equating coefficients. Write down the coefficients for the constant terms, <span class="process-math">\(x\)</span> terms and <span class="process-math">\(x^2\)</span> terms respectively.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-4-5-2-4">
-<div class="displaymath process-math" id="sect-subspaces-4-5-2-4-1">
+<div class="para logical" id="sect-subspaces-6-5-2-4">
+<div class="displaymath process-math" id="sect-subspaces-6-5-2-4-1">
 \begin{align*}
 2 c_1 + c_2 \amp = a_0 \\
 c_1 + c_3 \amp = a_1 \\
 c_3 \amp = a_2
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-4-5-2-5">This has a solution <span class="process-math">\(c_3=a_2, c_1 = a_1-a_2\)</span> and <span class="process-math">\(c_2 = a_0 - 2(a_1-a_2)\text{,}\)</span> which means that a linear combination of the three “vectors” can form any quadratic function, thus the given set spans <span class="process-math">\(\mathcal{P}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-5-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-subspaces-6-5-2-5">This has a solution <span class="process-math">\(c_3=a_2, c_1 = a_1-a_2\)</span> and <span class="process-math">\(c_2 = a_0 - 2(a_1-a_2)\text{,}\)</span> which means that a linear combination of the three “vectors” can form any quadratic function, thus the given set spans <span class="process-math">\(\mathcal{P}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-5-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.2.10.1"><a href="#sect-subspaces-4-5-2" title="Copy heading and permalink for Solution 4.2.10.1" aria-label="Copy heading and permalink for Solution 4.2.10.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.2.13.1"><a href="#sect-subspaces-6-5-2" title="Copy heading and permalink for Solution 4.2.13.1" aria-label="Copy heading and permalink for Solution 4.2.13.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.2.10"><a href="#sect-subspaces-4-5" title="Copy heading and permalink for Example 4.2.10" aria-label="Copy heading and permalink for Example 4.2.10">🔗</a></div></article></details><article class="lemma theorem-like" id="sect-subspaces-4-6"><h4 class="heading">
-<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 4.2.13"><a href="#sect-subspaces-6-5" title="Copy heading and permalink for Example 4.2.13" aria-label="Copy heading and permalink for Example 4.2.13">🔗</a></div></article></details><article class="lemma theorem-like" id="sect-subspaces-6-6"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-subspaces-4-6-1-1">The span of any subset of a vector space is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-subspaces-6-6-1-1">The span of any subset of a vector space is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 4.2.11"><a href="#sect-subspaces-4-6" title="Copy heading and permalink for Lemma 4.2.11" aria-label="Copy heading and permalink for Lemma 4.2.11">🔗</a></div></article><details id="sect-subspaces-4-6-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-subspaces-4-6-2-1">Let <span class="process-math">\(S\)</span> be the subset and <span class="process-math">\(\boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n\)</span> be the elements of <span class="process-math">\(S\text{.}\)</span> Using <a href="sect-subspaces.html#lemma-subspace" class="xref" data-knowl="./knowl/xref/lemma-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.5">Lemma 4.2.5</a>, we need to check that <span class="process-math">\(\text{span}(S)\)</span> is closed under linear combinations. Let<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 4.2.14"><a href="#sect-subspaces-6-6" title="Copy heading and permalink for Lemma 4.2.14" aria-label="Copy heading and permalink for Lemma 4.2.14">🔗</a></div></article><details id="sect-subspaces-6-6-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-subspaces-6-6-2-1">Let <span class="process-math">\(S\)</span> be the subset and <span class="process-math">\(\boldsymbol{s}_1, \boldsymbol{s}_2, \ldots, \boldsymbol{s}_n\)</span> be the elements of <span class="process-math">\(S\text{.}\)</span> Using <a href="sect-subspaces.html#lemma-subspace" class="xref" data-knowl="./knowl/xref/lemma-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.8">Lemma 4.2.8</a>, we need to check that <span class="process-math">\(\text{span}(S)\)</span> is closed under linear combinations. Let<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-4-6-2-2">
-<div class="displaymath process-math" id="sect-subspaces-4-6-2-2-1">
+<div class="para logical" id="sect-subspaces-6-6-2-2">
+<div class="displaymath process-math" id="sect-subspaces-6-6-2-2-1">
 \begin{align*}
 \boldsymbol{v} \amp = c_1 \boldsymbol{s}_1 + c_2 \boldsymbol{s}_2 + \cdots + c_n \boldsymbol{s}_n, \\
 \boldsymbol{w} \amp = k_1 \boldsymbol{s}_1 + k_2 \boldsymbol{s}_2 + \cdots + k_n \boldsymbol{s}_n
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-4-6-2-3">then<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-6-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-subspaces-6-6-2-3">then<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-6-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-4-6-2-4">
-<div class="displaymath process-math" id="sect-subspaces-4-6-2-4-1">
+<div class="para logical" id="sect-subspaces-6-6-2-4">
+<div class="displaymath process-math" id="sect-subspaces-6-6-2-4-1">
 \begin{align*}
 r_1 \boldsymbol{v} + r_2 \boldsymbol{w} \amp = r_1 (c_1 \boldsymbol{s}_1 + c_2 \boldsymbol{s}_2 + \cdots + c_n \boldsymbol{s}_n) + r_2 (k_1 \boldsymbol{s}_1 + k_2 \boldsymbol{s}_2 + \cdots + k_n \boldsymbol{s}_n) \\
 \amp = (r_1 c_1 + r_2 k_1) \boldsymbol{s}_1 + (r_1c_2 + r_2 k_2) \boldsymbol{s}_2 + \cdots + (r_1 c_n + r_2 k_n) \boldsymbol{s}_n
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-6-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-6-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-4-6-2-5">Since this shows that <span class="process-math">\(r_1 \boldsymbol{v} + r_2 \boldsymbol{w}\)</span> is in <span class="process-math">\(S\text{,}\)</span> then <span class="process-math">\(S\)</span> is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-6-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-subspaces-6-6-2-5">Since this shows that <span class="process-math">\(r_1 \boldsymbol{v} + r_2 \boldsymbol{w}\)</span> is in <span class="process-math">\(S\text{,}\)</span> then <span class="process-math">\(S\)</span> is a subspace.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-6-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.2.11.1"><a href="#sect-subspaces-4-6-2" title="Copy heading and permalink for Proof 4.2.11.1" aria-label="Copy heading and permalink for Proof 4.2.11.1">🔗</a></div></article></details><div class="para" id="sect-subspaces-4-7">This lemma allows us to talk about a vector space in terms of the vectors that span it. For example, instead of thinking of <span class="process-math">\(\mathcal{P}_2\text{,}\)</span>we think of the span of <span class="process-math">\(\{2+x,1,x+x^2\}\)</span> (in this case, it may not be more helpful, but other cases it is).<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 4.2.14.1"><a href="#sect-subspaces-6-6-2" title="Copy heading and permalink for Proof 4.2.14.1" aria-label="Copy heading and permalink for Proof 4.2.14.1">🔗</a></div></article></details><div class="para" id="sect-subspaces-6-7">This lemma allows us to talk about a vector space in terms of the vectors that span it. For example, instead of thinking of <span class="process-math">\(\mathcal{P}_2\text{,}\)</span>we think of the span of <span class="process-math">\(\{2+x,1,x+x^2\}\)</span> (in this case, it may not be more helpful, but other cases it is).<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-subspaces-4-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-4-8-1-1">Show that the following vectors span <span class="process-math">\(\mathbb{R}^3\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-4-8-1-2">
-<div class="displaymath process-math" id="sect-subspaces-4-8-1-2-1">
+<details id="sect-subspaces-6-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-6-8-1-1">Show that the following vectors span <span class="process-math">\(\mathbb{R}^3\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-subspaces-6-8-1-2">
+<div class="displaymath process-math" id="sect-subspaces-6-8-1-2-1">
 \begin{align*}
 \boldsymbol{e}_1 \amp = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \amp \boldsymbol{e}_2 \amp = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \amp \boldsymbol{e}_3 \amp = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-8-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-8-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-subspaces-4-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-subspaces-4-8-2-1">Because the vector <span class="process-math">\(\boldsymbol{x}=[x_1,x_2,x_3]^{\intercal}\)</span> can be written <span class="process-math">\(\boldsymbol{x}=x_1 \boldsymbol{e}_1 + x_2 \boldsymbol{e}_2 + x_3 \boldsymbol{e}_3\text{,}\)</span> then these vectors span <span class="process-math">\(\mathbb{R}^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="sect-subspaces-6-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-subspaces-6-8-2-1">Because the vector <span class="process-math">\(\boldsymbol{x}=[x_1,x_2,x_3]^{\intercal}\)</span> can be written <span class="process-math">\(\boldsymbol{x}=x_1 \boldsymbol{e}_1 + x_2 \boldsymbol{e}_2 + x_3 \boldsymbol{e}_3\text{,}\)</span> then these vectors span <span class="process-math">\(\mathbb{R}^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.2.12.1"><a href="#sect-subspaces-4-8-2" title="Copy heading and permalink for Solution 4.2.12.1" aria-label="Copy heading and permalink for Solution 4.2.12.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.2.15.1"><a href="#sect-subspaces-6-8-2" title="Copy heading and permalink for Solution 4.2.15.1" aria-label="Copy heading and permalink for Solution 4.2.15.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.2.12"><a href="#sect-subspaces-4-8" title="Copy heading and permalink for Example 4.2.12" aria-label="Copy heading and permalink for Example 4.2.12">🔗</a></div></article></details><details id="sect-subspaces-4-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-4-9-1-1">Does <span class="process-math">\(\{2+x,x^2 \}\)</span> span <span class="process-math">\(\mathcal{P}_2\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.2.15"><a href="#sect-subspaces-6-8" title="Copy heading and permalink for Example 4.2.15" aria-label="Copy heading and permalink for Example 4.2.15">🔗</a></div></article></details><details id="sect-subspaces-6-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-6-9-1-1">Does <span class="process-math">\(\{2+x,x^2 \}\)</span> span <span class="process-math">\(\mathcal{P}_2\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-subspaces-4-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-subspaces-4-9-2-1">To determine this, we will try write a general polynomial in <span class="process-math">\(\mathcal{P}_2\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="sect-subspaces-6-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-subspaces-6-9-2-1">To determine this, we will try write a general polynomial in <span class="process-math">\(\mathcal{P}_2\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-4-9-2-2">
-<div class="displaymath process-math" id="sect-subspaces-4-9-2-2-1">
+<div class="para logical" id="sect-subspaces-6-9-2-2">
+<div class="displaymath process-math" id="sect-subspaces-6-9-2-2-1">
 \begin{equation*}
 a_0 + a_1 x + a_2 x^2
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-9-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-4-9-2-3">as a linear combination of the set of vectors or<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-9-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-subspaces-6-9-2-3">as a linear combination of the set of vectors or<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-4-9-2-4">
-<div class="displaymath process-math" id="sect-subspaces-4-9-2-4-1">
+<div class="para logical" id="sect-subspaces-6-9-2-4">
+<div class="displaymath process-math" id="sect-subspaces-6-9-2-4-1">
 \begin{equation*}
 a_0 + a_1 x + a_2 x^2 = c_1 (2+x) + c_2 x^2
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-9-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-4-9-2-5">and equating coefficients,<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-9-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-subspaces-6-9-2-5">and equating coefficients,<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-subspaces-4-9-2-6">
-<div class="displaymath process-math" id="sect-subspaces-4-9-2-6-1">
+<div class="para logical" id="sect-subspaces-6-9-2-6">
+<div class="displaymath process-math" id="sect-subspaces-6-9-2-6-1">
 \begin{align*}
 a_0 \amp = 2c_1  \\
 a_1 \amp = c_1 \\
 a_2 \amp = c_2
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-9-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-subspaces-4-9-2-7">There’s no solution to this because <span class="process-math">\(c_1\)</span> can’t simultaneously equal <span class="process-math">\(a_1\)</span> and <span class="process-math">\(a_0/2\text{,}\)</span> so  <span class="process-math">\(\{2+x,x^2\}\)</span> does not span <span class="process-math">\(\mathcal{P}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-4-9-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-subspaces-6-9-2-7">There’s no solution to this because <span class="process-math">\(c_1\)</span> can’t simultaneously equal <span class="process-math">\(a_1\)</span> and <span class="process-math">\(a_0/2\text{,}\)</span> so  <span class="process-math">\(\{2+x,x^2\}\)</span> does not span <span class="process-math">\(\mathcal{P}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.2.13.1"><a href="#sect-subspaces-4-9-2" title="Copy heading and permalink for Solution 4.2.13.1" aria-label="Copy heading and permalink for Solution 4.2.13.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.2.16.1"><a href="#sect-subspaces-6-9-2" title="Copy heading and permalink for Solution 4.2.16.1" aria-label="Copy heading and permalink for Solution 4.2.16.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.2.13"><a href="#sect-subspaces-4-9" title="Copy heading and permalink for Example 4.2.13" aria-label="Copy heading and permalink for Example 4.2.13">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.2.1: The Span of a set of vectors"><a href="#sect-subspaces-4" title="Copy heading and permalink for Subsection 4.2.1: The Span of a set of vectors" aria-label="Copy heading and permalink for Subsection 4.2.1: The Span of a set of vectors">🔗</a></div></section><section class="subsection" id="sect-subspaces-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Basis and Dimension of a Vector Space</span>
-</h3>
-<section class="introduction" id="sect-subspaces-5-2"><div class="para" id="sect-subspaces-5-2-1">In the previous section, we saw that there some correspondence between a vector space and a set of spanning vectors. In this section, we formalize this relationship.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="definition definition-like" id="sect-subspaces-5-2-2"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sect-subspaces-5-2-2-1-1">The <dfn class="terminology">basis</dfn> of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Definition 4.2.14"><a href="#sect-subspaces-5-2-2" title="Copy heading and permalink for Definition 4.2.14" aria-label="Copy heading and permalink for Definition 4.2.14">🔗</a></div></article><div class="para" id="sect-subspaces-5-2-3">Note: the basis will be a tuple of vectors because the order of the vectors will be important. We will denote the tuple with parentheses, <span class="process-math">\(( \boldsymbol{s}_1, \boldsymbol{s}_2, \ldots )\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<details id="sect-subspaces-5-2-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-5-2-4-1">We showed in <a href="sect-linear-comb-span.html#ex-span-2" class="xref" data-knowl="./knowl/xref/ex-span-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.5.3">Example 2.5.3</a> that the set<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-2-4-2">
-<div class="displaymath process-math" id="sect-subspaces-5-2-4-2-1">
-\begin{equation*}
-\left\{ \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\1 \end{bmatrix} \right\}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-2-4-3">spans <span class="process-math">\(\mathbb{R}^2\)</span> and since the second is not a multiple of the first, they are linearly independent. Therefore the tuple<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-2-4-4">
-<div class="displaymath process-math" id="sect-subspaces-5-2-4-4-1">
-\begin{equation*}
-\left( \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\1 \end{bmatrix} \right)
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-2-4-5">form a basis for <span class="process-math">\(\mathbb{R}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Example 4.2.15"><a href="#sect-subspaces-5-2-4" title="Copy heading and permalink for Example 4.2.15" aria-label="Copy heading and permalink for Example 4.2.15">🔗</a></div></article></details><details id="sect-subspaces-5-2-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-5-2-5-1">The tuple of vectors<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-2-5-2">
-<div class="displaymath process-math" id="sect-subspaces-5-2-5-2-1">
-\begin{equation*}
-\left( \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\0 \end{bmatrix} \right)
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-2-5-3">is a different basis of <span class="process-math">\(\mathbb{R}^2\)</span> because of the order of vectors. The fact that they span <span class="process-math">\(\mathbb{R}^2\)</span> and are linearly independent do not depend on the order.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Example 4.2.16"><a href="#sect-subspaces-5-2-5" title="Copy heading and permalink for Example 4.2.16" aria-label="Copy heading and permalink for Example 4.2.16">🔗</a></div></article></details><details id="sect-subspaces-5-2-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-5-2-6-1-1">There are many bases of a vector space. For example,<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-5-2-6-1-2">
-<div class="displaymath process-math" id="sect-subspaces-5-2-6-1-2-1">
-\begin{equation*}
-\left( \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\1 \end{bmatrix} \right)
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-subspaces-5-2-6-1-3">also spans <span class="process-math">\(\mathbb{R}^2\)</span> and are linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-6-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Example 4.2.17"><a href="#sect-subspaces-5-2-6" title="Copy heading and permalink for Example 4.2.17" aria-label="Copy heading and permalink for Example 4.2.17">🔗</a></div></article></details><details id="sect-subspaces-5-2-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-5-2-7-1-1">Does<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-5-2-7-1-2">
-<div class="displaymath process-math" id="sect-subspaces-5-2-7-1-2-1">
-\begin{equation*}
-\left( \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\1 \end{bmatrix}, \begin{bmatrix} 2 \\ 3 \end{bmatrix} \right)
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-7-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-subspaces-5-2-7-1-3">form a basis of <span class="process-math">\(\mathbb{R}^2\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-7-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="solutions"><details id="sect-subspaces-5-2-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-subspaces-5-2-7-2-1">These three vectors are not linearly independent. Although one can show this in general, note that<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-2-7-2-2">
-<div class="displaymath process-math" id="sect-subspaces-5-2-7-2-2-1">
-\begin{equation*}
-\begin{bmatrix} 2 \\ 3 \end{bmatrix} = 3 \begin{bmatrix} 1 \\ 1 \end{bmatrix} - \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-2-7-2-3">and since they are not linearly independent, then they cannot form a basis of <span class="process-math">\(\mathbb{R}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-7-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Solution 4.2.18.1"><a href="#sect-subspaces-5-2-7-2" title="Copy heading and permalink for Solution 4.2.18.1" aria-label="Copy heading and permalink for Solution 4.2.18.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.2.18"><a href="#sect-subspaces-5-2-7" title="Copy heading and permalink for Example 4.2.18" aria-label="Copy heading and permalink for Example 4.2.18">🔗</a></div></article></details><div class="para" id="sect-subspaces-5-2-8">Although there are lots of different bases for a given subspace, there are some that are more useful than others. There is a basis for more subspaces called a standard basis.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="definition definition-like" id="sect-subspaces-5-2-9"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sect-subspaces-5-2-9-1-1">The tuple<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-5-2-9-1-2">
-<div class="displaymath process-math" id="sect-subspaces-5-2-9-1-2-1">
-\begin{equation*}
-{\cal E}_n = \left( \begin{bmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \cdots \begin{bmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix} \right)
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-9-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-subspaces-5-2-9-1-3">is called the <dfn class="terminology">standard basis</dfn> or <dfn class="terminology">natural basis</dfn> of <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> The vectors in the basis are called <span class="process-math">\(\boldsymbol{e}_1, \boldsymbol{e}_2, \ldots\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Definition 4.2.19"><a href="#sect-subspaces-5-2-9" title="Copy heading and permalink for Definition 4.2.19" aria-label="Copy heading and permalink for Definition 4.2.19">🔗</a></div></article><article class="remark remark-like" id="sect-subspaces-5-2-10"><h4 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sect-subspaces-5-2-10-1">The natural basis of <span class="process-math">\({\cal P}_3\)</span> is <span class="process-math">\(( 1, x, x^2, x^3 )\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Remark 4.2.20"><a href="#sect-subspaces-5-2-10" title="Copy heading and permalink for Remark 4.2.20" aria-label="Copy heading and permalink for Remark 4.2.20">🔗</a></div></article><div class="para logical" id="sect-subspaces-5-2-11">
-<div class="para">We saw bases of vector spaces (or subspaces) at the beginning of this course without knowing that they were vector spaces. For example, in <a href="sect-vectors-as-solutions.html#ex-large-linear-solution" class="xref" data-knowl="./knowl/xref/ex-large-linear-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.5">Example 1.4.5</a>, we solved a linear system. It’s associated homogeneous system is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-large-linear-solution.html" id="sect-subspaces-5-2-11-2">
-\begin{align*}
-x_2 + 3x_3 -9 x_4 + 11 x_5 \amp = 0, \\
-2x_3 \phantom{-9x_4} + 4x_5 \amp = 0, \\
-3x_5 \amp = 0,
-\end{align*}
-</div>
-<div class="para">The solution (which is a subspace of <span class="process-math">\(\mathbb{R}^5\)</span>) can be written as</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-large-linear-solution.html" id="sect-subspaces-5-2-11-4">
-\begin{equation*}
-\left\{\begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \\ 0 \end{bmatrix} t + \begin{bmatrix} 0 \\ 9 \\ 0 \\ 1 \\ 0 \end{bmatrix} s \; | \; t, s \in \mathbb{R}, \right\}
-\end{equation*}
-</div>
-<div class="para">If we let <span class="process-math">\(\boldsymbol{v}_1\)</span> and <span class="process-math">\(\boldsymbol{v}_2\)</span> be the two vectors above, then <span class="process-math">\((\boldsymbol{v}_1, \boldsymbol{v}_2)\)</span> form a basis of the solution space. Since there are only two vectors and they are not constant multiples of each other, it’s easy to see that they are linearly independent. Also because of the form of the solution set, you can also see that that span the space.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="definition definition-like" id="sect-subspaces-5-2-12"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sect-subspaces-5-2-12-1-1">In a vector space with basis <span class="process-math">\(B\text{,}\)</span> the <dfn class="terminology">representation of a vector <span class="process-math">\(\boldsymbol{v}\)</span> with respect to the basis <span class="process-math">\(B\)</span></dfn> is the column vector of the coefficients used to express <span class="process-math">\(\boldsymbol{v}\)</span> as a linear combination of the basis vectors:<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-5-2-12-1-2">
-<div class="displaymath process-math" id="sect-subspaces-5-2-12-1-2-1">
-\begin{equation*}
-\text{Rep}_B (\boldsymbol{v}) = \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-12-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-subspaces-5-2-12-1-3">where <span class="process-math">\(B=( \boldsymbol{\beta}_1, \boldsymbol{\beta}_2, \ldots , \boldsymbol{\beta}_n )\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-12-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-5-2-12-1-4">
-<div class="displaymath process-math" id="sect-subspaces-5-2-12-1-4-1">
-\begin{equation*}
-\boldsymbol{v} = c_1 \boldsymbol{\beta}_1 + c_2 \boldsymbol{\beta}_2 + \cdots + c_n \boldsymbol{\beta}_n
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-12-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Definition 4.2.21"><a href="#sect-subspaces-5-2-12" title="Copy heading and permalink for Definition 4.2.21" aria-label="Copy heading and permalink for Definition 4.2.21">🔗</a></div></article><details id="sect-subspaces-5-2-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-5-2-13-1">Consider the space <span class="process-math">\({\cal P}_2\text{,}\)</span> the space of quadratic functions. Let <span class="process-math">\(B=( 1, 1+x,1+x+x^2, )\)</span> be a basis of <span class="process-math">\({\cal P}_2\)</span> and <span class="process-math">\(\boldsymbol{v} = 2x+x^2\text{.}\)</span> To find the representation, we need to find <span class="process-math">\(c_1, c_2\)</span> and <span class="process-math">\(c_3\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-2-13-2">
-<div class="displaymath process-math" id="sect-subspaces-5-2-13-2-1">
-\begin{equation*}
-c_1 \cdot 1 + c_2 \cdot (1+x) + c_3 \cdot (1+x+x^2)  = 2x+x^2
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-2-13-3">by equating coefficients this is same as solving the linear system:<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-2-13-4">
-<div class="displaymath process-math" id="sect-subspaces-5-2-13-4-1">
-\begin{align*}
-c_1 + c_2 + c_3 \amp = 0 \\
-c_2 + c_3 \amp = 2 \\
-c_3  \amp = 1
-\end{align*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-2-13-5">resulting in <span class="process-math">\(c_1=-2, c_2=1, c_3=1\text{,}\)</span> therefore<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-2-13-6">
-<div class="displaymath process-math" id="sect-subspaces-5-2-13-6-1">
-\begin{equation*}
-\text{Rep}_B (\boldsymbol{v}) = \begin{bmatrix} -2 \\ 1 \\ 1 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-2-13-7">If instead the basis is given as <span class="process-math">\(D=( 2,2x,x^2 )\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-2-13-8">
-<div class="displaymath process-math" id="sect-subspaces-5-2-13-8-1">
-\begin{equation*}
-c_1 \cdot 2 + c_2 \cdot (2x) + c_3 \cdot (x^2)  = 2x+x^2
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-2-13-9">which shows that <span class="process-math">\(c_1=0, c_2 =1, c_3 = 1\text{,}\)</span> therefore<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-2-13-10">
-<div class="displaymath process-math" id="sect-subspaces-5-2-13-10-1">
-\begin{equation*}
-\text{Rep}_D (\boldsymbol{v}) = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-2-13-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Example 4.2.22"><a href="#sect-subspaces-5-2-13" title="Copy heading and permalink for Example 4.2.22" aria-label="Copy heading and permalink for Example 4.2.22">🔗</a></div></article></details></section><section class="subsubsection" id="sect-subspaces-5-3"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Representations in the natural basis</span>
-</h4>
-<div class="para logical" id="sect-subspaces-5-3-2">
-<div class="para">As we saw above, finding representations in a basis requires solving another linear system. However, representations in the natural basis are simple calculations. If we used the natural basis <span class="process-math">\(E=( 1, x, x^2 )\)</span> for the quadratic example above, then</div>
-<div class="displaymath process-math" id="sect-subspaces-5-3-2-2">
-\begin{equation*}
-\text{Rep}_E (\boldsymbol{v})  = \begin{bmatrix} 0 \\ 2 \\ 1 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="para">are just the coefficients of <span class="process-math">\(x^n\)</span> terms of the vector <span class="process-math">\(2x+x^2\text{.}\)</span> The following example shows that the representation of a vector in <span class="process-math">\(\mathbb{R}^3\)</span> is what we expect, itself.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<details id="sect-subspaces-5-3-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para" id="sect-subspaces-5-3-3-1-1">Find the Representation of the vector<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-5-3-3-1-2">
-<div class="displaymath process-math" id="sect-subspaces-5-3-3-1-2-1">
-\begin{equation*}
-\boldsymbol{v} = \begin{bmatrix} -3 \\ 2\\ 4 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-subspaces-5-3-3-1-3">in the natural basis<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-subspaces-5-3-3-1-4">
-<div class="displaymath process-math" id="sect-subspaces-5-3-3-1-4-1">
-\begin{equation*}
-{\cal E}_3  = \left( \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right)
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-3-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="solutions"><details id="sect-subspaces-5-3-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-subspaces-5-3-3-2-1">We seek the vector <span class="process-math">\(\boldsymbol{c}  = [c_1, c_2, c_3]^{\intercal}\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-3-3-2-2">
-<div class="displaymath process-math" id="sect-subspaces-5-3-3-2-2-1">
-\begin{equation*}
-c_1 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + c_3 \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -3 \\ 2 \\ 4 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-3-3-2-3">which is just that <span class="process-math">\(c_1=-3, c_2=2,\)</span> and <span class="process-math">\(c_3=4\)</span> so the representation of the vector in the basis <span class="process-math">\({\cal E}_3\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-3-3-2-4">
-<div class="displaymath process-math" id="sect-subspaces-5-3-3-2-4-1">
-\begin{equation*}
-\text{Rep}_{\cal E} (\boldsymbol{v})  = \begin{bmatrix} -3 \\ 2 \\ 4 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-5-3-3-2-5">which is just the original vector.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-3-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Solution 4.2.23.1"><a href="#sect-subspaces-5-3-3-2" title="Copy heading and permalink for Solution 4.2.23.1" aria-label="Copy heading and permalink for Solution 4.2.23.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.2.23"><a href="#sect-subspaces-5-3-3" title="Copy heading and permalink for Example 4.2.23" aria-label="Copy heading and permalink for Example 4.2.23">🔗</a></div></article></details><div class="para" id="sect-subspaces-5-3-4">The last example in this section uses matrices. The natural basis for <span class="process-math">\(\mathcal{M}_{2 \times 2}\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sect-subspaces-5-3-5">
-<div class="displaymath process-math" id="sect-subspaces-5-3-5-1">
-\begin{equation*}
-B = \left( \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<details id="ex-vect-rep-matrix" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para" id="ex-vect-rep-matrix-1-1">Find<div class="autopermalink" data-description="Paragraph"><a href="#ex-vect-rep-matrix-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-vect-rep-matrix-1-2">
-<div class="displaymath process-math" id="ex-vect-rep-matrix-1-2-1">
-\begin{equation*}
-\text{Rep}_B \biggl( \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} \biggr)
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-vect-rep-matrix-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="solutions"><details id="ex-vect-rep-matrix-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-vect-rep-matrix-2-1">Formally, one needs to find <span class="process-math">\(c_1, c_2, c_3\)</span> and <span class="process-math">\(c_4\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#ex-vect-rep-matrix-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ex-vect-rep-matrix-2-2">
-<div class="displaymath process-math" id="ex-vect-rep-matrix-2-2-1">
-\begin{equation*}
-\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = c_1 \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix} + c_3 \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix} + c_4 \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-vect-rep-matrix-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ex-vect-rep-matrix-2-3">but since the nice structure of the basis <span class="process-math">\(c_1=1,c_2=2,c_3=3,\)</span> and <span class="process-math">\(c_4=4\text{,}\)</span> so<div class="autopermalink" data-description="Paragraph"><a href="#ex-vect-rep-matrix-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ex-vect-rep-matrix-2-4">
-<div class="displaymath process-math" id="ex-vect-rep-matrix-2-4-1">
-\begin{equation*}
-\text{Rep}_B \biggl( \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} \biggr) = \begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-vect-rep-matrix-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Solution 4.2.24.1"><a href="#ex-vect-rep-matrix-2" title="Copy heading and permalink for Solution 4.2.24.1" aria-label="Copy heading and permalink for Solution 4.2.24.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.2.24"><a href="#ex-vect-rep-matrix" title="Copy heading and permalink for Example 4.2.24" aria-label="Copy heading and permalink for Example 4.2.24">🔗</a></div></article></details><div class="para logical" id="sect-subspaces-5-3-7">
-<div class="para">One can generalize to show that</div>
-<div class="displaymath process-math" id="sect-subspaces-5-3-7-1">
-\begin{equation*}
-\text{Rep}_B \left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} \right) = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}
-\end{equation*}
-</div>
-<div class="para">and this shows that matrices (which are vectors in the formal sense of vector spaces) can be represented by vectors by reshaping the matrix as a vector.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-5-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsubsection 4.2.2.1: Representations in the natural basis"><a href="#sect-subspaces-5-3" title="Copy heading and permalink for Subsubsection 4.2.2.1: Representations in the natural basis" aria-label="Copy heading and permalink for Subsubsection 4.2.2.1: Representations in the natural basis">🔗</a></div></section><div class="autopermalink" data-description="Subsection 4.2.2: The Basis and Dimension of a Vector Space"><a href="#sect-subspaces-5" title="Copy heading and permalink for Subsection 4.2.2: The Basis and Dimension of a Vector Space" aria-label="Copy heading and permalink for Subsection 4.2.2: The Basis and Dimension of a Vector Space">🔗</a></div></section><section class="subsection" id="sect-subspaces-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dimension</span>
-</h3>
-<div class="para" id="sect-subspaces-6-2">We have been talking about a few big topics in this chapter. One of those is the spanning set of a vector space. We noted that many different sets can span a vector space. This brought in the notation of linear independence and a basis. However for a vector space there can be many different bases.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-6-3">Although we did introduce a natural basis, this works well for some spaces, like <span class="process-math">\({\cal P}_2\)</span> and <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> however what is the natural basis for a solution of homogeneous linear system.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-6-4">Perhaps if two people argue over the basis of a vector space, one thing they will agree on is the number of vectors in a basis as we will see. We noted earlier that disregarding extra vectors is generally a good thing to result in a basis, but there is a unique thing about bases and that is the number of vectors in any basis.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="definition definition-like" id="sect-subspaces-6-5"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sect-subspaces-6-5-1-1">A vector space is <dfn class="terminology">finite dimensional</dfn> if it has a basis with only finitely-many vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Definition 4.2.25"><a href="#sect-subspaces-6-5" title="Copy heading and permalink for Definition 4.2.25" aria-label="Copy heading and permalink for Definition 4.2.25">🔗</a></div></article><article class="theorem theorem-like" id="sect-subspaces-6-6"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sect-subspaces-6-6-1-1">In any finite-dimensional vector space, all of the bases have the same number of elements.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 4.2.26"><a href="#sect-subspaces-6-6" title="Copy heading and permalink for Theorem 4.2.26" aria-label="Copy heading and permalink for Theorem 4.2.26">🔗</a></div></article><div class="para" id="sect-subspaces-6-7">Because of this theorem, we define the dimension in following manner.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="definition definition-like" id="sect-subspaces-6-8"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sect-subspaces-6-8-1-1">The <dfn class="terminology">dimension</dfn> of a finite dimensional vector space is the number of vectors in any of its bases.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Definition 4.2.27"><a href="#sect-subspaces-6-8" title="Copy heading and permalink for Definition 4.2.27" aria-label="Copy heading and permalink for Definition 4.2.27">🔗</a></div></article><details id="sect-subspaces-6-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sect-subspaces-6-9-1-1">
-<ul class="disc" id="sect-subspaces-6-9-1-1-1">
-<li id="sect-subspaces-6-9-1-1-1-1">
-<div class="para" id="sect-subspaces-6-9-1-1-1-1-1">The dimension of <span class="process-math">\(\mathbb{R}^n\)</span> is <span class="process-math">\(n\text{.}\)</span> Although there are many bases, consider <span class="process-math">\(\mathcal{E}_n\text{,}\)</span> the natural basis, which has <span class="process-math">\(n\)</span> elements.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#sect-subspaces-6-9-1-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="sect-subspaces-6-9-1-1-1-2">
-<div class="para" id="sect-subspaces-6-9-1-1-1-2-1">The dimension of <span class="process-math">\({\cal P}_n\)</span> is <span class="process-math">\(n+1\text{.}\)</span> The natural basis of <span class="process-math">\(\mathcal{P}_n\)</span> is <span class="process-math">\((1,x,x^2, \ldots, x^n)\)</span> with <span class="process-math">\(n+1\)</span> elements.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#sect-subspaces-6-9-1-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="sect-subspaces-6-9-1-1-1-3">
-<div class="para logical" id="sect-subspaces-6-9-1-1-1-3-1">
-<div class="para">The dimension of <span class="process-math">\({\cal M}_{2 \times 2}\text{,}\)</span> the vector space of all 2 by 2 matrices is 4. A natural basis for this is:</div>
-<div class="displaymath process-math" id="sect-subspaces-6-9-1-1-1-3-1-2">
-\begin{equation*}
-\biggl( \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} \biggr)
-\end{equation*}
-</div>
-<div class="para">and since there are 4 elements, the dimension is 4.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-1-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#sect-subspaces-6-9-1-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="sect-subspaces-6-9-1-1-1-4">
-<div class="para" id="sect-subspaces-6-9-1-1-1-4-1">The dimension of <span class="process-math">\({\cal M}_{m \times n} = mn\text{.}\)</span>  There is a natural basis that is similar to the previous example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-1-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#sect-subspaces-6-9-1-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-</ul>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-6-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Example 4.2.28"><a href="#sect-subspaces-6-9" title="Copy heading and permalink for Example 4.2.28" aria-label="Copy heading and permalink for Example 4.2.28">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.2.3: Dimension"><a href="#sect-subspaces-6" title="Copy heading and permalink for Subsection 4.2.3: Dimension" aria-label="Copy heading and permalink for Subsection 4.2.3: Dimension">🔗</a></div></section><section class="subsection" id="sect-subspaces-7"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bases of Subspaces</span>
-</h3>
-<div class="para" id="sect-subspaces-7-2">There were a number of important ideas in this section, so a summary is necessary. The basis of a space or subspace is useful for writing down elements in the space. That is, if we know the basis, then we know what’s in the space. Additionally, the representation of an element are the coefficients in terms of the basis.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sect-subspaces-7-3">This means that any vector in a finite-dimensional vector space can be represented as a vector and as we will see this will be helpful in that we can use many of the nice techniques from <a href="ch-linear-systems.html" class="internal" title="Chapter 1: Solving Linear Systems">Chapter 1</a> and <a href="ch-matrices.html" class="internal" title="Chapter 2: Matrices and Matrix Operations">Chapter 2</a> to help. We will start to see that since we can write any polynomial as a vector, that many operations that we do to polynomials (such as  multiplication, differentiation, and integration) can be done using matrices and vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-subspaces-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection 4.2.4: Bases of Subspaces"><a href="#sect-subspaces-7" title="Copy heading and permalink for Subsection 4.2.4: Bases of Subspaces" aria-label="Copy heading and permalink for Subsection 4.2.4: Bases of Subspaces">🔗</a></div></section><div class="autopermalink" data-description="Section 4.2: The Span and Basis of a Subspace"><a href="#sect-subspaces" title="Copy heading and permalink for Section 4.2: The Span and Basis of a Subspace" aria-label="Copy heading and permalink for Section 4.2: The Span and Basis of a Subspace">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 4.2.16"><a href="#sect-subspaces-6-9" title="Copy heading and permalink for Example 4.2.16" aria-label="Copy heading and permalink for Example 4.2.16">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.2.3: The Span of a set of vectors"><a href="#sect-subspaces-6" title="Copy heading and permalink for Subsection 4.2.3: The Span of a set of vectors" aria-label="Copy heading and permalink for Subsection 4.2.3: The Span of a set of vectors">🔗</a></div></section><div class="autopermalink" data-description="Section 4.2: The Span and Basis of a Subspace"><a href="#sect-subspaces" title="Copy heading and permalink for Section 4.2: The Span and Basis of a Subspace" aria-label="Copy heading and permalink for Section 4.2: The Span and Basis of a Subspace">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sect-vector-spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-inner-product.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sect-vector-spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-basis-vector-space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
