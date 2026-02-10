@@ -22,7 +22,7 @@
 				and <m>
 				\boldsymbol{v}</m> in <m>V</m> and each scalar <m>\alpha</m>,
 				<md>
-					<mrow xml:id="eq-linear-map-add" number="yes">(\boldsymbol{u} + \boldsymbol{v}) \amp = T(\boldsymbol{u}) + T
+					<mrow xml:id="eq-linear-map-add" number="yes">T(\boldsymbol{u} + \boldsymbol{v}) \amp = T(\boldsymbol{u}) + T
 					(\boldsymbol{v}), </mrow>
 					<mrow xml:id="eq-linear-map-prod" number="yes">T(\alpha \boldsymbol{v}) \amp = \alpha T
 					(\boldsymbol{v}), </mrow>
@@ -725,7 +725,7 @@
 	</example>
 
 	<p>
-		To verify the above results, recall that from <xref ref="ex-vect-rep-matrix" /> that the
+		To verify the above results, recall that from <xref ref="ex-vector-rep-matrix" /> that the
 		representation of a matrix is the unfolded matrix or in the <m>2 \times 2</m> case, that
 		<me>
 			\text{Rep}_B \biggl( \begin{bmatrix}

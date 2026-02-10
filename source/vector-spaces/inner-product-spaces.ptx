@@ -458,7 +458,7 @@
 			</solution>
 		</example>
 
-		<example xml:id="ex-orthog-set">
+		<example xml:id="ex-orthogonal-set">
 			<statement>
 				<p>
 					Show that
@@ -550,7 +550,7 @@
 		<example>
 			<statement>
 				<p>
-					In <xref ref="ex-orthog-set"/>, we showed that the vectors <m>\{ \sin x, \sin 2x, \sin 3x\}</m> is an orthogonal set on <m>[-\pi,\pi]</m>.  Use <xref ref="eq-normalize-vector"/> to create an orthonormal set. 
+					In <xref ref="ex-orthogonal-set"/>, we showed that the vectors <m>\{ \sin x, \sin 2x, \sin 3x\}</m> is an orthogonal set on <m>[-\pi,\pi]</m>.  Use <xref ref="eq-normalize-vector"/> to create an orthonormal set. 
 				</p>
 			</statement>
 			<solution>
@@ -576,8 +576,8 @@
 			generalize this to the inner product.
 		</p>
 
-		<theorem xml:id="thm-cauchy-swartz">
-			<title>Cauchy-Swartz Inequality</title>
+		<theorem xml:id="thm-cauchy-schwartz">
+			<title>Cauchy-Schwartz Inequality</title>
 			<statement>
 				<p>
 					If <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> are elements of an inner product space then
@@ -661,7 +661,7 @@
 		</theorem>
 
 		<p>
-			The Cauchy-Swartz inequality has numerous uses (which is not unexpected for a theorem named
+			The Cauchy-Schwartz inequality has numerous uses (which is not unexpected for a theorem named
 			after such famous mathematicians).
 			One such is to show that the angle between two vectors in <m>
 			\mathbb{R}^n</m> and actually in any inner product space is defined.
@@ -689,7 +689,7 @@
 		</p>
 
 		<p>
-			and using the Cauchy-Swartz Inequality,
+			and using the Cauchy-Schwartz Inequality,
 		</p>
 
 		<p>
@@ -1206,7 +1206,7 @@
 
       <solution>
         <p>
-          In this case, we will expand on <xref ref="ex-orthog-set" /> and use the handy alternative definition of the sine function.
+          In this case, we will expand on <xref ref="ex-orthogonal-set" /> and use the handy alternative definition of the sine function.
           Find the inner product if <m>n \neq m</m> ,
         </p>
 

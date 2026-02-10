@@ -1,0 +1,489 @@
+<section xml:id="sec-basis-vector-space">
+  <title>Basis of a Vector Space</title>
+  <introduction>
+  <p>
+    From the previous two sections, we have good feeling for what a vector space is.  Basically it is a set of vectors (vectors in <m>\mathbb{R}^n</m>, polynomials, matrices, other functions) with addition and scalar multiplication and other properties.  However, how can one write elements in the vector space.  
+  </p>
+
+  <p>
+    In this section, we examine a basis of a vector space as well as a representation using that basis.  
+  </p>
+  </introduction>
+
+    <subsection>
+    <title>The Basis and Dimension of a Vector Space</title>
+
+    <introduction>
+      <p>
+        In the previous section, we saw that there some correspondence between a vector space and a set of spanning vectors.
+        In this section, we formalize this relationship.
+      </p>
+
+      <definition>
+        <statement>
+          <p>
+            The <term>basis</term> of a vector space is a tuple of vectors of the vector space that form a linearly independent set that spans the vector space.
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        Note: the basis will be a tuple of vectors because the order of the vectors will be important.
+        We will denote the tuple with parentheses, <m>( \boldsymbol{s}_1, \boldsymbol{s}_2, \ldots )</m>.
+      </p>
+
+      <example>
+        <p>
+          We showed in <xref ref="ex-span-2" /> that the set
+        </p>
+
+        <p>
+          <me>
+            \left\{ \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\1 \end{bmatrix} \right\}
+          </me>
+        </p>
+
+        <p>
+          spans <m>\mathbb{R}^2</m> and since the second is not a multiple of the first, they are linearly independent.
+          Therefore the tuple
+        </p>
+
+        <p>
+          <me>
+            \left( \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\1 \end{bmatrix} \right)
+          </me>
+        </p>
+
+        <p>
+          form a basis for <m>\mathbb{R}^2</m>.
+        </p>
+      </example>
+
+      <example>
+        <p>
+          The tuple of vectors
+        </p>
+
+        <p>
+          <me>
+            \left( \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\0 \end{bmatrix} \right)
+          </me>
+        </p>
+
+        <p>
+          is a different basis of <m>\mathbb{R}^2</m> because of the order of vectors.
+          The fact that they span <m>\mathbb{R}^2</m> and are linearly independent do not depend on the order.
+        </p>
+      </example>
+
+      <example>
+        <statement>
+          <p>
+            There are many bases of a vector space.
+            For example,
+          </p>
+
+          <p>
+            <me>
+              \left( \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\1 \end{bmatrix} \right)
+            </me>
+          </p>
+
+          <p>
+            also spans <m>\mathbb{R}^2</m> and are linearly independent.
+          </p>
+        </statement>
+      </example>
+
+      <example>
+        <statement>
+          <p>
+            Does
+          </p>
+
+          <p>
+            <me>
+              \left( \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\1 \end{bmatrix}, \begin{bmatrix} 2 \\ 3 \end{bmatrix} \right)
+            </me>
+          </p>
+
+          <p>
+            form a basis of <m>\mathbb{R}^2</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            These three vectors are not linearly independent.
+            Although one can show this in general, note that
+          </p>
+
+          <p>
+            <me>
+              \begin{bmatrix} 2 \\ 3 \end{bmatrix} = 3 \begin{bmatrix} 1 \\ 1 \end{bmatrix} - \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+            </me>
+          </p>
+
+          <p>
+            and since they are not linearly independent, then they cannot form a basis of <m>\mathbb{R}^2</m>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        Although there are lots of different bases for a given subspace, there are some that are more useful than others.
+        There is a basis for more subspaces called a standard basis.
+      </p>
+
+      <definition>
+        <statement>
+          <p>
+            The tuple
+          </p>
+
+          <p>
+            <me>
+              {\cal E}_n = \left( \begin{bmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \cdots \begin{bmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix} \right)
+            </me>
+          </p>
+
+          <p>
+            is called the <term>standard basis</term> or <term>natural basis</term> of <m>\mathbb{R}^n</m>.
+            The vectors in the basis are called <m>\boldsymbol{e}_1, \boldsymbol{e}_2, \ldots</m>.
+          </p>
+        </statement>
+      </definition>
+
+      <remark>
+        <p>
+          The natural basis of <m>{\cal P}_3</m> is <m>( 1, x, x^2, x^3 )</m>.
+        </p>
+      </remark>
+
+      <p>
+        We saw bases of vector spaces (or subspaces) at the beginning of this course without knowing that they were vector spaces.
+        For example, in <xref ref="ex-large-linear-solution" />, we solved a linear system.
+        It's associated homogeneous system is
+        <md>
+          <mrow>x_2 + 3x_3 -9 x_4 + 11 x_5 \amp = 0, </mrow>
+          <mrow>2x_3 \phantom{-9x_4} + 4x_5 \amp = 0, </mrow>
+          <mrow>3x_5 \amp = 0,</mrow>
+        </md>
+        The solution (which is a subspace of <m>\mathbb{R}^5</m>) can be written as
+        <me>
+          \left\{\begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \\ 0 \end{bmatrix} t + \begin{bmatrix} 0 \\ 9 \\ 0 \\ 1 \\ 0 \end{bmatrix} s \; | \; t, s \in \mathbb{R}, \right\}
+        </me>
+        If we let <m>\boldsymbol{v}_1</m> and <m>\boldsymbol{v}_2</m> be the two vectors above, then <m>(\boldsymbol{v}_1, \boldsymbol{v}_2)</m> form a basis of the solution space.
+        Since there are only two vectors and they are not constant multiples of each other, it's easy to see that they are linearly independent.
+        Also because of the form of the solution set, you can also see that that span the space.
+      </p>
+
+      <definition>
+        <statement>
+          <p>
+            In a vector space with basis <m>B</m>, the <term>representation of a vector <m>\boldsymbol{v}</m> with respect to the basis <m>B</m></term> is the column vector of the coefficients used to express <m>\boldsymbol{v}</m> as a linear combination of the basis vectors:
+          </p>
+
+          <p>
+            <me>
+              \text{Rep}_B (\boldsymbol{v}) = \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{bmatrix}
+            </me>
+          </p>
+
+          <p>
+            where <m>B=( \boldsymbol{\beta}_1, \boldsymbol{\beta}_2, \ldots , \boldsymbol{\beta}_n )</m> and
+          </p>
+
+          <p>
+            <me>
+              \boldsymbol{v} = c_1 \boldsymbol{\beta}_1 + c_2 \boldsymbol{\beta}_2 + \cdots + c_n \boldsymbol{\beta}_n
+            </me>
+          </p>
+        </statement>
+      </definition>
+
+      <example>
+        <p>
+          Consider the space <m>{\cal P}_2</m>, the space of quadratic functions.
+          Let <m>B=( 1, 1+x,1+x+x^2, )</m> be a basis of <m>{\cal P}_2</m> and <m>\boldsymbol{v} = 2x+x^2</m>.
+          To find the representation, we need to find <m>c_1, c_2</m> and <m>c_3</m> such that
+        </p>
+
+        <p>
+          <me>
+            c_1 \cdot 1 + c_2 \cdot (1+x) + c_3 \cdot (1+x+x^2)  = 2x+x^2
+          </me>
+        </p>
+
+        <p>
+          by equating coefficients this is same as solving the linear system:
+        </p>
+
+        <p>
+          <md>
+            <mrow>c_1 + c_2 + c_3 \amp = 0 </mrow>
+            <mrow>c_2 + c_3 \amp = 2 </mrow>
+            <mrow>c_3  \amp = 1</mrow>
+          </md>
+        </p>
+
+        <p>
+          resulting in <m>c_1=-2, c_2=1, c_3=1</m>, therefore
+        </p>
+
+        <p>
+          <me>
+            \text{Rep}_B (\boldsymbol{v}) = \begin{bmatrix} -2 \\ 1 \\ 1 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          If instead the basis is given as <m>D=( 2,2x,x^2 )</m>, then
+        </p>
+
+        <p>
+          <me>
+            c_1 \cdot 2 + c_2 \cdot (2x) + c_3 \cdot (x^2)  = 2x+x^2
+          </me>
+        </p>
+
+        <p>
+          which shows that <m>c_1=0, c_2 =1, c_3 = 1</m>, therefore
+        </p>
+
+        <p>
+          <me>
+            \text{Rep}_D (\boldsymbol{v}) = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
+          </me>
+        </p>
+      </example>
+    </introduction>
+
+    <subsubsection>
+      <title>Representations in the natural basis</title>
+
+      <p>
+        As we saw above, finding representations in a basis requires solving another linear system.
+        However, representations in the natural basis are simple calculations.
+        If we used the natural basis <m>E=( 1, x, x^2 )</m> for the quadratic example above, then
+        <me>
+          \text{Rep}_E (\boldsymbol{v})  = \begin{bmatrix} 0 \\ 2 \\ 1 \end{bmatrix}
+        </me>
+        are just the coefficients of <m>x^n</m> terms of the vector <m>2x+x^2</m>.
+        The following example shows that the representation of a vector in <m>\mathbb{R}^3</m> is what we expect, itself.
+      </p>
+
+      <example>
+        <statement>
+          <p>
+            Find the Representation of the vector
+          </p>
+
+          <p>
+            <me>
+              \boldsymbol{v} = \begin{bmatrix} -3 \\ 2\\ 4 \end{bmatrix}
+            </me>
+          </p>
+
+          <p>
+            in the natural basis
+          </p>
+
+          <p>
+            <me>
+              {\cal E}_3  = \left( \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right)
+            </me>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            We seek the vector <m>\boldsymbol{c}  = [c_1, c_2, c_3]^{\intercal}</m> such that
+          </p>
+
+          <p>
+            <me>
+              c_1 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + c_3 \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -3 \\ 2 \\ 4 \end{bmatrix}
+            </me>
+          </p>
+
+          <p>
+            which is just that <m>c_1=-3, c_2=2,</m> and <m>c_3=4</m> so the representation of the vector in the basis <m>{\cal E}_3</m> is
+          </p>
+
+          <p>
+            <me>
+              \text{Rep}_{\cal E} (\boldsymbol{v})  = \begin{bmatrix} -3 \\ 2 \\ 4 \end{bmatrix}
+            </me>
+          </p>
+
+          <p>
+            which is just the original vector.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        The last example in this section uses matrices.
+        The natural basis for <m>\mathcal{M}_{2 \times 2}</m> is
+      </p>
+
+      <p>
+        <me>
+          B = \left( \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)
+        </me>
+      </p>
+
+      <example xml:id="ex-vector-rep-matrix">
+        <statement>
+          <p>
+            Find
+          </p>
+
+          <p>
+            <me>
+              \text{Rep}_B \left( \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} \right)
+            </me>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Formally, one needs to find <m>c_1, c_2, c_3</m> and <m>c_4</m> such that
+          </p>
+
+          <p>
+            <me>
+              \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = c_1 \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix} + c_3 \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix} + c_4 \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix}
+            </me>
+          </p>
+
+          <p>
+            but since the nice structure of the basis <m>c_1=1,c_2=2,c_3=3,</m> and <m>c_4=4</m>, so
+          </p>
+
+          <p>
+            <me>
+              \text{Rep}_B \left( \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} \right) = \begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}
+            </me>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        One can generalize to show that
+        <me>
+          \text{Rep}_B \left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} \right) = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}
+        </me>
+        and this shows that matrices (which are vectors in the formal sense of vector spaces) can be represented by vectors by reshaping the matrix as a vector.
+      </p>
+    </subsubsection>
+  </subsection>
+
+
+  <subsection>
+    <title>Dimension</title>
+
+    <p>
+      We have been talking about a few big topics in this chapter.
+      One of those is the spanning set of a vector space.
+      We noted that many different sets can span a vector space.
+      This brought in the notation of linear independence and a basis.
+      However for a vector space there can be many different bases.
+    </p>
+
+    <p>
+      Although we did introduce a natural basis, this works well for some spaces, like <m>{\cal P}_2</m> and <m>\mathbb{R}^3</m>, however what is the natural basis for a solution of homogeneous linear system.
+    </p>
+
+    <p>
+      Perhaps if two people argue over the basis of a vector space, one thing they will agree on is the number of vectors in a basis as we will see.
+      We noted earlier that disregarding extra vectors is generally a good thing to result in a basis, but there is a unique thing about bases and that is the number of vectors in any basis.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          A vector space is <term>finite dimensional</term> if it has a basis with only finitely-many vectors.
+        </p>
+      </statement>
+    </definition>
+
+    <theorem>
+      <statement>
+        <p>
+          In any finite-dimensional vector space, all of the bases have the same number of elements.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      Because of this theorem, we define the dimension in following manner.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          The <term>dimension</term> of a finite dimensional vector space is the number of vectors in any of its bases.
+        </p>
+      </statement>
+    </definition>
+
+    <example>
+      <statement>
+        <p>
+          <ul>
+            <li>
+              <p>
+                The dimension of <m>\mathbb{R}^n</m> is <m>n</m>.
+                Although there are many bases, consider <m>\mathcal{E}_n</m>, the natural basis, which has <m>n</m> elements.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The dimension of <m>{\cal P}_n</m> is <m>n+1</m>.
+                The natural basis of <m>\mathcal{P}_n</m> is <m>(1,x,x^2, \ldots, x^n)</m> with <m>n+1</m> elements.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The dimension of <m>{\cal M}_{2 \times 2}</m>, the vector space of all 2 by 2 matrices is 4.
+                A natural basis for this is:
+                <me>
+                  \left( \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix}, \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)
+                </me>
+                and since there are 4 elements, the dimension is 4.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The dimension of <m>\mathcal{M}_{m \times n} = mn</m>.
+                There is a natural basis that is similar to the previous example.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+
+  <subsection>
+    <title>Bases of Subspaces</title>
+
+    <p>
+      There were a number of important ideas in this section, so a summary is necessary.
+      The basis of a space or subspace is useful for writing down elements in the space.
+      That is, if we know the basis, then we know what's in the space.
+      Additionally, the representation of an element are the coefficients in terms of the basis.
+    </p>
+
+    <p>
+      This means that any vector in a finite-dimensional vector space can be represented as a vector and as we will see this will be helpful in that we can use many of the nice techniques from <xref ref="ch-linear-systems"/> and <xref ref="ch-matrices"/> to help.
+      We will start to see that since we can write any polynomial as a vector, that many operations that we do to polynomials (such as  multiplication, differentiation, and integration) can be done using matrices and vectors.
+    </p>
+  </subsection>
+</section>

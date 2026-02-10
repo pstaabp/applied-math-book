@@ -20,6 +20,7 @@
   <!-- include sections -->
   <xi:include href="./vector-spaces.ptx" />
   <xi:include href="./subspaces.ptx" />
+  <xi:include href="./basis-vector-space.ptx" />
   <xi:include href="./inner-product-spaces.ptx" />
   <xi:include href="./linear-transformations.ptx" />
   <xi:include href="./projection-maps.ptx" />

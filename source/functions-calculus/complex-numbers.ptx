@@ -5,25 +5,28 @@
     <ul>
       <li>
         <p>
-          Understand the basics of a complex number and the complex plane. 
+          Understand the basics of a complex number and the complex plane.
         </p>
       </li>
-      <li>
-        <p>
-          Perform arithmetic with complex numbers. 
-        </p>
-      </li>
-      <li>
-        <p>
-          Convert between the standard and polar forms of a complex number. 
-        </p>
 
-      </li>
       <li>
         <p>
-          Using the Polar Form for multiplication of complex numbers, as well as powers and roots. 
+          Perform arithmetic with complex numbers.
         </p>
       </li>
+
+      <li>
+        <p>
+          Convert between the standard and polar forms of a complex number.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Using the Polar Form for multiplication of complex numbers, as well as powers and roots.
+        </p>
+      </li>
+
       <li>
         <p>
           Find the roots of unity.
@@ -31,7 +34,6 @@
       </li>
     </ul>
   </objectives>
-  
 
   <introduction>
     <p>
@@ -302,23 +304,19 @@
               \begin{aligned} z_1z_2 \amp = r_1 r_2 e^{i(\theta_1+\theta_2)} \\ \amp = 2\sqrt{2} e^{i 3\pi/4} \end{aligned}
             </me>
           </p>
+
+          <p>
+            Note that if written in <m>a+bi</m> form using
+            <me>
+              \begin{aligned} z_1z_2 \amp = 2\sqrt{2}\left(\cos (3\pi/4) + i \sin (3\pi/4)\right) \\ \amp = 2 \sqrt{2} \left( -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2}\right) \\ \amp = -2 + 2 i \end{aligned}
+            </me>
+          </p>
+
+          <p>
+            This can also be found by multiplying the two numbers directly.
+          </p>
         </solution>
       </example>
-
-      <p>
-        Note that if written in <m>a+bi</m> form using 
-        <me>
-          \begin{aligned}
-            z_1z_2 \amp = 2\sqrt{2}\left(\cos (3\pi/4) + i \sin (3\pi/4)\right) \\
-            \amp = 2 \sqrt{2} \left( -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2}\right) \\
-            \amp = -2 + 2 i 
-          \end{aligned}
-        </me>
-      </p>
-      <p>
-        This can also be found by multiplying the two numbers directly. 
-      </p>
-      
     </paragraphs>
 
 
@@ -326,30 +324,41 @@
       <title>Powers and Roots of Complex Numbers in Polar Form</title>
 
       <p>
-        The polar form of a complex number is also helpful for powers and roots.  First, writing a number in polar form and then raising that to the power <m>n</m> results in 
+        The polar form of a complex number is also helpful for powers and roots.
+        First, writing a number in polar form and then raising that to the power <m>n</m> results in
         <me>
           z^n = (|z| e^{i\theta})^n = |z|^n e^{in \theta}
         </me>
       </p>
+
       <p>
         For example, if <m>z=1+i=\sqrt{2}e^{i\pi/4}</m>, then powers of <m>z</m> can be written as
         <me>
           z^{n} = (\sqrt{2})^{n} e^{i n \pi/4}
         </me>
       </p>
+
       <p>
-        If <m>n=6</m>, then 
-        <me>z^6 = (\sqrt{2})^6 e^{i 6 \pi/4} = 8 e^{i 3\pi/2}.</me>
-        This can then be converted back to the standard form as 
-        <me>z^6 = 8 (\cos (3\pi/2) + i \sin(3\pi/2)) = 8 (0 + i (-1)) = -8i</me>
+        If <m>n=6</m>, then
+        <me>
+          z^6 = (\sqrt{2})^6 e^{i 6 \pi/4} = 8 e^{i 3\pi/2}.
+        </me>
+        This can then be converted back to the standard form as
+        <me>
+          z^6 = 8 (\cos (3\pi/2) + i \sin(3\pi/2)) = 8 (0 + i (-1)) = -8i
+        </me>
       </p>
+
       <p>
-        A plot of the powers have some interesting properties.  Consider the first 6 powers of <m>z=1+i</m>
+        A plot of the powers have some interesting properties.
+        Consider the first 6 powers of <m>z=1+i</m>
       </p>
+
       <figure xml:id="fig-powers-polar-form">
         <caption></caption>
         <image width="75%">
-          <shortdescription></shortdescription>
+          <shortdescription>
+          </shortdescription>
           <latex-image>
             <![CDATA[ 
             \begin{tikzpicture}
@@ -464,7 +473,7 @@
     <p>
       First, recall that the fundamental theorem of algebra states that there are exactly <m>n</m> complex solutions to a degree <m>n</m> polynomial (including multiplicities), so we expect <m>n</m> solutions to this.
       <me>
-        \begin{aligned} z^n \amp = 1 \\ \amp = e^{2k\pi i} \qquad \text{for $k=0,1,2,\ldots,n-1$} \\ z \amp = e^{(2\pi k)/n i} = \cos \left(\frac{2k\pi}{n}\right) + i \sin \left(\frac{2k\pi}{n}\right) \end{aligned}
+        \begin{aligned} z^n \amp = 1 \\ \amp = e^{2k\pi i} \qquad \text{for $k=0,1,2,\ldots,n-1$} \\ z \amp = e^{(2\pi k)i/n} = \cos \left(\frac{2k\pi}{n}\right) + i \sin \left(\frac{2k\pi}{n}\right) \end{aligned}
       </me>
       And these values are on the unit circle, one of which is <m>z=1+0i</m> and the others are equally spaced around the circle.
     </p>
