@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.13';
+eBookConfig.runestone_version = '7.11.15';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.0d5f811896ddeac1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -349,19 +349,20 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-4" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Vector Norms and distance</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-5" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Angles between vectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-6" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Orthonormal sets of vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-7" class="internal"><span class="codenumber">4.4.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-gram-schmidt" class="internal"><span class="codenumber">4.4.4</span> <span class="title">The Gram-Schmidt Orthogonalization Process</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-inner-product.html#sect-inner-product-8" class="internal"><span class="codenumber">4.4.5</span> <span class="title">Orthogonal infinite sets of functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-linear-transformations.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Linear Transformations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#sect-linear-transformations-3" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-linear-transformations.html#subsect-matrix-form-linear-transformation" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Finding the Matrix Form of a Linear Transformation</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sect-projection-maps.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Projection Maps</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-3" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Using Projections to solve Least-Squares Problems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-4" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#subsec-projection-matrix" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Projection Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-projection-maps.html#sect-projection-maps-5" class="internal"><span class="codenumber">4.6.3</span> <span class="title">Projecting onto a Vector Space</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -378,10 +379,10 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-linear-maps-eigen.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Eigenvalues and Eigenvectors of Linear Transformations</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Symmetric and Orthogonal Matrices and Quadratic Forms</span></a></div>
+<div class="toc-title-box"><a href="sect-orthogonal-matrices.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Orthogonal Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-orthogonal-transformations" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Orthogonal Transformations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-sym-matrix-quad-form.html#sect-quad-forms" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Principle Axes of Quadratic Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-orthogonal-matrices.html#sect-orthogonal-as-transformation" class="internal"><span class="codenumber">5.3.1</span> <span class="title">The Transformation as an Orthogonal Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-orthogonal-matrices.html#sect-construction-orthogonal-matrix" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Constructing Orthogonal Matrices</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -403,7 +404,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-fact-example" class="internal"><span class="codenumber">6.1.1</span> <span class="title">LU factorization and elementary matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-not-lu" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Do All Matrices have an <span class="process-math">\(LU\)</span>-factorization?</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-6" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Generalization of LU Decomposition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-7" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-solve-linear-system-lu" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Solving linear systems using LU Decomposition</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-lu-factorization.html#sect-lu-factorization-8" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Inverting a Matrix</span></a></div></li>
 </ul>
 </li>
@@ -413,13 +414,22 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Powers of Diagonalizable Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Similar Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#ch-matrix-factoring-4-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Similar and Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#sect-orthogonal-transformations" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Orthogonal Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-4.html#sect-quad-forms" class="internal"><span class="codenumber">6.2.5</span> <span class="title">Principle Axes of Quadratic Forms</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-matrix-factoring-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Singular Value Decomposition</span></a></div>
+<div class="toc-title-box"><a href="sec-qr-factorization.html" class="internal"><span class="codenumber">6.3</span> <span class="title">QR Factorization</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-3" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The geometry of the SVD</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-5.html#ch-matrix-factoring-5-4" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Finding a best-fit line and plane using SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-qr-factorization-algorithm" class="internal"><span class="codenumber">6.3.1</span> <span class="title">QR Factorization Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-solving-linear-systems-qr" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Solving Linear Systems with QR factoring.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-matrix-factoring-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-6.html#ch-matrix-factoring-6-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">The geometry of the SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-matrix-factoring-6.html#ch-matrix-factoring-6-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Finding a best-fit line and plane using SVD</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -1084,18 +1094,18 @@ e^{-ix}}{2}
 </div>
 <div class="para" id="sect-inner-product-6-19">which is satisfied for all <span class="process-math">\(\theta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 4.4.3: Orthonormal sets of vectors"><a href="#sect-inner-product-6" title="Copy heading and permalink for Subsection 4.4.3: Orthonormal sets of vectors" aria-label="Copy heading and permalink for Subsection 4.4.3: Orthonormal sets of vectors">🔗</a></div></section><section class="subsection" id="sect-inner-product-7"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsection 4.4.3: Orthonormal sets of vectors"><a href="#sect-inner-product-6" title="Copy heading and permalink for Subsection 4.4.3: Orthonormal sets of vectors" aria-label="Copy heading and permalink for Subsection 4.4.3: Orthonormal sets of vectors">🔗</a></div></section><section class="subsection" id="sect-gram-schmidt"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Gram-Schmidt Orthogonalization Process</span>
 </h3>
-<div class="para" id="sect-inner-product-7-2">We saw above that an orthonormal set of vectors has the property that any two different vectors in the set are orthogonal (inner product of zero) and have norm of one. Often, if we have a set of vectors (say a basis), they aren’t orthonormal, but it is advantageous to have another set that is. The <dfn class="terminology">Gram-Schmidt</dfn> algorithm creates an orthonormal set of vectors from a set of linearly independent vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-2">We saw above that an orthonormal set of vectors has the property that any two different vectors in the set are orthogonal (inner product of zero) and have norm of one. Often, if we have a set of vectors (say a basis), they aren’t orthonormal, but it is advantageous to have another set that is. The <dfn class="terminology">Gram-Schmidt</dfn> algorithm creates an orthonormal set of vectors from a set of linearly independent vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-3">We first see the idea from a pair of vectors in the following example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-3">We first see the idea from a pair of vectors in the following example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-inner-product-7-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<details id="sect-gram-schmidt-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-inner-product-7-4-1-1">Find a orthonormal set of vectors that span the same set as <span class="process-math">\(\{\boldsymbol{u}_1,\boldsymbol{u}_2\}\text{,}\)</span> where<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-inner-product-7-4-1-2">
-<div class="displaymath process-math" id="sect-inner-product-7-4-1-2-1">
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-gram-schmidt-4-1-1">Find a orthonormal set of vectors that span the same set as <span class="process-math">\(\{\boldsymbol{u}_1,\boldsymbol{u}_2\}\text{,}\)</span> where<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sect-gram-schmidt-4-1-2">
+<div class="displaymath process-math" id="sect-gram-schmidt-4-1-2-1">
 \begin{align*}
 \boldsymbol{u}_1 \amp= \begin{bmatrix}
 2 \\ 0
@@ -1104,13 +1114,13 @@ e^{-ix}}{2}
 \end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-inner-product-7-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-inner-product-7-4-2-1">There are many ways of doing this, but the following will always work. First, let’s start by finding a unit vector in the same direction as <span class="process-math">\(\boldsymbol{u}_1\text{.}\)</span> We denote this as <span class="process-math">\(\hat{v}_1\)</span> and this can be found by dividing <span class="process-math">\(\boldsymbol{u}_1\)</span> by its length:<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="sect-gram-schmidt-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-gram-schmidt-4-2-1">There are many ways of doing this, but the following will always work. First, let’s start by finding a unit vector in the same direction as <span class="process-math">\(\boldsymbol{u}_1\text{.}\)</span> We denote this as <span class="process-math">\(\hat{v}_1\)</span> and this can be found by dividing <span class="process-math">\(\boldsymbol{u}_1\)</span> by its length:<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-4-2-2">
-<div class="displaymath process-math" id="sect-inner-product-7-4-2-2-1">
+<div class="para logical" id="sect-gram-schmidt-4-2-2">
+<div class="displaymath process-math" id="sect-gram-schmidt-4-2-2-1">
 \begin{equation*}
 \hat{v}_1 = \frac{1}{||\boldsymbol{u}_1||} \boldsymbol{u}_1 = \frac{1}{2} \begin{bmatrix}
 2 \\ 0
@@ -1119,22 +1129,22 @@ e^{-ix}}{2}
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-4-2-3">Next, we will form a new vector <span class="process-math">\(\boldsymbol{v}_2\)</span> which is a linear combination of <span class="process-math">\(\hat{v}_1\)</span> and <span class="process-math">\(\boldsymbol{u}_2\)</span> and has the property that it is orthogonal to <span class="process-math">\(\boldsymbol{v}_1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-4-2-3">Next, we will form a new vector <span class="process-math">\(\boldsymbol{v}_2\)</span> which is a linear combination of <span class="process-math">\(\hat{v}_1\)</span> and <span class="process-math">\(\boldsymbol{u}_2\)</span> and has the property that it is orthogonal to <span class="process-math">\(\boldsymbol{v}_1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-4-2-4">
-<div class="displaymath process-math" id="sect-inner-product-7-4-2-4-1">
+<div class="para logical" id="sect-gram-schmidt-4-2-4">
+<div class="displaymath process-math" id="sect-gram-schmidt-4-2-4-1">
 \begin{equation*}
 \boldsymbol{v}_2 = c_1 \hat{v}_1 + c_2 \boldsymbol{u}_2
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-4-2-5">and we can take <span class="process-math">\(c_1=1\)</span> without loss of generality. with<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-4-2-5">and we can take <span class="process-math">\(c_1=1\)</span> without loss of generality. with<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-4-2-6">
-<div class="displaymath process-math" id="sect-inner-product-7-4-2-6-1">
+<div class="para logical" id="sect-gram-schmidt-4-2-6">
+<div class="displaymath process-math" id="sect-gram-schmidt-4-2-6-1">
 \begin{align*}
 0 \amp = \langle \boldsymbol{v}_2, \hat{v}_1 \rangle \\
 \amp = \langle \hat{v}_1 + c_2 \boldsymbol{u}_2, \hat{v}_1 \rangle \\
@@ -1142,33 +1152,33 @@ e^{-ix}}{2}
 \rangle 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-4-2-7">and solving for <span class="process-math">\(c_2\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-4-2-7">and solving for <span class="process-math">\(c_2\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-4-2-8">
-<div class="displaymath process-math" id="sect-inner-product-7-4-2-8-1">
+<div class="para logical" id="sect-gram-schmidt-4-2-8">
+<div class="displaymath process-math" id="sect-gram-schmidt-4-2-8-1">
 \begin{align*}
 c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 {\langle \hat{v}_1 \hat{v_1} \rangle}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-4-2-9">and since <span class="process-math">\(\boldsymbol{v}_1\)</span> is a unit vector<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-4-2-9">and since <span class="process-math">\(\boldsymbol{v}_1\)</span> is a unit vector<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-4-2-10">
-<div class="displaymath process-math" id="sect-inner-product-7-4-2-10-1">
+<div class="para logical" id="sect-gram-schmidt-4-2-10">
+<div class="displaymath process-math" id="sect-gram-schmidt-4-2-10-1">
 \begin{equation*}
 = -\langle \boldsymbol{u}_2, \hat{v}_1 \rangle = -1
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-4-2-11">So<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-4-2-11">So<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-4-2-12">
-<div class="displaymath process-math" id="sect-inner-product-7-4-2-12-1">
+<div class="para logical" id="sect-gram-schmidt-4-2-12">
+<div class="displaymath process-math" id="sect-gram-schmidt-4-2-12-1">
 \begin{align*}
 \amp \boldsymbol{v}_2 \amp = \hat{v}_1 - \boldsymbol{u}_2 = \begin{bmatrix}
 1 \\ 0
@@ -1179,12 +1189,12 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 \end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-4-2-13">Now since <span class="process-math">\(\boldsymbol{v}_2\)</span> is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-4-2-13">Now since <span class="process-math">\(\boldsymbol{v}_2\)</span> is already a unit vector, normalization is not needed. If it were, then dividing by its length would create a unit vector. A orthonormal set that spans the set is<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-4-2-14">
-<div class="displaymath process-math" id="sect-inner-product-7-4-2-14-1">
+<div class="para logical" id="sect-gram-schmidt-4-2-14">
+<div class="displaymath process-math" id="sect-gram-schmidt-4-2-14-1">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 1\\0
@@ -1193,42 +1203,42 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 \end{bmatrix} \right\}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-4-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.4.12.1"><a href="#sect-inner-product-7-4-2" title="Copy heading and permalink for Solution 4.4.12.1" aria-label="Copy heading and permalink for Solution 4.4.12.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.4.12.1"><a href="#sect-gram-schmidt-4-2" title="Copy heading and permalink for Solution 4.4.12.1" aria-label="Copy heading and permalink for Solution 4.4.12.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.4.12"><a href="#sect-inner-product-7-4" title="Copy heading and permalink for Example 4.4.12" aria-label="Copy heading and permalink for Example 4.4.12">🔗</a></div></article></details><div class="para" id="sect-inner-product-7-5">If there are more than two vectors in the set, then the process is similar in that iteratively, one creates a new vector that is orthogonal to all previous vectors and then normalizes each one.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.4.12"><a href="#sect-gram-schmidt-4" title="Copy heading and permalink for Example 4.4.12" aria-label="Copy heading and permalink for Example 4.4.12">🔗</a></div></article></details><div class="para" id="sect-gram-schmidt-5">If there are more than two vectors in the set, then the process is similar in that iteratively, one creates a new vector that is orthogonal to all previous vectors and then normalizes each one.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="remark remark-like" id="sect-inner-product-7-6"><h4 class="heading">
+<article class="remark remark-like" id="sect-gram-schmidt-6"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sect-inner-product-7-6-1">The <dfn class="terminology">Gram-Schmidt Orthogonalization</dfn> algorithm is the following. Consider a set of vectors <span class="process-math">\(\{\boldsymbol{u}_1,\boldsymbol{u}_2, \ldots, \boldsymbol{u}_n\}\)</span> which is the basis for some vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-6-1">The <dfn class="terminology">Gram-Schmidt Orthogonalization</dfn> algorithm is the following. Consider a set of vectors <span class="process-math">\(\{\boldsymbol{u}_1,\boldsymbol{u}_2, \ldots, \boldsymbol{u}_n\}\)</span> which is the basis for some vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-6-2">
-<ol class="decimal" id="sect-inner-product-7-6-2-1">
-<li id="sect-inner-product-7-6-2-1-1">
-<div class="para" id="sect-inner-product-7-6-2-1-1-1">Let <span class="process-math">\(\boldsymbol{v}_1=\boldsymbol{u}_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-6-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sect-gram-schmidt-6-2">
+<ol class="decimal" id="sect-gram-schmidt-6-2-1">
+<li id="sect-gram-schmidt-6-2-1-1">
+<div class="para" id="sect-gram-schmidt-6-2-1-1-1">Let <span class="process-math">\(\boldsymbol{v}_1=\boldsymbol{u}_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-6-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#sect-inner-product-7-6-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#sect-gram-schmidt-6-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="sect-inner-product-7-6-2-1-2">
-<div class="para" id="sect-inner-product-7-6-2-1-2-1">Let <span class="process-math">\(\boldsymbol{v}_2 = \boldsymbol{u}_2 - \dfrac{\langle \boldsymbol{v}_1,\boldsymbol{u}_2 \rangle}{\langle
-\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-6-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="sect-gram-schmidt-6-2-1-2">
+<div class="para" id="sect-gram-schmidt-6-2-1-2-1">Let <span class="process-math">\(\boldsymbol{v}_2 = \boldsymbol{u}_2 - \dfrac{\langle \boldsymbol{v}_1,\boldsymbol{u}_2 \rangle}{\langle
+\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-6-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#sect-inner-product-7-6-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#sect-gram-schmidt-6-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="sect-inner-product-7-6-2-1-3">
-<div class="para" id="sect-inner-product-7-6-2-1-3-1">Let <span class="process-math">\(\boldsymbol{v}_3 = \boldsymbol{u}_3 - \dfrac{\langle \boldsymbol{v}_2,\boldsymbol{u}_3 \rangle}{\langle
+<li id="sect-gram-schmidt-6-2-1-3">
+<div class="para" id="sect-gram-schmidt-6-2-1-3-1">Let <span class="process-math">\(\boldsymbol{v}_3 = \boldsymbol{u}_3 - \dfrac{\langle \boldsymbol{v}_2,\boldsymbol{u}_3 \rangle}{\langle
 \boldsymbol{v}_2,\boldsymbol{v}_2 \rangle} \boldsymbol{v}_2-\dfrac{\langle \boldsymbol{v}_1,\boldsymbol{u}_3
 \rangle}{\langle
-\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-6-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\boldsymbol{v}_1,\boldsymbol{v}_1 \rangle} \boldsymbol{v}_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-6-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3"><a href="#sect-inner-product-7-6-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3"><a href="#sect-gram-schmidt-6-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
-<li id="sect-inner-product-7-6-2-1-4">
-<div class="para logical" id="sect-inner-product-7-6-2-1-4-1">
+<li id="sect-gram-schmidt-6-2-1-4">
+<div class="para logical" id="sect-gram-schmidt-6-2-1-4-1">
 <div class="para">And so on with</div>
-<div class="displaymath process-math" id="sect-inner-product-7-6-2-1-4-1-1">
+<div class="displaymath process-math" id="sect-gram-schmidt-6-2-1-4-1-1">
 \begin{align*}
 \boldsymbol{v}_k \amp = \boldsymbol{u}_k - \frac{\langle \boldsymbol{v}_{k-1},\boldsymbol{u}_k
 \rangle}{\langle \boldsymbol{v}_{k-1},\boldsymbol{v}_{k-1} \rangle} \boldsymbol{v}_{k-1}-\frac{\langle
@@ -1242,19 +1252,19 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 \rangle}{\langle \boldsymbol{v}_i,\boldsymbol{v}_i \rangle} \boldsymbol{v}_i
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-6-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-6-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4"><a href="#sect-inner-product-7-6-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+<div class="autopermalink" data-description="Item 4"><a href="#sect-gram-schmidt-6-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-6-3">The resulting set of vectors <span class="process-math">\(\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\}\)</span> are orthogonal. If the set also needs to be orthonormal, for each vector <span class="process-math">\(\boldsymbol{v}_k\)</span> divide through by its length.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-6-3">The resulting set of vectors <span class="process-math">\(\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\}\)</span> are orthogonal. If the set also needs to be orthonormal, for each vector <span class="process-math">\(\boldsymbol{v}_k\)</span> divide through by its length.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 4.4.13"><a href="#sect-inner-product-7-6" title="Copy heading and permalink for Remark 4.4.13" aria-label="Copy heading and permalink for Remark 4.4.13">🔗</a></div></article><details id="sect-inner-product-7-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of Gram-Schmidt Orthogonalization.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-inner-product-7-7-2">To prove Gram-Schmidt orthogonalization works, we will prove that <span class="process-math">\(\boldsymbol{v}_k\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_i\)</span> for all <span class="process-math">\(i \lt k\text{.}\)</span> We will show this by induction. First show that <span class="process-math">\(\boldsymbol{v}_2\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_1\)</span> :<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 4.4.13"><a href="#sect-gram-schmidt-6" title="Copy heading and permalink for Remark 4.4.13" aria-label="Copy heading and permalink for Remark 4.4.13">🔗</a></div></article><details id="sect-gram-schmidt-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of Gram-Schmidt Orthogonalization.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-gram-schmidt-7-2">To prove Gram-Schmidt orthogonalization works, we will prove that <span class="process-math">\(\boldsymbol{v}_k\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_i\)</span> for all <span class="process-math">\(i \lt k\text{.}\)</span> We will show this by induction. First show that <span class="process-math">\(\boldsymbol{v}_2\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_1\)</span> :<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-7-3">
-<div class="displaymath process-math" id="sect-inner-product-7-7-3-1">
+<div class="para logical" id="sect-gram-schmidt-7-3">
+<div class="displaymath process-math" id="sect-gram-schmidt-7-3-1">
 \begin{align*}
 \langle \boldsymbol{v}_2 , \boldsymbol{v}_1 \rangle \amp = \biggl\langle \boldsymbol{u}_2 -
 \dfrac{\langle
@@ -1266,13 +1276,13 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 0
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-7-4">Now assume that <span class="process-math">\(\boldsymbol{v}_k\)</span> is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s or <span class="process-math">\(\langle\boldsymbol{v}_k, \boldsymbol{v}_i \rangle =0\)</span> for <span class="process-math">\(i=k-1,k-2,\ldots,
-2,1\text{.}\)</span> Now we will prove that <span class="process-math">\(\boldsymbol{v}_{k+1}\text{,}\)</span> given by Gram-Schmidt is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s. For all <span class="process-math">\(j=1,2,\ldots,k\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-7-4">Now assume that <span class="process-math">\(\boldsymbol{v}_k\)</span> is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s or <span class="process-math">\(\langle\boldsymbol{v}_k, \boldsymbol{v}_i \rangle =0\)</span> for <span class="process-math">\(i=k-1,k-2,\ldots,
+2,1\text{.}\)</span> Now we will prove that <span class="process-math">\(\boldsymbol{v}_{k+1}\text{,}\)</span> given by Gram-Schmidt is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s. For all <span class="process-math">\(j=1,2,\ldots,k\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-7-5">
-<div class="displaymath process-math" id="sect-inner-product-7-7-5-1">
+<div class="para logical" id="sect-gram-schmidt-7-5">
+<div class="displaymath process-math" id="sect-gram-schmidt-7-5-1">
 \begin{align*}
 \langle \boldsymbol{v}_{k+1}, \boldsymbol{v}_j \rangle \amp =
 \biggl \langle \boldsymbol{u}_{k+1} - \sum_{i=1}^{k} \dfrac{\langle \boldsymbol{v}_i, \boldsymbol{u}_{k+1}
@@ -1283,12 +1293,12 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 \boldsymbol{v}_j \rangle
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-7-6">The only term that is not apparently nonzero in the sum is when <span class="process-math">\(i=j\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-7-6">The only term that is not apparently nonzero in the sum is when <span class="process-math">\(i=j\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-7-7">
-<div class="displaymath process-math" id="sect-inner-product-7-7-7-1">
+<div class="para logical" id="sect-gram-schmidt-7-7">
+<div class="displaymath process-math" id="sect-gram-schmidt-7-7-1">
 \begin{align*}
 \amp = \langle \boldsymbol{u}_{k+1}, \boldsymbol{v}_j \rangle - \dfrac{\langle \boldsymbol{v}_j,
 \boldsymbol{u}_{k+1} \rangle}{\langle \boldsymbol{v}_j,\boldsymbol{v}_i \rangle} \langle \boldsymbol{v}_j, \boldsymbol{v}_j
@@ -1297,15 +1307,15 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 \rangle = 0
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-7-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-7-8">Therefore <span class="process-math">\(\boldsymbol{v}_{k+1}\)</span> is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s and thus the basis consisting of <span class="process-math">\(\boldsymbol{v}\)</span> form an orthonormal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-7-8">Therefore <span class="process-math">\(\boldsymbol{v}_{k+1}\)</span> is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s and thus the basis consisting of <span class="process-math">\(\boldsymbol{v}\)</span> form an orthonormal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization"><a href="#sect-inner-product-7-7" title="Copy heading and permalink for Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization" aria-label="Copy heading and permalink for Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization">🔗</a></div></article></details><details id="sect-inner-product-7-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization"><a href="#sect-gram-schmidt-7" title="Copy heading and permalink for Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization" aria-label="Copy heading and permalink for Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization">🔗</a></div></article></details><details id="sect-gram-schmidt-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sect-inner-product-7-8-1-1">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sect-gram-schmidt-8-1-1">
 <div class="para">Find a orthogonal set of vectors than spans the same subspace as</div>
-<div class="displaymath process-math" id="sect-inner-product-7-8-1-1-1">
+<div class="displaymath process-math" id="sect-gram-schmidt-8-1-1-1">
 \begin{equation*}
 \left\{ \begin{bmatrix}
 1 \\ 0 \\ 1
@@ -1316,29 +1326,29 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 \end{bmatrix} \right\}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-inner-product-7-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sect-inner-product-7-8-2-1">Let <span class="process-math">\(\boldsymbol{u}_1, \boldsymbol{u}_2\)</span> and <span class="process-math">\(\boldsymbol{u}_3\)</span> be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="sect-gram-schmidt-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sect-gram-schmidt-8-2-1">Let <span class="process-math">\(\boldsymbol{u}_1, \boldsymbol{u}_2\)</span> and <span class="process-math">\(\boldsymbol{u}_3\)</span> be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sect-inner-product-7-8-2-2">
-<ol class="decimal" id="sect-inner-product-7-8-2-2-1">
-<li id="sect-inner-product-7-8-2-2-1-1">
-<div class="para logical" id="sect-inner-product-7-8-2-2-1-1-1">
-<div class="displaymath process-math" id="sect-inner-product-7-8-2-2-1-1-1-1">
+<div class="para logical" id="sect-gram-schmidt-8-2-2">
+<ol class="decimal" id="sect-gram-schmidt-8-2-2-1">
+<li id="sect-gram-schmidt-8-2-2-1-1">
+<div class="para logical" id="sect-gram-schmidt-8-2-2-1-1-1">
+<div class="displaymath process-math" id="sect-gram-schmidt-8-2-2-1-1-1-1">
 \begin{equation*}
 \boldsymbol{v}_1 = \boldsymbol{u}_1 = \begin{bmatrix}
 1 \\ 0 \\ 1
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-8-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#sect-inner-product-7-8-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#sect-gram-schmidt-8-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="sect-inner-product-7-8-2-2-1-2">
-<div class="para logical" id="sect-inner-product-7-8-2-2-1-2-1">
-<div class="displaymath process-math" id="sect-inner-product-7-8-2-2-1-2-1-1">
+<li id="sect-gram-schmidt-8-2-2-1-2">
+<div class="para logical" id="sect-gram-schmidt-8-2-2-1-2-1">
+<div class="displaymath process-math" id="sect-gram-schmidt-8-2-2-1-2-1-1">
 \begin{equation*}
 \boldsymbol{v}_2 = \boldsymbol{u}_2 - \frac{\langle \boldsymbol{u}_2, \boldsymbol{v}_1 \rangle}{\langle
 \boldsymbol{v}_1, \boldsymbol{v}_1 \rangle} \boldsymbol{v}_1 = \begin{bmatrix}
@@ -1350,13 +1360,13 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-8-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#sect-inner-product-7-8-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#sect-gram-schmidt-8-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="sect-inner-product-7-8-2-2-1-3">
-<div class="para logical" id="sect-inner-product-7-8-2-2-1-3-1">
-<div class="displaymath process-math" id="sect-inner-product-7-8-2-2-1-3-1-1">
+<li id="sect-gram-schmidt-8-2-2-1-3">
+<div class="para logical" id="sect-gram-schmidt-8-2-2-1-3-1">
+<div class="displaymath process-math" id="sect-gram-schmidt-8-2-2-1-3-1-1">
 \begin{align*}
 \boldsymbol{v}_3 \amp = \boldsymbol{u}_3 - \frac{\langle \boldsymbol{u}_3, \boldsymbol{v}_2
 \rangle}{\langle \boldsymbol{v}_2, \boldsymbol{v}_2 \rangle}
@@ -1373,20 +1383,20 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 \end{bmatrix}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-8-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3"><a href="#sect-inner-product-7-8-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3"><a href="#sect-gram-schmidt-8-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-8-2-3">And the set <span class="process-math">\(\{\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3\}\)</span> is now orthogonal (check it).<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-8-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-8-2-3">And the set <span class="process-math">\(\{\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3\}\)</span> is now orthogonal (check it).<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-inner-product-7-8-2-4">Note:	there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-8-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-gram-schmidt-8-2-4">Note:	there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.4.14.1"><a href="#sect-inner-product-7-8-2" title="Copy heading and permalink for Solution 4.4.14.1" aria-label="Copy heading and permalink for Solution 4.4.14.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.4.14.1"><a href="#sect-gram-schmidt-8-2" title="Copy heading and permalink for Solution 4.4.14.1" aria-label="Copy heading and permalink for Solution 4.4.14.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.4.14"><a href="#sect-inner-product-7-8" title="Copy heading and permalink for Example 4.4.14" aria-label="Copy heading and permalink for Example 4.4.14">🔗</a></div></article></details><div class="para" id="sect-inner-product-7-9">Although the example shown here uses vectors in <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> Gram-Schmidt can be done on any set of vectors from an inner product space. This is very common for polynomials and will show an example with this next. Also, in  <a href="ch-fourier-series.html" class="internal" title="Chapter 7: Fourier Series">Chapter 7</a>, we will also show this with trigonometric functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-7-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.4.14"><a href="#sect-gram-schmidt-8" title="Copy heading and permalink for Example 4.4.14" aria-label="Copy heading and permalink for Example 4.4.14">🔗</a></div></article></details><div class="para" id="sect-gram-schmidt-9">Although the example shown here uses vectors in <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> Gram-Schmidt can be done on any set of vectors from an inner product space. This is very common for polynomials and will show an example with this next. Also, in  <a href="ch-fourier-series.html" class="internal" title="Chapter 7: Fourier Series">Chapter 7</a>, we will also show this with trigonometric functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="example-gram-schmidt-p3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -1471,7 +1481,7 @@ x - \frac{\int_{-1}^1 x^3 \cdot 1 \,dx }{\int_{-1}^1 1 \cdot 1 \, dx}
 </div>
 <div class="autopermalink" data-description="Solution 4.4.15.1"><a href="#example-gram-schmidt-p3-2" title="Copy heading and permalink for Solution 4.4.15.1" aria-label="Copy heading and permalink for Solution 4.4.15.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.4.15"><a href="#example-gram-schmidt-p3" title="Copy heading and permalink for Example 4.4.15" aria-label="Copy heading and permalink for Example 4.4.15">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process"><a href="#sect-inner-product-7" title="Copy heading and permalink for Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process" aria-label="Copy heading and permalink for Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process">🔗</a></div></section><section class="subsection" id="sect-inner-product-8"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 4.4.15"><a href="#example-gram-schmidt-p3" title="Copy heading and permalink for Example 4.4.15" aria-label="Copy heading and permalink for Example 4.4.15">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process"><a href="#sect-gram-schmidt" title="Copy heading and permalink for Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process" aria-label="Copy heading and permalink for Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process">🔗</a></div></section><section class="subsection" id="sect-inner-product-8"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonal infinite sets of functions</span>
 </h3>
 <div class="para" id="sect-inner-product-8-2">

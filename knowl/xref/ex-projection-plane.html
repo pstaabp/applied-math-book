@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para">Find the projection of vector <span class="process-math">\([6,-2,3]^T\)</span> onto plane given by <span class="process-math">\(x+2y+3z=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-projection-plane-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">First, let’s find two vectors in the plane, called <span class="process-math">\(P\text{,}\)</span> that form an orthogonal basis (we will see why it’s helpful to have an orthogonal basis later). Recall that a normal vector to the plane is given by the vector <span class="process-math">\([1,2,3]^T\text{.}\)</span> Two vector that are normal to it is <span class="process-math">\(\boldsymbol{u}_1=[3,0,-1]\)</span> and <span class="process-math">\(\boldsymbol{u}_2=[0,-3,2]^T\text{.}\)</span> (Note: these are two points in the plane). To form an orthonormal basis, we need to perform Gramm-Schmidt.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\boldsymbol{v}_1 \amp = \boldsymbol{u}_1 \amp \boldsymbol{v}_2 \amp= \boldsymbol{u}_2 - \frac{\langle \boldsymbol{v}_1,\boldsymbol{u}_2 \rangle}{\langle \boldsymbol{v}_1, \boldsymbol{v}_1 \rangle} \boldsymbol{v}_1  \\ \amp = \begin{bmatrix} 3 \\ 0 \\ -1 \end{bmatrix}\amp \boldsymbol{v}_2 \amp = \begin{bmatrix} 0 \\ -3 \\ 2 \end{bmatrix} - \biggl(-\frac{1}{5}\biggr) \begin{bmatrix} 3 \\ 0 \\ -1 \end{bmatrix} \\
+\amp\amp\amp  = \begin{bmatrix} 3/5 \\ -3 \\ 9/5 \end{bmatrix}
+\end{align*}
+</div>
+<div class="para">and to make the second vector nicer, we’ll multiply by <span class="process-math">\(5/3\text{.}\)</span> An orthogonal set in the plane is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix} 3 \\ 0 \\ -1 \end{bmatrix} , \begin{bmatrix} 1 \\ -5 \\ 3 \end{bmatrix} \right \}
+\end{equation*}
+</div>
+<div class="para">To consider how to project the vector <span class="process-math">\(\boldsymbol{u} = [6,-2,3]^{\intercal}\)</span> into the plane we will write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldsymbol{u} = \boldsymbol{u}_{\perp} + \boldsymbol{u}_{||}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\boldsymbol{u}_{\perp}\)</span> is orthogonal to both <span class="process-math">\(\boldsymbol{v}_1\)</span> and <span class="process-math">\(\boldsymbol{v}_2\)</span> and we can write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Proj}_{P}\boldsymbol{u} = \boldsymbol{u}_{||} = c_1 \boldsymbol{v}_1 + c_2 \boldsymbol{v}_2
+\end{equation*}
+</div>
+<div class="para">So we next take the inner product of <span class="process-math">\(\boldsymbol{u}\)</span> with both <span class="process-math">\(\boldsymbol{v}_1\)</span> and <span class="process-math">\(\boldsymbol{v}_2\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\langle \boldsymbol{u}, \boldsymbol{v}_1 \rangle \amp = \langle \boldsymbol{u}_{\perp} + \boldsymbol{u}_{||}, \boldsymbol{v}_1 \rangle \amp \langle \boldsymbol{u}, \boldsymbol{v}_2 \rangle \amp = \langle \boldsymbol{u}_{\perp} + \boldsymbol{u}_{||}, \boldsymbol{v}_2 \rangle \\
+\amp = \langle \boldsymbol{u}_{\perp}, \boldsymbol{v}_1 \rangle + \langle \boldsymbol{u}_{||}, \boldsymbol{v}_1 \rangle \amp \amp = \langle \boldsymbol{u}_{\perp}, \boldsymbol{v}_2 \rangle + \langle \boldsymbol{u}_{||}, \boldsymbol{v}_2 \rangle \\
+\amp = 0 + \langle c_1 \boldsymbol{v}_1 + c_2 \boldsymbol{v}_2 ,\boldsymbol{v}_1 \rangle \amp \amp = 0 + \langle c_1 \boldsymbol{v}_1 + c_2 \boldsymbol{v}_2 ,\boldsymbol{v}_2 \rangle \\
+\amp = c_1 \langle \boldsymbol{v}_1, \boldsymbol{v}_1 \rangle + c_2 \langle \boldsymbol{v}_2, \boldsymbol{v}_1 \rangle \amp \amp = c_1 \langle \boldsymbol{v}_1, \boldsymbol{v}_2 \rangle + c_2 \langle \boldsymbol{v}_2, \boldsymbol{v}_2 \rangle \\
+\amp = c_1 \langle \boldsymbol{v}_1, \boldsymbol{v}_1 \rangle + 0 \amp \amp = 0 + c_2 \langle \boldsymbol{v}_2, \boldsymbol{v}_1 \rangle
+\end{align*}
+</div>
+<div class="para">Therefore</div>
+<div class="displaymath process-math">
+\begin{align*}
+c_1 \amp = \frac{\langle \boldsymbol{u},\boldsymbol{v}_1 \rangle}{\langle \boldsymbol{v}_1, \boldsymbol{v}_1 \rangle} \amp c_2 \amp = \frac{\langle \boldsymbol{u},\boldsymbol{v}_2 \rangle}{\langle \boldsymbol{v}_2, \boldsymbol{v}_2 \rangle} 
+\end{align*}
+</div>
+<div class="para">So in the case of projecting a vector onto a plane, <span class="process-math">\(P\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\text{Proj}_{P} \boldsymbol{u} \amp = c_1 \boldsymbol{v}_1 + c_2 \boldsymbol{v}_2 \\
+\amp = \frac{\langle \boldsymbol{u},\boldsymbol{v}_1 \rangle}{\langle \boldsymbol{v}_1, \boldsymbol{v}_1 \rangle} \boldsymbol{v}_1 + \frac{\langle \boldsymbol{u},\boldsymbol{v}_2 \rangle}{\langle \boldsymbol{v}_2, \boldsymbol{v}_2 \rangle} \boldsymbol{v}_2 \\
+\amp = \frac{15}{10} \begin{bmatrix} 3 \\ 0 \\ -1 \end{bmatrix} + \frac{25}{35} \begin{bmatrix} 1 \\ -5 \\ 3 \end{bmatrix} = \frac{1}{14}\begin{bmatrix} 73 \\ -50 \\ 9 \end{bmatrix}
+\end{align*}
+</div>
+<div class="para">So the vector <span class="process-math">\(\frac{1}{14} [73,-50,9]^{\intercal}\)</span> is the projection of the vector <span class="process-math">\([6,-2,3]^{\intercal}\)</span> onto the plane <span class="process-math">\(x+2y+3z=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-projection-plane-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.6.6.1"><a href="#ex-projection-plane-2" title="Copy heading and permalink for Solution 4.6.6.1" aria-label="Copy heading and permalink for Solution 4.6.6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.6.6"><a href="#ex-projection-plane" title="Copy heading and permalink for Example 4.6.6" aria-label="Copy heading and permalink for Example 4.6.6">🔗</a></div></article><span class="incontext"><a class="internal" href="sect-projection-maps.html#ex-projection-plane">in-context</a></span>
+</body>
+</html>

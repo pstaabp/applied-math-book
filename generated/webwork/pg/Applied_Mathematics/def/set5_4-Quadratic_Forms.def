@@ -1,0 +1,11 @@
+openDate          = 02/23/2026 at 12:00am
+dueDate           = 08/23/2026 at 10:00pm
+answerDate        = 08/23/2026 at 10:00pm
+paperHeaderFile   = Applied_Mathematics/header/5_4-Quadratic_Forms.pg
+screenHeaderFile  = Applied_Mathematics/header/5_4-Quadratic_Forms.pg
+description       = Quadratic Forms
+problemListV2
+problem_start
+source_file = Contrib/Michigan/linalg/Library/TCNJ/TCNJ_OrthogonalSets/problem8.pg
+problem_id = 6
+problem_end

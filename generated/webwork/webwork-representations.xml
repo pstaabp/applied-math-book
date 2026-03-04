@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-representations>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-1" ww-id="webwork-1">
+    <static seed="1" source="Contrib/Michigan/linalg/Library/TCNJ/TCNJ_OrthogonalSets/problem8.pg">
+      <statement><p>In the following, 
+all vectors are in <m>{\mathbb R}^n</m>.
+An <em>orthogonal set</em> is a set of vectors all
+of which are orthogonal to the other vectors in the set
+(but not necessarily orthonormal).</p>
+<p>Check the true statements below:</p>
+<p><var form="checkboxes">
+<li>
+<p>An orthogonal matrix is invertible.</p>
+</li>
+<li>
+<p>The orthogonal projection of <m>y</m> onto <m>v</m> is the same as the orthogonal projection of <m>y</m> onto <m>cv</m> whenever <m>c\neq 0</m>.</p>
+</li>
+<li>
+<p>If the columns of an <m>m\times n</m> matrix are orthonormal, then the linear mapping <m>x\rightarrow Ax</m> preserves lengths.</p>
+</li>
+<li>
+<p>If a set <m>S= \{ u_{1},...,u_{p} \}</m> has the property that <m>u_{i}\cdot u_{j}=0</m> whenever <m>i\neq j</m>, then <m>S</m> is an orthonormal set.</p>
+</li>
+<li>
+<p>Not every orthogonal set in <m>{\mathbb R}^n</m> is a linearly independent set.</p>
+</li>
+</var></p>
+</statement>
+    </static>
+    <rendering-data sourceFilePath="Contrib/Michigan/linalg/Library/TCNJ/TCNJ_OrthogonalSets/problem8.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Contrib/Michigan/linalg/Library/TCNJ/TCNJ_OrthogonalSets/problem8.pg"/>
+  </webwork-reps>
+</webwork-representations>
