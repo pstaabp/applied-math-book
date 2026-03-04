@@ -1438,7 +1438,7 @@
         </p>
 
         <p>
-          Next, the revsere direction:  If <m>\det(A) = 0 </m>, we will use proof by contradiction and assume that <m>A^{-1}</m> exists that is
+          Next, the reverse direction:  If <m>\det(A) = 0 </m>, we will use proof by contradiction and assume that <m>A^{-1}</m> exists that is
           <me>
             A A^{-1} = I
           </me>

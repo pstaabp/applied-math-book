@@ -695,7 +695,7 @@
 					If <m>\lambda</m> is an complex eigenvalue with
 					corresponding eigenvector, <m>\boldsymbol{v}</m>, then the complex conjugate of <m>\lambda,</m>
 					denoted <m>\overline{\lambda}</m> is also an eigenvalue with corresponding complex
-					conjuate eigenvector <m>\overline{\boldsymbol{v}}</m>.
+					conjugate eigenvector <m>\overline{\boldsymbol{v}}</m>.
 				</p>
 			</statement>
 

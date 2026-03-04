@@ -11,5 +11,6 @@
   <!-- <xi:include href="./matrix-operations.ptx" /> -->
   <xi:include href="./lu-factorization.ptx" />
   <xi:include href="./diagonalization.ptx" />
+  <xi:include href="./qr-factor.ptx" />
   <xi:include href="./svd.ptx" />
 </chapter>

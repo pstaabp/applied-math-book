@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-orthogonal-matrices">
+  <title>Orthogonal Matrices</title>
+
+  <introduction>
+    <p>
+      In this chapter, we explore matrices that have special properties and their applications to quadratic forms.
+      We will see that symmetric matrices have real eigenvalues and orthogonal eigenvectors, and that we can use these properties to simplify quadratic forms.
+    </p>
+
+    <p>
+      Before defining a orthogonal matrix and its corresponding transformation, let's recall a few definitions and theorems about symmetric matrices.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          A square matrix <m>A</m> is said to be <term>symmetric</term> if <m>A=A^{\intercal}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      The next theorem is an important result about the eigenvalues of symmetric matrices, and it will be used in the next section to show that the eigenvectors of a symmetric matrix are orthogonal.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          The eigenvalues of a symmetric matrix are real.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          Let <m>\lambda</m> be an eigenvalue of <m>A</m> with corresponding eigenvector <m> \boldsymbol{v}</m> that is:
+        </p>
+
+        <p>
+          <men xml:id="eq-eig-eq2">
+            A \boldsymbol{v} = \lambda \boldsymbol{v}
+          </men>
+        </p>
+
+        <p>
+          Left multiply <xref ref="eq-eig-eq2"/> by <m>\overline{\boldsymbol{v}}^{\intercal}</m>
+        </p>
+
+        <p>
+          <me>
+            \overline{\boldsymbol{v}}^{\intercal} A \boldsymbol{v} = \lambda \overline{\boldsymbol{v}}^{\intercal} \boldsymbol{v}
+          </me>
+          resulting in
+          <men xml:id="eq-eig-eq3">
+            \lambda = \frac{\overline{\boldsymbol{v}}^{\intercal} A \boldsymbol{v}}{\overline{\boldsymbol{v}}^{\intercal} \boldsymbol{v}}
+          </men>
+        </p>
+
+        <p>
+          Next, take the transpose of <xref ref="eq-eig-eq2"/> and recall that <m>(AB)^{\intercal} = B^{\intercal} A^{\intercal}</m>
+          <me>
+            \begin{aligned} \boldsymbol{v}^{\intercal} A^{\intercal} \amp = \lambda \boldsymbol{v}^{\intercal} \\ \boldsymbol{v}^{\intercal} A \amp = \lambda \boldsymbol{v}^{\intercal} \\ \end{aligned}
+          </me>
+          where the symmetry of <m>A</m> has been employed.
+          Take the complex conjugate of the above equation:
+          <me>
+            \begin{aligned} \overline{\boldsymbol{v}^{\intercal} A} \amp =  \overline{\lambda \boldsymbol{v}^{\intercal}} \\ \overline{\boldsymbol{v}}^{\intercal} \overline{A} \amp = \overline{\lambda} \overline{\boldsymbol{v}}^{\intercal} \\ \overline{\boldsymbol{v}}^{\intercal} A \amp = \overline{\lambda} \overline{\boldsymbol{v}}^{\intercal} \end{aligned}
+          </me>
+          where <m>\overline{A} = A</m> has been used because <m>A</m> is a real matrix.
+          Right multiply this by <m>\boldsymbol{v}</m>
+          <me>
+            \overline{\boldsymbol{v}}^{\intercal} \overline{A} \boldsymbol{v} = \overline{\lambda} \overline{\boldsymbol{v}}^{\intercal} \boldsymbol{v}
+          </me>
+          Solving this for <m>\overline{\lambda}</m> results in
+          <me>
+            \overline{\lambda} = \frac{\overline{\boldsymbol{v}}^{\intercal} A \boldsymbol{v}}{ \overline{\boldsymbol{v}}^{\intercal} \boldsymbol{v}}
+          </me>
+          which is identical to <xref ref="eq-eig-eq3"/> showing that <m>\lambda = \overline{\lambda}</m> which shows that <m>\lambda</m> is real.
+        </p>
+      </proof>
+    </theorem>
+
+    <theorem>
+      <statement>
+        <p>
+          The eigenvectors of a symmetric matrix are orthogonal.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          Let <m>\lambda_1</m> and <m>\lambda_2</m> be two distinct eigenvalues of a symmetric matrix <m>A</m> with corresponding eigenvectors <m>\boldsymbol{v}_1</m> and <m>\boldsymbol{v}_2</m>.
+          Then
+          <me>
+            A \boldsymbol{v}_1 = \lambda_1 \boldsymbol{v}_1
+          </me>
+          and
+          <me>
+            A \boldsymbol{v}_2 = \lambda_2 \boldsymbol{v}_2
+          </me>
+          Left multiply the first equation by <m>\boldsymbol{v}_2^{\intercal}</m> and the second equation by <m>\boldsymbol{v}_1^{\intercal}</m> to get
+          <me>
+            \begin{aligned} \boldsymbol{v}_2^{\intercal} A \boldsymbol{v}_1 \amp = \lambda_1 \boldsymbol{v}_2^{\intercal} \boldsymbol{v}_1 \\ \boldsymbol{v}_1^{\intercal} A \boldsymbol{v}_2 \amp = \lambda_2 \boldsymbol{v}_1^{\intercal} \boldsymbol{v}_2 \\ \end{aligned}
+          </me>
+          Since <m>A</m> is symmetric, then <m>\boldsymbol{v}_2^{\intercal} A \boldsymbol{v}_1 =  \boldsymbol{v}_1^{\intercal} A \boldsymbol{v}_2</m>.
+          Therefore,
+          <me>
+            (\lambda_1 - \lambda_2)  \boldsymbol{v}_2^{\intercal} \boldsymbol{v}_1 = 0
+          </me>
+          Since the eigenvalues are distinct, then <m>\lambda_1 - \lambda_2 \neq 0</m> which implies that <m>\boldsymbol{v}_2^{\intercal} \boldsymbol{v}_1 = 0</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <definition>
+      <statement>
+        <p>
+          A square matrix <m>Q=[\boldsymbol{q}_1\;\; \boldsymbol{q}_2\;\;\boldsymbol{q}_3\;\; \cdots\;\;\boldsymbol{q}_n] </m> is said to be <term>orthogonal</term> if
+        </p>
+
+        <p>
+          <me>
+            \boldsymbol{q}_i^{\intercal} \boldsymbol{q}_j = 0
+          </me>
+        </p>
+
+        <p>
+          for all <m>i \neq j</m>.
+          If in addition that <m>\boldsymbol{q}_i^{\intercal}\boldsymbol{q}_i = 1</m> for all <m>i</m> then the matrix is also said to be <term>orthonormal</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Sometimes orthogonal matrices also have the condition that each column has length 1.
+    </p>
+
+    <theorem xml:id="thm-orthogonal-inverse">
+      <statement>
+        <p>
+          If <m>Q</m> is a orthonormal matrix, then <m>Q^{\intercal} = Q^{-1}</m>.
+        </p>
+      </statement>
+    </theorem>
+
+
+    <proof>
+      <p>
+        This is the same as showing that <m>Q^{\intercal} Q = I</m>, which is the definition of an orthonormal matrix.
+      </p>
+    </proof>
+
+    <p>
+      The last theorem in this section is about the determinants.  We show that the determinant of a orthogonal matrix is either 1 or -1. 
+    </p>
+
+    <theorem xml:id="thm-orthogonal-determinant">
+      <statement>
+        <p>
+          If <m>Q</m> is an orthogonal matrix, then <m>\det(Q)=1</m> or <m>\det(Q)=-1</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Recall that <m>\det(Q) = \det(Q^{\intercal})</m> from <xref ref="lem-det-transpose"/>, then from <xref ref="lem-det-product-matrices"/> 
+          <me>
+             \det(Q^{\intercal})\det(Q) = \det(Q^{\intercal}Q) = \det(I) = 1
+          </me>
+          Then since the determinant is a real number, then <m>\det(Q) = 1</m> or <m>\det(Q)=-1</m>.
+        </p>
+      </proof>
+    </theorem>
+    
+
+  </introduction>
+
+
+  <subsection xml:id="sect-orthogonal-as-transformation">
+    <title>The Transformation as an Orthogonal Matrix</title>
+
+    <p>
+      Recall that as discussed in <xref ref="sect-linear-transformations"/> that matrix multiplication is a linear transformation.
+      In short, transformations with these matrices are isometries, in which the geometry of the transformation is preserved.
+      That is, if <m>Q</m> is an orthogonal matrix, then the following are preserved.
+      <dl>
+      <li>
+        <title>Length</title>
+
+        <p>
+          The length of the vector stays the same.
+          That is, <m>||Q\boldsymbol{v}|| = ||\boldsymbol{v}||</m>.
+        </p>
+      </li>
+
+      <li>
+        <title>Angle</title>
+
+        <p>
+          The angle between two vectors <m>\boldsymbol{u}</m> and <m>\boldsymbol{v}</m> stays the same.
+          That is,
+          <me>
+            \cos \theta = \frac{\langle \boldsymbol{u}, \boldsymbol{v} \rangle}{||\boldsymbol{u}|| ||\boldsymbol{v}||} = \frac{\langle Q\boldsymbol{u}, Q\boldsymbol{v} \rangle}{||Q\boldsymbol{u}|| ||Q\boldsymbol{v}||}
+          </me>.
+        </p>
+      </li>
+
+      <li>
+        <title>Volume</title>
+
+        <p>
+          The volume of a shape is preserved.
+          That is, if <m>S</m> is a shape in <m>\mathbb{R}^n</m>, then the volume of <m>Q(S)</m> is the same as the volume of <m>S</m>.
+        </p>
+      </li>
+      </dl>
+    </p>
+
+    <proof>
+      <p>
+        The proof of the length is shown and the remainder is left to the reader.  Without loss of generality, we will find the square of the length of the vector <m>Q\boldsymbol{v}</m> or 
+        <me>
+          \begin{aligned}
+          ||Q\boldsymbol{v}||^2 \amp = \langle Q\boldsymbol{v}, Q\boldsymbol{v}\rangle  \\
+          \amp = (Q \boldsymbol{v})^{\intercal} Q \boldsymbol{v} \\
+          \amp = \boldsymbol{v}^{\intercal} Q^{\intercal} Q \boldsymbol{v} \\
+          \amp = \boldsymbol{v}^{\intercal} I \boldsymbol{v} \\
+          \amp = \boldsymbol{v}^{\intercal} \boldsymbol{v} 
+          \end{aligned}
+        </me>
+        where <m>Q^{\intercal}Q=I</m> is used from <xref ref="thm-orthogonal-inverse"/>. 
+      </p>
+    </proof>
+
+  </subsection>
+
+  <subsection xml:id="sect-construction-orthogonal-matrix">
+    <title>Constructing Orthogonal Matrices</title>
+
+    <p>
+      Let's look at <m>2 \times 2</m> orthogonal matrices.  A general matrix has the form:
+      <me>Q = \begin{bmatrix}
+      a \amp b \\ c \amp  d
+      \end{bmatrix}</me>
+      Since each column has a norm of 1 and the columns are orthogonal  then 
+      <me>
+        \begin{aligned}
+        a^2 + c^2 \amp = 1 \\ b^2 + d^2 \amp = 1 \\ ab + cd \amp = 0
+        \end{aligned}
+      </me>
+      We can let <m>a = \cos \theta</m>, resulting in <m>c = \sin \theta</m> and <m>b = \sin \alpha</m> resulting in <m>d = \cos \alpha</m>. The third equation shows
+      <md>
+        
+        <mrow>\cos \theta \sin \alpha + \sin \theta \cos \alpha \amp  = 0 </mrow>
+        <mrow xml:id="eq-orthogonal-condition" number="yes"> \sin(\theta + \alpha) \amp = 0 </mrow>
+      </md>
+      One such solution to this is <m>\alpha = -\theta</m>, which would give the matrix: 
+      <me>
+        Q = \begin{bmatrix}
+        \cos \theta \amp \sin (-\theta) \\  \sin \theta \amp \cos (-\theta) 
+        \end{bmatrix} = \begin{bmatrix}
+        \cos \theta \amp -\sin \theta \\  \sin \theta \amp \cos \theta
+        \end{bmatrix} 
+      </me>
+      which is a rotation matrix that takes a vector in <m>\mathbb{R}^2</m> and rotates the vector counter-clockwise <m>\theta</m> radians.  An alternative solution to <xref ref="eq-orthogonal-condition"/> is <m>\theta+\alpha = \pi</m> and this would result in the matrix: 
+      <me>
+        Q = \begin{bmatrix}
+        \cos \theta \amp \sin (\pi - \theta) \\  \sin \theta \amp \cos (\pi-\theta) 
+        \end{bmatrix} = \begin{bmatrix}
+        \cos \theta \amp \sin \theta \\  \sin \theta \amp -\cos \theta
+        \end{bmatrix} 
+      </me>
+    </p>
+    
+  </subsection>
+
+
+
+</section>

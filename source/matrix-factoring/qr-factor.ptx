@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-qr-factorization">
+  <title>QR Factorization</title>
+
+  <introduction>
+    <p>
+      The QR factorization of a matrix is a decomposition of a matrix into the product of an orthogonal matrix and an upper triangular matrix.
+      This factorization is useful in solving systems of linear equations, computing eigenvalues, and in numerical linear algebra.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          The QR factorization of a matrix <m>A</m> is given by
+        </p>
+
+        <p>
+          <me>
+            A = QR
+          </me>
+          where <m>Q</m> is an orthogonal matrix and <m>R</m> is an upper triangular matrix.
+        </p>
+      </statement>
+    </definition>
+  </introduction>
+
+
+  <subsection xml:id="sect-qr-factorization-algorithm">
+    <title>QR Factorization Algorithm</title>
+
+    <p>
+      The QR-factorization can be performed using the Gram-Schmidt orthogonalization seen in <xref ref="sect-gram-schmidt"/>.
+      We will first show this with an example and then explain why this works.
+    </p>
+
+    <example xml:id="ex-qr-factor">
+      <statement>
+        <p>
+          Perform Gram-Schmidt Orthogonalization to find an orthonormal set of vectors of the columns of
+        </p>
+
+        <p>
+          <me>
+            A = \begin{bmatrix} -9 \amp 4 \amp 7 \\ -18 \amp 15 \amp -28 \\ 6 \amp 2 \amp 49 \\ \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          and then use the resulting matrix <m>Q</m> to find <m>R</m> using
+          <me>
+            R = Q^{\intercal} A
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Let <m>\boldsymbol{a}_j</m> be the columns of <m>A</m> and we will call the resulting orthogonal vectors as <m>\boldsymbol{q}_j</m>.
+        </p>
+
+        <p>
+          <me>
+            \boldsymbol{q}_1 = \frac{\boldsymbol{a}_1}{||\boldsymbol{a}_1||} = \frac{1}{\sqrt{9^2+18^2+6^2}} \begin{bmatrix} -9 \\ -18 \\ 6 \end{bmatrix} = \begin{bmatrix} -3/7 \\ -6/7 \\ 2/7 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          For the second vector,
+          <me>
+            \begin{aligned} \boldsymbol{u}_2 \amp = \boldsymbol{a}_2 - \langle \boldsymbol{q}_1, \boldsymbol{a}_2 \rangle \boldsymbol{q}_1\\ \amp = \begin{bmatrix} 4 \\ 15 \\ 2 \end{bmatrix} - (-14) \begin{bmatrix} -3/7 \\ -6/7 \\ 2/7 \end{bmatrix}  = \begin{bmatrix} 4 \\ 15 \\ 2 \end{bmatrix} + \begin{bmatrix} -6 \\ -12 \\ 4 \end{bmatrix} = \begin{bmatrix} -2 \\ 3 \\ 6 \end{bmatrix} \end{aligned}
+          </me>
+          and then this vectors is normalized with
+          <me>
+            \boldsymbol{q}_2 = \frac{1}{||\boldsymbol{u}_2||} \boldsymbol{u_2} = \frac{1}{\sqrt{2^2+3^2+6^2}} \begin{bmatrix} -2 \\ 3 \\ 6 \end{bmatrix} = \frac{1}{7} \begin{bmatrix} -2 \\ 3 \\ 6 \end{bmatrix} = \begin{bmatrix} -2/7 \\ 3/7 \\ 6/7 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          Lastly, the third column of <m>Q</m> can be found with
+          <me>
+            \begin{aligned} \boldsymbol{u}_3 \amp = \boldsymbol{a}_3 - \langle \boldsymbol{q}_2, \boldsymbol{a}_3 \rangle \boldsymbol{q}_2 - \langle \boldsymbol{q}_1, \boldsymbol{a}_3 \rangle \boldsymbol{q}_1 \\ \amp = \begin{bmatrix} 7 \\ -28 \\ 49 \end{bmatrix} - 28 \begin{bmatrix} -2/7 \\ 3/7 \\ 6/7 \end{bmatrix} - 35 \begin{bmatrix} -3/7 \\ -6/7 \\ 2/7 \end{bmatrix} \\ \amp = \begin{bmatrix} 7 \\ -28 \\ 49 \end{bmatrix} + \begin{bmatrix} 8 \\ -12 \\ -24 \end{bmatrix} + \begin{bmatrix} 15 \\ 30 \\ -10 \end{bmatrix} = \begin{bmatrix} 30 \\ -10 \\ 15 \end{bmatrix} \end{aligned}
+          </me>
+          and lastly, we normalize this vector as
+          <me>
+            \boldsymbol{q3} = \frac{1}{||\boldsymbol{u}_2||} \boldsymbol{u_2} = \frac{1}{\sqrt{30^2+10^2+15^2}} \begin{bmatrix} 30 \\ -10 \\ 15 \end{bmatrix} = \frac{1}{35} \begin{bmatrix} 30 \\ -10 \\ 15 \end{bmatrix} = \begin{bmatrix} 6/7 \\ -2/7 \\ 3/7 \end{bmatrix}
+          </me>
+          and thus the matrix <m>Q</m> is the matrix with these three vectors or
+          <me>
+            Q = \begin{bmatrix} -3/7 \amp -2/7 \amp 6/7 \\ -6/7 \amp 3/7 \amp -2/7 \\ 2/7 \amp 6/7 \amp 3/7 \end{bmatrix}
+          </me>
+        </p>
+
+        <p>
+          Lastly, we find <m>R</m> with
+          <me>
+            \begin{aligned} R \amp = Q^{\intercal} A  \\ \amp = \begin{bmatrix} -3/7 \amp -6/7 \amp 2/7 \\ -2/7 \amp 3/7 \amp 6/7 \\ 6/7 \amp -2/7 \amp 3/7 \end{bmatrix} \begin{bmatrix} -9 \amp 4 \amp 7 \\ -18 \amp 15 \amp -28 \\ 6 \amp 2 \amp 49 \end{bmatrix} \\ \amp = \begin{bmatrix} 21 \amp -14 \amp 35 \\ 0 \amp 7 \amp 28 \\ 0 \amp 0 \amp 35 \\ \end{bmatrix}
+            \end{aligned}
+          </me>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A natural question to ask is why does this work? Why does the Gram-Schmidt process give us the QR factorization?
+      The answer is that the Gram-Schmidt process gives us an orthonormal basis for the column space of <m>A</m> and thus the matrix <m>Q</m> is an orthogonal matrix.
+      Then, the matrix <m>R</m> is the change of basis matrix from the standard basis to the orthonormal basis given by the columns of <m>Q</m>.
+    </p>
+    <p>
+      Examining the result of <m>R = Q^{\intercal}A </m>, the matrix <m>Q^{\intercal}</m> projects the columns of <m>A</m> onto <m>Q</m>.  Because <m>Q</m> is constructed as the 
+    </p>
+  </subsection>
+  <subsection xml:id="sect-solving-linear-systems-qr">
+    <title>Solving Linear Systems with QR factoring.</title>
+    <p>
+      We can solving linear systems with the QR factorization and is often done if the original matrix is difficult to solve (Section where this is explained??). Let's look the example in <xref ref="sect-solve-linear-system-lu"/>. 
+
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Write <m>A = QR</m>
+          </p>
+        </li>
+        <li>
+          <p>
+           Solve <m>R\boldsymbol{x} = Q^{\intercal}\boldsymbol{b}</m>.  Note that <m>R</m> is upper triangular and thus this can be solved with back substitution.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <example>
+      <statement>
+        <p>
+          Solve the linear system <m>A\boldsymbol{x}= \boldsymbol{b}</m> using the <m>QR</m>-decomposition where 
+          <me>
+            A = \begin{bmatrix}
+            3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7
+            \end{bmatrix} \qquad \boldsymbol{b} = \begin{bmatrix}
+            14 \\ 22 \\ -9 
+            \end{bmatrix}
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First, we need to find the factorization.  We can follow the same steps using Gram-Schmidt Orthogonalization as in <xref ref="ex-qr-factor"/>, however, generally the resulting elements of <m>Q</m> are not rational, so we will resort to software to do this.  Using Matlab or Julia, the result in 
+          <me>
+            \begin{aligned}
+            Q \amp = \begin{bmatrix}
+ -0.333333  \amp -0.522976  \amp  0.784465 \\
+ -0.666667  \amp -0.457604  \amp -0.588348 \\
+  0.666667  \amp -0.719092  \amp -0.196116 \\
+            \end{bmatrix} \\ 
+            R \amp = \begin{bmatrix}
+ -9.0 \amp  -4.66667 \amp  -7.66667 \\
+  0.0 \amp   6.79869 \amp   2.68025 \\
+  0.0 \amp   0.0     \amp  -0.196116 \\
+            \end{bmatrix}
+            \end{aligned}
+          </me>
+          and this just shows the first 5 or so digits of the two matrices.  
+        </p>
+
+        <p>
+          The next step is to find <m>Q^{\intercal} \boldsymbol{b}</m> or 
+          <me>Q^{\intercal} \boldsymbol{b}
+            = \begin{bmatrix}
+ -25.33333333333333 \\
+ -10.917131522692245 \\
+  -0.19611613513818504 \\
+            \end{bmatrix}
+          </me>
+        </p>
+        <p>
+          And lastly, we solve <m>R\boldsymbol{x} = Q^{\intercal} \boldsymbol{b}</m>. This is done with back-substitution.  The result of this is:
+          <me>
+            \boldsymbol{x} = \begin{bmatrix}            
+  2.999999999999997 \\
+ -2.000000000000001 \\
+  1.0000000000000033 \\
+            \end{bmatrix}
+          </me>
+          which is close to the answer found in <xref ref="sect-solve-linear-system-lu"/>, the difference being that here we used floating-point numbers which have round off errors. 
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

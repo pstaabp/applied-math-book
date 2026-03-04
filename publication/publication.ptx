@@ -122,6 +122,8 @@
       reading="static"
       worksheet="static"
       project="dynamic"
+      server="https://webwork.fitchburgstate.edu/webwork2/"
+      course="ms_pretext"
     />
     <!-- Magic IDs identify HTML pages to analytics services   -->
     <!-- Presence implies relevant Javascript will be added    -->

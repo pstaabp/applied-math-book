@@ -387,7 +387,7 @@
 </p>
 </introduction>
 
-<subsection>
+<subsection xml:id="subsect-matrix-form-linear-transformation">
 	<title>Finding the
 	Matrix Form of a Linear Transformation</title>
 	<p>

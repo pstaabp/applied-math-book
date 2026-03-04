@@ -378,7 +378,7 @@
   </subsection>
 
 
-  <subsection>
+  <subsection xml:id="sect-solve-linear-system-lu">
     <title>Solving linear systems using LU Decomposition</title>
 
     <p>

@@ -715,7 +715,7 @@
 		</p>
 	</subsection>
 
-	<subsection>
+	<subsection xml:id="sect-gram-schmidt">
 		<title>The Gram-Schmidt Orthogonalization Process</title>
 		<p>
 			We saw above that an orthonormal set of vectors has the property that any two different
