@@ -35,7 +35,6 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
@@ -55,7 +54,6 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
@@ -101,16 +99,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.15';
+eBookConfig.runestone_version = '7.13.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -423,6 +421,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-qr-factorization-algorithm" class="internal"><span class="codenumber">6.3.1</span> <span class="title">QR Factorization Algorithm</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-solving-linear-systems-qr" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Solving Linear Systems with QR factoring.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-qr-eigenvalues" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Using QR factorization to find Eigenvalues</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -677,9 +676,10 @@ A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}\tag{2.8.1}
 </div>
 <div class="autopermalink" data-description="Note 2.8.3: The Determinant of a 2 \times 2 matrix"><a href="#subsec-defintion-determinant-9" title="Copy heading and permalink for Note 2.8.3: The Determinant of a 2 \times 2 matrix" aria-label="Copy heading and permalink for Note 2.8.3: The Determinant of a 2 \times 2 matrix">🔗</a></div></article><div class="para" id="subsec-defintion-determinant-10">It may seem like now that we have the definition in <a href="sect-det.html#def-det" class="xref" data-knowl="./knowl/xref/def-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.8.2">Definition 2.8.2</a>, we can calculate the determinant of any square matrix. The following example shows how to calculate it with a <span class="process-math">\(3 \times 3\)</span> matrix:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-defintion-determinant-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="subsec-defintion-determinant-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="subsec-defintion-determinant-11"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-defintion-determinant-11-1-1">
+</h4>
+<div class="para logical" id="subsec-defintion-determinant-11-1-1">
 <div class="para">Use the definition in <a href="sect-det.html#def-det" class="xref" data-knowl="./knowl/xref/def-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.8.2">Definition 2.8.2</a> to find <span class="process-math">\(\det(A)\)</span> if</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-det.html" id="subsec-defintion-determinant-11-1-1-3">
 \begin{equation*}
@@ -708,7 +708,7 @@ A = \begin{bmatrix} 3 \amp 2 \amp -1 \\ 0 \amp 2 \amp 1 \\ 1 \amp 0 \amp -2 \end
 </div>
 <div class="autopermalink" data-description="Solution 2.8.4.1"><a href="#subsec-defintion-determinant-11-2" title="Copy heading and permalink for Solution 2.8.4.1" aria-label="Copy heading and permalink for Solution 2.8.4.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.4"><a href="#subsec-defintion-determinant-11" title="Copy heading and permalink for Example 2.8.4" aria-label="Copy heading and permalink for Example 2.8.4">🔗</a></div></article></details><div class="para" id="subsec-defintion-determinant-12">This example isn’t too bad. However, due to the nature of permutations, the formula in <a href="sect-det.html#eq-def-det" class="xref" data-knowl="./knowl/xref/eq-def-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.2">(2.8.2)</a> is unwieldy. For a 5 by 5 matrix, there would be <span class="process-math">\(5!=120\)</span> terms. Fortunately, there are other formulas available to perform the calculation. One thing to notice is using a little factoring, we can simplify the formula in <a href="sect-det.html#eq-det-3by3" class="xref" data-knowl="./knowl/xref/eq-det-3by3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.4">(2.8.4)</a> and make it easier to compute. This will be done formally below.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-defintion-determinant-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.8.4"><a href="#subsec-defintion-determinant-11" title="Copy heading and permalink for Example 2.8.4" aria-label="Copy heading and permalink for Example 2.8.4">🔗</a></div></article><div class="para" id="subsec-defintion-determinant-12">This example isn’t too bad. However, due to the nature of permutations, the formula in <a href="sect-det.html#eq-def-det" class="xref" data-knowl="./knowl/xref/eq-def-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.2">(2.8.2)</a> is unwieldy. For a 5 by 5 matrix, there would be <span class="process-math">\(5!=120\)</span> terms. Fortunately, there are other formulas available to perform the calculation. One thing to notice is using a little factoring, we can simplify the formula in <a href="sect-det.html#eq-det-3by3" class="xref" data-knowl="./knowl/xref/eq-det-3by3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.4">(2.8.4)</a> and make it easier to compute. This will be done formally below.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-defintion-determinant-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-defintion-determinant-13">Before presenting other computational methods of the determinant, let’s look at the properties of the determinant.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-defintion-determinant-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -974,9 +974,10 @@ A = E_1 E_2 \cdots E_k A' \qquad B = F_1 F_2 \cdots F_{\ell}B'
 </h3>
 <div class="para" id="sect-det-7-2">We saw how to calculate the determinant for very specific matrices. However, up until this point, we should use the definition if the matrix doesn’t have any particular structure. However,  <dfn class="terminology">Gauss’ Method for Calculating Determinants</dfn> uses <a href="sect-det.html#lem-det-row-swap" class="xref" data-knowl="./knowl/xref/lem-det-row-swap.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.8">Lemma 2.8.8</a>, <a href="sect-det.html#lem-det-multiply-row-by-constant" class="xref" data-knowl="./knowl/xref/lem-det-multiply-row-by-constant.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.10">Lemma 2.8.10</a> and <a href="sect-det.html#lem-det-multiply-row-and-add" class="xref" data-knowl="./knowl/xref/lem-det-multiply-row-and-add.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.11">Lemma 2.8.11</a> to simplify a matrix and then take the determinant. Generally, row operations are performed to get a matrix in upper-triangular (or echelon) form and then use <a href="sect-det.html#lem-det-upper-triangular" class="xref" data-knowl="./knowl/xref/lem-det-upper-triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.5">Lemma 2.8.5</a>. The following examples show how to use the method.<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-det-7-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="sect-det-7-3"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-det-7-3-1-1">Find the determinant of the following matrix using a) the formula for <span class="process-math">\(2 \times 2\)</span> determinants and b) using Gauss’ method.<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-7-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sect-det-7-3-1-1">Find the determinant of the following matrix using a) the formula for <span class="process-math">\(2 \times 2\)</span> determinants and b) using Gauss’ method.<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-7-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-det-7-3-1-2">
 <div class="displaymath process-math" id="sect-det-7-3-1-2-1">
 \begin{equation*}
@@ -1006,9 +1007,10 @@ R_1 \leftrightarrow R_2 \qquad -|T|\amp= \begin{vmatrix} 1 \amp -2 \\ 3 \amp 2 \
 </div>
 <div class="autopermalink" data-description="Solution 2.8.18.1"><a href="#sect-det-7-3-2" title="Copy heading and permalink for Solution 2.8.18.1" aria-label="Copy heading and permalink for Solution 2.8.18.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.18"><a href="#sect-det-7-3" title="Copy heading and permalink for Example 2.8.18" aria-label="Copy heading and permalink for Example 2.8.18">🔗</a></div></article></details><details id="ex-det-gauss" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Example 2.8.18"><a href="#sect-det-7-3" title="Copy heading and permalink for Example 2.8.18" aria-label="Copy heading and permalink for Example 2.8.18">🔗</a></div></article><article class="example example-like" id="ex-det-gauss"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-det-gauss-1-1">Use Gauss’s method to find the determinants of the following matrices:<div class="autopermalink" data-description="Paragraph"><a href="#ex-det-gauss-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="ex-det-gauss-1-1">Use Gauss’s method to find the determinants of the following matrices:<div class="autopermalink" data-description="Paragraph"><a href="#ex-det-gauss-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-det-gauss-1-2">
 <div class="displaymath process-math" id="ex-det-gauss-1-2-1">
 \begin{align*}
@@ -1057,7 +1059,7 @@ R_2 \leftrightarrow R_4 \qquad |S| \amp= \begin{vmatrix} 1 \amp 0 \amp 10 \amp 6
 </div>
 <div class="autopermalink" data-description="Solution 2.8.19.1"><a href="#ex-det-gauss-2" title="Copy heading and permalink for Solution 2.8.19.1" aria-label="Copy heading and permalink for Solution 2.8.19.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.19"><a href="#ex-det-gauss" title="Copy heading and permalink for Example 2.8.19" aria-label="Copy heading and permalink for Example 2.8.19">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 2.8.4: Gauss’ Method for Calculating Determinants"><a href="#sect-det-7" title="Copy heading and permalink for Subsection 2.8.4: Gauss’ Method for Calculating Determinants" aria-label="Copy heading and permalink for Subsection 2.8.4: Gauss’ Method for Calculating Determinants">🔗</a></div></section><section class="subsection" id="subsec-minors-cofactors"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 2.8.19"><a href="#ex-det-gauss" title="Copy heading and permalink for Example 2.8.19" aria-label="Copy heading and permalink for Example 2.8.19">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.8.4: Gauss’ Method for Calculating Determinants"><a href="#sect-det-7" title="Copy heading and permalink for Subsection 2.8.4: Gauss’ Method for Calculating Determinants" aria-label="Copy heading and permalink for Subsection 2.8.4: Gauss’ Method for Calculating Determinants">🔗</a></div></section><section class="subsection" id="subsec-minors-cofactors"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Minors and Cofactors of a Matrix</span>
 </h3>
 <div class="para" id="subsec-minors-cofactors-2">Although Gauss’ method is a very robust and in general efficient method for finding determinants, a method called the Laplace Expansion method can be quite helpful at times as well. Before defining this, we need to know a matrix minor and cofactor first.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-minors-cofactors-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1082,9 +1084,10 @@ C = \cof(A) = \left[ \cof_{ij}(A)\right]
 </div>
 <div class="autopermalink" data-description="Definition 2.8.20"><a href="#subsec-minors-cofactors-3" title="Copy heading and permalink for Definition 2.8.20" aria-label="Copy heading and permalink for Definition 2.8.20">🔗</a></div></article><div class="para" id="subsec-minors-cofactors-4">Before moving on, let’s find some minors, cofactors and the cofactor matrix of a <span class="process-math">\(3 \times 3\)</span> matrix. Note that since the determinant is needed for these, note that we use the determinant formula for the <span class="process-math">\(2 \times 2\)</span> matrix in <a href="sect-det.html#eq-det-2by2" class="xref" data-knowl="./knowl/xref/eq-det-2by2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.3">(2.8.3)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-minors-cofactors-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="ex-minor-cofactors" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-minor-cofactors"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="introduction" id="ex-minor-cofactors-1"><div class="para logical" id="ex-minor-cofactors-1-1">
+</h4>
+<div class="introduction" id="ex-minor-cofactors-1"><div class="para logical" id="ex-minor-cofactors-1-1">
 <div class="para">Let</div>
 <div class="displaymath process-math" id="ex-minor-cofactors-1-1-1">
 \begin{equation*}
@@ -1140,7 +1143,7 @@ C = \begin{bmatrix} -1 \amp -6 \amp -10 \\  0 \amp  1 \amp   2 \\ -1 \amp -5 \am
 </div>
 <div class="autopermalink" data-description="Solution 2.8.21.c.1"><a href="#ex-minor-cofactors-4-2" title="Copy heading and permalink for Solution 2.8.21.c.1" aria-label="Copy heading and permalink for Solution 2.8.21.c.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Task 2.8.21.c"><a href="#ex-minor-cofactors-4" title="Copy heading and permalink for Task 2.8.21.c" aria-label="Copy heading and permalink for Task 2.8.21.c">🔗</a></div></article><div class="autopermalink" data-description="Example 2.8.21"><a href="#ex-minor-cofactors" title="Copy heading and permalink for Example 2.8.21" aria-label="Copy heading and permalink for Example 2.8.21">🔗</a></div></article></details><div class="para" id="subsec-minors-cofactors-6"><div class="autopermalink" data-description="Paragraph"><a href="#subsec-minors-cofactors-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Task 2.8.21.c"><a href="#ex-minor-cofactors-4" title="Copy heading and permalink for Task 2.8.21.c" aria-label="Copy heading and permalink for Task 2.8.21.c">🔗</a></div></article><div class="autopermalink" data-description="Example 2.8.21"><a href="#ex-minor-cofactors" title="Copy heading and permalink for Example 2.8.21" aria-label="Copy heading and permalink for Example 2.8.21">🔗</a></div></article><div class="para" id="subsec-minors-cofactors-6"><div class="autopermalink" data-description="Paragraph"><a href="#subsec-minors-cofactors-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
 <div class="autopermalink" data-description="Subsection 2.8.5: Minors and Cofactors of a Matrix"><a href="#subsec-minors-cofactors" title="Copy heading and permalink for Subsection 2.8.5: Minors and Cofactors of a Matrix" aria-label="Copy heading and permalink for Subsection 2.8.5: Minors and Cofactors of a Matrix">🔗</a></div></section><section class="subsection" id="sect-det-9"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Expansion Method for finding the Determinant</span>
 </h3>
@@ -1167,9 +1170,10 @@ C = \begin{bmatrix} -1 \amp -6 \amp -10 \\  0 \amp  1 \amp   2 \\ -1 \amp -5 \am
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-laplace-expansion-det-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="thm-laplace-expansion-det-2-5">for any <span class="process-math">\(j\)</span> satisfying <span class="process-math">\(1 \leq j \leq n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-laplace-expansion-det-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 2.8.22: Laplace Expansion of Determinants"><a href="#thm-laplace-expansion-det" title="Copy heading and permalink for Theorem 2.8.22: Laplace Expansion of Determinants" aria-label="Copy heading and permalink for Theorem 2.8.22: Laplace Expansion of Determinants">🔗</a></div></article><details id="sect-det-9-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Theorem 2.8.22: Laplace Expansion of Determinants"><a href="#thm-laplace-expansion-det" title="Copy heading and permalink for Theorem 2.8.22: Laplace Expansion of Determinants" aria-label="Copy heading and permalink for Theorem 2.8.22: Laplace Expansion of Determinants">🔗</a></div></article><article class="example example-like" id="sect-det-9-4"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-det-9-4-1-1">Use the expansion formula to find the determinants of the matrices in <a href="sect-det.html#ex-det-gauss" class="xref" data-knowl="./knowl/xref/ex-det-gauss.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.8.19">Example 2.8.19</a>, namely<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-9-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sect-det-9-4-1-1">Use the expansion formula to find the determinants of the matrices in <a href="sect-det.html#ex-det-gauss" class="xref" data-knowl="./knowl/xref/ex-det-gauss.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.8.19">Example 2.8.19</a>, namely<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-9-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-det-9-4-1-2">
 <div class="displaymath process-math" id="sect-det-9-4-1-2-1">
 \begin{align*}
@@ -1221,7 +1225,7 @@ T \amp = \begin{bmatrix} 3 \amp 0 \amp 2 \\ 1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 5 \
 </div>
 <div class="autopermalink" data-description="Solution 2.8.23.1"><a href="#sect-det-9-4-2" title="Copy heading and permalink for Solution 2.8.23.1" aria-label="Copy heading and permalink for Solution 2.8.23.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.23"><a href="#sect-det-9-4" title="Copy heading and permalink for Example 2.8.23" aria-label="Copy heading and permalink for Example 2.8.23">🔗</a></div></article></details><div class="para" id="sect-det-9-5">We have now seen a few different approaches to calculating a determinant. When there are many tools to entering a matrix to find the result, perhaps these are less useful, but understanding these different approaches leads to understanding matrices and the relationships between various aspects of them in a deeper manner.<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-9-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.8.23"><a href="#sect-det-9-4" title="Copy heading and permalink for Example 2.8.23" aria-label="Copy heading and permalink for Example 2.8.23">🔗</a></div></article><div class="para" id="sect-det-9-5">We have now seen a few different approaches to calculating a determinant. When there are many tools to entering a matrix to find the result, perhaps these are less useful, but understanding these different approaches leads to understanding matrices and the relationships between various aspects of them in a deeper manner.<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-9-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Subsection 2.8.6: Expansion Method for finding the Determinant"><a href="#sect-det-9" title="Copy heading and permalink for Subsection 2.8.6: Expansion Method for finding the Determinant" aria-label="Copy heading and permalink for Subsection 2.8.6: Expansion Method for finding the Determinant">🔗</a></div></section><section class="subsection" id="sect-det-10"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Geometry of Determinants</span>
@@ -1288,9 +1292,10 @@ T \amp = \begin{bmatrix} 3 \amp 0 \amp 2 \\ 1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 5 \
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-det-10-3-10-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-det-10-3-10-1-3">The <dfn class="terminology">volume</dfn> of the parallelepiped is the absolute value of the determinant of the matrix whose columns are <span class="process-math">\(\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-det-10-3-10-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 2.8.28"><a href="#sect-det-10-3-10" title="Copy heading and permalink for Definition 2.8.28" aria-label="Copy heading and permalink for Definition 2.8.28">🔗</a></div></article><details id="sect-det-10-3-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<div class="autopermalink" data-description="Definition 2.8.28"><a href="#sect-det-10-3-10" title="Copy heading and permalink for Definition 2.8.28" aria-label="Copy heading and permalink for Definition 2.8.28">🔗</a></div></article><article class="example example-like" id="sect-det-10-3-11"><h5 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h5></summary><article class="example example-like knowl__content"><div class="para" id="sect-det-10-3-11-1-1">Find the volume of the parallelepiped formed by the vectors:<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-10-3-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h5>
+<div class="para" id="sect-det-10-3-11-1-1">Find the volume of the parallelepiped formed by the vectors:<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-10-3-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-det-10-3-11-1-2">
 <div class="displaymath process-math" id="sect-det-10-3-11-1-2-1">
 \begin{equation*}
@@ -1317,7 +1322,7 @@ T \amp = \begin{bmatrix} 3 \amp 0 \amp 2 \\ 1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 5 \
 </div>
 <div class="autopermalink" data-description="Solution 2.8.29.1"><a href="#sect-det-10-3-11-2" title="Copy heading and permalink for Solution 2.8.29.1" aria-label="Copy heading and permalink for Solution 2.8.29.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.29"><a href="#sect-det-10-3-11" title="Copy heading and permalink for Example 2.8.29" aria-label="Copy heading and permalink for Example 2.8.29">🔗</a></div></article></details><div class="autopermalink" data-description="Subsubsection 2.8.7.1: Transformation of the Vectors and the size of the Parallelogram"><a href="#sect-det-10-3" title="Copy heading and permalink for Subsubsection 2.8.7.1: Transformation of the Vectors and the size of the Parallelogram" aria-label="Copy heading and permalink for Subsubsection 2.8.7.1: Transformation of the Vectors and the size of the Parallelogram">🔗</a></div></section><div class="autopermalink" data-description="Subsection 2.8.7: Geometry of Determinants"><a href="#sect-det-10" title="Copy heading and permalink for Subsection 2.8.7: Geometry of Determinants" aria-label="Copy heading and permalink for Subsection 2.8.7: Geometry of Determinants">🔗</a></div></section><section class="subsection" id="sect-det-11"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 2.8.29"><a href="#sect-det-10-3-11" title="Copy heading and permalink for Example 2.8.29" aria-label="Copy heading and permalink for Example 2.8.29">🔗</a></div></article><div class="autopermalink" data-description="Subsubsection 2.8.7.1: Transformation of the Vectors and the size of the Parallelogram"><a href="#sect-det-10-3" title="Copy heading and permalink for Subsubsection 2.8.7.1: Transformation of the Vectors and the size of the Parallelogram" aria-label="Copy heading and permalink for Subsubsection 2.8.7.1: Transformation of the Vectors and the size of the Parallelogram">🔗</a></div></section><div class="autopermalink" data-description="Subsection 2.8.7: Geometry of Determinants"><a href="#sect-det-10" title="Copy heading and permalink for Subsection 2.8.7: Geometry of Determinants" aria-label="Copy heading and permalink for Subsection 2.8.7: Geometry of Determinants">🔗</a></div></section><section class="subsection" id="sect-det-11"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Other Properties of Determinants</span>
 </h3>
 <div class="para" id="sect-det-11-2">This section has a number of other properties of determinants. We start by showing that a matrix and it’s transpose have the same determinant.<div class="autopermalink" data-description="Paragraph"><a href="#sect-det-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1418,9 +1423,10 @@ T \amp = \begin{bmatrix} 3 \amp 0 \amp 2 \\ 1 \amp 4 \amp 0 \\ 0 \amp 2 \amp 5 \
 </h3>
 <div class="para" id="subsec-adjugate-matrices-2">Another matrix that is related to the inverse (as we will see below) is the <dfn class="terminology">adjugate matrix</dfn>. In short, this is the transpose of the cofactor matrix, which was presented in <a href="sect-det.html#subsec-minors-cofactors" class="internal" title="Subsection 2.8.5: Minors and Cofactors of a Matrix">Subsection 2.8.5</a>. Let’s look at another example.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="subsec-adjugate-matrices-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="subsec-adjugate-matrices-3"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-adjugate-matrices-3-1-1">
+</h4>
+<div class="para logical" id="subsec-adjugate-matrices-3-1-1">
 <div class="para">Find the cofactor matrix and the adjugate matrix if</div>
 <div class="displaymath process-math" id="subsec-adjugate-matrices-3-1-1-1">
 \begin{equation*}
@@ -1441,7 +1447,7 @@ A = \begin{bmatrix} -1 \amp  2 \amp  -1 \\ 4 \amp  1 \amp  -1 \\ 2 \amp -2 \amp 
 </div>
 <div class="autopermalink" data-description="Solution 2.8.32.1"><a href="#subsec-adjugate-matrices-3-2" title="Copy heading and permalink for Solution 2.8.32.1" aria-label="Copy heading and permalink for Solution 2.8.32.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.32"><a href="#subsec-adjugate-matrices-3" title="Copy heading and permalink for Example 2.8.32" aria-label="Copy heading and permalink for Example 2.8.32">🔗</a></div></article></details><div class="para" id="subsec-adjugate-matrices-4">You might be wondering what the adjugate is for and that is an excellent question. First of all, it satisfies the following lemma, which we will see is quite useful.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.8.32"><a href="#subsec-adjugate-matrices-3" title="Copy heading and permalink for Example 2.8.32" aria-label="Copy heading and permalink for Example 2.8.32">🔗</a></div></article><div class="para" id="subsec-adjugate-matrices-4">You might be wondering what the adjugate is for and that is an excellent question. First of all, it satisfies the following lemma, which we will see is quite useful.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-adjugate-times-transpose"><h4 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -1489,9 +1495,10 @@ B = \det(A) I,
 </div>
 <div class="autopermalink" data-description="Proof 2.8.33.1"><a href="#lem-adjugate-times-transpose-2" title="Copy heading and permalink for Proof 2.8.33.1" aria-label="Copy heading and permalink for Proof 2.8.33.1">🔗</a></div></article></details><div class="para" id="subsec-adjugate-matrices-6">Before moving on, let’s do an example with the adjugate to show the results of this lemma.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="subsec-adjugate-matrices-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="subsec-adjugate-matrices-7"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-adjugate-matrices-7-1-1">
+</h4>
+<div class="para logical" id="subsec-adjugate-matrices-7-1-1">
 <div class="para">Use the matrix in <a href="sect-det.html#ex-minor-cofactors" class="xref" data-knowl="./knowl/xref/ex-minor-cofactors.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.8.21">Example 2.8.21</a> or</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-minor-cofactors.html" id="subsec-adjugate-matrices-7-1-1-2">
 \begin{equation*}
@@ -1523,11 +1530,12 @@ AC = \begin{bmatrix} -1 \amp 0 \amp 0 \\ 0 \amp -1 \amp 0 \\ 0 \amp 0 \amp -1 \e
 </div>
 <div class="autopermalink" data-description="Solution 2.8.34.1"><a href="#subsec-adjugate-matrices-7-2" title="Copy heading and permalink for Solution 2.8.34.1" aria-label="Copy heading and permalink for Solution 2.8.34.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.34"><a href="#subsec-adjugate-matrices-7" title="Copy heading and permalink for Example 2.8.34" aria-label="Copy heading and permalink for Example 2.8.34">🔗</a></div></article></details><div class="para" id="subsec-adjugate-matrices-8">Notice that the definition of the adjugate or the statement in <a href="sect-det.html#lem-adjugate-times-transpose" class="xref" data-knowl="./knowl/xref/lem-adjugate-times-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.33">Lemma 2.8.33</a> says nothing about if <span class="process-math">\(A\)</span> needs to be invertible. The following example shows that if <span class="process-math">\(A\)</span> has determinant 0, that <span class="process-math">\(A \adj(A)\)</span> is the zero matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.8.34"><a href="#subsec-adjugate-matrices-7" title="Copy heading and permalink for Example 2.8.34" aria-label="Copy heading and permalink for Example 2.8.34">🔗</a></div></article><div class="para" id="subsec-adjugate-matrices-8">Notice that the definition of the adjugate or the statement in <a href="sect-det.html#lem-adjugate-times-transpose" class="xref" data-knowl="./knowl/xref/lem-adjugate-times-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.33">Lemma 2.8.33</a> says nothing about if <span class="process-math">\(A\)</span> needs to be invertible. The following example shows that if <span class="process-math">\(A\)</span> has determinant 0, that <span class="process-math">\(A \adj(A)\)</span> is the zero matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="subsec-adjugate-matrices-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="subsec-adjugate-matrices-9"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.35</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-adjugate-matrices-9-1-1">
+</h4>
+<div class="para logical" id="subsec-adjugate-matrices-9-1-1">
 <div class="para">Consider the matrix</div>
 <div class="displaymath process-math" id="subsec-adjugate-matrices-9-1-1-1">
 \begin{equation*}
@@ -1550,7 +1558,7 @@ C = \cof(A) = \begin{bmatrix} -6 \amp 4 \amp -14 \amp -4 \\ 0 \amp 0 \amp   0 \a
 </div>
 <div class="autopermalink" data-description="Solution 2.8.35.1"><a href="#subsec-adjugate-matrices-9-2" title="Copy heading and permalink for Solution 2.8.35.1" aria-label="Copy heading and permalink for Solution 2.8.35.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.35"><a href="#subsec-adjugate-matrices-9" title="Copy heading and permalink for Example 2.8.35" aria-label="Copy heading and permalink for Example 2.8.35">🔗</a></div></article></details><div class="para" id="subsec-adjugate-matrices-10">The result of the adjugate in <a href="sect-det.html#lem-adjugate-times-transpose" class="xref" data-knowl="./knowl/xref/lem-adjugate-times-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.33">Lemma 2.8.33</a> isn’t that helpful, however the following shows a way to find the inverse.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.8.35"><a href="#subsec-adjugate-matrices-9" title="Copy heading and permalink for Example 2.8.35" aria-label="Copy heading and permalink for Example 2.8.35">🔗</a></div></article><div class="para" id="subsec-adjugate-matrices-10">The result of the adjugate in <a href="sect-det.html#lem-adjugate-times-transpose" class="xref" data-knowl="./knowl/xref/lem-adjugate-times-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.33">Lemma 2.8.33</a> isn’t that helpful, however the following shows a way to find the inverse.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-adj-inverse"><h4 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.36</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -1578,9 +1586,10 @@ A^{-1} = \frac{1}{\det(A)} \adj(A)
 </div>
 <div class="autopermalink" data-description="Proof 2.8.36.1"><a href="#lem-adj-inverse-2" title="Copy heading and permalink for Proof 2.8.36.1" aria-label="Copy heading and permalink for Proof 2.8.36.1">🔗</a></div></article></details><div class="para" id="subsec-adjugate-matrices-12">Let’s see that this formula results in the inverse by using <a href="sect-det.html#lem-adj-inverse" class="xref" data-knowl="./knowl/xref/lem-adj-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.36">Lemma 2.8.36</a> to solve <a href="sect-matrix-inverse.html#ex-3by3-matrix-inverse" class="xref" data-knowl="./knowl/xref/ex-3by3-matrix-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.13">Example 2.3.13</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="subsec-adjugate-matrices-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="subsec-adjugate-matrices-13"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.37</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-adjugate-matrices-13-1-1">
+</h4>
+<div class="para logical" id="subsec-adjugate-matrices-13-1-1">
 <div class="para">Using <a href="sect-det.html#lem-adj-inverse" class="xref" data-knowl="./knowl/xref/lem-adj-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.8.36">Lemma 2.8.36</a> to find the inverse of</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-adj-inverse.html" id="subsec-adjugate-matrices-13-1-1-2">
 \begin{equation*}
@@ -1612,7 +1621,7 @@ A = \begin{bmatrix} 3 \amp 3 \amp -1 \\ 2 \amp 1 \amp -3 \\ 0 \amp 2 \amp 5 \end
 </div>
 <div class="autopermalink" data-description="Solution 2.8.37.1"><a href="#subsec-adjugate-matrices-13-2" title="Copy heading and permalink for Solution 2.8.37.1" aria-label="Copy heading and permalink for Solution 2.8.37.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.37"><a href="#subsec-adjugate-matrices-13" title="Copy heading and permalink for Example 2.8.37" aria-label="Copy heading and permalink for Example 2.8.37">🔗</a></div></article></details><div class="para" id="subsec-adjugate-matrices-14">The last lemma presented here relates determinants to inverse matrices. At the top of the section, we noted where the notion of the determinant might arise and we will formalize this here.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.8.37"><a href="#subsec-adjugate-matrices-13" title="Copy heading and permalink for Example 2.8.37" aria-label="Copy heading and permalink for Example 2.8.37">🔗</a></div></article><div class="para" id="subsec-adjugate-matrices-14">The last lemma presented here relates determinants to inverse matrices. At the top of the section, we noted where the notion of the determinant might arise and we will formalize this here.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-adjugate-matrices-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-inverse-matrix-determinant"><h4 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.38</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -1670,9 +1679,10 @@ A \boldsymbol{x} = \boldsymbol{b}
 </div>
 <div class="para" id="subsec-cramers-rule-4">Before looking at why this works, let’s redo <a href="sect-gaussian-elimination.html#ex-solve-3by3" class="xref" data-knowl="./knowl/xref/ex-solve-3by3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.10">Example 1.3.10</a> using Cramer’s rule.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cramers-rule-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="subsec-cramers-rule-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="subsec-cramers-rule-5"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.39</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-cramers-rule-5-1-1">
+</h4>
+<div class="para logical" id="subsec-cramers-rule-5-1-1">
 <div class="para">Find the solution to <span class="process-math">\(A\boldsymbol{x} = \boldsymbol{b}\)</span> if</div>
 <div class="displaymath process-math" id="subsec-cramers-rule-5-1-1-2">
 \begin{equation*}
@@ -1715,7 +1725,7 @@ A = \begin{bmatrix} 4 \amp 0 \amp -1 \\ 1 \amp 3 \amp 2 \\ 0 \amp 3 \amp 5 \end{
 </div>
 <div class="autopermalink" data-description="Solution 2.8.39.1"><a href="#subsec-cramers-rule-5-2" title="Copy heading and permalink for Solution 2.8.39.1" aria-label="Copy heading and permalink for Solution 2.8.39.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.8.39"><a href="#subsec-cramers-rule-5" title="Copy heading and permalink for Example 2.8.39" aria-label="Copy heading and permalink for Example 2.8.39">🔗</a></div></article></details><div class="para" id="subsec-cramers-rule-6">Cramer’s rule seems like a nice approach to solving linear systems, however, it is computationally intensive. For this (small) 3 by 3 example, 4 determinants need to be computed. If done by hand, there are a lot calculations to do. For larger systems, this can be untenable even if software is used. Row operations are generally the method to use to do in fewer steps.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cramers-rule-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.8.39"><a href="#subsec-cramers-rule-5" title="Copy heading and permalink for Example 2.8.39" aria-label="Copy heading and permalink for Example 2.8.39">🔗</a></div></article><div class="para" id="subsec-cramers-rule-6">Cramer’s rule seems like a nice approach to solving linear systems, however, it is computationally intensive. For this (small) 3 by 3 example, 4 determinants need to be computed. If done by hand, there are a lot calculations to do. For larger systems, this can be untenable even if software is used. Row operations are generally the method to use to do in fewer steps.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cramers-rule-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-cramers-rule-7">Also, if <span class="process-math">\(A\)</span> is not square then this method cannot be used. However, it is nice to have an alternative method for solving some linear systems.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cramers-rule-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>

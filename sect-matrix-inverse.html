@@ -35,7 +35,6 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
@@ -55,7 +54,6 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
@@ -101,16 +99,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.15';
+eBookConfig.runestone_version = '7.13.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -423,6 +421,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-qr-factorization-algorithm" class="internal"><span class="codenumber">6.3.1</span> <span class="title">QR Factorization Algorithm</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-solving-linear-systems-qr" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Solving Linear Systems with QR factoring.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-qr-eigenvalues" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Using QR factorization to find Eigenvalues</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -716,9 +715,10 @@ A A^{-1} = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} \frac{1}{ad-bc} \b
 </div>
 <div class="autopermalink" data-description="Proof 2.3.4.1"><a href="#sect-matrix-inverse-6-5-2" title="Copy heading and permalink for Proof 2.3.4.1" aria-label="Copy heading and permalink for Proof 2.3.4.1">🔗</a></div></article></details><div class="para" id="sect-matrix-inverse-6-6">The following example uses the formula in <a href="sect-matrix-inverse.html#eq-def-2by2-inverse" class="xref" data-knowl="./knowl/xref/eq-def-2by2-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a> to find the inverse matrix of a 2 by 2 matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-6-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="ex-inv-2-by-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-inv-2-by-2"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-inv-2-by-2-1-1">Find the inverse of<div class="autopermalink" data-description="Paragraph"><a href="#ex-inv-2-by-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="ex-inv-2-by-2-1-1">Find the inverse of<div class="autopermalink" data-description="Paragraph"><a href="#ex-inv-2-by-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-inv-2-by-2-1-2">
 <div class="displaymath process-math" id="ex-inv-2-by-2-1-2-1">
 \begin{equation*}
@@ -740,11 +740,12 @@ A^{-1} = \frac{1}{-1} \begin{bmatrix} 1 \amp -2 \\ -2 \amp 3 \end{bmatrix} = \be
 </div>
 <div class="autopermalink" data-description="Solution 2.3.5.1"><a href="#ex-inv-2-by-2-2" title="Copy heading and permalink for Solution 2.3.5.1" aria-label="Copy heading and permalink for Solution 2.3.5.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.5"><a href="#ex-inv-2-by-2" title="Copy heading and permalink for Example 2.3.5" aria-label="Copy heading and permalink for Example 2.3.5">🔗</a></div></article></details><div class="para" id="sect-matrix-inverse-6-8">The next example shows that not every matrix has an inverse. Since a matrix inverse is similar to the reciprocal of a number, a matrix with no inverse is similar to a number with no reciprocal. And this occurs for the number 0 because <span class="process-math">\(1/0\)</span> is undefined.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-6-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.3.5"><a href="#ex-inv-2-by-2" title="Copy heading and permalink for Example 2.3.5" aria-label="Copy heading and permalink for Example 2.3.5">🔗</a></div></article><div class="para" id="sect-matrix-inverse-6-8">The next example shows that not every matrix has an inverse. Since a matrix inverse is similar to the reciprocal of a number, a matrix with no inverse is similar to a number with no reciprocal. And this occurs for the number 0 because <span class="process-math">\(1/0\)</span> is undefined.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-6-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="ex-2by2-noinverse" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-2by2-noinverse"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-2by2-noinverse-1-1">Show that the matrix<div class="autopermalink" data-description="Paragraph"><a href="#ex-2by2-noinverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="ex-2by2-noinverse-1-1">Show that the matrix<div class="autopermalink" data-description="Paragraph"><a href="#ex-2by2-noinverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-2by2-noinverse-1-2">
 <div class="displaymath process-math" id="ex-2by2-noinverse-1-2-1">
 \begin{equation*}
@@ -759,7 +760,7 @@ A = \begin{bmatrix} 2 \amp 1 \\ 4 \amp 2 \end{bmatrix}
 </div>
 <div class="autopermalink" data-description="Solution 2.3.6.1"><a href="#ex-2by2-noinverse-2" title="Copy heading and permalink for Solution 2.3.6.1" aria-label="Copy heading and permalink for Solution 2.3.6.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.6"><a href="#ex-2by2-noinverse" title="Copy heading and permalink for Example 2.3.6" aria-label="Copy heading and permalink for Example 2.3.6">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 2.3.4: The Matrix Inverse"><a href="#sect-matrix-inverse-6" title="Copy heading and permalink for Subsection 2.3.4: The Matrix Inverse" aria-label="Copy heading and permalink for Subsection 2.3.4: The Matrix Inverse">🔗</a></div></section><section class="subsection" id="sect-matrix-inverse-7"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 2.3.6"><a href="#ex-2by2-noinverse" title="Copy heading and permalink for Example 2.3.6" aria-label="Copy heading and permalink for Example 2.3.6">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.3.4: The Matrix Inverse"><a href="#sect-matrix-inverse-6" title="Copy heading and permalink for Subsection 2.3.4: The Matrix Inverse" aria-label="Copy heading and permalink for Subsection 2.3.4: The Matrix Inverse">🔗</a></div></section><section class="subsection" id="sect-matrix-inverse-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving <span class="process-math">\(A\boldsymbol{u}=\boldsymbol{b}\)</span></span>
 </h3>
 <div class="para logical" id="sect-matrix-inverse-7-2">
@@ -798,9 +799,10 @@ A\boldsymbol{u} = \boldsymbol{b}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-7-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 2.3.7"><a href="#sect-matrix-inverse-7-3" title="Copy heading and permalink for Remark 2.3.7" aria-label="Copy heading and permalink for Remark 2.3.7">🔗</a></div></article><details id="ex-solve-by-inverse" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Remark 2.3.7"><a href="#sect-matrix-inverse-7-3" title="Copy heading and permalink for Remark 2.3.7" aria-label="Copy heading and permalink for Remark 2.3.7">🔗</a></div></article><article class="example example-like" id="ex-solve-by-inverse"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-solve-by-inverse-1-1">Solve the system:<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-by-inverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="ex-solve-by-inverse-1-1">Solve the system:<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-by-inverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-solve-by-inverse-1-2">
 <div class="displaymath process-math" id="ex-solve-by-inverse-1-2-1">
 \begin{align*}
@@ -848,11 +850,12 @@ A^{-1} = \frac{1}{-11} \begin{bmatrix} -1 \amp -4 \\ -2 \amp 3 \end{bmatrix}
 </div>
 <div class="autopermalink" data-description="Solution 2.3.8.1"><a href="#ex-solve-by-inverse-2" title="Copy heading and permalink for Solution 2.3.8.1" aria-label="Copy heading and permalink for Solution 2.3.8.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.8"><a href="#ex-solve-by-inverse" title="Copy heading and permalink for Example 2.3.8" aria-label="Copy heading and permalink for Example 2.3.8">🔗</a></div></article></details><div class="para" id="sect-matrix-inverse-7-5">The next example shows how to perform the same steps for a 3 by 3 matrix, although we don’t know how to find an inverse of a 3 by 3 matrix yet.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.3.8"><a href="#ex-solve-by-inverse" title="Copy heading and permalink for Example 2.3.8" aria-label="Copy heading and permalink for Example 2.3.8">🔗</a></div></article><div class="para" id="sect-matrix-inverse-7-5">The next example shows how to perform the same steps for a 3 by 3 matrix, although we don’t know how to find an inverse of a 3 by 3 matrix yet.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-matrix-inverse-7-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="sect-matrix-inverse-7-6"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-matrix-inverse-7-6-1-1">We will later show that if<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-7-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sect-matrix-inverse-7-6-1-1">We will later show that if<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-7-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-matrix-inverse-7-6-1-2">
 <div class="displaymath process-math" id="sect-matrix-inverse-7-6-1-2-1">
 \begin{equation*}
@@ -902,7 +905,7 @@ A \amp = \begin{bmatrix} -4 \amp -5 \amp -1 \\ 2 \amp1 \amp -3 \\ 0 \amp 2 \amp 
 </div>
 <div class="autopermalink" data-description="Solution 2.3.9.1"><a href="#sect-matrix-inverse-7-6-2" title="Copy heading and permalink for Solution 2.3.9.1" aria-label="Copy heading and permalink for Solution 2.3.9.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.9"><a href="#sect-matrix-inverse-7-6" title="Copy heading and permalink for Example 2.3.9" aria-label="Copy heading and permalink for Example 2.3.9">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 2.3.5: Solving A\boldsymbol{u}=\boldsymbol{b}"><a href="#sect-matrix-inverse-7" title="Copy heading and permalink for Subsection 2.3.5: Solving A\boldsymbol{u}=\boldsymbol{b}" aria-label="Copy heading and permalink for Subsection 2.3.5: Solving A\boldsymbol{u}=\boldsymbol{b}">🔗</a></div></section><section class="subsection" id="sect-matrix-inverse-8"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 2.3.9"><a href="#sect-matrix-inverse-7-6" title="Copy heading and permalink for Example 2.3.9" aria-label="Copy heading and permalink for Example 2.3.9">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.3.5: Solving A\boldsymbol{u}=\boldsymbol{b}"><a href="#sect-matrix-inverse-7" title="Copy heading and permalink for Subsection 2.3.5: Solving A\boldsymbol{u}=\boldsymbol{b}" aria-label="Copy heading and permalink for Subsection 2.3.5: Solving A\boldsymbol{u}=\boldsymbol{b}">🔗</a></div></section><section class="subsection" id="sect-matrix-inverse-8"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">the Gauss-Jordan Method for Calculating Inverses</span>
 </h3>
 <div class="para" id="sect-matrix-inverse-8-2">As we have seen, often matrices are larger than 2 by 2 and thus far we have no method to find an inverse of a matrix of this size. In this section, we will see that the Gauss-Jordon method can help us do this.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -921,9 +924,10 @@ B  \amp = \begin{bmatrix} \boldsymbol{b}_1 \amp \boldsymbol{b}_2 \amp \cdots \am
 </div>
 <div class="para" id="sect-matrix-inverse-8-6">We will use this method to find the inverse of the same <span class="process-math">\(2 \times 2\)</span> matrix as in <a href="sect-matrix-inverse.html#ex-inv-2-by-2" class="xref" data-knowl="./knowl/xref/ex-inv-2-by-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.5">Example 2.3.5</a><div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-matrix-inverse-8-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="sect-matrix-inverse-8-7"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-matrix-inverse-8-7-1-1">Use the method explained above to find the inverse of<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sect-matrix-inverse-8-7-1-1">Use the method explained above to find the inverse of<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-matrix-inverse-8-7-1-2">
 <div class="displaymath process-math" id="sect-matrix-inverse-8-7-1-2-1">
 \begin{equation*}
@@ -1013,7 +1017,7 @@ B = \begin{bmatrix} \boldsymbol{b}_1 \amp \boldsymbol{b}_2 \end{bmatrix} = \begi
 </div>
 <div class="autopermalink" data-description="Solution 2.3.10.1"><a href="#sect-matrix-inverse-8-7-2" title="Copy heading and permalink for Solution 2.3.10.1" aria-label="Copy heading and permalink for Solution 2.3.10.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.10"><a href="#sect-matrix-inverse-8-7" title="Copy heading and permalink for Example 2.3.10" aria-label="Copy heading and permalink for Example 2.3.10">🔗</a></div></article></details><div class="para" id="sect-matrix-inverse-8-8">You should notice that the steps to solve each of the linear systems above were exactly the same. We can take advantage of this to solve for both systems simultaneously. The result is the following method of finding inverses.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.3.10"><a href="#sect-matrix-inverse-8-7" title="Copy heading and permalink for Example 2.3.10" aria-label="Copy heading and permalink for Example 2.3.10">🔗</a></div></article><div class="para" id="sect-matrix-inverse-8-8">You should notice that the steps to solve each of the linear systems above were exactly the same. We can take advantage of this to solve for both systems simultaneously. The result is the following method of finding inverses.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="remark remark-like" id="sect-matrix-inverse-8-9"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Using Gauss-Jordon to find Matrix Inverses.</span>
@@ -1042,9 +1046,10 @@ B = \begin{bmatrix} \boldsymbol{b}_1 \amp \boldsymbol{b}_2 \end{bmatrix} = \begi
 </div>
 <div class="para" id="sect-matrix-inverse-8-9-7">If the row-reduced form of the matrix <span class="process-math">\([A\;|\;I]\)</span> does not have the identity matrix on left side <em class="emphasis">the inverse does not exist.</em><div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-9-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 2.3.11: Using Gauss-Jordon to find Matrix Inverses"><a href="#sect-matrix-inverse-8-9" title="Copy heading and permalink for Remark 2.3.11: Using Gauss-Jordon to find Matrix Inverses" aria-label="Copy heading and permalink for Remark 2.3.11: Using Gauss-Jordon to find Matrix Inverses">🔗</a></div></article><details id="sect-matrix-inverse-8-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Remark 2.3.11: Using Gauss-Jordon to find Matrix Inverses"><a href="#sect-matrix-inverse-8-9" title="Copy heading and permalink for Remark 2.3.11: Using Gauss-Jordon to find Matrix Inverses" aria-label="Copy heading and permalink for Remark 2.3.11: Using Gauss-Jordon to find Matrix Inverses">🔗</a></div></article><article class="example example-like" id="sect-matrix-inverse-8-10"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-matrix-inverse-8-10-1-1">Use the Gauss-Jordan Method to find the inverse of<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sect-matrix-inverse-8-10-1-1">Use the Gauss-Jordan Method to find the inverse of<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-matrix-inverse-8-10-1-2">
 <div class="displaymath process-math" id="sect-matrix-inverse-8-10-1-2-1">
 \begin{equation*}
@@ -1116,11 +1121,12 @@ A^{-1} = \begin{bmatrix} -1 \amp 2 \\ 2 \amp -3 \end{bmatrix}
 </div>
 <div class="autopermalink" data-description="Solution 2.3.12.1"><a href="#sect-matrix-inverse-8-10-2" title="Copy heading and permalink for Solution 2.3.12.1" aria-label="Copy heading and permalink for Solution 2.3.12.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.12"><a href="#sect-matrix-inverse-8-10" title="Copy heading and permalink for Example 2.3.12" aria-label="Copy heading and permalink for Example 2.3.12">🔗</a></div></article></details><div class="para" id="sect-matrix-inverse-8-11">This example showed how to find the inverse of a 2 by 2 matrix using the Gauss-Jordan method. We saw the formula in <a href="sect-matrix-inverse.html#eq-def-2by2-inverse" class="xref" data-knowl="./knowl/xref/eq-def-2by2-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a>, and generally it is easier to compute the inverse using that formula. However, the formula in <a href="sect-matrix-inverse.html#eq-def-2by2-inverse" class="xref" data-knowl="./knowl/xref/eq-def-2by2-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a> only works for 2 by 2 matrices. The next example shows how to use the Gauss-Jordan method to find the inverse of a 3 by 3 matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.3.12"><a href="#sect-matrix-inverse-8-10" title="Copy heading and permalink for Example 2.3.12" aria-label="Copy heading and permalink for Example 2.3.12">🔗</a></div></article><div class="para" id="sect-matrix-inverse-8-11">This example showed how to find the inverse of a 2 by 2 matrix using the Gauss-Jordan method. We saw the formula in <a href="sect-matrix-inverse.html#eq-def-2by2-inverse" class="xref" data-knowl="./knowl/xref/eq-def-2by2-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a>, and generally it is easier to compute the inverse using that formula. However, the formula in <a href="sect-matrix-inverse.html#eq-def-2by2-inverse" class="xref" data-knowl="./knowl/xref/eq-def-2by2-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a> only works for 2 by 2 matrices. The next example shows how to use the Gauss-Jordan method to find the inverse of a 3 by 3 matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="ex-3by3-matrix-inverse" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-3by3-matrix-inverse"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-3by3-matrix-inverse-1-1">Find the inverse of<div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="ex-3by3-matrix-inverse-1-1">Find the inverse of<div class="autopermalink" data-description="Paragraph"><a href="#ex-3by3-matrix-inverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-3by3-matrix-inverse-1-2">
 <div class="displaymath process-math" id="ex-3by3-matrix-inverse-1-2-1">
 \begin{equation*}
@@ -1211,11 +1217,12 @@ A^{-1} = \begin{bmatrix} -11 \amp 17 \amp 8 \\ 10 \amp -15 \amp -7 \\ -4 \amp 6 
 </div>
 <div class="autopermalink" data-description="Solution 2.3.13.1"><a href="#ex-3by3-matrix-inverse-2" title="Copy heading and permalink for Solution 2.3.13.1" aria-label="Copy heading and permalink for Solution 2.3.13.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.13"><a href="#ex-3by3-matrix-inverse" title="Copy heading and permalink for Example 2.3.13" aria-label="Copy heading and permalink for Example 2.3.13">🔗</a></div></article></details><div class="para" id="sect-matrix-inverse-8-13">As we saw with some 2 by 2 matrices (as in <a href="sect-matrix-inverse.html#ex-2by2-noinverse" class="xref" data-knowl="./knowl/xref/ex-2by2-noinverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.6">Example 2.3.6</a>), their inverse does not exist. We see how using the Gauss-Jordon method results in this situation for a 3 by 3 example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.3.13"><a href="#ex-3by3-matrix-inverse" title="Copy heading and permalink for Example 2.3.13" aria-label="Copy heading and permalink for Example 2.3.13">🔗</a></div></article><div class="para" id="sect-matrix-inverse-8-13">As we saw with some 2 by 2 matrices (as in <a href="sect-matrix-inverse.html#ex-2by2-noinverse" class="xref" data-knowl="./knowl/xref/ex-2by2-noinverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.6">Example 2.3.6</a>), their inverse does not exist. We see how using the Gauss-Jordon method results in this situation for a 3 by 3 example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-matrix-inverse-8-14" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="sect-matrix-inverse-8-14"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-matrix-inverse-8-14-1-1">Show that the matrix<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sect-matrix-inverse-8-14-1-1">Show that the matrix<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-matrix-inverse-8-14-1-2">
 <div class="displaymath process-math" id="sect-matrix-inverse-8-14-1-2-1">
 \begin{equation*}
@@ -1242,11 +1249,12 @@ A^{-1} = \begin{bmatrix} -11 \amp 17 \amp 8 \\ 10 \amp -15 \amp -7 \\ -4 \amp 6 
 </div>
 <div class="autopermalink" data-description="Solution 2.3.14.1"><a href="#sect-matrix-inverse-8-14-2" title="Copy heading and permalink for Solution 2.3.14.1" aria-label="Copy heading and permalink for Solution 2.3.14.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.14"><a href="#sect-matrix-inverse-8-14" title="Copy heading and permalink for Example 2.3.14" aria-label="Copy heading and permalink for Example 2.3.14">🔗</a></div></article></details><div class="para" id="sect-matrix-inverse-8-15">This next example, shows how to solve a linear system of 3 variables and 3 equations, find 1) written in in the form <span class="process-math">\(A\boldsymbol{u}=\boldsymbol{b}\text{,}\)</span> 2) Find the inverse matrix <span class="process-math">\(A^{-1}\)</span> and 3) finding <span class="process-math">\(\boldsymbol{u} = A^{-1} \boldsymbol{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.3.14"><a href="#sect-matrix-inverse-8-14" title="Copy heading and permalink for Example 2.3.14" aria-label="Copy heading and permalink for Example 2.3.14">🔗</a></div></article><div class="para" id="sect-matrix-inverse-8-15">This next example, shows how to solve a linear system of 3 variables and 3 equations, find 1) written in in the form <span class="process-math">\(A\boldsymbol{u}=\boldsymbol{b}\text{,}\)</span> 2) Find the inverse matrix <span class="process-math">\(A^{-1}\)</span> and 3) finding <span class="process-math">\(\boldsymbol{u} = A^{-1} \boldsymbol{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-matrix-inverse-8-16" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="sect-matrix-inverse-8-16"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-matrix-inverse-8-16-1-1">Consider the linear system<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sect-matrix-inverse-8-16-1-1">Consider the linear system<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-matrix-inverse-8-16-1-2">
 <div class="displaymath process-math" id="sect-matrix-inverse-8-16-1-2-1">
 \begin{align*}
@@ -1308,11 +1316,12 @@ A^{-1}= \begin{bmatrix} -1 \amp 0 \amp 2\\ 1 \amp 0 \amp -1 \\ 1 \amp -1 \amp -1
 </div>
 <div class="autopermalink" data-description="Solution 2.3.15.1"><a href="#sect-matrix-inverse-8-16-2" title="Copy heading and permalink for Solution 2.3.15.1" aria-label="Copy heading and permalink for Solution 2.3.15.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.15"><a href="#sect-matrix-inverse-8-16" title="Copy heading and permalink for Example 2.3.15" aria-label="Copy heading and permalink for Example 2.3.15">🔗</a></div></article></details><div class="para" id="sect-matrix-inverse-8-17">The last example shows how to perform a linear system solve using the inverse matrix technique of a linear system with 4 equations and 4 unknowns. The technique is exactly the same as the previous example, however there are quite a few steps to find the inverse.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.3.15"><a href="#sect-matrix-inverse-8-16" title="Copy heading and permalink for Example 2.3.15" aria-label="Copy heading and permalink for Example 2.3.15">🔗</a></div></article><div class="para" id="sect-matrix-inverse-8-17">The last example shows how to perform a linear system solve using the inverse matrix technique of a linear system with 4 equations and 4 unknowns. The technique is exactly the same as the previous example, however there are quite a few steps to find the inverse.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-matrix-inverse-8-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="sect-matrix-inverse-8-18"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-matrix-inverse-8-18-1-1">Use Matrix Inversion to solve:<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sect-matrix-inverse-8-18-1-1">Use Matrix Inversion to solve:<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-8-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-matrix-inverse-8-18-1-2">
 <div class="displaymath process-math" id="sect-matrix-inverse-8-18-1-2-1">
 \begin{align*}
@@ -1365,7 +1374,7 @@ X = \begin{bmatrix} 4/5 \amp -3/5 \amp 2/5 \amp - 1/5 \\ -3/5 \amp 6/5 \amp -4/5
 </div>
 <div class="autopermalink" data-description="Solution 2.3.16.1"><a href="#sect-matrix-inverse-8-18-2" title="Copy heading and permalink for Solution 2.3.16.1" aria-label="Copy heading and permalink for Solution 2.3.16.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.3.16"><a href="#sect-matrix-inverse-8-18" title="Copy heading and permalink for Example 2.3.16" aria-label="Copy heading and permalink for Example 2.3.16">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 2.3.6: the Gauss-Jordan Method for Calculating Inverses"><a href="#sect-matrix-inverse-8" title="Copy heading and permalink for Subsection 2.3.6: the Gauss-Jordan Method for Calculating Inverses" aria-label="Copy heading and permalink for Subsection 2.3.6: the Gauss-Jordan Method for Calculating Inverses">🔗</a></div></section><section class="subsection" id="sect-matrix-inverse-9"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 2.3.16"><a href="#sect-matrix-inverse-8-18" title="Copy heading and permalink for Example 2.3.16" aria-label="Copy heading and permalink for Example 2.3.16">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.3.6: the Gauss-Jordan Method for Calculating Inverses"><a href="#sect-matrix-inverse-8" title="Copy heading and permalink for Subsection 2.3.6: the Gauss-Jordan Method for Calculating Inverses" aria-label="Copy heading and permalink for Subsection 2.3.6: the Gauss-Jordan Method for Calculating Inverses">🔗</a></div></section><section class="subsection" id="sect-matrix-inverse-9"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of the Inverse Matrix</span>
 </h3>
 <div class="para" id="sect-matrix-inverse-9-2">An inverse matrix is just a matrix, so in many cases has the same properties as general matrices. However, one important is the inverse of the product of matrices.<div class="autopermalink" data-description="Paragraph"><a href="#sect-matrix-inverse-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>

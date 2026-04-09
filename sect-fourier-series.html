@@ -35,7 +35,6 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
@@ -55,7 +54,6 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
@@ -101,16 +99,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.15';
+eBookConfig.runestone_version = '7.13.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -423,6 +421,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-qr-factorization-algorithm" class="internal"><span class="codenumber">6.3.1</span> <span class="title">QR Factorization Algorithm</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-solving-linear-systems-qr" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Solving Linear Systems with QR factoring.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-qr-eigenvalues" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Using QR factorization to find Eigenvalues</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -686,9 +685,10 @@ b_n = \frac{\langle f(x), \sin nx \rangle}{\langle \sin nx, \sin nx \rangle} =
 </div>
 <div class="autopermalink" data-description="Proof 7.1.2.1"><a href="#thm-fourier-series-2" title="Copy heading and permalink for Proof 7.1.2.1" aria-label="Copy heading and permalink for Proof 7.1.2.1">🔗</a></div></article></details><div class="para" id="sect-fourier-series-3-8">Notice again that the statement in <a href="sect-fourier-series.html#thm-fourier-series" class="xref" data-knowl="./knowl/xref/thm-fourier-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.2">Theorem 7.1.2</a> requires <span class="process-math">\(f\)</span> to be periodic with period <span class="process-math">\(2\pi\text{.}\)</span> This is a fairly strict requirement that we will relax over the rest of this section, however, one way to get a periodic function is to start with a function that is defined on <span class="process-math">\([-\pi,\pi]\)</span> and extend it periodically such that <span class="process-math">\(f(x)=f(x+2\pi)\text{.}\)</span> We do this in the following example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="ex-FS-square-wave" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="ex-FS-square-wave"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-FS-square-wave-1-1">Find the Fourier coefficients and the Fourier series for the periodic extension square wave:<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-square-wave-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="ex-FS-square-wave-1-1">Find the Fourier coefficients and the Fourier series for the periodic extension square wave:<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-square-wave-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ex-FS-square-wave-1-2">
 <div class="displaymath process-math" id="ex-FS-square-wave-1-2-1">
 \begin{equation*}
@@ -757,7 +757,7 @@ F(x) \amp = \sum_{n=1}^{\infty} \frac{2}{n\pi} (1- (-1)^n) \sin nx \\
 </div>
 <div class="autopermalink" data-description="Solution 7.1.3.1"><a href="#ex-FS-square-wave-2" title="Copy heading and permalink for Solution 7.1.3.1" aria-label="Copy heading and permalink for Solution 7.1.3.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 7.1.3"><a href="#ex-FS-square-wave" title="Copy heading and permalink for Example 7.1.3" aria-label="Copy heading and permalink for Example 7.1.3">🔗</a></div></article></details><div class="para" id="sect-fourier-series-3-10">The above series also shows an interesting result that you should have seen in the series chapter of Calculus. If we let <span class="process-math">\(x=\pi/2\text{,}\)</span> then <span class="process-math">\(\sin (2n-1)\frac{\pi}{2}=(-1)^{n+1}\)</span> and <span class="process-math">\(F(\pi/2) = 1\)</span> from the definition of the square wave and substituting this into the Fourier series, we get:<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 7.1.3"><a href="#ex-FS-square-wave" title="Copy heading and permalink for Example 7.1.3" aria-label="Copy heading and permalink for Example 7.1.3">🔗</a></div></article><div class="para" id="sect-fourier-series-3-10">The above series also shows an interesting result that you should have seen in the series chapter of Calculus. If we let <span class="process-math">\(x=\pi/2\text{,}\)</span> then <span class="process-math">\(\sin (2n-1)\frac{\pi}{2}=(-1)^{n+1}\)</span> and <span class="process-math">\(F(\pi/2) = 1\)</span> from the definition of the square wave and substituting this into the Fourier series, we get:<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-fourier-series-3-11">
 <div class="displaymath process-math" id="sect-fourier-series-3-11-1">
@@ -779,9 +779,10 @@ F(x) \amp = \sum_{n=1}^{\infty} \frac{2}{n\pi} (1- (-1)^n) \sin nx \\
 </div>
 <div class="para" id="sect-fourier-series-3-14">which shows that some infinite sums have closed form values. This particular series is usually found using the Taylor Series of <span class="process-math">\(\tan x\)</span> and evaluating it a 1.<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="ex-FS-sawtooth" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="ex-FS-sawtooth"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-FS-sawtooth-1-1">Find the Fourier series of the period sawtooth wave:<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-sawtooth-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="ex-FS-sawtooth-1-1">Find the Fourier series of the period sawtooth wave:<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-sawtooth-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="ex-FS-sawtooth-1-2"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/plot-sawtooth-wave.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Plot of the sawtooth wave<div class="autopermalink" data-description="Figure 7.1.6"><a href="#ex-FS-sawtooth-1-2" title="Copy heading and permalink for Figure 7.1.6" aria-label="Copy heading and permalink for Figure 7.1.6">🔗</a></div></figcaption></figure><div class="solutions"><details id="ex-FS-sawtooth-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="ex-FS-sawtooth-2-1">Let <span class="process-math">\(f(x)\)</span> be the sawtooth wave defined in the picture above. We can write it as a piecewise function as<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-sawtooth-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -860,7 +861,7 @@ F(x) = \frac{\pi}{2} + \sum_{n=1}^{\infty} \frac{2}{\pi n^2} \bigl( (-1)^n - 1) 
 </div>
 <div class="autopermalink" data-description="Solution 7.1.5.1"><a href="#ex-FS-sawtooth-2" title="Copy heading and permalink for Solution 7.1.5.1" aria-label="Copy heading and permalink for Solution 7.1.5.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 7.1.5"><a href="#ex-FS-sawtooth" title="Copy heading and permalink for Example 7.1.5" aria-label="Copy heading and permalink for Example 7.1.5">🔗</a></div></article></details></section><section class="subsection" id="sect-fourier-series-4"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 7.1.5"><a href="#ex-FS-sawtooth" title="Copy heading and permalink for Example 7.1.5" aria-label="Copy heading and permalink for Example 7.1.5">🔗</a></div></article></section><section class="subsection" id="sect-fourier-series-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Convergence of a Sum of a Fourier Series</span>
 </h3>
 <div class="para" id="sect-fourier-series-4-2">Since Fourier series are infinite series, it is important to consider if it converges. As we will see, Fourier series will generally converge, to what value will depend on <span class="process-math">\(x\text{.}\)</span> Consider the Fourier series in <a href="sect-fourier-series.html#ex-FS-sawtooth" class="xref" data-knowl="./knowl/xref/ex-FS-sawtooth.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.1.5">Example 7.1.5</a>. If we let<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -893,9 +894,10 @@ f(x) \amp \text{if $f$ is continuous at $x$} \\
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-4-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sect-fourier-series-4-6-1-3">In other words, the Fourier series converges to the average of the left- and right-hand limits of <span class="process-math">\(f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-4-6-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.1.8"><a href="#sect-fourier-series-4-6" title="Copy heading and permalink for Theorem 7.1.8" aria-label="Copy heading and permalink for Theorem 7.1.8">🔗</a></div></article><details id="sect-fourier-series-4-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Theorem 7.1.8"><a href="#sect-fourier-series-4-6" title="Copy heading and permalink for Theorem 7.1.8" aria-label="Copy heading and permalink for Theorem 7.1.8">🔗</a></div></article><article class="example example-like" id="sect-fourier-series-4-7"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sect-fourier-series-4-7-1-1">Show that the Fourier series of the square wave function above converges to 0 when <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-4-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sect-fourier-series-4-7-1-1">Show that the Fourier series of the square wave function above converges to 0 when <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-4-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="sect-fourier-series-4-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="sect-fourier-series-4-7-2-1">Note that average of the left- and right-handed limits of the square wave function at <span class="process-math">\(x=0\)</span> is <span class="process-math">\((1+(-1))/2=0\text{,}\)</span> so using the theorem above, the function converges to 0 when <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-4-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -915,7 +917,7 @@ F(0) = \sum_{n=1}^{\infty} \frac{2}{n\pi} (1-\cos(n\pi)) \sin n x \biggl \vert_{
 </div>
 <div class="autopermalink" data-description="Solution 7.1.9.1"><a href="#sect-fourier-series-4-7-2" title="Copy heading and permalink for Solution 7.1.9.1" aria-label="Copy heading and permalink for Solution 7.1.9.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 7.1.9"><a href="#sect-fourier-series-4-7" title="Copy heading and permalink for Example 7.1.9" aria-label="Copy heading and permalink for Example 7.1.9">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 7.1.1: Convergence of a Sum of a Fourier Series"><a href="#sect-fourier-series-4" title="Copy heading and permalink for Subsection 7.1.1: Convergence of a Sum of a Fourier Series" aria-label="Copy heading and permalink for Subsection 7.1.1: Convergence of a Sum of a Fourier Series">🔗</a></div></section><section class="subsection" id="sect-fourier-series-5"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 7.1.9"><a href="#sect-fourier-series-4-7" title="Copy heading and permalink for Example 7.1.9" aria-label="Copy heading and permalink for Example 7.1.9">🔗</a></div></article><div class="autopermalink" data-description="Subsection 7.1.1: Convergence of a Sum of a Fourier Series"><a href="#sect-fourier-series-4" title="Copy heading and permalink for Subsection 7.1.1: Convergence of a Sum of a Fourier Series" aria-label="Copy heading and permalink for Subsection 7.1.1: Convergence of a Sum of a Fourier Series">🔗</a></div></section><section class="subsection" id="sect-fourier-series-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fourier Series of Functions of Period <span class="process-math">\(2L\)</span></span>
 </h3>
 <div class="para" id="sect-fourier-series-5-2">We saw that the Fourier series above applied only to functions that were periodic with period <span class="process-math">\(2\pi\text{.}\)</span> This section covers functions with arbitrary periodicity, which we will call period <span class="process-math">\(2L\text{.}\)</span> If we let <span class="process-math">\(u=\frac{\pi x}{L}\text{,}\)</span> and substitute this into <a href="sect-fourier-series.html#eq-trig-series" class="xref" data-knowl="./knowl/xref/eq-trig-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.1.1">(7.1.1)</a>, then<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -945,9 +947,10 @@ b_n \amp = \frac{1}{L} \int_{-L}^{L} f(x)
 </div>
 <div class="para" id="sect-fourier-series-5-6">The series is called the Fourier series of period <span class="process-math">\(2L\)</span> with the corresponding Fourier coefficients.<div class="autopermalink" data-description="Paragraph"><a href="#sect-fourier-series-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="ex-FS-x" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="ex-FS-x"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-FS-x-1-1">Find the Fourier Series of the periodic extension (of period 2) of <span class="process-math">\(f(x) = x\)</span> for <span class="process-math">\(x
+</h4>
+<div class="para" id="ex-FS-x-1-1">Find the Fourier Series of the periodic extension (of period 2) of <span class="process-math">\(f(x) = x\)</span> for <span class="process-math">\(x
 \in [-1,1]\)</span> as shown in the graph below:<div class="autopermalink" data-description="Paragraph"><a href="#ex-FS-x-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="ex-FS-x-1-2"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/plot-another-one.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A plot of a periodic sawtooth wave on <span class="process-math">\([-1,1]\text{.}\)</span><div class="autopermalink" data-description="Figure 7.1.11"><a href="#ex-FS-x-1-2" title="Copy heading and permalink for Figure 7.1.11" aria-label="Copy heading and permalink for Figure 7.1.11">🔗</a></div></figcaption></figure><div class="solutions"><details id="ex-FS-x-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
@@ -983,7 +986,7 @@ b_n \amp = -\frac{x}{n\pi} \cos (n \pi x) + \frac{1}{n^2 \pi^2} \sin (n\pi x)
 </div>
 <div class="autopermalink" data-description="Solution 7.1.10.1"><a href="#ex-FS-x-2" title="Copy heading and permalink for Solution 7.1.10.1" aria-label="Copy heading and permalink for Solution 7.1.10.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 7.1.10"><a href="#ex-FS-x" title="Copy heading and permalink for Example 7.1.10" aria-label="Copy heading and permalink for Example 7.1.10">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 7.1.2: Fourier Series of Functions of Period 2L"><a href="#sect-fourier-series-5" title="Copy heading and permalink for Subsection 7.1.2: Fourier Series of Functions of Period 2L" aria-label="Copy heading and permalink for Subsection 7.1.2: Fourier Series of Functions of Period 2L">🔗</a></div></section><div class="autopermalink" data-description="Section 7.1: Fourier Series"><a href="#sect-fourier-series" title="Copy heading and permalink for Section 7.1: Fourier Series" aria-label="Copy heading and permalink for Section 7.1: Fourier Series">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 7.1.10"><a href="#ex-FS-x" title="Copy heading and permalink for Example 7.1.10" aria-label="Copy heading and permalink for Example 7.1.10">🔗</a></div></article><div class="autopermalink" data-description="Subsection 7.1.2: Fourier Series of Functions of Period 2L"><a href="#sect-fourier-series-5" title="Copy heading and permalink for Subsection 7.1.2: Fourier Series of Functions of Period 2L" aria-label="Copy heading and permalink for Subsection 7.1.2: Fourier Series of Functions of Period 2L">🔗</a></div></section><div class="autopermalink" data-description="Section 7.1: Fourier Series"><a href="#sect-fourier-series" title="Copy heading and permalink for Section 7.1: Fourier Series" aria-label="Copy heading and permalink for Section 7.1: Fourier Series">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-fourier-series.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-even-odd.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

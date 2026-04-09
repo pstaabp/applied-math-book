@@ -35,7 +35,6 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
@@ -55,7 +54,6 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
@@ -101,16 +99,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.15';
+eBookConfig.runestone_version = '7.13.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -423,6 +421,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-qr-factorization-algorithm" class="internal"><span class="codenumber">6.3.1</span> <span class="title">QR Factorization Algorithm</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-solving-linear-systems-qr" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Solving Linear Systems with QR factoring.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-qr-factorization.html#sect-qr-eigenvalues" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Using QR factorization to find Eigenvalues</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -577,9 +576,10 @@ eBookConfig.enable_chatcodes =  false;
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-nonsingular-matrices-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 2.9.1"><a href="#thm-nonsingular-matrices" title="Copy heading and permalink for Theorem 2.9.1" aria-label="Copy heading and permalink for Theorem 2.9.1">🔗</a></div></article><details id="sect-linear-algebra-summary-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="Theorem 2.9.1"><a href="#thm-nonsingular-matrices" title="Copy heading and permalink for Theorem 2.9.1" aria-label="Copy heading and permalink for Theorem 2.9.1">🔗</a></div></article><article class="example example-like" id="sect-linear-algebra-summary-4"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-linear-algebra-summary-4-1-1">Examine <a href="sect-linear-algebra-summary.html#thm-nonsingular-matrices" class="xref" data-knowl="./knowl/xref/thm-nonsingular-matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.9.1">Theorem 2.9.1</a> using the matrix<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-algebra-summary-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="sect-linear-algebra-summary-4-1-1">Examine <a href="sect-linear-algebra-summary.html#thm-nonsingular-matrices" class="xref" data-knowl="./knowl/xref/thm-nonsingular-matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.9.1">Theorem 2.9.1</a> using the matrix<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-algebra-summary-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-linear-algebra-summary-4-1-2">
 <div class="displaymath process-math" id="sect-linear-algebra-summary-4-1-2-1">
 \begin{equation*}
@@ -839,7 +839,7 @@ R_3 + R_2 \rightarrow R_2, \\
 </div>
 <div class="autopermalink" data-description="Solution 2.9.2.1"><a href="#sect-linear-algebra-summary-4-2" title="Copy heading and permalink for Solution 2.9.2.1" aria-label="Copy heading and permalink for Solution 2.9.2.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.9.2"><a href="#sect-linear-algebra-summary-4" title="Copy heading and permalink for Example 2.9.2" aria-label="Copy heading and permalink for Example 2.9.2">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-sing-matrices"><h3 class="heading">
+<div class="autopermalink" data-description="Example 2.9.2"><a href="#sect-linear-algebra-summary-4" title="Copy heading and permalink for Example 2.9.2" aria-label="Copy heading and permalink for Example 2.9.2">🔗</a></div></article><article class="theorem theorem-like" id="thm-sing-matrices"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="thm-sing-matrices-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> real matrix. The following statements are equivalent<div class="autopermalink" data-description="Paragraph"><a href="#thm-sing-matrices-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -871,9 +871,10 @@ R_3 + R_2 \rightarrow R_2, \\
 </div>
 <div class="autopermalink" data-description="Theorem 2.9.3"><a href="#thm-sing-matrices" title="Copy heading and permalink for Theorem 2.9.3" aria-label="Copy heading and permalink for Theorem 2.9.3">🔗</a></div></article><div class="para" id="sect-linear-algebra-summary-6">This theorem will be extremely helpful in finding a certain type of scalar and vector called an eigenvalue and eigenvector. The following example shows its usefulness.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-algebra-summary-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-linear-algebra-summary-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="sect-linear-algebra-summary-7"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sect-linear-algebra-summary-7-1-1">Let<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-algebra-summary-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="sect-linear-algebra-summary-7-1-1">Let<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-algebra-summary-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sect-linear-algebra-summary-7-1-2">
 <div class="displaymath process-math" id="sect-linear-algebra-summary-7-1-2-1">
 \begin{equation*}
@@ -969,7 +970,7 @@ x_2 \amp = \frac{1}{2} x_3
 </div>
 <div class="autopermalink" data-description="Solution 2.9.4.1"><a href="#sect-linear-algebra-summary-7-2" title="Copy heading and permalink for Solution 2.9.4.1" aria-label="Copy heading and permalink for Solution 2.9.4.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 2.9.4"><a href="#sect-linear-algebra-summary-7" title="Copy heading and permalink for Example 2.9.4" aria-label="Copy heading and permalink for Example 2.9.4">🔗</a></div></article></details><div class="para" id="sect-linear-algebra-summary-8">Also notice that the last matrix of Gauss’ method showed that the rank was 2 (since there were only 2 nonzero rows). This was another statement in the theorem.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-algebra-summary-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.9.4"><a href="#sect-linear-algebra-summary-7" title="Copy heading and permalink for Example 2.9.4" aria-label="Copy heading and permalink for Example 2.9.4">🔗</a></div></article><div class="para" id="sect-linear-algebra-summary-8">Also notice that the last matrix of Gauss’ method showed that the rank was 2 (since there were only 2 nonzero rows). This was another statement in the theorem.<div class="autopermalink" data-description="Paragraph"><a href="#sect-linear-algebra-summary-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Section 2.9: Summary of the basics of linear algebra"><a href="#sect-linear-algebra-summary" title="Copy heading and permalink for Section 2.9: Summary of the basics of linear algebra" aria-label="Copy heading and permalink for Section 2.9: Summary of the basics of linear algebra">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
