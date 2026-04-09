@@ -35,20 +35,7 @@
 
 	<introduction>
 		<p>
-			Consider a periodic function <m>f</m> of period <m>2\pi</m> on the interval <m>[-\pi,\pi]</m>.
-			The <m>N</m>th partial sum of the Fourier Series of <m>f</m> is denoted <m>f_N</m>,
-		</p>
-
-		<p>
-			<me>
-				f_N(x) = a_0 + \sum_{n=1}^N (a_n \cos nx + b_n \sin nx)
-			</me>
-		</p>
-
-		<p>
-			where <m>a_0,
-			a_n</m> and <m>b_n</m> are the Fourier Coefficients as before.
-			The function <m>f_N</m> is also called the <term>Trigonometric Polynomial of degree <m>n</m></term>.
+			
 		</p>
 
 		<p>
@@ -346,7 +333,7 @@
 
 			<p>
 				<men xml:id="eq-estar">
-					E^{\star} = \int_{-\pi}^{\pi} f^2 \, dx - 2A_0\pi - \pi \sum_{n=1}^{N} (A_n^2 + B_n^2)
+					E^{\star} = \int_{-\pi}^{\pi} f^2 \, dx - \frac{A_0^2}{2}\pi - \pi \sum_{n=1}^{N} (A_n^2 + B_n^2)
 				</men>
 			</p>
 		</statement>
@@ -363,7 +350,7 @@
 
 		<p>
 			<me>
-				2a_0^2 + \sum_{n=1}^N (a_n^2+b_n^2) \leq \frac{1}{\pi} \int_{-\pi}^{\pi} f^2 \, dx
+				\frac{a_0^2}{2} + \sum_{n=1}^N (a_n^2+b_n^2) \leq \frac{1}{\pi} \int_{-\pi}^{\pi} f^2 \, dx
 			</me>
 		</p>
 	</statement>
@@ -380,7 +367,7 @@ xml:id="thm-parsevals-theorem">
 
 	<p>
 		<me>
-			2a_0^2 + \sum_{n=1}^{\infty} (a_n^2+b_n^2) = \frac{1}{\pi} \int_{-\pi}^{\pi} f^2 \, dx
+			\frac{a_0^2}{2} + \sum_{n=1}^{\infty} (a_n^2+b_n^2) = \frac{1}{\pi} \int_{-\pi}^{\pi} f^2 \, dx
 		</me>
 	</p>
 </statement>

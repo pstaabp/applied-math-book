@@ -94,27 +94,32 @@
         <p>
           Lastly, we find <m>R</m> with
           <me>
-            \begin{aligned} R \amp = Q^{\intercal} A  \\ \amp = \begin{bmatrix} -3/7 \amp -6/7 \amp 2/7 \\ -2/7 \amp 3/7 \amp 6/7 \\ 6/7 \amp -2/7 \amp 3/7 \end{bmatrix} \begin{bmatrix} -9 \amp 4 \amp 7 \\ -18 \amp 15 \amp -28 \\ 6 \amp 2 \amp 49 \end{bmatrix} \\ \amp = \begin{bmatrix} 21 \amp -14 \amp 35 \\ 0 \amp 7 \amp 28 \\ 0 \amp 0 \amp 35 \\ \end{bmatrix}
-            \end{aligned}
+            \begin{aligned} R \amp = Q^{\intercal} A  \\ \amp = \begin{bmatrix} -3/7 \amp -6/7 \amp 2/7 \\ -2/7 \amp 3/7 \amp 6/7 \\ 6/7 \amp -2/7 \amp 3/7 \end{bmatrix} \begin{bmatrix} -9 \amp 4 \amp 7 \\ -18 \amp 15 \amp -28 \\ 6 \amp 2 \amp 49 \end{bmatrix} \\ \amp = \begin{bmatrix} 21 \amp -14 \amp 35 \\ 0 \amp 7 \amp 28 \\ 0 \amp 0 \amp 35 \\ \end{bmatrix} \end{aligned}
           </me>
         </p>
       </solution>
     </example>
+
     <p>
-      A natural question to ask is why does this work? Why does the Gram-Schmidt process give us the QR factorization?
-      The answer is that the Gram-Schmidt process gives us an orthonormal basis for the column space of <m>A</m> and thus the matrix <m>Q</m> is an orthogonal matrix.
+      A natural question to ask is why does this work? Why does the Gram-Schmidt process give us the QR factorization? The answer is that the Gram-Schmidt process gives us an orthonormal basis for the column space of <m>A</m> and thus the matrix <m>Q</m> is an orthogonal matrix.
       Then, the matrix <m>R</m> is the change of basis matrix from the standard basis to the orthonormal basis given by the columns of <m>Q</m>.
     </p>
+
     <p>
-      Examining the result of <m>R = Q^{\intercal}A </m>, the matrix <m>Q^{\intercal}</m> projects the columns of <m>A</m> onto <m>Q</m>.  Because <m>Q</m> is constructed as the 
+      Examining the result of <m>R = Q^{\intercal}A </m>, the matrix <m>Q^{\intercal}</m> projects the columns of <m>A</m> onto <m>Q</m>.
+      Because <m>Q</m> is constructed as the
     </p>
   </subsection>
+
+
   <subsection xml:id="sect-solving-linear-systems-qr">
     <title>Solving Linear Systems with QR factoring.</title>
-    <p>
-      We can solving linear systems with the QR factorization and is often done if the original matrix is difficult to solve (Section where this is explained??). Let's look the example in <xref ref="sect-solve-linear-system-lu"/>. 
 
+    <p>
+      We can solving linear systems with the QR factorization and is often done if the original matrix is difficult to solve (Section where this is explained??).
+      Let's look the example in <xref ref="sect-solve-linear-system-lu"/>.
     </p>
+
     <p>
       <ol>
         <li>
@@ -122,68 +127,236 @@
             Write <m>A = QR</m>
           </p>
         </li>
+
         <li>
           <p>
-           Solve <m>R\boldsymbol{x} = Q^{\intercal}\boldsymbol{b}</m>.  Note that <m>R</m> is upper triangular and thus this can be solved with back substitution.
+            Solve <m>R\boldsymbol{x} = Q^{\intercal}\boldsymbol{b}</m>.
+            Note that <m>R</m> is upper triangular and thus this can be solved with back substitution.
           </p>
         </li>
       </ol>
     </p>
+
     <example>
       <statement>
         <p>
-          Solve the linear system <m>A\boldsymbol{x}= \boldsymbol{b}</m> using the <m>QR</m>-decomposition where 
+          Solve the linear system <m>A\boldsymbol{x}= \boldsymbol{b}</m> using the <m>QR</m>-decomposition where
           <me>
-            A = \begin{bmatrix}
-            3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7
-            \end{bmatrix} \qquad \boldsymbol{b} = \begin{bmatrix}
-            14 \\ 22 \\ -9 
-            \end{bmatrix}
+            A = \begin{bmatrix} 3 \amp -2 \amp 1 \\ 6 \amp 0 \amp 4 \\ -6 \amp -8 \amp -7 \end{bmatrix} \qquad \boldsymbol{b} = \begin{bmatrix} 14 \\ 22 \\ -9 \end{bmatrix}
           </me>
         </p>
       </statement>
+
       <solution>
         <p>
-          First, we need to find the factorization.  We can follow the same steps using Gram-Schmidt Orthogonalization as in <xref ref="ex-qr-factor"/>, however, generally the resulting elements of <m>Q</m> are not rational, so we will resort to software to do this.  Using Matlab or Julia, the result in 
+          First, we need to find the factorization.
+          We can follow the same steps using Gram-Schmidt Orthogonalization as in <xref ref="ex-qr-factor"/>, however, generally the resulting elements of <m>Q</m> are not rational, so we will resort to software to do this.
+          Using Matlab or Julia, the result in
           <me>
-            \begin{aligned}
-            Q \amp = \begin{bmatrix}
- -0.333333  \amp -0.522976  \amp  0.784465 \\
- -0.666667  \amp -0.457604  \amp -0.588348 \\
-  0.666667  \amp -0.719092  \amp -0.196116 \\
-            \end{bmatrix} \\ 
-            R \amp = \begin{bmatrix}
- -9.0 \amp  -4.66667 \amp  -7.66667 \\
-  0.0 \amp   6.79869 \amp   2.68025 \\
-  0.0 \amp   0.0     \amp  -0.196116 \\
-            \end{bmatrix}
-            \end{aligned}
+            \begin{aligned} Q \amp = \begin{bmatrix} -0.333333  \amp -0.522976  \amp  0.784465 \\ -0.666667  \amp -0.457604  \amp -0.588348 \\ 0.666667  \amp -0.719092  \amp -0.196116 \\ \end{bmatrix} \\ R \amp = \begin{bmatrix} -9.0 \amp  -4.66667 \amp  -7.66667 \\ 0.0 \amp   6.79869 \amp   2.68025 \\ 0.0 \amp   0.0     \amp  -0.196116 \\ \end{bmatrix} \end{aligned}
           </me>
-          and this just shows the first 5 or so digits of the two matrices.  
+          and this just shows the first 5 or so digits of the two matrices.
         </p>
 
         <p>
-          The next step is to find <m>Q^{\intercal} \boldsymbol{b}</m> or 
-          <me>Q^{\intercal} \boldsymbol{b}
-            = \begin{bmatrix}
- -25.33333333333333 \\
- -10.917131522692245 \\
-  -0.19611613513818504 \\
-            \end{bmatrix}
+          The next step is to find <m>Q^{\intercal} \boldsymbol{b}</m> or
+          <me>
+            Q^{\intercal} \boldsymbol{b} = \begin{bmatrix} -25.33333333333333 \\ -10.917131522692245 \\ -0.19611613513818504 \\ \end{bmatrix}
           </me>
         </p>
+
         <p>
-          And lastly, we solve <m>R\boldsymbol{x} = Q^{\intercal} \boldsymbol{b}</m>. This is done with back-substitution.  The result of this is:
+          And lastly, we solve <m>R\boldsymbol{x} = Q^{\intercal} \boldsymbol{b}</m>.
+          This is done with back-substitution.
+          The result of this is:
           <me>
-            \boldsymbol{x} = \begin{bmatrix}            
-  2.999999999999997 \\
- -2.000000000000001 \\
-  1.0000000000000033 \\
-            \end{bmatrix}
+            \boldsymbol{x} = \begin{bmatrix} 2.999999999999997 \\ -2.000000000000001 \\ 1.0000000000000033 \\ \end{bmatrix}
           </me>
-          which is close to the answer found in <xref ref="sect-solve-linear-system-lu"/>, the difference being that here we used floating-point numbers which have round off errors. 
+          which is close to the answer found in <xref ref="sect-solve-linear-system-lu"/>, the difference being that here we used floating-point numbers which have round off errors.
         </p>
       </solution>
     </example>
+  </subsection>
+
+
+  <subsection xml:id="sect-qr-eigenvalues">
+    <title>Using QR factorization to find Eigenvalues</title>
+
+    <p>
+      Another use of <m>QR</m>-factorization is that of numerically estimating the eigenvalues of a matrix.
+    </p>
+
+    <lemma xml:id="lem-eigenvalues-qr">
+      <statement>
+        <p>
+          The matrix <m>A = QR</m> for orthogonal matrix <m>Q</m> and upper triangular matrix <m>R</m> has the same eigenvalues as <m>RQ</m>.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          This amounts to showing that the matrices <m>QR</m> and <m>RQ</m> are similar.
+          <me>
+            QR = S^{-1} RQ S
+          </me>
+          Let <m>S = Q^{\intercal}</m> and since <m>Q</m> is orthogonal, then <m>S^{-1} = Q</m>
+          <me>
+            QR = Q RQ Q^{\intercal} = Q R
+          </me>
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      We use this fact to generate the following algorithm
+    </p>
+
+    <algorithm xml:id="alg-qr-eigenvalues">
+      <statement>
+        <p>
+          The following steps generates a sequence of matrices <m>A_k</m>.
+          In the limit <m>A_k</m> goes to the diagonal matrix with the eigenvalues of <m>A</m> on the diagonal.
+        </p>
+
+        <p>
+          <ol>
+            <li>
+              <p>
+                Let <m>A_0 = A</m> and <m>k=0</m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Factor <m>A_k = Q_k R_k </m> where <m>Q_k</m> is othogonal and <m>R_k</m> is upper triangular.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Let <m>A_{k+1} = R_k Q_k</m>.
+                That is, reverse the order of the matrix multiplies.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                If the maximum of the absolute value of the lower left elements of <m>A_{k+1}</m> is within <m>\epsilon</m>, then stop.
+                Otherwise increment <m>k</m> by 1 and return to step 2.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </algorithm>
+
+    <p>
+      We will show an example of this in action and then prove later why this converges to the correct answer.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Estimate the eigenvalues of the matrix
+          <me>
+            A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 3 \amp -2 \amp 6 \\ 2 \amp 1 \amp 3 \end{bmatrix}
+          </me>
+          as found in <xref ref="ex-eigs-3by3"/>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          First let <m>A_0=A</m>.
+          Then factor <m>A_0</m> into <m>Q_0</m> and <m>R_0</m>, where <m>A_0=Q_0R_0</m>.
+          This is done with software.
+          If using Julia,
+        </p>
+
+
+        <program language="julia">
+          <code>
+            QR₀ = qr(A₀)
+          </code>
+        </program>
+
+        <p>
+          and the matrices are then located in <c>Matrix(QR₀.Q)</c><fn>Note: if you leave off the <c>Matrix</c>, then the matrix <c>QR₀.Q</c> is in a compact form.</fn> or
+          <cd>
+          <cline>3×3 Matrix{Float64}:</cline>
+          <cline>-0.267261   0.145479  -0.952579</cline>
+          <cline>-0.801784  -0.581914   0.136083</cline>
+          <cline>-0.534522   0.800132   0.272166</cline>
+          </cd>
+          and <c>QR₀.R</c> or
+          <cd>
+          <cline>3×3 Matrix{Float64}:</cline>
+          <cline> -3.74166  1.06904  -6.41427</cline>
+          <cline>  0.0      1.96396  -1.09109</cline>
+          <cline>  0.0      0.0       1.63299</cline>
+          </cd>
+        </p>
+
+        <p>
+          Then the order of the matrices is reversed to <c>A₁ = QR₀.R * QR₀.Q</c>, resulting in
+          <cd>
+          <cline>3×3 Matrix{Float64}:</cline>
+          <cline>  3.57143   -6.29869   1.96396</cline>
+          <cline> -0.99146   -2.01587  -0.0296957</cline>
+          <cline> -0.872872   1.30661   0.444444</cline>
+          </cd>
+        </p>
+
+        <p>
+          Recall that the algorithm is supposed to result in an upper triangular matrix <m>A_k</m>.
+          We'll do one more step by hand.
+          Let <c>QR₁ = qr(A₁)</c>.
+          This gives us the two matrices (which we won't show here), but the next <m>A</m> matrix is found by reversing the <m>R</m> and <m>Q</m> with <c>A₂ = QR₁.R * QR₁.Q</c> resulting in
+          <cd>
+          <cline>3×3 Matrix{Float64}:</cline>
+          <cline> 4.65025   -4.45991      -2.88562</cline>
+          <cline> 0.830799  -3.49591      -0.700881</cline>
+          <cline> 0.199152   0.000981054   0.845661</cline>
+          </cd>
+        </p>
+
+        <p>
+          Notice that the numbers in the lower right are getting smaller, but not very quickly.
+          We'll do a number of steps with
+        </p>
+
+
+        <program language="julia">
+          <code>
+            Aₖ = A
+            for i=1:25
+              QRₖ = qr(Aₖ)
+              Aₖ = QRₖ.R * QRₖ.Q
+            end
+            Aₖ
+          </code>
+        </program>
+
+        <p>
+          and the result is
+        </p>
+
+        <p>
+          <cd>
+          <cline>3×3 Matrix{Float64}:</cline>
+          <cline>  3.99934      -5.00092      3.53563</cline>
+          <cline> -0.000921692  -2.99934      0.706641</cline>
+          <cline> -2.34445e-15   1.27349e-12  1.0</cline>
+          </cd>
+        </p>
+        <p>
+          The terms in the lower left are quite close to zero, so we can estimate that the eigenvalues are the diagonal elements or <c> 3.99934, -2.9934</c> and <c>1.0</c>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      We now discuss why this works.  
+    </p>
   </subsection>
 </section>
