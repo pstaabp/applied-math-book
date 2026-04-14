@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="ch-pde" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Partial Differential Equations</title>
+<chapter xml:id="ch-diff-eqn" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Differential Equations</title>
 
 	<introduction>
 		<p> Partial differential equations (or PDEs) are very common in modeling many
@@ -14,8 +14,9 @@
 </introduction>
 
 	<!-- include sections -->
-	<xi:include href="./heat-eqn-1d.ptx" />
-	<xi:include href="./heat-eqn-2d.ptx" />
-	<xi:include href="./bessel.ptx" />
-	<xi:include href="./heat-circular.ptx" />
+	<xi:include href="./partial-derivatives.ptx" />
+	<xi:include href="./modeling-pdes.ptx" />
+	<xi:include href="./linear-ode.ptx" />
+	<xi:include href="./series-solutions.ptx" />
+	<xi:include href="./sturm-liouville-probs.ptx" />
 </chapter>

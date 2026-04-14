@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sect-series-solutions">
+  <title>Series Solutions of Differential Equations</title>
+
+  <introduction>
+    <p>
+      In <xref ref="sect-linear-ode"/>, we touched on solutions to linear ordinary differential equations.
+      We kept our scope to those that were 2nd order and constant coefficient.
+      In this section, we investigate power series solutions to differential equations.
+    </p>
+  </introduction>
+
+
+  <subsection xml:id="subsec-first-order-ode">
+    <title>Solving First-order Differential Equations with Series</title>
+
+    <p>
+      Let's start this section with a specific example.
+      Before doing that example, we will assume that the solution has the form:
+      <men xml:id="eq-ps-1">
+        y = \sum_{n=0}^{\infty} a_n x^n
+      </men>
+      and because we need the derivative as well, we will differentiate the series or
+      <men xml:id="eq-ps-diff">
+        y' = \sum_{n=0}^{\infty} n a_n x^{n-1}
+      </men>
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Solve the initial value problem
+          <me>
+            y' = y, \quad y(0) = 1,
+          </me>
+          for some non-zero real constant <m>r</m> using power series.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Start by substituting <xref ref="eq-ps-1"/> and <xref ref="eq-ps-diff"/> into the differential equation or
+          <me>
+            \sum_{n=0}^{\infty} n a_n x^{n-1} = \sum_{n=0}^{\infty} a_n x^n
+          </me>
+        </p>
+
+        <p>
+          We will use the <term>method of underdetermined coefficients</term> which is a general techniques that is used to find the coefficients of variables functions (polynomials, sines and cosines or exponentials ) which sets the coefficients on both sides of an example to the same.
+        </p>
+
+        <p>
+          In this case, we match similar powers and it is easier if the series on the left is written in term of <m>x^{n}</m> instead of <m>x^{n-1}</m> and we can change this by first noting that we can start incrementing at <m>n=1</m> instead, because the first term is 0.
+          <me>
+            \sum_{n=1}^{\infty} n a_n x^{n-1} = \sum_{n=0}^{\infty} a_n x^n
+          </me>
+          and then if we let <m>k=n-1</m> or <m>n= k+1</m>, then the left side becomes
+          <me>
+            \sum_{k=0}^{\infty} (k+1) a_{k+1} x^k = \sum_{n=0}^{\infty} a_n x^n
+          </me>
+          and lastly since the index variable doesn't matter, let's switch back to <m>n</m> using <m>k=n</m>.<fn> Wait.
+          You might be thinking "Wait.
+          First you said <m>n=k+1</m> and then <m>n=k</m>.
+          How can these both be true?"  That is some good thinking there are your part.
+          However, since both <m>n</m> and <m>k</m> are just indexes, they aren't variables in the power series.
+          Write out a handful of terms of each of the series on the left sides above and you will see that they are equivalent.
+          We just write them differently.
+          </fn>
+          <me>
+            \sum_{n=0}^{\infty} (n+1) a_{n+1} x^n = \sum_{n=0}^{\infty} a_n x^n
+          </me>
+        </p>
+
+        <p>
+          Now that powers are both sides are the same, this means that the coefficients must be the same or
+          <me>
+            (n+1)a_{n+1} = a_n
+          </me>
+          or
+          <me>
+            a_{n+1} = \frac{1}{n+1} a_n
+          </me>
+          and since we have the initial condition, plugging <m>x=0</m> into <xref ref="eq-ps-1"/>, results in <m>a_0=1</m>.
+          If determining a formula for <m>a_n</m> is not clear, let's try
+          <me>
+            \begin{aligned} a_1 \amp = \frac{a_0}{1} = 1 \\ a_2 \amp = \frac{a_1}{2} = \frac{1}{2} \\ a_3 \amp = \frac{a_2}{3} = \frac{1}{2\cdot 3} \\ a_4 \amp = \frac{a_3}{4} = \frac{1}{2 \cdot 3 \cdot 4} \end{aligned}
+          </me>
+          and can be shown that in general
+          <me>
+            a_n = \frac{1}{n!}
+          </me>
+          So the series solution will be substituting <m>a_n</m> into <xref ref="eq-ps-1"/> or
+          <me>
+            y = \sum_{n=0}^{\infty} \frac{1}{n!} x^n
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The equation in the previous example was relatively simple.
+      The follow exercises asks you to expand the equation a bit.
+    </p>
+
+    <exercise>
+      <statement>
+        <p>
+          Solve the following initial value problem using power series techniques.
+          <me>
+            y' + r y = 0, \quad y(0) = y_0
+          </me>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+
+
+  <subsection xml:id="subsec-second-order">
+    <title>Second-Order Differential Equations</title>
+
+    <p>
+      Let's now examine some second order equations.
+      We'll start with one we know.
+      <me>
+        y'' + 4y = 0, \quad y(0) = 1, y'(0)=0
+      </me>
+      and in this case, we will need the second derivative or the derivative of
+      <men xml:id="eq-ps-diff2">
+        y'' = \sum_{n=0}^{\infty}n(n-1) a_n x^{n-2}
+      </men>
+      and substitute this and <xref ref="eq-ps-1"/> into the differential equation as
+      <me>
+        \begin{aligned} \sum_{n=0}^{\infty}n(n-1) a_n x^{n-2} + 4 \sum_{n=0}^{\infty} a_n x^n \amp = 0\\ \sum_{n=2}^{\infty} n(n-1) a_n x^{n-2} + 4 \sum_{n=0}^{\infty} a_n x^n \amp = 0 \end{aligned}
+      </me>
+      where the first two terms of the left series are zero so we start at index 2.
+      Next, we will reindex the first series as <m>k=n-2</m>, then <m>k=n</m> to get
+      <me>
+        \begin{aligned} \sum_{n=0}^{\infty} (n+2)(n+1)a_{n+2} x^n + \sum_{n=0}^{\infty} 4 a_n x^n \amp =0 \\ \sum_{n=0}^{\infty} \left((n+2)(n+1) a_{n+2} + 4 a_n\right) x^n \amp 0 \end{aligned}
+      </me>
+      and the result is the recursive formula:
+      <me>
+        a_{n+2} = - \frac{4}{(n+1)(n+2)}a_n
+      </me>
+      The intial conditions result in <m>a_0=1</m> and <m>a_1=0</m>.
+      From the recursive formula and <m>a_1=0</m>, we get <m>a_k=0</m> for all odd values of <m>k</m>.
+      For even values,
+      <me>
+        \begin{aligned} a_2 \amp = -\frac{4}{(1)(2)} a_0 = -2 = - \frac{2^2}{2!}, \\ a_4 \amp = -\frac{4}{(3)(4)} a_2 = \frac{2^4}{4!} \\ a_6 \amp = -\frac{4}{(5)(6)} a_4 = -\frac{2^2 (2^4)}{(4!)(5)(6)} = - \frac{2^6}{6!} \\ a_8 \amp = -\frac{4}{(7)(8)} a_6 = \frac{2^8}{8!} \end{aligned}
+      </me>
+      and in general, we can write:
+      <me>
+        a_{2k} = (-1)^k \frac{2^{2k}}{(2k)!}
+      </me>
+      so the series is
+      <me>
+        \begin{aligned} y \amp = 1 - \frac{2^2}{2!}x^2 + \frac{2^4}{4!} x^4 - \frac{2^6}{6!} x^6 + \frac{2^8}{8!} x^8 + \cdots \\ \amp = \sum_{k=0}^{\infty} \frac{2^{2k}}{4!}x^{2k} \end{aligned}
+      </me>
+      and this is the Taylor series expansion of <m>\cos(2x)</m>.
+    </p>
+  </subsection>
+
+
+  <subsection>
+    <title>Series Solutions and Orthogonal Polynomials</title>
+
+    <p>
+      In <xref ref="sect-inner-product"/>, we saw orthogonal sets of "vectors", which can include polynomials.
+      The inner product is defined with respect to a weight function and interval and an example of this is if <m>w(x) \equiv 1</m> on <m>[-1,1]</m>, the the resulting polynomials are the <term>Legendre Polynomials</term>.
+      In <xref ref="example-gram-schmidt-p3"/>, we used the Gram-Schmidt Orthogonalization algorithm to find these polynomials.
+      An alternative method is to solve the differential equation:
+      <me>
+        \frac{d}{dx} \left( (1-x^2) \frac{dy}{dx}\right) + n(n+1) y = 0
+      </me>
+      which will have a solution <m>P_n(x)</m>, which will be the <m>n</m>th Legendre polynomial.
+    </p>
+
+    <p>
+      The series solutions of this differential equation is quite nice in that it can be found for general value <m>n</m>.
+      As before, we will assume the solution has the form of <xref ref="eq-ps-1"/> and then we will need the first derivative.
+      <me>
+        \begin{aligned} \frac{d}{dx} \left( (1-x^2) \sum_{k=0}^{\infty} k a_k x^{k-1}\right)  + n(n+1) \sum_{k=0}^{\infty} a_k x_k \amp = 0  \\ \frac{d}{dx} \left(\sum_{k=0}^{\infty} k a_k x^{k-1} - \sum_{k=0}^{\infty} k a_k x^{k+1} \right) + n(n+1) \sum_{k=0}^{\infty} a_k x_k  \amp = 0 \end{aligned}
+      </me>
+      where <m>k</m> is used as the index for the series because <m>n</m> is used as the specific polynomial (solution).
+      Differentiating
+      <me>
+        \begin{aligned} \sum_{k=2}^{\infty} k (k-1) a_k x^{k-2} -  \sum_{k=0}^{\infty} k (k+1) a_k x^k + n(n+1) \sum_{k=0}^{\infty} a_k x_k \amp = 0  \\ \sum_{k=0}^{\infty} (k+2) (k+1) a_{k+2} x^k - \sum_{k=0}^{\infty} k (k+1) a_k x^k + n(n+1) \sum_{k=0}^{\infty} a_k x_k \amp = 0  \\ \sum_{k=0}^{\infty} \left((k+2)(k+1)a_{k+2} - k(k+1)a_k + n(n+1)a_k\right) x^k \amp =0 \end{aligned}
+      </me>
+      where the in the first equation above, the series starts at <m>k=2</m>, because the first two terms are 0.
+      Also the indexing for the first series in the second equation above has been shifted by 2.
+    </p>
+
+    <p>
+      The coefficient of <m>x^k</m> must be zero so setting the coefficient to 0 results in
+      <me>
+        a_{k+2} = \frac{k(k+1) - n(n+1)}{(k+1)(k+2)}a_k
+      </me>
+      Like above and is common to other 2nd order differential equations, the even and odd coefficients decouple from each other.
+      If <m>n</m> is not an integer, then eventually the terms will look like <m> a_{k+2} \approx \frac{k}{k+2} </m> and recall that if the terms of a series do not go to 0, then the series diverges.
+      It is a solution, but not a helpful one.
+    </p>
+
+    <p>
+      If <m>n</m> is an integer, that when <m>k=n</m>, the term <m>a_{k+2}=0</m> and from this general relationship <m>a_{k+2j}=0</m> for all <m>j \geq 1</m>.
+      Note also, if <m>n</m> is odd, then the even terms <m>a_{2k}</m> will have the same situation as the non-integer solution and will diverge.
+      Similarly if <m>n</m> is even then the odd terms <m>a_{2k+1}</m> will diverge.
+    </p>
+
+    <p>
+      Thus the only interesting solution to this is to examine the odd terms if <m>n</m> is odd or the even terms if <m>n</m> is even.
+      Let's look at the cases:
+    </p>
+
+
+    <paragraphs>
+      <title><m>n=0</m> case</title>
+
+      <p>
+        In this case, we have
+        <me>
+          a_{k+2} = \frac{k(k+1) - 0}{(k+1)(k+2)} a_0
+        </me>
+        and when <m>k=0</m>, <m>a_{k+2} =a_2=0</m> as so all even terms above this are also zero, then <m>y(x) = a_0</m>
+      </p>
+    </paragraphs>
+
+
+    <paragraphs>
+      <title><m>n=1</m> case</title>
+
+      <p>
+        In this case, we have
+        <me>
+          a_{k+2} = \frac{k(k+1) - 1(2)}{(k+1)(k+2)} a_k
+        </me>
+        and when <m>k=1</m>, <m>a_{k+2} =0</m> the only solution is <m>P_1(x) = a_1 x</m>
+      </p>
+    </paragraphs>
+
+    <paragraphs>
+      <title><m>n=2</m> case</title>
+      <p>
+        In this case we ignore the odd terms and when <m>k=0</m>
+        <me>
+          a_2 = \frac{0(1)-2(3)}{(1)(2)}a_0 = -\frac{3}{2} a_0
+        </me>
+        and all <m>a_{2k}=0</m> for <m>k \geq 2</m>.  The solution thus is a polynomial of the form:
+        <me>
+          P_2(x) = a_0 - 3 a_0 x^2 
+        </me>
+        and often we write this as a monomial or 
+        <me>
+          P_2(x) = C\left(x^2 - \frac{1}{3}\right)
+        </me>
+      </p>
+    </paragraphs>
+    <paragraphs>
+      <title><m>n=3</m> case</title>
+      <p>
+        In this case, we ignore the even terms and when <m>k=1</m>
+        <me>
+          a_3 = \frac{1(2)-3(4)}{2(3)} a_1 = -\frac{5}{3} a_1
+        </me>
+        and for all <m>a_{2k+1}=0</m> for <m>k \geq 2</m>. The solution is a polynomial:
+        <me>
+          P_3 = a_1 x - \frac{5}{3} a_1 x^3 
+        </me>
+        and writing this as a monomial:
+        <me>
+          P_3 = C\left(x^3 - \frac{3}{5} x)
+        </me>
+      </p>
+    </paragraphs>
+  </subsection>
+
+
+  <subsection xml:id="subsec-singular-diff-eq">
+    <title>Differential Equations with Singular Points</title>
+
+    <p>
+      Let's take a look at another example:
+      <men xml:id="eq-ode-singular">
+        2x y'' + y'+ y = 0
+      </men>
+    </p>
+
+    <p>
+      We assume the form of <xref ref="eq-ps-1"/> for the solution and use <xref ref="eq-ps-diff"/> and  <xref ref="eq-ps-diff2"/> for the derivatives, then
+      <me>
+        \begin{aligned} 2x \sum_{n=0}^{\infty} n(n-1) a_n x^{n-2} + \sum_{n=0}^{\infty} n a_n x^{n-1} + \sum_{n=0}^{\infty} a_n x^n \amp = 0 \\ \sum_{n=2}^{\infty} 2n(n-1) a_n x^{n-1}+ \sum_{n=1}^{\infty} n a_n x^{n-1} + \sum_{n=0}^{\infty} a_n x^n \amp = 0 \end{aligned}
+      </me>
+      and we reindex the first two series, first with <m>k=n+1</m>, then <m>k=n</m>
+      <me>
+        \sum_{n=1}^{\infty} 2(n+1)na_{n+1} x^n + \sum_{n=0}^{\infty} (n+1) a_{n+1} x^n + \sum_{n=0}^{\infty} a_n x^n  = 0
+      </me>
+      and now the powers are the same, however note that the second two sums have an additional term so we would need to write this as
+      <me>
+        \begin{aligned} a_1 + a_0 + \sum_{n=1}^{\infty} \left((2(n+1)n +(n+1))a_{n+1} + a_n\right) x^n \amp = 0 \\ a_1 + a_0 + \sum_{n=1}^{\infty} \left((n+1)(2n+1)a_{n+1} + a_n\right) x^n \amp = 0 \end{aligned}
+      </me>
+      The general term would be
+      <me>
+        a_{n+1} = -\frac{1}{(2n+1)(n+1)} a_n
+      </me>
+      with the first term leading to <m>a_1 = -a_0</m> and then the next few terms are:
+    </p>
+
+    <p>
+      <me>
+        \begin{aligned} a_2 \amp = - \frac{1}{3(2)} a_1 = \frac{1}{2(3)} a_0 \\ a_3 \amp = -\frac{1}{5(3)} a_2 = -\frac{1}{5(3)(2)(3)} = - \frac{1}{90} a_0 \\ a_4 \amp = -\frac{1}{7(4)} a_3 = \frac{1}{48 \cdot 90} = \frac{1}{4320} a_0 \end{aligned}
+      </me>
+      and then this leads to the series
+      <me>
+        y (x) = a_0 \left(1-x+\frac{x^2}{6} - \frac{x^3}{90} + \frac{x^4}{4320} + \cdots\right)
+      </me>
+    </p>
+  </subsection>
+
+
+  <subsection xml:id="subsec-frobenius-method">
+    <title>Frobenius Method</title>
+
+    <p>
+      But a second solution is missing.
+      There should be two linearly independent solutions.
+      Although there are other ways to do this, let's use a more general method for series, called the <term>Frobenius Method</term>.
+      Instead of the power series form in <xref ref="eq-ps-1"/>, we can assume
+      <me>
+        y = x^r \sum_{n=0}^{\infty} a_n x^n  = \sum_{n=0}^{\infty} a_n x^{r+n}
+      </me>
+      where <m>r</m> is a constant.
+      Let's use this to see what happens with <xref ref="eq-ode-singular"/> and will need the derivatives of this.
+      <me>
+        \begin{aligned} y' \amp = \sum_{n=0}^{\infty} (r+n)a_n x^{r+n-1} \\ y'' \amp = \sum_{n=0}^{\infty} (r+n)(r+n-1) a_n x^{r+n-2} \end{aligned}
+      </me>
+      Substituting this into <xref ref="eq-ode-singular"/> results in
+      <me>
+        \begin{aligned} 2x \sum_{n=0}^{\infty} (r+n)(r+n-1)a_n x^{r+n-2} + \sum_{n=0}^{\infty} (r+n)a_n x^{r+n-1} + \sum_{n=0}^{\infty} a_n x^{r+n} \amp = 0 \\ \sum_{n=0}^{\infty} 2(r+n)(r+n-1)a_n x^{r+n-1} + \sum_{n=0}^{\infty} (r+n)a_n x^{r+n-1} + \sum_{n=0}^{\infty} a_n x^{r+n} \amp = 0 \\ \end{aligned}
+      </me>
+      and note that since we don't know a value of <m>r</m>, we don't drop off the first term like above.
+      Reindexing like above results in
+      <me>
+        \sum_{n=-1}^{\infty} 2(r+n+1)(r+n)a_{n+1} x^{r+n} + \sum_{n=-1}^{\infty} (r+n+1)a_{n+1} x^{r+n} + \sum_{n=0}^{\infty} a_n x^{r+n}  = 0 \\
+      </me>
+      The first term in each of the first two series is extra, so we write it separately
+      <me>
+        2r(r-1)a_0 x^{r-1} +  r a_0 x^{r-1} + \sum_{n=0}^{\infty} \left(2(r+n+1)(r+n)a_{n+1} + (r+n+1)a_{n+1} + a_n\right)x^{r+n} =0
+      </me>
+      the general terms (coefficient of <m>x^{r+n}</m> inside the sum) results in
+      <men xml:id="eq-frobenius-general">
+        a_{n+1} = - \frac{a_n}{(r+n+1)(2(r+n)+1)}
+      </men>
+      the coefficient of the first term is
+      <me>
+        a_0 (2r^2-2r+r) x^{r-1} = a_0 (2r^2-r) x^{r-1} = 0
+      </me>
+      and since we are looking for the value of <m>r</m>, <m>2r^2-r = r(2r-1)</m>, which has the two solutions <m>r=0,1/2</m>.
+    </p>
+
+    <p>
+      Note that the <m>r=0</m> will result in the solution we found above, so we're interested in the <m>r=1/2</m> case.
+      Let's write down a few terms using the general formula in <xref ref="eq-frobenius-general"/>:
+      <me>
+        \begin{aligned} a_1 = - \frac{a_0}{(1/2+1)(2(1/2)+1)} = - \frac{a_0}{3} \\ a_2 = - \frac{a_1}{(5/2)(2(3/2)+1)} = \frac{a_0}{10\cdot 3} = \frac{a_0}{30} \\ a_3 = - \frac{a_2}{(7/2)(2(5/2)+1)} = -\frac{a_0}{30(7/2)(6)} = -\frac{a_0}{630} \\ a_4 = - \frac{a_3}{(9/2)(2(7/2)+1)} = \frac{a_0}{630(9/2)(8)} = \frac{a_0}{2520} \end{aligned}
+      </me>
+      resulting in the series (with the <m>x^{1/2}</m> term)
+      <me>
+        y_2 = C \sqrt{x} \left(1-\frac{x}{3} + \frac{x^2}{30} - \frac{x^3}{630} + \frac{x^4}{2520} + \cdots \right)
+      </me>
+    </p>
+  </subsection>
+</section>

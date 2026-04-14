@@ -18,6 +18,7 @@
     <xi:include href="./eigenvectors/ch-eigenvectors.ptx" />
     <xi:include href="./matrix-factoring/ch-matrix-factoring.ptx" />
     <xi:include href="./fourier-series/ch-fourier-series.ptx" />
+    <xi:include href="./diff-eqn/ch-diff-eqn.ptx" />
     <xi:include href="./pde/ch-pde.ptx" />
 
     <!-- Include backmatter -->
