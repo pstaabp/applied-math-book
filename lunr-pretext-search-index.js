@@ -4381,7 +4381,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.2",
   "title": "Modeling with PDEs",
-  "body": " Modeling with PDEs   In this section, we show where two important differential equations arise based on modeling the physical situation. The first will be the heat transport or heat equation and the second will be the wave equation by modeling the motion of a taut string. In both situations we will only show this for motion in one-dimension although similar PDEs model more complex behavior.    The Heat Equation  In this section, we will derive the transport of heat in a solid bar. In short, heat moves in a substance from a warmer region to a cooler region and if we know the direction of motion and the rate then we can understand heat flow.  We will consider a bar of length with fixed density , constant cross sectional area and insulated sides. This derivation will result in flow only in the direction of the length of the bar. The shape of the cross section and material in the bar does not matter but we will show a cylindrical bar.   A cylindrical bar which conducts heat.      The small segment of rod has heat flux entering in the left side and has heat flux exiting the right side. The temperature is on the left and on the right.   The heat flux through a slice of thickness of the bar.      Next, we consider the amount of heat in the segment. The heat is proportional to the mass of the segment ( ) and the temperature. The proportionality constant, is called the specific heat. The amount of heat in this small segment is:     The temporal change in heat of this element is the derivative with respect to and the only quantity that depends on time is the temperature :     and is equal to the total amount of heat entering from the two ends or     Divide both sides of this equation by and take the limit ,     The relationship between the heat flux, and the temperature is called Fourier's Law , and states that the heat transferred across unit area is proportional to the temperature gradient or     where is the proportionality constant called the thermal conductivity and the negative sign is due to the fact that heat flows from hot to cold (in a negative direction). Substituting Fourier's Law into results in     and assuming that is a constant,     rearranging we get     where is called the thermal diffusivity.   The one-dimensional heat equation is     and is typically solved for a given initial condition and with boundary conditions. We will see some examples of this in .     Wave Equation: Modeling a Taut String  Next, we turn to modeling the motion of a taut string fixed on both ends. A common example of this is a guitar string. We look at a small part of the string that has been displaced vertically from rest:   A small section of a taut string. The vectors and are the force vectors on the string, the variable is the vertical displacement of the string from rest position.      where be the vertical position of the string at position and time and the tension at and are the force vectors and . To determine an equation that describes the motion of the string, we need to balance the horizontal a vertical forces. We can write the two force vectors and in terms of the horizontal and vertical components where the subscripts in this case are the components as shown in the figure below.   The force vectors from are written in terms of the component vectors.      And recall that using Newton's 2nd law of motion the sum of the forces on a object is equal to the mass of the object times its acceleration in that direction or . There is no horizontal motion of the string, so the horizontal acceleration is zero and therefore:     and solving for      Next, we examine the vertical forces. The main difference is that there is a vertical acceleration which is the 2nd derivative of the position with respect to .     where the mass of the short piece is the mass density of the string and is the horizontal length of the piece. Substituting into the equation above,     and dividing through by      The tangent of the angles are the slopes of the function at and respectively, or at and therefore the above can be written     Divide by and let be the horizontal tension in the string     take the limit as      The parameter plays an important role in the solution, and we'll define , so the equation can be written:   Typically, is called the wave equation or since there is once one spatial variable, the one-dimensional wave equation .    Important Second-Order PDEs  The following is a list of other important second-order partial differential equations. Some of these are two-dimensions versions of the wave and heat equations derived above.     The remainder of this chapter covers solution techniques of these and other partial differential equations.   "
+  "body": " Modeling with PDEs   In this section, we show where two important differential equations arise based on modeling the physical situation. The first will be the heat transport or heat equation and the second will be the wave equation by modeling the motion of a taut string. In both situations we will only show this for motion in one-dimension although similar PDEs model more complex behavior.    The Heat Equation  In this section, we will derive the transport of heat in a solid bar. In short, heat moves in a substance from a warmer region to a cooler region and if we know the direction of heat transfer and the rate then we can understand heat flow.  We will consider a bar of length with fixed density , constant cross-sectional area and insulated sides. This derivation will result in flow only in the direction of the length of the bar. The shape of the cross section and material in the bar does not matter but we will show a cylindrical bar.   A cylindrical bar which conducts heat.      Heat flux is the flow of energy per unit area per unit time. The small segment of rod has heat flux entering in the left side and has heat flux exiting the right side. The temperature is on the left and on the right.   The heat flux through a slice of thickness of the bar.      Next, we consider the amount of heat in the segment. The heat is proportional to the mass of the segment ( ) and the temperature, where is the linear mass density of the bar. The proportionality constant, is called the specific heat and is a property of the material. The amount of heat in this small segment is:     The temporal change in heat of this element is the derivative with respect to and the only quantity that depends on time is the temperature :     and is equal to the total amount of heat entering from the two ends or     Divide both sides of this equation by and take the limit ,     The relationship between the heat flux, and the temperature is called Fourier's Law , and states that the heat transferred across unit area is proportional to the temperature gradient or     where is the proportionality constant called the thermal conductivity and the negative sign is due to the fact that heat flows from hot to cold (in a negative direction). Substituting Fourier's Law into results in     and assuming that is a constant,     rearranging we get     where is called the thermal diffusivity.   The one-dimensional heat equation is     and is typically solved for a given initial condition and with boundary conditions. We will see some examples of this in .     Wave Equation: Modeling a Taut String  Next, we turn to modeling the motion of a taut string fixed on both ends. A common example of this is a guitar string. We look at a small part of the string that has been displaced vertically from rest:   A small section of a taut string. The vectors and are the force vectors on the string, the variable is the vertical displacement of the string from rest position.      where be the vertical position of the string at position and time and the tension at and are the force vectors and . To determine an equation that describes the motion of the string, we need to balance the horizontal a vertical forces. We can write the two force vectors and in terms of the horizontal and vertical components where the subscripts in this case are the components as shown in the figure below.   The force vectors from are written in terms of the component vectors.      And recall that using Newton's 2nd law of motion the sum of the forces on a object is equal to the mass of the object times its acceleration in that direction or . There is no horizontal motion of the string, so the horizontal acceleration is zero and therefore:     and solving for      Next, we examine the vertical forces. The main difference is that there is a vertical acceleration which is the 2nd derivative of the position with respect to .     where the mass of the short piece is the mass density of the string and is the horizontal length of the piece. Substituting into the equation above,     and dividing through by      The tangent of the angles are the slopes of the function at and respectively, or at and therefore the above can be written     Divide by and let be the horizontal tension in the string     take the limit as      The parameter plays an important role in the solution, and we'll define , so the equation can be written:   Typically, is called the wave equation or since there is once one spatial variable, the one-dimensional wave equation .    Important Second-Order PDEs  The following is a list of other important second-order partial differential equations. Some of these are two-dimensions versions of the wave and heat equations derived above.     The remainder of this chapter covers solution techniques of these and other partial differential equations.   "
 },
 {
   "id": "sect-modeling-pdes-2-1",
@@ -4528,56 +4528,101 @@ var ptx_lunr_docs = [
   "body": "  Find the solution to .    The characteristic equation for this differential equation is     and since this can't be factored, we'll use the quadratic equation to solve this:     Using , the general solution is      "
 },
 {
-  "id": "ch-pde-6",
+  "id": "sect-series-solutions",
   "level": "1",
-  "url": "ch-pde-6.html",
+  "url": "sect-series-solutions.html",
   "type": "Section",
   "number": "8.4",
+  "title": "Series Solutions of Differential Equations",
+  "body": " Series Solutions of Differential Equations   In , we touched on solutions to linear ordinary differential equations. We kept our scope to those that were 2nd order and constant coefficient. In this section, we investigate power series solutions to differential equations.    Solving First-order Differential Equations with Series  Let's start this section with a specific example. Before doing that example, we will assume that the solution has the form: and because we need the derivative as well, we will differentiate the series or     Solve the initial value problem for some non-zero real constant using power series.    Start by substituting and into the differential equation or   We will use the method of underdetermined coefficients which is a general techniques that is used to find the coefficients of variables functions (polynomials, sines and cosines or exponentials ) which sets the coefficients on both sides of an example to the same.  In this case, we match similar powers and it is easier if the series on the left is written in term of instead of and we can change this by first noting that we can start incrementing at instead, because the first term is 0. and then if we let or , then the left side becomes and lastly since the index variable doesn't matter, let's switch back to using . Wait. You might be thinking \"Wait. First you said and then . How can these both be true?\" That is some good thinking there are your part. However, since both and are just indexes, they aren't variables in the power series. Write out a handful of terms of each of the series on the left sides above and you will see that they are equivalent. We just write them differently.    Now that powers are both sides are the same, this means that the coefficients must be the same or or and since we have the initial condition, plugging into , results in . If determining a formula for is not clear, let's try and can be shown that in general So the series solution will be substituting into or     The equation in the previous example was relatively simple. The follow exercises asks you to expand the equation a bit.    Solve the following initial value problem using power series techniques.       Second-Order Differential Equations  Let's now examine some second order equations. We'll start with one we know. and in this case, we will need the second derivative or the derivative of and substitute this and into the differential equation as where the first two terms of the left series are zero so we start at index 2. Next, we will reindex the first series as , then to get and the result is the recursive formula: The intial conditions result in and . From the recursive formula and , we get for all odd values of . For even values, and in general, we can write: so the series is and this is the Taylor series expansion of .    Series Solutions and Orthogonal Polynomials  In , we saw orthogonal sets of \"vectors\", which can include polynomials. The inner product is defined with respect to a weight function and interval and an example of this is if on , the the resulting polynomials are the Legendre Polynomials . In , we used the Gram-Schmidt Orthogonalization algorithm to find these polynomials. An alternative method is to solve the differential equation: which will have a solution , which will be the th Legendre polynomial.  The series solutions of this differential equation is quite nice in that it can be found for general value . As before, we will assume the solution has the form of and then we will need the first derivative. where is used as the index for the series because is used as the specific polynomial (solution). Differentiating where the in the first equation above, the series starts at , because the first two terms are 0. Also the indexing for the first series in the second equation above has been shifted by 2.  The coefficient of must be zero so setting the coefficient to 0 results in Like above and is common to other 2nd order differential equations, the even and odd coefficients decouple from each other. If is not an integer, then eventually the terms will look like and recall that if the terms of a series do not go to 0, then the series diverges. It is a solution, but not a helpful one.  If is an integer, that when , the term and from this general relationship for all . Note also, if is odd, then the even terms will have the same situation as the non-integer solution and will diverge. Similarly if is even then the odd terms will diverge.  Thus the only interesting solution to this is to examine the odd terms if is odd or the even terms if is even. Let's look at the cases:   case  In this case, we have and when , as so all even terms above this are also zero, then     case  In this case, we have and when , the only solution is     case  In this case we ignore the odd terms and when  and all for . The solution thus is a polynomial of the form: and often we write this as a monomial or     case  In this case, we ignore the even terms and when  and for all for . The solution is a polynomial: and writing this as a monomial:      Differential Equations with Singular Points  Let's take a look at another example:   We assume the form of for the solution and use and for the derivatives, then and we reindex the first two series, first with , then  and now the powers are the same, however note that the second two sums have an additional term so we would need to write this as The general term would be with the first term leading to and then the next few terms are:   and then this leads to the series     Frobenius Method  But a second solution is missing. There should be two linearly independent solutions. Although there are other ways to do this, let's use a more general method for series, called the Frobenius Method . Instead of the power series form in , we can assume where is a constant. Let's use this to see what happens with and will need the derivatives of this. Substituting this into results in and note that since we don't know a value of , we don't drop off the first term like above. Reindexing like above results in The first term in each of the first two series is extra, so we write it separately the general terms (coefficient of inside the sum) results in the coefficient of the first term is and since we are looking for the value of , , which has the two solutions .  Note that the will result in the solution we found above, so we're interested in the case. Let's write down a few terms using the general formula in : resulting in the series (with the term)    "
+},
+{
+  "id": "subsec-first-order-ode-3",
+  "level": "2",
+  "url": "sect-series-solutions.html#subsec-first-order-ode-3",
+  "type": "Example",
+  "number": "8.4.1",
+  "title": "",
+  "body": "  Solve the initial value problem for some non-zero real constant using power series.    Start by substituting and into the differential equation or   We will use the method of underdetermined coefficients which is a general techniques that is used to find the coefficients of variables functions (polynomials, sines and cosines or exponentials ) which sets the coefficients on both sides of an example to the same.  In this case, we match similar powers and it is easier if the series on the left is written in term of instead of and we can change this by first noting that we can start incrementing at instead, because the first term is 0. and then if we let or , then the left side becomes and lastly since the index variable doesn't matter, let's switch back to using . Wait. You might be thinking \"Wait. First you said and then . How can these both be true?\" That is some good thinking there are your part. However, since both and are just indexes, they aren't variables in the power series. Write out a handful of terms of each of the series on the left sides above and you will see that they are equivalent. We just write them differently.    Now that powers are both sides are the same, this means that the coefficients must be the same or or and since we have the initial condition, plugging into , results in . If determining a formula for is not clear, let's try and can be shown that in general So the series solution will be substituting into or    "
+},
+{
+  "id": "subsec-first-order-ode-5",
+  "level": "2",
+  "url": "sect-series-solutions.html#subsec-first-order-ode-5",
+  "type": "Checkpoint",
+  "number": "8.4.2",
+  "title": "",
+  "body": "  Solve the following initial value problem using power series techniques.    "
+},
+{
+  "id": "sect-series-solutions-5-2",
+  "level": "2",
+  "url": "sect-series-solutions.html#sect-series-solutions-5-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Legendre Polynomials "
+},
+{
+  "id": "subsec-frobenius-method-2",
+  "level": "2",
+  "url": "sect-series-solutions.html#subsec-frobenius-method-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Frobenius Method "
+},
+{
+  "id": "ch-diff-eqn-7",
+  "level": "1",
+  "url": "ch-diff-eqn-7.html",
+  "type": "Section",
+  "number": "8.5",
   "title": "Sturm-Liouville Problems",
   "body": " Sturm-Liouville Problems  We now turn to a class of differential equations that arise in solving partial differential equations. This class is called Sturm-Liouville problems and they satisfy boundary conditions instead of the initial conditions that we saw in the previous section.    Consider the differential equation     for , , and . The differential equation is also subject to the boundary conditions:     such that both and cannot be zero as well as both and . The differential equation with these boundary conditions are called a Sturm-Liouville Problem . The solution is called an eigenfunction of the problem and the values of are called the eigenvalues .    The following example shows how to solve a Sturm-Liouville problem, that is, find the eigenvalues and eigenfunctions of the problem.    Find the eigenvalue and eigenfunctions of the Sturm-Liouville problem:       First note that and also and , which satisfies the conditions on the boundaries. The characteristic equation for this problem is:     which has the solutions . The form of the equation depends on . If , we get:     if , then the solution is     and if , then we get     Next, we apply the boundary conditions on all three solutions. Recall that . If , substituting the boundary conditions into ,     so the only solution to is the trivial solution . If , then substituting the boundary conditions into results in     From the first equation, and substituting this into the 2nd equation      is a solution, the second term is never zero and the third term is only zero if , which is not true or , which is also not true, since this case is . Therefore again, the only solution to is the trivial solution. If then substituting the boundary conditions into results in     the second states that either , again the trivial solution or     which occurs if for . Or     We now check which values of result in valid values of . When , we get again, which violates and for both plus and minus the same number, we get the same eigenvalue, so we will discard the negative values of and just include The eigenvalues of this problem are those in for and the eigenfunctions of this problem are:       It may have appears that we were lucky that there was a solution to the Sturm-Liouville problem in the above example. However, this is not the case and any Sturm-Liouville problem has a solution as the following theorem shows.    Let and be any eigenvalue and eigenfunction of the Sturm-Liouville problem.     The eigenvalue is real.    There are an infinite number of eigenvalues that can be ordered and for each eigenvalue, there is only one eigenfunction.    Eigenfunctions and with satisfy .    Let and be piecewise continuous functions on . If     then the series:     converges to if is continuous at and to the value if is discontinuous at for each point in .         Let on . Find the series expansion listed in the theorem corresponding to the Sturm-Liouville problem .       which is the Fourier sine series.      Find the solution of the Sturm-Liouville problem       Since this the same differential equation as in , we note that when , there was no solution and the same is true here. In the case of , the solution is     and the derivative is needed as well,     and then applying the boundary condition , implies that , however, is not determined and is a solution. Next, we turn to , with the solution,     and again, we need the derivative,     Applying the boundary condition, , results in     which implies that . Applying the boundary condition results in     and if , this results in the trivial solution, cannot be zero, however     when or . The eigenvalues and eigenfunctions of this problem then are and , and       There are other Sturm-Liouville problems that arise commonly and we will see others later in this chapter and solve them as they arise. We will use these solutions that we just found in solving the PDEs that we derived above.  "
 },
 {
-  "id": "ch-pde-6-3",
+  "id": "ch-diff-eqn-7-3",
   "level": "2",
-  "url": "ch-pde-6.html#ch-pde-6-3",
+  "url": "ch-diff-eqn-7.html#ch-diff-eqn-7-3",
   "type": "Definition",
-  "number": "8.4.1",
+  "number": "8.5.1",
   "title": "",
   "body": "  Consider the differential equation     for , , and . The differential equation is also subject to the boundary conditions:     such that both and cannot be zero as well as both and . The differential equation with these boundary conditions are called a Sturm-Liouville Problem . The solution is called an eigenfunction of the problem and the values of are called the eigenvalues .   "
 },
 {
   "id": "ex-sturm-liouville",
   "level": "2",
-  "url": "ch-pde-6.html#ex-sturm-liouville",
+  "url": "ch-diff-eqn-7.html#ex-sturm-liouville",
   "type": "Example",
-  "number": "8.4.2",
+  "number": "8.5.2",
   "title": "",
   "body": "  Find the eigenvalue and eigenfunctions of the Sturm-Liouville problem:       First note that and also and , which satisfies the conditions on the boundaries. The characteristic equation for this problem is:     which has the solutions . The form of the equation depends on . If , we get:     if , then the solution is     and if , then we get     Next, we apply the boundary conditions on all three solutions. Recall that . If , substituting the boundary conditions into ,     so the only solution to is the trivial solution . If , then substituting the boundary conditions into results in     From the first equation, and substituting this into the 2nd equation      is a solution, the second term is never zero and the third term is only zero if , which is not true or , which is also not true, since this case is . Therefore again, the only solution to is the trivial solution. If then substituting the boundary conditions into results in     the second states that either , again the trivial solution or     which occurs if for . Or     We now check which values of result in valid values of . When , we get again, which violates and for both plus and minus the same number, we get the same eigenvalue, so we will discard the negative values of and just include The eigenvalues of this problem are those in for and the eigenfunctions of this problem are:      "
 },
 {
   "id": "thm-sturm-liouville",
   "level": "2",
-  "url": "ch-pde-6.html#thm-sturm-liouville",
+  "url": "ch-diff-eqn-7.html#thm-sturm-liouville",
   "type": "Theorem",
-  "number": "8.4.3",
+  "number": "8.5.3",
   "title": "",
   "body": "  Let and be any eigenvalue and eigenfunction of the Sturm-Liouville problem.     The eigenvalue is real.    There are an infinite number of eigenvalues that can be ordered and for each eigenvalue, there is only one eigenfunction.    Eigenfunctions and with satisfy .    Let and be piecewise continuous functions on . If     then the series:     converges to if is continuous at and to the value if is discontinuous at for each point in .      "
 },
 {
-  "id": "ch-pde-6-8",
+  "id": "ch-diff-eqn-7-8",
   "level": "2",
-  "url": "ch-pde-6.html#ch-pde-6-8",
+  "url": "ch-diff-eqn-7.html#ch-diff-eqn-7-8",
   "type": "Example",
-  "number": "8.4.4",
+  "number": "8.5.4",
   "title": "",
   "body": "  Let on . Find the series expansion listed in the theorem corresponding to the Sturm-Liouville problem .       which is the Fourier sine series.   "
 },
 {
   "id": "ex-sturm-liouville-2",
   "level": "2",
-  "url": "ch-pde-6.html#ex-sturm-liouville-2",
+  "url": "ch-diff-eqn-7.html#ex-sturm-liouville-2",
   "type": "Example",
-  "number": "8.4.5",
+  "number": "8.5.5",
   "title": "",
   "body": "  Find the solution of the Sturm-Liouville problem       Since this the same differential equation as in , we note that when , there was no solution and the same is true here. In the case of , the solution is     and the derivative is needed as well,     and then applying the boundary condition , implies that , however, is not determined and is a solution. Next, we turn to , with the solution,     and again, we need the derivative,     Applying the boundary condition, , results in     which implies that . Applying the boundary condition results in     and if , this results in the trivial solution, cannot be zero, however     when or . The eigenvalues and eigenfunctions of this problem then are and , and      "
 },
@@ -4586,7 +4631,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-1d-heat-eqn.html",
   "type": "Section",
-  "number": "8.5",
+  "number": "9.1",
   "title": "Solution to the 1D Heat Equation",
   "body": " Solution to the 1D Heat Equation  In this section we will investigate solving the 1D heat equation     with boundary conditions:     indicating that the end are insulated and the initial condition is:     As with the wave equation, we use the technique of separation of variables. That is let to get:     since the left side only depends on and the right side only depends on , it must be that these must both equal only a constant, (call it ) therefore we get the two equations:     or   The boundary conditions for the second equation becomes:     This is a Sturm-Liouville problem that we saw in which has the solution:     if and and is also a solution. The solution to can be found by letting and substituting in     or     therefore the solution is     A solution to the equation is     and using the principle of superposition the general solution to the PDE with given boundary conditions is:     Next, the initial condition is:     and the coefficients can be found by the Sturm-Liouville theorem to get:       Find the solution to the heat equation given above if the initial condition is:       In this case, we need to find and :     So the solution to the PDE is:     To get a feeling for the solution, the following is a plot when , for .   A bar      The plot shows the temperature distribution for the initial case and subsequent times. The temperature evens out as time increases and in the limit the temperature would be 1 throughout, which is the average initial temperature.    "
 },
@@ -4595,7 +4640,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-1d-heat-eqn.html#sect-1d-heat-eqn-31",
   "type": "Example",
-  "number": "8.5.1",
+  "number": "9.1.1",
   "title": "",
   "body": "  Find the solution to the heat equation given above if the initial condition is:       In this case, we need to find and :     So the solution to the PDE is:     To get a feeling for the solution, the following is a plot when , for .   A bar      The plot shows the temperature distribution for the initial case and subsequent times. The temperature evens out as time increases and in the limit the temperature would be 1 throughout, which is the average initial temperature.   "
 },
@@ -4604,7 +4649,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-2d-heat-eqn.html",
   "type": "Section",
-  "number": "8.6",
+  "number": "9.2",
   "title": "Heat Equation in two spatial dimensions",
   "body": " Heat Equation in two spatial dimensions  The Heat equation in two spatial dimensions can be written:     In this case, let's say that we have the following boundary conditions:     which means that along the edge , the temperature is 0 and the other three edges are insulated. In addition, assume that the initial condition is     In this section, we will examine how to solve this problem using the separation of variables. Since there are 3 variables, let's assume that the solution can be written:     and substituting this into the heat equation, we get:     dividing through by      Since is only a function of , is only a function of and is only a function of , the only option for allowing the above to be true is to assume that     The boundary condition can also be written in terms of and as . Thus, in this case, we have two Sturm-Liouville problems,     The solution to the first is     and     The solution to the second is   and     Next, then we need to solve     which has the solution     Then put the solutions together:     and the solution that satisfies the boundary conditions is:     Finally, we apply the initial condition.     which results in the generalized Fourier Series:       Find the full solution if and       We only need to find      So the solution is     where and .    "
 },
@@ -4613,7 +4658,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-2d-heat-eqn.html#sect-2d-heat-eqn-37",
   "type": "Example",
-  "number": "8.6.1",
+  "number": "9.2.1",
   "title": "",
   "body": "  Find the full solution if and       We only need to find      So the solution is     where and .   "
 },
@@ -4622,7 +4667,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-bessel-eqn.html",
   "type": "Section",
-  "number": "8.7",
+  "number": "9.3",
   "title": "Bessel’s equation and Bessel Functions",
   "body": " Bessel's equation and Bessel Functions   Bessel's equation is     A solution can be obtained by a power series solution and represented as     where is the gamma function, a generalized factorial. The function is called the Bessel Function of the first kind . We are often interested in solutions of in which is an integer. If this is the case, then and are two linearly independent solutions. The power series representation in this case is       Propeties of  The following is a plot of (solid line) and (dashed line) on . Each of the Bessel functions have osciallatory behavior with decay and an infinite number of roots for . Also note that the roots of are between the roots of .   A plot of the bessel functions and on .      Using , it can be shown that     In addition, using the power series representation, one can show that the other solution of can be written:     However for , has a term which means that it is undefined at , which is generally why it not relevant as we will show later. There are a number of identities that are useful for understanding Bessel functions. Two of these are shown in the follow lemma.    Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.    In addition, there are another two identities for Bessel functions that are often called recurrence relationships.    Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .    These properties can now be used to find higher order Bessel functions, the derivatives of Bessel functions as well as the closed form of some integrals as shown in the next three examples.    Use the identities in and to find in terms of and .    Let in or     use again with or which can be written        The above technique can be used to find where is an integer in terms of and , showing the importance of the first two Bessel functions. The next example shows how to calculate the derivatives of the first two Bessel functions.    Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by          Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get         Roots of the Bessel functions  There is not an analytic way to find the roots of any of the bessel functions, so we will resort to numerical approximation. Many Computer Algebra Systems and scientific computing languages have bessel functions built in and roots can be found with techniques such as Newton's method or bisection.  In general, the th root of is between and , so the following Maple code will find the first 50.     The first ten values are: .   "
 },
@@ -4640,7 +4685,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#fig-bessel",
   "type": "Figure",
-  "number": "8.7.1",
+  "number": "9.3.1",
   "title": "",
   "body": " A plot of the bessel functions and on .     "
 },
@@ -4649,7 +4694,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#lem-bessel-identities",
   "type": "Lemma",
-  "number": "8.7.2",
+  "number": "9.3.2",
   "title": "",
   "body": "  Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.   "
 },
@@ -4658,7 +4703,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#lem-bessel-recurrence",
   "type": "Lemma",
-  "number": "8.7.3",
+  "number": "9.3.3",
   "title": "",
   "body": "  Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .   "
 },
@@ -4667,7 +4712,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#ex-bessel-J3",
   "type": "Example",
-  "number": "8.7.4",
+  "number": "9.3.4",
   "title": "",
   "body": "  Use the identities in and to find in terms of and .    Let in or     use again with or which can be written       "
 },
@@ -4676,7 +4721,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#sec-bessel-eqn-3-15",
   "type": "Example",
-  "number": "8.7.5",
+  "number": "9.3.5",
   "title": "",
   "body": "  Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by       "
 },
@@ -4685,7 +4730,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bessel-eqn.html#sec-bessel-eqn-3-16",
   "type": "Example",
-  "number": "8.7.6",
+  "number": "9.3.6",
   "title": "",
   "body": "  Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get      "
 },
@@ -4694,7 +4739,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sect-heat-circular.html",
   "type": "Section",
-  "number": "8.8",
+  "number": "9.4",
   "title": "The Heat Equation in a Circular Region",
   "body": " The Heat Equation in a Circular Region   Next, we examine how to solve the heat equation in a circular region: as shown in the following figure.   A circular region where a point is written in polar coordinates.      Instead of solving the equation in cartesian coordinates, we look to write the heat equation in \\emph{polar coordinates}. A point in polar coordinates is labelled where     or written as and in terms of and ,     To convert the heat equation to polar coordinates, we need to write the right hand side of ( ) or     in terms of and . This is basically an exercise in using the chain rule with multiple independent variables. We start by finding the first partial derivatives of with respect to and .     and differentiating again, we get:     and similarly,     To complete this, we need to find      as well as and .     So now we write      Thus the heat equation in polar coordinates is     Before solving this equation in general, we will examine a simpler equation that is related.    Rotationally Symmetric Solutions  The general case is a bit hard to deal with, so we first start with a rotationally symmetric solution , which means that there is no dependence. Thus the term and the heat equation becomes:     To solve this using separation of variables, let and substitution into the PDE:     As before, the only way that the left hand side can equal the right hand side is if each side only depends on a constant or     The boundary conditions become and is finite, so we get the Sturm-Liouville problem:     This is a difficult problem to solve in that letting does not work. There are techniques to solve this, but let's use Maple to get:     where and are bessel functions.    Solving the Sturm-Liouville Problem  If we apply the first ``boundary'' condition that must be finite, we take that since is not finite at . The next boundary condition is or     and let be the th root of . so     are the eigenvalues of the problem with eigenfunctions:     Next, the solution to     is     The full solution is     Lastly, using the initial condition, we get:     which is a Fourier-type series with       Find the solution using the initial condition and let .    Again, we need only to find the Fourier Coefficients. The first three are:     So the solution is         General Circular Heat Equation  To solve this (as we have seen before) we will use separation of variables. Let :     Assume that     and then the right hand side becomes:     mulitply through by and rearrange       Sturm-Liouville Problems from the heat equation  The first Sturm-Liouville problem is:     and as well as . If , then . No solution of this exists that satsifies the boundary conditions. If , then . To satisfy the boundary conditions . If , then .     which is satisfied when , for . The derivative of is     The second boundary condition:     which is satisfied. Thus     each satisfy the boundary condition. The next differential equation is     The solution of this is     and the boundary conditions are is finite and . The condition at sets and the other condition:     results in     where is the th root of . Thus the eigenvalue is     and the eigenfunction is     The last DE is     of which the solution is:        and using the principle of superposition the full solution is:     Finding the coefficients. In this case we use the initial condition that     and substituting into the solution:     The coefficients are:       Solve the equation above when . Use and .    Again, we just need to compute the coefficients above. Use can either use Maple or make a symmetry argument to see that     So the solution is        "
 },
@@ -4703,7 +4748,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-heat-circular.html#sect-heat-circular-2-2",
   "type": "Figure",
-  "number": "8.8.1",
+  "number": "9.4.1",
   "title": "",
   "body": " A circular region where a point is written in polar coordinates.     "
 },
@@ -4712,7 +4757,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-heat-circular.html#sect-heat-circular-4-18",
   "type": "Example",
-  "number": "8.8.2",
+  "number": "9.4.2",
   "title": "",
   "body": "  Find the solution using the initial condition and let .    Again, we need only to find the Fourier Coefficients. The first three are:     So the solution is      "
 },
@@ -4721,7 +4766,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-heat-circular.html#sect-heat-circular-6-37",
   "type": "Example",
-  "number": "8.8.3",
+  "number": "9.4.3",
   "title": "",
   "body": "  Solve the equation above when . Use and .    Again, we just need to compute the coefficients above. Use can either use Maple or make a symmetry argument to see that     So the solution is      "
 },
