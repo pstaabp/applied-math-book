@@ -15,7 +15,8 @@
 
 	<!-- include sections -->
 	<xi:include href="./heat-eqn-1d.ptx" />
+	<xi:include href="./wave-1d.ptx" />
+	<xi:include href="./nonhomogeneous.ptx" />
 	<xi:include href="./heat-eqn-2d.ptx" />
-	<xi:include href="./bessel.ptx" />
 	<xi:include href="./heat-circular.ptx" />
 </chapter>

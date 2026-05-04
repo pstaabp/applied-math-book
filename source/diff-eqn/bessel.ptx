@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="sec-bessel-eqn">
+  <title>Bessel's equation and Bessel Functions</title>
+
+  <introduction>
+    <p>
+      Bessel's equation or
+      <men xml:id="eq-bessel-eqn">
+        x^2 y'' + x y' + (x^2-\nu^2)y = 0
+      </men>
+      for real constants <m>\nu</m> is related to solving partial differential equations in circular or cylindrical regions and with certain boundary conditions satisfy Sturm-Liouville problems seen in <xref ref="sect-sturm-liouville"/>.
+      In this section, we will provide solutions to <xref ref="eq-bessel-eqn"/> as well as a number of properties.
+      In <xref ref="ch-pde"/>, we will use these solutions to solve partial differential equations.
+    </p>
+  </introduction>
+
+
+  <subsection xml:id="sect-bessel-solution">
+    <title>Solutions of Bessel's Equation</title>
+
+    <p>
+      We will use the Frobenius method from <xref ref="subsec-frobenius-method"/> to solve this.
+      This means that we assume that the solution of the form:
+      <men xml:id="eq-frob-y">
+        y(x) = x^r \sum_{n=0}^{\infty} a_n x^n = \sum_{n=0}^{\infty} a_n x^{r+n}
+      </men>
+      and recall that the first two derivatives of this is
+      <md>
+        <mrow xml:id="eq-frob-y-prime" number="yes"> y'(x) \amp = \sum_{n=0}^{\infty} (r+n) a_n x^{r+n-1} </mrow>
+        <mrow xml:id="eq-frob-y-double-prime" number="yes"> y''(x) \amp = \sum_{n=0}^{\infty} (r+n)(r+n-1) a_n x^{r+n-2} </mrow>
+      </md>
+    </p>
+
+    <p>
+      Substituting <xref ref="eq-frob-y"/>, <xref ref="eq-frob-y-prime"/> and <xref ref="eq-frob-y-double-prime"/> into <xref ref="eq-bessel-eqn"/> results in
+      <me>
+        \begin{aligned} x^2 \sum_{n=0}^{\infty} (r+n)(r+n-1) a_n x^{r+n-2} + x \sum_{n=0}^{\infty} (r+n) a_n x^{r+n-1} + (x^2 - \nu^2) \sum_{n=0}^{\infty} a_n x^{r+n} \amp = 0 \\ \sum_{n=0}^{\infty} (r+n)(r+n-1) a_n x^{r+n} + \sum_{n=0}^{\infty} (r+n) a_n x^{r+n} + \sum_{n=0}^{\infty} a_n x^{r+n+2} - \nu^2 \sum_{n=0}^{\infty} a_n x^{r+n} \amp = 0 \end{aligned}
+      </me>
+      The first two terms can be combined and the third terms re-indexed to give
+      <me>
+        \sum_{n=0}^{\infty} (r+n)^2 a_n x^{r+n} + \sum_{n=2}^{\infty} a_{n-2} x^{r+n} - \nu^2 \sum_{n=0}^{\infty} a_n x^{r+n} = 0
+      </me>
+      If the first two terms of the first and third series are written out then all series can be combined to give,
+      <men xml:id="eq-bessel-expansion">
+        \begin{aligned} \left(r^2 - \nu^2 \right)a_0 x^r + \left((r+1)^2 - \nu^2\right)a_1 x^{r+1} \quad \quad\amp + \sum_{n=2}^{\infty} \left(\left( (r+n)^2 - \nu^2 \right)a_n + a_{n-2}\right) x^{r+n} \amp = 0 \end{aligned}
+      </men>
+    </p>
+
+    <p>
+      For power series, each coefficient must be zero.
+      The first term is zero when
+      <me>
+        r^2 - \nu^2 = 0
+      </me>
+      which has two roots <m>r=\nu</m> and <m>r=-\nu</m> and consider the negative root later.
+      The coefficient of the second term of <xref ref="eq-bessel-expansion"/> with <m>r=\nu</m> is
+      <me>
+        \left((\nu+1)^2 - \nu^2\right)a_1 = (2\nu + 1)a_1
+      </me>
+      and this must be 0, so <m>a_1=0</m>.
+    </p>
+
+    <p>
+      The coefficient of the general <m>x^{r+n}</m> term of <xref ref="eq-bessel-expansion"/> is set to zero to give the following recurrence relationship for <m>n\geq 2</m> when <m>r = \nu </m> results in
+      <men xml:id="eq-bessel-recur-coeff">
+        a_n = - a_{n-2}\frac{1}{(\nu+n)^2 - \nu^2} = - a_{n-2} \frac{1}{n(n+2\nu)}.
+      </men>
+    </p>
+
+    <p>
+      Because <m>a_1=0</m>, this relationship shows that all odd coefficients are also 0.
+    </p>
+
+    <p>
+      Writing out a few terms of the relationship above:
+      <me>
+        \begin{aligned} a_2 \amp  = - a_0 \frac{1}{2(2+2\nu)} = -a_0 \frac{1}{2^2(1+\nu)} \\ a_4 \amp = -a_2 \frac{1}{4(4+2\nu)} = a_0 \frac{1}{2^4 \cdot 2(1+\nu)(2+\nu)} \\ a_6 \amp = -a_4 \frac{1}{6(6+2\nu)} = -a_0 \frac{1}{2^6\cdot 3 \cdot 2 (3+\nu)(2+\nu)(1+\nu)} \\ a_8 \amp = -a_6 \frac{1}{8(8+2\nu)} = a_0 \frac{1}{2^8 \cdot 4 \cdot 3 \cdot 2 (4+\nu)(3+\nu)(2+\nu)(1+\nu) } \end{aligned}
+      </me>
+    </p>
+
+    <p>
+      Since the Gamma Function has the property that <m>\Gamma(n+m+1) = (n+m)\Gamma(n+m) = (n+m)(n+m-1)\Gamma(n+m-1)</m>, the terms
+      <me>
+        (m+\nu)(m-1+\nu)(m-2+\nu) \cdots (1+\nu) = \frac{\Gamma(m+\nu+1)}{\Gamma(\nu+1)}
+      </me>
+      and the even coefficients can be written as
+      <me>
+        a_{2m} = \frac{(-1)^ma_0}{2^{2m}m! \frac{\Gamma(m+\nu+1)}{\Gamma(\nu+1)}} = \frac{(-1)^m a_0 \Gamma(\nu+1)}{2^{2m}m!\Gamma(m+\nu+1)}.
+      </me>
+      Lastly, the coefficient <m>a_0</m> is often chosen such that <m>a_0 \Gamma(\nu+1) = 1</m> and this results in the <em>power series solution</em> of Bessel's equation as
+      <men xml:id="eq-bessel-first">
+        J_{\nu} (x) = \frac{x^{\nu}}{2^{\nu}} \sum_{m=0}^{\infty} \frac{(-1)^m}{4^m m! \Gamma(m+\nu+1)} x^{2m}
+      </men>
+    </p>
+
+    <p>
+      where <m>\Gamma</m> is the gamma function, a generalized factorial.
+      The function <m>J_{\nu}(x)</m> is called the <term>Bessel Function of the first kind</term>.
+      We are often interested in solutions of <xref ref="eq-bessel-eqn" /> in which <m>\nu=n</m> is an integer.
+      Recall that above, we found that <m>r=\nu</m> arose from the Frobenius method.
+      The solution <m>r = -\nu</m> also satisfies this with the same steps and thus <m>J_{-\nu}(x)</m> is a second linearly independent solution to <xref ref="eq-bessel-eqn"/>.
+    </p>
+  </subsection>
+
+
+  <subsection>
+    <title>Propeties of <m>J_n(x)</m></title>
+
+    <p>
+      The following is a plot of <m>J_0(x)</m> (solid line) and <m>J_1(x)</m> (dashed line) on <m>0 \leq x \leq 10</m>.
+      Each of the Bessel functions have osciallatory behavior with decay and an infinite number of roots for <m>x \geq 0</m>.
+      Also note that the roots of <m>J_1</m> are between the roots of <m>J_0</m>.
+    </p>
+
+    <figure xml:id="fig-bessel">
+      <caption> A plot of the bessel functions <m>J_0</m> and <m>J_1</m> on <m>[0,10]</m>.</caption>
+      <image width="75%" xml:id="plot-bessel">
+        <latex-image>
+				<![CDATA[
+				\begin{tikzpicture}[yscale=3]
+				\draw[->] (-0.5,0) -- (10.5,0) node [above right] {$x$};
+				\foreach \x in {1,2,...,10} \draw (\x,0.05) -- (\x, -0.05) node [below] {\x};
+				\foreach \y in {-1,1} \draw (0.1,\y) -- (-0.1,\y) node [left] {\y};
+				\draw[->] (0,-1.1) -- (0,1.1) node [above right] {$y$};
+				\draw plot[domain=0:4,samples=75] (\x,{(.1070175340+(-.3197655443+(.1317665405+(0.03420779066-0.009123904620*\x)*(\x-2))*(\x-2))*(\x-2))/(.4782168796+(-.1963783133+(0.03225662346-0.009674608375*\x)*(\x-2))*(\x-2))});
+				\draw plot[domain=4:8,samples=75] (\x, {(0.38882689e-1+(0.67993679e-1+(-0.304195383e-1+(-0.1854623075e-1+0.2117043641e-2*\x)*(\x-6))*(\x-6))*(\x-6))/(.2580479835+(-0.225929762e-1+(0.1684428220e-1-0.1419604109e-2*\x)*(\x-6))*(\x-6))});
+				\draw plot[domain=8:10,samples=75] (\x, {(-0.7016077e-2+(-0.17665130e-1+(0.81186790e-2+(0.7847342517e-2-0.6999609674e-3*\x)*(\x-9))*(\x-9))*(\x-9))/(0.77668449e-1+(-0.153635550e-1+(0.9679747603e-2-0.8086687126e-3*\x)*(\x-9))*(\x-9))});
+				\draw[dashed] plot[domain=0:5,samples=100] (\x, {(.6293300006+(-.2276493766+(-.2208737473+(-0.1166308301e-1+0.1029876752e-1*\x)*(\x-2.5))*(\x-2.5))*(\x-2.5))/(1.265426981+(.1713608410+(0.2607601937e-1+0.8783305461e-2*\x)*(\x-2.5))*(\x-2.5))});
+				\draw[dashed] plot[domain=5:10,samples=100] (\x,{(0.18515418e-1+(0.31837218e-1+(-0.145966941e-1+(-0.9991569388e-2+0.9863389544e-3*\x)*(\x-7.5))*(\x-7.5))*(\x-7.5))/(.136655698+(-0.154778221e-1+(0.1328463355e-1-0.1109859561e-2*\x)*(\x-7.5))*(\x-7.5))});
+				\end{tikzpicture}
+				]]>
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      Using <xref ref="eq-bessel-first" />, it can be shown that
+    </p>
+
+    <p>
+      <me>
+        J_n(0) = \begin{cases} 1 \amp \text{if $n=0$} \\ 0 \amp \text{otherwise} \end{cases}
+      </me>
+    </p>
+
+    <p>
+      In addition, using the power series representation, one can show that the other solution of <xref ref="eq-bessel-eqn" /> can be written:
+    </p>
+
+    <p>
+      <me>
+        J_{-n}(x) = (-1)^n J_n(x)
+      </me>
+    </p>
+
+    <p>
+      However for <m>n &lt; 0</m>,<m>J_n(x)</m> has a term <m>x^{-n}</m> which means that it is undefined at <m>x=0</m>, which is generally why it not relevant as we will show later.
+      There are a number of identities that are useful for understanding Bessel functions.
+      Two of these are shown in the follow lemma.
+    </p>
+
+    <lemma xml:id="lem-bessel-identities">
+      <statement>
+        <p>
+          Consider <m>n\geq 1</m>, where <m>n</m> is an integer.
+          Then
+        </p>
+
+        <p>
+          <md>
+            <mrow number="yes" xml:id="eq-bessel-id1">\frac{d}{dx} \bigl( x^n J_n(x) \bigr) \amp = x^n J_{n-1} (x) </mrow>
+            <mrow number="yes" xml:id="eq-bessel-id2">\frac{d}{dx} \bigl( x^{-n} J_n(x) \bigr) \amp = -x^{-n} J_{n+1} (x)</mrow>
+          </md>
+        </p>
+
+        <p>
+          for all <m>x &gt; 0</m>.
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          First we will prove <xref ref="eq-bessel-id1" />.
+          Using <xref ref="eq-bessel-first" />, we can write
+        </p>
+
+        <p>
+          <md>
+            <mrow>x^nJ_n(x) \amp = x^n \biggl( \frac{x^{n}}{2^{n}} \sum_{m=0}^{\infty} \frac{(-1)^m}{2^m m! (m+n)!} x^{2m} \biggr) </mrow>
+            <mrow>\amp = \sum_{m=0}^{\infty} \frac{(-1)^m}{2^{m+n} m! (m+n)!} x^{2m+2n} </mrow>
+          </md>
+        </p>
+
+        <p>
+          and differentiating,
+        </p>
+
+        <p>
+          <md>
+            <mrow>\frac{d}{dx} \bigl(x^nJ_n(x)\bigr) \amp =  \sum_{m=0}^{\infty} \frac{(-1)^m(2m+2n)}{2^{m+n} m! (m+n)!} x^{2m+2n-1} </mrow>
+            <mrow>\amp = \frac{x^{n-1}}{2^{n-1}}  \sum_{m=0}^{\infty} \frac{(-1)^m2(m+n)}{2^{m+1} m! (m+n)!} x^{2m+n} </mrow>
+            <mrow>\amp = x^n \biggl(\frac{x^{n-1}}{2^{n-1}}  \sum_{m=0}^{\infty} \frac{(-1)^m}{2^{m} m! (m+n-1)!} x^{2m}) </mrow>
+            <mrow>\amp  = x^{n} J_{n-1}(x) </mrow>
+          </md>
+        </p>
+
+        <p>
+          The proof for <xref ref="eq-bessel-id2" /> is very similar and is not shown.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      In addition, there are another two identities for Bessel functions that are often called recurrence relationships.
+    </p>
+
+    <lemma xml:id="lem-bessel-recurrence">
+      <statement>
+        <p>
+          Let <m>n\geq 1</m> for <m>n</m> an integer and <m>x &gt; 0</m>, then
+        </p>
+
+        <p>
+          <md>
+            <mrow number="yes" xml:id="eq-bessel-recur1">x(J_{n-1}+J_{n+1}) \amp = 2n J_n</mrow>
+            <mrow number="yes" xml:id="eq-bessel-recur2"> J_{n-1} - J_{n+1} \amp = 2 J'_n </mrow>
+          </md>
+        </p>
+      </statement>
+
+
+      <proof>
+        <p>
+          If we use the product rule to expand <xref ref="eq-bessel-id1" /> and <xref ref="eq-bessel-id2" />, we get
+        </p>
+
+        <p>
+          <md>
+            <mrow>n x^{n-1} J_n(x) + x^n J'_n(x) \amp = x^n J_{n-1} (x)  </mrow>
+            <mrow>-nx^{-n-1} J_n(x) +x^{-n} J'_n(x) \amp = - x^{-n} J_{n+1}(x) </mrow>
+          </md>
+        </p>
+
+        <p>
+          and multiply the first equation by <m>x^{1-n}</m> and the second by <m>x^{1+n}</m>, one gets
+        </p>
+
+        <p>
+          <md>
+            <mrow>n J_n + x J'_n \amp = xJ_{n-1} </mrow>
+            <mrow>-nJ_n+xJ'_n \amp = -xJ_{n+1}</mrow>
+          </md>
+        </p>
+
+        <p>
+          Adding the two above equations and dividing through by <m>x</m> results in <xref ref="eq-bessel-recur1" /> whereas subtracting the bottom equation from the top results in <xref ref="eq-bessel-recur2" />.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      These properties can now be used to find higher order Bessel functions, the derivatives of Bessel functions as well as the closed form of some integrals as shown in the next three examples.
+    </p>
+
+    <example xml:id="ex-bessel-J3">
+      <statement>
+        <p>
+          Use the identities in <xref ref="lem-bessel-identities" /> and <xref ref="eq-bessel-recur1" /> to find <m>J_3</m> in terms of <m>J_0</m> and <m>J_1</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Let <m>n=2</m> in <xref ref="eq-bessel-recur1" /> or
+        </p>
+
+        <p>
+          <md>
+            <mrow>x (J_1 + J_3) \amp = 4J_2 \amp\amp\text{solving for $J_3$} </mrow>
+            <mrow>J_3 \amp = \frac{4}{x} J_2 - J_1 </mrow>
+          </md>
+        </p>
+
+        <p>
+          use <xref ref="eq-bessel-recur1" /> again with <m>n=1</m> or <m>x(J_0 + J_2) = 2J_1</m> which can be written <m>J_2 = (2/x)J_1 -J_0</m>
+        </p>
+
+        <p>
+          <md>
+            <mrow>\amp = \frac{4}{x} \biggl( \frac{2}{x} J_1 - J_0 \biggr) - J_1 </mrow>
+            <mrow>J_3 \amp = \biggl( \frac{8}{x^2} -1\biggr) J_1 - \frac{2}{x} J_0 </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The above technique can be used to find <m>J_n</m> where <m>n</m> is an integer in terms of <m>J_0</m> and <m>J_1</m>, showing the importance of the first two Bessel functions.
+      The next example shows how to calculate the derivatives of the first two Bessel functions.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Use the identities in lemmas <xref ref="lem-bessel-identities" /> and <xref ref="lem-bessel-recurrence" /> to find <m>J'_0</m> and <m>J'_1</m> in terms of <m>J_0</m> and <m>J_1</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          First, differentiate <xref ref="eq-bessel-recur1" /> with <m>n=1</m> to get
+        </p>
+
+        <p>
+          <md>
+            <mrow>x (J'_0 +J'_2) + J_0 + J_2 \amp = 2 J' _1  \quad\text{solving for $xJ'_0$} </mrow>
+            <mrow>xJ'_0 \amp = 2J'_1 -J_0 - J_2 - xJ'_2 </mrow>
+          </md>
+        </p>
+
+        <p>
+          using <xref ref="eq-bessel-recur2" /> with <m>n=1</m> and <m>n=2</m>,
+        </p>
+
+        <p>
+          <md>
+            <mrow>xJ'_0 \amp = (J_0 - J_2) -J_0 -J_2 - \frac{xJ_1 - xJ_3}{2} </mrow>
+            <mrow>\amp  = -2J_2 -\frac{xJ_1 - xJ_3}{2} </mrow>
+          </md>
+        </p>
+
+        <p>
+          Using <xref ref="eq-bessel-recur1" /> with <m>n=1</m>
+        </p>
+
+        <p>
+          <md>
+            <mrow>\amp = \frac{-x(J_1+J_3)}{2} - x\frac{J_1 -J_3}{2} = -xJ_1 </mrow>
+          </md>
+        </p>
+
+        <p>
+          and finally dividing through by <m>x</m>
+        </p>
+
+        <p>
+          <me>
+            J'_0  = -J_1
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Evaluate <m>\int x^4 J_1 (x) \, dx</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Integrating this by parts with <m>u=x^2</m> and <m>du = x^2 J_1\, dx</m> results in
+        </p>
+
+        <p>
+          <me>
+            \int x^4 J_1 \, dx = \int x^2 (x^2 J_1) \,dx = x^2 (x^2 J_2) - \int x^2 J_2 (2x) \,dx - 2 \int x^3 J_2 \, dx
+          </me>
+        </p>
+
+        <p>
+          where <m>(x^2 J_2)'=x^2 J_1</m> is used from <xref ref="eq-bessel-id1" />.
+          Next, if we again apply <xref ref="eq-bessel-id1" /> with <m>n=3</m>, to the last integral, we get
+        </p>
+
+        <p>
+          <me>
+            \int x^4 J_1 \, dx = x^4 J_2 -2x^3 J_3 + C
+          </me>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+
+  <subsection>
+    <title>Roots of the Bessel functions</title>
+
+    <p>
+      There is not an analytic way to find the roots of any of the bessel functions, so we will resort to numerical approximation.
+      Many Computer Algebra Systems and scientific computing languages have bessel functions built in and roots can be found with techniques such as Newton's method or bisection.
+    </p>
+
+    <p>
+      In general, the <m>i</m>th root of <m>J_0(x)</m> is between <m>(i-1)\pi</m> and <m>i\pi</m>, so one can use numerical techniques to find the roots in these intervals.
+      However, also, there are often packages available to find these as well.
+      In Julia, the package <c>FunctionZeros</c> can be used as following
+    </p>
+
+    <p>
+      <cd>
+      <cline>σ₀ = map(i -&gt; besselj_zero(0, i), 1:10)</cline>
+      <cline>σ₁ = map(i -&gt; besselj_zero(1, i), 1:10)</cline>
+      <cline>σ₂ = map(i -&gt; besselj_zero(2, i), 1:10)</cline>
+      </cd>
+    </p>
+
+    <p>
+      The following table shows the first 10 roots of <m>J_0</m>, <m>J_1</m> and <m>J_2</m>.
+    </p>
+
+    <table xml:id="table-bessel-roots">
+      <title>Bessel Function Roots</title>
+
+      <tabular halign="center">
+        <row header="yes" bottom="minor">
+          <cell>Row</cell>
+          <cell><m>\sigma_0</m></cell>
+          <cell><m>\sigma_1</m></cell>
+          <cell><m>\sigma_2</m></cell>
+        </row>
+
+        <row>
+          <cell>1</cell>
+          <cell>2.4048</cell>
+          <cell>3.8317</cell>
+          <cell>5.1356</cell>
+        </row>
+
+        <row>
+          <cell>2</cell>
+          <cell>5.5200</cell>
+          <cell>7.0155</cell>
+          <cell>8.4172</cell>
+        </row>
+
+        <row>
+          <cell>3</cell>
+          <cell>8.6537</cell>
+          <cell>10.1735</cell>
+          <cell>11.6198</cell>
+        </row>
+
+        <row>
+          <cell>4</cell>
+          <cell>11.7915</cell>
+          <cell>13.3237</cell>
+          <cell>14.7965</cell>
+        </row>
+
+        <row>
+          <cell>5</cell>
+          <cell>14.9309</cell>
+          <cell>16.4706</cell>
+          <cell>17.9598</cell>
+        </row>
+
+        <row>
+          <cell>6</cell>
+          <cell>18.0711</cell>
+          <cell>19.6159</cell>
+          <cell>21.1177</cell>
+        </row>
+
+        <row>
+          <cell>7</cell>
+          <cell>21.2116</cell>
+          <cell>22.7601</cell>
+          <cell>24.2701</cell>
+        </row>
+
+        <row>
+          <cell>8</cell>
+          <cell>24.3525</cell>
+          <cell>25.9037</cell>
+          <cell>27.4206</cell>
+        </row>
+
+        <row>
+          <cell>9</cell>
+          <cell>27.4935</cell>
+          <cell>29.0468</cell>
+          <cell>30.5692</cell>
+        </row>
+
+        <row>
+          <cell>10</cell>
+          <cell>30.6346</cell>
+          <cell>32.1897</cell>
+          <cell>33.7165</cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+
+  <subsection xml:id="subsec-bessel-second">
+    <title>Bessel Functions of the Second Kind</title>
+
+    <p>
+      Above we mentioned that <m>J_{-\nu}</m> is a solution to <xref ref="eq-bessel-eqn"/>, however, the function
+      <men xml:id="eq-bessel-second">
+        Y_{\nu}(x) = \frac{J_{\nu}(x) \cos (\nu \pi) - J_{-\nu}(x)}{\sin(\nu \pi)}
+      </men>
+      is generally used instead and is called the <term>Bessel function of the second kind</term>.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Show that <xref ref="eq-bessel-second"/> satisfies <xref ref="eq-bessel-eqn"/>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We can write <m>Y_{\nu}(x)</m> as the power series
+          <me>
+            Y_{\nu}(x) = \frac{\cos(\nu \pi)}{\sin(\nu \pi)} \frac{x^{\nu}}{2^{\nu}} \sum_{m=0}^{\infty} \frac{(-1)^m}{4^m m! \Gamma( m+\nu+1)} x^{2m} - \frac{1}{\sin(\nu \pi)}\frac{x^{-\nu}}{2^{-\nu}} \sum_{m=0}^{\infty} \frac{(-1)^m}{4^m m! \Gamma( m-\nu+1)} x^{2m}
+          </me>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

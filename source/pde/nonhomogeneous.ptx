@@ -1,0 +1,35 @@
+<section xml:id="sect-nonhomogeneous">
+  <title>Nonhomogeneous PDEs and Boundary Conditions</title>
+
+  <introduction>
+    <p>
+      In the previous sections, we have focused on homogeneous PDEs and boundary conditions.
+      However, many real-world problems involve nonhomogeneous terms, which can represent sources, sinks, or external forces.
+      In this section, we will explore how to handle nonhomogeneous PDEs and boundary conditions using various techniques, including the method of undetermined coefficients and variation of parameters.
+      We will also discuss how to apply these methods to specific examples, such as the nonhomogeneous heat equation and wave equation.
+    </p>
+  </introduction>
+
+
+  <subsection xml:id="subsec-nonhomogeneous-pdes">
+    <title>Nonhomogeneous PDEs</title>
+
+    <p>
+    </p>
+  </subsection>
+
+
+  <subsection xml:id="subsec-nonhomogeneous-boundaries">
+    <title>Nonhomogeneous Boundary Conditions</title>
+
+    <p>
+      Nonhomogeneous boundary conditions can arise in various physical contexts, such as when the temperature at the boundary of a domain is not constant or when there is a flux across the boundary.
+      To solve PDEs with nonhomogeneous boundary conditions, we can often use a technique called "lifting," which involves finding a function that satisfies the nonhomogeneous boundary conditions and then solving a related homogeneous problem for the remaining part of the solution.
+      We will illustrate this method with examples and discuss how to implement it effectively.
+    </p>
+
+    <p>
+      Consider the following
+    </p>
+  </subsection>
+</section>

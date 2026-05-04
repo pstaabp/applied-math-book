@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section>
+<section xml:id="sect-sturm-liouville">
 	<title>Sturm-Liouville Problems </title>
 	<p>
 		We now turn to a class of differential equations that arise in solving partial differential equations.

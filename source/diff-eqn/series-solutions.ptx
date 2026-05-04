@@ -309,9 +309,9 @@
         \begin{aligned} a_2 \amp = - \frac{1}{3(2)} a_1 = \frac{1}{2(3)} a_0 \\ a_3 \amp = -\frac{1}{5(3)} a_2 = -\frac{1}{5(3)(2)(3)} = - \frac{1}{90} a_0 \\ a_4 \amp = -\frac{1}{7(4)} a_3 = \frac{1}{48 \cdot 90} = \frac{1}{4320} a_0 \end{aligned}
       </me>
       and then this leads to the series
-      <me>
+      <men xml:id="eq-sol1-ode-singular">
         y (x) = a_0 \left(1-x+\frac{x^2}{6} - \frac{x^3}{90} + \frac{x^4}{4320} + \cdots\right)
-      </me>
+      </men>
     </p>
   </subsection>
 
@@ -324,14 +324,18 @@
       There should be two linearly independent solutions.
       Although there are other ways to do this, let's use a more general method for series, called the <term>Frobenius Method</term>.
       Instead of the power series form in <xref ref="eq-ps-1"/>, we can assume
-      <me>
+      <men xml:id="eq-frobenius-y">
         y = x^r \sum_{n=0}^{\infty} a_n x^n  = \sum_{n=0}^{\infty} a_n x^{r+n}
-      </me>
+      </men>
       where <m>r</m> is a constant.
       Let's use this to see what happens with <xref ref="eq-ode-singular"/> and will need the derivatives of this.
-      <me>
-        \begin{aligned} y' \amp = \sum_{n=0}^{\infty} (r+n)a_n x^{r+n-1} \\ y'' \amp = \sum_{n=0}^{\infty} (r+n)(r+n-1) a_n x^{r+n-2} \end{aligned}
-      </me>
+      <md>
+        <mrow  xml:id="eq-frobenius-diff-y" number="yes"> 
+          y' \amp = \sum_{n=0}^{\infty} (r+n)a_n x^{r+n-1} </mrow>
+        <mrow xml:id="eq-frobenius-diff2-y" number="yes"> 
+          y'' \amp = \sum_{n=0}^{\infty} (r+n)(r+n-1) a_n x^{r+n-2}
+        </mrow>
+      </md>
       Substituting this into <xref ref="eq-ode-singular"/> results in
       <me>
         \begin{aligned} 2x \sum_{n=0}^{\infty} (r+n)(r+n-1)a_n x^{r+n-2} + \sum_{n=0}^{\infty} (r+n)a_n x^{r+n-1} + \sum_{n=0}^{\infty} a_n x^{r+n} \amp = 0 \\ \sum_{n=0}^{\infty} 2(r+n)(r+n-1)a_n x^{r+n-1} + \sum_{n=0}^{\infty} (r+n)a_n x^{r+n-1} + \sum_{n=0}^{\infty} a_n x^{r+n} \amp = 0 \\ \end{aligned}
@@ -363,9 +367,43 @@
         \begin{aligned} a_1 = - \frac{a_0}{(1/2+1)(2(1/2)+1)} = - \frac{a_0}{3} \\ a_2 = - \frac{a_1}{(5/2)(2(3/2)+1)} = \frac{a_0}{10\cdot 3} = \frac{a_0}{30} \\ a_3 = - \frac{a_2}{(7/2)(2(5/2)+1)} = -\frac{a_0}{30(7/2)(6)} = -\frac{a_0}{630} \\ a_4 = - \frac{a_3}{(9/2)(2(7/2)+1)} = \frac{a_0}{630(9/2)(8)} = \frac{a_0}{2520} \end{aligned}
       </me>
       resulting in the series (with the <m>x^{1/2}</m> term)
-      <me>
+      <men xml:id="eq-sol2-ode-singular">
         y_2 = C \sqrt{x} \left(1-\frac{x}{3} + \frac{x^2}{30} - \frac{x^3}{630} + \frac{x^4}{2520} + \cdots \right)
+      </men>
+    </p>
+    <p>
+    The general solution to <xref ref="eq-ode-singular"/> can be written using the two series solutions in <xref ref="eq-sol1-ode-singular"/> and <xref ref="eq-sol2-ode-singular"/>
+    <me>
+      \begin{aligned}
+      y(x) \amp = C_1 \left(1-x+\frac{x^2}{6} - \frac{x^3}{90} + \frac{x^4}{4320} + \cdots\right) \\ \amp \qquad + C_2 \sqrt{x} \left(1-\frac{x}{3} + \frac{x^2}{30} - \frac{x^3}{630} + \frac{x^4}{2520} + \cdots \right)
+      \end{aligned}
+    </me>
+    </p>
+    <p>
+      A plot of these two solutions are seen in the figure below 
+
+    </p>
+    <figure xml:id="fig-ode-singular-sol">
+      <caption></caption>
+      <image source="images/series-solution.png" width="75%">
+        <shortdescription></shortdescription>
+        
+      </image>
+    </figure>
+  </subsection>
+
+  <subsection xml:id="subsec-bessel-functions">
+    <title>Bessel Functions</title>
+    <p>
+      The Bessel functions are solutions to the differential equation
+      <me>
+        x^2 y'' + x y' + (x^2 - n^2) y = 0
       </me>
+       and using the Frobenius method, we substitute in <xref ref="eq-frobenius-y"/>, <xref ref="eq-frobenius-diff-y"/> and <xref ref="eq-frobenius-diff2-y"/>
+       to get
+       <me>
+         a_{k+2} = \frac{k(k+1) - n(n+1)}{(k+1)(k+2)}a_k
+       </me>
     </p>
   </subsection>
 </section>

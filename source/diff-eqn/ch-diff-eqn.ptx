@@ -19,4 +19,5 @@
 	<xi:include href="./linear-ode.ptx" />
 	<xi:include href="./series-solutions.ptx" />
 	<xi:include href="./sturm-liouville-probs.ptx" />
+	<xi:include href="./bessel.ptx" />
 </chapter>
