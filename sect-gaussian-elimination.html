@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.4';
+eBookConfig.runestone_version = '7.13.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -492,40 +492,57 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#sect-series-solutions-5" class="internal"><span class="codenumber">8.4.3</span> <span class="title">Series Solutions and Orthogonal Polynomials</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#subsec-singular-diff-eq" class="internal"><span class="codenumber">8.4.4</span> <span class="title">Differential Equations with Singular Points</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#subsec-frobenius-method" class="internal"><span class="codenumber">8.4.5</span> <span class="title">Frobenius Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#subsec-bessel-functions" class="internal"><span class="codenumber">8.4.6</span> <span class="title">Bessel Functions</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diff-eqn-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-sturm-liouville.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sect-bessel-solution" class="internal"><span class="codenumber">8.6.1</span> <span class="title">Solutions of Bessel’s Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">8.6.2</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-5" class="internal"><span class="codenumber">8.6.3</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#subsec-bessel-second" class="internal"><span class="codenumber">8.6.4</span> <span class="title">Bessel Functions of the Second Kind</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">9</span> <span class="title">Partial Differential Equations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="ch-pde-4.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Solving the 1D Wave Equation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-4.html#ch-pde-4-3" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Solution to the Wave Equation with a free boundary condition</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<div class="toc-title-box"><a href="sect-nonhomogeneous.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Nonhomogeneous PDEs and Boundary Conditions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">9.4.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">9.4.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-nonhomogeneous.html#subsec-nonhomogeneous-pdes" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Nonhomogeneous PDEs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-nonhomogeneous.html#subsec-nonhomogeneous-boundaries" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Nonhomogeneous Boundary Conditions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">9.5</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">9.5.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">9.5.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">9.5.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-gaussian-elimination"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sect-gaussian-elimination">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Echelon Forms and Gaussian Elimination</span>
 </h2>
-<section class="introduction" id="sect-gaussian-elimination-2"><div class="para" id="sect-gaussian-elimination-2-1">In this section, we formalize the solving of linear systems using matrices. You will learn:<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="sect-gaussian-elimination-2">
+<div class="para" id="sect-gaussian-elimination-2-1">In this section, we formalize the solving of linear systems using matrices. You will learn:<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gaussian-elimination-2-2">
 <ul class="disc" id="sect-gaussian-elimination-2-2-1">
@@ -548,7 +565,9 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-gaussian-elimination-2-3">Recall from <a href="sect-elementary-row-operations.html" class="internal" title="Section 1.2: Elementary Row Operations">Section 1.2</a> how to convert any linear system into an augmented coefficient matrix. This will be needed to solve linear systems.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><section class="subsection" id="subsect-echelon-form"><h3 class="heading hide-type">
+</div></section>
+<section class="subsection" id="subsect-echelon-form">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Row-Echelon and Reduced Row-Echelon Form</span>
 </h3>
 <div class="para" id="subsect-echelon-form-2">Notice that the strategy laid out above gets the linear system in a nice form for solving for all variables using back substitution. We will now explicitly state what this nice form is.<div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -557,7 +576,8 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="def-echelon-form-1-1">In each row of a matrix, the left-most entry that is non-zero is called the <dfn class="terminology">leading term</dfn>. A matrix is in <dfn class="terminology">row-echelon form</dfn> if<div class="autopermalink" data-description="Paragraph"><a href="#def-echelon-form-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="def-echelon-form-1-2">
+</div> 
+<div class="para logical" id="def-echelon-form-1-2">
 <ul class="disc" id="def-echelon-form-1-2-1">
 <li id="def-echelon-form-1-2-1-1">
 <div class="para" id="def-echelon-form-1-2-1-1-1">there are any rows that are all zero, they are at the bottom of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#def-echelon-form-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -572,11 +592,14 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-echelon-form-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.3.1"><a href="#def-echelon-form" title="Copy heading and permalink for Definition 1.3.1" aria-label="Copy heading and permalink for Definition 1.3.1">🔗</a></div></article><article class="example example-like" id="subsect-echelon-form-4"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 1.3.1"><a href="#def-echelon-form" title="Copy heading and permalink for Definition 1.3.1" aria-label="Copy heading and permalink for Definition 1.3.1">🔗</a></div>
+</article>
+<article class="example example-like" id="subsect-echelon-form-4"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrices in Row-Echelon Form.</span>
 </h4>
 <div class="para" id="subsect-echelon-form-4-2-1">The following matrices are in row-echelon form:<div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="subsect-echelon-form-4-2-2">
+</div> 
+<div class="para logical" id="subsect-echelon-form-4-2-2">
 <div class="displaymath process-math" id="subsect-echelon-form-4-2-2-1">
 \begin{align*}
 \begin{bmatrix}
@@ -600,11 +623,14 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.3.2: Matrices in Row-Echelon Form"><a href="#subsect-echelon-form-4" title="Copy heading and permalink for Example 1.3.2: Matrices in Row-Echelon Form" aria-label="Copy heading and permalink for Example 1.3.2: Matrices in Row-Echelon Form">🔗</a></div></article><article class="definition definition-like" id="def-rref"><h4 class="heading">
+<div class="autopermalink" data-description="Example 1.3.2: Matrices in Row-Echelon Form"><a href="#subsect-echelon-form-4" title="Copy heading and permalink for Example 1.3.2: Matrices in Row-Echelon Form" aria-label="Copy heading and permalink for Example 1.3.2: Matrices in Row-Echelon Form">🔗</a></div>
+</article>
+<article class="definition definition-like" id="def-rref"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="def-rref-1-1">A matrix is in <dfn class="terminology">reduced row-echelon form</dfn> if it is echelon form and has the following properties:<div class="autopermalink" data-description="Paragraph"><a href="#def-rref-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="def-rref-1-2">
+</div> 
+<div class="para logical" id="def-rref-1-2">
 <ul class="disc" id="def-rref-1-2-1">
 <li id="def-rref-1-2-1-1">
 <div class="para" id="def-rref-1-2-1-1-1">The leading term of each non-zero row is 1.<div class="autopermalink" data-description="Paragraph"><a href="#def-rref-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -618,13 +644,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-rref-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="def-rref-1-3">In each row of a matrix, the left-most term that is non-zero is called the <dfn class="terminology">leading term</dfn>. A matrix is in <dfn class="terminology">echelon form</dfn> if each leading term is to the right of the leading term of the row above it (except the first row).<div class="autopermalink" data-description="Paragraph"><a href="#def-rref-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="def-rref-1-3">In each row of a matrix, the left-most term that is non-zero is called the <dfn class="terminology">leading term</dfn>. A matrix is in <dfn class="terminology">echelon form</dfn> if each leading term is to the right of the leading term of the row above it (except the first row).<div class="autopermalink" data-description="Paragraph"><a href="#def-rref-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.3.3"><a href="#def-rref" title="Copy heading and permalink for Definition 1.3.3" aria-label="Copy heading and permalink for Definition 1.3.3">🔗</a></div></article><article class="example example-like" id="subsect-echelon-form-6"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 1.3.3"><a href="#def-rref" title="Copy heading and permalink for Definition 1.3.3" aria-label="Copy heading and permalink for Definition 1.3.3">🔗</a></div>
+</article>
+<article class="example example-like" id="subsect-echelon-form-6"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="subsect-echelon-form-6-1-1">The following matrix are reduced row-echelon form:<div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="subsect-echelon-form-6-1-2">
+</div> 
+<div class="para logical" id="subsect-echelon-form-6-1-2">
 <div class="displaymath process-math" id="subsect-echelon-form-6-1-2-1">
 \begin{align*}
 \begin{bmatrix}
@@ -647,8 +677,10 @@ eBookConfig.enable_chatcodes =  false;
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsect-echelon-form-6-1-3">and the following are not in reduced-row echelon form<div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-6-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="subsect-echelon-form-6-1-4">
+</div> 
+<div class="para" id="subsect-echelon-form-6-1-3">and the following are not in reduced-row echelon form<div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-6-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="subsect-echelon-form-6-1-4">
 <div class="displaymath process-math" id="subsect-echelon-form-6-1-4-1">
 \begin{align*}
 \begin{bmatrix}
@@ -674,9 +706,14 @@ eBookConfig.enable_chatcodes =  false;
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-6-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsect-echelon-form-6-1-5">The first matrix is in echelon form, but the leading coefficients are not 1. The second matrix isn’t in echelon form. The leading coefficient in the 2nd row is to the left of the row above. The third matrix has a row of zeros that is not at the bottom. The fourth matrix doesn’t have the leading term in a column that is zero otherwise.<div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-6-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsect-echelon-form-6-1-5">The first matrix is in echelon form, but the leading coefficients are not 1. The second matrix isn’t in echelon form. The leading coefficient in the 2nd row is to the left of the row above. The third matrix has a row of zeros that is not at the bottom. The fourth matrix doesn’t have the leading term in a column that is zero otherwise.<div class="autopermalink" data-description="Paragraph"><a href="#subsect-echelon-form-6-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.3.4"><a href="#subsect-echelon-form-6" title="Copy heading and permalink for Example 1.3.4" aria-label="Copy heading and permalink for Example 1.3.4">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.3.1: Row-Echelon and Reduced Row-Echelon Form"><a href="#subsect-echelon-form" title="Copy heading and permalink for Subsection 1.3.1: Row-Echelon and Reduced Row-Echelon Form" aria-label="Copy heading and permalink for Subsection 1.3.1: Row-Echelon and Reduced Row-Echelon Form">🔗</a></div></section><section class="subsection" id="sect-gaussian-elimination-4"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 1.3.4"><a href="#subsect-echelon-form-6" title="Copy heading and permalink for Example 1.3.4" aria-label="Copy heading and permalink for Example 1.3.4">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 1.3.1: Row-Echelon and Reduced Row-Echelon Form"><a href="#subsect-echelon-form" title="Copy heading and permalink for Subsection 1.3.1: Row-Echelon and Reduced Row-Echelon Form" aria-label="Copy heading and permalink for Subsection 1.3.1: Row-Echelon and Reduced Row-Echelon Form">🔗</a></div>
+</section>
+<section class="subsection" id="sect-gaussian-elimination-4">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving Linear Systems with Matrices</span>
 </h3>
 <div class="para" id="sect-gaussian-elimination-4-2">Returing to the solution of linear systems, in the context of matrices, we seek to put an augmented matrix into either row-echelon or reduced row-echelon form. The following strategy for a system with 3 equations and 3 variables is often helpful, however, as we will see not guaranteed.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -687,16 +724,20 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="def-eliminate-step-1-1">If there is a 1 in row <span class="process-math">\(i\text{,}\)</span> the row operation<div class="autopermalink" data-description="Paragraph"><a href="#def-eliminate-step-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="def-eliminate-step-1-2">
+</div> 
+<div class="para logical" id="def-eliminate-step-1-2">
 <div class="displaymath process-math" id="eq-eliminate-step">
 \begin{equation}
 -c R_i + R_j \to R_j\tag{1.3.1}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-eliminate-step-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="def-eliminate-step-1-3">where <span class="process-math">\(c\)</span> is the value in the <span class="process-math">\(j\)</span>th row in the same column will put a 0 in that location. This is called the <dfn class="terminology">Elimination Opeation</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-eliminate-step-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="def-eliminate-step-1-3">where <span class="process-math">\(c\)</span> is the value in the <span class="process-math">\(j\)</span>th row in the same column will put a 0 in that location. This is called the <dfn class="terminology">Elimination Opeation</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-eliminate-step-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.3.5"><a href="#def-eliminate-step" title="Copy heading and permalink for Definition 1.3.5" aria-label="Copy heading and permalink for Definition 1.3.5">🔗</a></div></article><article class="remark remark-like" id="row-echelon-form-strategy"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 1.3.5"><a href="#def-eliminate-step" title="Copy heading and permalink for Definition 1.3.5" aria-label="Copy heading and permalink for Definition 1.3.5">🔗</a></div>
+</article>
+<article class="remark remark-like" id="row-echelon-form-strategy"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Strategy for putting a matrix in Row-Echelon Form.</span>
 </h4>
 <div class="para" id="row-echelon-form-strategy-2">Consider a general <span class="process-math">\(3 \times 4\)</span> matrix representating a linear system with 3 equations and 3 variables. The <span class="process-math">\(\star\)</span> means the value of entry can be any number.<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -773,11 +814,14 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="row-echelon-form-strategy-13">This matrix is now in row-echelon form. If instead reduced-row-echelon form is desired, in the previous step, the 2nd column, first row can be eliminated and then another set of steps can be used to get the 3rd row in the correct form.<div class="autopermalink" data-description="Paragraph"><a href="#row-echelon-form-strategy-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form"><a href="#row-echelon-form-strategy" title="Copy heading and permalink for Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form" aria-label="Copy heading and permalink for Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form">🔗</a></div></article><article class="example example-like" id="ex-solve-linear-syst"><h4 class="heading">
+<div class="autopermalink" data-description="Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form"><a href="#row-echelon-form-strategy" title="Copy heading and permalink for Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form" aria-label="Copy heading and permalink for Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-solve-linear-syst"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving a Linear System.</span>
 </h4>
 <div class="para" id="ex-solve-linear-syst-2-1">Use the strategy in <a href="sect-gaussian-elimination.html#row-echelon-form-strategy" class="xref" data-knowl="./knowl/xref/row-echelon-form-strategy.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.3.6: Strategy for putting a matrix in Row-Echelon Form">Remark 1.3.6</a> to put the augmented matrix of the linear system:<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-linear-syst-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-solve-linear-syst-2-2">
+</div> 
+<div class="para logical" id="ex-solve-linear-syst-2-2">
 <div class="displaymath process-math" id="ex-solve-linear-syst-2-2-1">
 \begin{align*}
 4x_1 \phantom{+3x_2}- x_3 \amp = 0, \\
@@ -786,9 +830,12 @@ x_1+3x_2 +2x_3 \amp = 3, \\
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-linear-syst-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-solve-linear-syst-2-3">into row-echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-linear-syst-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ex-solve-linear-syst-2-3">into row-echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-linear-syst-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-solve-linear-syst-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex-solve-linear-syst-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="ex-solve-linear-syst-3-1">First, put the linear system into an augmented coefficient matrix:<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-linear-syst-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-solve-linear-syst-3-2">
@@ -879,8 +926,11 @@ R_1 \leftrightarrow R_2 \qquad
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-linear-syst-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.7.1"><a href="#ex-solve-linear-syst-3" title="Copy heading and permalink for Solution 1.3.7.1" aria-label="Copy heading and permalink for Solution 1.3.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 1.3.7: Solving a Linear System"><a href="#ex-solve-linear-syst" title="Copy heading and permalink for Example 1.3.7: Solving a Linear System" aria-label="Copy heading and permalink for Example 1.3.7: Solving a Linear System">🔗</a></div></article><div class="para" id="sect-gaussian-elimination-4-7">One of the advantages of putting an augmented coefficient matrix in row-echelon form is that the solution can be found using <dfn class="terminology">back substitution</dfn>, where generally the last variable is solved for in the last equation and then substituted into previous equations. We see this for the previous example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.3.7: Solving a Linear System"><a href="#ex-solve-linear-syst" title="Copy heading and permalink for Example 1.3.7: Solving a Linear System" aria-label="Copy heading and permalink for Example 1.3.7: Solving a Linear System">🔗</a></div>
+</article>
+<div class="para" id="sect-gaussian-elimination-4-7">One of the advantages of putting an augmented coefficient matrix in row-echelon form is that the solution can be found using <dfn class="terminology">back substitution</dfn>, where generally the last variable is solved for in the last equation and then substituted into previous equations. We see this for the previous example.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-gaussian-elimination-4-8">We now write the matrix <a href="sect-gaussian-elimination.html#ex-solve-linear-syst" class="xref" data-knowl="./knowl/xref/ex-solve-linear-syst.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.7: Solving a Linear System">Example 1.3.7</a> as a linear system and use back substitution to solve it.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -922,7 +972,8 @@ x + 3 (-2) + 2(4) = 3
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving the Biathlon Problem.</span>
 </h4>
 <div class="para" id="ex-biathlon-solution-2-1">Solve the linear system for the biathlon race in example <a href="sect-linear-systems.html#ex-biathlon" class="xref" data-knowl="./knowl/xref/ex-biathlon.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.1: Biathlon Example">Example 1.1.1</a><div class="autopermalink" data-description="Paragraph"><a href="#ex-biathlon-solution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-biathlon-solution-2-2">
+</div> 
+<div class="para logical" id="ex-biathlon-solution-2-2">
 <div class="displaymath process-math" id="ex-biathlon-solution-2-2-1">
 \begin{align*}
 x_1+x_2\amp =29, \\
@@ -931,7 +982,9 @@ x_1+x_2\amp =29, \\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-biathlon-solution-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-biathlon-solution-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex-biathlon-solution-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="ex-biathlon-solution-3-1">We start with the augmented coefficient matrix:<div class="autopermalink" data-description="Paragraph"><a href="#ex-biathlon-solution-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-biathlon-solution-3-2">
@@ -1005,8 +1058,13 @@ x_1 = 5
 <div class="para" id="ex-biathlon-solution-3-13">So the running part of the race is 5 miles and the biking is 24 miles.<div class="autopermalink" data-description="Paragraph"><a href="#ex-biathlon-solution-3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.8.1"><a href="#ex-biathlon-solution-3" title="Copy heading and permalink for Solution 1.3.8.1" aria-label="Copy heading and permalink for Solution 1.3.8.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 1.3.8: Solving the Biathlon Problem"><a href="#ex-biathlon-solution" title="Copy heading and permalink for Example 1.3.8: Solving the Biathlon Problem" aria-label="Copy heading and permalink for Example 1.3.8: Solving the Biathlon Problem">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.3.2: Solving Linear Systems with Matrices"><a href="#sect-gaussian-elimination-4" title="Copy heading and permalink for Subsection 1.3.2: Solving Linear Systems with Matrices" aria-label="Copy heading and permalink for Subsection 1.3.2: Solving Linear Systems with Matrices">🔗</a></div></section><section class="subsection" id="sect-gaussian-elimination-5"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.3.8: Solving the Biathlon Problem"><a href="#ex-biathlon-solution" title="Copy heading and permalink for Example 1.3.8: Solving the Biathlon Problem" aria-label="Copy heading and permalink for Example 1.3.8: Solving the Biathlon Problem">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 1.3.2: Solving Linear Systems with Matrices"><a href="#sect-gaussian-elimination-4" title="Copy heading and permalink for Subsection 1.3.2: Solving Linear Systems with Matrices" aria-label="Copy heading and permalink for Subsection 1.3.2: Solving Linear Systems with Matrices">🔗</a></div>
+</section>
+<section class="subsection" id="sect-gaussian-elimination-5">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear Systems and Reduced Row-Echelon Form</span>
 </h3>
 <div class="para" id="sect-gaussian-elimination-5-2">Throughout this section, we have used Gauss’s method to take a linear system as an augmented matrix and put the matrix in row echelon form, a convenient matrix for using back substitution to find the solution to the linear system. For the remainder of the section, we will still use row operations, but put the matrix in <em class="emphasis">reduced row-echelon form</em>. Despite the fact that it takes more steps to put in the form, the result is generally easier to find the solution.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1016,11 +1074,14 @@ x_1 = 5
 </h4>
 <div class="para" id="sect-gaussian-elimination-5-3-1-1">Solving a linear system by reducing its corresponding augmented matrix to a reduced row-echelon form matrix, then interpreting its solution is called <dfn class="terminology">Gauss-Jordon reduction</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.3.9"><a href="#sect-gaussian-elimination-5-3" title="Copy heading and permalink for Definition 1.3.9" aria-label="Copy heading and permalink for Definition 1.3.9">🔗</a></div></article><article class="example example-like" id="ex-solve-3by3"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 1.3.9"><a href="#sect-gaussian-elimination-5-3" title="Copy heading and permalink for Definition 1.3.9" aria-label="Copy heading and permalink for Definition 1.3.9">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-solve-3by3"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-solve-3by3-1-1">Solve<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-3by3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-solve-3by3-1-2">
+</div> 
+<div class="para logical" id="ex-solve-3by3-1-2">
 <div class="displaymath process-math" id="ex-solve-3by3-1-2-1">
 \begin{align*}
 4x_1 - x_3 \amp = 0, \\
@@ -1029,9 +1090,12 @@ x_1+3x_2 +2x_3 \amp = 3, \\
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-3by3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-solve-3by3-1-3">using Gauss-Jordon reduction<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-3by3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ex-solve-3by3-1-3">using Gauss-Jordon reduction<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-3by3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-solve-3by3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex-solve-3by3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="ex-solve-3by3-2-1">First put the linear system into an augmented matrix and then use elementary row operations.<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-3by3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-solve-3by3-2-2">
@@ -1127,12 +1191,16 @@ z \amp = 4
 <div class="para" id="ex-solve-3by3-2-10">or the triple <span class="process-math">\((1,-2,4)\text{.}\)</span> And notice that the solution in this case is simply the right hand side of the matrix above.<div class="autopermalink" data-description="Paragraph"><a href="#ex-solve-3by3-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.10.1"><a href="#ex-solve-3by3-2" title="Copy heading and permalink for Solution 1.3.10.1" aria-label="Copy heading and permalink for Solution 1.3.10.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 1.3.10"><a href="#ex-solve-3by3" title="Copy heading and permalink for Example 1.3.10" aria-label="Copy heading and permalink for Example 1.3.10">🔗</a></div></article><article class="example example-like" id="ex-traffic-solution"><h4 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.3.10"><a href="#ex-solve-3by3" title="Copy heading and permalink for Example 1.3.10" aria-label="Copy heading and permalink for Example 1.3.10">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-traffic-solution"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving the Traffic Problem.</span>
 </h4>
 <div class="para" id="ex-traffic-solution-2-1">Solve the linear system in <a href="sect-linear-systems.html#ex-streets" class="xref" data-knowl="./knowl/xref/ex-streets.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.2: Traffic Flow">Example 1.1.2</a> or written in standard form:<div class="autopermalink" data-description="Paragraph"><a href="#ex-traffic-solution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-traffic-solution-2-2">
+</div> 
+<div class="para logical" id="ex-traffic-solution-2-2">
 <div class="displaymath process-math" id="ex-traffic-solution-2-2-1">
 \begin{align*}
 -x_1 + x_4 + x_5 \amp = 250\\
@@ -1142,9 +1210,12 @@ x_3 + x_2 \amp = 600
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-traffic-solution-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-traffic-solution-2-3">by writing the augmented coefficient matrix and putting the matrix in reduced row-echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#ex-traffic-solution-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ex-traffic-solution-2-3">by writing the augmented coefficient matrix and putting the matrix in reduced row-echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#ex-traffic-solution-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-traffic-solution-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex-traffic-solution-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="ex-traffic-solution-3-1">We first write the augmented coefficient matrix:<div class="autopermalink" data-description="Paragraph"><a href="#ex-traffic-solution-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-traffic-solution-3-2">
@@ -1235,8 +1306,13 @@ x_4 \amp= -x_5 + 450
 <div class="para" id="ex-traffic-solution-3-8">Additionally, on a more global scale for the map shown above there are <span class="process-math">\(350+500+200=1050\)</span> cars entering the area and <span class="process-math">\(250+400+200+x_1=850+x_1\)</span> leaving and we don’t know how many cars are leaving the area. If we also include another equation that would balance these (and that makes sense), then there would now be 5 equations and probably would give a unique solution.<div class="autopermalink" data-description="Paragraph"><a href="#ex-traffic-solution-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.11.1"><a href="#ex-traffic-solution-3" title="Copy heading and permalink for Solution 1.3.11.1" aria-label="Copy heading and permalink for Solution 1.3.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 1.3.11: Solving the Traffic Problem"><a href="#ex-traffic-solution" title="Copy heading and permalink for Example 1.3.11: Solving the Traffic Problem" aria-label="Copy heading and permalink for Example 1.3.11: Solving the Traffic Problem">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.3.3: Linear Systems and Reduced Row-Echelon Form"><a href="#sect-gaussian-elimination-5" title="Copy heading and permalink for Subsection 1.3.3: Linear Systems and Reduced Row-Echelon Form" aria-label="Copy heading and permalink for Subsection 1.3.3: Linear Systems and Reduced Row-Echelon Form">🔗</a></div></section><section class="subsection" id="subsect-describe-solutions"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.3.11: Solving the Traffic Problem"><a href="#ex-traffic-solution" title="Copy heading and permalink for Example 1.3.11: Solving the Traffic Problem" aria-label="Copy heading and permalink for Example 1.3.11: Solving the Traffic Problem">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 1.3.3: Linear Systems and Reduced Row-Echelon Form"><a href="#sect-gaussian-elimination-5" title="Copy heading and permalink for Subsection 1.3.3: Linear Systems and Reduced Row-Echelon Form" aria-label="Copy heading and permalink for Subsection 1.3.3: Linear Systems and Reduced Row-Echelon Form">🔗</a></div>
+</section>
+<section class="subsection" id="subsect-describe-solutions">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Describing the Solution Set</span>
 </h3>
 <div class="para" id="subsect-describe-solutions-2">So far we have seen linear system with solution sets with different number of elements. The <em class="emphasis">no solution</em> means that the solution set is empty, the <em class="emphasis">unique solution</em> means that there is one element in the set. This was the case in <a href="sect-gaussian-elimination.html#ex-biathlon-solution" class="xref" data-knowl="./knowl/xref/ex-biathlon-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.8: Solving the Biathlon Problem">Example 1.3.8</a> and in <a href="sect-gaussian-elimination.html#ex-traffic-solution" class="xref" data-knowl="./knowl/xref/ex-traffic-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.11: Solving the Traffic Problem">Example 1.3.11</a>, there is a free variable resulting in <em class="emphasis">infinitely many solutions</em>. We examine this last case in more detail.<div class="autopermalink" data-description="Paragraph"><a href="#subsect-describe-solutions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1348,13 +1424,16 @@ y=-13\text{,}\)</span> so the point <span class="process-math">\((-6,-13,0)\)</s
 </h4>
 <div class="para" id="subsect-describe-solutions-21-1-1">Any non-leading variable in a linear system in echelon form is called a <dfn class="terminology">free variable</dfn> or <dfn class="terminology">parameter</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#subsect-describe-solutions-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.3.12"><a href="#subsect-describe-solutions-21" title="Copy heading and permalink for Definition 1.3.12" aria-label="Copy heading and permalink for Definition 1.3.12">🔗</a></div></article><div class="para" id="subsect-describe-solutions-22">The next example shows that a linear system can have more than one free variable.<div class="autopermalink" data-description="Paragraph"><a href="#subsect-describe-solutions-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 1.3.12"><a href="#subsect-describe-solutions-21" title="Copy heading and permalink for Definition 1.3.12" aria-label="Copy heading and permalink for Definition 1.3.12">🔗</a></div>
+</article>
+<div class="para" id="subsect-describe-solutions-22">The next example shows that a linear system can have more than one free variable.<div class="autopermalink" data-description="Paragraph"><a href="#subsect-describe-solutions-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ex-echelon-form-3by5"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-echelon-form-3by5-1-1">Consider the linear system<div class="autopermalink" data-description="Paragraph"><a href="#ex-echelon-form-3by5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-echelon-form-3by5-1-2">
+</div> 
+<div class="para logical" id="ex-echelon-form-3by5-1-2">
 <div class="displaymath process-math" id="ex-echelon-form-3by5-1-2-1">
 \begin{align*}
 x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, \\
@@ -1363,9 +1442,12 @@ x_1\phantom{+2x_3} + 3x_3 -9 x_4 + 11 x_5 \amp = 14, \\
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-echelon-form-3by5-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-echelon-form-3by5-1-3">Write the solution set in terms of the free variables.<div class="autopermalink" data-description="Paragraph"><a href="#ex-echelon-form-3by5-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ex-echelon-form-3by5-1-3">Write the solution set in terms of the free variables.<div class="autopermalink" data-description="Paragraph"><a href="#ex-echelon-form-3by5-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-echelon-form-3by5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex-echelon-form-3by5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="ex-echelon-form-3by5-2-1">First, let’s put this in augmented matrix form as<div class="autopermalink" data-description="Paragraph"><a href="#ex-echelon-form-3by5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-echelon-form-3by5-2-2">
@@ -1450,14 +1532,18 @@ x_5 \amp = 9
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-echelon-form-3by5-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.13.1"><a href="#ex-echelon-form-3by5-2" title="Copy heading and permalink for Solution 1.3.13.1" aria-label="Copy heading and permalink for Solution 1.3.13.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 1.3.13"><a href="#ex-echelon-form-3by5" title="Copy heading and permalink for Example 1.3.13" aria-label="Copy heading and permalink for Example 1.3.13">🔗</a></div></article><div class="para" id="subsect-describe-solutions-24">We now find the solution to the Hydrazine chemistry problem in Example <a href="sect-linear-systems.html#ex-hydrazine" class="xref" data-knowl="./knowl/xref/ex-hydrazine.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.4: Chemical Reactions">Example 1.1.4</a><div class="autopermalink" data-description="Paragraph"><a href="#subsect-describe-solutions-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.3.13"><a href="#ex-echelon-form-3by5" title="Copy heading and permalink for Example 1.3.13" aria-label="Copy heading and permalink for Example 1.3.13">🔗</a></div>
+</article>
+<div class="para" id="subsect-describe-solutions-24">We now find the solution to the Hydrazine chemistry problem in Example <a href="sect-linear-systems.html#ex-hydrazine" class="xref" data-knowl="./knowl/xref/ex-hydrazine.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.4: Chemical Reactions">Example 1.1.4</a><div class="autopermalink" data-description="Paragraph"><a href="#subsect-describe-solutions-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ex-hydrazine-solution"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-hydrazine-solution-1-1">Find the solution set of the linear system in <a href="sect-linear-systems.html#ex-hydrazine" class="xref" data-knowl="./knowl/xref/ex-hydrazine.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.4: Chemical Reactions">Example 1.1.4</a><div class="autopermalink" data-description="Paragraph"><a href="#ex-hydrazine-solution-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-hydrazine-solution-1-2">
+</div> 
+<div class="para logical" id="ex-hydrazine-solution-1-2">
 <div class="displaymath process-math" id="ex-hydrazine-solution-1-2-1">
 \begin{align*}
 k_1\phantom{+2k_2}-2k_3\phantom{+2k_4} \amp = 0, \\
@@ -1467,7 +1553,9 @@ k_1\phantom{+2k_2}-2k_3\phantom{+2k_4} \amp = 0, \\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-hydrazine-solution-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-hydrazine-solution-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex-hydrazine-solution-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="ex-hydrazine-solution-2-1">We will first put this into an augmented matrix, then use Gauss’s method,<div class="autopermalink" data-description="Paragraph"><a href="#ex-hydrazine-solution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-hydrazine-solution-2-2">
@@ -1570,8 +1658,13 @@ k_3 \amp = \frac{1}{2}k_4
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-hydrazine-solution-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.14.1"><a href="#ex-hydrazine-solution-2" title="Copy heading and permalink for Solution 1.3.14.1" aria-label="Copy heading and permalink for Solution 1.3.14.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 1.3.14"><a href="#ex-hydrazine-solution" title="Copy heading and permalink for Example 1.3.14" aria-label="Copy heading and permalink for Example 1.3.14">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.3.4: Describing the Solution Set"><a href="#subsect-describe-solutions" title="Copy heading and permalink for Subsection 1.3.4: Describing the Solution Set" aria-label="Copy heading and permalink for Subsection 1.3.4: Describing the Solution Set">🔗</a></div></section><section class="subsection" id="sect-gaussian-elimination-7"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.3.14"><a href="#ex-hydrazine-solution" title="Copy heading and permalink for Example 1.3.14" aria-label="Copy heading and permalink for Example 1.3.14">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 1.3.4: Describing the Solution Set"><a href="#subsect-describe-solutions" title="Copy heading and permalink for Subsection 1.3.4: Describing the Solution Set" aria-label="Copy heading and permalink for Subsection 1.3.4: Describing the Solution Set">🔗</a></div>
+</section>
+<section class="subsection" id="sect-gaussian-elimination-7">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Row Equivalence</span>
 </h3>
 <div class="para" id="sect-gaussian-elimination-7-2">We have used the term <em class="emphasis">matrix reduction</em> in converting a matrix to either echelon or reduced row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1581,11 +1674,14 @@ k_3 \amp = \frac{1}{2}k_4
 </h4>
 <div class="para" id="sect-gaussian-elimination-7-3-1-1">If matrix <span class="process-math">\(A\)</span> can be converted to matrix <span class="process-math">\(B\)</span> by elementary row operations, then we say that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <dfn class="terminology">row equivalent</dfn> or just <dfn class="terminology">equivalent</dfn>. We use the notation <span class="process-math">\(A \sim B\)</span> for equivalence of matrices.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.3.15"><a href="#sect-gaussian-elimination-7-3" title="Copy heading and permalink for Definition 1.3.15" aria-label="Copy heading and permalink for Definition 1.3.15">🔗</a></div></article><article class="example example-like" id="sect-gaussian-elimination-7-4"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 1.3.15"><a href="#sect-gaussian-elimination-7-3" title="Copy heading and permalink for Definition 1.3.15" aria-label="Copy heading and permalink for Definition 1.3.15">🔗</a></div>
+</article>
+<article class="example example-like" id="sect-gaussian-elimination-7-4"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-gaussian-elimination-7-4-1-1">Show that the following matrices are row equivalent<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-gaussian-elimination-7-4-1-2">
+</div> 
+<div class="para logical" id="sect-gaussian-elimination-7-4-1-2">
 <div class="displaymath process-math" id="sect-gaussian-elimination-7-4-1-2-1">
 \begin{align*}
 \begin{bmatrix}3 \amp 4 \\ 0 \amp -2 \end{bmatrix} \amp \amp
@@ -1595,7 +1691,9 @@ k_3 \amp = \frac{1}{2}k_4
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-gaussian-elimination-7-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-gaussian-elimination-7-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-gaussian-elimination-7-4-2-1">One method to showing matrices are equivalent is to find the row operation to go from one to the other. However, generally an easier way is to put both (or in this case all three) in reduced row echelon form. In this case all three of these matrices reduce to<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gaussian-elimination-7-4-2-2">
@@ -1607,13 +1705,20 @@ k_3 \amp = \frac{1}{2}k_4
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.16.1"><a href="#sect-gaussian-elimination-7-4-2" title="Copy heading and permalink for Solution 1.3.16.1" aria-label="Copy heading and permalink for Solution 1.3.16.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 1.3.16"><a href="#sect-gaussian-elimination-7-4" title="Copy heading and permalink for Example 1.3.16" aria-label="Copy heading and permalink for Example 1.3.16">🔗</a></div></article><article class="lemma theorem-like" id="sect-gaussian-elimination-7-5"><h4 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.3.16"><a href="#sect-gaussian-elimination-7-4" title="Copy heading and permalink for Example 1.3.16" aria-label="Copy heading and permalink for Example 1.3.16">🔗</a></div>
+</article>
+<article class="lemma theorem-like" id="sect-gaussian-elimination-7-5"><h4 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-gaussian-elimination-7-5-1-1">A linear combination of linear combinations is a linear combination.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 1.3.17"><a href="#sect-gaussian-elimination-7-5" title="Copy heading and permalink for Lemma 1.3.17" aria-label="Copy heading and permalink for Lemma 1.3.17">🔗</a></div></article><details id="sect-gaussian-elimination-7-5-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-gaussian-elimination-7-5-2-1">Consider the <span class="process-math">\(m\)</span> linear combinations <span class="process-math">\(c_{1,1} x_1 + \cdots + c_{1,n} x_n\)</span> through <span class="process-math">\(c_{m,1} x_1 + \cdots + c_{m,n} x_n\text{.}\)</span> A linear combination of these is<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 1.3.17"><a href="#sect-gaussian-elimination-7-5" title="Copy heading and permalink for Lemma 1.3.17" aria-label="Copy heading and permalink for Lemma 1.3.17">🔗</a></div>
+</article>
+<details id="sect-gaussian-elimination-7-5-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sect-gaussian-elimination-7-5-2-1">Consider the <span class="process-math">\(m\)</span> linear combinations <span class="process-math">\(c_{1,1} x_1 + \cdots + c_{1,n} x_n\)</span> through <span class="process-math">\(c_{m,1} x_1 + \cdots + c_{m,n} x_n\text{.}\)</span> A linear combination of these is<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gaussian-elimination-7-5-2-2">
 <div class="displaymath process-math" id="sect-gaussian-elimination-7-5-2-2-1">
@@ -1628,7 +1733,9 @@ x_1 + \cdots + d_m c_{m,n} x_n \\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 1.3.17.1"><a href="#sect-gaussian-elimination-7-5-2" title="Copy heading and permalink for Proof 1.3.17.1" aria-label="Copy heading and permalink for Proof 1.3.17.1">🔗</a></div></article></details><div class="para" id="sect-gaussian-elimination-7-6">We will use the following standard notation for matrices. A matrix is named with a roman capital letter, the <span class="process-math">\(i\)</span>th row will be denoted with the equivalent lower-case greek with subscript <span class="process-math">\(i\text{,}\)</span> that is<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 1.3.17.1"><a href="#sect-gaussian-elimination-7-5-2" title="Copy heading and permalink for Proof 1.3.17.1" aria-label="Copy heading and permalink for Proof 1.3.17.1">🔗</a></div>
+</article></details>
+<div class="para" id="sect-gaussian-elimination-7-6">We will use the following standard notation for matrices. A matrix is named with a roman capital letter, the <span class="process-math">\(i\)</span>th row will be denoted with the equivalent lower-case greek with subscript <span class="process-math">\(i\text{,}\)</span> that is<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gaussian-elimination-7-7">
 <div class="displaymath process-math" id="sect-gaussian-elimination-7-7-1">
@@ -1654,7 +1761,11 @@ B \amp = \begin{bmatrix}
 </h4>
 <div class="para" id="cor-rows-linear-comb-1-1">When one matrix is transformed to another matrix, each row of the second is a linear combination of the first.<div class="autopermalink" data-description="Paragraph"><a href="#cor-rows-linear-comb-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Corollary 1.3.18"><a href="#cor-rows-linear-comb" title="Copy heading and permalink for Corollary 1.3.18" aria-label="Copy heading and permalink for Corollary 1.3.18">🔗</a></div></article><details id="cor-rows-linear-comb-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-rows-linear-comb-2-1">The base step, we prove that zero row operations that transforms <span class="process-math">\(A\)</span> to <span class="process-math">\(B\text{,}\)</span> satisfies the corollary. In this case,<div class="autopermalink" data-description="Paragraph"><a href="#cor-rows-linear-comb-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Corollary 1.3.18"><a href="#cor-rows-linear-comb" title="Copy heading and permalink for Corollary 1.3.18" aria-label="Copy heading and permalink for Corollary 1.3.18">🔗</a></div>
+</article>
+<details id="cor-rows-linear-comb-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="cor-rows-linear-comb-2-1">The base step, we prove that zero row operations that transforms <span class="process-math">\(A\)</span> to <span class="process-math">\(B\text{,}\)</span> satisfies the corollary. In this case,<div class="autopermalink" data-description="Paragraph"><a href="#cor-rows-linear-comb-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="cor-rows-linear-comb-2-2">
 <div class="displaymath process-math" id="cor-rows-linear-comb-2-2-1">
@@ -1747,11 +1858,14 @@ c \boldsymbol{\gamma}_k+ \boldsymbol{\gamma}_j \amp \text{if}\;\; k=i \\
 </div>
 <div class="para" id="cor-rows-linear-comb-2-9">Now, using induction, since the first <span class="process-math">\(t\)</span> steps transforming <span class="process-math">\(A\)</span> to <span class="process-math">\(G\)</span> is a linear combination, the steps from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\text{,}\)</span> each row of <span class="process-math">\(B\)</span> is a linear combination of rows of <span class="process-math">\(A\)</span> because linear combinations of linear combinations are linear combinations.<div class="autopermalink" data-description="Paragraph"><a href="#cor-rows-linear-comb-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 1.3.18.1"><a href="#cor-rows-linear-comb-2" title="Copy heading and permalink for Proof 1.3.18.1" aria-label="Copy heading and permalink for Proof 1.3.18.1">🔗</a></div></article></details><article class="example example-like" id="sect-gaussian-elimination-7-9"><h4 class="heading">
+<div class="autopermalink" data-description="Proof 1.3.18.1"><a href="#cor-rows-linear-comb-2" title="Copy heading and permalink for Proof 1.3.18.1" aria-label="Copy heading and permalink for Proof 1.3.18.1">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sect-gaussian-elimination-7-9"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-gaussian-elimination-7-9-1-1">Show that the steps that transform:<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-gaussian-elimination-7-9-1-2">
+</div> 
+<div class="para logical" id="sect-gaussian-elimination-7-9-1-2">
 <div class="displaymath process-math" id="sect-gaussian-elimination-7-9-1-2-1">
 \begin{align*}
 \amp\begin{bmatrix}
@@ -1776,9 +1890,12 @@ R_1 \leftrightarrow R_2 \qquad \amp
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-9-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-gaussian-elimination-7-9-1-3">are each linear combinations of row operations.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sect-gaussian-elimination-7-9-1-3">are each linear combinations of row operations.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-gaussian-elimination-7-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-gaussian-elimination-7-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-gaussian-elimination-7-9-2-1">Call the 4 matrices, <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(D\text{,}\)</span> <span class="process-math">\(G\)</span> and <span class="process-math">\(B\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gaussian-elimination-7-9-2-2">
@@ -1801,8 +1918,13 @@ R_1 \leftrightarrow R_2 \qquad \amp
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-7-9-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.19.1"><a href="#sect-gaussian-elimination-7-9-2" title="Copy heading and permalink for Solution 1.3.19.1" aria-label="Copy heading and permalink for Solution 1.3.19.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 1.3.19"><a href="#sect-gaussian-elimination-7-9" title="Copy heading and permalink for Example 1.3.19" aria-label="Copy heading and permalink for Example 1.3.19">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.3.5: Row Equivalence"><a href="#sect-gaussian-elimination-7" title="Copy heading and permalink for Subsection 1.3.5: Row Equivalence" aria-label="Copy heading and permalink for Subsection 1.3.5: Row Equivalence">🔗</a></div></section><section class="subsection" id="sect-gaussian-elimination-8"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.3.19"><a href="#sect-gaussian-elimination-7-9" title="Copy heading and permalink for Example 1.3.19" aria-label="Copy heading and permalink for Example 1.3.19">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 1.3.5: Row Equivalence"><a href="#sect-gaussian-elimination-7" title="Copy heading and permalink for Subsection 1.3.5: Row Equivalence" aria-label="Copy heading and permalink for Subsection 1.3.5: Row Equivalence">🔗</a></div>
+</section>
+<section class="subsection" id="sect-gaussian-elimination-8">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Echelon Form and Linear Combinations of Rows</span>
 </h3>
 <div class="para" id="sect-gaussian-elimination-8-2">Let’s return to echelon form. Why is this a nice form? Well we can use back substitution to solve for the leading variables. The reason this works is the following lemma.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1812,7 +1934,9 @@ R_1 \leftrightarrow R_2 \qquad \amp
 </h4>
 <div class="para" id="lem-ech-ind-1">In an echelon form matrix, no nonzero row is a linear combination of the other rows.<div class="autopermalink" data-description="Paragraph"><a href="#lem-ech-ind-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 1.3.20"><a href="#lem-ech-ind" title="Copy heading and permalink for Lemma 1.3.20" aria-label="Copy heading and permalink for Lemma 1.3.20">🔗</a></div></article><div class="para" id="sect-gaussian-elimination-8-4">In lieu of a proof, let’s take a look at an example. Consider the echelon form matrix of a the linear system from <a href="sect-vectors-as-solutions.html#ex-large-linear-solution" class="xref" data-knowl="./knowl/xref/ex-large-linear-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.5">Example 1.4.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 1.3.20"><a href="#lem-ech-ind" title="Copy heading and permalink for Lemma 1.3.20" aria-label="Copy heading and permalink for Lemma 1.3.20">🔗</a></div>
+</article>
+<div class="para" id="sect-gaussian-elimination-8-4">In lieu of a proof, let’s take a look at an example. Consider the echelon form matrix of a the linear system from <a href="sect-vectors-as-solutions.html#ex-large-linear-solution" class="xref" data-knowl="./knowl/xref/ex-large-linear-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.5">Example 1.4.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gaussian-elimination-8-5">
 <div class="displaymath process-math" id="sect-gaussian-elimination-8-5-1">
@@ -1895,7 +2019,9 @@ c_1 + 0 c_2 \amp = 0 \\
 </div>
 <div class="para" id="sect-gaussian-elimination-8-15">The notation of rows not being linear combinations of other rows is called <dfn class="terminology">independence</dfn> and will be defined more-explicitly later in the course, however this example should give you a sense of what independence means.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-8-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sect-gaussian-elimination-8-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of Lemma 1.3.20.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-gaussian-elimination-8-16-2">This will be a proof by contradiction. Assume that the <span class="process-math">\(i\)</span>th row is a linear combination of the other rows of the matrix that is it can be written:<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-8-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<details id="sect-gaussian-elimination-8-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of Lemma 1.3.20.</span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sect-gaussian-elimination-8-16-2">This will be a proof by contradiction. Assume that the <span class="process-math">\(i\)</span>th row is a linear combination of the other rows of the matrix that is it can be written:<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-8-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gaussian-elimination-8-16-3">
 <div class="displaymath process-math" id="eq-row-linear-comb">
@@ -1960,7 +2086,11 @@ A =
 <div class="para" id="sect-gaussian-elimination-8-16-12">If <span class="process-math">\(i&gt;k\text{,}\)</span> then <span class="process-math">\(\alpha_{i,\ell_k}=0\text{,}\)</span> and this implied that <span class="process-math">\(c_k=0\text{.}\)</span> If <span class="process-math">\(i
 \lt k\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#sect-gaussian-elimination-8-16-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 1.3.6.1: Proof of Lemma 1.3.20"><a href="#sect-gaussian-elimination-8-16" title="Copy heading and permalink for Proof 1.3.6.1: Proof of Lemma 1.3.20" aria-label="Copy heading and permalink for Proof 1.3.6.1: Proof of Lemma 1.3.20">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.3.6: Echelon Form and Linear Combinations of Rows"><a href="#sect-gaussian-elimination-8" title="Copy heading and permalink for Subsection 1.3.6: Echelon Form and Linear Combinations of Rows" aria-label="Copy heading and permalink for Subsection 1.3.6: Echelon Form and Linear Combinations of Rows">🔗</a></div></section><div class="autopermalink" data-description="Section 1.3: Echelon Forms and Gaussian Elimination"><a href="#sect-gaussian-elimination" title="Copy heading and permalink for Section 1.3: Echelon Forms and Gaussian Elimination" aria-label="Copy heading and permalink for Section 1.3: Echelon Forms and Gaussian Elimination">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Proof 1.3.6.1: Proof of Lemma 1.3.20"><a href="#sect-gaussian-elimination-8-16" title="Copy heading and permalink for Proof 1.3.6.1: Proof of Lemma 1.3.20" aria-label="Copy heading and permalink for Proof 1.3.6.1: Proof of Lemma 1.3.20">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Subsection 1.3.6: Echelon Form and Linear Combinations of Rows"><a href="#sect-gaussian-elimination-8" title="Copy heading and permalink for Subsection 1.3.6: Echelon Form and Linear Combinations of Rows" aria-label="Copy heading and permalink for Subsection 1.3.6: Echelon Form and Linear Combinations of Rows">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 1.3: Echelon Forms and Gaussian Elimination"><a href="#sect-gaussian-elimination" title="Copy heading and permalink for Section 1.3: Echelon Forms and Gaussian Elimination" aria-label="Copy heading and permalink for Section 1.3: Echelon Forms and Gaussian Elimination">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sect-elementary-row-operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-vectors-as-solutions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

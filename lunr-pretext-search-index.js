@@ -4534,7 +4534,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.4",
   "title": "Series Solutions of Differential Equations",
-  "body": " Series Solutions of Differential Equations   In , we touched on solutions to linear ordinary differential equations. We kept our scope to those that were 2nd order and constant coefficient. In this section, we investigate power series solutions to differential equations.    Solving First-order Differential Equations with Series  Let's start this section with a specific example. Before doing that example, we will assume that the solution has the form: and because we need the derivative as well, we will differentiate the series or     Solve the initial value problem for some non-zero real constant using power series.    Start by substituting and into the differential equation or   We will use the method of underdetermined coefficients which is a general techniques that is used to find the coefficients of variables functions (polynomials, sines and cosines or exponentials ) which sets the coefficients on both sides of an example to the same.  In this case, we match similar powers and it is easier if the series on the left is written in term of instead of and we can change this by first noting that we can start incrementing at instead, because the first term is 0. and then if we let or , then the left side becomes and lastly since the index variable doesn't matter, let's switch back to using . Wait. You might be thinking \"Wait. First you said and then . How can these both be true?\" That is some good thinking there are your part. However, since both and are just indexes, they aren't variables in the power series. Write out a handful of terms of each of the series on the left sides above and you will see that they are equivalent. We just write them differently.    Now that powers are both sides are the same, this means that the coefficients must be the same or or and since we have the initial condition, plugging into , results in . If determining a formula for is not clear, let's try and can be shown that in general So the series solution will be substituting into or     The equation in the previous example was relatively simple. The follow exercises asks you to expand the equation a bit.    Solve the following initial value problem using power series techniques.       Second-Order Differential Equations  Let's now examine some second order equations. We'll start with one we know. and in this case, we will need the second derivative or the derivative of and substitute this and into the differential equation as where the first two terms of the left series are zero so we start at index 2. Next, we will reindex the first series as , then to get and the result is the recursive formula: The intial conditions result in and . From the recursive formula and , we get for all odd values of . For even values, and in general, we can write: so the series is and this is the Taylor series expansion of .    Series Solutions and Orthogonal Polynomials  In , we saw orthogonal sets of \"vectors\", which can include polynomials. The inner product is defined with respect to a weight function and interval and an example of this is if on , the the resulting polynomials are the Legendre Polynomials . In , we used the Gram-Schmidt Orthogonalization algorithm to find these polynomials. An alternative method is to solve the differential equation: which will have a solution , which will be the th Legendre polynomial.  The series solutions of this differential equation is quite nice in that it can be found for general value . As before, we will assume the solution has the form of and then we will need the first derivative. where is used as the index for the series because is used as the specific polynomial (solution). Differentiating where the in the first equation above, the series starts at , because the first two terms are 0. Also the indexing for the first series in the second equation above has been shifted by 2.  The coefficient of must be zero so setting the coefficient to 0 results in Like above and is common to other 2nd order differential equations, the even and odd coefficients decouple from each other. If is not an integer, then eventually the terms will look like and recall that if the terms of a series do not go to 0, then the series diverges. It is a solution, but not a helpful one.  If is an integer, that when , the term and from this general relationship for all . Note also, if is odd, then the even terms will have the same situation as the non-integer solution and will diverge. Similarly if is even then the odd terms will diverge.  Thus the only interesting solution to this is to examine the odd terms if is odd or the even terms if is even. Let's look at the cases:   case  In this case, we have and when , as so all even terms above this are also zero, then     case  In this case, we have and when , the only solution is     case  In this case we ignore the odd terms and when  and all for . The solution thus is a polynomial of the form: and often we write this as a monomial or     case  In this case, we ignore the even terms and when  and for all for . The solution is a polynomial: and writing this as a monomial:      Differential Equations with Singular Points  Let's take a look at another example:   We assume the form of for the solution and use and for the derivatives, then and we reindex the first two series, first with , then  and now the powers are the same, however note that the second two sums have an additional term so we would need to write this as The general term would be with the first term leading to and then the next few terms are:   and then this leads to the series     Frobenius Method  But a second solution is missing. There should be two linearly independent solutions. Although there are other ways to do this, let's use a more general method for series, called the Frobenius Method . Instead of the power series form in , we can assume where is a constant. Let's use this to see what happens with and will need the derivatives of this. Substituting this into results in and note that since we don't know a value of , we don't drop off the first term like above. Reindexing like above results in The first term in each of the first two series is extra, so we write it separately the general terms (coefficient of inside the sum) results in the coefficient of the first term is and since we are looking for the value of , , which has the two solutions .  Note that the will result in the solution we found above, so we're interested in the case. Let's write down a few terms using the general formula in : resulting in the series (with the term)    "
+  "body": " Series Solutions of Differential Equations   In , we touched on solutions to linear ordinary differential equations. We kept our scope to those that were 2nd order and constant coefficient. In this section, we investigate power series solutions to differential equations.    Solving First-order Differential Equations with Series  Let's start this section with a specific example. Before doing that example, we will assume that the solution has the form: and because we need the derivative as well, we will differentiate the series or     Solve the initial value problem for some non-zero real constant using power series.    Start by substituting and into the differential equation or   We will use the method of underdetermined coefficients which is a general techniques that is used to find the coefficients of variables functions (polynomials, sines and cosines or exponentials ) which sets the coefficients on both sides of an example to the same.  In this case, we match similar powers and it is easier if the series on the left is written in term of instead of and we can change this by first noting that we can start incrementing at instead, because the first term is 0. and then if we let or , then the left side becomes and lastly since the index variable doesn't matter, let's switch back to using . Wait. You might be thinking \"Wait. First you said and then . How can these both be true?\" That is some good thinking there are your part. However, since both and are just indexes, they aren't variables in the power series. Write out a handful of terms of each of the series on the left sides above and you will see that they are equivalent. We just write them differently.    Now that powers are both sides are the same, this means that the coefficients must be the same or or and since we have the initial condition, plugging into , results in . If determining a formula for is not clear, let's try and can be shown that in general So the series solution will be substituting into or     The equation in the previous example was relatively simple. The follow exercises asks you to expand the equation a bit.    Solve the following initial value problem using power series techniques.       Second-Order Differential Equations  Let's now examine some second order equations. We'll start with one we know. and in this case, we will need the second derivative or the derivative of and substitute this and into the differential equation as where the first two terms of the left series are zero so we start at index 2. Next, we will reindex the first series as , then to get and the result is the recursive formula: The intial conditions result in and . From the recursive formula and , we get for all odd values of . For even values, and in general, we can write: so the series is and this is the Taylor series expansion of .    Series Solutions and Orthogonal Polynomials  In , we saw orthogonal sets of \"vectors\", which can include polynomials. The inner product is defined with respect to a weight function and interval and an example of this is if on , the the resulting polynomials are the Legendre Polynomials . In , we used the Gram-Schmidt Orthogonalization algorithm to find these polynomials. An alternative method is to solve the differential equation: which will have a solution , which will be the th Legendre polynomial.  The series solutions of this differential equation is quite nice in that it can be found for general value . As before, we will assume the solution has the form of and then we will need the first derivative. where is used as the index for the series because is used as the specific polynomial (solution). Differentiating where the in the first equation above, the series starts at , because the first two terms are 0. Also the indexing for the first series in the second equation above has been shifted by 2.  The coefficient of must be zero so setting the coefficient to 0 results in Like above and is common to other 2nd order differential equations, the even and odd coefficients decouple from each other. If is not an integer, then eventually the terms will look like and recall that if the terms of a series do not go to 0, then the series diverges. It is a solution, but not a helpful one.  If is an integer, that when , the term and from this general relationship for all . Note also, if is odd, then the even terms will have the same situation as the non-integer solution and will diverge. Similarly if is even then the odd terms will diverge.  Thus the only interesting solution to this is to examine the odd terms if is odd or the even terms if is even. Let's look at the cases:   case  In this case, we have and when , as so all even terms above this are also zero, then     case  In this case, we have and when , the only solution is     case  In this case we ignore the odd terms and when  and all for . The solution thus is a polynomial of the form: and often we write this as a monomial or     case  In this case, we ignore the even terms and when  and for all for . The solution is a polynomial: and writing this as a monomial:      Differential Equations with Singular Points  Let's take a look at another example:   We assume the form of for the solution and use and for the derivatives, then and we reindex the first two series, first with , then  and now the powers are the same, however note that the second two sums have an additional term so we would need to write this as The general term would be with the first term leading to and then the next few terms are:   and then this leads to the series     Frobenius Method  But a second solution is missing. There should be two linearly independent solutions. Although there are other ways to do this, let's use a more general method for series, called the Frobenius Method . Instead of the power series form in , we can assume where is a constant. Let's use this to see what happens with and will need the derivatives of this. Substituting this into results in and note that since we don't know a value of , we don't drop off the first term like above. Reindexing like above results in The first term in each of the first two series is extra, so we write it separately the general terms (coefficient of inside the sum) results in the coefficient of the first term is and since we are looking for the value of , , which has the two solutions .  Note that the will result in the solution we found above, so we're interested in the case. Let's write down a few terms using the general formula in : resulting in the series (with the term)   The general solution to can be written using the two series solutions in and    A plot of these two solutions are seen in the figure below          Bessel Functions  The Bessel functions are solutions to the differential equation and using the Frobenius method, we substitute in , and to get    "
 },
 {
   "id": "subsec-first-order-ode-3",
@@ -4573,18 +4573,27 @@ var ptx_lunr_docs = [
   "body": "Frobenius Method "
 },
 {
-  "id": "ch-diff-eqn-7",
+  "id": "fig-ode-singular-sol",
+  "level": "2",
+  "url": "sect-series-solutions.html#fig-ode-singular-sol",
+  "type": "Figure",
+  "number": "8.4.3",
+  "title": "",
+  "body": "     "
+},
+{
+  "id": "sect-sturm-liouville",
   "level": "1",
-  "url": "ch-diff-eqn-7.html",
+  "url": "sect-sturm-liouville.html",
   "type": "Section",
   "number": "8.5",
   "title": "Sturm-Liouville Problems",
   "body": " Sturm-Liouville Problems  We now turn to a class of differential equations that arise in solving partial differential equations. This class is called Sturm-Liouville problems and they satisfy boundary conditions instead of the initial conditions that we saw in the previous section.    Consider the differential equation     for , , and . The differential equation is also subject to the boundary conditions:     such that both and cannot be zero as well as both and . The differential equation with these boundary conditions are called a Sturm-Liouville Problem . The solution is called an eigenfunction of the problem and the values of are called the eigenvalues .    The following example shows how to solve a Sturm-Liouville problem, that is, find the eigenvalues and eigenfunctions of the problem.    Find the eigenvalue and eigenfunctions of the Sturm-Liouville problem:       First note that and also and , which satisfies the conditions on the boundaries. The characteristic equation for this problem is:     which has the solutions . The form of the equation depends on . If , we get:     if , then the solution is     and if , then we get     Next, we apply the boundary conditions on all three solutions. Recall that . If , substituting the boundary conditions into ,     so the only solution to is the trivial solution . If , then substituting the boundary conditions into results in     From the first equation, and substituting this into the 2nd equation      is a solution, the second term is never zero and the third term is only zero if , which is not true or , which is also not true, since this case is . Therefore again, the only solution to is the trivial solution. If then substituting the boundary conditions into results in     the second states that either , again the trivial solution or     which occurs if for . Or     We now check which values of result in valid values of . When , we get again, which violates and for both plus and minus the same number, we get the same eigenvalue, so we will discard the negative values of and just include The eigenvalues of this problem are those in for and the eigenfunctions of this problem are:       It may have appears that we were lucky that there was a solution to the Sturm-Liouville problem in the above example. However, this is not the case and any Sturm-Liouville problem has a solution as the following theorem shows.    Let and be any eigenvalue and eigenfunction of the Sturm-Liouville problem.     The eigenvalue is real.    There are an infinite number of eigenvalues that can be ordered and for each eigenvalue, there is only one eigenfunction.    Eigenfunctions and with satisfy .    Let and be piecewise continuous functions on . If     then the series:     converges to if is continuous at and to the value if is discontinuous at for each point in .         Let on . Find the series expansion listed in the theorem corresponding to the Sturm-Liouville problem .       which is the Fourier sine series.      Find the solution of the Sturm-Liouville problem       Since this the same differential equation as in , we note that when , there was no solution and the same is true here. In the case of , the solution is     and the derivative is needed as well,     and then applying the boundary condition , implies that , however, is not determined and is a solution. Next, we turn to , with the solution,     and again, we need the derivative,     Applying the boundary condition, , results in     which implies that . Applying the boundary condition results in     and if , this results in the trivial solution, cannot be zero, however     when or . The eigenvalues and eigenfunctions of this problem then are and , and       There are other Sturm-Liouville problems that arise commonly and we will see others later in this chapter and solve them as they arise. We will use these solutions that we just found in solving the PDEs that we derived above.  "
 },
 {
-  "id": "ch-diff-eqn-7-3",
+  "id": "sect-sturm-liouville-3",
   "level": "2",
-  "url": "ch-diff-eqn-7.html#ch-diff-eqn-7-3",
+  "url": "sect-sturm-liouville.html#sect-sturm-liouville-3",
   "type": "Definition",
   "number": "8.5.1",
   "title": "",
@@ -4593,7 +4602,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-sturm-liouville",
   "level": "2",
-  "url": "ch-diff-eqn-7.html#ex-sturm-liouville",
+  "url": "sect-sturm-liouville.html#ex-sturm-liouville",
   "type": "Example",
   "number": "8.5.2",
   "title": "",
@@ -4602,16 +4611,16 @@ var ptx_lunr_docs = [
 {
   "id": "thm-sturm-liouville",
   "level": "2",
-  "url": "ch-diff-eqn-7.html#thm-sturm-liouville",
+  "url": "sect-sturm-liouville.html#thm-sturm-liouville",
   "type": "Theorem",
   "number": "8.5.3",
   "title": "",
   "body": "  Let and be any eigenvalue and eigenfunction of the Sturm-Liouville problem.     The eigenvalue is real.    There are an infinite number of eigenvalues that can be ordered and for each eigenvalue, there is only one eigenfunction.    Eigenfunctions and with satisfy .    Let and be piecewise continuous functions on . If     then the series:     converges to if is continuous at and to the value if is discontinuous at for each point in .      "
 },
 {
-  "id": "ch-diff-eqn-7-8",
+  "id": "sect-sturm-liouville-8",
   "level": "2",
-  "url": "ch-diff-eqn-7.html#ch-diff-eqn-7-8",
+  "url": "sect-sturm-liouville.html#sect-sturm-liouville-8",
   "type": "Example",
   "number": "8.5.4",
   "title": "",
@@ -4620,11 +4629,110 @@ var ptx_lunr_docs = [
 {
   "id": "ex-sturm-liouville-2",
   "level": "2",
-  "url": "ch-diff-eqn-7.html#ex-sturm-liouville-2",
+  "url": "sect-sturm-liouville.html#ex-sturm-liouville-2",
   "type": "Example",
   "number": "8.5.5",
   "title": "",
   "body": "  Find the solution of the Sturm-Liouville problem       Since this the same differential equation as in , we note that when , there was no solution and the same is true here. In the case of , the solution is     and the derivative is needed as well,     and then applying the boundary condition , implies that , however, is not determined and is a solution. Next, we turn to , with the solution,     and again, we need the derivative,     Applying the boundary condition, , results in     which implies that . Applying the boundary condition results in     and if , this results in the trivial solution, cannot be zero, however     when or . The eigenvalues and eigenfunctions of this problem then are and , and      "
+},
+{
+  "id": "sec-bessel-eqn",
+  "level": "1",
+  "url": "sec-bessel-eqn.html",
+  "type": "Section",
+  "number": "8.6",
+  "title": "Bessel’s equation and Bessel Functions",
+  "body": " Bessel's equation and Bessel Functions   Bessel's equation or for real constants is related to solving partial differential equations in circular or cylindrical regions and with certain boundary conditions satisfy Sturm-Liouville problems seen in . In this section, we will provide solutions to as well as a number of properties. In , we will use these solutions to solve partial differential equations.    Solutions of Bessel's Equation  We will use the Frobenius method from to solve this. This means that we assume that the solution of the form: and recall that the first two derivatives of this is   Substituting , and into results in The first two terms can be combined and the third terms re-indexed to give If the first two terms of the first and third series are written out then all series can be combined to give,   For power series, each coefficient must be zero. The first term is zero when which has two roots and and consider the negative root later. The coefficient of the second term of with is and this must be 0, so .  The coefficient of the general term of is set to zero to give the following recurrence relationship for when results in   Because , this relationship shows that all odd coefficients are also 0.  Writing out a few terms of the relationship above:   Since the Gamma Function has the property that , the terms and the even coefficients can be written as Lastly, the coefficient is often chosen such that and this results in the power series solution of Bessel's equation as   where is the gamma function, a generalized factorial. The function is called the Bessel Function of the first kind . We are often interested in solutions of in which is an integer. Recall that above, we found that arose from the Frobenius method. The solution also satisfies this with the same steps and thus is a second linearly independent solution to .    Propeties of  The following is a plot of (solid line) and (dashed line) on . Each of the Bessel functions have osciallatory behavior with decay and an infinite number of roots for . Also note that the roots of are between the roots of .   A plot of the bessel functions and on .      Using , it can be shown that     In addition, using the power series representation, one can show that the other solution of can be written:     However for , has a term which means that it is undefined at , which is generally why it not relevant as we will show later. There are a number of identities that are useful for understanding Bessel functions. Two of these are shown in the follow lemma.    Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.    In addition, there are another two identities for Bessel functions that are often called recurrence relationships.    Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .    These properties can now be used to find higher order Bessel functions, the derivatives of Bessel functions as well as the closed form of some integrals as shown in the next three examples.    Use the identities in and to find in terms of and .    Let in or     use again with or which can be written        The above technique can be used to find where is an integer in terms of and , showing the importance of the first two Bessel functions. The next example shows how to calculate the derivatives of the first two Bessel functions.    Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by          Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get         Roots of the Bessel functions  There is not an analytic way to find the roots of any of the bessel functions, so we will resort to numerical approximation. Many Computer Algebra Systems and scientific computing languages have bessel functions built in and roots can be found with techniques such as Newton's method or bisection.  In general, the th root of is between and , so one can use numerical techniques to find the roots in these intervals. However, also, there are often packages available to find these as well. In Julia, the package FunctionZeros can be used as following    σ₀ = map(i -> besselj_zero(0, i), 1:10)  σ₁ = map(i -> besselj_zero(1, i), 1:10)  σ₂ = map(i -> besselj_zero(2, i), 1:10)    The following table shows the first 10 roots of , and .   Bessel Function Roots    Row       1  2.4048  3.8317  5.1356    2  5.5200  7.0155  8.4172    3  8.6537  10.1735  11.6198    4  11.7915  13.3237  14.7965    5  14.9309  16.4706  17.9598    6  18.0711  19.6159  21.1177    7  21.2116  22.7601  24.2701    8  24.3525  25.9037  27.4206    9  27.4935  29.0468  30.5692    10  30.6346  32.1897  33.7165       Bessel Functions of the Second Kind  Above we mentioned that is a solution to , however, the function is generally used instead and is called the Bessel function of the second kind .    Show that satisfies .    We can write as the power series      "
+},
+{
+  "id": "sect-bessel-solution-9",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#sect-bessel-solution-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Bessel Function of the first kind "
+},
+{
+  "id": "fig-bessel",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#fig-bessel",
+  "type": "Figure",
+  "number": "8.6.1",
+  "title": "",
+  "body": " A plot of the bessel functions and on .     "
+},
+{
+  "id": "lem-bessel-identities",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#lem-bessel-identities",
+  "type": "Lemma",
+  "number": "8.6.2",
+  "title": "",
+  "body": "  Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.   "
+},
+{
+  "id": "lem-bessel-recurrence",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#lem-bessel-recurrence",
+  "type": "Lemma",
+  "number": "8.6.3",
+  "title": "",
+  "body": "  Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .   "
+},
+{
+  "id": "ex-bessel-J3",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#ex-bessel-J3",
+  "type": "Example",
+  "number": "8.6.4",
+  "title": "",
+  "body": "  Use the identities in and to find in terms of and .    Let in or     use again with or which can be written       "
+},
+{
+  "id": "sec-bessel-eqn-4-15",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#sec-bessel-eqn-4-15",
+  "type": "Example",
+  "number": "8.6.5",
+  "title": "",
+  "body": "  Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by       "
+},
+{
+  "id": "sec-bessel-eqn-4-16",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#sec-bessel-eqn-4-16",
+  "type": "Example",
+  "number": "8.6.6",
+  "title": "",
+  "body": "  Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get      "
+},
+{
+  "id": "table-bessel-roots",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#table-bessel-roots",
+  "type": "Table",
+  "number": "8.6.7",
+  "title": "Bessel Function Roots",
+  "body": " Bessel Function Roots    Row       1  2.4048  3.8317  5.1356    2  5.5200  7.0155  8.4172    3  8.6537  10.1735  11.6198    4  11.7915  13.3237  14.7965    5  14.9309  16.4706  17.9598    6  18.0711  19.6159  21.1177    7  21.2116  22.7601  24.2701    8  24.3525  25.9037  27.4206    9  27.4935  29.0468  30.5692    10  30.6346  32.1897  33.7165    "
+},
+{
+  "id": "subsec-bessel-second-2",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#subsec-bessel-second-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Bessel function of the second kind "
+},
+{
+  "id": "subsec-bessel-second-3",
+  "level": "2",
+  "url": "sec-bessel-eqn.html#subsec-bessel-second-3",
+  "type": "Example",
+  "number": "8.6.8",
+  "title": "",
+  "body": "  Show that satisfies .    We can write as the power series    "
 },
 {
   "id": "sect-1d-heat-eqn",
@@ -4645,11 +4753,74 @@ var ptx_lunr_docs = [
   "body": "  Find the solution to the heat equation given above if the initial condition is:       In this case, we need to find and :     So the solution to the PDE is:     To get a feeling for the solution, the following is a plot when , for .   A bar      The plot shows the temperature distribution for the initial case and subsequent times. The temperature evens out as time increases and in the limit the temperature would be 1 throughout, which is the average initial temperature.   "
 },
 {
+  "id": "ch-pde-4",
+  "level": "1",
+  "url": "ch-pde-4.html",
+  "type": "Section",
+  "number": "9.2",
+  "title": "Solving the 1D Wave Equation",
+  "body": " Solving the 1D Wave Equation   We derived the 1D wave equation in section . We will now solve this as an initial value problem. Consider with boundary conditions   The technique of separation of variables is the standard way to solve this and other linear PDEs. First start by assuming that the solution can be written as a product of functions solely of and or . Then substituting this into the PDE: or   Now since (and therefore ) depends only on and (and also ) only depends on , each side of the PDE must be equal to a constant (independent of either or ). Let's say it is or   This results in two equations: The boundary conditions are for all , so substituting we get for all or . The ODE for is that in with these boundary conditions. This is a Sturm-Liouville problem that was solved in example . We know that the only form of the solution is when and from the problem that we solved above we know that   and the solution for are the eigenfunctions of the problem: for .  Next, we need to solve and using the eigenvalues in    The solution to this is found by assuming and getting the characteristic equation and thus and the solution to this is   We know then that the following is a solution to the PDE:   The principle of superposition states that a sum of these solutions is also a solution to the original PDE and in fact the most general solution is   Lastly, we use the initial conditions and for to solve for and above. We will look at the second condition first: and evaluated at : and since , then . The first condition: is the Fourier sine series for . Thus   We summarize the solution to the wave equation.  The solution to the wave equation with boundary conditions and initial conditions is where   The following two examples show specific solutions for given functions .    Find the specific solution to the wave equation if     Specifically, we only need to find the coefficients above:   Thus the full solution to the PDE is:       Find the solution to the wave equation above if the initial shape of the string is   As before, we only need to find the coefficients of given by   And thus the full solution to the wave equation is:       Solution to the Wave Equation with a free boundary condition  We now look at the wave equation with what is termed a free boundary condition. Consider with boundary conditions and initial conditions and the difference between this and the initial value problem at the beginning of the section is the boundary condition at . Above, the function was forced to be 0 there and in this case, the derivative is 0 at .  Using separation of variables by assuming that , and substituting into the wave equation and dividing through by , we again get the equation where again since each term only depends on or , it must be a constant, which we say is . The differential equation in is where the boundary conditions came from . The solution to this Sturm-Liouville problem is similar to those in Examples and , however the details of this are not shown. The eigenfunctions and eigenvalues of this are   Next, we seek the solution to which again, similar to solution of the wave equation with fixed boundary conditions, is which has a solution for each value of or   Using the principle of superposition, the sum of solutions is also a solution, so   To find the particular solution, we need to find the constants and which can be found using the initial conditions of the problem. Similar to the problem above with the fixed boundary conditions, we will use the initial condition in first, which requires that we know the derivative. And   Applying the initial condition in , which implies that for all . Next, if we substitute this into ) and apply the boundary condition in ( , and the coefficients can be found using Theorem , to be   To summarize, the solution to the 1D wave equation with boundary conditions and initial conditions is where     Find the solution to the 1D wave equation with free boundary condition at if     In this case, we only need to find the constants as defined in ,   So the full solution to this wave equation is      "
+},
+{
+  "id": "ch-pde-4-2-2",
+  "level": "2",
+  "url": "ch-pde-4.html#ch-pde-4-2-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "separation of variables "
+},
+{
+  "id": "ch-pde-4-2-9",
+  "level": "2",
+  "url": "ch-pde-4.html#ch-pde-4-2-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "principle of superposition "
+},
+{
+  "id": "ch-pde-4-2-14",
+  "level": "2",
+  "url": "ch-pde-4.html#ch-pde-4-2-14",
+  "type": "Example",
+  "number": "9.2.1",
+  "title": "",
+  "body": "  Find the specific solution to the wave equation if     Specifically, we only need to find the coefficients above:   Thus the full solution to the PDE is:    "
+},
+{
+  "id": "ch-pde-4-2-15",
+  "level": "2",
+  "url": "ch-pde-4.html#ch-pde-4-2-15",
+  "type": "Example",
+  "number": "9.2.2",
+  "title": "",
+  "body": "  Find the solution to the wave equation above if the initial shape of the string is   As before, we only need to find the coefficients of given by   And thus the full solution to the wave equation is:    "
+},
+{
+  "id": "ch-pde-4-3-9",
+  "level": "2",
+  "url": "ch-pde-4.html#ch-pde-4-3-9",
+  "type": "Example",
+  "number": "9.2.3",
+  "title": "",
+  "body": "  Find the solution to the 1D wave equation with free boundary condition at if     In this case, we only need to find the constants as defined in ,   So the full solution to this wave equation is    "
+},
+{
+  "id": "sect-nonhomogeneous",
+  "level": "1",
+  "url": "sect-nonhomogeneous.html",
+  "type": "Section",
+  "number": "9.3",
+  "title": "Nonhomogeneous PDEs and Boundary Conditions",
+  "body": " Nonhomogeneous PDEs and Boundary Conditions   In the previous sections, we have focused on homogeneous PDEs and boundary conditions. However, many real-world problems involve nonhomogeneous terms, which can represent sources, sinks, or external forces. In this section, we will explore how to handle nonhomogeneous PDEs and boundary conditions using various techniques, including the method of undetermined coefficients and variation of parameters. We will also discuss how to apply these methods to specific examples, such as the nonhomogeneous heat equation and wave equation.    Nonhomogeneous PDEs      Nonhomogeneous Boundary Conditions  Nonhomogeneous boundary conditions can arise in various physical contexts, such as when the temperature at the boundary of a domain is not constant or when there is a flux across the boundary. To solve PDEs with nonhomogeneous boundary conditions, we can often use a technique called \"lifting,\" which involves finding a function that satisfies the nonhomogeneous boundary conditions and then solving a related homogeneous problem for the remaining part of the solution. We will illustrate this method with examples and discuss how to implement it effectively.  Consider the following   "
+},
+{
   "id": "sect-2d-heat-eqn",
   "level": "1",
   "url": "sect-2d-heat-eqn.html",
   "type": "Section",
-  "number": "9.2",
+  "number": "9.4",
   "title": "Heat Equation in two spatial dimensions",
   "body": " Heat Equation in two spatial dimensions  The Heat equation in two spatial dimensions can be written:     In this case, let's say that we have the following boundary conditions:     which means that along the edge , the temperature is 0 and the other three edges are insulated. In addition, assume that the initial condition is     In this section, we will examine how to solve this problem using the separation of variables. Since there are 3 variables, let's assume that the solution can be written:     and substituting this into the heat equation, we get:     dividing through by      Since is only a function of , is only a function of and is only a function of , the only option for allowing the above to be true is to assume that     The boundary condition can also be written in terms of and as . Thus, in this case, we have two Sturm-Liouville problems,     The solution to the first is     and     The solution to the second is   and     Next, then we need to solve     which has the solution     Then put the solutions together:     and the solution that satisfies the boundary conditions is:     Finally, we apply the initial condition.     which results in the generalized Fourier Series:       Find the full solution if and       We only need to find      So the solution is     where and .    "
 },
@@ -4658,88 +4829,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-2d-heat-eqn.html#sect-2d-heat-eqn-37",
   "type": "Example",
-  "number": "9.2.1",
+  "number": "9.4.1",
   "title": "",
   "body": "  Find the full solution if and       We only need to find      So the solution is     where and .   "
-},
-{
-  "id": "sec-bessel-eqn",
-  "level": "1",
-  "url": "sec-bessel-eqn.html",
-  "type": "Section",
-  "number": "9.3",
-  "title": "Bessel’s equation and Bessel Functions",
-  "body": " Bessel's equation and Bessel Functions   Bessel's equation is     A solution can be obtained by a power series solution and represented as     where is the gamma function, a generalized factorial. The function is called the Bessel Function of the first kind . We are often interested in solutions of in which is an integer. If this is the case, then and are two linearly independent solutions. The power series representation in this case is       Propeties of  The following is a plot of (solid line) and (dashed line) on . Each of the Bessel functions have osciallatory behavior with decay and an infinite number of roots for . Also note that the roots of are between the roots of .   A plot of the bessel functions and on .      Using , it can be shown that     In addition, using the power series representation, one can show that the other solution of can be written:     However for , has a term which means that it is undefined at , which is generally why it not relevant as we will show later. There are a number of identities that are useful for understanding Bessel functions. Two of these are shown in the follow lemma.    Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.    In addition, there are another two identities for Bessel functions that are often called recurrence relationships.    Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .    These properties can now be used to find higher order Bessel functions, the derivatives of Bessel functions as well as the closed form of some integrals as shown in the next three examples.    Use the identities in and to find in terms of and .    Let in or     use again with or which can be written        The above technique can be used to find where is an integer in terms of and , showing the importance of the first two Bessel functions. The next example shows how to calculate the derivatives of the first two Bessel functions.    Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by          Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get         Roots of the Bessel functions  There is not an analytic way to find the roots of any of the bessel functions, so we will resort to numerical approximation. Many Computer Algebra Systems and scientific computing languages have bessel functions built in and roots can be found with techniques such as Newton's method or bisection.  In general, the th root of is between and , so the following Maple code will find the first 50.     The first ten values are: .   "
-},
-{
-  "id": "sec-bessel-eqn-2-5",
-  "level": "2",
-  "url": "sec-bessel-eqn.html#sec-bessel-eqn-2-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Bessel Function of the first kind "
-},
-{
-  "id": "fig-bessel",
-  "level": "2",
-  "url": "sec-bessel-eqn.html#fig-bessel",
-  "type": "Figure",
-  "number": "9.3.1",
-  "title": "",
-  "body": " A plot of the bessel functions and on .     "
-},
-{
-  "id": "lem-bessel-identities",
-  "level": "2",
-  "url": "sec-bessel-eqn.html#lem-bessel-identities",
-  "type": "Lemma",
-  "number": "9.3.2",
-  "title": "",
-  "body": "  Consider , where is an integer. Then     for all .    First we will prove . Using , we can write     and differentiating,     The proof for is very similar and is not shown.   "
-},
-{
-  "id": "lem-bessel-recurrence",
-  "level": "2",
-  "url": "sec-bessel-eqn.html#lem-bessel-recurrence",
-  "type": "Lemma",
-  "number": "9.3.3",
-  "title": "",
-  "body": "  Let for an integer and , then       If we use the product rule to expand and , we get     and multiply the first equation by and the second by , one gets     Adding the two above equations and dividing through by results in whereas subtracting the bottom equation from the top results in .   "
-},
-{
-  "id": "ex-bessel-J3",
-  "level": "2",
-  "url": "sec-bessel-eqn.html#ex-bessel-J3",
-  "type": "Example",
-  "number": "9.3.4",
-  "title": "",
-  "body": "  Use the identities in and to find in terms of and .    Let in or     use again with or which can be written       "
-},
-{
-  "id": "sec-bessel-eqn-3-15",
-  "level": "2",
-  "url": "sec-bessel-eqn.html#sec-bessel-eqn-3-15",
-  "type": "Example",
-  "number": "9.3.5",
-  "title": "",
-  "body": "  Use the identities in lemmas and to find and in terms of and .    First, differentiate with to get     using with and ,     Using with      and finally dividing through by       "
-},
-{
-  "id": "sec-bessel-eqn-3-16",
-  "level": "2",
-  "url": "sec-bessel-eqn.html#sec-bessel-eqn-3-16",
-  "type": "Example",
-  "number": "9.3.6",
-  "title": "",
-  "body": "  Evaluate .    Integrating this by parts with and results in     where is used from . Next, if we again apply with , to the last integral, we get      "
 },
 {
   "id": "sect-heat-circular",
   "level": "1",
   "url": "sect-heat-circular.html",
   "type": "Section",
-  "number": "9.4",
+  "number": "9.5",
   "title": "The Heat Equation in a Circular Region",
   "body": " The Heat Equation in a Circular Region   Next, we examine how to solve the heat equation in a circular region: as shown in the following figure.   A circular region where a point is written in polar coordinates.      Instead of solving the equation in cartesian coordinates, we look to write the heat equation in \\emph{polar coordinates}. A point in polar coordinates is labelled where     or written as and in terms of and ,     To convert the heat equation to polar coordinates, we need to write the right hand side of ( ) or     in terms of and . This is basically an exercise in using the chain rule with multiple independent variables. We start by finding the first partial derivatives of with respect to and .     and differentiating again, we get:     and similarly,     To complete this, we need to find      as well as and .     So now we write      Thus the heat equation in polar coordinates is     Before solving this equation in general, we will examine a simpler equation that is related.    Rotationally Symmetric Solutions  The general case is a bit hard to deal with, so we first start with a rotationally symmetric solution , which means that there is no dependence. Thus the term and the heat equation becomes:     To solve this using separation of variables, let and substitution into the PDE:     As before, the only way that the left hand side can equal the right hand side is if each side only depends on a constant or     The boundary conditions become and is finite, so we get the Sturm-Liouville problem:     This is a difficult problem to solve in that letting does not work. There are techniques to solve this, but let's use Maple to get:     where and are bessel functions.    Solving the Sturm-Liouville Problem  If we apply the first ``boundary'' condition that must be finite, we take that since is not finite at . The next boundary condition is or     and let be the th root of . so     are the eigenvalues of the problem with eigenfunctions:     Next, the solution to     is     The full solution is     Lastly, using the initial condition, we get:     which is a Fourier-type series with       Find the solution using the initial condition and let .    Again, we need only to find the Fourier Coefficients. The first three are:     So the solution is         General Circular Heat Equation  To solve this (as we have seen before) we will use separation of variables. Let :     Assume that     and then the right hand side becomes:     mulitply through by and rearrange       Sturm-Liouville Problems from the heat equation  The first Sturm-Liouville problem is:     and as well as . If , then . No solution of this exists that satsifies the boundary conditions. If , then . To satisfy the boundary conditions . If , then .     which is satisfied when , for . The derivative of is     The second boundary condition:     which is satisfied. Thus     each satisfy the boundary condition. The next differential equation is     The solution of this is     and the boundary conditions are is finite and . The condition at sets and the other condition:     results in     where is the th root of . Thus the eigenvalue is     and the eigenfunction is     The last DE is     of which the solution is:        and using the principle of superposition the full solution is:     Finding the coefficients. In this case we use the initial condition that     and substituting into the solution:     The coefficients are:       Solve the equation above when . Use and .    Again, we just need to compute the coefficients above. Use can either use Maple or make a symmetry argument to see that     So the solution is        "
 },
@@ -4748,7 +4847,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-heat-circular.html#sect-heat-circular-2-2",
   "type": "Figure",
-  "number": "9.4.1",
+  "number": "9.5.1",
   "title": "",
   "body": " A circular region where a point is written in polar coordinates.     "
 },
@@ -4757,7 +4856,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-heat-circular.html#sect-heat-circular-4-18",
   "type": "Example",
-  "number": "9.4.2",
+  "number": "9.5.2",
   "title": "",
   "body": "  Find the solution using the initial condition and let .    Again, we need only to find the Fourier Coefficients. The first three are:     So the solution is      "
 },
@@ -4766,7 +4865,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sect-heat-circular.html#sect-heat-circular-6-37",
   "type": "Example",
-  "number": "9.4.3",
+  "number": "9.5.3",
   "title": "",
   "body": "  Solve the equation above when . Use and .    Again, we just need to compute the coefficients above. Use can either use Maple or make a symmetry argument to see that     So the solution is      "
 },

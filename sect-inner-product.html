@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.4';
+eBookConfig.runestone_version = '7.13.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -492,37 +492,53 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#sect-series-solutions-5" class="internal"><span class="codenumber">8.4.3</span> <span class="title">Series Solutions and Orthogonal Polynomials</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#subsec-singular-diff-eq" class="internal"><span class="codenumber">8.4.4</span> <span class="title">Differential Equations with Singular Points</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#subsec-frobenius-method" class="internal"><span class="codenumber">8.4.5</span> <span class="title">Frobenius Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#subsec-bessel-functions" class="internal"><span class="codenumber">8.4.6</span> <span class="title">Bessel Functions</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diff-eqn-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-sturm-liouville.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sect-bessel-solution" class="internal"><span class="codenumber">8.6.1</span> <span class="title">Solutions of Bessel’s Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">8.6.2</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-5" class="internal"><span class="codenumber">8.6.3</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#subsec-bessel-second" class="internal"><span class="codenumber">8.6.4</span> <span class="title">Bessel Functions of the Second Kind</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">9</span> <span class="title">Partial Differential Equations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="ch-pde-4.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Solving the 1D Wave Equation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-4.html#ch-pde-4-3" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Solution to the Wave Equation with a free boundary condition</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<div class="toc-title-box"><a href="sect-nonhomogeneous.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Nonhomogeneous PDEs and Boundary Conditions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">9.4.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">9.4.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-nonhomogeneous.html#subsec-nonhomogeneous-pdes" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Nonhomogeneous PDEs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-nonhomogeneous.html#subsec-nonhomogeneous-boundaries" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Nonhomogeneous Boundary Conditions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">9.5</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">9.5.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">9.5.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">9.5.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-inner-product"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sect-inner-product">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inner Product Spaces</span>
 </h2>
 <article class="objectives goal-like" id="sect-inner-product-2"><h3 class="heading"><span class="type">Objectives</span></h3>
@@ -553,7 +569,10 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Objective"><a href="#sect-inner-product-2-1-5" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" data-description="Objectives 4.4"><a href="#sect-inner-product-2" title="Copy heading and permalink for Objectives 4.4" aria-label="Copy heading and permalink for Objectives 4.4">🔗</a></div></article><section class="introduction" id="sect-inner-product-3"><div class="para" id="sect-inner-product-3-1">In <a href="sect-linear-geometry.html#sect-length-angles" class="internal" title="Subsection 1.6.7: Length and Angle Measures">Subsection 1.6.7</a>, we examined the dot product between two vectors in <span class="process-math">\(\mathbb{R}^n\)</span> Recall that this dot product between two vectors <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Objectives 4.4"><a href="#sect-inner-product-2" title="Copy heading and permalink for Objectives 4.4" aria-label="Copy heading and permalink for Objectives 4.4">🔗</a></div>
+</article>
+<section class="introduction" id="sect-inner-product-3">
+<div class="para" id="sect-inner-product-3-1">In <a href="sect-linear-geometry.html#sect-length-angles" class="internal" title="Subsection 1.6.7: Length and Angle Measures">Subsection 1.6.7</a>, we examined the dot product between two vectors in <span class="process-math">\(\mathbb{R}^n\)</span> Recall that this dot product between two vectors <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-3-2">
 <div class="displaymath process-math" id="eq-dot-product-rn">
@@ -571,7 +590,8 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="sect-inner-product-3-4-1-1">The vector space <span class="process-math">\(V\)</span> is called an <dfn class="terminology">inner product space</dfn> if for every pair of vectors <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> in <span class="process-math">\(V\)</span> there is a unique number <span class="process-math">\(\langle
 \boldsymbol{u}, \boldsymbol{v} \rangle\text{,}\)</span> called the <dfn class="terminology">inner product</dfn> of <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> such that for all <span class="process-math">\(\boldsymbol{u}, \boldsymbol{v}\)</span> and <span class="process-math">\(\boldsymbol{w}\)</span> in <span class="process-math">\(V\)</span> and <span class="process-math">\(a,
 b \in \mathbb{R}\)</span> then the following properties are satisfied:<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-inner-product-3-4-1-2">
+</div> 
+<div class="para logical" id="sect-inner-product-3-4-1-2">
 <ol class="decimal" id="sect-inner-product-3-4-1-2-1">
 <li id="sect-inner-product-3-4-1-2-1-1">
 <div class="para" id="sect-inner-product-3-4-1-2-1-1-1">
@@ -596,11 +616,14 @@ b \in \mathbb{R}\)</span> then the following properties are satisfied:<div class
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.4.1"><a href="#sect-inner-product-3-4" title="Copy heading and permalink for Definition 4.4.1" aria-label="Copy heading and permalink for Definition 4.4.1">🔗</a></div></article><article class="example example-like" id="sect-inner-product-3-5"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 4.4.1"><a href="#sect-inner-product-3-4" title="Copy heading and permalink for Definition 4.4.1" aria-label="Copy heading and permalink for Definition 4.4.1">🔗</a></div>
+</article>
+<article class="example example-like" id="sect-inner-product-3-5"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sect-inner-product-3-5-1-1">Show that <span class="process-math">\(\mathbb{R}^n\)</span> is an inner product space with<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-inner-product-3-5-1-2">
+</div> 
+<div class="para logical" id="sect-inner-product-3-5-1-2">
 <div class="displaymath process-math" id="sect-inner-product-3-5-1-2-1">
 \begin{align*}
 \boldsymbol{u} \amp= \begin{bmatrix}
@@ -612,11 +635,15 @@ v_1 \\ v_2 \\ \vdots \\ v_n
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-5-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-inner-product-3-5-1-3">and<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-5-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-inner-product-3-5-1-4">
+</div> 
+<div class="para" id="sect-inner-product-3-5-1-3">and<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-5-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sect-inner-product-3-5-1-4">
 <span class="process-math">\(\langle \boldsymbol{u}, \boldsymbol{v} \rangle = \boldsymbol{u}^{\intercal}\boldsymbol{v}\text{,}\)</span> which is an alternative  way of writing <a href="sect-inner-product.html#eq-dot-product-rn" class="xref" data-knowl="./knowl/xref/eq-dot-product-rn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.1">(4.4.1)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-5-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-inner-product-3-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-inner-product-3-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-inner-product-3-5-2-1">First, the set <span class="process-math">\(\mathbb{R}^n\)</span> is a vector space. Next, we need to show that the three properties are satisfied for <span class="process-math">\(\langle \boldsymbol{u}, \boldsymbol{v} \rangle = \boldsymbol{u}^{\intercal}
 \boldsymbol{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -683,23 +710,30 @@ b\boldsymbol{v})^{\intercal}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.2.1"><a href="#sect-inner-product-3-5-2" title="Copy heading and permalink for Solution 4.4.2.1" aria-label="Copy heading and permalink for Solution 4.4.2.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.2"><a href="#sect-inner-product-3-5" title="Copy heading and permalink for Example 4.4.2" aria-label="Copy heading and permalink for Example 4.4.2">🔗</a></div></article><div class="para" id="sect-inner-product-3-6">The next example shows that the notion of an inner product is not limited to the dot product of vectors in <span class="process-math">\(\mathbb{R}^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.2"><a href="#sect-inner-product-3-5" title="Copy heading and permalink for Example 4.4.2" aria-label="Copy heading and permalink for Example 4.4.2">🔗</a></div>
+</article>
+<div class="para" id="sect-inner-product-3-6">The next example shows that the notion of an inner product is not limited to the dot product of vectors in <span class="process-math">\(\mathbb{R}^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sect-inner-product-3-7"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sect-inner-product-3-7-1-1">Show that <span class="process-math">\(\mathcal{P}_n\)</span> on the interval <span class="process-math">\([0,1]\)</span> is a inner product space with<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-inner-product-3-7-1-2">
+</div> 
+<div class="para logical" id="sect-inner-product-3-7-1-2">
 <div class="displaymath process-math" id="sect-inner-product-3-7-1-2-1">
 \begin{equation*}
 \langle p,q \rangle = \int_0^1 p q \, dx
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-7-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-inner-product-3-7-1-3">for any <span class="process-math">\(p, q \in \mathcal{P}_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-7-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sect-inner-product-3-7-1-3">for any <span class="process-math">\(p, q \in \mathcal{P}_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-7-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-inner-product-3-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-inner-product-3-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-inner-product-3-7-2-1">We have seen above that <span class="process-math">\(\mathcal{P}_n\)</span> is a vector space and limiting this to the interval <span class="process-math">\([0,1]\)</span> does not change that fact. We need to show that the inner product defined as an integral satisfies the three properties of inner products.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-3-7-2-2">
@@ -749,8 +783,12 @@ b\boldsymbol{v})^{\intercal}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-3-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.3.1"><a href="#sect-inner-product-3-7-2" title="Copy heading and permalink for Solution 4.4.3.1" aria-label="Copy heading and permalink for Solution 4.4.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.3"><a href="#sect-inner-product-3-7" title="Copy heading and permalink for Example 4.4.3" aria-label="Copy heading and permalink for Example 4.4.3">🔗</a></div></article></section><section class="subsection" id="sect-inner-product-4"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.3"><a href="#sect-inner-product-3-7" title="Copy heading and permalink for Example 4.4.3" aria-label="Copy heading and permalink for Example 4.4.3">🔗</a></div>
+</article></section>
+<section class="subsection" id="sect-inner-product-4">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Norms and distance</span>
 </h3>
 <div class="para" id="sect-inner-product-4-2">The notion of the length of a vector in <span class="process-math">\(\mathbb{R}^n\)</span> was examined in <a href="sect-linear-geometry.html#sect-length-angles" class="internal" title="Subsection 1.6.7: Length and Angle Measures">Subsection 1.6.7</a>. We extend this idea to any vector in an inner product space with the following.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -759,7 +797,8 @@ b\boldsymbol{v})^{\intercal}
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-inner-product-4-3-1-1">Let <span class="process-math">\(\boldsymbol{u}\)</span> be an element of an inner product space. The norm of the vector <span class="process-math">\(\boldsymbol{u}\)</span> is given by<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-inner-product-4-3-1-2">
+</div> 
+<div class="para logical" id="sect-inner-product-4-3-1-2">
 <div class="displaymath process-math" id="sect-inner-product-4-3-1-2-1">
 \begin{equation*}
 || \boldsymbol{u} || = \sqrt{\langle \boldsymbol{u},\boldsymbol{u} \rangle}
@@ -767,13 +806,16 @@ b\boldsymbol{v})^{\intercal}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.4.4"><a href="#sect-inner-product-4-3" title="Copy heading and permalink for Definition 4.4.4" aria-label="Copy heading and permalink for Definition 4.4.4">🔗</a></div></article><div class="para" id="sect-inner-product-4-4">Note: if <span class="process-math">\(\boldsymbol{u} \in \mathbb{R}^n\)</span> then the vector norm is the length of the vector.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 4.4.4"><a href="#sect-inner-product-4-3" title="Copy heading and permalink for Definition 4.4.4" aria-label="Copy heading and permalink for Definition 4.4.4">🔗</a></div>
+</article>
+<div class="para" id="sect-inner-product-4-4">Note: if <span class="process-math">\(\boldsymbol{u} \in \mathbb{R}^n\)</span> then the vector norm is the length of the vector.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="sect-inner-product-4-5"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-inner-product-4-5-1-1">The distance between vectors <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> denoted <span class="process-math">\(d(\boldsymbol{u},\boldsymbol{v})\)</span> and is defined as<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-inner-product-4-5-1-2">
+</div> 
+<div class="para logical" id="sect-inner-product-4-5-1-2">
 <div class="displaymath process-math" id="sect-inner-product-4-5-1-2-1">
 \begin{equation*}
 d(\boldsymbol{u},\boldsymbol{v})=||\boldsymbol{u}-\boldsymbol{v}||.
@@ -781,14 +823,20 @@ d(\boldsymbol{u},\boldsymbol{v})=||\boldsymbol{u}-\boldsymbol{v}||.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-5-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.4.5"><a href="#sect-inner-product-4-5" title="Copy heading and permalink for Definition 4.4.5" aria-label="Copy heading and permalink for Definition 4.4.5">🔗</a></div></article><div class="para" id="sect-inner-product-4-6">Note: if <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> are in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> then the distance function is the standard distance function where the vectors are considered to be points.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 4.4.5"><a href="#sect-inner-product-4-5" title="Copy heading and permalink for Definition 4.4.5" aria-label="Copy heading and permalink for Definition 4.4.5">🔗</a></div>
+</article>
+<div class="para" id="sect-inner-product-4-6">Note: if <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> are in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> then the distance function is the standard distance function where the vectors are considered to be points.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-distance-zero"><h4 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="lem-distance-zero-1-1">The distance <span class="process-math">\(||\boldsymbol{u}-\boldsymbol{v}||=0\)</span> if and only if <span class="process-math">\(\boldsymbol{u}=\boldsymbol{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-distance-zero-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 4.4.6"><a href="#lem-distance-zero" title="Copy heading and permalink for Lemma 4.4.6" aria-label="Copy heading and permalink for Lemma 4.4.6">🔗</a></div></article><details id="lem-distance-zero-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-distance-zero-2-1">
+<div class="autopermalink" data-description="Lemma 4.4.6"><a href="#lem-distance-zero" title="Copy heading and permalink for Lemma 4.4.6" aria-label="Copy heading and permalink for Lemma 4.4.6">🔗</a></div>
+</article>
+<details id="lem-distance-zero-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="lem-distance-zero-2-1">
 <span class="process-math">\(\Longrightarrow\)</span> Let <span class="process-math">\(||\boldsymbol{u}-\boldsymbol{v}||=0\text{,}\)</span> then <span class="process-math">\(\langle
 \boldsymbol{u}-\boldsymbol{v},\boldsymbol{u}-\boldsymbol{v} \rangle=0\)</span> By definition, this is only zero if <span class="process-math">\(\boldsymbol{u}-\boldsymbol{v}=\boldsymbol{0}\text{,}\)</span> therefore <span class="process-math">\(\boldsymbol{u}=\boldsymbol{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-distance-zero-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -796,11 +844,16 @@ d(\boldsymbol{u},\boldsymbol{v})=||\boldsymbol{u}-\boldsymbol{v}||.
 <span class="process-math">\(\Longleftarrow\)</span> If <span class="process-math">\(\boldsymbol{u}=\boldsymbol{v}\text{,}\)</span> then <span class="process-math">\(||\boldsymbol{u}-\boldsymbol{v}|| =
 ||\boldsymbol{0}||=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-distance-zero-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.4.6.1"><a href="#lem-distance-zero-2" title="Copy heading and permalink for Proof 4.4.6.1" aria-label="Copy heading and permalink for Proof 4.4.6.1">🔗</a></div></article></details><div class="para" id="sect-inner-product-4-8">Except for the example of the inner product as an integral, all of the other discussion in this section has been about vectors in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> and this is mainly because it is the canonical vector and inner product space and some of the interpretations of length of vectors don’t make a lot of sense when talking about polynomials or other functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 4.4.6.1"><a href="#lem-distance-zero-2" title="Copy heading and permalink for Proof 4.4.6.1" aria-label="Copy heading and permalink for Proof 4.4.6.1">🔗</a></div>
+</article></details>
+<div class="para" id="sect-inner-product-4-8">Except for the example of the inner product as an integral, all of the other discussion in this section has been about vectors in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> and this is mainly because it is the canonical vector and inner product space and some of the interpretations of length of vectors don’t make a lot of sense when talking about polynomials or other functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-inner-product-4-9">However, distance does have some interpretation with functions. <a href="sect-inner-product.html#lem-distance-zero" class="xref" data-knowl="./knowl/xref/lem-distance-zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.4.6">Lemma 4.4.6</a> can be used to show when two functions are equal (at least on the interval of the integration), but can also be useful to determine when they are close to equal (when the integrals are close to one another). This will be useful in future chapters.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-4-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 4.4.1: Vector Norms and distance"><a href="#sect-inner-product-4" title="Copy heading and permalink for Subsection 4.4.1: Vector Norms and distance" aria-label="Copy heading and permalink for Subsection 4.4.1: Vector Norms and distance">🔗</a></div></section><section class="subsection" id="sect-inner-product-5"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsection 4.4.1: Vector Norms and distance"><a href="#sect-inner-product-4" title="Copy heading and permalink for Subsection 4.4.1: Vector Norms and distance" aria-label="Copy heading and permalink for Subsection 4.4.1: Vector Norms and distance">🔗</a></div>
+</section>
+<section class="subsection" id="sect-inner-product-5">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Angles between vectors</span>
 </h3>
 <div class="para" id="sect-inner-product-5-2">If <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> are vectors in <span class="process-math">\(\mathbb{R}^2\)</span> then we saw in <a href="sect-linear-geometry.html#sect-length-angles" class="internal" title="Subsection 1.6.7: Length and Angle Measures">Subsection 1.6.7</a> that<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -816,35 +869,45 @@ d(\boldsymbol{u},\boldsymbol{v})=||\boldsymbol{u}-\boldsymbol{v}||.
 </div>
 <div class="para" id="sect-inner-product-5-4">This notion generalizes to any vectors in an inner product space, <span class="process-math">\(V\text{.}\)</span> Most helpful, two vectors meet at a right angle if <span class="process-math">\(\langle \boldsymbol{u},\boldsymbol{v}\rangle=0\)</span> and it is said that if this holds then <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> are orthogonal. The next section talks about how an entire set of vectors can be orthogonal .<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 4.4.2: Angles between vectors"><a href="#sect-inner-product-5" title="Copy heading and permalink for Subsection 4.4.2: Angles between vectors" aria-label="Copy heading and permalink for Subsection 4.4.2: Angles between vectors">🔗</a></div></section><section class="subsection" id="sect-inner-product-6"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsection 4.4.2: Angles between vectors"><a href="#sect-inner-product-5" title="Copy heading and permalink for Subsection 4.4.2: Angles between vectors" aria-label="Copy heading and permalink for Subsection 4.4.2: Angles between vectors">🔗</a></div>
+</section>
+<section class="subsection" id="sect-inner-product-6">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthonormal sets of vectors</span>
 </h3>
 <article class="definition definition-like" id="def-finite-set-orthogonal"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A finite set of orthogonal/orthonormal vectors.</span>
 </h4>
 <div class="para" id="def-finite-set-orthogonal-2-1">Let <span class="process-math">\(\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\}\)</span> each be elements of an inner product space, <span class="process-math">\(V\text{.}\)</span> The set is called an <dfn class="terminology">orthonormal set</dfn> if<div class="autopermalink" data-description="Paragraph"><a href="#def-finite-set-orthogonal-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="def-finite-set-orthogonal-2-2">
+</div> 
+<div class="para logical" id="def-finite-set-orthogonal-2-2">
 <div class="displaymath process-math" id="def-finite-set-orthogonal-2-2-1">
 \begin{equation*}
 \langle \boldsymbol{v}_i, \boldsymbol{v}_j \rangle = 0 \qquad \text{if $i \neq j$}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-finite-set-orthogonal-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="def-finite-set-orthogonal-2-3">and<div class="autopermalink" data-description="Paragraph"><a href="#def-finite-set-orthogonal-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="def-finite-set-orthogonal-2-4">
+</div> 
+<div class="para" id="def-finite-set-orthogonal-2-3">and<div class="autopermalink" data-description="Paragraph"><a href="#def-finite-set-orthogonal-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="def-finite-set-orthogonal-2-4">
 <div class="displaymath process-math" id="def-finite-set-orthogonal-2-4-1">
 \begin{equation*}
 ||\boldsymbol{v}_i|| = \sqrt{\langle \boldsymbol{v}_i, \boldsymbol{v}_i \rangle} = 1
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-finite-set-orthogonal-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="def-finite-set-orthogonal-2-5">If only the first condition holds, the set is called <dfn class="terminology">orthogonal</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-finite-set-orthogonal-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="def-finite-set-orthogonal-2-5">If only the first condition holds, the set is called <dfn class="terminology">orthogonal</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-finite-set-orthogonal-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.4.7: A finite set of orthogonal/orthonormal vectors"><a href="#def-finite-set-orthogonal" title="Copy heading and permalink for Definition 4.4.7: A finite set of orthogonal/orthonormal vectors" aria-label="Copy heading and permalink for Definition 4.4.7: A finite set of orthogonal/orthonormal vectors">🔗</a></div></article><article class="example example-like" id="sect-inner-product-6-3"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 4.4.7: A finite set of orthogonal/orthonormal vectors"><a href="#def-finite-set-orthogonal" title="Copy heading and permalink for Definition 4.4.7: A finite set of orthogonal/orthonormal vectors" aria-label="Copy heading and permalink for Definition 4.4.7: A finite set of orthogonal/orthonormal vectors">🔗</a></div>
+</article>
+<article class="example example-like" id="sect-inner-product-6-3"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-inner-product-6-3-1-1">Show that<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-inner-product-6-3-1-2">
+</div> 
+<div class="para logical" id="sect-inner-product-6-3-1-2">
 <div class="displaymath process-math" id="sect-inner-product-6-3-1-2-1">
 \begin{align*}
 \boldsymbol{v}_1 \amp=
@@ -862,9 +925,12 @@ d(\boldsymbol{u},\boldsymbol{v})=||\boldsymbol{u}-\boldsymbol{v}||.
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-inner-product-6-3-1-3">is an orthonormal set where each vector is an element of <span class="process-math">\(\mathbb{R}^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sect-inner-product-6-3-1-3">is an orthonormal set where each vector is an element of <span class="process-math">\(\mathbb{R}^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-inner-product-6-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-inner-product-6-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-inner-product-6-3-2-1">We need to show that the three inner products between the vectors are zero<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-6-3-2-2">
@@ -897,21 +963,28 @@ d(\boldsymbol{u},\boldsymbol{v})=||\boldsymbol{u}-\boldsymbol{v}||.
 <div class="para" id="sect-inner-product-6-3-2-5">Note: this set of vectors is also a basis for <span class="process-math">\(\mathbb{R}^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-3-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.8.1"><a href="#sect-inner-product-6-3-2" title="Copy heading and permalink for Solution 4.4.8.1" aria-label="Copy heading and permalink for Solution 4.4.8.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.8"><a href="#sect-inner-product-6-3" title="Copy heading and permalink for Example 4.4.8" aria-label="Copy heading and permalink for Example 4.4.8">🔗</a></div></article><article class="example example-like" id="ex-orthogonal-set"><h4 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.8"><a href="#sect-inner-product-6-3" title="Copy heading and permalink for Example 4.4.8" aria-label="Copy heading and permalink for Example 4.4.8">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-orthogonal-set"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-orthogonal-set-1-1">Show that<div class="autopermalink" data-description="Paragraph"><a href="#ex-orthogonal-set-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-orthogonal-set-1-2">
+</div> 
+<div class="para logical" id="ex-orthogonal-set-1-2">
 <div class="displaymath process-math" id="ex-orthogonal-set-1-2-1">
 \begin{equation*}
 \{\sin x, \sin 2x, \sin 3x\}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-orthogonal-set-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-orthogonal-set-1-3">form an orthogonal set on <span class="process-math">\([-\pi,\pi]\)</span> with the inner product taken to be the definite integral on <span class="process-math">\([-\pi,\pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-orthogonal-set-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ex-orthogonal-set-1-3">form an orthogonal set on <span class="process-math">\([-\pi,\pi]\)</span> with the inner product taken to be the definite integral on <span class="process-math">\([-\pi,\pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-orthogonal-set-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-orthogonal-set-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex-orthogonal-set-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="ex-orthogonal-set-2-1">Note: the following integrals will come up in the next few chapters a number of times and the technique shown below is helpful for such integrals. This also shows that even though in most cases in this text so far, that using complex numbers helps out tremendously.<div class="autopermalink" data-description="Paragraph"><a href="#ex-orthogonal-set-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="ex-orthogonal-set-2-2">Recall that<div class="autopermalink" data-description="Paragraph"><a href="#ex-orthogonal-set-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -958,8 +1031,11 @@ e^{-ix}}{2}
 <div class="para" id="ex-orthogonal-set-2-9">if <span class="process-math">\(k \neq \ell\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-orthogonal-set-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.9.1"><a href="#ex-orthogonal-set-2" title="Copy heading and permalink for Solution 4.4.9.1" aria-label="Copy heading and permalink for Solution 4.4.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.9"><a href="#ex-orthogonal-set" title="Copy heading and permalink for Example 4.4.9" aria-label="Copy heading and permalink for Example 4.4.9">🔗</a></div></article><div class="para logical" id="sect-inner-product-6-5">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.9"><a href="#ex-orthogonal-set" title="Copy heading and permalink for Example 4.4.9" aria-label="Copy heading and permalink for Example 4.4.9">🔗</a></div>
+</article>
+<div class="para logical" id="sect-inner-product-6-5">
 <div class="para">Similar to vectors in <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> we can take a vector that doesn’t have norm 1 by dividing the vector through by its length.  That is, if <span class="process-math">\(\boldsymbol{u}\)</span> is a vector then</div>
 <div class="displaymath process-math" id="eq-normalize-vector">
 \begin{equation}
@@ -976,7 +1052,9 @@ e^{-ix}}{2}
 </h4>
 <div class="para" id="sect-inner-product-6-7-1-1">In <a href="sect-inner-product.html#ex-orthogonal-set" class="xref" data-knowl="./knowl/xref/ex-orthogonal-set.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.9">Example 4.4.9</a>, we showed that the vectors <span class="process-math">\(\{ \sin x, \sin 2x, \sin 3x\}\)</span> is an orthogonal set on <span class="process-math">\([-\pi,\pi]\text{.}\)</span>  Use <a href="sect-inner-product.html#eq-normalize-vector" class="xref" data-knowl="./knowl/xref/eq-normalize-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.2">(4.4.2)</a> to create an orthonormal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-inner-product-6-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-inner-product-6-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sect-inner-product-6-7-2-1">
 <div class="para">We need to find <span class="process-math">\(\langle \sin kx, \sin kx\rangle\)</span> for <span class="process-math">\(k=1,2,3\text{,}\)</span> but we can do this in general with</div>
 <div class="displaymath process-math" id="sect-inner-product-6-7-2-1-3">
@@ -992,14 +1070,18 @@ e^{-ix}}{2}
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.10.1"><a href="#sect-inner-product-6-7-2" title="Copy heading and permalink for Solution 4.4.10.1" aria-label="Copy heading and permalink for Solution 4.4.10.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.10"><a href="#sect-inner-product-6-7" title="Copy heading and permalink for Example 4.4.10" aria-label="Copy heading and permalink for Example 4.4.10">🔗</a></div></article><div class="para" id="sect-inner-product-6-8">We saw the following theorem applied to vectors in <span class="process-math">\(\mathbb{R}^n\)</span> in <a href="sect-linear-geometry.html#sect-dot-prod-props" class="internal" title="Subsection 1.6.10: Properties of The Dot Product">Subsection 1.6.10</a>. It was a consequence of the triangle inequality. We again generalize this to the inner product.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.10"><a href="#sect-inner-product-6-7" title="Copy heading and permalink for Example 4.4.10" aria-label="Copy heading and permalink for Example 4.4.10">🔗</a></div>
+</article>
+<div class="para" id="sect-inner-product-6-8">We saw the following theorem applied to vectors in <span class="process-math">\(\mathbb{R}^n\)</span> in <a href="sect-linear-geometry.html#sect-dot-prod-props" class="internal" title="Subsection 1.6.10: Properties of The Dot Product">Subsection 1.6.10</a>. It was a consequence of the triangle inequality. We again generalize this to the inner product.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-cauchy-schwartz"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cauchy-Schwartz Inequality.</span>
 </h4>
 <div class="para" id="thm-cauchy-schwartz-2-1">If <span class="process-math">\(\boldsymbol{u}\)</span> and <span class="process-math">\(\boldsymbol{v}\)</span> are elements of an inner product space then<div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-schwartz-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="thm-cauchy-schwartz-2-2">
+</div> 
+<div class="para logical" id="thm-cauchy-schwartz-2-2">
 <div class="displaymath process-math" id="thm-cauchy-schwartz-2-2-1">
 \begin{equation*}
 | \langle \boldsymbol{u}, \boldsymbol{v} \rangle| \leq || \boldsymbol{u} ||\, ||\boldsymbol{v}||
@@ -1007,7 +1089,11 @@ e^{-ix}}{2}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-schwartz-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.4.11: Cauchy-Schwartz Inequality"><a href="#thm-cauchy-schwartz" title="Copy heading and permalink for Theorem 4.4.11: Cauchy-Schwartz Inequality" aria-label="Copy heading and permalink for Theorem 4.4.11: Cauchy-Schwartz Inequality">🔗</a></div></article><details id="thm-cauchy-schwartz-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-cauchy-schwartz-3-1">If <span class="process-math">\(\boldsymbol{v}=\boldsymbol{0}\text{,}\)</span> then the inequality is satisfied. Assume <span class="process-math">\(\boldsymbol{v} \neq
+<div class="autopermalink" data-description="Theorem 4.4.11: Cauchy-Schwartz Inequality"><a href="#thm-cauchy-schwartz" title="Copy heading and permalink for Theorem 4.4.11: Cauchy-Schwartz Inequality" aria-label="Copy heading and permalink for Theorem 4.4.11: Cauchy-Schwartz Inequality">🔗</a></div>
+</article>
+<details id="thm-cauchy-schwartz-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="thm-cauchy-schwartz-3-1">If <span class="process-math">\(\boldsymbol{v}=\boldsymbol{0}\text{,}\)</span> then the inequality is satisfied. Assume <span class="process-math">\(\boldsymbol{v} \neq
 \boldsymbol{0}\)</span> and define<div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-schwartz-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-cauchy-schwartz-3-2">
@@ -1069,7 +1155,9 @@ e^{-ix}}{2}
 </div>
 <div class="para" id="thm-cauchy-schwartz-3-11">and taking the square root, you get the desired result.<div class="autopermalink" data-description="Paragraph"><a href="#thm-cauchy-schwartz-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.4.11.1"><a href="#thm-cauchy-schwartz-3" title="Copy heading and permalink for Proof 4.4.11.1" aria-label="Copy heading and permalink for Proof 4.4.11.1">🔗</a></div></article></details><div class="para" id="sect-inner-product-6-10">The Cauchy-Schwartz inequality has numerous uses (which is not unexpected for a theorem named after such famous mathematicians). One such is to show that the angle between two vectors in <span class="process-math">\(\mathbb{R}^n\)</span> and actually in any inner product space is defined.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 4.4.11.1"><a href="#thm-cauchy-schwartz-3" title="Copy heading and permalink for Proof 4.4.11.1" aria-label="Copy heading and permalink for Proof 4.4.11.1">🔗</a></div>
+</article></details>
+<div class="para" id="sect-inner-product-6-10">The Cauchy-Schwartz inequality has numerous uses (which is not unexpected for a theorem named after such famous mathematicians). One such is to show that the angle between two vectors in <span class="process-math">\(\mathbb{R}^n\)</span> and actually in any inner product space is defined.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sect-inner-product-6-11">Recall that above in this section, the angle between two vectors was defined as the angle <span class="process-math">\(\theta\)</span> that satisfies<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1115,7 +1203,10 @@ e^{-ix}}{2}
 </div>
 <div class="para" id="sect-inner-product-6-19">which is satisfied for all <span class="process-math">\(\theta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-6-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 4.4.3: Orthonormal sets of vectors"><a href="#sect-inner-product-6" title="Copy heading and permalink for Subsection 4.4.3: Orthonormal sets of vectors" aria-label="Copy heading and permalink for Subsection 4.4.3: Orthonormal sets of vectors">🔗</a></div></section><section class="subsection" id="sect-gram-schmidt"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsection 4.4.3: Orthonormal sets of vectors"><a href="#sect-inner-product-6" title="Copy heading and permalink for Subsection 4.4.3: Orthonormal sets of vectors" aria-label="Copy heading and permalink for Subsection 4.4.3: Orthonormal sets of vectors">🔗</a></div>
+</section>
+<section class="subsection" id="sect-gram-schmidt">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Gram-Schmidt Orthogonalization Process</span>
 </h3>
 <div class="para" id="sect-gram-schmidt-2">We saw above that an orthonormal set of vectors has the property that any two different vectors in the set are orthogonal (inner product of zero) and have norm of one. Often, if we have a set of vectors (say a basis), they aren’t orthonormal, but it is advantageous to have another set that is. The <dfn class="terminology">Gram-Schmidt</dfn> algorithm creates an orthonormal set of vectors from a set of linearly independent vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1126,7 +1217,8 @@ e^{-ix}}{2}
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-gram-schmidt-4-1-1">Find a orthonormal set of vectors that span the same set as <span class="process-math">\(\{\boldsymbol{u}_1,\boldsymbol{u}_2\}\text{,}\)</span> where<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-gram-schmidt-4-1-2">
+</div> 
+<div class="para logical" id="sect-gram-schmidt-4-1-2">
 <div class="displaymath process-math" id="sect-gram-schmidt-4-1-2-1">
 \begin{align*}
 \boldsymbol{u}_1 \amp= \begin{bmatrix}
@@ -1138,7 +1230,9 @@ e^{-ix}}{2}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-gram-schmidt-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-gram-schmidt-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-gram-schmidt-4-2-1">There are many ways of doing this, but the following will always work. First, let’s start by finding a unit vector in the same direction as <span class="process-math">\(\boldsymbol{u}_1\text{.}\)</span> We denote this as <span class="process-math">\(\hat{v}_1\)</span> and this can be found by dividing <span class="process-math">\(\boldsymbol{u}_1\)</span> by its length:<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gram-schmidt-4-2-2">
@@ -1228,8 +1322,11 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-4-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.12.1"><a href="#sect-gram-schmidt-4-2" title="Copy heading and permalink for Solution 4.4.12.1" aria-label="Copy heading and permalink for Solution 4.4.12.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.12"><a href="#sect-gram-schmidt-4" title="Copy heading and permalink for Example 4.4.12" aria-label="Copy heading and permalink for Example 4.4.12">🔗</a></div></article><div class="para" id="sect-gram-schmidt-5">If there are more than two vectors in the set, then the process is similar in that iteratively, one creates a new vector that is orthogonal to all previous vectors and then normalizes each one.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.12"><a href="#sect-gram-schmidt-4" title="Copy heading and permalink for Example 4.4.12" aria-label="Copy heading and permalink for Example 4.4.12">🔗</a></div>
+</article>
+<div class="para" id="sect-gram-schmidt-5">If there are more than two vectors in the set, then the process is similar in that iteratively, one creates a new vector that is orthogonal to all previous vectors and then normalizes each one.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="remark remark-like" id="sect-gram-schmidt-6"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -1283,7 +1380,11 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 </div>
 <div class="para" id="sect-gram-schmidt-6-3">The resulting set of vectors <span class="process-math">\(\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n\}\)</span> are orthogonal. If the set also needs to be orthonormal, for each vector <span class="process-math">\(\boldsymbol{v}_k\)</span> divide through by its length.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 4.4.13"><a href="#sect-gram-schmidt-6" title="Copy heading and permalink for Remark 4.4.13" aria-label="Copy heading and permalink for Remark 4.4.13">🔗</a></div></article><details id="sect-gram-schmidt-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of Gram-Schmidt Orthogonalization.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-gram-schmidt-7-2">To prove Gram-Schmidt orthogonalization works, we will prove that <span class="process-math">\(\boldsymbol{v}_k\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_i\)</span> for all <span class="process-math">\(i \lt k\text{.}\)</span> We will show this by induction. First show that <span class="process-math">\(\boldsymbol{v}_2\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_1\)</span> :<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 4.4.13"><a href="#sect-gram-schmidt-6" title="Copy heading and permalink for Remark 4.4.13" aria-label="Copy heading and permalink for Remark 4.4.13">🔗</a></div>
+</article>
+<details id="sect-gram-schmidt-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of Gram-Schmidt Orthogonalization.</span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sect-gram-schmidt-7-2">To prove Gram-Schmidt orthogonalization works, we will prove that <span class="process-math">\(\boldsymbol{v}_k\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_i\)</span> for all <span class="process-math">\(i \lt k\text{.}\)</span> We will show this by induction. First show that <span class="process-math">\(\boldsymbol{v}_2\)</span> is orthogonal to <span class="process-math">\(\boldsymbol{v}_1\)</span> :<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gram-schmidt-7-3">
 <div class="displaymath process-math" id="sect-gram-schmidt-7-3-1">
@@ -1333,7 +1434,9 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 </div>
 <div class="para" id="sect-gram-schmidt-7-8">Therefore <span class="process-math">\(\boldsymbol{v}_{k+1}\)</span> is orthogonal to all other <span class="process-math">\(\boldsymbol{v}\)</span>’s and thus the basis consisting of <span class="process-math">\(\boldsymbol{v}\)</span> form an orthonormal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization"><a href="#sect-gram-schmidt-7" title="Copy heading and permalink for Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization" aria-label="Copy heading and permalink for Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization">🔗</a></div></article></details><article class="example example-like" id="sect-gram-schmidt-8"><h4 class="heading">
+<div class="autopermalink" data-description="Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization"><a href="#sect-gram-schmidt-7" title="Copy heading and permalink for Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization" aria-label="Copy heading and permalink for Proof 4.4.4.1: Proof of Gram-Schmidt Orthogonalization">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sect-gram-schmidt-8"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="sect-gram-schmidt-8-1-1">
@@ -1351,7 +1454,9 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-gram-schmidt-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-gram-schmidt-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-gram-schmidt-8-2-1">Let <span class="process-math">\(\boldsymbol{u}_1, \boldsymbol{u}_2\)</span> and <span class="process-math">\(\boldsymbol{u}_3\)</span> be these three vectors. We now use Gram-Schmidt orthogonalization to find an orthogonal set.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-gram-schmidt-8-2-2">
@@ -1418,14 +1523,18 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 <div class="para" id="sect-gram-schmidt-8-2-4">Note:	there are many other orthogonal sets that span this subspace. For example, the standard basis does this or if we would have shuffled the original three vectors, so this is not unique.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-8-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.14.1"><a href="#sect-gram-schmidt-8-2" title="Copy heading and permalink for Solution 4.4.14.1" aria-label="Copy heading and permalink for Solution 4.4.14.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.14"><a href="#sect-gram-schmidt-8" title="Copy heading and permalink for Example 4.4.14" aria-label="Copy heading and permalink for Example 4.4.14">🔗</a></div></article><div class="para" id="sect-gram-schmidt-9">Although the example shown here uses vectors in <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> Gram-Schmidt can be done on any set of vectors from an inner product space. This is very common for polynomials and will show an example with this next. Also, in  <a href="ch-fourier-series.html" class="internal" title="Chapter 7: Fourier Series">Chapter 7</a>, we will also show this with trigonometric functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.14"><a href="#sect-gram-schmidt-8" title="Copy heading and permalink for Example 4.4.14" aria-label="Copy heading and permalink for Example 4.4.14">🔗</a></div>
+</article>
+<div class="para" id="sect-gram-schmidt-9">Although the example shown here uses vectors in <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> Gram-Schmidt can be done on any set of vectors from an inner product space. This is very common for polynomials and will show an example with this next. Also, in  <a href="ch-fourier-series.html" class="internal" title="Chapter 7: Fourier Series">Chapter 7</a>, we will also show this with trigonometric functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-gram-schmidt-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="example-gram-schmidt-p3"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="example-gram-schmidt-p3-1-1">Use Gram-Schmidt orthogonalization to find a orthogonal set that spans <span class="process-math">\(\mathcal{P}_3[-1,1]\text{,}\)</span> the set of all cubic functions on the interval <span class="process-math">\([-1,1]\)</span> with inner product<div class="autopermalink" data-description="Paragraph"><a href="#example-gram-schmidt-p3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="example-gram-schmidt-p3-1-2">
+</div> 
+<div class="para logical" id="example-gram-schmidt-p3-1-2">
 <div class="displaymath process-math" id="example-gram-schmidt-p3-1-2-1">
 \begin{equation*}
 \langle p, q \rangle = \int_{-1}^1 p(x) q(x) \, dx
@@ -1433,7 +1542,9 @@ c_2 \amp = -\frac{\langle \boldsymbol{u}_2, \hat{v}_1 \rangle }
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#example-gram-schmidt-p3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="example-gram-schmidt-p3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="example-gram-schmidt-p3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="example-gram-schmidt-p3-2-1">To begin, we need a set of vectors (polynomials) on the set and we can take the standard basis <span class="process-math">\(\{1,x,x^2,x^3\}\text{.}\)</span> Call these <span class="process-math">\(p_0,p_1,p_2,p_3\)</span> and we’ll use Gram-Schmidt to find a set <span class="process-math">\(\{q_0,q_1,q_2,q_3\}\)</span> that is orthogonal.<div class="autopermalink" data-description="Paragraph"><a href="#example-gram-schmidt-p3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="example-gram-schmidt-p3-2-2">
@@ -1504,8 +1615,13 @@ x - \frac{\int_{-1}^1 x^3 \cdot 1 \,dx }{\int_{-1}^1 1 \cdot 1 \, dx}
 <div class="para" id="example-gram-schmidt-p3-2-11">and these are the first four Legendre Polynomials. Also, they are a basis of <span class="process-math">\(\mathcal{P}_3[-1,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-gram-schmidt-p3-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.15.1"><a href="#example-gram-schmidt-p3-2" title="Copy heading and permalink for Solution 4.4.15.1" aria-label="Copy heading and permalink for Solution 4.4.15.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.15"><a href="#example-gram-schmidt-p3" title="Copy heading and permalink for Example 4.4.15" aria-label="Copy heading and permalink for Example 4.4.15">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process"><a href="#sect-gram-schmidt" title="Copy heading and permalink for Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process" aria-label="Copy heading and permalink for Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process">🔗</a></div></section><section class="subsection" id="sect-inner-product-8"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.15"><a href="#example-gram-schmidt-p3" title="Copy heading and permalink for Example 4.4.15" aria-label="Copy heading and permalink for Example 4.4.15">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process"><a href="#sect-gram-schmidt" title="Copy heading and permalink for Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process" aria-label="Copy heading and permalink for Subsection 4.4.4: The Gram-Schmidt Orthogonalization Process">🔗</a></div>
+</section>
+<section class="subsection" id="sect-inner-product-8">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonal infinite sets of functions</span>
 </h3>
 <div class="para" id="sect-inner-product-8-2">
@@ -1516,14 +1632,18 @@ x - \frac{\int_{-1}^1 x^3 \cdot 1 \,dx }{\int_{-1}^1 1 \cdot 1 \, dx}
 </h4>
 <div class="para" id="sect-inner-product-8-3-1-1">An infinite set of continuous function <span class="process-math">\(\{f_1,f_2, \ldots\}\)</span> is said to be <dfn class="terminology">orthogonal on <span class="process-math">\([a,b]\)</span></dfn> if <span class="process-math">\(\langle f_n, f_m \rangle =0\)</span> for all <span class="process-math">\(n,m\text{,}\)</span> <span class="process-math">\(n \neq m\text{.}\)</span> If in addition, <span class="process-math">\(||f_n||=1\)</span> for all <span class="process-math">\(n\text{,}\)</span> the set is said to be <dfn class="terminology">orthonormal</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-8-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.4.16"><a href="#sect-inner-product-8-3" title="Copy heading and permalink for Definition 4.4.16" aria-label="Copy heading and permalink for Definition 4.4.16">🔗</a></div></article><div class="para" id="sect-inner-product-8-4">In the next couple of examples, we examine a couple of the most important orthogonal and orthonormal sets of functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 4.4.16"><a href="#sect-inner-product-8-3" title="Copy heading and permalink for Definition 4.4.16" aria-label="Copy heading and permalink for Definition 4.4.16">🔗</a></div>
+</article>
+<div class="para" id="sect-inner-product-8-4">In the next couple of examples, we examine a couple of the most important orthogonal and orthonormal sets of functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sect-inner-product-8-5"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-inner-product-8-5-1-1">Show that <span class="process-math">\(f_n(x) = \sin nx\)</span> for <span class="process-math">\(n=1,2,3,\ldots\)</span> form an orthogonal set on <span class="process-math">\([-\pi,\pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-8-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-inner-product-8-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-inner-product-8-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-inner-product-8-5-2-1">In this case, we will expand on <a href="sect-inner-product.html#ex-orthogonal-set" class="xref" data-knowl="./knowl/xref/ex-orthogonal-set.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.9">Example 4.4.9</a> and use the handy alternative definition of the sine function. Find the inner product if <span class="process-math">\(n \neq m\)</span> ,<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-8-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-inner-product-8-5-2-2">
@@ -1540,21 +1660,28 @@ x - \frac{\int_{-1}^1 x^3 \cdot 1 \,dx }{\int_{-1}^1 1 \cdot 1 \, dx}
 <div class="para" id="sect-inner-product-8-5-2-3">where <a href="sect-funct-props.html#lem-int-complex-exp" class="xref" data-knowl="./knowl/xref/lem-int-complex-exp.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 3.2.5">Lemma 3.2.5</a> is used on the last step above.<div class="autopermalink" data-description="Paragraph"><a href="#sect-inner-product-8-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.17.1"><a href="#sect-inner-product-8-5-2" title="Copy heading and permalink for Solution 4.4.17.1" aria-label="Copy heading and permalink for Solution 4.4.17.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.17"><a href="#sect-inner-product-8-5" title="Copy heading and permalink for Example 4.4.17" aria-label="Copy heading and permalink for Example 4.4.17">🔗</a></div></article><article class="example example-like" id="ex-trig-ortho-set"><h4 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.17"><a href="#sect-inner-product-8-5" title="Copy heading and permalink for Example 4.4.17" aria-label="Copy heading and permalink for Example 4.4.17">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-trig-ortho-set"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-trig-ortho-set-1-1">Show that the set of functions<div class="autopermalink" data-description="Paragraph"><a href="#ex-trig-ortho-set-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-trig-ortho-set-1-2">
+</div> 
+<div class="para logical" id="ex-trig-ortho-set-1-2">
 <div class="displaymath process-math" id="ex-trig-ortho-set-1-2-1">
 \begin{equation*}
 \biggl\{ \frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{\pi}} \cos x , \frac{1}{\sqrt{\pi}} \sin x, \frac{1}{\sqrt{\pi}} \cos 2x, \frac{1}{\sqrt{\pi}} \sin 2x, \ldots \biggr\}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-trig-ortho-set-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-trig-ortho-set-1-3">for an orthonormal set on <span class="process-math">\([-\pi,\pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-trig-ortho-set-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ex-trig-ortho-set-1-3">for an orthonormal set on <span class="process-math">\([-\pi,\pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-trig-ortho-set-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-trig-ortho-set-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex-trig-ortho-set-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="ex-trig-ortho-set-2-1">
 <div class="para">We showed above that <span class="process-math">\(\langle \sin mx, \sin nx \rangle=0\)</span> for all <span class="process-math">\(m,n\)</span> when <span class="process-math">\(m \neq n\text{.}\)</span> Therefore <span class="process-math">\(\langle (\sin mx)/\sqrt{\pi}, (\sin nx)/\sqrt{\pi} \rangle\)</span> also equals 0 for <span class="process-math">\(m \neq n\text{.}\)</span> For simpler notation let</div>
 <div class="displaymath process-math" id="ex-trig-ortho-set-2-1-6">
@@ -1642,8 +1769,13 @@ c_n(x) \amp = \begin{cases} \frac{1}{\sqrt{2\pi}} \amp n = 0, \\ \frac{1}{\sqrt{
 <div class="para" id="ex-trig-ortho-set-2-14">This shows that the set of functions given above is an orthonormal set of functions.<div class="autopermalink" data-description="Paragraph"><a href="#ex-trig-ortho-set-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.4.18.1"><a href="#ex-trig-ortho-set-2" title="Copy heading and permalink for Solution 4.4.18.1" aria-label="Copy heading and permalink for Solution 4.4.18.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.4.18"><a href="#ex-trig-ortho-set" title="Copy heading and permalink for Example 4.4.18" aria-label="Copy heading and permalink for Example 4.4.18">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.4.5: Orthogonal infinite sets of functions"><a href="#sect-inner-product-8" title="Copy heading and permalink for Subsection 4.4.5: Orthogonal infinite sets of functions" aria-label="Copy heading and permalink for Subsection 4.4.5: Orthogonal infinite sets of functions">🔗</a></div></section><div class="autopermalink" data-description="Section 4.4: Inner Product Spaces"><a href="#sect-inner-product" title="Copy heading and permalink for Section 4.4: Inner Product Spaces" aria-label="Copy heading and permalink for Section 4.4: Inner Product Spaces">🔗</a></div></section></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.4.18"><a href="#ex-trig-ortho-set" title="Copy heading and permalink for Example 4.4.18" aria-label="Copy heading and permalink for Example 4.4.18">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 4.4.5: Orthogonal infinite sets of functions"><a href="#sect-inner-product-8" title="Copy heading and permalink for Subsection 4.4.5: Orthogonal infinite sets of functions" aria-label="Copy heading and permalink for Subsection 4.4.5: Orthogonal infinite sets of functions">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 4.4: Inner Product Spaces"><a href="#sect-inner-product" title="Copy heading and permalink for Section 4.4: Inner Product Spaces" aria-label="Copy heading and permalink for Section 4.4: Inner Product Spaces">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-basis-vector-space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-linear-transformations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

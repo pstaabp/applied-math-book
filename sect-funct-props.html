@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.4';
+eBookConfig.runestone_version = '7.13.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -492,37 +492,53 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#sect-series-solutions-5" class="internal"><span class="codenumber">8.4.3</span> <span class="title">Series Solutions and Orthogonal Polynomials</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#subsec-singular-diff-eq" class="internal"><span class="codenumber">8.4.4</span> <span class="title">Differential Equations with Singular Points</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#subsec-frobenius-method" class="internal"><span class="codenumber">8.4.5</span> <span class="title">Frobenius Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-series-solutions.html#subsec-bessel-functions" class="internal"><span class="codenumber">8.4.6</span> <span class="title">Bessel Functions</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diff-eqn-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-sturm-liouville.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Sturm-Liouville Problems</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sect-bessel-solution" class="internal"><span class="codenumber">8.6.1</span> <span class="title">Solutions of Bessel’s Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">8.6.2</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-5" class="internal"><span class="codenumber">8.6.3</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#subsec-bessel-second" class="internal"><span class="codenumber">8.6.4</span> <span class="title">Bessel Functions of the Second Kind</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-pde.html" class="internal"><span class="codenumber">9</span> <span class="title">Partial Differential Equations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-1d-heat-eqn.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Solution to the 1D Heat Equation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-bessel-eqn.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Bessel’s equation and Bessel Functions</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-3" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Propeties of <span class="process-math">\(J_n(x)\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bessel-eqn.html#sec-bessel-eqn-4" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Roots of the Bessel functions</span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="ch-pde-4.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Solving the 1D Wave Equation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-pde-4.html#ch-pde-4-3" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Solution to the Wave Equation with a free boundary condition</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<div class="toc-title-box"><a href="sect-nonhomogeneous.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Nonhomogeneous PDEs and Boundary Conditions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">9.4.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">9.4.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-nonhomogeneous.html#subsec-nonhomogeneous-pdes" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Nonhomogeneous PDEs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-nonhomogeneous.html#subsec-nonhomogeneous-boundaries" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Nonhomogeneous Boundary Conditions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sect-2d-heat-eqn.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Heat Equation in two spatial dimensions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-heat-circular.html" class="internal"><span class="codenumber">9.5</span> <span class="title">The Heat Equation in a Circular Region</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-3" class="internal"><span class="codenumber">9.5.1</span> <span class="title">Rotationally Symmetric Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-4" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Solving the Sturm-Liouville Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-5" class="internal"><span class="codenumber">9.5.3</span> <span class="title">General Circular Heat Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-heat-circular.html#sect-heat-circular-6" class="internal"><span class="codenumber">9.5.4</span> <span class="title">Sturm-Liouville Problems from the heat equation</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-funct-props"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sect-funct-props">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of Functions</span>
 </h2>
 <article class="objectives goal-like" id="sect-funct-props-2"><h3 class="heading"><span class="type">Objectives</span></h3>
@@ -553,8 +569,13 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Objective"><a href="#sect-funct-props-2-1-5" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" data-description="Objectives 3.2"><a href="#sect-funct-props-2" title="Copy heading and permalink for Objectives 3.2" aria-label="Copy heading and permalink for Objectives 3.2">🔗</a></div></article><section class="introduction" id="sect-funct-props-3"><div class="para" id="sect-funct-props-3-1">In <a href="sect-inner-product.html" class="internal" title="Section 4.4: Inner Product Spaces">Section 4.4</a>, we reviewed inner product spaces and saw orthonormal sets of vectors (both in <span class="process-math">\(\mathbb{R}^3\)</span> as well as polynomials). In this section, we will examine another set of functions, sines and cosines that are orthogonal. First, let’s see a short review of periodic functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><section class="subsection" id="sect-complex-exponential"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Objectives 3.2"><a href="#sect-funct-props-2" title="Copy heading and permalink for Objectives 3.2" aria-label="Copy heading and permalink for Objectives 3.2">🔗</a></div>
+</article>
+<section class="introduction" id="sect-funct-props-3">
+<div class="para" id="sect-funct-props-3-1">In <a href="sect-inner-product.html" class="internal" title="Section 4.4: Inner Product Spaces">Section 4.4</a>, we reviewed inner product spaces and saw orthonormal sets of vectors (both in <span class="process-math">\(\mathbb{R}^3\)</span> as well as polynomials). In this section, we will examine another set of functions, sines and cosines that are orthogonal. First, let’s see a short review of periodic functions.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="sect-complex-exponential">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Complex Exponential</span>
 </h3>
 <div class="para logical" id="sect-complex-exponential-2">
@@ -566,7 +587,9 @@ e^{i\theta} = \cos \theta + i \sin \theta\tag{3.2.1}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-complex-exponential-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sect-complex-exponential-3">This equation, known as <dfn class="terminology">Euler’s Formula</dfn> isn’t obvious. We’ll spend this section deriving it. First, we need to recall the Maclaurin Series<details class="ptx-footnote" aria-live="polite" id="sect-complex-exponential-3-2"><summary class="ptx-footnote__number" title="Footnote 3.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sect-complex-exponential-3-2">This is often covered in the infinite series section of Calculus. See <a class="external" href="https://www.apexcalculus.com" target="_blank">APEX Calculus</a> for an open-source version or other Calculus texts for details on series.</div></details> of <span class="process-math">\(\sin x, \cos x\)</span> and <span class="process-math">\(e^x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-complex-exponential-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sect-complex-exponential-3">This equation, known as <dfn class="terminology">Euler’s Formula</dfn> isn’t obvious. We’ll spend this section deriving it. First, we need to recall the Maclaurin Series<details class="ptx-footnote" aria-live="polite" id="sect-complex-exponential-3-2"><summary class="ptx-footnote__number" title="Footnote 3.2.1"><sup> 1 </sup></summary>
+<div class="ptx-footnote__contents" id="sect-complex-exponential-3-2">This is often covered in the infinite series section of Calculus. See <a class="external" href="https://www.apexcalculus.com" target="_blank">APEX Calculus</a> for an open-source version or other Calculus texts for details on series.
+</div></details> of <span class="process-math">\(\sin x, \cos x\)</span> and <span class="process-math">\(e^x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-complex-exponential-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-complex-exponential-4">
 <div class="displaymath process-math" id="sect-complex-exponential-4-1">
@@ -600,9 +623,14 @@ e^{i\pi} + 1 = 0\tag{3.2.2}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-complex-exponential-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 3.2.1: The Most Interesting Equation in Mathematics"><a href="#sect-complex-exponential-7" title="Copy heading and permalink for Remark 3.2.1: The Most Interesting Equation in Mathematics" aria-label="Copy heading and permalink for Remark 3.2.1: The Most Interesting Equation in Mathematics">🔗</a></div></article><div class="para" id="sect-complex-exponential-8">and this is often called the most interesting equation in mathematics because it arguably contains the 5 most important mathematical constants: 0, 1, <span class="process-math">\(e\text{,}\)</span> <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(\pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-complex-exponential-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 3.2.1: The Most Interesting Equation in Mathematics"><a href="#sect-complex-exponential-7" title="Copy heading and permalink for Remark 3.2.1: The Most Interesting Equation in Mathematics" aria-label="Copy heading and permalink for Remark 3.2.1: The Most Interesting Equation in Mathematics">🔗</a></div>
+</article>
+<div class="para" id="sect-complex-exponential-8">and this is often called the most interesting equation in mathematics because it arguably contains the 5 most important mathematical constants: 0, 1, <span class="process-math">\(e\text{,}\)</span> <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(\pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-complex-exponential-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 3.2.1: The Complex Exponential"><a href="#sect-complex-exponential" title="Copy heading and permalink for Subsection 3.2.1: The Complex Exponential" aria-label="Copy heading and permalink for Subsection 3.2.1: The Complex Exponential">🔗</a></div></section><section class="subsection" id="subsec-more-complex-exponential"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsection 3.2.1: The Complex Exponential"><a href="#sect-complex-exponential" title="Copy heading and permalink for Subsection 3.2.1: The Complex Exponential" aria-label="Copy heading and permalink for Subsection 3.2.1: The Complex Exponential">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-more-complex-exponential">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Other Properties of the Complex Exponential</span>
 </h3>
 <div class="para" id="subsec-more-complex-exponential-2">You might ask yourself about why the complex exponential function is important or helpful in other part of mathematics, especially since this isn’t a book on complex analysis. This section provides some insight into why you might want to learn this.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-more-complex-exponential-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -611,28 +639,37 @@ e^{i\pi} + 1 = 0\tag{3.2.2}
 </div>
 <div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/bejemtygsu?embed" id="desmos-rotation" style="width:450px; height:450px; display: block; "></iframe></div>
 <div class="interactive-iframe-container__opener"><a href="desmos-rotation.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
-<div class="autopermalink" data-description="Subsection 3.2.2: Other Properties of the Complex Exponential"><a href="#subsec-more-complex-exponential" title="Copy heading and permalink for Subsection 3.2.2: Other Properties of the Complex Exponential" aria-label="Copy heading and permalink for Subsection 3.2.2: Other Properties of the Complex Exponential">🔗</a></div></section><section class="subsection" id="sect-funct-props-6"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsection 3.2.2: Other Properties of the Complex Exponential"><a href="#subsec-more-complex-exponential" title="Copy heading and permalink for Subsection 3.2.2: Other Properties of the Complex Exponential" aria-label="Copy heading and permalink for Subsection 3.2.2: Other Properties of the Complex Exponential">🔗</a></div>
+</section>
+<section class="subsection" id="sect-funct-props-6">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Periodic Functions</span>
 </h3>
 <article class="definition definition-like" id="sect-funct-props-6-2"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-6-2-1-1">A function is <dfn class="terminology">periodic with period <span class="process-math">\(p\)</span></dfn> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-funct-props-6-2-1-2">
+</div> 
+<div class="para logical" id="sect-funct-props-6-2-1-2">
 <div class="displaymath process-math" id="sect-funct-props-6-2-1-2-1">
 \begin{equation*}
 f(t) = f(t+p) 
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-funct-props-6-2-1-3">for all <span class="process-math">\(t\text{.}\)</span> The smallest value of <span class="process-math">\(p &gt; 0\)</span>  for which this true is called the <dfn class="terminology">period</dfn> of the function.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-2-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sect-funct-props-6-2-1-3">for all <span class="process-math">\(t\text{.}\)</span> The smallest value of <span class="process-math">\(p &gt; 0\)</span>  for which this true is called the <dfn class="terminology">period</dfn> of the function.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-2-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.2.2"><a href="#sect-funct-props-6-2" title="Copy heading and permalink for Definition 3.2.2" aria-label="Copy heading and permalink for Definition 3.2.2">🔗</a></div></article><article class="example example-like" id="sect-funct-props-6-3"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 3.2.2"><a href="#sect-funct-props-6-2" title="Copy heading and permalink for Definition 3.2.2" aria-label="Copy heading and permalink for Definition 3.2.2">🔗</a></div>
+</article>
+<article class="example example-like" id="sect-funct-props-6-3"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-6-3-1-1">Show that <span class="process-math">\(f(t) = \sin t\)</span> is periodic with period <span class="process-math">\(2\pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-funct-props-6-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-funct-props-6-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sect-funct-props-6-3-2-1">
 <div class="displaymath process-math" id="sect-funct-props-6-3-2-1-1">
 \begin{equation*}
@@ -644,18 +681,26 @@ f(t+2\pi) = \sin (t + 2 \pi) = \sin t \cos 2\pi + \sin 2\pi \cos t = \sin t
 <div class="para" id="sect-funct-props-6-3-2-2">where the sum of angles sine formula is used.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.2.3.1"><a href="#sect-funct-props-6-3-2" title="Copy heading and permalink for Solution 3.2.3.1" aria-label="Copy heading and permalink for Solution 3.2.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 3.2.3"><a href="#sect-funct-props-6-3" title="Copy heading and permalink for Example 3.2.3" aria-label="Copy heading and permalink for Example 3.2.3">🔗</a></div></article><article class="example example-like" id="sect-funct-props-6-4"><h4 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.2.3"><a href="#sect-funct-props-6-3" title="Copy heading and permalink for Example 3.2.3" aria-label="Copy heading and permalink for Example 3.2.3">🔗</a></div>
+</article>
+<article class="example example-like" id="sect-funct-props-6-4"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-6-4-1-1">What is the period of the function <span class="process-math">\(f(t) = \cos kt\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-funct-props-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-funct-props-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-funct-props-6-4-2-1">We know that the period of <span class="process-math">\(\cos t\)</span> is also the same as <span class="process-math">\(\sin t\)</span> or <span class="process-math">\(2\pi\text{.}\)</span> If we let <span class="process-math">\(u=kt\text{,}\)</span> then <span class="process-math">\(f(u)=\cos u\)</span> has period <span class="process-math">\(p=2\pi\)</span> since it is the smallest value of <span class="process-math">\(p\)</span> such that <span class="process-math">\(f(u)=f(u+p)\)</span> for all <span class="process-math">\(u\text{.}\)</span> The function <span class="process-math">\(f(t)\)</span> would then had period <span class="process-math">\(p=2\pi/k\text{,}\)</span> since <span class="process-math">\(t=u/k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.2.4.1"><a href="#sect-funct-props-6-4-2" title="Copy heading and permalink for Solution 3.2.4.1" aria-label="Copy heading and permalink for Solution 3.2.4.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 3.2.4"><a href="#sect-funct-props-6-4" title="Copy heading and permalink for Example 3.2.4" aria-label="Copy heading and permalink for Example 3.2.4">🔗</a></div></article><div class="para" id="sect-funct-props-6-5">The periodic functions that we will mostly be using in this text are the sine and cosine function. We review here a few convenient identities with these functions and the complex exponential. From Euler’s formula,<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.2.4"><a href="#sect-funct-props-6-4" title="Copy heading and permalink for Example 3.2.4" aria-label="Copy heading and permalink for Example 3.2.4">🔗</a></div>
+</article>
+<div class="para" id="sect-funct-props-6-5">The periodic functions that we will mostly be using in this text are the sine and cosine function. We review here a few convenient identities with these functions and the complex exponential. From Euler’s formula,<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-6-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-funct-props-6-6">
 <div class="displaymath process-math" id="sect-funct-props-6-6-1">
@@ -679,7 +724,8 @@ e^{i \theta} = \cos \theta + i \sin \theta
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="lem-int-complex-exp-1-1">If <span class="process-math">\(k \in \mathbb{Z}\text{,}\)</span> and <span class="process-math">\(x_0 \in \mathbb{R}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#lem-int-complex-exp-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="lem-int-complex-exp-1-2">
+</div> 
+<div class="para logical" id="lem-int-complex-exp-1-2">
 <div class="displaymath process-math" id="lem-int-complex-exp-1-2-1">
 \begin{equation*}
 \int_{x_0}^{x_0 + 2\pi} e^{i kx} \, dx = \begin{cases} 2\pi \amp k = 0, \\ 0 \amp \text{otherwise}. \end{cases} 
@@ -687,7 +733,11 @@ e^{i \theta} = \cos \theta + i \sin \theta
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lem-int-complex-exp-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 3.2.5"><a href="#lem-int-complex-exp" title="Copy heading and permalink for Lemma 3.2.5" aria-label="Copy heading and permalink for Lemma 3.2.5">🔗</a></div></article><details id="lem-int-complex-exp-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-int-complex-exp-2-1">If <span class="process-math">\(k=0\text{,}\)</span> then the integral is of the constant function 1 over a interval of length <span class="process-math">\(2\pi\text{,}\)</span> so the lemma holds. If <span class="process-math">\(k \neq 0\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-int-complex-exp-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 3.2.5"><a href="#lem-int-complex-exp" title="Copy heading and permalink for Lemma 3.2.5" aria-label="Copy heading and permalink for Lemma 3.2.5">🔗</a></div>
+</article>
+<details id="lem-int-complex-exp-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="lem-int-complex-exp-2-1">If <span class="process-math">\(k=0\text{,}\)</span> then the integral is of the constant function 1 over a interval of length <span class="process-math">\(2\pi\text{,}\)</span> so the lemma holds. If <span class="process-math">\(k \neq 0\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-int-complex-exp-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="lem-int-complex-exp-2-2">
 <div class="displaymath process-math" id="lem-int-complex-exp-2-2-1">
@@ -702,7 +752,11 @@ e^{i \theta} = \cos \theta + i \sin \theta
 </div>
 <div class="para" id="lem-int-complex-exp-2-3">because <span class="process-math">\(e^{i\pi}=-1\)</span> from <a href="sect-funct-props.html#eq-e-to-the-i-pi" class="xref" data-knowl="./knowl/xref/eq-e-to-the-i-pi.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2.2">(3.2.2)</a>, but this is raised to an even power so <span class="process-math">\((e^{i\pi})^{2k}=1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-int-complex-exp-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.2.5.1"><a href="#lem-int-complex-exp-2" title="Copy heading and permalink for Proof 3.2.5.1" aria-label="Copy heading and permalink for Proof 3.2.5.1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 3.2.3: Periodic Functions"><a href="#sect-funct-props-6" title="Copy heading and permalink for Subsection 3.2.3: Periodic Functions" aria-label="Copy heading and permalink for Subsection 3.2.3: Periodic Functions">🔗</a></div></section><section class="subsection" id="sect-funct-props-7"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Proof 3.2.5.1"><a href="#lem-int-complex-exp-2" title="Copy heading and permalink for Proof 3.2.5.1" aria-label="Copy heading and permalink for Proof 3.2.5.1">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Subsection 3.2.3: Periodic Functions"><a href="#sect-funct-props-6" title="Copy heading and permalink for Subsection 3.2.3: Periodic Functions" aria-label="Copy heading and permalink for Subsection 3.2.3: Periodic Functions">🔗</a></div>
+</section>
+<section class="subsection" id="sect-funct-props-7">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">One-Side Limits and Derivatives; Piecewise Continuous Functions</span>
 </h3>
 <div class="para" id="sect-funct-props-7-2">As we will see, the notion of a piecewise continuous function is a function that is continuous on subintervals. However, there are some technical details that we need before a formal definition.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -711,68 +765,88 @@ e^{i \theta} = \cos \theta + i \sin \theta
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-7-3-1-1">A function <span class="process-math">\(f\)</span> has a <dfn class="terminology">left-hand limit</dfn> at <span class="process-math">\(x=x_0\)</span> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-funct-props-7-3-1-2">
+</div> 
+<div class="para logical" id="sect-funct-props-7-3-1-2">
 <div class="displaymath process-math" id="sect-funct-props-7-3-1-2-1">
 \begin{equation*}
 f(x_0^-) = \lim_{x \rightarrow x_0^-} f(x) 
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-funct-props-7-3-1-3">exists. In addition, a function <span class="process-math">\(f\)</span> has a <dfn class="terminology">right-hand limit</dfn> at <span class="process-math">\(x=x_0\)</span> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-funct-props-7-3-1-4">
+</div> 
+<div class="para" id="sect-funct-props-7-3-1-3">exists. In addition, a function <span class="process-math">\(f\)</span> has a <dfn class="terminology">right-hand limit</dfn> at <span class="process-math">\(x=x_0\)</span> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="sect-funct-props-7-3-1-4">
 <div class="displaymath process-math" id="sect-funct-props-7-3-1-4-1">
 \begin{equation*}
 f(x_0^+) = \lim_{x \rightarrow x_0^+} f(x) 
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-3-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-funct-props-7-3-1-5">exists.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-3-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sect-funct-props-7-3-1-5">exists.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-3-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.2.6"><a href="#sect-funct-props-7-3" title="Copy heading and permalink for Definition 3.2.6" aria-label="Copy heading and permalink for Definition 3.2.6">🔗</a></div></article><div class="para" id="sect-funct-props-7-4">If one is talking about either a left- or right-handed limit, these are typically called <em class="emphasis">one-sided limits.</em> Also, an example of these will be shown below.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 3.2.6"><a href="#sect-funct-props-7-3" title="Copy heading and permalink for Definition 3.2.6" aria-label="Copy heading and permalink for Definition 3.2.6">🔗</a></div>
+</article>
+<div class="para" id="sect-funct-props-7-4">If one is talking about either a left- or right-handed limit, these are typically called <em class="emphasis">one-sided limits.</em> Also, an example of these will be shown below.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="sect-funct-props-7-5"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-7-5-1-1">A function <span class="process-math">\(f\)</span> has a <dfn class="terminology">left-hand derivative</dfn> at <span class="process-math">\(x=x_0\)</span> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-funct-props-7-5-1-2">
+</div> 
+<div class="para logical" id="sect-funct-props-7-5-1-2">
 <div class="displaymath process-math" id="sect-funct-props-7-5-1-2-1">
 \begin{equation*}
 f'(x_0^-) = \lim_{h \rightarrow 0^-} \frac{f(x_0+h)-f(x)}{h} 
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-5-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-funct-props-7-5-1-3">exists. Similarly, a function <span class="process-math">\(f\)</span> has a <dfn class="terminology">right-hand derivative</dfn> at <span class="process-math">\(x=x_0\)</span> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-5-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-funct-props-7-5-1-4">
+</div> 
+<div class="para" id="sect-funct-props-7-5-1-3">exists. Similarly, a function <span class="process-math">\(f\)</span> has a <dfn class="terminology">right-hand derivative</dfn> at <span class="process-math">\(x=x_0\)</span> if<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-5-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="sect-funct-props-7-5-1-4">
 <div class="displaymath process-math" id="sect-funct-props-7-5-1-4-1">
 \begin{equation*}
 f'(x_0^+) = \lim_{h \rightarrow 0^+} \frac{f(x_0+h)-f(x)}{h} 
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-5-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-funct-props-7-5-1-5">exists.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-5-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sect-funct-props-7-5-1-5">exists.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-5-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.2.7"><a href="#sect-funct-props-7-5" title="Copy heading and permalink for Definition 3.2.7" aria-label="Copy heading and permalink for Definition 3.2.7">🔗</a></div></article><div class="para" id="sect-funct-props-7-6">If one is talking about either a left- or right-handed derivative, these are typically called <em class="emphasis">one-sided derivatives.</em>  An example of these will be shown below.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 3.2.7"><a href="#sect-funct-props-7-5" title="Copy heading and permalink for Definition 3.2.7" aria-label="Copy heading and permalink for Definition 3.2.7">🔗</a></div>
+</article>
+<div class="para" id="sect-funct-props-7-6">If one is talking about either a left- or right-handed derivative, these are typically called <em class="emphasis">one-sided derivatives.</em>  An example of these will be shown below.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="sect-funct-props-7-7"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-7-7-1-1">A function <span class="process-math">\(f\)</span> is <dfn class="terminology">piecewise continuous</dfn> on an interval <span class="process-math">\([a,b]\)</span> if <span class="process-math">\(f\)</span> is continuous on all <span class="process-math">\(x \in [a,b]\)</span> except for a finite number of points <span class="process-math">\(x_i\text{.}\)</span> In addition for all <span class="process-math">\(x_i\text{,}\)</span> <span class="process-math">\(f(x_i^+)\)</span> and <span class="process-math">\(f(x_i^-)\)</span> exist.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.2.8"><a href="#sect-funct-props-7-7" title="Copy heading and permalink for Definition 3.2.8" aria-label="Copy heading and permalink for Definition 3.2.8">🔗</a></div></article><article class="example example-like" id="ex-piecewise-cont-function"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 3.2.8"><a href="#sect-funct-props-7-7" title="Copy heading and permalink for Definition 3.2.8" aria-label="Copy heading and permalink for Definition 3.2.8">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-piecewise-cont-function"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-piecewise-cont-function-1-1">The following function is piecewise continuous on <span class="process-math">\([-1,1]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-cont-function-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-piecewise-cont-function-1-2">
+</div> 
+<div class="para logical" id="ex-piecewise-cont-function-1-2">
 <div class="displaymath process-math" id="ex-piecewise-cont-function-1-2-1">
 \begin{equation*}
 f(x) = \begin{cases} 1, \amp -1 \leq x \lt 0, \\ x, \amp 0 \leq x \lt 1/2, \\ 1-x^2, \amp 1/2 \leq x \leq 1. \end{cases} 
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-cont-function-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-piecewise-cont-function-1-3">Also, the graph of piecewise functions are helpful. These are found by finding the graphs of <span class="process-math">\(f\)</span> on each given interval. The graph of <span class="process-math">\(f\)</span> is shown below.<div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-cont-function-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <figure class="figure figure-like" id="fig-piece-function"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-piece-function.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graph of a piecewise continuous function.<div class="autopermalink" data-description="Figure 3.2.10"><a href="#fig-piece-function" title="Copy heading and permalink for Figure 3.2.10" aria-label="Copy heading and permalink for Figure 3.2.10">🔗</a></div></figcaption></figure> <div class="para" id="ex-piecewise-cont-function-1-5">In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get<div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-cont-function-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="ex-piecewise-cont-function-1-6">
+</div> 
+<div class="para" id="ex-piecewise-cont-function-1-3">Also, the graph of piecewise functions are helpful. These are found by finding the graphs of <span class="process-math">\(f\)</span> on each given interval. The graph of <span class="process-math">\(f\)</span> is shown below.<div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-cont-function-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-piece-function"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/plot-piece-function.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graph of a piecewise continuous function.<div class="autopermalink" data-description="Figure 3.2.10"><a href="#fig-piece-function" title="Copy heading and permalink for Figure 3.2.10" aria-label="Copy heading and permalink for Figure 3.2.10">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="ex-piecewise-cont-function-1-5">In addition, we need to show that all of the one-sided limits exist. For each of the functions above, we differentiate to get<div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-cont-function-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="ex-piecewise-cont-function-1-6">
 <div class="displaymath process-math" id="ex-piecewise-cont-function-1-6-1">
 \begin{align*}
 \lim_{x \rightarrow 0^-} f(x) \amp = 1 \amp \lim_{x \rightarrow 0^+} f(x) \amp = 0 \\
@@ -780,14 +854,19 @@ f(x) = \begin{cases} 1, \amp -1 \leq x \lt 0, \\ x, \amp 0 \leq x \lt 1/2, \\ 1-
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-cont-function-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="ex-piecewise-cont-function-1-7">And since the function is continuous at all points except at 0 and 1/2, but the one-sided limits are finite here, then the function <span class="process-math">\(f\)</span> is piecewise continuous.<div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-cont-function-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ex-piecewise-cont-function-1-7">And since the function is continuous at all points except at 0 and 1/2, but the one-sided limits are finite here, then the function <span class="process-math">\(f\)</span> is piecewise continuous.<div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-cont-function-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.2.9"><a href="#ex-piecewise-cont-function" title="Copy heading and permalink for Example 3.2.9" aria-label="Copy heading and permalink for Example 3.2.9">🔗</a></div></article><article class="example example-like" id="sect-funct-props-7-9"><h4 class="heading">
+<div class="autopermalink" data-description="Example 3.2.9"><a href="#ex-piecewise-cont-function" title="Copy heading and permalink for Example 3.2.9" aria-label="Copy heading and permalink for Example 3.2.9">🔗</a></div>
+</article>
+<article class="example example-like" id="sect-funct-props-7-9"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-7-9-1-1">Find both the left- and right-handed derivatives of the function defined in <a href="sect-funct-props.html#ex-piecewise-cont-function" class="xref" data-knowl="./knowl/xref/ex-piecewise-cont-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.2.9">Example 3.2.9</a> at <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=1/2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-funct-props-7-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-funct-props-7-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-funct-props-7-9-2-1">First, consider the derivative of the function<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-funct-props-7-9-2-2">
@@ -815,13 +894,18 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 <div class="para" id="sect-funct-props-7-9-2-6">then the left-handed derivative at 0 is 0, the right-handed derivative of <span class="process-math">\(f\)</span> at 1, the left-handed derivative at 1/2 is 1 and the right-handed derivative of <span class="process-math">\(f\)</span> at 1/2 is <span class="process-math">\(-1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-9-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.2.11.1"><a href="#sect-funct-props-7-9-2" title="Copy heading and permalink for Solution 3.2.11.1" aria-label="Copy heading and permalink for Solution 3.2.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 3.2.11"><a href="#sect-funct-props-7-9" title="Copy heading and permalink for Example 3.2.11" aria-label="Copy heading and permalink for Example 3.2.11">🔗</a></div></article><article class="example example-like" id="sect-funct-props-7-10"><h4 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.2.11"><a href="#sect-funct-props-7-9" title="Copy heading and permalink for Example 3.2.11" aria-label="Copy heading and permalink for Example 3.2.11">🔗</a></div>
+</article>
+<article class="example example-like" id="sect-funct-props-7-10"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-7-10-1-1">Show that <span class="process-math">\(f(x)=1/x\)</span> is not a piecewise continuous function on <span class="process-math">\([-1,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-funct-props-7-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-funct-props-7-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-funct-props-7-10-2-1">The function on  <span class="process-math">\([-1,1]\)</span> is not continuous at <span class="process-math">\(x=0\text{.}\)</span> Also<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-funct-props-7-10-2-2">
@@ -835,8 +919,13 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 <div class="para" id="sect-funct-props-7-10-2-3">and since the one-sided limits are not finite, then <span class="process-math">\(f\)</span> is not piecewise continuous on <span class="process-math">\([-1,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-7-10-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.2.12.1"><a href="#sect-funct-props-7-10-2" title="Copy heading and permalink for Solution 3.2.12.1" aria-label="Copy heading and permalink for Solution 3.2.12.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 3.2.12"><a href="#sect-funct-props-7-10" title="Copy heading and permalink for Example 3.2.12" aria-label="Copy heading and permalink for Example 3.2.12">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.2.4: One-Side Limits and Derivatives; Piecewise Continuous Functions"><a href="#sect-funct-props-7" title="Copy heading and permalink for Subsection 3.2.4: One-Side Limits and Derivatives; Piecewise Continuous Functions" aria-label="Copy heading and permalink for Subsection 3.2.4: One-Side Limits and Derivatives; Piecewise Continuous Functions">🔗</a></div></section><section class="subsection" id="sect-even-odd-functions"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.2.12"><a href="#sect-funct-props-7-10" title="Copy heading and permalink for Example 3.2.12" aria-label="Copy heading and permalink for Example 3.2.12">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 3.2.4: One-Side Limits and Derivatives; Piecewise Continuous Functions"><a href="#sect-funct-props-7" title="Copy heading and permalink for Subsection 3.2.4: One-Side Limits and Derivatives; Piecewise Continuous Functions" aria-label="Copy heading and permalink for Subsection 3.2.4: One-Side Limits and Derivatives; Piecewise Continuous Functions">🔗</a></div>
+</section>
+<section class="subsection" id="sect-even-odd-functions">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Odd and Even Functions</span>
 </h3>
 <article class="definition definition-like" id="sect-even-odd-functions-2"><h4 class="heading">
@@ -844,20 +933,25 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 </h4>
 <div class="para" id="sect-even-odd-functions-2-1-1">A function <span class="process-math">\(f(x)\)</span> is an <dfn class="terminology">odd function</dfn> if <span class="process-math">\(f(-x) = -f(x)\)</span> for all <span class="process-math">\(x\)</span> in its domain.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.2.13"><a href="#sect-even-odd-functions-2" title="Copy heading and permalink for Definition 3.2.13" aria-label="Copy heading and permalink for Definition 3.2.13">🔗</a></div></article><div class="para" id="sect-even-odd-functions-3">Note: recall that an odd function is symmetric about the origin, meaning that if the graph of <span class="process-math">\(f\)</span> is rotated a half circle about the origin, that one gets the graph back.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 3.2.13"><a href="#sect-even-odd-functions-2" title="Copy heading and permalink for Definition 3.2.13" aria-label="Copy heading and permalink for Definition 3.2.13">🔗</a></div>
+</article>
+<div class="para" id="sect-even-odd-functions-3">Note: recall that an odd function is symmetric about the origin, meaning that if the graph of <span class="process-math">\(f\)</span> is rotated a half circle about the origin, that one gets the graph back.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="sect-even-odd-functions-4"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-even-odd-functions-4-1-1">A function <span class="process-math">\(f(x)\)</span> is an <dfn class="terminology">even function</dfn> if <span class="process-math">\(f(-x)=f(x)\)</span> for all <span class="process-math">\(x\)</span> in its domain.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.2.14"><a href="#sect-even-odd-functions-4" title="Copy heading and permalink for Definition 3.2.14" aria-label="Copy heading and permalink for Definition 3.2.14">🔗</a></div></article><div class="para" id="sect-even-odd-functions-5">Recall that an even function is symmetric about the <span class="process-math">\(y\)</span>-axis. This means that if the graph is reflected over the <span class="process-math">\(y\)</span>-axis that one gets the same graph upon the reflection.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 3.2.14"><a href="#sect-even-odd-functions-4" title="Copy heading and permalink for Definition 3.2.14" aria-label="Copy heading and permalink for Definition 3.2.14">🔗</a></div>
+</article>
+<div class="para" id="sect-even-odd-functions-5">Recall that an even function is symmetric about the <span class="process-math">\(y\)</span>-axis. This means that if the graph is reflected over the <span class="process-math">\(y\)</span>-axis that one gets the same graph upon the reflection.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sect-even-odd-functions-6"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-even-odd-functions-6-1-1">Here’s a list of a few functions that are odd or even (without showing details):<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-even-odd-functions-6-1-2">
+</div> 
+<div class="para logical" id="sect-even-odd-functions-6-1-2">
 <ul class="disc" id="sect-even-odd-functions-6-1-2-1">
 <li id="sect-even-odd-functions-6-1-2-1-1">
 <div class="para" id="sect-even-odd-functions-6-1-2-1-1-1">The following functions are odd: <span class="process-math">\(x, x^3, x^5, \sin x, \tan x\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-6-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -872,7 +966,9 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 </ul>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.2.15"><a href="#sect-even-odd-functions-6" title="Copy heading and permalink for Example 3.2.15" aria-label="Copy heading and permalink for Example 3.2.15">🔗</a></div></article><div class="para" id="sect-even-odd-functions-7">The following theorem is helpful for finding whether or not products of functions are odd or even.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 3.2.15"><a href="#sect-even-odd-functions-6" title="Copy heading and permalink for Example 3.2.15" aria-label="Copy heading and permalink for Example 3.2.15">🔗</a></div>
+</article>
+<div class="para" id="sect-even-odd-functions-7">The following theorem is helpful for finding whether or not products of functions are odd or even.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="sect-even-odd-functions-8"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -897,12 +993,18 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 </ul>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 3.2.16"><a href="#sect-even-odd-functions-8" title="Copy heading and permalink for Theorem 3.2.16" aria-label="Copy heading and permalink for Theorem 3.2.16">🔗</a></div></article><article class="lemma theorem-like" id="sect-even-odd-functions-9"><h4 class="heading">
+<div class="autopermalink" data-description="Theorem 3.2.16"><a href="#sect-even-odd-functions-8" title="Copy heading and permalink for Theorem 3.2.16" aria-label="Copy heading and permalink for Theorem 3.2.16">🔗</a></div>
+</article>
+<article class="lemma theorem-like" id="sect-even-odd-functions-9"><h4 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-even-odd-functions-9-1-1">The derivative of an even function is odd. The derivative of an odd function is even.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 3.2.17"><a href="#sect-even-odd-functions-9" title="Copy heading and permalink for Lemma 3.2.17" aria-label="Copy heading and permalink for Lemma 3.2.17">🔗</a></div></article><details id="sect-even-odd-functions-9-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sect-even-odd-functions-9-2-1">Let <span class="process-math">\(f\)</span> be an even function, then <span class="process-math">\(f(-x) = f(x)\)</span> for all <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 3.2.17"><a href="#sect-even-odd-functions-9" title="Copy heading and permalink for Lemma 3.2.17" aria-label="Copy heading and permalink for Lemma 3.2.17">🔗</a></div>
+</article>
+<details id="sect-even-odd-functions-9-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sect-even-odd-functions-9-2-1">Let <span class="process-math">\(f\)</span> be an even function, then <span class="process-math">\(f(-x) = f(x)\)</span> for all <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-even-odd-functions-9-2-2">
 <div class="displaymath process-math" id="sect-even-odd-functions-9-2-2-1">
@@ -914,7 +1016,9 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 </div>
 <div class="para" id="sect-even-odd-functions-9-2-3">by the chain rule. And the proof that the derivative of an odd function is similar.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-9-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.2.17.1"><a href="#sect-even-odd-functions-9-2" title="Copy heading and permalink for Proof 3.2.17.1" aria-label="Copy heading and permalink for Proof 3.2.17.1">🔗</a></div></article></details><div class="para" id="sect-even-odd-functions-10">And as a corollary, antiderivatives work in the same way.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 3.2.17.1"><a href="#sect-even-odd-functions-9-2" title="Copy heading and permalink for Proof 3.2.17.1" aria-label="Copy heading and permalink for Proof 3.2.17.1">🔗</a></div>
+</article></details>
+<div class="para" id="sect-even-odd-functions-10">And as a corollary, antiderivatives work in the same way.<div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="corollary theorem-like" id="sect-even-odd-functions-11"><h4 class="heading">
 <span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -934,11 +1038,14 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 </ul>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-even-odd-functions-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Corollary 3.2.18"><a href="#sect-even-odd-functions-11" title="Copy heading and permalink for Corollary 3.2.18" aria-label="Copy heading and permalink for Corollary 3.2.18">🔗</a></div></article><article class="theorem theorem-like" id="thm-even-odd-integrals"><h4 class="heading">
+<div class="autopermalink" data-description="Corollary 3.2.18"><a href="#sect-even-odd-functions-11" title="Copy heading and permalink for Corollary 3.2.18" aria-label="Copy heading and permalink for Corollary 3.2.18">🔗</a></div>
+</article>
+<article class="theorem theorem-like" id="thm-even-odd-integrals"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="thm-even-odd-integrals-1-1">Let <span class="process-math">\(f\)</span> be a piecewise continuous function on the interval <span class="process-math">\([-a,a]\)</span> for <span class="process-math">\(a&gt;0\)</span> .<div class="autopermalink" data-description="Paragraph"><a href="#thm-even-odd-integrals-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="thm-even-odd-integrals-1-2">
+</div> 
+<div class="para logical" id="thm-even-odd-integrals-1-2">
 <ul class="disc" id="thm-even-odd-integrals-1-2-1">
 <li id="thm-even-odd-integrals-1-2-1-1">
 <div class="para" id="thm-even-odd-integrals-1-2-1-1-1">If <span class="process-math">\(f\)</span> is an odd function then<div class="autopermalink" data-description="Paragraph"><a href="#thm-even-odd-integrals-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -969,7 +1076,11 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 </ul>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-even-odd-integrals-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 3.2.19"><a href="#thm-even-odd-integrals" title="Copy heading and permalink for Theorem 3.2.19" aria-label="Copy heading and permalink for Theorem 3.2.19">🔗</a></div></article><details id="thm-even-odd-integrals-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-even-odd-integrals-2-1">First, examine the first statement. Let <span class="process-math">\(F(x)\)</span> be an antiderivative of <span class="process-math">\(f(x)\text{,}\)</span> an odd function. The function <span class="process-math">\(F(x)\)</span> can be written as <span class="process-math">\(F(x)=G(x)+C\)</span> where <span class="process-math">\(G(x)\)</span> is an even function.<div class="autopermalink" data-description="Paragraph"><a href="#thm-even-odd-integrals-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 3.2.19"><a href="#thm-even-odd-integrals" title="Copy heading and permalink for Theorem 3.2.19" aria-label="Copy heading and permalink for Theorem 3.2.19">🔗</a></div>
+</article>
+<details id="thm-even-odd-integrals-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="thm-even-odd-integrals-2-1">First, examine the first statement. Let <span class="process-math">\(F(x)\)</span> be an antiderivative of <span class="process-math">\(f(x)\text{,}\)</span> an odd function. The function <span class="process-math">\(F(x)\)</span> can be written as <span class="process-math">\(F(x)=G(x)+C\)</span> where <span class="process-math">\(G(x)\)</span> is an even function.<div class="autopermalink" data-description="Paragraph"><a href="#thm-even-odd-integrals-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-even-odd-integrals-2-2">
 <div class="displaymath process-math" id="thm-even-odd-integrals-2-2-1">
@@ -981,7 +1092,11 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 </div>
 <div class="para" id="thm-even-odd-integrals-2-3">since <span class="process-math">\(G(x)\)</span> is even. The proof of the second statement is similar.<div class="autopermalink" data-description="Paragraph"><a href="#thm-even-odd-integrals-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.2.19.1"><a href="#thm-even-odd-integrals-2" title="Copy heading and permalink for Proof 3.2.19.1" aria-label="Copy heading and permalink for Proof 3.2.19.1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 3.2.5: Odd and Even Functions"><a href="#sect-even-odd-functions" title="Copy heading and permalink for Subsection 3.2.5: Odd and Even Functions" aria-label="Copy heading and permalink for Subsection 3.2.5: Odd and Even Functions">🔗</a></div></section><section class="subsection" id="sect-funct-props-9"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Proof 3.2.19.1"><a href="#thm-even-odd-integrals-2" title="Copy heading and permalink for Proof 3.2.19.1" aria-label="Copy heading and permalink for Proof 3.2.19.1">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Subsection 3.2.5: Odd and Even Functions"><a href="#sect-even-odd-functions" title="Copy heading and permalink for Subsection 3.2.5: Odd and Even Functions" aria-label="Copy heading and permalink for Subsection 3.2.5: Odd and Even Functions">🔗</a></div>
+</section>
+<section class="subsection" id="sect-funct-props-9">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Tabular Integration</span>
 </h3>
 <div class="para" id="sect-funct-props-9-2">A very handy formula for many integrations in this section is called <dfn class="terminology">tabular integration</dfn>, which is just a recursive version of integration by parts that works well for integrals of a certain type. Before we show this, recall that the integration by parts formula is<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1000,7 +1115,8 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-9-5-1-1">Find<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-funct-props-9-5-1-2">
+</div> 
+<div class="para logical" id="sect-funct-props-9-5-1-2">
 <div class="displaymath process-math" id="sect-funct-props-9-5-1-2-1">
 \begin{equation*}
 \int x e^x \, dx.
@@ -1008,7 +1124,9 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-5-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-funct-props-9-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-funct-props-9-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-funct-props-9-5-2-1">In this case, we’ll let <span class="process-math">\(u= x\)</span> and <span class="process-math">\(dv = e^x \, dx\text{,}\)</span> finding the differential <span class="process-math">\(u\)</span> results in <span class="process-math">\(du=dx\)</span> and finding an antiderivative of <span class="process-math">\(dv\)</span> results in <span class="process-math">\(v= e^x\text{,}\)</span> so using integration by parts to get<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-funct-props-9-5-2-2">
@@ -1020,8 +1138,11 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.2.20.1"><a href="#sect-funct-props-9-5-2" title="Copy heading and permalink for Solution 3.2.20.1" aria-label="Copy heading and permalink for Solution 3.2.20.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 3.2.20"><a href="#sect-funct-props-9-5" title="Copy heading and permalink for Example 3.2.20" aria-label="Copy heading and permalink for Example 3.2.20">🔗</a></div></article><div class="para" id="sect-funct-props-9-6">This example shows that in order to integrate with the by parts formula, one must replace one integral with another. In more difficult examples, this may need to be done multiple times until the resulting integral is able to be done without by parts. This is the case when tabular integration is useful.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.2.20"><a href="#sect-funct-props-9-5" title="Copy heading and permalink for Example 3.2.20" aria-label="Copy heading and permalink for Example 3.2.20">🔗</a></div>
+</article>
+<div class="para" id="sect-funct-props-9-6">This example shows that in order to integrate with the by parts formula, one must replace one integral with another. In more difficult examples, this may need to be done multiple times until the resulting integral is able to be done without by parts. This is the case when tabular integration is useful.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="remark remark-like" id="sect-funct-props-9-7"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -1060,26 +1181,34 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 </div>
 <div class="para" id="sect-funct-props-9-7-5">For columns 2 and 3, continue until you reach the same row as the 0 in the first column. To find the antiderivative, draw arrows from each function in the first column, to a function in the third column one row below. The result is the sum of the product of each pair of functions connected by the arrows with the sign of that above the given arrow.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 3.2.21"><a href="#sect-funct-props-9-7" title="Copy heading and permalink for Remark 3.2.21" aria-label="Copy heading and permalink for Remark 3.2.21">🔗</a></div></article><div class="para" id="sect-funct-props-9-8">This is best seen with a couple of examples.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 3.2.21"><a href="#sect-funct-props-9-7" title="Copy heading and permalink for Remark 3.2.21" aria-label="Copy heading and permalink for Remark 3.2.21">🔗</a></div>
+</article>
+<div class="para" id="sect-funct-props-9-8">This is best seen with a couple of examples.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sect-funct-props-9-9"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-9-9-1-1">Find<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-funct-props-9-9-1-2">
+</div> 
+<div class="para logical" id="sect-funct-props-9-9-1-2">
 <div class="displaymath process-math" id="sect-funct-props-9-9-1-2-1">
 \begin{equation*}
 \int x^3 e^x \, dx
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-9-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-funct-props-9-9-1-3">using tabular integration.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sect-funct-props-9-9-1-3">using tabular integration.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-funct-props-9-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-funct-props-9-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-funct-props-9-9-2-1">First, we will build the table:<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="sect-funct-props-9-9-2-2"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="generated/latex-image/plot-tab-int-table.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Tabular integration of <span class="process-math">\(\int x^3 e^x \, dx\)</span><div class="autopermalink" data-description="Figure 3.2.23"><a href="#sect-funct-props-9-9-2-2" title="Copy heading and permalink for Figure 3.2.23" aria-label="Copy heading and permalink for Figure 3.2.23">🔗</a></div></figcaption></figure><div class="para" id="sect-funct-props-9-9-2-3">Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-9-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Tabular integration of <span class="process-math">\(\int x^3 e^x \, dx\)</span><div class="autopermalink" data-description="Figure 3.2.23"><a href="#sect-funct-props-9-9-2-2" title="Copy heading and permalink for Figure 3.2.23" aria-label="Copy heading and permalink for Figure 3.2.23">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sect-funct-props-9-9-2-3">Then read off the result which is the sum of the product of terms connected by the arrows with the sign above each arrow.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-9-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-funct-props-9-9-2-4">
 <div class="displaymath process-math" id="sect-funct-props-9-9-2-4-1">
@@ -1092,27 +1221,36 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 <div class="para" id="sect-funct-props-9-9-2-5">and don’t forget the <span class="process-math">\(C\)</span> for an indefinite integral.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-9-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.2.22.1"><a href="#sect-funct-props-9-9-2" title="Copy heading and permalink for Solution 3.2.22.1" aria-label="Copy heading and permalink for Solution 3.2.22.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 3.2.22"><a href="#sect-funct-props-9-9" title="Copy heading and permalink for Example 3.2.22" aria-label="Copy heading and permalink for Example 3.2.22">🔗</a></div></article><div class="para" id="sect-funct-props-9-10">And the following is an example that is similar as we will see below:<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.2.22"><a href="#sect-funct-props-9-9" title="Copy heading and permalink for Example 3.2.22" aria-label="Copy heading and permalink for Example 3.2.22">🔗</a></div>
+</article>
+<div class="para" id="sect-funct-props-9-10">And the following is an example that is similar as we will see below:<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sect-funct-props-9-11"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="sect-funct-props-9-11-1-1">Find<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sect-funct-props-9-11-1-2">
+</div> 
+<div class="para logical" id="sect-funct-props-9-11-1-2">
 <div class="displaymath process-math" id="sect-funct-props-9-11-1-2-1">
 \begin{equation*}
 \int_0^{\pi} x^2 \cos 2x \, dx
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-11-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sect-funct-props-9-11-1-3">using tabular integration.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-11-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sect-funct-props-9-11-1-3">using tabular integration.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-11-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sect-funct-props-9-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sect-funct-props-9-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="sect-funct-props-9-11-2-1">First, we will build the table:<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="sect-funct-props-9-11-2-2"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="generated/latex-image/plot-tab-int-table2.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Tabular integration of <span class="process-math">\(x^2 \cos 2x\text{.}\)</span><div class="autopermalink" data-description="Figure 3.2.25"><a href="#sect-funct-props-9-11-2-2" title="Copy heading and permalink for Figure 3.2.25" aria-label="Copy heading and permalink for Figure 3.2.25">🔗</a></div></figcaption></figure><div class="para" id="sect-funct-props-9-11-2-3">and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-11-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Tabular integration of <span class="process-math">\(x^2 \cos 2x\text{.}\)</span><div class="autopermalink" data-description="Figure 3.2.25"><a href="#sect-funct-props-9-11-2-2" title="Copy heading and permalink for Figure 3.2.25" aria-label="Copy heading and permalink for Figure 3.2.25">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sect-funct-props-9-11-2-3">and then read off the result which is the product of terms connected by the arrows with the sign above each arrow.<div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-11-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sect-funct-props-9-11-2-4">
 <div class="displaymath process-math" id="sect-funct-props-9-11-2-4-1">
@@ -1126,8 +1264,13 @@ f'(x) = \begin{cases} 0, \amp -1 \lt x \lt 0, \\ 1, \amp 0 \lt x \lt 1/2, \\ -2x
 <div class="autopermalink" data-description="Paragraph"><a href="#sect-funct-props-9-11-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.2.24.1"><a href="#sect-funct-props-9-11-2" title="Copy heading and permalink for Solution 3.2.24.1" aria-label="Copy heading and permalink for Solution 3.2.24.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 3.2.24"><a href="#sect-funct-props-9-11" title="Copy heading and permalink for Example 3.2.24" aria-label="Copy heading and permalink for Example 3.2.24">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.2.6: Tabular Integration"><a href="#sect-funct-props-9" title="Copy heading and permalink for Subsection 3.2.6: Tabular Integration" aria-label="Copy heading and permalink for Subsection 3.2.6: Tabular Integration">🔗</a></div></section><div class="autopermalink" data-description="Section 3.2: Properties of Functions"><a href="#sect-funct-props" title="Copy heading and permalink for Section 3.2: Properties of Functions" aria-label="Copy heading and permalink for Section 3.2: Properties of Functions">🔗</a></div></section></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.2.24"><a href="#sect-funct-props-9-11" title="Copy heading and permalink for Example 3.2.24" aria-label="Copy heading and permalink for Example 3.2.24">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 3.2.6: Tabular Integration"><a href="#sect-funct-props-9" title="Copy heading and permalink for Subsection 3.2.6: Tabular Integration" aria-label="Copy heading and permalink for Subsection 3.2.6: Tabular Integration">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 3.2: Properties of Functions"><a href="#sect-funct-props" title="Copy heading and permalink for Section 3.2: Properties of Functions" aria-label="Copy heading and permalink for Section 3.2: Properties of Functions">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sect-complex-numbers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-vector-spaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
